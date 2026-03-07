@@ -145,9 +145,7 @@ export default function HomePage() {
                             linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
         }
       `}</style>
-
       <Header />
-
       {/* --- HERO SECTION --- */}
       <section ref={heroRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center">
         {/* Background Parallax */}
@@ -246,7 +244,6 @@ export default function HomePage() {
           <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent" />
         </motion.div>
       </section>
-
       {/* --- MARQUEE --- */}
       <div className="w-full bg-primary py-4 overflow-hidden border-y border-white/10 relative z-20">
         <div className="flex items-center whitespace-nowrap animate-marquee-mobile md:animate-marquee-desktop">
@@ -277,19 +274,19 @@ export default function HomePage() {
         `}</style>
       </div>
       {/* --- INTRO / STATS --- */}
-      <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 xl:py-32 bg-dark-grey overflow-hidden">
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-10 xl:gap-14 2xl:gap-16 items-start">
+      <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 2xl:py-32 bg-dark-grey overflow-hidden">
+        <div className="grid grid-cols-1 2xl:grid-cols-12 gap-10 xl:gap-12 2xl:gap-16 items-start">
           {/* Left Column */}
-          <div className="xl:col-span-5 min-w-0">
+          <div className="2xl:col-span-5 min-w-0">
             <SectionLabel text="Company Profile" />
 
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl text-white leading-[0.95] tracking-tight mb-8 max-w-[10ch]">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl xl:text-[4.25rem] 2xl:text-[5rem] text-white leading-[0.9] tracking-tight mb-8 max-w-[8ch]">
               <span className="block">ENGINEERING</span>
               <span className="block text-white/30">DURABILITY</span>
               <span className="block">SINCE 1994.</span>
             </h2>
 
-            <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-[58ch]">
+            <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-[56ch]">
               Russo NV stands at the intersection of industrial power and precision engineering.
               We don&apos;t just paint; we engineer longevity into the critical infrastructure that powers our world.
               From storage tanks in Antwerp to pipelines in Germany, our work is the first line of defense against corrosion.
@@ -301,10 +298,10 @@ export default function HomePage() {
                   <div className="font-heading text-3xl md:text-4xl text-primary mb-1">
                     {stat.value}
                   </div>
-                  <div className="font-paragraph text-white font-bold text-sm uppercase break-words">
+                  <div className="font-paragraph text-white font-bold text-sm uppercase">
                     {stat.label}
                   </div>
-                  <div className="font-paragraph text-white/40 text-xs mt-1 break-words">
+                  <div className="font-paragraph text-white/40 text-xs mt-1">
                     {stat.sub}
                   </div>
                 </div>
@@ -313,7 +310,7 @@ export default function HomePage() {
           </div>
 
           {/* Right Column */}
-          <div className="xl:col-span-7 relative min-w-0">
+          <div className="2xl:col-span-7 relative min-w-0">
             <div className="relative w-full min-h-[420px] md:min-h-[520px] xl:min-h-[600px] overflow-hidden group">
               <div className="absolute inset-0 border border-white/10 z-10 pointer-events-none" />
               <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary z-20" />
@@ -339,10 +336,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-
-
-
       {/* --- STICKY SERVICES --- */}
       <section className="relative w-full bg-black py-32">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12">
@@ -378,7 +371,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- PARALLAX INDUSTRIES --- */}
       <section className="relative w-full py-40 overflow-hidden bg-dark-grey clip-diagonal">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -401,7 +393,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- FEATURED PROJECT (Parallax Reveal) --- */}
       <section className="relative w-full min-h-screen flex items-center justify-center bg-black py-32">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 w-full">
@@ -450,7 +441,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- CTA SECTION --- */}
       <section className="relative w-full bg-primary py-32 overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-20 mix-blend-multiply" />
@@ -488,7 +478,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
