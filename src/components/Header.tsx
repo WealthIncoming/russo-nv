@@ -28,7 +28,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-24 gap-8">
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0 whitespace-nowrap">
-            <span className="font-heading text-3xl font-bold text-foreground">RUSSO NV</span>
+            <span className="font-heading text-3xl font-bold text-dark-grey">RUSSO NV</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -92,7 +92,6 @@ export default function Header() {
           </button>
         </div>
       </div>
-
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMenuOpen && (

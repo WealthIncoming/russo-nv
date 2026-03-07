@@ -393,72 +393,50 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      {/* --- FEATURED PROJECT --- */}
-      <section className="relative w-full py-24 md:py-32 bg-black overflow-hidden">
+      {/* --- FEATURED PROJECT (Parallax Reveal) --- */}
+      <section className="relative w-full min-h-screen flex items-center justify-center bg-black py-32">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Left Column: Image */}
-            <div className="relative w-full aspect-video lg:aspect-[4/3] overflow-hidden border border-white/10">
-              <Image
-                src="https://static.wixstatic.com/media/3232e5_227722fce6c544bfa11ad9bde5ff07a5~mv2.png?originWidth=1920&originHeight=1024"
-                alt="Large scale tank farm project"
-                className="w-full h-full object-cover"
-                width={1920}
-              />
-            </div>
-
-            {/* Right Column: Text Content */}
-            <div className="flex flex-col justify-center">
+          <div className="flex flex-col lg:flex-row items-end justify-between mb-16 gap-8">
+            <div>
               <SectionLabel text="Featured Project" />
-
-              <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-tight mb-8">
-                TOTAL TANK FARM <br />
-                <span className="text-primary">REFURBISHMENT</span>
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white max-w-full lg:max-w-3xl leading-tight">
+                TOTAL TANK FARM <br/> REFURBISHMENT
               </h2>
+            </div>
+            <div className="flex flex-col items-end text-right">
+              <span className="font-paragraph text-primary font-bold text-xl">ANTWERP PORT</span>
+              <span className="font-paragraph text-white/40 text-sm uppercase tracking-wider">Duration: 18 Months</span>
+            </div>
+          </div>
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 mb-8">
-                <span className="font-paragraph text-primary font-bold text-xl">
-                  ANTWERP PORT
-                </span>
-                <span className="font-paragraph text-white/40 text-sm uppercase tracking-wider">
-                  Duration: 18 Months
-                </span>
-              </div>
+          <div className="relative w-full aspect-[16/9] lg:aspect-[21/9] overflow-hidden group">
+            <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <Image
+              src="https://static.wixstatic.com/media/3232e5_227722fce6c544bfa11ad9bde5ff07a5~mv2.png?originWidth=1920&originHeight=1024"
+              alt="Large scale tank farm project"
+              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out"
+              width={1920}
+            />
 
-              <p className="font-paragraph text-white/70 text-base md:text-lg leading-relaxed mb-8 max-w-[60ch]">
-                Large-scale refurbishment project involving abrasive blasting, primer application,
-                and a multi-coat epoxy protection system for critical tank farm infrastructure in the Port of Antwerp.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-                <div className="border-t border-white/10 pt-4">
-                  <h4 className="font-paragraph text-white/60 text-xs uppercase tracking-widest mb-2">
-                    Scope
-                  </h4>
-                  <p className="font-paragraph text-white text-sm leading-relaxed">
-                    Full abrasive blasting, primer application, and multi-coat epoxy system for 12 storage tanks.
-                  </p>
+            {/* Overlay Info */}
+            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent p-8 md:p-12 z-20 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                  <h4 className="font-paragraph text-white/60 text-xs uppercase tracking-widest mb-2">Scope</h4>
+                  <p className="font-paragraph text-white text-sm">Full abrasive blasting, primer application, and multi-coat epoxy system for 12 storage tanks.</p>
                 </div>
-
-                <div className="border-t border-white/10 pt-4">
-                  <h4 className="font-paragraph text-white/60 text-xs uppercase tracking-widest mb-2">
-                    Challenge
-                  </h4>
-                  <p className="font-paragraph text-white text-sm leading-relaxed">
-                    Strict environmental controls and continuous operation of adjacent facilities.
-                  </p>
+                <div>
+                  <h4 className="font-paragraph text-white/60 text-xs uppercase tracking-widest mb-2">Challenge</h4>
+                  <p className="font-paragraph text-white text-sm">Strict environmental controls and continuous operation of adjacent facilities.</p>
+                </div>
+                <div className="flex items-end justify-end">
+                  <Link to="/projects">
+                    <button className="text-primary font-paragraph font-bold uppercase text-sm flex items-center gap-2 hover:gap-4 transition-all">
+                      View Case Study <ArrowRight className="w-4 h-4" />
+                    </button>
+                  </Link>
                 </div>
               </div>
-
-              <Link to="/projects">
-                <button className="group relative overflow-hidden bg-primary px-8 py-4 flex items-center gap-3 whitespace-nowrap w-fit">
-                  <span className="relative z-10 font-paragraph font-bold uppercase text-white text-sm tracking-wider">
-                    View Case Study
-                  </span>
-                  <ArrowRight className="relative z-10 w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
-                  <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out mix-blend-overlay" />
-                </button>
-              </Link>
             </div>
           </div>
         </div>
