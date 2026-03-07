@@ -145,9 +145,7 @@ export default function HomePage() {
                             linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
         }
       `}</style>
-
       <Header />
-
       {/* --- HERO SECTION --- */}
       <section ref={heroRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center">
         {/* Background Parallax */}
@@ -246,7 +244,6 @@ export default function HomePage() {
           <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent" />
         </motion.div>
       </section>
-
       {/* --- MARQUEE --- */}
       <div className="w-full bg-primary py-4 overflow-hidden border-y border-white/10 relative z-20">
         <div className="flex items-center whitespace-nowrap animate-marquee-mobile md:animate-marquee-desktop">
@@ -277,70 +274,59 @@ export default function HomePage() {
         `}</style>
       </div>
       {/* --- INTRO / STATS --- */}
-      <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 xl:py-32 bg-dark-grey overflow-hidden">
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-10 xl:gap-14 2xl:gap-16 items-start">
-          {/* Left Column */}
-          <div className="xl:col-span-5 min-w-0">
+      <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 pt-24 md:pt-32 xl:pt-40 pb-20 md:pb-24 xl:pb-32 bg-dark-grey overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+          <div className="relative min-h-[400px] md:min-h-[550px] lg:min-h-[700px] overflow-hidden">
+            <div className="absolute inset-0 border border-white/10 z-10 pointer-events-none" />
+            <div className="absolute top-0 left-0 w-6 h-6 border-t border-l border-primary z-20" />
+            <div className="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-primary z-20" />
+
+            <Image src="https://static.wixstatic.com/media/3232e5_ccacd4497b0147e8a64b40b832b79772~mv2.png?originWidth=1152&originHeight=576" alt="Industrial worker sandblasting" className="w-full h-full object-cover filter grayscale contrast-125 hover:grayscale-0 transition-all duration-700" width={1200} />
+
+            <div className="absolute bottom-8 left-8 z-20 bg-black/80 backdrop-blur-md p-6 md:p-8 border-l-4 border-primary max-w-[85%] sm:max-w-sm">
+              <div className="flex items-center gap-3 mb-3">
+                <Shield className="w-6 h-6 text-primary" />
+                <span className="font-heading text-white text-xl">Safety First</span>
+              </div>
+              <p className="font-paragraph text-white/70 text-sm leading-relaxed">
+                Strict adherence to VCA &amp; NACE protocols ensures zero-incident operations in high-risk environments.
+              </p>
+            </div>
+          </div>
+
+          <div className="min-w-0">
             <SectionLabel text="Company Profile" />
 
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl text-white leading-[0.95] tracking-tight mb-8 max-w-[10ch]">
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-white leading-[0.9] tracking-tight mb-10 max-w-[12ch]">
               <span className="block">ENGINEERING</span>
               <span className="block text-white/30">DURABILITY</span>
               <span className="block">SINCE 1994.</span>
             </h2>
 
-            <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-[58ch]">
+            <p className="font-paragraph text-white/60 text-lg md:text-xl leading-relaxed mb-12 max-w-[65ch]">
               Russo NV stands at the intersection of industrial power and precision engineering.
               We don&apos;t just paint; we engineer longevity into the critical infrastructure that powers our world.
               From storage tanks in Antwerp to pipelines in Germany, our work is the first line of defense against corrosion.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-2xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 max-w-3xl">
               {STATS_DATA.map((stat, index) => (
-                <div key={index} className="border-t border-white/10 pt-4 min-w-0">
-                  <div className="font-heading text-3xl md:text-4xl text-primary mb-1">
+                <div key={index} className="border-l-4 border-primary pl-6 py-2 min-w-0 bg-black/20 hover:bg-black/40 transition-colors duration-300">
+                  <div className="font-heading text-4xl md:text-5xl text-primary mb-2">
                     {stat.value}
                   </div>
-                  <div className="font-paragraph text-white font-bold text-sm uppercase break-words">
+                  <div className="font-paragraph text-white font-bold text-base uppercase break-words">
                     {stat.label}
                   </div>
-                  <div className="font-paragraph text-white/40 text-xs mt-1 break-words">
+                  <div className="font-paragraph text-white/40 text-sm mt-1 break-words">
                     {stat.sub}
                   </div>
                 </div>
               ))}
             </div>
           </div>
-
-          {/* Right Column */}
-          <div className="xl:col-span-7 relative min-w-0">
-            <div className="relative w-full min-h-[420px] md:min-h-[520px] xl:min-h-[600px] overflow-hidden group">
-              <div className="absolute inset-0 border border-white/10 z-10 pointer-events-none" />
-              <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary z-20" />
-              <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary z-20" />
-
-              <Image
-                src="https://static.wixstatic.com/media/3232e5_ccacd4497b0147e8a64b40b832b79772~mv2.png?originWidth=1152&originHeight=576"
-                alt="Industrial worker sandblasting"
-                className="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700"
-                width={1200}
-              />
-
-              <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 z-20 bg-black/80 backdrop-blur-md p-4 md:p-6 border-l-2 border-primary max-w-[85%] sm:max-w-xs">
-                <div className="flex items-center gap-2 mb-2">
-                  <Shield className="w-5 h-5 text-primary" />
-                  <span className="font-heading text-white text-lg">Safety First</span>
-                </div>
-                <p className="font-paragraph text-white/70 text-xs leading-relaxed">
-                  Strict adherence to VCA &amp; NACE protocols ensures zero-incident operations in high-risk environments.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
-
-
       {/* --- STICKY SERVICES --- */}
       <section className="relative w-full bg-black py-32">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12">
@@ -376,7 +362,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- PARALLAX INDUSTRIES --- */}
       <section className="relative w-full py-40 overflow-hidden bg-dark-grey clip-diagonal">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -399,7 +384,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- FEATURED PROJECT (Parallax Reveal) --- */}
       <section className="relative w-full min-h-screen flex items-center justify-center bg-black py-32">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 w-full">
@@ -448,7 +432,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- CTA SECTION --- */}
       <section className="relative w-full bg-primary py-32 overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-20 mix-blend-multiply" />
@@ -486,7 +469,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
