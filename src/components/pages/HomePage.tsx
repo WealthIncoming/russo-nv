@@ -453,7 +453,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-6xl md:text-8xl text-white mb-8 leading-[0.9]">
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white mb-8 leading-[0.9]">
               READY TO <br/>
               <span className="text-black">MOBILIZE?</span>
             </h2>
