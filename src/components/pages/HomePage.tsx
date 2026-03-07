@@ -211,20 +211,22 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col md:flex-row items-start md:items-center gap-8 pl-8 md:pl-12 max-w-4xl"
+            className="flex flex-col md:flex-row items-start gap-8 pl-8 md:pl-12 max-w-4xl w-full"
           >
-            <p className="font-paragraph text-white/70 text-lg leading-relaxed max-w-xl">
-              Specialized surface preparation and protective coating solutions for heavy industry. 
-              Serving chemical plants, refineries, and infrastructure across the EU.
-            </p>
+            <div className="flex-1 min-w-0">
+              <p className="font-paragraph text-white/70 text-lg leading-relaxed max-w-xl">
+                Specialized surface preparation and protective coating solutions for heavy industry. 
+                Serving chemical plants, refineries, and infrastructure across the EU.
+              </p>
+            </div>
             
-            <div className="flex gap-4">
-              <Link to="/contact" className="group relative overflow-hidden bg-primary px-8 py-4 flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
+              <Link to="/contact" className="group relative overflow-hidden bg-primary px-8 py-4 flex items-center gap-3 whitespace-nowrap">
                 <span className="relative z-10 font-paragraph font-bold uppercase text-white text-sm tracking-wider">Request Quote</span>
                 <ArrowRight className="relative z-10 w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out mix-blend-overlay" />
               </Link>
-              <Link to="/projects" className="group px-8 py-4 border border-white/30 hover:border-white transition-colors flex items-center gap-3">
+              <Link to="/projects" className="group px-8 py-4 border border-white/30 hover:border-white transition-colors flex items-center gap-3 whitespace-nowrap">
                 <span className="font-paragraph font-bold uppercase text-white text-sm tracking-wider">View Portfolio</span>
               </Link>
             </div>
