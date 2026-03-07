@@ -164,7 +164,7 @@ export default function HomePage() {
 
         {/* Hero Content */}
         <motion.div 
-          style={{ y: heroTextY, opacity: heroOpacity }} 
+          style={{ opacity: heroOpacity }} 
           className="relative z-10 w-full max-w-[120rem] mx-auto px-6 md:px-12 flex flex-col justify-center h-full pt-20"
         >
           <div className="border-l border-white/20 pl-8 md:pl-12 mb-8">
