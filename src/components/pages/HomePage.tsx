@@ -368,7 +368,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-[120rem] mx-auto px-6 md:px-12">
           <div className="text-center mb-24">
             <SectionLabel text="Sectors" align="center" />
-            <h2 className="font-heading text-5xl md:text-7xl text-white">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-tight">
               BUILT FOR <span className="text-primary">HEAVY INDUSTRY</span>
             </h2>
           </div>
