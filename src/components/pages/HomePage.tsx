@@ -399,7 +399,7 @@ export default function HomePage() {
           <div className="flex flex-col lg:flex-row items-end justify-between mb-16 gap-8">
             <div>
               <SectionLabel text="Featured Project" />
-              <h2 className="font-heading text-5xl md:text-6xl text-white max-w-3xl">
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white max-w-full lg:max-w-3xl leading-tight">
                 TOTAL TANK FARM <br/> REFURBISHMENT
               </h2>
             </div>
