@@ -284,9 +284,9 @@ export default function HomePage() {
             <Image src="https://static.wixstatic.com/media/3232e5_ccacd4497b0147e8a64b40b832b79772~mv2.png?originWidth=1152&originHeight=576" alt="Industrial worker sandblasting" className="w-full h-full object-cover filter grayscale contrast-125 hover:grayscale-0 transition-all duration-700" width={1200} />
 
             <div className="absolute bottom-8 left-8 z-20 bg-black/80 backdrop-blur-md p-6 md:p-8 border-l-4 border-primary max-w-[85%] sm:max-w-sm">
-              <div className="flex items-center gap-3 mb-3">
-                <Shield className="w-6 h-6 text-primary" />
-                <span className="font-heading text-white text-xl">Safety First</span>
+              <div className="flex items-center gap-3 mb-3 min-w-0">
+                <Shield className="w-6 h-6 text-primary flex-shrink-0" />
+                <span className="font-heading text-white text-xl truncate">Safety First</span>
               </div>
               <p className="font-paragraph text-white/70 text-sm leading-relaxed">
                 Strict adherence to VCA &amp; NACE protocols ensures zero-incident operations in high-risk environments.
@@ -294,16 +294,16 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="min-w-0">
+          <div className="min-w-0 overflow-hidden">
             <SectionLabel text="Company Profile" />
 
-            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-white leading-[0.9] tracking-tight mb-10 max-w-[12ch]">
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl text-white leading-[0.9] tracking-tight mb-10 max-w-[12ch] break-words">
               <span className="block">ENGINEERING</span>
               <span className="block text-white/30">DURABILITY</span>
               <span className="block">SINCE 1994.</span>
             </h2>
 
-            <p className="font-paragraph text-white/60 text-lg md:text-xl leading-relaxed mb-12 max-w-[65ch]">
+            <p className="font-paragraph text-white/60 text-lg md:text-xl leading-relaxed mb-12 max-w-[65ch] break-words">
               Russo NV stands at the intersection of industrial power and precision engineering.
               We don&apos;t just paint; we engineer longevity into the critical infrastructure that powers our world.
               From storage tanks in Antwerp to pipelines in Germany, our work is the first line of defense against corrosion.
@@ -311,8 +311,8 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 max-w-3xl">
               {STATS_DATA.map((stat, index) => (
-                <div key={index} className="border-l-4 border-primary pl-6 py-2 min-w-0 bg-black/20 hover:bg-black/40 transition-colors duration-300">
-                  <div className="font-heading text-4xl md:text-5xl text-primary mb-2">
+                <div key={index} className="border-l-4 border-primary pl-6 py-2 min-w-0 bg-black/20 hover:bg-black/40 transition-colors duration-300 overflow-hidden">
+                  <div className="font-heading text-4xl md:text-5xl text-primary mb-2 truncate">
                     {stat.value}
                   </div>
                   <div className="font-paragraph text-white font-bold text-base uppercase break-words">
