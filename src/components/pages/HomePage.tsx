@@ -172,14 +172,15 @@ export default function HomePage() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex items-center gap-4 mb-4"
+              className="flex flex-wrap items-center gap-4 mb-4"
             >
               <span className="font-paragraph text-primary font-bold tracking-widest text-sm uppercase">Est. 1994</span>
               <span className="h-[1px] w-16 bg-white/20" />
               <span className="font-paragraph text-white/60 text-sm uppercase tracking-widest">Antwerp, Belgium</span>
             </motion.div>
             
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-8xl lg:text-[9rem] leading-[0.85] font-black text-white uppercase tracking-tighter">
+            <div className="max-w-[min(100%,900px)]">
+              <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.85] font-black text-white uppercase tracking-tighter">
               <motion.span 
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -205,6 +206,7 @@ export default function HomePage() {
                 Vanguard
               </motion.span>
             </h1>
+            </div>
           </div>
 
           <motion.div 
