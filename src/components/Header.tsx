@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Image } from '@/components/ui/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,12 +28,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
-            <Image
-              src="https://static.wixstatic.com/media/3232e5_a9937279cd4a45fea82cb09da4986d7b~mv2.png"
-              alt="RUSSO N.V. Company Logo"
-              width={120}
-              className="h-20 w-auto object-contain"
-            />
+            <span className="font-heading text-3xl font-bold text-foreground">RUSSO NV</span>
           </Link>
 
           {/* Desktop Navigation */}
