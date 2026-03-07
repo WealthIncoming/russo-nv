@@ -340,33 +340,7 @@ export default function HomePage() {
         </div>
       </section>
 
-          {/* Right Column */}
-          <div className="xl:col-span-7 relative min-w-0">
-            <div className="relative w-full min-h-[420px] md:min-h-[520px] xl:min-h-[600px] overflow-hidden group">
-              <div className="absolute inset-0 border border-white/10 z-10 pointer-events-none" />
-              <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary z-20" />
-              <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary z-20" />
 
-              <Image
-                src="https://static.wixstatic.com/media/3232e5_ccacd4497b0147e8a64b40b832b79772~mv2.png?originWidth=1152&originHeight=576"
-                alt="Industrial worker sandblasting"
-                className="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700"
-                width={1200}
-              />
-
-              <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 z-20 bg-black/80 backdrop-blur-md p-4 md:p-6 border-l-2 border-primary max-w-[85%] sm:max-w-xs">
-                <div className="flex items-center gap-2 mb-2">
-                  <Shield className="w-5 h-5 text-primary" />
-                  <span className="font-heading text-white text-lg">Safety First</span>
-                </div>
-                <p className="font-paragraph text-white/70 text-xs leading-relaxed">
-                  Strict adherence to VCA &amp; NACE protocols ensures zero-incident operations in high-risk environments.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
 
       {/* --- STICKY SERVICES --- */}
