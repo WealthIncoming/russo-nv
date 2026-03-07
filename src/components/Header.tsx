@@ -30,9 +30,9 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <Image
-              src="https://static.wixstatic.com/media/3232e5_02a2c8fd70c44d55b0e56736908447d1~mv2.jpg"
+              src="https://static.wixstatic.com/media/3232e5_a9937279cd4a45fea82cb09da4986d7b~mv2.png"
               alt="RUSSO N.V. Company Logo"
-              width={100}
+              width={120}
               className="h-20 w-auto object-contain"
             />
           </Link>
