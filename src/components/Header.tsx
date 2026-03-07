@@ -28,12 +28,12 @@ export default function Header() {
       <div className="max-w-[100rem] mx-auto px-8">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center flex-shrink-0">
             <Image
               src="https://static.wixstatic.com/media/3232e5_02a2c8fd70c44d55b0e56736908447d1~mv2.jpg"
               alt="RUSSO N.V. Company Logo"
-              width={120}
-              className="h-auto"
+              width={100}
+              className="h-20 w-auto object-contain"
             />
           </Link>
 
