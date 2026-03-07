@@ -334,9 +334,9 @@ export default function HomePage() {
             <div className="lg:col-span-4 relative">
               <div className="sticky top-32">
                 <SectionLabel text="Our Expertise" />
-                <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white mb-8 break-words">
+                <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-8">
                   CORE<br/>
-                  <span className="text-primary">SERVICES</span>
+                  <span className="text-primary whitespace-nowrap">SERVICES</span>
                 </h2>
                 <p className="font-paragraph text-white/60 text-lg mb-12 max-w-md">
                   Comprehensive surface treatment solutions tailored for the most demanding industrial environments.
