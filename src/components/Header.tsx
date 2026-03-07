@@ -25,14 +25,14 @@ export default function Header() {
   return (
     <header className="w-full bg-white border-b border-dark-grey/20 sticky top-0 z-50">
       <div className="max-w-[100rem] mx-auto px-8">
-        <div className="grid grid-cols-[auto_1fr_auto] items-center h-24 gap-8">
+        <div className="flex items-center justify-between h-24 gap-8">
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0 whitespace-nowrap">
             <span className="font-heading text-3xl font-bold text-foreground">RUSSO NV</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center justify-center gap-6">
+          <nav className="hidden lg:flex items-center justify-center gap-6 flex-1">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -85,7 +85,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-foreground p-2"
+            className="lg:hidden text-foreground p-2 ml-auto"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
