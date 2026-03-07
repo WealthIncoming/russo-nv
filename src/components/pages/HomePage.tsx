@@ -179,7 +179,7 @@ export default function HomePage() {
               <span className="font-paragraph text-white/60 text-sm uppercase tracking-widest">Antwerp, Belgium</span>
             </motion.div>
             
-            <h1 className="font-heading text-6xl md:text-8xl lg:text-[9rem] leading-[0.85] font-black text-white uppercase tracking-tighter">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-8xl lg:text-[9rem] leading-[0.85] font-black text-white uppercase tracking-tighter">
               <motion.span 
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
