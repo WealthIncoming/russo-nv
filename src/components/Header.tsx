@@ -13,7 +13,7 @@ export default function Header() {
     { path: '/services', label: 'Services' },
     { path: '/industries', label: 'Industries' },
     { path: '/projects', label: 'Projects' },
-    { path: '/safety', label: 'Safety & Certifications' },
+    { path: '/safety', label: 'Safety' },
     { path: '/about', label: 'About' },
     { path: '/contact', label: 'Contact' },
   ];
@@ -25,19 +25,19 @@ export default function Header() {
   return (
     <header className="w-full bg-white border-b border-dark-grey/20 sticky top-0 z-50">
       <div className="max-w-[100rem] mx-auto px-8">
-        <div className="flex items-center justify-between h-24">
+        <div className="grid grid-cols-[auto_1fr_auto] items-center h-24 gap-8">
           {/* Logo */}
-          <Link to="/" className="flex items-center flex-shrink-0">
+          <Link to="/" className="flex items-center flex-shrink-0 whitespace-nowrap">
             <span className="font-heading text-3xl font-bold text-foreground">RUSSO NV</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center justify-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-paragraph text-sm uppercase tracking-wider transition-colors relative ${
+                className={`font-paragraph text-sm uppercase tracking-wider transition-colors relative whitespace-nowrap ${
                   isActive(link.path)
                     ? 'text-primary font-bold'
                     : 'text-foreground hover:text-primary'
