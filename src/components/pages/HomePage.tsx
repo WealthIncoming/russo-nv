@@ -249,12 +249,12 @@ export default function HomePage() {
 
       {/* --- MARQUEE --- */}
       <div className="w-full bg-primary py-4 overflow-hidden border-y border-white/10 relative z-20">
-        <div className="flex whitespace-nowrap animate-marquee">
-          {[...Array(4)].map((_, i) => (
+        <div className="flex items-center whitespace-nowrap animate-marquee-mobile md:animate-marquee-desktop">
+          {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center gap-12 mx-6">
               {CERTIFICATIONS.map((cert, idx) => (
                 <div key={`${i}-${idx}`} className="flex items-center gap-4">
-                  <span className="font-heading font-bold text-black text-xl md:text-2xl uppercase tracking-tight">{cert}</span>
+                  <span className="font-heading font-bold text-black text-lg sm:text-xl md:text-2xl uppercase tracking-tight">{cert}</span>
                   <div className="w-2 h-2 bg-black rotate-45" />
                 </div>
               ))}
@@ -266,8 +266,13 @@ export default function HomePage() {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
           }
-          .animate-marquee {
-            animation: marquee 30s linear infinite;
+          .animate-marquee-mobile {
+            animation: marquee 18s linear infinite;
+          }
+          @media (min-width: 768px) {
+            .animate-marquee-desktop {
+              animation: marquee 30s linear infinite;
+            }
           }
         `}</style>
       </div>
