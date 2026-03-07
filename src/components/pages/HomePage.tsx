@@ -274,21 +274,21 @@ export default function HomePage() {
 
       {/* --- INTRO / STATS --- */}
       <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-32 bg-dark-grey">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          <div className="lg:col-span-5">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-16 items-start">
+          <div className="xl:col-span-5 min-w-0">
             <SectionLabel text="Company Profile" />
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1] mb-8">
               ENGINEERING <br/>
               <span className="text-white/30">DURABILITY</span> <br/>
               SINCE 1994.
             </h2>
-            <p className="font-paragraph text-white/60 text-lg leading-relaxed mb-12">
+            <p className="font-paragraph text-white/60 text-lg leading-relaxed mb-12 max-w-prose">
               Russo NV stands at the intersection of industrial power and precision engineering. 
               We don't just paint; we engineer longevity into the critical infrastructure that powers our world.
               From storage tanks in Antwerp to pipelines in Germany, our work is the first line of defense against corrosion.
             </p>
             
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {STATS_DATA.map((stat, index) => (
                 <div key={index} className="border-t border-white/10 pt-4">
                   <div className="font-heading text-4xl text-primary mb-1">{stat.value}</div>
@@ -299,7 +299,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 relative">
+          <div className="xl:col-span-7 relative min-w-0">
             <div className="relative h-full min-h-[600px] w-full overflow-hidden group">
               <div className="absolute inset-0 border border-white/10 z-10 pointer-events-none" />
               <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary z-20" />
