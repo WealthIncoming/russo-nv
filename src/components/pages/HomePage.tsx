@@ -329,9 +329,9 @@ export default function HomePage() {
       {/* --- STICKY SERVICES --- */}
       <section className="relative w-full bg-black py-32">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Sticky Header */}
-            <div className="lg:col-span-4 relative">
+            <div className="lg:col-span-5 relative z-20">
               <div className="sticky top-32">
                 <SectionLabel text="Our Expertise" />
                 <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-8">
@@ -353,7 +353,7 @@ export default function HomePage() {
             </div>
 
             {/* Scrollable Cards */}
-            <div className="lg:col-span-8 flex flex-col gap-8">
+            <div className="lg:col-span-7 flex flex-col gap-8 relative z-10">
               {SERVICES_DATA.map((service, index) => (
                 <StickyServiceCard key={index} service={service} index={index} />
               ))}
