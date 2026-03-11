@@ -51,7 +51,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.8 }}
           >
             <span className="font-paragraph text-primary text-sm uppercase tracking-wider">Our Expertise</span>
-            <h1 className="font-heading text-6xl md:text-7xl lg:text-8xl text-white mt-4 mb-8 leading-none">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-white mt-4 mb-8 leading-none">
               INDUSTRIAL<br />
               <span className="text-primary">SERVICES</span>
             </h1>
