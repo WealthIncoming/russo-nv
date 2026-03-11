@@ -338,70 +338,70 @@ export default function HomePage() {
 
         </div>
       </section>
-  {/* --- STICKY SERVICES --- */}
-  <section className="relative w-full bg-black py-32 overflow-hidden">
-    <div className="max-w-[120rem] mx-auto px-6 md:px-12">
-      <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] 2xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] gap-12 xl:gap-14 2xl:gap-16 items-start">
+      {/* --- STICKY SERVICES --- */}
+      <section className="relative w-full bg-black py-32 overflow-hidden">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] 2xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] gap-12 xl:gap-14 2xl:gap-16 items-start">
 
-        {/* Sticky Header */}
-        <div className="relative min-w-0 w-full z-20">
-          <div className="xl:sticky xl:top-32 max-w-full xl:max-w-[34rem]">
-            <SectionLabel text="Our Expertise" />
+            {/* Sticky Header */}
+            <div className="relative min-w-0 w-full z-20">
+              <div className="xl:sticky xl:top-32 max-w-full xl:max-w-[34rem]">
+                <SectionLabel text="Our Expertise" />
 
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] 2xl:text-7xl leading-[0.92] tracking-tight text-white mb-8 break-words">
-              <span className="block">CORE</span>
-              <span className="block text-primary">SERVICES</span>
-            </h2>
+                <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] 2xl:text-7xl leading-[0.92] tracking-tight text-white mb-8">
+                  <span className="block whitespace-nowrap">CORE</span>
+                  <span className="block text-primary whitespace-nowrap">SERVICES</span>
+                </h2>
 
-            <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-12 max-w-[32rem]">
-              Comprehensive surface treatment solutions tailored for the most demanding industrial environments.
-            </p>
+                <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-12 max-w-[32rem]">
+                  Comprehensive surface treatment solutions tailored for the most demanding industrial environments.
+                </p>
 
-            <Link to="/services">
-              <button className="group flex items-center gap-4 text-white hover:text-primary transition-colors max-w-full">
-                <div className="w-12 h-12 border border-current flex items-center justify-center rounded-full group-hover:bg-primary group-hover:border-primary group-hover:text-white transition-all shrink-0">
-                  <ArrowUpRight className="w-5 h-5" />
-                </div>
-                <span className="font-paragraph font-bold uppercase tracking-wider text-sm break-words">
-                  View All Services
-                </span>
-              </button>
-            </Link>
+                <Link to="/services">
+                  <button className="group flex items-center gap-4 text-white hover:text-primary transition-colors max-w-full">
+                    <div className="w-12 h-12 border border-current flex items-center justify-center rounded-full group-hover:bg-primary group-hover:border-primary group-hover:text-white transition-all shrink-0">
+                      <ArrowUpRight className="w-5 h-5" />
+                    </div>
+                    <span className="font-paragraph font-bold uppercase tracking-wider text-sm break-words">
+                      View All Services
+                    </span>
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Scrollable Cards */}
+            <div className="relative min-w-0 w-full z-10 flex flex-col gap-8">
+              {SERVICES_DATA.map((service, index) => (
+                <StickyServiceCard key={index} service={service} index={index} />
+              ))}
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Scrollable Cards */}
-        <div className="relative min-w-0 w-full z-10 flex flex-col gap-8">
-          {SERVICES_DATA.map((service, index) => (
-            <StickyServiceCard key={index} service={service} index={index} />
-          ))}
+      {/* --- PARALLAX INDUSTRIES --- */}
+      <section className="relative w-full py-40 overflow-hidden bg-dark-grey clip-diagonal">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <ParallaxText baseVelocity={-2}>INDUSTRIES SERVED</ParallaxText>
+          <ParallaxText baseVelocity={2}>GLOBAL REACH</ParallaxText>
         </div>
-      </div>
-    </div>
-  </section>
 
-  {/* --- PARALLAX INDUSTRIES --- */}
-  <section className="relative w-full py-40 overflow-hidden bg-dark-grey clip-diagonal">
-    <div className="absolute inset-0 opacity-10 pointer-events-none">
-      <ParallaxText baseVelocity={-2}>INDUSTRIES SERVED</ParallaxText>
-      <ParallaxText baseVelocity={2}>GLOBAL REACH</ParallaxText>
-    </div>
+        <div className="relative z-10 max-w-[120rem] mx-auto px-6 md:px-12">
+          <div className="text-center mb-24">
+            <SectionLabel text="Sectors" align="center" />
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-tight">
+              BUILT FOR <span className="text-primary">HEAVY INDUSTRY</span>
+            </h2>
+          </div>
 
-    <div className="relative z-10 max-w-[120rem] mx-auto px-6 md:px-12">
-      <div className="text-center mb-24">
-        <SectionLabel text="Sectors" align="center" />
-        <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-tight">
-          BUILT FOR <span className="text-primary">HEAVY INDUSTRY</span>
-        </h2>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
-        {INDUSTRIES_DATA.map((industry, index) => (
-          <IndustryCard key={index} industry={industry} index={index} />
-        ))}
-      </div>
-    </div>
-  </section>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
+            {INDUSTRIES_DATA.map((industry, index) => (
+              <IndustryCard key={index} industry={industry} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
       {/* --- FEATURED PROJECT --- */}
       <section className="relative w-full py-24 md:py-32 bg-black">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 w-full">
