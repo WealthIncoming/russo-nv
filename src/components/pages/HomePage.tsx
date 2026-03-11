@@ -2,11 +2,11 @@
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
+import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, CheckCircle, Clock, Shield, Users } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguageStore } from '@/lib/i18n/useLanguage';
 
 // --- Components ---
 
@@ -182,40 +182,52 @@ export default function HomePage() {
         {/* Hero Content */}
         <motion.div
           style={{ opacity: heroOpacity }}
-          className="relative z-10 w-full max-w-[120rem] mx-auto px-6 md:px-12 flex flex-col justify-center h-full pt-20"
+          className="relative z-10 w-full max-w-[120rem] mx-auto px-6 md:px-12 flex flex-col justify-center h-full pt-20 overflow-hidden"
         >
-          <div className="md:border-l md:border-white/20 md:pl-12 mb-8">
+          <div className="md:border-l md:border-white/20 md:pl-12 mb-8 min-w-0">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-4"
+              className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-4 min-w-0"
             >
-              <span className="font-paragraph text-primary font-bold tracking-widest text-sm uppercase">Est. 1994</span>
-              <span className="h-[1px] w-16 bg-white/20" />
-              <span className="font-paragraph text-white/60 text-sm uppercase tracking-widest">Antwerp, Belgium</span>
+              <span className="font-paragraph text-primary font-bold tracking-widest text-sm uppercase">
+                Est. 1994
+              </span>
+              <span className="h-[1px] w-16 bg-white/20 shrink-0" />
+              <span className="font-paragraph text-white/60 text-sm uppercase tracking-widest text-center md:text-left">
+                Antwerp, Belgium
+              </span>
             </motion.div>
 
-            <div className="max-w-[min(100%,900px)]">
-              <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.85] font-black text-white uppercase tracking-tighter text-center md:text-left">
+            <div className="w-full max-w-[min(100%,900px)] min-w-0">
+              <h1 className="font-heading text-[clamp(2.6rem,11vw,3.5rem)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.92] md:leading-[0.85] font-black text-white uppercase tracking-[-0.04em] sm:tracking-tighter text-center md:text-left max-w-full min-w-0">
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
-                  className="block"
-                >SPECIALISTEN</motion.span>
+                  className="block break-words sm:break-normal"
+                >
+                  SPECIALISTEN
+                </motion.span>
+
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.1, ease: [0.215, 0.61, 0.355, 1] }}
-                  className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50"
-                >IN INDUSTRIAL</motion.span>
+                  className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50 break-words sm:break-normal"
+                >
+                  IN INDUSTRIAL
+                </motion.span>
+
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
-                  className="block text-primary"
-                >COATING</motion.span>
+                  className="block text-primary break-words sm:break-normal"
+                >
+                  COATING
+                </motion.span>
               </h1>
             </div>
           </div>
@@ -224,20 +236,33 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-8 md:pl-12 max-w-4xl w-full"
+            className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-8 md:pl-12 max-w-4xl w-full min-w-0"
           >
             <div className="flex-1 min-w-0 text-center md:text-left">
-              <p className="font-paragraph text-white/70 text-lg leading-relaxed max-w-xl">Gespecialiseerd in oppervlaktevoorbereiding en industriële coatings voor de zware industrie. Actief in chemische installaties, terminals, raffinaderijen en infrastructuur in heel Europa.</p>
+              <p className="font-paragraph text-white/70 text-base sm:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
+                Gespecialiseerd in oppervlaktevoorbereiding en industriële coatings voor de zware industrie. Actief in chemische installaties, terminals, raffinaderijen en infrastructuur in heel Europa.
+              </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0 justify-center md:justify-start">
-              <Link to="/contact" className="group relative overflow-hidden bg-primary px-8 py-4 flex items-center gap-3 whitespace-nowrap">
-                <span className="relative z-10 font-paragraph font-bold uppercase text-white text-sm tracking-wider">Offerte aanvragen</span>
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto flex-shrink-0 justify-center md:justify-start">
+              <Link
+                to="/contact"
+                className="group relative overflow-hidden bg-primary px-6 sm:px-8 py-4 flex items-center justify-center gap-3 whitespace-nowrap w-full sm:w-auto"
+              >
+                <span className="relative z-10 font-paragraph font-bold uppercase text-white text-sm tracking-wider">
+                  Offerte aanvragen
+                </span>
                 <ArrowRight className="relative z-10 w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out mix-blend-overlay" />
               </Link>
-              <Link to="/projects" className="group px-8 py-4 border border-white/30 hover:border-white transition-colors flex items-center gap-3 whitespace-nowrap">
-                <span className="font-paragraph font-bold uppercase text-white text-sm tracking-wider">Projecten bekijken</span>
+
+              <Link
+                to="/projects"
+                className="group px-6 sm:px-8 py-4 border border-white/30 hover:border-white transition-colors flex items-center justify-center gap-3 whitespace-nowrap w-full sm:w-auto"
+              >
+                <span className="font-paragraph font-bold uppercase text-white text-sm tracking-wider">
+                  Projecten bekijken
+                </span>
               </Link>
             </div>
           </motion.div>
