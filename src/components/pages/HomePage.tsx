@@ -274,44 +274,44 @@ export default function HomePage() {
         `}</style>
       </div>
       {/* --- INTRO / STATS --- */}
-      <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 2xl:py-32 bg-dark-grey overflow-hidden">
-        <div className="grid grid-cols-1 2xl:grid-cols-12 gap-10 xl:gap-12 2xl:gap-16 items-start">
-          {/* Left Column */}
-          <div className="2xl:col-span-5 min-w-0">
-            <SectionLabel text="Company Profile" />
+            <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 xl:py-32 bg-dark-grey overflow-hidden">
+                    <div className="grid grid-cols-1 xl:grid-cols-[1.15fr_0.85fr] 2xl:grid-cols-[1.08fr_0.92fr] gap-10 xl:gap-12 2xl:gap-16 items-start">
+                              {/* Left Column */}
+                                        <div className="relative min-w-0 z-20">
+                                                    <SectionLabel text="Company Profile" />
 
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl xl:text-[4.25rem] 2xl:text-[5rem] text-white leading-[0.9] tracking-tight mb-8 max-w-[8ch]">
-              <span className="block">ENGINEERING</span>
-              <span className="block text-white/30">DURABILITY</span>
-              <span className="block">SINCE 1994.</span>
-            </h2>
+                                                                <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl xl:text-[3.2rem] 2xl:text-[3.9rem] text-white leading-[0.9] tracking-tight mb-8 max-w-[9ch]">
+                                                                              <span className="block">ENGINEERING</span>
+                                                                                            <span className="block text-white/30">DURABILITY</span>
+                                                                                                          <span className="block">SINCE 1994.</span>
+                                                                                                                      </h2>
 
-            <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-[56ch]">
-              Russo NV stands at the intersection of industrial power and precision engineering.
-              We don&apos;t just paint; we engineer longevity into the critical infrastructure that powers our world.
-              From storage tanks in Antwerp to pipelines in Germany, our work is the first line of defense against corrosion.
-            </p>
+                                                                                                                                  <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-[56ch]">
+                                                                                                                                                Russo NV stands at the intersection of industrial power and precision engineering.
+                                                                                                                                                              We don&apos;t just paint; we engineer longevity into the critical infrastructure that powers our world.
+                                                                                                                                                                            From storage tanks in Antwerp to pipelines in Germany, our work is the first line of defense against corrosion.
+                                                                                                                                                                                        </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-2xl">
-              {STATS_DATA.map((stat, index) => (
-                <div key={index} className="border-t border-white/10 pt-4 min-w-0">
-                  <div className="font-heading text-3xl md:text-4xl text-primary mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="font-paragraph text-white font-bold text-sm uppercase">
-                    {stat.label}
-                  </div>
-                  <div className="font-paragraph text-white/40 text-xs mt-1">
-                    {stat.sub}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+                                                                                                                                                                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-2xl">
+                                                                                                                                                                                                                  {STATS_DATA.map((stat, index) => (
+                                                                                                                                                                                                                                  <div key={index} className="border-t border-white/10 pt-4 min-w-0">
+                                                                                                                                                                                                                                                    <div className="font-heading text-3xl md:text-4xl text-primary mb-1">
+                                                                                                                                                                                                                                                                        {stat.value}
+                                                                                                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                                                                                                                            <div className="font-paragraph text-white font-bold text-sm uppercase">
+                                                                                                                                                                                                                                                                                                                                {stat.label}
+                                                                                                                                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                                                                                                                                    <div className="font-paragraph text-white/40 text-xs mt-1">
+                                                                                                                                                                                                                                                                                                                                                                                        {stat.sub}
+                                                                                                                                                                                                                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                        ))}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                              </div>
 
           {/* Right Column */}
-          <div className="2xl:col-span-7 relative min-w-0">
-            <div className="relative w-full min-h-[420px] md:min-h-[520px] xl:min-h-[600px] overflow-hidden group">
+          <div className="relative min-w-0 z-10">
+            <div className="relative w-full min-h-[420px] md:min-h-[520px] xl:min-h-[560px] 2xl:min-h-[600px] overflow-hidden group">
               <div className="absolute inset-0 border border-white/10 z-10 pointer-events-none" />
               <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary z-20" />
               <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary z-20" />
