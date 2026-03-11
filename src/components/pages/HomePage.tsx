@@ -408,12 +408,12 @@ export default function HomePage() {
             </div>
 
             {/* Right Column: Text Content */}
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col justify-center min-w-0">
               <SectionLabel text="Featured Project" />
 
-              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-8 w-full break-words">
-                TOTAL TANK FARM <br />
-                <span className="text-primary">REFURBISHMENT</span>
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-white leading-[0.95] mb-8 w-full max-w-[12ch]">
+                <span className="block">TOTAL TANK FARM</span>
+                <span className="block text-primary">REFURBISHMENT</span>
               </h2>
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 mb-8">
