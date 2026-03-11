@@ -8,10 +8,8 @@ import { IndustrialServices } from '@/entities';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
-import { useLanguageStore } from '@/lib/i18n/useLanguage';
 
 export default function ServicesPage() {
-  const { t } = useLanguageStore();
   const [services, setServices] = useState<IndustrialServices[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
