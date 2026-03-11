@@ -289,7 +289,7 @@ export default function HomePage() {
 
           {/* Left Column */}
           <div className="relative min-w-0 w-full z-20">
-            <SectionLabel text="Company Profile" />
+            <SectionLabel text={t('home', 'companyProfile')} />
 
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl xl:text-[3.2rem] 2xl:text-[3.9rem] text-white leading-[0.9] tracking-tight mb-8 max-w-[9ch]">
               <span className="block">ENGINEERING</span>
