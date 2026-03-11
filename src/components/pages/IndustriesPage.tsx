@@ -191,7 +191,7 @@ export default function IndustriesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-5xl md:text-6xl text-white mb-8 leading-tight">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight">
               YOUR INDUSTRY<br />
               <span className="text-primary">OUR EXPERTISE</span>
             </h2>
