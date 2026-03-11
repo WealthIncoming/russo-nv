@@ -201,12 +201,12 @@ export default function HomePage() {
             </motion.div>
 
             <div className="w-full max-w-[min(100%,900px)] min-w-0">
-              <h1 className="font-heading text-[clamp(2.6rem,11vw,3.5rem)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.92] md:leading-[0.85] font-black text-white uppercase tracking-[-0.04em] sm:tracking-tighter text-center md:text-left max-w-full min-w-0">
+              <h1 className="font-heading text-[clamp(1.75rem,8vw,3.5rem)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] md:leading-[0.85] font-black text-white uppercase tracking-[-0.02em] sm:tracking-[-0.04em] md:tracking-tighter text-center md:text-left max-w-full min-w-0">
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
-                  className="block break-words sm:break-normal"
+                  className="block break-normal"
                 >
                   SPECIALISTEN
                 </motion.span>
@@ -215,7 +215,7 @@ export default function HomePage() {
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.1, ease: [0.215, 0.61, 0.355, 1] }}
-                  className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50 break-words sm:break-normal"
+                  className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50 break-normal"
                 >
                   IN INDUSTRIAL
                 </motion.span>
@@ -224,7 +224,7 @@ export default function HomePage() {
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
-                  className="block text-primary break-words sm:break-normal"
+                  className="block text-primary break-normal"
                 >
                   COATING
                 </motion.span>
