@@ -338,17 +338,18 @@ export default function HomePage() {
 
         </div>
       </section>
+
       {/* --- STICKY SERVICES --- */}
       <section className="relative w-full bg-black py-32 overflow-hidden">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] 2xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] gap-12 xl:gap-14 2xl:gap-16 items-start">
+          <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] 2xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] gap-12 xl:gap-14 2xl:gap-16 items-start">
 
             {/* Sticky Header */}
             <div className="relative min-w-0 w-full z-20">
-              <div className="xl:sticky xl:top-32 max-w-full xl:max-w-[34rem]">
+              <div className="xl:sticky xl:top-32 w-full max-w-full xl:max-w-[30rem] 2xl:max-w-[34rem]">
                 <SectionLabel text="Our Expertise" />
 
-                <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.5rem] 2xl:text-7xl leading-[0.92] tracking-tight text-white mb-8">
+                <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[clamp(3.8rem,5vw,5.6rem)] 2xl:text-[clamp(4.5rem,5vw,6.2rem)] leading-[0.92] tracking-tight text-white mb-8 max-w-full">
                   <span className="block whitespace-nowrap">CORE</span>
                   <span className="block text-primary whitespace-nowrap">SERVICES</span>
                 </h2>
@@ -376,6 +377,29 @@ export default function HomePage() {
                 <StickyServiceCard key={index} service={service} index={index} />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- PARALLAX INDUSTRIES --- */}
+      <section className="relative w-full py-40 overflow-hidden bg-dark-grey clip-diagonal">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <ParallaxText baseVelocity={-2}>INDUSTRIES SERVED</ParallaxText>
+          <ParallaxText baseVelocity={2}>GLOBAL REACH</ParallaxText>
+        </div>
+
+        <div className="relative z-10 max-w-[120rem] mx-auto px-6 md:px-12">
+          <div className="text-center mb-24">
+            <SectionLabel text="Sectors" align="center" />
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-tight">
+              BUILT FOR <span className="text-primary">HEAVY INDUSTRY</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
+            {INDUSTRIES_DATA.map((industry, index) => (
+              <IndustryCard key={index} industry={industry} index={index} />
+            ))}
           </div>
         </div>
       </section>
