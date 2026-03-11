@@ -67,22 +67,22 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="space-y-8"
           >
-            <div className="border-l-4 border-primary pl-8">
-              <h2 className="font-heading text-5xl text-foreground mb-6">
+            <div className="border-l-4 border-primary pl-4 sm:pl-8">
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
                 30 YEARS OF<br />
                 <span className="text-primary">EXCELLENCE</span>
               </h2>
             </div>
 
-            <p className="font-paragraph text-lg text-foreground/80 leading-relaxed">
+            <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed">
               Founded in 1994 in Antwerp, Belgium, Russo NV has grown from a local coating specialist to an international leader in industrial surface preparation and protective coatings.
             </p>
 
-            <p className="font-paragraph text-lg text-foreground/80 leading-relaxed">
+            <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed">
               Our expertise spans industrial painting, sandblasting, coat removal, fireproofing coatings, and protective coatings for heavy industry. We serve clients across Belgium, the Netherlands, France, Germany, and Luxembourg.
             </p>
 
-            <p className="font-paragraph text-lg text-foreground/80 leading-relaxed">
+            <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed">
               What sets us apart is our unwavering commitment to safety compliance, quality workmanship, fast project turnaround, and transparent communication. Every client receives daily project updates through dedicated site managers, ensuring complete visibility throughout the project lifecycle.
             </p>
 
