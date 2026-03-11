@@ -274,44 +274,45 @@ export default function HomePage() {
         `}</style>
       </div>
       {/* --- INTRO / STATS --- */}
-            <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 xl:py-32 bg-dark-grey overflow-hidden">
-                    <div className="grid grid-cols-1 xl:grid-cols-[1.15fr_0.85fr] 2xl:grid-cols-[1.08fr_0.92fr] gap-10 xl:gap-12 2xl:gap-16 items-start">
-                              {/* Left Column */}
-                                        <div className="relative min-w-0 z-20">
-                                                    <SectionLabel text="Company Profile" />
+      <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 xl:py-32 bg-dark-grey overflow-hidden">
+        <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] 2xl:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] gap-10 xl:gap-12 2xl:gap-16 items-start">
 
-                                                                <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl xl:text-[3.2rem] 2xl:text-[3.9rem] text-white leading-[0.9] tracking-tight mb-8 max-w-[9ch]">
-                                                                              <span className="block">ENGINEERING</span>
-                                                                                            <span className="block text-white/30">DURABILITY</span>
-                                                                                                          <span className="block">SINCE 1994.</span>
-                                                                                                                      </h2>
+          {/* Left Column */}
+          <div className="relative min-w-0 w-full z-20">
+            <SectionLabel text="Company Profile" />
 
-                                                                                                                                  <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-[56ch]">
-                                                                                                                                                Russo NV stands at the intersection of industrial power and precision engineering.
-                                                                                                                                                              We don&apos;t just paint; we engineer longevity into the critical infrastructure that powers our world.
-                                                                                                                                                                            From storage tanks in Antwerp to pipelines in Germany, our work is the first line of defense against corrosion.
-                                                                                                                                                                                        </p>
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl xl:text-[3.2rem] 2xl:text-[3.9rem] text-white leading-[0.9] tracking-tight mb-8 max-w-[9ch]">
+              <span className="block">ENGINEERING</span>
+              <span className="block text-white/30">DURABILITY</span>
+              <span className="block">SINCE 1994.</span>
+            </h2>
 
-                                                                                                                                                                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-2xl">
-                                                                                                                                                                                                                  {STATS_DATA.map((stat, index) => (
-                                                                                                                                                                                                                                  <div key={index} className="border-t border-white/10 pt-4 min-w-0">
-                                                                                                                                                                                                                                                    <div className="font-heading text-3xl md:text-4xl text-primary mb-1">
-                                                                                                                                                                                                                                                                        {stat.value}
-                                                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                                                                            <div className="font-paragraph text-white font-bold text-sm uppercase">
-                                                                                                                                                                                                                                                                                                                                {stat.label}
-                                                                                                                                                                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                                                                                                                                                                                    <div className="font-paragraph text-white/40 text-xs mt-1">
-                                                                                                                                                                                                                                                                                                                                                                                        {stat.sub}
-                                                                                                                                                                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                        ))}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              </div>
+            <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-[56ch]">
+              Russo NV stands at the intersection of industrial power and precision engineering.
+              We don&apos;t just paint; we engineer longevity into the critical infrastructure that powers our world.
+              From storage tanks in Antwerp to pipelines in Germany, our work is the first line of defense against corrosion.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-2xl">
+              {STATS_DATA.map((stat, index) => (
+                <div key={index} className="border-t border-white/10 pt-4 min-w-0">
+                  <div className="font-heading text-3xl md:text-4xl text-primary mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="font-paragraph text-white font-bold text-sm uppercase break-words">
+                    {stat.label}
+                  </div>
+                  <div className="font-paragraph text-white/40 text-xs mt-1 break-words">
+                    {stat.sub}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* Right Column */}
-          <div className="relative min-w-0 z-10">
-            <div className="relative w-full min-h-[420px] md:min-h-[520px] xl:min-h-[560px] 2xl:min-h-[600px] overflow-hidden group">
+          <div className="relative min-w-0 w-full z-10">
+            <div className="relative w-full h-[420px] md:h-[520px] xl:h-[560px] 2xl:h-[600px] overflow-hidden group rounded-none">
               <div className="absolute inset-0 border border-white/10 z-10 pointer-events-none" />
               <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary z-20" />
               <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary z-20" />
@@ -319,7 +320,7 @@ export default function HomePage() {
               <Image
                 src="https://static.wixstatic.com/media/3232e5_ccacd4497b0147e8a64b40b832b79772~mv2.png?originWidth=1152&originHeight=576"
                 alt="Industrial worker sandblasting"
-                className="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700"
+                className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700"
                 width={1200}
               />
 
@@ -334,6 +335,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+
         </div>
       </section>
       {/* --- STICKY SERVICES --- */}
