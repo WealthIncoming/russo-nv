@@ -280,7 +280,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-5xl md:text-6xl text-white mb-8 leading-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight">
               PARTNER WITH<br />
               <span className="text-primary">EXPERIENCE</span>
             </h2>
