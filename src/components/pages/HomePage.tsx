@@ -396,9 +396,9 @@ export default function HomePage() {
       {/* --- FEATURED PROJECT --- */}
       <section className="relative w-full py-24 md:py-32 bg-black overflow-hidden">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 w-full">
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] xl:grid-cols-[0.85fr_1.15fr] 2xl:grid-cols-[0.95fr_1.05fr] gap-12 lg:gap-16 items-center">
             {/* Left Column: Image */}
-            <div className="relative w-full aspect-video lg:aspect-[4/3] overflow-hidden border border-white/10">
+            <div className="relative w-full aspect-video lg:aspect-[4/3] xl:aspect-[16/12] 2xl:aspect-[4/3] overflow-hidden border border-white/10">
               <Image
                 src="https://static.wixstatic.com/media/3232e5_227722fce6c544bfa11ad9bde5ff07a5~mv2.png?originWidth=1920&originHeight=1024"
                 alt="Large scale tank farm project"
