@@ -203,25 +203,19 @@ export default function HomePage() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
                   className="block"
-                >
-                  Industrial
-                </motion.span>
+                >SPECIALISTEN</motion.span>
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.1, ease: [0.215, 0.61, 0.355, 1] }}
                   className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50"
-                >
-                  Coating
-                </motion.span>
+                >IN INDUSTRIAL</motion.span>
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
                   className="block text-primary"
-                >
-                  Vanguard
-                </motion.span>
+                >COATING</motion.span>
               </h1>
             </div>
           </div>
@@ -357,7 +351,6 @@ export default function HomePage() {
 
         </div>
       </section>
-
       {/* --- STICKY SERVICES --- */}
       <section className="relative w-full bg-black py-32 overflow-hidden">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12">
@@ -399,7 +392,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- PARALLAX INDUSTRIES --- */}
       <section className="relative w-full py-40 overflow-hidden bg-dark-grey clip-diagonal">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -422,7 +414,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- FEATURED PROJECT --- */}
       <section className="relative w-full py-24 md:py-32 bg-black">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 w-full">
