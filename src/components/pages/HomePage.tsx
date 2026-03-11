@@ -394,11 +394,11 @@ export default function HomePage() {
         </div>
       </section>
       {/* --- FEATURED PROJECT --- */}
-      <section className="relative w-full py-24 md:py-32 bg-black overflow-hidden">
+      <section className="relative w-full py-24 md:py-32 bg-black">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-[0.82fr_1.18fr] xl:grid-cols-[0.84fr_1.16fr] 2xl:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-12 xl:gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.72fr_1.28fr] xl:grid-cols-[0.78fr_1.22fr] 2xl:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-10 xl:gap-12 items-center">
             {/* Left Column: Image */}
-            <div className="relative w-full min-w-0 aspect-video lg:aspect-[4/3] xl:aspect-[16/12] 2xl:aspect-[4/3] overflow-hidden border border-white/10">
+            <div className="relative w-full min-w-0 aspect-video lg:aspect-[4/3] overflow-hidden border border-white/10">
               <Image
                 src="https://static.wixstatic.com/media/3232e5_227722fce6c544bfa11ad9bde5ff07a5~mv2.png?originWidth=1920&originHeight=1024"
                 alt="Large scale tank farm project"
@@ -411,7 +411,7 @@ export default function HomePage() {
             <div className="flex flex-col justify-center min-w-0">
               <SectionLabel text="Featured Project" />
 
-              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[4.25rem] 2xl:text-6xl text-white leading-[0.92] tracking-tight mb-8 max-w-full">
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[2.9rem] xl:text-[3.5rem] 2xl:text-[4.4rem] text-white leading-[0.92] tracking-tight mb-8 w-full min-w-0">
                 <span className="block">TOTAL TANK FARM</span>
                 <span className="block text-primary">REFURBISHMENT</span>
               </h2>
