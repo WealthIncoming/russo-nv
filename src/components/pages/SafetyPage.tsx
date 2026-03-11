@@ -66,7 +66,7 @@ export default function SafetyPage() {
             transition={{ duration: 0.8 }}
           >
             <span className="font-paragraph text-primary text-sm uppercase tracking-wider">Our Commitment</span>
-            <h1 className="font-heading text-6xl md:text-7xl lg:text-8xl text-white mt-4 mb-8 leading-none">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-white mt-4 mb-8 leading-tight sm:leading-none">
               SAFETY &<br />
               <span className="text-primary">CERTIFICATIONS</span>
             </h1>
