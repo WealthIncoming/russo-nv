@@ -6,52 +6,7 @@ import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, CheckCircle, Clock, Shield, Users } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-
-// --- Canonical Data Sources ---
-const SERVICES_DATA = [
-  {
-    id: '01',
-    title: 'Sandblasting',
-    description: 'Complete surface preparation ensuring optimal coating adhesion through advanced abrasive techniques.',
-    details: ['Surface Profile Creation', 'Rust & Scale Removal', 'Contaminant Elimination']
-  },
-  {
-    id: '02',
-    title: 'Fireproofing',
-    description: 'Application of intumescent and cementitious coatings to protect structural integrity during thermal exposure.',
-    details: ['Passive Fire Protection', 'Hydrocarbon Fire Defense', 'Thermal Insulation']
-  },
-  {
-    id: '03',
-    title: 'Protective Coatings',
-    description: 'High-performance barrier systems designed to withstand extreme chemical and environmental aggression.',
-    details: ['Anti-Corrosion Systems', 'Chemical Resistance', 'UV Protection']
-  },
-  {
-    id: '04',
-    title: 'Industrial Painting',
-    description: 'Large-scale aesthetic and functional coating application for factories, terminals, and infrastructure.',
-    details: ['Airless Spraying', 'Color Coding Systems', 'Maintenance Painting']
-  }
-];
-
-const INDUSTRIES_DATA = [
-  { title: 'Chemical Plants', desc: 'Acid-resistant lining & containment.' },
-  { title: 'Food Production', desc: 'Hygienic, FDA-compliant surfacing.' },
-  { title: 'Storage Terminals', desc: 'Tank lining & exterior protection.' },
-  { title: 'Industrial Construction', desc: 'Structural steel & pipeline coating.' },
-  { title: 'Warehouses', desc: 'Floor systems & safety marking.' },
-  { title: 'Manufacturing', desc: 'Heavy machinery & facility maintenance.' },
-];
-
-const STATS_DATA = [
-  { value: '30+', label: 'Years Experience', sub: 'Since 1994' },
-  { value: '05', label: 'Countries Served', sub: 'EU Region' },
-  { value: '100%', label: 'Safety Certified', sub: 'VCA / ISO' },
-  { value: '24/7', label: 'Project Updates', sub: 'Real-time Data' },
-];
-
-const CERTIFICATIONS = ['VCA PETROCHEMICAL', 'ISO 9001', 'NACE CERTIFIED', 'SSPC STANDARDS', 'FROSIO INSPECTORS'];
+import { useLanguageStore } from '@/lib/i18n/useLanguage';
 
 // --- Components ---
 
@@ -114,6 +69,7 @@ const ParallaxText = ({ children, baseVelocity = 100 }: { children: string; base
 };
 
 export default function HomePage() {
+  const { t } = useLanguageStore();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -129,6 +85,69 @@ export default function HomePage() {
   const heroY = useTransform(heroScroll, [0, 1], ["0%", "30%"]);
   const heroTextY = useTransform(heroScroll, [0, 1], ["0%", "50%"]);
   const heroOpacity = useTransform(heroScroll, [0, 0.5], [1, 0]);
+
+  // Build services data from translations
+  const SERVICES_DATA = [
+    {
+      id: '01',
+      title: t('home', 'sandblastingTitle'),
+      description: t('home', 'sandblastingDesc'),
+      details: [
+        t('home', 'surfaceProfileCreation'),
+        t('home', 'rustScaleRemoval'),
+        t('home', 'contaminantElimination')
+      ]
+    },
+    {
+      id: '02',
+      title: t('home', 'fireproofingTitle'),
+      description: t('home', 'fireproofingDesc'),
+      details: [
+        t('home', 'passiveFireProtection'),
+        t('home', 'hydrocarbonFireDefense'),
+        t('home', 'thermalInsulation')
+      ]
+    },
+    {
+      id: '03',
+      title: t('home', 'protectiveCoatingsTitle'),
+      description: t('home', 'protectiveCoatingsDesc'),
+      details: [
+        t('home', 'antiCorrosionSystems'),
+        t('home', 'chemicalResistance'),
+        t('home', 'uvProtection')
+      ]
+    },
+    {
+      id: '04',
+      title: t('home', 'industrialPaintingTitle'),
+      description: t('home', 'industrialPaintingDesc'),
+      details: [
+        t('home', 'airlessSpraying'),
+        t('home', 'colorCodingSystems'),
+        t('home', 'maintenancePainting')
+      ]
+    }
+  ];
+
+  // Build industries data from translations
+  const INDUSTRIES_DATA = [
+    { title: t('home', 'chemicalPlants'), desc: t('home', 'chemicalPlantsDesc') },
+    { title: t('home', 'foodProduction'), desc: t('home', 'foodProductionDesc') },
+    { title: t('home', 'storageTerminals'), desc: t('home', 'storageTerminalsDesc') },
+    { title: t('home', 'industrialConstruction'), desc: t('home', 'industrialConstructionDesc') },
+    { title: t('home', 'warehouses'), desc: t('home', 'warehousesDesc') },
+    { title: t('home', 'manufacturing'), desc: t('home', 'manufacturingDesc') },
+  ];
+
+  const STATS_DATA = [
+    { value: '30+', label: t('home', 'statsYearsExperience'), sub: t('home', 'statsSince') },
+    { value: '05', label: t('home', 'statsCountriesServed'), sub: t('home', 'statsEuRegion') },
+    { value: '100%', label: t('home', 'statsSafetyCertified'), sub: t('home', 'statsVcaIso') },
+    { value: '24/7', label: 'Project Updates', sub: 'Real-time Data' },
+  ];
+
+  const CERTIFICATIONS = ['VCA PETROCHEMICAL', 'ISO 9001', 'NACE CERTIFIED', 'SSPC STANDARDS', 'FROSIO INSPECTORS'];
 
   return (
     <div ref={containerRef} className="bg-black min-h-screen text-white selection:bg-primary selection:text-white overflow-clip">
@@ -161,77 +180,77 @@ export default function HomePage() {
         </motion.div>
 
         {/* Hero Content */}
-                <motion.div
-                          style={{ opacity: heroOpacity }}
-                                    className="relative z-10 w-full max-w-[120rem] mx-auto px-6 md:px-12 flex flex-col justify-center h-full pt-20"
-                                            >
-                                                      <div className="md:border-l md:border-white/20 md:pl-12 mb-8">
-                                                                  <motion.div
-                                                                                initial={{ opacity: 0, x: -20 }}
-                                                                                              animate={{ opacity: 1, x: 0 }}
-                                                                                                            transition={{ duration: 0.8, delay: 0.2 }}
-                                                                                                                          className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-4"
-                                                                                                                                      >
-                                                                                                                                                    <span className="font-paragraph text-primary font-bold tracking-widest text-sm uppercase">Est. 1994</span>
-                                                                                                                                                                  <span className="h-[1px] w-16 bg-white/20" />
-                                                                                                                                                                                <span className="font-paragraph text-white/60 text-sm uppercase tracking-widest">Antwerp, Belgium</span>
-                                                                                                                                                                                            </motion.div>
+        <motion.div
+          style={{ opacity: heroOpacity }}
+          className="relative z-10 w-full max-w-[120rem] mx-auto px-6 md:px-12 flex flex-col justify-center h-full pt-20"
+        >
+          <div className="md:border-l md:border-white/20 md:pl-12 mb-8">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-4"
+            >
+              <span className="font-paragraph text-primary font-bold tracking-widest text-sm uppercase">Est. 1994</span>
+              <span className="h-[1px] w-16 bg-white/20" />
+              <span className="font-paragraph text-white/60 text-sm uppercase tracking-widest">Antwerp, Belgium</span>
+            </motion.div>
 
-                                                                                                                                                                                                                    <div className="max-w-[min(100%,900px)]">
-                                                                                                                                                                                                                                  <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.85] font-black text-white uppercase tracking-tighter text-center md:text-left">
-                                                                                                                                                                                                                                                <motion.span
-                                                                                                                                                                                                                                                                initial={{ y: 100, opacity: 0 }}
-                                                                                                                                                                                                                                                                                animate={{ y: 0, opacity: 1 }}
-                                                                                                                                                                                                                                                                                                transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
-                                                                                                                                                                                                                                                                                                                className="block"
-                                                                                                                                                                                                                                                                                                                              >
-                                                                                                                                                                                                                                                                                                                                              Industrial
-                                                                                                                                                                                                                                                                                                                                                            </motion.span>
-                                                                                                                                                                                                                                                                                                                                                                          <motion.span
-                                                                                                                                                                                                                                                                                                                                                                                          initial={{ y: 100, opacity: 0 }}
-                                                                                                                                                                                                                                                                                                                                                                                                          animate={{ y: 0, opacity: 1 }}
-                                                                                                                                                                                                                                                                                                                                                                                                                          transition={{ duration: 0.8, delay: 0.1, ease: [0.215, 0.61, 0.355, 1] }}
-                                                                                                                                                                                                                                                                                                                                                                                                                                          className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                        >
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Coating
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </motion.span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <motion.span
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    initial={{ y: 100, opacity: 0 }}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    animate={{ y: 0, opacity: 1 }}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    className="block text-primary"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  >
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Vanguard
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </motion.span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </h1>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </div>
+            <div className="max-w-[min(100%,900px)]">
+              <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.85] font-black text-white uppercase tracking-tighter text-center md:text-left">
+                <motion.span
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
+                  className="block"
+                >
+                  Industrial
+                </motion.span>
+                <motion.span
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.1, ease: [0.215, 0.61, 0.355, 1] }}
+                  className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50"
+                >
+                  Coating
+                </motion.span>
+                <motion.span
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
+                  className="block text-primary"
+                >
+                  Vanguard
+                </motion.span>
+              </h1>
+            </div>
+          </div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <motion.div
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        initial={{ opacity: 0, y: 20 }}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    animate={{ opacity: 1, y: 0 }}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                transition={{ duration: 0.8, delay: 0.6 }}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-8 md:pl-12 max-w-4xl w-full"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      >
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div className="flex-1 min-w-0 text-center md:text-left">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <p className="font-paragraph text-white/70 text-lg leading-relaxed max-w-xl">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Specialized surface preparation and protective coating solutions for heavy industry.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Serving chemical plants, refineries, and infrastructure across the EU.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-8 md:pl-12 max-w-4xl w-full"
+          >
+            <div className="flex-1 min-w-0 text-center md:text-left">
+              <p className="font-paragraph text-white/70 text-lg leading-relaxed max-w-xl">
+                Specialized surface preparation and protective coating solutions for heavy industry.
+                Serving chemical plants, refineries, and infrastructure across the EU.
+              </p>
+            </div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0 justify-center md:justify-start">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <Link to="/contact" className="group relative overflow-hidden bg-primary px-8 py-4 flex items-center gap-3 whitespace-nowrap">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <span className="relative z-10 font-paragraph font-bold uppercase text-white text-sm tracking-wider">Request Quote</span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <ArrowRight className="relative z-10 w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out mix-blend-overlay" />
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </Link>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <Link to="/projects" className="group px-8 py-4 border border-white/30 hover:border-white transition-colors flex items-center gap-3 whitespace-nowrap">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <span className="font-paragraph font-bold uppercase text-white text-sm tracking-wider">View Portfolio</span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </Link>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </motion.div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </motion.div>
+            <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0 justify-center md:justify-start">
+              <Link to="/contact" className="group relative overflow-hidden bg-primary px-8 py-4 flex items-center gap-3 whitespace-nowrap">
+                <span className="relative z-10 font-paragraph font-bold uppercase text-white text-sm tracking-wider">Request Quote</span>
+                <ArrowRight className="relative z-10 w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
+                <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out mix-blend-overlay" />
+              </Link>
+              <Link to="/projects" className="group px-8 py-4 border border-white/30 hover:border-white transition-colors flex items-center gap-3 whitespace-nowrap">
+                <span className="font-paragraph font-bold uppercase text-white text-sm tracking-wider">View Portfolio</span>
+              </Link>
+            </div>
+          </motion.div>
+        </motion.div>
 
         {/* Scroll Indicator */}
         <motion.div
@@ -404,74 +423,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* --- PARALLAX INDUSTRIES --- */}
-      <section className="relative w-full py-40 overflow-hidden bg-dark-grey clip-diagonal">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <ParallaxText baseVelocity={-2}>INDUSTRIES SERVED</ParallaxText>
-          <ParallaxText baseVelocity={2}>GLOBAL REACH</ParallaxText>
-        </div>
-
-        <div className="relative z-10 max-w-[120rem] mx-auto px-6 md:px-12">
-          <div className="text-center mb-24">
-            <SectionLabel text="Sectors" align="center" />
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-tight">
-              BUILT FOR <span className="text-primary">HEAVY INDUSTRY</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
-            {INDUSTRIES_DATA.map((industry, index) => (
-              <IndustryCard key={index} industry={industry} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* --- PARALLAX INDUSTRIES --- */}
-      <section className="relative w-full py-40 overflow-hidden bg-dark-grey clip-diagonal">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <ParallaxText baseVelocity={-2}>INDUSTRIES SERVED</ParallaxText>
-          <ParallaxText baseVelocity={2}>GLOBAL REACH</ParallaxText>
-        </div>
-
-        <div className="relative z-10 max-w-[120rem] mx-auto px-6 md:px-12">
-          <div className="text-center mb-24">
-            <SectionLabel text="Sectors" align="center" />
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-tight">
-              BUILT FOR <span className="text-primary">HEAVY INDUSTRY</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
-            {INDUSTRIES_DATA.map((industry, index) => (
-              <IndustryCard key={index} industry={industry} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* --- PARALLAX INDUSTRIES --- */}
-      <section className="relative w-full py-40 overflow-hidden bg-dark-grey clip-diagonal">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <ParallaxText baseVelocity={-2}>INDUSTRIES SERVED</ParallaxText>
-          <ParallaxText baseVelocity={2}>GLOBAL REACH</ParallaxText>
-        </div>
-
-        <div className="relative z-10 max-w-[120rem] mx-auto px-6 md:px-12">
-          <div className="text-center mb-24">
-            <SectionLabel text="Sectors" align="center" />
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-tight">
-              BUILT FOR <span className="text-primary">HEAVY INDUSTRY</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
-            {INDUSTRIES_DATA.map((industry, index) => (
-              <IndustryCard key={index} industry={industry} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
       {/* --- FEATURED PROJECT --- */}
       <section className="relative w-full py-24 md:py-32 bg-black">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 w-full">
@@ -586,7 +537,7 @@ export default function HomePage() {
 
 // --- Sub-Components ---
 
-function StickyServiceCard({ service, index }: { service: typeof SERVICES_DATA[0], index: number }) {
+function StickyServiceCard({ service, index }: { service: any, index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -616,7 +567,7 @@ function StickyServiceCard({ service, index }: { service: typeof SERVICES_DATA[0
           </p>
 
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {service.details.map((detail, i) => (
+            {service.details.map((detail: string, i: number) => (
               <li key={i} className="flex items-center gap-2 font-paragraph text-xs text-white/80 uppercase tracking-wide">
                 <div className="w-1 h-1 bg-primary" />
                 {detail}
@@ -639,7 +590,7 @@ function StickyServiceCard({ service, index }: { service: typeof SERVICES_DATA[0
   );
 }
 
-function IndustryCard({ industry, index }: { industry: typeof INDUSTRIES_DATA[0], index: number }) {
+function IndustryCard({ industry, index }: { industry: any, index: number }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

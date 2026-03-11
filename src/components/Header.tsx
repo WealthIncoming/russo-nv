@@ -2,23 +2,25 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguageStore } from '@/lib/i18n/useLanguage';
+import { Language } from '@/lib/i18n/translations';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [language, setLanguage] = useState('EN');
+  const { language, setLanguage, t } = useLanguageStore();
   const location = useLocation();
 
   const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/services', label: 'Services' },
-    { path: '/industries', label: 'Industries' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/safety', label: 'Safety' },
-    { path: '/about', label: 'About' },
-    { path: '/contact', label: 'Contact' },
+    { path: '/', label: t('nav', 'home') },
+    { path: '/services', label: t('nav', 'services') },
+    { path: '/industries', label: t('nav', 'industries') },
+    { path: '/projects', label: t('nav', 'projects') },
+    { path: '/safety', label: t('nav', 'safety') },
+    { path: '/about', label: t('nav', 'about') },
+    { path: '/contact', label: t('nav', 'contact') },
   ];
 
-  const languages = ['EN', 'NL', 'FR'];
+  const languages: Language[] = ['EN', 'NL'];
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -78,7 +80,7 @@ export default function Header() {
               className="flex items-center gap-3 bg-primary text-primary-foreground font-paragraph font-bold uppercase px-6 py-3 hover:bg-primary/90 transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span>Call Now</span>
+              <span>{t('header', 'callNow')}</span>
             </a>
           </div>
 
@@ -140,7 +142,7 @@ export default function Header() {
                   className="flex items-center justify-center gap-3 bg-primary text-primary-foreground font-paragraph font-bold uppercase px-6 py-3 hover:bg-primary/90 transition-colors w-full"
                 >
                   <Phone className="w-4 h-4" />
-                  <span>Call Now</span>
+                  <span>{t('header', 'callNow')}</span>
                 </a>
               </div>
             </nav>
