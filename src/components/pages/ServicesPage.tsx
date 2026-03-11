@@ -154,7 +154,7 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-5xl md:text-6xl text-white mb-8 leading-tight">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight">
               NEED A <span className="text-primary">CUSTOM</span> SOLUTION?
             </h2>
             <p className="font-paragraph text-lg text-white/80 max-w-2xl mx-auto mb-12">
