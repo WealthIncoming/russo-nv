@@ -396,9 +396,9 @@ export default function HomePage() {
       {/* --- FEATURED PROJECT --- */}
       <section className="relative w-full py-24 md:py-32 bg-black overflow-hidden">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] xl:grid-cols-[0.85fr_1.15fr] 2xl:grid-cols-[0.95fr_1.05fr] gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.82fr_1.18fr] xl:grid-cols-[0.84fr_1.16fr] 2xl:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-12 xl:gap-14 items-center">
             {/* Left Column: Image */}
-            <div className="relative w-full aspect-video lg:aspect-[4/3] xl:aspect-[16/12] 2xl:aspect-[4/3] overflow-hidden border border-white/10">
+            <div className="relative w-full min-w-0 aspect-video lg:aspect-[4/3] xl:aspect-[16/12] 2xl:aspect-[4/3] overflow-hidden border border-white/10">
               <Image
                 src="https://static.wixstatic.com/media/3232e5_227722fce6c544bfa11ad9bde5ff07a5~mv2.png?originWidth=1920&originHeight=1024"
                 alt="Large scale tank farm project"
@@ -411,16 +411,16 @@ export default function HomePage() {
             <div className="flex flex-col justify-center min-w-0">
               <SectionLabel text="Featured Project" />
 
-              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-white leading-[0.95] mb-8 w-full max-w-full">
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[4.25rem] 2xl:text-6xl text-white leading-[0.92] tracking-tight mb-8 max-w-full">
                 <span className="block">TOTAL TANK FARM</span>
                 <span className="block text-primary">REFURBISHMENT</span>
               </h2>
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 mb-8">
-                <span className="font-paragraph text-primary font-bold text-xl">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-3 sm:gap-6 mb-8 min-w-0">
+                <span className="font-paragraph text-primary font-bold text-lg md:text-xl">
                   ANTWERP PORT
                 </span>
-                <span className="font-paragraph text-white/40 text-sm uppercase tracking-wider">
+                <span className="font-paragraph text-white/40 text-sm uppercase tracking-[0.12em]">
                   Duration: 18 Months
                 </span>
               </div>
@@ -430,8 +430,8 @@ export default function HomePage() {
                 and a multi-coat epoxy protection system for critical tank farm infrastructure in the Port of Antwerp.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-                <div className="border-t border-white/10 pt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10 min-w-0">
+                <div className="border-t border-white/10 pt-4 min-w-0">
                   <h4 className="font-paragraph text-white/60 text-xs uppercase tracking-widest mb-2">
                     Scope
                   </h4>
@@ -440,7 +440,7 @@ export default function HomePage() {
                   </p>
                 </div>
 
-                <div className="border-t border-white/10 pt-4">
+                <div className="border-t border-white/10 pt-4 min-w-0">
                   <h4 className="font-paragraph text-white/60 text-xs uppercase tracking-widest mb-2">
                     Challenge
                   </h4>
