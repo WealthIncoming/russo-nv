@@ -396,7 +396,7 @@ export default function HomePage() {
       {/* --- FEATURED PROJECT --- */}
       <section className="relative w-full py-24 md:py-32 bg-black overflow-hidden">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-16 items-center">
             {/* Left Column: Image */}
             <div className="relative w-full aspect-video lg:aspect-[4/3] overflow-hidden border border-white/10">
               <Image
@@ -411,7 +411,7 @@ export default function HomePage() {
             <div className="flex flex-col justify-center min-w-0">
               <SectionLabel text="Featured Project" />
 
-              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-white leading-[0.95] mb-8 w-full max-w-[12ch]">
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-white leading-[0.95] mb-8 w-full max-w-full">
                 <span className="block">TOTAL TANK FARM</span>
                 <span className="block text-primary">REFURBISHMENT</span>
               </h2>
