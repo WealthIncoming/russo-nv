@@ -411,7 +411,7 @@ export default function HomePage() {
             <div className="flex flex-col justify-center">
               <SectionLabel text="Featured Project" />
 
-              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-8 max-w-full">
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-8 w-full break-words">
                 TOTAL TANK FARM <br />
                 <span className="text-primary">REFURBISHMENT</span>
               </h2>
