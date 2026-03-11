@@ -1,9 +1,9 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Users, Target, Zap, Globe, ArrowRight } from 'lucide-react';
-import { Image } from '@/components/ui/image';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import { Image } from '@/components/ui/image';
+import { motion } from 'framer-motion';
+import { ArrowRight, Globe, Target, Users, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function AboutPage() {
   return (
@@ -41,19 +41,21 @@ export default function AboutPage() {
       </section>
 
       {/* Company Story */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+      <section className="w-full max-w-[100rem] mx-auto px-8 py-32 overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-16 xl:gap-20 2xl:gap-24 items-center">
+
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="min-w-0 w-full"
           >
-            <div className="relative h-[600px]">
+            <div className="relative h-[420px] sm:h-[500px] lg:h-[600px] w-full overflow-hidden">
               <Image
                 src="https://static.wixstatic.com/media/3232e5_023a500fd54f44c4a9f17d757eb2abdb~mv2.png?originWidth=768&originHeight=576"
                 alt="Russo NV team at work"
-                className="w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
                 width={800}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -65,36 +67,36 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-8"
+            className="min-w-0 w-full max-w-full space-y-8"
           >
-            <div className="border-l-4 border-primary pl-4 sm:pl-8">
-              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground mb-6">
-                30 YEARS OF<br />
-                <span className="text-primary">EXCELLENCE</span>
+            <div className="border-l-4 border-primary pl-4 sm:pl-8 max-w-full">
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-[clamp(2.8rem,4vw,4.5rem)] text-foreground leading-[0.95] tracking-tight mb-6 max-w-full">
+                <span className="block whitespace-nowrap">30 YEARS OF</span>
+                <span className="block text-primary whitespace-nowrap">EXCELLENCE</span>
               </h2>
             </div>
 
-            <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed">
+            <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed max-w-[65ch]">
               Founded in 1994 in Antwerp, Belgium, Russo NV has grown from a local coating specialist to an international leader in industrial surface preparation and protective coatings.
             </p>
 
-            <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed">
+            <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed max-w-[65ch]">
               Our expertise spans industrial painting, sandblasting, coat removal, fireproofing coatings, and protective coatings for heavy industry. We serve clients across Belgium, the Netherlands, France, Germany, and Luxembourg.
             </p>
 
-            <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed">
+            <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed max-w-[65ch]">
               What sets us apart is our unwavering commitment to safety compliance, quality workmanship, fast project turnaround, and transparent communication. Every client receives daily project updates through dedicated site managers, ensuring complete visibility throughout the project lifecycle.
             </p>
 
-            <div className="grid grid-cols-2 gap-8 pt-8">
-              <div>
-                <div className="font-heading text-5xl text-primary mb-2">30+</div>
+            <div className="grid grid-cols-2 gap-8 pt-8 max-w-[32rem]">
+              <div className="min-w-0">
+                <div className="font-heading text-4xl sm:text-5xl text-primary mb-2">30+</div>
                 <div className="font-paragraph text-sm text-foreground/70 uppercase tracking-wider">
                   Years Experience
                 </div>
               </div>
-              <div>
-                <div className="font-heading text-5xl text-primary mb-2">5</div>
+              <div className="min-w-0">
+                <div className="font-heading text-4xl sm:text-5xl text-primary mb-2">5</div>
                 <div className="font-paragraph text-sm text-foreground/70 uppercase tracking-wider">
                   Countries Served
                 </div>
