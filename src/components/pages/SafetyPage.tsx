@@ -197,7 +197,7 @@ export default function SafetyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="font-heading text-5xl md:text-6xl text-white mb-6">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-6">
               INDUSTRY <span className="text-primary">CERTIFICATIONS</span>
             </h2>
             <p className="font-paragraph text-lg text-white/80 max-w-3xl mx-auto">
