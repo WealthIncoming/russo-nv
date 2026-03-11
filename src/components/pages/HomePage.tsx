@@ -232,12 +232,12 @@ export default function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0 justify-center md:justify-start">
               <Link to="/contact" className="group relative overflow-hidden bg-primary px-8 py-4 flex items-center gap-3 whitespace-nowrap">
-                <span className="relative z-10 font-paragraph font-bold uppercase text-white text-sm tracking-wider">Request Quote</span>
+                <span className="relative z-10 font-paragraph font-bold uppercase text-white text-sm tracking-wider">Offerte aanvragen</span>
                 <ArrowRight className="relative z-10 w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out mix-blend-overlay" />
               </Link>
               <Link to="/projects" className="group px-8 py-4 border border-white/30 hover:border-white transition-colors flex items-center gap-3 whitespace-nowrap">
-                <span className="font-paragraph font-bold uppercase text-white text-sm tracking-wider">View Portfolio</span>
+                <span className="font-paragraph font-bold uppercase text-white text-sm tracking-wider">Projecten bekijken</span>
               </Link>
             </div>
           </motion.div>
