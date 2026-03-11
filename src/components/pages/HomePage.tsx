@@ -362,7 +362,7 @@ export default function HomePage() {
                     <div className="w-12 h-12 border border-current flex items-center justify-center rounded-full group-hover:bg-primary group-hover:border-primary group-hover:text-white transition-all shrink-0">
                       <ArrowUpRight className="w-5 h-5" />
                     </div>
-                    <span className="font-paragraph font-bold uppercase tracking-wider text-sm break-words">
+                    <span className="font-paragraph font-bold uppercase tracking-wider text-sm">
                       View All Services
                     </span>
                   </button>
@@ -376,6 +376,29 @@ export default function HomePage() {
                 <StickyServiceCard key={index} service={service} index={index} />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- PARALLAX INDUSTRIES --- */}
+      <section className="relative w-full py-40 overflow-hidden bg-dark-grey clip-diagonal">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <ParallaxText baseVelocity={-2}>INDUSTRIES SERVED</ParallaxText>
+          <ParallaxText baseVelocity={2}>GLOBAL REACH</ParallaxText>
+        </div>
+
+        <div className="relative z-10 max-w-[120rem] mx-auto px-6 md:px-12">
+          <div className="text-center mb-24">
+            <SectionLabel text="Sectors" align="center" />
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-tight">
+              BUILT FOR <span className="text-primary">HEAVY INDUSTRY</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
+            {INDUSTRIES_DATA.map((industry, index) => (
+              <IndustryCard key={index} industry={industry} index={index} />
+            ))}
           </div>
         </div>
       </section>
