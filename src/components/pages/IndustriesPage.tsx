@@ -150,7 +150,7 @@ export default function IndustriesPage() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="font-heading text-5xl md:text-6xl text-white mb-8">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight">
               INTERNATIONAL <span className="text-primary">COVERAGE</span>
             </h2>
             <p className="font-paragraph text-lg text-white/80 max-w-3xl mx-auto mb-16">
