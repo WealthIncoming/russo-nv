@@ -227,10 +227,7 @@ export default function HomePage() {
             className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-8 md:pl-12 max-w-4xl w-full"
           >
             <div className="flex-1 min-w-0 text-center md:text-left">
-              <p className="font-paragraph text-white/70 text-lg leading-relaxed max-w-xl">
-                Specialized surface preparation and protective coating solutions for heavy industry.
-                Serving chemical plants, refineries, and infrastructure across the EU.
-              </p>
+              <p className="font-paragraph text-white/70 text-lg leading-relaxed max-w-xl">Gespecialiseerd in oppervlaktevoorbereiding en industriële coatings voor de zware industrie. Actief in chemische installaties, terminals, raffinaderijen en infrastructuur in heel Europa.</p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0 justify-center md:justify-start">
