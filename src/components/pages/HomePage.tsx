@@ -284,9 +284,9 @@ export default function HomePage() {
             <SectionLabel text={t('home', 'companyProfile')} />
 
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl xl:text-[3.2rem] 2xl:text-[3.9rem] text-white leading-[0.9] tracking-tight mb-8 max-w-[9ch]">
-              <span className="block">{t('home', 'engineeringDurability')}</span>
-              <span className="block text-white/30">{t('home', 'durability')}</span>
-              <span className="block">{t('home', 'since1994')}</span>
+              <span className="block text-4xl">{t('home', 'engineeringDurability')}</span>
+              <span className="block text-white/30 text-4xl">{t('home', 'durability')}</span>
+              <span className="block text-4xl">{t('home', 'since1994')}</span>
             </h2>
 
             <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-[56ch]">
