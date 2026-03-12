@@ -419,7 +419,7 @@ export default function HomePage() {
             <div className="flex flex-col justify-center min-w-0">
               <SectionLabel text={t('home', 'featuredProject')} />
               <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[2.9rem] xl:text-[3.5rem] 2xl:text-[4.1rem] text-white leading-[0.9] tracking-tight mb-8 w-full min-w-0">
-                <span className="block text-3xl">{t('home', 'totalTankFarm')}</span>
+                <span className="block text-4xl">{t('home', 'totalTankFarm')}</span>
                 <span className="block text-primary text-[0.82em] leading-[0.9] tracking-[-0.02em]">
                   {t('home', 'refurbishment')}
                 </span>
