@@ -1,11 +1,13 @@
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
+import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { motion } from 'framer-motion';
 import { ArrowRight, Globe, Target, Users, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function AboutPage() {
+  const { t } = useLanguageStore();
   return (
     <div className="min-h-screen bg-background">
       <Header />

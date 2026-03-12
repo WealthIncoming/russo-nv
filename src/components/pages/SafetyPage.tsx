@@ -5,6 +5,7 @@ import { Shield, CheckCircle, Award, FileCheck, ArrowRight } from 'lucide-react'
 import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
 import { Certifications, CompanyValues } from '@/entities';
+import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
@@ -14,6 +15,7 @@ export default function SafetyPage() {
   const [certifications, setCertifications] = useState<Certifications[]>([]);
   const [companyValues, setCompanyValues] = useState<CompanyValues[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { t } = useLanguageStore();
 
   useEffect(() => {
     loadData();

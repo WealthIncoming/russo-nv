@@ -4,6 +4,7 @@ import { Image } from '@/components/ui/image';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { IndustrialServices } from '@/entities';
 import { BaseCrudService } from '@/integrations';
+import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
@@ -12,6 +13,7 @@ import { Link } from 'react-router-dom';
 export default function ServicesPage() {
   const [services, setServices] = useState<IndustrialServices[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { t } = useLanguageStore();
 
   useEffect(() => {
     loadServices();

@@ -2,10 +2,11 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguageStore } from '@/lib/i18n/useLanguage';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [language, setLanguage] = useState('EN');
+  const { language, setLanguage } = useLanguageStore();
   const location = useLocation();
 
   const navLinks = [
@@ -18,7 +19,7 @@ export default function Header() {
     { path: '/contact', label: 'Contact' },
   ];
 
-  const languages = ['EN', 'NL', 'FR'];
+  const languages = ['NL', 'EN'];
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -61,7 +62,7 @@ export default function Header() {
               <Globe className="w-4 h-4 text-foreground" />
               <select
                 value={language}
-                onChange={(e) => setLanguage(e.target.value)}
+                onChange={(e) => setLanguage(e.target.value as 'EN' | 'NL')}
                 className="font-paragraph text-sm bg-transparent border-none outline-none cursor-pointer text-foreground"
               >
                 {languages.map((lang) => (
@@ -123,7 +124,7 @@ export default function Header() {
                   <Globe className="w-4 h-4 text-foreground" />
                   <select
                     value={language}
-                    onChange={(e) => setLanguage(e.target.value)}
+                    onChange={(e) => setLanguage(e.target.value as 'EN' | 'NL')}
                     className="font-paragraph text-sm bg-transparent border-none outline-none cursor-pointer text-foreground flex-1"
                   >
                     {languages.map((lang) => (

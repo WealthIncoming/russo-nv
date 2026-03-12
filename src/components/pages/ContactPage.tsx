@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 import { Image } from '@/components/ui/image';
+import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useToast } from '@/hooks/use-toast';
 
 export default function ContactPage() {
   const { toast } = useToast();
+  const { t } = useLanguageStore();
   const [formData, setFormData] = useState({
     name: '',
     company: '',

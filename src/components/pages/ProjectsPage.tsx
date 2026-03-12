@@ -5,6 +5,7 @@ import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
 import { ProjectPortfolio } from '@/entities';
+import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { format } from 'date-fns';
@@ -12,6 +13,7 @@ import { format } from 'date-fns';
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<ProjectPortfolio[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { t } = useLanguageStore();
 
   useEffect(() => {
     loadProjects();
