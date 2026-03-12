@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
-import { Image } from '@/components/ui/image';
-import { BaseCrudService } from '@/integrations';
-import { IndustrialServices } from '@/entities';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import { Image } from '@/components/ui/image';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
+import { IndustrialServices } from '@/entities';
+import { BaseCrudService } from '@/integrations';
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ServicesPage() {
   const [services, setServices] = useState<IndustrialServices[]>([]);
@@ -63,18 +63,20 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Content */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 py-32">
-        <div className="min-h-[400px]">
+      <section className="w-full max-w-[100rem] mx-auto px-6 sm:px-8 py-24 sm:py-32 overflow-hidden">
+        <div className="min-h-[400px] min-w-0">
           {isLoading ? (
             <div className="flex items-center justify-center py-32">
               <LoadingSpinner />
             </div>
           ) : services.length === 0 ? (
-            <div className="text-center py-32">
-              <p className="font-paragraph text-lg text-foreground/60">No services available at the moment.</p>
+            <div className="text-center py-32 min-w-0">
+              <p className="font-paragraph text-lg text-foreground/60 break-words">
+                No services available at the moment.
+              </p>
             </div>
           ) : (
-            <div className="space-y-32">
+            <div className="space-y-24 sm:space-y-32 min-w-0">
               {services.map((service, index) => (
                 <motion.div
                   key={service._id}
@@ -82,56 +84,67 @@ export default function ServicesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${
+                  className={`grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-10 sm:gap-12 lg:gap-16 items-center min-w-0 ${
                     index % 2 === 1 ? 'lg:grid-flow-dense' : ''
                   }`}
                 >
-                  <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                    <div className="relative h-[500px] overflow-hidden">
+                  {/* Image Column */}
+                  <div className={`min-w-0 w-full ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                    <div className="relative h-[320px] sm:h-[420px] lg:h-[500px] w-full overflow-hidden">
                       <Image
-                        src={service.serviceImage || 'https://static.wixstatic.com/media/3232e5_361542816ae042acac6c1000f5ee8a72~mv2.png?originWidth=768&originHeight=448'}
+                        src={
+                          service.serviceImage ||
+                          'https://static.wixstatic.com/media/3232e5_361542816ae042acac6c1000f5ee8a72~mv2.png?originWidth=768&originHeight=448'
+                        }
                         alt={service.serviceName || 'Industrial service'}
-                        className="w-full h-full object-cover"
+                        className="absolute inset-0 w-full h-full object-cover"
                         width={800}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                     </div>
                   </div>
 
-                  <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                    <div className="space-y-6">
-                      <div className="inline-block border-l-4 border-primary pl-6">
-                        <h2 className="font-heading text-4xl md:text-5xl text-foreground">
+                  {/* Text Column */}
+                  <div className={`min-w-0 w-full ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                    <div className="space-y-6 min-w-0 w-full">
+                      <div className="inline-block max-w-full border-l-4 border-primary pl-4 sm:pl-6 min-w-0">
+                        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-foreground leading-tight tracking-tight break-words [overflow-wrap:anywhere]">
                           {service.serviceName}
                         </h2>
                       </div>
 
-                      <p className="font-paragraph text-lg text-foreground/80 leading-relaxed">
+                      <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed break-words [overflow-wrap:anywhere]">
                         {service.description}
                       </p>
 
                       {service.keyBenefits && (
-                        <div className="bg-dark-grey/5 border-l-4 border-primary p-8">
-                          <h3 className="font-heading text-2xl text-foreground mb-4">Key Benefits</h3>
-                          <p className="font-paragraph text-base text-foreground/80 leading-relaxed whitespace-pre-line">
+                        <div className="bg-dark-grey/5 border-l-4 border-primary p-6 sm:p-8 min-w-0 w-full overflow-hidden">
+                          <h3 className="font-heading text-xl sm:text-2xl text-foreground mb-4 break-words">
+                            Key Benefits
+                          </h3>
+                          <p className="font-paragraph text-base text-foreground/80 leading-relaxed whitespace-pre-line break-words [overflow-wrap:anywhere]">
                             {service.keyBenefits}
                           </p>
                         </div>
                       )}
 
                       {service.processOverview && (
-                        <div>
-                          <h3 className="font-heading text-2xl text-foreground mb-4">Process Overview</h3>
-                          <p className="font-paragraph text-base text-foreground/80 leading-relaxed whitespace-pre-line">
+                        <div className="min-w-0 w-full">
+                          <h3 className="font-heading text-xl sm:text-2xl text-foreground mb-4 break-words">
+                            Process Overview
+                          </h3>
+                          <p className="font-paragraph text-base text-foreground/80 leading-relaxed whitespace-pre-line break-words [overflow-wrap:anywhere]">
                             {service.processOverview}
                           </p>
                         </div>
                       )}
 
                       {service.targetIndustries && (
-                        <div>
-                          <h3 className="font-heading text-xl text-foreground mb-3">Target Industries</h3>
-                          <p className="font-paragraph text-base text-foreground/70">
+                        <div className="min-w-0 w-full">
+                          <h3 className="font-heading text-lg sm:text-xl text-foreground mb-3 break-words">
+                            Target Industries
+                          </h3>
+                          <p className="font-paragraph text-base text-foreground/70 break-words [overflow-wrap:anywhere]">
                             {service.targetIndustries}
                           </p>
                         </div>
