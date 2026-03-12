@@ -349,7 +349,7 @@ export default function HomePage() {
                 <SectionLabel text={t('home', 'ourExpertise')} />
 
                 <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[clamp(3.8rem,5vw,5.6rem)] 2xl:text-[clamp(4.5rem,5vw,6.2rem)] leading-[0.92] tracking-tight text-white mb-8 max-w-full">
-                  <span className="block whitespace-nowrap">{t('home', 'coreServices').split(' ')[0]}</span>
+                  <span className="block whitespace-nowrap text-5xl">{t('home', 'coreServices').split(' ')[0]}</span>
                   <span className="block text-primary whitespace-nowrap">{t('home', 'coreServices').split(' ')[1]}</span>
                 </h2>
 
