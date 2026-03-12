@@ -242,7 +242,7 @@ export default function HomePage() {
           transition={{ delay: 1.5, duration: 1 }}
           className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="font-paragraph text-[10px] uppercase tracking-[0.3em] text-white/40">Scroll</span>
+          <span className="font-paragraph text-[10px] uppercase tracking-[0.3em] text-white/40">{t('home', 'scroll')}</span>
           <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent" />
         </motion.div>
       </section>
@@ -284,15 +284,13 @@ export default function HomePage() {
             <SectionLabel text={t('home', 'companyProfile')} />
 
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl xl:text-[3.2rem] 2xl:text-[3.9rem] text-white leading-[0.9] tracking-tight mb-8 max-w-[9ch]">
-              <span className="block">ENGINEERING</span>
-              <span className="block text-white/30">DURABILITY</span>
-              <span className="block">SINCE 1994.</span>
+              <span className="block">{t('home', 'engineeringDurability')}</span>
+              <span className="block text-white/30">{t('home', 'durability')}</span>
+              <span className="block">{t('home', 'since1994')}</span>
             </h2>
 
             <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-[56ch]">
-              Russo NV stands at the intersection of industrial power and precision engineering.
-              We don&apos;t just paint; we engineer longevity into the critical infrastructure that powers our world.
-              From storage tanks in Antwerp to pipelines in Germany, our work is the first line of defense against corrosion.
+              {t('home', 'companyDescription')}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-2xl">
@@ -329,10 +327,10 @@ export default function HomePage() {
               <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 z-20 bg-black/80 backdrop-blur-md p-4 md:p-6 border-l-2 border-primary max-w-[85%] sm:max-w-xs">
                 <div className="flex items-center gap-2 mb-2">
                   <Shield className="w-5 h-5 text-primary" />
-                  <span className="font-heading text-white text-lg">Safety First</span>
+                  <span className="font-heading text-white text-lg">{t('home', 'safetyFirstTitle')}</span>
                 </div>
                 <p className="font-paragraph text-white/70 text-xs leading-relaxed">
-                  Strict adherence to VCA &amp; NACE protocols ensures zero-incident operations in high-risk environments.
+                  {t('home', 'safetyFirstDesc')}
                 </p>
               </div>
             </div>
@@ -349,15 +347,15 @@ export default function HomePage() {
             {/* Sticky Header */}
             <div className="relative min-w-0 w-full z-20">
               <div className="xl:sticky xl:top-32 w-full max-w-full xl:max-w-[30rem] 2xl:max-w-[34rem]">
-                <SectionLabel text="Our Expertise" />
+                <SectionLabel text={t('home', 'ourExpertise')} />
 
                 <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[clamp(3.8rem,5vw,5.6rem)] 2xl:text-[clamp(4.5rem,5vw,6.2rem)] leading-[0.92] tracking-tight text-white mb-8 max-w-full">
-                  <span className="block whitespace-nowrap">CORE</span>
-                  <span className="block text-primary whitespace-nowrap">SERVICES</span>
+                  <span className="block whitespace-nowrap">{t('home', 'coreServices').split(' ')[0]}</span>
+                  <span className="block text-primary whitespace-nowrap">{t('home', 'coreServices').split(' ')[1]}</span>
                 </h2>
 
                 <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-12 max-w-[32rem]">
-                  Comprehensive surface treatment solutions tailored for the most demanding industrial environments.
+                  {t('home', 'coreServicesDesc')}
                 </p>
 
                 <Link to="/services">
@@ -366,7 +364,7 @@ export default function HomePage() {
                       <ArrowUpRight className="w-5 h-5" />
                     </div>
                     <span className="font-paragraph font-bold uppercase tracking-wider text-sm">
-                      View All Services
+                      {t('home', 'viewAllServices')}
                     </span>
                   </button>
                 </Link>
@@ -386,13 +384,13 @@ export default function HomePage() {
       {/* --- PARALLAX INDUSTRIES --- */}
       <section className="relative w-full py-40 overflow-hidden bg-dark-grey clip-diagonal">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <ParallaxText baseVelocity={-2}>INDUSTRIES SERVED</ParallaxText>
-          <ParallaxText baseVelocity={2}>GLOBAL REACH</ParallaxText>
+          <ParallaxText baseVelocity={-2}>{t('home', 'industriesServed')}</ParallaxText>
+          <ParallaxText baseVelocity={2}>{t('home', 'globalReach')}</ParallaxText>
         </div>
 
         <div className="relative z-10 max-w-[120rem] mx-auto px-6 md:px-12">
           <div className="text-center mb-24">
-            <SectionLabel text="Sectors" align="center" />
+            <SectionLabel text={t('home', 'sectors')} align="center" />
             <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-tight">
               BUILT FOR <span className="text-primary">HEAVY INDUSTRY</span>
             </h2>
@@ -421,43 +419,42 @@ export default function HomePage() {
 
             {/* Right Column: Text Content */}
             <div className="flex flex-col justify-center min-w-0">
-              <SectionLabel text="Featured Project" />
+              <SectionLabel text={t('home', 'featuredProject')} />
               <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[2.9rem] xl:text-[3.5rem] 2xl:text-[4.1rem] text-white leading-[0.9] tracking-tight mb-8 w-full min-w-0">
-                <span className="block">TOTAL TANK FARM</span>
+                <span className="block">{t('home', 'totalTankFarm')}</span>
                 <span className="block text-primary text-[0.82em] leading-[0.9] tracking-[-0.02em]">
-                  REFURBISHMENT
+                  {t('home', 'refurbishment')}
                 </span>
               </h2>
               <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-3 sm:gap-6 mb-8 min-w-0">
                 <span className="font-paragraph text-primary font-bold text-lg md:text-xl">
-                  ANTWERP PORT
+                  {t('home', 'antwerpPort')}
                 </span>
                 <span className="font-paragraph text-white/40 text-sm uppercase tracking-[0.12em]">
-                  Duration: 18 Months
+                  {t('home', 'duration18Months')}
                 </span>
               </div>
 
               <p className="font-paragraph text-white/70 text-base md:text-lg leading-relaxed mb-8 max-w-[60ch]">
-                Large-scale refurbishment project involving abrasive blasting, primer application,
-                and a multi-coat epoxy protection system for critical tank farm infrastructure in the Port of Antwerp.
+                {t('home', 'projectDescription')}
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10 min-w-0">
                 <div className="border-t border-white/10 pt-4 min-w-0">
                   <h4 className="font-paragraph text-white/60 text-xs uppercase tracking-widest mb-2">
-                    Scope
+                    {t('home', 'scope')}
                   </h4>
                   <p className="font-paragraph text-white text-sm leading-relaxed">
-                    Full abrasive blasting, primer application, and multi-coat epoxy system for 12 storage tanks.
+                    {t('home', 'scopeDesc')}
                   </p>
                 </div>
 
                 <div className="border-t border-white/10 pt-4 min-w-0">
                   <h4 className="font-paragraph text-white/60 text-xs uppercase tracking-widest mb-2">
-                    Challenge
+                    {t('home', 'challenge')}
                   </h4>
                   <p className="font-paragraph text-white text-sm leading-relaxed">
-                    Strict environmental controls and continuous operation of adjacent facilities.
+                    {t('home', 'challengeDesc')}
                   </p>
                 </div>
               </div>
@@ -465,7 +462,7 @@ export default function HomePage() {
               <Link to="/projects">
                 <button className="group relative overflow-hidden bg-primary px-8 py-4 flex items-center gap-3 whitespace-nowrap w-fit">
                   <span className="relative z-10 font-paragraph font-bold uppercase text-white text-sm tracking-wider">
-                    View Case Study
+                    {t('home', 'viewCaseStudy')}
                   </span>
                   <ArrowRight className="relative z-10 w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
                   <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out mix-blend-overlay" />
@@ -488,24 +485,23 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white mb-8 leading-[0.9]">
-              READY TO <br/>
-              <span className="text-black">MOBILIZE?</span>
+              {t('home', 'readyToMobilize')} <br/>
+              <span className="text-black">?</span>
             </h2>
             <p className="font-paragraph text-white/90 text-xl max-w-2xl mx-auto mb-12 font-medium">
-              Contact our engineering team for a detailed consultation and quote.
-              We respond to all industrial inquiries within 24 hours.
+              {t('home', 'ctaDescription')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
                 <button className="bg-black text-white font-paragraph font-bold uppercase px-10 py-5 hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-3 shadow-xl">
-                  Request Quote
+                  {t('home', 'requestQuote')}
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
               <Link to="/contact">
                 <button className="bg-transparent border-2 border-black text-black font-paragraph font-bold uppercase px-10 py-5 hover:bg-black hover:text-white transition-all duration-300">
-                  Call Us Now
+                  {t('home', 'callUsNow')}
                 </button>
               </Link>
             </div>
