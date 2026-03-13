@@ -291,7 +291,7 @@ export const translations: Record<Language, Translations> = {
       manufacturing: 'Fabricage',
       manufacturingDesc: 'Zware machinerie & faciliteitsonderhoud.',
       statsYearsExperience: 'Jaren Ervaring',
-      statsSince: 'Sinds 1994',
+      statsSince: 'Sinds 1984',
       statsCountriesServed: 'Landen Bediend',
       statsEuRegion: 'EU Regio',
       statsSafetyCertified: 'Veiligheidsgecertificeerd',
