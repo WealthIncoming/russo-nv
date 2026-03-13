@@ -175,7 +175,7 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-4"
             >
-              <span className="font-paragraph text-primary font-bold tracking-widest text-sm uppercase">Est. 1994</span>
+              <span className="font-paragraph text-primary font-bold tracking-widest text-sm uppercase">EST. 1984</span>
               <span className="h-[1px] w-16 bg-white/20" />
               <span className="font-paragraph text-white/60 text-sm uppercase tracking-widest">Antwerp, Belgium</span>
             </motion.div>
