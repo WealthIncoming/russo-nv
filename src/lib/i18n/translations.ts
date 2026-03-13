@@ -110,7 +110,7 @@ export const translations: Record<Language, Translations> = {
       recentProjectsDesc: 'Showcasing our expertise across diverse industrial applications',
       viewProject: 'View Project',
       exploreMore: 'Explore More',
-      engineeringDurability: 'ENGINEERING',
+      engineeringDurability: 'LEADERS IN',
       durability: 'DURABILITY',
       since1994: 'SINCE 1994.',
       companyDescription: 'Russo NV stands at the intersection of industrial power and precision engineering. We don\'t just paint; we engineer longevity into the critical infrastructure that powers our world. From storage tanks in Antwerp to pipelines in Germany, our work is the first line of defense against corrosion.',
