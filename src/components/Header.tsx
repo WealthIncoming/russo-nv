@@ -6,17 +6,17 @@ import { useLanguageStore } from '@/lib/i18n/useLanguage';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { language, setLanguage } = useLanguageStore();
+  const { language, setLanguage, t } = useLanguageStore();
   const location = useLocation();
 
   const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/services', label: 'Services' },
-    { path: '/industries', label: 'Industries' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/safety', label: 'Safety' },
-    { path: '/about', label: 'About' },
-    { path: '/contact', label: 'Contact' },
+    { path: '/', labelKey: 'home' },
+    { path: '/services', labelKey: 'services' },
+    { path: '/industries', labelKey: 'industries' },
+    { path: '/projects', labelKey: 'projects' },
+    { path: '/safety', labelKey: 'safety' },
+    { path: '/about', labelKey: 'about' },
+    { path: '/contact', labelKey: 'contact' },
   ];
 
   const languages = ['NL', 'EN'];
@@ -44,7 +44,7 @@ export default function Header() {
                     : 'text-foreground hover:text-primary'
                 }`}
               >
-                {link.label}
+                {t('nav', link.labelKey)}
                 {isActive(link.path) && (
                   <motion.div
                     layoutId="activeNav"
@@ -114,7 +114,7 @@ export default function Header() {
                       : 'text-foreground hover:text-primary'
                   }`}
                 >
-                  {link.label}
+                  {t('nav', link.labelKey)}
                 </Link>
               ))}
 
