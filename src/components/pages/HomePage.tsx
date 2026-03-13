@@ -203,9 +203,7 @@ export default function HomePage() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
                   className="block text-primary"
-                >
-                  Vanguard
-                </motion.span>
+                >SPECIALISTEN</motion.span>
               </h1>
             </div>
           </div>
