@@ -46,7 +46,7 @@ const INDUSTRIES_DATA = [
 ];
 
 const STATS_DATA = [
-  { valueKey: '30+', labelKey: 'statsYearsExperience', subKey: 'statsSince' },
+  { valueKey: '25+', labelKey: 'statsProjectsPerYear', subKey: 'statsAveragePerYear' },
   { valueKey: '1000+', labelKey: 'statsProjectsCompleted', subKey: 'statsIndustrialProjects' },
   { valueKey: '100%', labelKey: 'statsSafetyCertified', subKey: 'statsVcaIso' },
   { valueKey: '24/7', labelKey: 'Project Updates', subKey: 'Real-time Data' },
