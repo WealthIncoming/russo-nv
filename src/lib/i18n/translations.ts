@@ -295,7 +295,7 @@ export const translations: Record<Language, Translations> = {
       statsCountriesServed: 'Landen Bediend',
       statsEuRegion: 'EU Regio',
       statsSafetyCertified: 'Veiligheidsgecertificeerd',
-      statsVcaIso: 'VCA / ISO',
+      statsVcaIso: 'VCA CERTIFIED',
       whyChooseUs: 'Waarom Russo NV Kiezen',
       whyChooseUsDesc: 'Decennia van expertise gecombineerd met geavanceerde veiligheidsnormen',
       expertise: 'Expertise',
