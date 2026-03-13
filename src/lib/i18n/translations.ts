@@ -250,8 +250,8 @@ export const translations: Record<Language, Translations> = {
     // Home Page
     home: {
       heroTitle: 'Industriële Coating Excellentie',
-      heroSubtitle: 'Nauwkeurige oppervlaktebehandeling en beschermende coatings voor zware industrie',
-      heroCtaMain: 'Aan de slag',
+      heroSubtitle: 'Nauwkeurige oppervlaktebehandeling en beschermende coatings voor alle industrieën',
+      heroCtaMain: 'Offerte aanvragen',
       heroCtaSecondary: 'Portfolio Bekijken',
       companyProfile: 'Bedrijfsprofiel',
       servicesTitle: 'Onze Diensten',
