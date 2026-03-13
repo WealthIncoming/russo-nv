@@ -1,8 +1,8 @@
+import { useLanguageStore } from '@/lib/i18n/useLanguage';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Globe, Menu, Phone, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Globe } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useLanguageStore } from '@/lib/i18n/useLanguage';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,20 +25,22 @@ export default function Header() {
 
   return (
     <header className="w-full bg-white border-b border-dark-grey/20 sticky top-0 z-50">
-      <div className="max-w-[100rem] mx-auto px-8">
-        <div className="flex items-center justify-between h-24 gap-8">
+      <div className="max-w-[100rem] mx-auto px-4 sm:px-6 xl:px-8">
+        <div className="grid grid-cols-[auto_1fr_auto] items-center h-20 xl:h-24 gap-4 xl:gap-6">
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0 whitespace-nowrap">
-            <span className="font-heading text-3xl font-bold text-dark-grey">RUSSO NV</span>
+            <span className="font-heading text-2xl xl:text-3xl font-bold text-dark-grey">
+              RUSSO NV
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center justify-center gap-6 flex-1">
+          <nav className="hidden lg:flex items-center justify-center gap-3 xl:gap-5 min-w-0 px-2">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-paragraph text-sm uppercase tracking-wider transition-colors relative whitespace-nowrap ${
+                className={`font-paragraph text-[12px] xl:text-sm uppercase tracking-[0.08em] transition-colors relative whitespace-nowrap ${
                   isActive(link.path)
                     ? 'text-primary font-bold'
                     : 'text-foreground hover:text-primary'
@@ -56,9 +58,9 @@ export default function Header() {
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-4 flex-shrink-0">
             {/* Language Selector */}
-            <div className="flex items-center gap-2 border border-dark-grey/20 px-4 py-2">
+            <div className="flex items-center gap-2 border border-dark-grey/20 px-3 py-2 whitespace-nowrap">
               <Globe className="w-4 h-4 text-foreground" />
               <select
                 value={language}
@@ -76,23 +78,24 @@ export default function Header() {
             {/* Phone CTA */}
             <a
               href="tel:+3234567890"
-              className="flex items-center gap-3 bg-primary text-primary-foreground font-paragraph font-bold uppercase px-6 py-3 hover:bg-primary/90 transition-colors"
+              className="flex items-center gap-2 bg-primary text-primary-foreground font-paragraph font-bold uppercase px-4 xl:px-6 py-3 hover:bg-primary/90 transition-colors whitespace-nowrap"
             >
               <Phone className="w-4 h-4" />
-              <span>Call Now</span>
+              <span>{t('header', 'callNow')}</span>
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-foreground p-2 ml-auto"
+            className="lg:hidden text-foreground p-2 justify-self-end"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
+
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMenuOpen && (
@@ -141,7 +144,7 @@ export default function Header() {
                   className="flex items-center justify-center gap-3 bg-primary text-primary-foreground font-paragraph font-bold uppercase px-6 py-3 hover:bg-primary/90 transition-colors w-full"
                 >
                   <Phone className="w-4 h-4" />
-                  <span>Call Now</span>
+                  <span>{t('header', 'callNow')}</span>
                 </a>
               </div>
             </nav>
