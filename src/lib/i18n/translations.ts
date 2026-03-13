@@ -91,7 +91,7 @@ export const translations: Record<Language, Translations> = {
       manufacturing: 'Manufacturing',
       manufacturingDesc: 'Heavy machinery & facility maintenance.',
       statsYearsExperience: 'Years Experience',
-      statsSince: 'Since 1994',
+      statsSince: 'Since 1984',
       statsCountriesServed: 'Countries Served',
       statsEuRegion: 'EU Region',
       statsSafetyCertified: 'Safety Certified',
