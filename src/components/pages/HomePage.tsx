@@ -177,7 +177,7 @@ export default function HomePage() {
             >
               <span className="font-paragraph text-primary font-bold tracking-widest text-sm uppercase">EST. 1984</span>
               <span className="h-[1px] w-16 bg-white/20" />
-              <span className="font-paragraph text-white/60 text-sm uppercase tracking-widest">Antwerp, Belgium</span>
+              <span className="font-paragraph text-white/60 text-sm uppercase tracking-widest">Antwerpen, België</span>
             </motion.div>
 
             <div className="max-w-[min(100%,900px)]">
