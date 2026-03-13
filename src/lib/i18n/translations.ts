@@ -313,7 +313,7 @@ export const translations: Record<Language, Translations> = {
       engineeringDurability: 'LEADERS IN',
       durability: 'CORROSION PROTECTION',
       since1994: 'SINCE 1984.',
-      companyDescription: 'Russo NV staat op het kruispunt van industriële kracht en precisie-engineering. We schilderen niet alleen; we engineeren duurzaamheid in de kritieke infrastructuur die onze wereld aandrijft. Van opslagtanks in Antwerpen tot pijpleidingen in Duitsland, ons werk is de eerste verdedigingslinie tegen corrosie.',
+      companyDescription: 'Russo NV is een toonaangevende specialist in industriële oppervlaktevoorbereiding en hoogwaardige beschermende coatings voor alle soorten industriële oppervlakken. Wij leveren geavanceerde straal- en coatingsoplossingen die kritische installaties beschermen tegen corrosie, slijtage en zware omgevingsinvloeden.',
       safetyFirstTitle: 'Veiligheid Eerst',
       safetyFirstDesc: 'Strikte naleving van VCA & NACE-protocollen garandeert nul-incidenten in omgevingen met hoog risico.',
       ourExpertise: 'Onze Expertise',
