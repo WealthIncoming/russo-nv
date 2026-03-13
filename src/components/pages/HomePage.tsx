@@ -11,6 +11,12 @@ import { Link } from 'react-router-dom';
 // --- Canonical Data Sources ---
 const SERVICES_DATA = [
   {
+    id: '04',
+    titleKey: 'industrialPaintingTitle',
+    descKey: 'industrialPaintingDesc',
+    detailsKeys: ['airlessSpraying', 'colorCodingSystems', 'maintenancePainting']
+  },
+  {
     id: '03',
     titleKey: 'protectiveCoatingsTitle',
     descKey: 'protectiveCoatingsDesc',
@@ -27,12 +33,6 @@ const SERVICES_DATA = [
     titleKey: 'fireproofingTitle',
     descKey: 'fireproofingDesc',
     detailsKeys: ['passiveFireProtection', 'hydrocarbonFireDefense', 'thermalInsulation']
-  },
-  {
-    id: '04',
-    titleKey: 'industrialPaintingTitle',
-    descKey: 'industrialPaintingDesc',
-    detailsKeys: ['airlessSpraying', 'colorCodingSystems', 'maintenancePainting']
   }
 ];
 
