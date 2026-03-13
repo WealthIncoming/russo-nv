@@ -188,7 +188,7 @@ export default function HomePage() {
                   transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
                   className="block"
                 >
-                  Industrial
+                  Industriële
                 </motion.span>
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
