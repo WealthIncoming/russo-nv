@@ -2,11 +2,11 @@
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
+import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, CheckCircle, Clock, Shield, Users } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguageStore } from '@/lib/i18n/useLanguage';
 
 // --- Canonical Data Sources ---
 const SERVICES_DATA = [
@@ -52,7 +52,14 @@ const STATS_DATA = [
   { valueKey: '24/7', labelKey: 'Project Updates', subKey: 'Real-time Data' },
 ];
 
-const CERTIFICATIONS = ['VCA PETROCHEMICAL', 'ISO 9001', 'NACE CERTIFIED', 'SSPC STANDARDS', 'FROSIO INSPECTORS'];
+const CERTIFICATIONS = [
+  'VCA-P PETROCHEMICAL',
+  'NACE CERTIFIED',
+  'SSPC STANDARDS',
+  'FROSIO INSPECTORS',
+  'APAC CERTIFICATION',
+  'CERTIFIED SAFETY ADVISOR'
+];
 
 // --- Components ---
 
