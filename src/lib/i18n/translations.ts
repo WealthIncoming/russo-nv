@@ -95,7 +95,7 @@ export const translations: Record<Language, Translations> = {
       statsCountriesServed: 'Countries Served',
       statsEuRegion: 'EU Region',
       statsSafetyCertified: 'Safety Certified',
-      statsVcaIso: 'VCA / ISO',
+      statsVcaIso: 'VCA • Prevention Advisor',
       whyChooseUs: 'Why Choose Russo NV',
       whyChooseUsDesc: 'Decades of expertise combined with cutting-edge safety standards',
       expertise: 'Expertise',
