@@ -7,8 +7,34 @@ import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, CheckCircle, Clock, Shield, Users } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { IndustrialServices } from '@/entities';
-import { BaseCrudService } from '@/integrations';
+
+// --- Canonical Data Sources ---
+const SERVICES_DATA = [
+  {
+    id: '04',
+    titleKey: 'industrialPaintingTitle',
+    descKey: 'industrialPaintingDesc',
+    detailsKeys: ['airlessSpraying', 'colorCodingSystems', 'maintenancePainting']
+  },
+  {
+    id: '03',
+    titleKey: 'protectiveCoatingsTitle',
+    descKey: 'protectiveCoatingsDesc',
+    detailsKeys: ['antiCorrosionSystems', 'chemicalResistance', 'uvProtection']
+  },
+  {
+    id: '01',
+    titleKey: 'sandblastingTitle',
+    descKey: 'sandblastingDesc',
+    detailsKeys: ['surfaceProfileCreation', 'rustScaleRemoval', 'contaminantElimination']
+  },
+  {
+    id: '02',
+    titleKey: 'fireproofingTitle',
+    descKey: 'fireproofingDesc',
+    detailsKeys: ['passiveFireProtection', 'hydrocarbonFireDefense', 'thermalInsulation']
+  }
+];
 
 const INDUSTRIES_DATA = [
   { titleKey: 'chemicalPlants', descKey: 'chemicalPlantsDesc' },
@@ -113,23 +139,6 @@ export default function HomePage() {
   const heroOpacity = useTransform(heroScroll, [0, 0.5], [1, 0]);
 
   const { t } = useLanguageStore();
-  const [services, setServices] = useState<IndustrialServices[]>([]);
-  const [isLoadingServices, setIsLoadingServices] = useState(true);
-
-  useEffect(() => {
-    loadServices();
-  }, []);
-
-  const loadServices = async () => {
-    try {
-      const result = await BaseCrudService.getAll<IndustrialServices>('industrialservices');
-      setServices(result.items);
-    } catch (error) {
-      console.error('Error loading services:', error);
-    } finally {
-      setIsLoadingServices(false);
-    }
-  };
 
   return (
     <div ref={containerRef} className="bg-black min-h-screen text-white selection:bg-primary selection:text-white overflow-clip">
@@ -367,19 +376,9 @@ export default function HomePage() {
 
             {/* Scrollable Cards */}
             <div className="relative min-w-0 w-full z-10 flex flex-col gap-8">
-              {isLoadingServices ? (
-                <div className="text-center py-12">
-                  <p className="font-paragraph text-white/60">Loading services...</p>
-                </div>
-              ) : services.length === 0 ? (
-                <div className="text-center py-12">
-                  <p className="font-paragraph text-white/60">No services available</p>
-                </div>
-              ) : (
-                services.map((service, index) => (
-                  <StickyServiceCard key={service._id} service={service} index={index} />
-                ))
-              )}
+              {SERVICES_DATA.map((service, index) => (
+                <StickyServiceCard key={index} service={service} index={index} />
+              ))}
             </div>
           </div>
         </div>
@@ -518,7 +517,7 @@ export default function HomePage() {
 
 // --- Sub-Components ---
 
-function StickyServiceCard({ service, index }: { service: IndustrialServices, index: number }) {
+function StickyServiceCard({ service, index }: { service: typeof SERVICES_DATA[0], index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -528,6 +527,8 @@ function StickyServiceCard({ service, index }: { service: IndustrialServices, in
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0.3, 1]);
   const x = useTransform(scrollYProgress, [0, 0.5], [50, 0]);
 
+  const { t } = useLanguageStore();
+
   return (
     <motion.div
       ref={cardRef}
@@ -535,34 +536,33 @@ function StickyServiceCard({ service, index }: { service: IndustrialServices, in
       className="group relative bg-dark-grey border border-white/10 p-8 md:p-12 hover:border-primary transition-colors duration-500"
     >
       <div className="absolute top-0 right-0 p-4 opacity-20 font-heading text-6xl text-white group-hover:opacity-10 transition-opacity">
-        {String(index + 1).padStart(2, '0')}
+        {service.id}
       </div>
 
       <div className="flex flex-col md:flex-row gap-8 items-start">
         <div className="flex-1">
           <h3 className="font-heading text-3xl md:text-4xl text-white mb-4 group-hover:text-primary transition-colors">
-            {service.serviceName}
+            {t('home', service.titleKey)}
           </h3>
           <p className="font-paragraph text-white/60 text-sm md:text-base leading-relaxed mb-8 max-w-xl">
-            {service.description}
+            {t('home', service.descKey)}
           </p>
 
-          {service.keyBenefits && (
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {service.keyBenefits.split('\n').filter(Boolean).map((benefit, i) => (
-                <li key={i} className="flex items-center gap-2 font-paragraph text-xs text-white/80 uppercase tracking-wide">
-                  <div className="w-1 h-1 bg-primary" />
-                  {benefit.trim()}
-                </li>
-              ))}
-            </ul>
-          )}
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {service.detailsKeys.map((detailKey, i) => (
+              <li key={i} className="flex items-center gap-2 font-paragraph text-xs text-white/80 uppercase tracking-wide">
+                <div className="w-1 h-1 bg-primary" />
+                {t('home', detailKey)}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="w-full md:w-48 h-32 bg-black/20 border border-white/5 relative overflow-hidden">
+           {/* Placeholder for service specific imagery - using generic for now but styled */}
            <Image
-             src={service.serviceImage || "https://static.wixstatic.com/media/3232e5_1f2a1a565833417a9c5c5ea40e20a310~mv2.png?originWidth=384&originHeight=320"}
-             alt={service.serviceName || 'Service'}
+             src="https://static.wixstatic.com/media/3232e5_1f2a1a565833417a9c5c5ea40e20a310~mv2.png?originWidth=384&originHeight=320"
+             alt={t('home', service.titleKey)}
              className="w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700"
              width={400}
            />
