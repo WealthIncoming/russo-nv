@@ -315,7 +315,7 @@ export const translations: Record<Language, Translations> = {
       since1994: 'SINCE 1984.',
       companyDescription: 'Russo NV is een toonaangevende specialist in industriële oppervlaktevoorbereiding en hoogwaardige beschermende coatings voor alle soorten industriële oppervlakken. Wij leveren geavanceerde straal- en coatingsoplossingen die kritische installaties beschermen tegen corrosie, slijtage en zware omgevingsinvloeden.',
       safetyFirstTitle: 'Veiligheid Eerst',
-      safetyFirstDesc: 'Strikte naleving van VCA & NACE-protocollen garandeert nul-incidenten in omgevingen met hoog risico.',
+      safetyFirstDesc: 'Strikte naleving van VCA- en preventieprotocollen garandeert een veilige uitvoering, zelfs in risicovolle omgevingen.',
       ourExpertise: 'Onze Expertise',
       coreServices: 'KERNSERVICES',
       coreServicesDesc: 'Uitgebreide oppervlaktebehandelingsoplossingen op maat voor de meest veeleisende industriële omgevingen.',
