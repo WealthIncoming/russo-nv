@@ -12,7 +12,7 @@ export default function Footer() {
               RUSSO <span className="text-primary">NV</span>
             </div>
             <p className="font-paragraph text-sm text-white/80 mb-8 leading-relaxed">
-              Leading industrial coating and surface preparation company serving Belgium and neighboring countries since 1994. Specialized in heavy industry solutions with strict safety compliance.
+              Leading industrial coating and surface preparation company serving Belgium and neighboring countries since 1984. Specialized in heavy industry solutions with strict safety compliance.
             </p>
             <div className="flex gap-4">
               <a

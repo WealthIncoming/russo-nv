@@ -30,7 +30,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="font-paragraph text-primary text-sm uppercase tracking-wider">Since 1994</span>
+            <span className="font-paragraph text-primary text-sm uppercase tracking-wider">Since 1984</span>
             <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-8xl text-white mt-4 mb-8 leading-none">
               ABOUT<br />
               <span className="text-primary">RUSSO NV</span>
@@ -79,7 +79,7 @@ export default function AboutPage() {
             </div>
 
             <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed max-w-[65ch]">
-              Founded in 1994 in Antwerp, Belgium, Russo NV has grown from a local coating specialist to an international leader in industrial surface preparation and protective coatings.
+              Founded in 1984 in Antwerp, Belgium, Russo NV has grown from a local coating specialist to an international leader in industrial surface preparation and protective coatings.
             </p>
 
             <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed max-w-[65ch]">
