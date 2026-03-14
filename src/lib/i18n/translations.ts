@@ -185,7 +185,7 @@ export const translations: Record<Language, Translations> = {
 
       viewCaseStudy: 'View Case Study',
 
-      readyToMobilize: 'READY TO MOBILIZE?',
+      readyToMobilize: 'READY TO MOBILIZE',
       ctaDescription: 'Contact our engineering team for a detailed consultation and quote. We respond to all industrial inquiries within 24 hours.',
 
       requestQuote: 'Request Quote',
