@@ -201,8 +201,8 @@ export default function HomePage() {
               <span className="font-paragraph text-white/60 text-sm uppercase tracking-widest">Antwerpen, België</span>
             </motion.div>
 
-            <div className="max-w-[min(100%,900px)]">
-              <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.85] font-black text-white uppercase tracking-tighter text-center md:text-left">
+            <div className="max-w-full md:max-w-[900px]">
+              <h1 className="font-heading text-[clamp(2.4rem,11vw,4.75rem)] md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] md:leading-[0.85] font-black text-white uppercase tracking-tight md:tracking-tighter text-center md:text-left break-words">
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -223,8 +223,10 @@ export default function HomePage() {
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
-                  className="block text-primary"
-                >SPECIALISTEN</motion.span>
+                  className="block text-primary text-[0.92em] md:text-[1em]"
+                >
+                  SPECIALISTEN
+                </motion.span>
               </h1>
             </div>
           </div>
