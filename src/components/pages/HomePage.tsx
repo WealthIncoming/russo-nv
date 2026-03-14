@@ -33,7 +33,7 @@ const SERVICES_DATA = [
     detailsKeys: ['surfaceProfileCreation', 'rustScaleRemoval', 'contaminantElimination']
   },
   {
-    id: '02',
+    id: '04',
     titleKey: 'fireproofingTitle',
     descKey: 'fireproofingDesc',
     detailsKeys: ['passiveFireProtection', 'hydrocarbonFireDefense', 'thermalInsulation']
