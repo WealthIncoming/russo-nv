@@ -202,32 +202,7 @@ export default function HomePage() {
             </motion.div>
 
             <div className="max-w-full md:max-w-[900px]">
-              <h1 className="font-heading text-[clamp(2.4rem,11vw,4.75rem)] md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] md:leading-[0.85] font-black text-white uppercase tracking-tight md:tracking-tighter text-center md:text-left">
-              <motion.span
-                initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
-                className="block"
-              >
-                Industriële
-              </motion.span>
-              <motion.span
-                initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.1, ease: [0.215, 0.61, 0.355, 1] }}
-                className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50"
-              >
-                Coating
-              </motion.span>
-              <motion.span
-                initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
-                className="block text-primary text-[0.78em] sm:text-[0.85em] md:text-[1em]"
-              >
-                Specialisten
-              </motion.span>
-            </h1>
+
             </div>
           </div>
 
