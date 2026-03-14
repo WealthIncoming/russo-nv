@@ -326,7 +326,7 @@ export const translations: Record<Language, Translations> = {
       industrialWaterproofingDesc: 'Naadloze industriële waterdichting met het Kemperol 2K-PUR systeem voor bescherming van opvangzones, tankfunderingen, bundwanden en kritische infrastructuur tegen waterinsijpeling en zware omgevingsinvloeden.',
 
       surfaceProfileCreation: 'Opbouw van Oppervlakteprofiel',
-      rustScaleRemoval: 'Verwijdering van Roest en Walshuid',
+      rustScaleRemoval: 'Roest- en walshuidverwijdering',
       contaminantElimination: 'Verwijdering van Verontreinigingen',
 
       passiveFireProtection: 'Passieve Brandbescherming',
@@ -348,7 +348,7 @@ export const translations: Record<Language, Translations> = {
       industriesTitle: 'Industrieën die Wij Bedienen',
       industriesSubtitle: 'Vertrouwd door toonaangevende bedrijven in diverse sectoren',
 
-      chemicalPlants: 'Chemische Fabrieken',
+      chemicalPlants: 'Chemische Installaties',
       chemicalPlantsDesc: 'Zuurbestendige bekleding en opvangsystemen.',
 
       foodProduction: 'Voedingsindustrie',

@@ -78,83 +78,99 @@ export default function ServicesPage() {
               </p>
             </div>
           ) : (
-            <div className="space-y-24 sm:space-y-32 min-w-0">
-              {services.map((service, index) => (
-                <motion.div
-                  key={service._id}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className={`grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-10 sm:gap-12 lg:gap-16 items-center min-w-0 ${
-                    index % 2 === 1 ? 'lg:grid-flow-dense' : ''
-                  }`}
-                >
-                  {/* Image Column */}
-                  <div className={`min-w-0 w-full ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                    <div className="relative h-[320px] sm:h-[420px] lg:h-[500px] w-full overflow-hidden">
-                      <Image
-                        src={
-                          service.serviceImage ||
-                          'https://static.wixstatic.com/media/3232e5_361542816ae042acac6c1000f5ee8a72~mv2.png?originWidth=768&originHeight=448'
-                        }
-                        alt={service.serviceName || 'Industrial service'}
-                        className="absolute inset-0 w-full h-full object-cover"
-                        width={800}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    </div>
-                  </div>
+            <div className="space-y-32 sm:space-y-40 min-w-0">
+              {services.map((service, index) => {
+                const isReversed = index % 2 === 1;
 
-                  {/* Text Column */}
-                  <div className={`min-w-0 w-full ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                    <div className="space-y-6 min-w-0 w-full">
-                      <div className="inline-block max-w-full border-l-4 border-primary pl-4 sm:pl-6 min-w-0">
-                        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-foreground leading-tight tracking-tight break-words [overflow-wrap:anywhere]">
-                          {service.serviceName}
-                        </h2>
+                return (
+                  <motion.div
+                    key={service._id}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-100px' }}
+                    transition={{ duration: 0.6 }}
+                    className="min-w-0"
+                  >
+                    <div
+                      className={`grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center min-w-0 ${
+                        isReversed ? 'lg:[direction:rtl]' : ''
+                      }`}
+                    >
+                      {/* Image Column */}
+                      <div className="min-w-0 w-full lg:[direction:ltr]">
+                        <div className="relative h-[320px] sm:h-[420px] lg:h-[500px] w-full overflow-hidden group">
+                          <Image
+                            src={
+                              service.serviceImage ||
+                              'https://static.wixstatic.com/media/3232e5_361542816ae042acac6c1000f5ee8a72~mv2.png?originWidth=768&originHeight=448'
+                            }
+                            alt={service.serviceName || 'Industrial service'}
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            width={800}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                          {/* Corner accents */}
+                          <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-primary" />
+                          <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-primary" />
+                        </div>
                       </div>
 
-                      <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed break-words [overflow-wrap:anywhere]">
-                        {service.description}
-                      </p>
+                      {/* Text Column */}
+                      <div className="min-w-0 w-full lg:[direction:ltr]">
+                        <div className="space-y-6 min-w-0 w-full">
+                          {/* Service number */}
+                          <span className="font-heading text-primary/20 text-6xl sm:text-7xl font-black leading-none">
+                            {String(index + 1).padStart(2, '0')}
+                          </span>
 
-                      {service.keyBenefits && (
-                        <div className="bg-dark-grey/5 border-l-4 border-primary p-6 sm:p-8 min-w-0 w-full overflow-hidden">
-                          <h3 className="font-heading text-xl sm:text-2xl text-foreground mb-4 break-words">
-                            Key Benefits
-                          </h3>
-                          <p className="font-paragraph text-base text-foreground/80 leading-relaxed whitespace-pre-line break-words [overflow-wrap:anywhere]">
-                            {service.keyBenefits}
-                          </p>
-                        </div>
-                      )}
+                          <div className="border-l-4 border-primary pl-4 sm:pl-6 min-w-0">
+                            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-foreground leading-tight tracking-tight break-words">
+                              {service.serviceName}
+                            </h2>
+                          </div>
 
-                      {service.processOverview && (
-                        <div className="min-w-0 w-full">
-                          <h3 className="font-heading text-xl sm:text-2xl text-foreground mb-4 break-words">
-                            Process Overview
-                          </h3>
-                          <p className="font-paragraph text-base text-foreground/80 leading-relaxed whitespace-pre-line break-words [overflow-wrap:anywhere]">
-                            {service.processOverview}
+                          <p className="font-paragraph text-base sm:text-lg text-foreground/70 leading-relaxed break-words">
+                            {service.description}
                           </p>
-                        </div>
-                      )}
 
-                      {service.targetIndustries && (
-                        <div className="min-w-0 w-full">
-                          <h3 className="font-heading text-lg sm:text-xl text-foreground mb-3 break-words">
-                            Target Industries
-                          </h3>
-                          <p className="font-paragraph text-base text-foreground/70 break-words [overflow-wrap:anywhere]">
-                            {service.targetIndustries}
-                          </p>
+                          {service.keyBenefits && (
+                            <div className="bg-dark-grey/5 border border-dark-grey/10 p-6 sm:p-8 min-w-0 w-full overflow-hidden">
+                              <h3 className="font-heading text-lg sm:text-xl text-foreground mb-3 break-words">
+                                Key Benefits
+                              </h3>
+                              <p className="font-paragraph text-base text-foreground/70 leading-relaxed whitespace-pre-line break-words">
+                                {service.keyBenefits}
+                              </p>
+                            </div>
+                          )}
+
+                          {service.processOverview && (
+                            <div className="min-w-0 w-full">
+                              <h3 className="font-heading text-lg sm:text-xl text-foreground mb-3 break-words">
+                                Process Overview
+                              </h3>
+                              <p className="font-paragraph text-base text-foreground/70 leading-relaxed whitespace-pre-line break-words">
+                                {service.processOverview}
+                              </p>
+                            </div>
+                          )}
+
+                          {service.targetIndustries && (
+                            <div className="min-w-0 w-full pt-4 border-t border-dark-grey/10">
+                              <h3 className="font-heading text-sm uppercase tracking-widest text-foreground/50 mb-2 break-words">
+                                Target Industries
+                              </h3>
+                              <p className="font-paragraph text-base text-foreground/70 break-words">
+                                {service.targetIndustries}
+                              </p>
+                            </div>
+                          )}
                         </div>
-                      )}
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </div>
           )}
         </div>
