@@ -170,7 +170,7 @@ export default function HomePage() {
         }
       `}</style>
       <Header />
-      {/* --- HERO SECTION --- */}
+{/* --- HERO SECTION --- */}
       <section ref={heroRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center">
         {/* Background Parallax */}
         <motion.div style={{ y: heroY }} className="absolute inset-0 z-0">
@@ -187,7 +187,7 @@ export default function HomePage() {
         {/* Hero Content */}
         <motion.div
           style={{ opacity: heroOpacity }}
-          className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-12 flex flex-col justify-center h-full pt-20"
+          className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-12 flex flex-col justify-center h-full pt-20 overflow-hidden"
         >
           <div className="mb-8 md:border-l md:border-white/20 md:pl-12">
             <motion.div
@@ -203,9 +203,12 @@ export default function HomePage() {
               <span className="h-[1px] w-8 sm:w-16 bg-white/20" />
             </motion.div>
 
-            <div className="w-full max-w-[320px] sm:max-w-[360px] md:max-w-[900px] mx-auto md:mx-0">
+            <div className="w-full max-w-full sm:max-w-[360px] md:max-w-[900px] mx-auto md:mx-0 overflow-hidden">
               {/* Mobile title */}
-              <h1 className="font-heading md:hidden text-[2.7rem] sm:text-[3.15rem] leading-[0.88] font-black text-white uppercase tracking-[-0.03em] text-center">
+              <h1
+                className="font-heading md:hidden leading-[0.88] font-black text-white uppercase tracking-[-0.03em] text-center"
+                style={{ fontSize: 'clamp(2rem, 8vw, 3.15rem)' }}
+              >
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
