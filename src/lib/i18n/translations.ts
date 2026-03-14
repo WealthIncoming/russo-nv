@@ -47,149 +47,149 @@ export const translations: Record<Language, Translations> = {
       privacyPolicy: 'Privacy Policy',
       termsOfService: 'Terms of Service',
     },
-  // Home Page
-  home: {
-    heroTitle: 'Industrial Coating Excellence',
-    heroSubtitle: 'Precision surface preparation and protective coatings for heavy industry',
-    heroCtaMain: 'Get Started',
-    heroCtaSecondary: 'View Portfolio',
+    // Home Page
+    home: {
+      heroTitle: 'Industrial Coating Excellence',
+      heroSubtitle: 'Precision surface preparation and protective coatings for heavy industry',
+      heroCtaMain: 'Get Started',
+      heroCtaSecondary: 'View Portfolio',
 
-    companyProfile: 'Company Profile',
+      companyProfile: 'Company Profile',
 
-    servicesTitle: 'Our Services',
-    servicesSubtitle: 'Comprehensive industrial coating solutions',
+      servicesTitle: 'Our Services',
+      servicesSubtitle: 'Comprehensive industrial coating solutions',
 
-    sandblastingTitle: 'Sandblasting',
-    sandblastingDesc: 'Complete surface preparation ensuring optimal coating adhesion through advanced abrasive techniques.',
+      sandblastingTitle: 'Sandblasting',
+      sandblastingDesc: 'Complete surface preparation ensuring optimal coating adhesion through advanced abrasive techniques.',
 
-    fireproofingTitle: 'Fireproofing',
-    fireproofingDesc: 'Application of intumescent and cementitious coatings to protect structural integrity during thermal exposure.',
+      fireproofingTitle: 'Fireproofing',
+      fireproofingDesc: 'Application of intumescent and cementitious coatings to protect structural integrity during thermal exposure.',
 
-    protectiveCoatingsTitle: 'Protective Coatings',
-    protectiveCoatingsDesc: 'High-performance barrier systems designed to withstand extreme chemical and environmental aggression.',
+      protectiveCoatingsTitle: 'Protective Coatings',
+      protectiveCoatingsDesc: 'High-performance barrier systems designed to withstand extreme chemical and environmental aggression.',
 
-    industrialPaintingTitle: 'Industrial Painting',
-    industrialPaintingDesc: 'Large-scale aesthetic and functional coating application for factories, terminals, and infrastructure.',
+      industrialPaintingTitle: 'Industrial Painting',
+      industrialPaintingDesc: 'Large-scale aesthetic and functional coating application for factories, terminals, and infrastructure.',
 
-    industrialWaterproofingTitle: 'Industrial Waterproofing',
-    industrialWaterproofingDesc: 'Seamless industrial waterproofing using the Kemperol 2K-PUR system to protect containment areas, tank foundations, bund walls, and critical infrastructure from water ingress and harsh environmental exposure.',
+      industrialWaterproofingTitle: 'Industrial Waterproofing',
+      industrialWaterproofingDesc: 'Seamless industrial waterproofing using the Kemperol 2K-PUR system to protect containment areas, tank foundations, bund walls, and critical infrastructure from water ingress and harsh environmental exposure.',
 
-    surfaceProfileCreation: 'Surface Profile Creation',
-    rustScaleRemoval: 'Rust & Scale Removal',
-    contaminantElimination: 'Contaminant Elimination',
+      surfaceProfileCreation: 'Surface Profile Creation',
+      rustScaleRemoval: 'Rust & Scale Removal',
+      contaminantElimination: 'Contaminant Elimination',
 
-    passiveFireProtection: 'Passive Fire Protection',
-    hydrocarbonFireDefense: 'Hydrocarbon Fire Defense',
-    thermalInsulation: 'Thermal Insulation',
+      passiveFireProtection: 'Passive Fire Protection',
+      hydrocarbonFireDefense: 'Hydrocarbon Fire Defense',
+      thermalInsulation: 'Thermal Insulation',
 
-    antiCorrosionSystems: 'Anti-Corrosion Systems',
-    chemicalResistance: 'Chemical Resistance',
-    uvProtection: 'UV Protection',
+      antiCorrosionSystems: 'Anti-Corrosion Systems',
+      chemicalResistance: 'Chemical Resistance',
+      uvProtection: 'UV Protection',
 
-    airlessSpraying: 'Airless Spraying',
-    corrosionProtection: 'Corrosion Protection',
-    maintenancePainting: 'Maintenance Painting',
+      airlessSpraying: 'Airless Spraying',
+      corrosionProtection: 'Corrosion Protection',
+      maintenancePainting: 'Maintenance Painting',
 
-    bundContainmentSealing: 'Bund & Containment Sealing',
-    tankFoundationWaterproofing: 'Tank Foundation Waterproofing',
-    seamlessMembraneSystems: 'Seamless Liquid Membrane Systems',
+      bundContainmentSealing: 'Bund & Containment Sealing',
+      tankFoundationWaterproofing: 'Tank Foundation Waterproofing',
+      seamlessMembraneSystems: 'Seamless Liquid Membrane Systems',
 
-    industriesTitle: 'Industries We Serve',
-    industriesSubtitle: 'Trusted by leading companies across sectors',
+      industriesTitle: 'Industries We Serve',
+      industriesSubtitle: 'Trusted by leading companies across sectors',
 
-    chemicalPlants: 'Chemical Plants',
-    chemicalPlantsDesc: 'Acid-resistant lining & containment.',
+      chemicalPlants: 'Chemical Plants',
+      chemicalPlantsDesc: 'Acid-resistant lining & containment.',
 
-    foodProduction: 'Food Production',
-    foodProductionDesc: 'Hygienic, FDA-compliant surfacing.',
+      foodProduction: 'Food Production',
+      foodProductionDesc: 'Hygienic, FDA-compliant surfacing.',
 
-    storageTerminals: 'Storage Terminals',
-    storageTerminalsDesc: 'Tank lining & exterior protection.',
+      storageTerminals: 'Storage Terminals',
+      storageTerminalsDesc: 'Tank lining & exterior protection.',
 
-    industrialConstruction: 'Industrial Construction',
-    industrialConstructionDesc: 'Structural steel & pipeline coating.',
+      industrialConstruction: 'Industrial Construction',
+      industrialConstructionDesc: 'Structural steel & pipeline coating.',
 
-    warehouses: 'Warehouses',
-    warehousesDesc: 'Floor systems & safety marking.',
+      warehouses: 'Warehouses',
+      warehousesDesc: 'Floor systems & safety marking.',
 
-    manufacturing: 'Manufacturing',
-    manufacturingDesc: 'Heavy machinery & facility maintenance.',
+      manufacturing: 'Manufacturing',
+      manufacturingDesc: 'Heavy machinery & facility maintenance.',
 
-    statsYearsExperience: 'Years Experience',
-    statsSince: 'Since 1984',
-    statsProjectsPerYear: 'PROJECTS PER YEAR',
-    statsAveragePerYear: 'Average annually',
-    statsProjectsCompleted: 'Projects Completed',
-    statsIndustrialProjects: 'Industrial Projects',
-    statsCountriesServed: 'Countries Served',
-    statsEuRegion: 'EU Region',
-    statsSafetyCertified: 'Safety Certified',
-    statsVcaIso: 'VCA • Prevention Advisor',
+      statsYearsExperience: 'Years Experience',
+      statsSince: 'Since 1984',
+      statsProjectsPerYear: 'PROJECTS PER YEAR',
+      statsAveragePerYear: 'Average annually',
+      statsProjectsCompleted: 'Projects Completed',
+      statsIndustrialProjects: 'Industrial Projects',
+      statsCountriesServed: 'Countries Served',
+      statsEuRegion: 'EU Region',
+      statsSafetyCertified: 'Safety Certified',
+      statsVcaIso: 'VCA • Prevention Advisor',
 
-    whyChooseUs: 'Why Choose Russo NV',
-    whyChooseUsDesc: 'Decades of expertise combined with cutting-edge safety standards',
+      whyChooseUs: 'Why Choose Russo NV',
+      whyChooseUsDesc: 'Decades of expertise combined with cutting-edge safety standards',
 
-    expertise: 'Expertise',
-    expertiseDesc: 'Three decades of specialized industrial coating experience',
+      expertise: 'Expertise',
+      expertiseDesc: 'Three decades of specialized industrial coating experience',
 
-    safety: 'Safety First',
-    safetyDesc: 'VCA and ISO certified with zero-compromise safety protocols',
+      safety: 'Safety First',
+      safetyDesc: 'VCA and ISO certified with zero-compromise safety protocols',
 
-    quality: 'Quality Assurance',
-    qualityDesc: 'Rigorous testing and compliance with international standards',
+      quality: 'Quality Assurance',
+      qualityDesc: 'Rigorous testing and compliance with international standards',
 
-    reliability: 'Reliability',
-    reliabilityDesc: 'Consistent delivery on time and within specification',
+      reliability: 'Reliability',
+      reliabilityDesc: 'Consistent delivery on time and within specification',
 
-    recentProjects: 'Recent Projects',
-    recentProjectsDesc: 'Showcasing our expertise across diverse industrial applications',
+      recentProjects: 'Recent Projects',
+      recentProjectsDesc: 'Showcasing our expertise across diverse industrial applications',
 
-    viewProject: 'View Project',
-    exploreMore: 'Explore More',
+      viewProject: 'View Project',
+      exploreMore: 'Explore More',
 
-    engineeringDurability: 'LEADERS IN',
-    durability: 'CORROSION PROTECTION',
+      engineeringDurability: 'LEADERS IN',
+      durability: 'CORROSION PROTECTION',
 
-    companyDescription: 'Russo NV stands at the intersection of industrial power and precision engineering. We don\'t just paint; we engineer longevity into the critical infrastructure that powers our world. From storage tanks in Antwerp to pipelines in Germany, our work is the first line of defense against corrosion.',
+      companyDescription: 'Russo NV stands at the intersection of industrial power and precision engineering. We don\'t just paint; we engineer longevity into the critical infrastructure that powers our world. From storage tanks in Antwerp to pipelines in Germany, our work is the first line of defense against corrosion.',
 
-    safetyFirstTitle: 'Safety First',
-    safetyFirstDesc: 'Strict adherence to VCA & NACE protocols ensures zero-incident operations in high-risk environments.',
+      safetyFirstTitle: 'Safety First',
+      safetyFirstDesc: 'Strict adherence to VCA & NACE protocols ensures zero-incident operations in high-risk environments.',
 
-    ourExpertise: 'Our Expertise',
+      ourExpertise: 'Our Expertise',
 
-    coreServices: 'CORE SERVICES',
-    coreServicesDesc: 'Comprehensive surface treatment solutions tailored for the most demanding industrial environments.',
+      coreServices: 'CORE SERVICES',
+      coreServicesDesc: 'Comprehensive surface treatment solutions tailored for the most demanding industrial environments.',
 
-    viewAllServices: 'View All Services',
+      viewAllServices: 'View All Services',
 
-    industriesServed: 'INDUSTRIES SERVED',
-    globalReach: 'GLOBAL REACH',
-    sectors: 'Sectors',
-    builtForHeavyIndustry: 'BUILT FOR HEAVY INDUSTRY',
+      industriesServed: 'INDUSTRIES SERVED',
+      globalReach: 'GLOBAL REACH',
+      sectors: 'Sectors',
+      builtForHeavyIndustry: 'BUILT FOR HEAVY INDUSTRY',
 
-    featuredProject: 'Featured Project',
-    totalTankFarm: 'TOTAL TANK FARM',
-    refurbishment: 'REFURBISHMENT',
-    antwerpPort: 'ANTWERP PORT',
-    duration18Months: 'Duration: 18 Months',
+      featuredProject: 'Featured Project',
+      totalTankFarm: 'TOTAL TANK FARM',
+      refurbishment: 'REFURBISHMENT',
+      antwerpPort: 'ANTWERP PORT',
+      duration18Months: 'Duration: 18 Months',
 
-    projectDescription: 'Large-scale refurbishment project involving abrasive blasting, primer application, and a multi-coat epoxy protection system for critical tank farm infrastructure in the Port of Antwerp.',
+      projectDescription: 'Large-scale refurbishment project involving abrasive blasting, primer application, and a multi-coat epoxy protection system for critical tank farm infrastructure in the Port of Antwerp.',
 
-    scope: 'Scope',
-    scopeDesc: 'Full abrasive blasting, primer application, and multi-coat epoxy system for 12 storage tanks.',
+      scope: 'Scope',
+      scopeDesc: 'Full abrasive blasting, primer application, and multi-coat epoxy system for 12 storage tanks.',
 
-    challenge: 'Challenge',
-    challengeDesc: 'Strict environmental controls and continuous operation of adjacent facilities.',
+      challenge: 'Challenge',
+      challengeDesc: 'Strict environmental controls and continuous operation of adjacent facilities.',
 
-    viewCaseStudy: 'View Case Study',
+      viewCaseStudy: 'View Case Study',
 
-    readyToMobilize: 'READY TO MOBILIZE?',
-    ctaDescription: 'Contact our engineering team for a detailed consultation and quote. We respond to all industrial inquiries within 24 hours.',
+      readyToMobilize: 'READY TO MOBILIZE?',
+      ctaDescription: 'Contact our engineering team for a detailed consultation and quote. We respond to all industrial inquiries within 24 hours.',
 
-    requestQuote: 'Request Quote',
-    callUsNow: 'Call Us Now',
-    scroll: 'Scroll',
-  },
+      requestQuote: 'Request Quote',
+      callUsNow: 'Call Us Now',
+      scroll: 'Scroll',
+    },
     // Services Page
     services: {
       pageTitle: 'Industrial Coating Services',
@@ -298,97 +298,143 @@ export const translations: Record<Language, Translations> = {
     },
     // Home Page
     home: {
-      heroTitle: 'Industriële Coating Excellentie',
+      heroTitle: 'Industriële Coatingexpertise',
       heroSubtitle: 'Nauwkeurige oppervlaktebehandeling en beschermende coatings voor alle industrieën',
       heroCtaMain: 'Offerte aanvragen',
       heroCtaSecondary: 'Onze projecten',
+
       companyProfile: 'Bedrijfsprofiel',
+
       servicesTitle: 'Onze Diensten',
       servicesSubtitle: 'Uitgebreide industriële coatingoplossingen',
+
       sandblastingTitle: 'Zandstralen',
-      sandblastingDesc: 'Volledige oppervlaktebehandeling die optimale coatingadhesie garandeert door geavanceerde abrasieve technieken.',
+      sandblastingDesc: 'Volledige oppervlaktevoorbereiding die optimale coatinghechting garandeert met geavanceerde straaltechnieken.',
+
       fireproofingTitle: 'Brandwering',
-      fireproofingDesc: 'Toepassing van intumescente en cementeuze coatings ter bescherming van structurele integriteit tijdens thermische blootstelling.',
+      fireproofingDesc: 'Toepassing van intumescente en cementeuze coatings ter bescherming van de structurele integriteit bij thermische belasting.',
+
       protectiveCoatingsTitle: 'Beschermende Coatings',
-      protectiveCoatingsDesc: 'Hoogwaardige barrièresystemen ontworpen om extreme chemische en milieuaantasting te weerstaan.',
-      industrialPaintingTitle: 'Industrieel Schilderen',
-      industrialPaintingDesc: 'Grootschalige esthetische en functionele coatingtoepassing voor fabrieken, terminals en infrastructuur.',
-      surfaceProfileCreation: 'Oppervlakteprofiel Creatie',
-      rustScaleRemoval: 'Roest- & Schubverwijdering',
+      protectiveCoatingsDesc: 'Hoogwaardige barrièresystemen ontworpen om extreme chemische belasting en zware omgevingsinvloeden te weerstaan.',
+
+      industrialPaintingTitle: 'Industrieel Schilderwerk',
+      industrialPaintingDesc: 'Grootschalige esthetische en functionele coatingtoepassingen voor fabrieken, terminals en infrastructuur.',
+
+      industrialWaterproofingTitle: 'Industriële Waterdichting',
+      industrialWaterproofingDesc: 'Naadloze industriële waterdichting met het Kemperol 2K-PUR systeem voor bescherming van opvangzones, tankfunderingen, bundwanden en kritische infrastructuur tegen waterinsijpeling en zware omgevingsinvloeden.',
+
+      surfaceProfileCreation: 'Opbouw van Oppervlakteprofiel',
+      rustScaleRemoval: 'Verwijdering van Roest en Walshuid',
       contaminantElimination: 'Verwijdering van Verontreinigingen',
-      passiveFireProtection: 'Passieve Brandbeveiliging',
-      hydrocarbonFireDefense: 'Koolwaterstofbrandverdediging',
+
+      passiveFireProtection: 'Passieve Brandbescherming',
+      hydrocarbonFireDefense: 'Bescherming tegen Koolwaterstofbranden',
       thermalInsulation: 'Thermische Isolatie',
-      antiCorrosionSystems: 'Anti-Corrosie Systemen',
-      chemicalResistance: 'Chemische Resistentie',
+
+      antiCorrosionSystems: 'Anticorrosiesystemen',
+      chemicalResistance: 'Chemische Bestendigheid',
       uvProtection: 'UV-Bescherming',
-      airlessSpraying: 'Spuiten zonder Lucht',
-      colorCodingSystems: 'Kleurcoderings Systemen',
-      maintenancePainting: 'Onderhoudsschildering',
-      industriesTitle: 'Industrieën die we Bedienen',
-      industriesSubtitle: 'Vertrouwd door toonaangevende bedrijven in alle sectoren',
+
+      airlessSpraying: 'Airless Spuiten',
+      corrosionProtection: 'Corrosiebescherming',
+      maintenancePainting: 'Onderhoudsschilderwerk',
+
+      bundContainmentSealing: 'Afdichting van Bunds en Opvangzones',
+      tankFoundationWaterproofing: 'Waterdichting van Tankfunderingen',
+      seamlessMembraneSystems: 'Naadloze Vloeibare Membraansystemen',
+
+      industriesTitle: 'Industrieën die Wij Bedienen',
+      industriesSubtitle: 'Vertrouwd door toonaangevende bedrijven in diverse sectoren',
+
       chemicalPlants: 'Chemische Fabrieken',
-      chemicalPlantsDesc: 'Zuurbestendig voering & beperking.',
-      foodProduction: 'Voedselproductie',
+      chemicalPlantsDesc: 'Zuurbestendige bekleding en opvangsystemen.',
+
+      foodProduction: 'Voedingsindustrie',
       foodProductionDesc: 'Hygiënische, FDA-conforme oppervlakken.',
+
       storageTerminals: 'Opslagterminals',
-      storageTerminalsDesc: 'Tankafdichting & buitenbescherming.',
-      industrialConstruction: 'Industriële Constructie',
-      industrialConstructionDesc: 'Constructiestaal & pijpleidingcoating.',
+      storageTerminalsDesc: 'Tankbekleding en uitwendige bescherming.',
+
+      industrialConstruction: 'Industriële Bouw',
+      industrialConstructionDesc: 'Coatings voor constructiestaal en pijpleidingen.',
+
       warehouses: 'Magazijnen',
-      warehousesDesc: 'Vloersystemen & veiligheidsmerkering.',
-      manufacturing: 'Fabricage',
-      manufacturingDesc: 'Zware machinerie & faciliteitsonderhoud.',
+      warehousesDesc: 'Vloersystemen en veiligheidsmarkeringen.',
+
+      manufacturing: 'Productie',
+      manufacturingDesc: 'Onderhoud van zware machines en industriële installaties.',
+
       statsYearsExperience: 'Jaren Ervaring',
       statsSince: 'Sinds 1984',
       statsProjectsPerYear: 'PROJECTEN PER JAAR',
       statsAveragePerYear: 'Gemiddeld per jaar',
       statsProjectsCompleted: 'PROJECTEN VOLTOOID',
       statsIndustrialProjects: 'Industriële projecten',
-      statsCountriesServed: 'Landen Bediend',
-      statsEuRegion: 'EU Regio',
-      statsSafetyCertified: 'Veiligheidsgecertificeerd',
+      statsCountriesServed: 'LANDEN BEDIEND',
+      statsEuRegion: 'EU-regio',
+      statsSafetyCertified: 'VEILIGHEIDSGECERTIFICEERD',
       statsVcaIso: 'VCA • Preventieadviseur',
-      whyChooseUs: 'Waarom Russo NV Kiezen',
-      whyChooseUsDesc: 'Decennia van expertise gecombineerd met geavanceerde veiligheidsnormen',
+
+      whyChooseUs: 'Waarom Kiezen voor Russo NV',
+      whyChooseUsDesc: 'Technische expertise gecombineerd met geavanceerde veiligheidsnormen',
+
       expertise: 'Expertise',
-      expertiseDesc: 'Drie decennia gespecialiseerde industriële coatingervaring',
+      expertiseDesc: 'Gespecialiseerde ervaring in industriële oppervlaktebehandeling en coatings',
+
       safety: 'Veiligheid Eerst',
-      safetyDesc: 'VCA en ISO gecertificeerd met zero-compromise veiligheidsprotocollen',
+      safetyDesc: 'VCA-conforme uitvoering met strikte veiligheidsprotocollen',
+
       quality: 'Kwaliteitsborging',
-      qualityDesc: 'Rigoureus testen en naleving van internationale normen',
+      qualityDesc: 'Strenge controles en naleving van industriële normen',
+
       reliability: 'Betrouwbaarheid',
-      reliabilityDesc: 'Consistente levering op tijd en volgens specificatie',
+      reliabilityDesc: 'Consistente uitvoering op tijd en volgens specificatie',
+
       recentProjects: 'Recente Projecten',
-      recentProjectsDesc: 'Onze expertise tonen in diverse industriële toepassingen',
+      recentProjectsDesc: 'Een selectie van projecten die onze expertise in diverse industriële toepassingen tonen',
+
       viewProject: 'Project Bekijken',
-      exploreMore: 'Meer Verkennen',
+      exploreMore: 'Meer Ontdekken',
+
       engineeringDurability: 'LEIDEND IN',
       durability: 'CORROSIEBESCHERMING',
+
       companyDescription: 'Russo NV is een toonaangevende specialist in industriële oppervlaktevoorbereiding en hoogwaardige beschermende coatings voor alle soorten industriële oppervlakken. Wij leveren geavanceerde straal- en coatingsoplossingen die kritische installaties beschermen tegen corrosie, slijtage en zware omgevingsinvloeden.',
+
       safetyFirstTitle: 'Veiligheid Eerst',
       safetyFirstDesc: 'Strikte naleving van VCA- en preventieprotocollen garandeert een veilige uitvoering, zelfs in risicovolle omgevingen.',
+
       ourExpertise: 'Onze Expertise',
-      coreServices: 'KERNSERVICES',
-      coreServicesDesc: 'Uitgebreide oppervlaktebehandelingsoplossingen op maat voor de meest veeleisende industriële omgevingen.',
+
+      coreServices: 'KERNDIENSTEN',
+      coreServicesDesc: 'Uitgebreide oplossingen voor oppervlaktebehandeling, afgestemd op de meest veeleisende industriële omgevingen.',
+
       viewAllServices: 'Alle Diensten Bekijken',
+
       industriesServed: 'BEDIENDE INDUSTRIEËN',
-      globalReach: 'WERELDWIJD BEREIK',
+      globalReach: 'WERKTERREIN',
       sectors: 'Sectoren',
       builtForHeavyIndustry: 'GEBOUWD VOOR ZWARE INDUSTRIE',
+
       featuredProject: 'Uitgelicht Project',
-      totalTankFarm: 'TOTALE TANKBOERDERIJ',
+      totalTankFarm: 'TOTALE TANKPARK',
       refurbishment: 'RENOVATIE',
       antwerpPort: 'HAVEN VAN ANTWERPEN',
-      duration18Months: 'Duur: 18 Maanden',
-      projectDescription: 'Grootschalig renovatieproject met abrasieve straling, primertoepassing en een multi-laags epoxyoxidebeschermingssysteem voor kritieke tankboerderijinfrastructuur in de haven van Antwerpen.',
+      duration18Months: 'Duur: 18 maanden',
+
+      projectDescription: 'Grootschalig renovatieproject met abrasief stralen, primertoepassing en een meerlaags epoxybeschermingssysteem voor kritieke tankparkinfrastructuur in de haven van Antwerpen.',
+
       scope: 'Omvang',
-      scopeDesc: 'Volledige abrasieve straling, primertoepassing en multi-laags epoxysysteem voor 12 opslagtanks.',
+      scopeDesc: 'Volledig abrasief straalwerk, primertoepassing en een meerlaags epoxysysteem voor 12 opslagtanks.',
+
       challenge: 'Uitdaging',
-      challengeDesc: 'Strikte milieucontroles en continue werking van aangrenzende faciliteiten.',
+      challengeDesc: 'Strikte milieueisen en continue werking van aangrenzende installaties.',
+
       viewCaseStudy: 'Casestudy Bekijken',
-      readyToMobilize: 'KLAAR OM IN TE ZETTEN?',
-      ctaDescription: 'Neem contact op met ons engineeringteam voor een gedetailleerd advies en offerte. We reageren op alle industriële vragen binnen 24 uur.',
+
+      readyToMobilize: 'KLAAR OM TE STARTEN?',
+      ctaDescription: 'Neem contact op met ons engineeringteam voor een gedetailleerd advies en offerte. Wij reageren op alle industriële aanvragen binnen 24 uur.',
+
       requestQuote: 'Offerte Aanvragen',
       callUsNow: 'Bel Ons Nu',
       scroll: 'Scroll',
