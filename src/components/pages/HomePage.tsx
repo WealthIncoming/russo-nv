@@ -33,6 +33,16 @@ const SERVICES_DATA = [
     titleKey: 'fireproofingTitle',
     descKey: 'fireproofingDesc',
     detailsKeys: ['passiveFireProtection', 'hydrocarbonFireDefense', 'thermalInsulation']
+  },
+  {
+  id: '05',
+  titleKey: 'industrialWaterproofingTitle',
+  descKey: 'industrialWaterproofingDesc',
+  detailsKeys: [
+    'bundContainmentSealing',
+    'tankFoundationWaterproofing',
+    'seamlessMembraneSystems'
+  ]
   }
 ];
 
