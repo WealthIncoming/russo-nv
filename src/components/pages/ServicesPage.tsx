@@ -39,7 +39,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="https://static.wixstatic.com/media/3232e5_9c963dcc60f34f52af898b723a8fc190~mv2.png?originWidth=1152&originHeight=640"
-            alt={t('servicesPage', 'heroImageAlt')}
+            alt={t('services', 'pageTitle')}
             className="w-full h-full object-cover"
             width={1920}
           />
@@ -53,17 +53,15 @@ export default function ServicesPage() {
             transition={{ duration: 0.8 }}
           >
             <span className="font-paragraph text-primary text-sm uppercase tracking-wider">
-              {t('servicesPage', 'heroEyebrow')}
+              {t('services', 'allServices')}
             </span>
 
             <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-white mt-4 mb-8 leading-none">
-              {t('servicesPage', 'heroTitleLine1')}
-              <br />
-              <span className="text-primary">{t('servicesPage', 'heroTitleLine2')}</span>
+              {t('services', 'pageTitle')}
             </h1>
 
             <p className="font-paragraph text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed">
-              {t('servicesPage', 'heroSubtitle')}
+              {t('services', 'pageSubtitle')}
             </p>
           </motion.div>
         </div>
@@ -79,7 +77,7 @@ export default function ServicesPage() {
           ) : services.length === 0 ? (
             <div className="text-center py-24 min-w-0">
               <p className="font-paragraph text-lg text-foreground/60 break-words">
-                {t('servicesPage', 'emptyState')}
+                {t('services', 'emptyState')}
               </p>
             </div>
           ) : (
@@ -105,7 +103,7 @@ export default function ServicesPage() {
                               service.serviceImage ||
                               'https://static.wixstatic.com/media/3232e5_361542816ae042acac6c1000f5ee8a72~mv2.png?originWidth=768&originHeight=448'
                             }
-                            alt={service.serviceName || t('servicesPage', 'defaultServiceImageAlt')}
+                            alt={service.serviceName || 'Industrial service'}
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             width={800}
                           />
@@ -140,7 +138,7 @@ export default function ServicesPage() {
                             {service.keyBenefits && (
                               <div className="border-t border-dark-grey/10 pt-6 min-w-0 w-full">
                                 <h3 className="font-heading text-lg sm:text-xl text-foreground mb-3 break-words">
-                                  {t('servicesPage', 'keyBenefits')}
+                                  {t('services', 'keyBenefits')}
                                 </h3>
                                 <p className="font-paragraph text-base text-foreground/70 leading-relaxed whitespace-pre-line break-words">
                                   {service.keyBenefits}
@@ -151,7 +149,7 @@ export default function ServicesPage() {
                             {service.processOverview && (
                               <div className="border-t border-dark-grey/10 pt-6 min-w-0 w-full">
                                 <h3 className="font-heading text-lg sm:text-xl text-foreground mb-3 break-words">
-                                  {t('servicesPage', 'processOverview')}
+                                  {t('services', 'processOverview')}
                                 </h3>
                                 <p className="font-paragraph text-base text-foreground/70 leading-relaxed whitespace-pre-line break-words">
                                   {service.processOverview}
@@ -162,7 +160,7 @@ export default function ServicesPage() {
                             {service.targetIndustries && (
                               <div className="border-t border-dark-grey/10 pt-6 min-w-0 w-full">
                                 <h3 className="font-heading text-sm uppercase tracking-widest text-foreground/50 mb-2 break-words">
-                                  {t('servicesPage', 'targetIndustries')}
+                                  {t('services', 'targetIndustries')}
                                 </h3>
                                 <p className="font-paragraph text-base text-foreground/70 break-words">
                                   {service.targetIndustries}
@@ -191,18 +189,18 @@ export default function ServicesPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight">
-              {t('servicesPage', 'ctaTitleLine1')}{' '}
-              <span className="text-primary">{t('servicesPage', 'ctaTitleHighlight')}</span>{' '}
-              {t('servicesPage', 'ctaTitleLine2')}
+              {t('services', 'ctaTitleLine1')}{' '}
+              <span className="text-primary">{t('services', 'ctaTitleHighlight')}</span>{' '}
+              {t('services', 'ctaTitleLine2')}
             </h2>
 
             <p className="font-paragraph text-lg text-white/80 max-w-2xl mx-auto mb-12">
-              {t('servicesPage', 'ctaDescription')}
+              {t('services', 'ctaDescription')}
             </p>
 
             <Link to="/contact">
               <button className="bg-primary text-primary-foreground font-paragraph font-bold uppercase px-8 py-4 hover:bg-primary/90 transition-colors inline-flex items-center gap-3 group">
-                {t('servicesPage', 'ctaButton')}
+                {t('services', 'learnMore')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
