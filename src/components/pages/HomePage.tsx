@@ -170,7 +170,7 @@ export default function HomePage() {
         }
       `}</style>
       <Header />
-{/* --- HERO SECTION --- */}
+      {/* --- HERO SECTION --- */}
       <section ref={heroRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center">
         {/* Background Parallax */}
         <motion.div style={{ y: heroY }} className="absolute inset-0 z-0">
@@ -187,7 +187,7 @@ export default function HomePage() {
         {/* Hero Content */}
         <motion.div
           style={{ opacity: heroOpacity }}
-          className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-12 flex flex-col justify-center h-full pt-20 overflow-hidden"
+          className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-12 flex flex-col justify-center h-full pt-20"
         >
           <div className="mb-8 md:border-l md:border-white/20 md:pl-12">
             <motion.div
@@ -203,7 +203,7 @@ export default function HomePage() {
               <span className="h-[1px] w-8 sm:w-16 bg-white/20" />
             </motion.div>
 
-            <div className="w-full max-w-full sm:max-w-[360px] md:max-w-[900px] mx-auto md:mx-0 overflow-hidden">
+            <div className="w-full max-w-full md:max-w-[900px] mx-auto md:mx-0">
               {/* Mobile title */}
               <h1
                 className="font-heading md:hidden leading-[0.88] font-black text-white uppercase tracking-[-0.03em] text-center"
@@ -258,9 +258,7 @@ export default function HomePage() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
                   className="block text-primary"
-                >
-                  SPECIALISTEN
-                </motion.span>
+                >SPECIALISTEN</motion.span>
               </h1>
             </div>
           </div>
@@ -341,7 +339,7 @@ export default function HomePage() {
           }
         `}</style>
       </div>
-{/* --- INTRO / STATS --- */}
+      {/* --- INTRO / STATS --- */}
       <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 xl:py-32 bg-dark-grey overflow-hidden">
         <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] 2xl:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] gap-10 xl:gap-12 2xl:gap-16 items-start">
 
@@ -476,7 +474,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-{/* --- FEATURED PROJECT --- */}
+      {/* --- FEATURED PROJECT --- */}
       <section className="relative w-full py-24 md:py-32 bg-black overflow-hidden">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-[0.72fr_1.28fr] xl:grid-cols-[0.78fr_1.22fr] 2xl:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-10 xl:gap-12 items-center">
