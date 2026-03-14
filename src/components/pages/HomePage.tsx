@@ -17,7 +17,7 @@ const SERVICES_DATA = [
     detailsKeys: [
       'airlessSpraying',
       'corrosionProtection',
-      'maintenancePainting'
+      'chemicalProtection'
     ]
   },
   {
