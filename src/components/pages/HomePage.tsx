@@ -474,7 +474,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      {/* --- FEATURED PROJECT --- */}
+{/* --- FEATURED PROJECT --- */}
       <section className="relative w-full py-24 md:py-32 bg-black overflow-hidden">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-[0.72fr_1.28fr] xl:grid-cols-[0.78fr_1.22fr] 2xl:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-10 xl:gap-12 items-center">
@@ -489,14 +489,14 @@ export default function HomePage() {
             </div>
 
             {/* Right Column: Text Content */}
-            <div className="flex flex-col justify-center min-w-0">
+            <div className="flex flex-col justify-center min-w-0 overflow-hidden">
               <SectionLabel text={t('home', 'featuredProject')} />
               <h2
                 className="font-heading text-white leading-[0.9] tracking-tight mb-8 w-full min-w-0 break-words sm:text-4xl md:text-5xl lg:text-[2.9rem] xl:text-[3.5rem] 2xl:text-[4.1rem]"
                 style={{ fontSize: 'clamp(2rem, 8vw, 3rem)' }}
               >
-                <span className="block sm:whitespace-nowrap">{t('home', 'totalTankFarm')}</span>
-                <span className="block text-primary tracking-[-0.02em] sm:whitespace-nowrap">
+                <span className="block">{t('home', 'totalTankFarm')}</span>
+                <span className="block text-primary tracking-[-0.02em]">
                   {t('home', 'refurbishment')}
                 </span>
               </h2>
