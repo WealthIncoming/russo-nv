@@ -399,7 +399,7 @@ export const translations: Record<Language, Translations> = {
       exploreMore: 'Meer Ontdekken',
 
       engineeringDurability: 'LEIDEND IN',
-      durability: "CORROSIEBESCHERMING",
+      durability: "CORROSIE\u00ADBESCHERMING",
 
       companyDescription: 'Russo NV is een toonaangevende specialist in industriële oppervlaktevoorbereiding en hoogwaardige beschermende coatings voor alle soorten industriële oppervlakken. Wij leveren geavanceerde straal- en coatingsoplossingen die kritische installaties beschermen tegen corrosie, slijtage en zware omgevingsinvloeden.',
 
