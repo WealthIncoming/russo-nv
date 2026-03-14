@@ -408,7 +408,7 @@ export default function HomePage() {
           <div className="text-center mb-24">
             <SectionLabel text={t('home', 'sectors')} align="center" />
             <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-tight">
-              BUILT FOR <span className="text-primary">ALL INDUSTRY</span>
+              {t('home', 'builtForHeavyIndustry')}
             </h2>
           </div>
 
