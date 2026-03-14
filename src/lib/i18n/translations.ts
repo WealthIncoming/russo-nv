@@ -417,6 +417,8 @@ export const translations: Record<Language, Translations> = {
       globalReach: 'WERKTERREIN',
       sectors: 'Sectoren',
       builtForHeavyIndustry: 'VOOR ALLE INDUSTRIËN',
+      builtFor: 'VOOR',
+      allIndustry: 'ALLE INDUSTRIËN',
 
       featuredProject: 'Uitgelicht Project',
       totalTankFarm: 'TOTALE TANKPARK',
