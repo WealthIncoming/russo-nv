@@ -165,7 +165,7 @@ export const translations: Record<Language, Translations> = {
       industriesServed: 'INDUSTRIES SERVED',
       globalReach: 'GLOBAL REACH',
       sectors: 'Sectors',
-      builtForHeavyIndustry: 'BUILT FOR HEAVY INDUSTRY',
+      builtForHeavyIndustry: 'BUILT FOR ALL INDUSTRY',
 
       featuredProject: 'Featured Project',
       totalTankFarm: 'TOTAL TANK FARM',
