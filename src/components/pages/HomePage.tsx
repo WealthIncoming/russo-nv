@@ -341,7 +341,7 @@ export default function HomePage() {
           }
         `}</style>
       </div>
-      {/* --- INTRO / STATS --- */}
+{/* --- INTRO / STATS --- */}
       <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 xl:py-32 bg-dark-grey overflow-hidden">
         <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] 2xl:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] gap-10 xl:gap-12 2xl:gap-16 items-start">
 
@@ -349,9 +349,12 @@ export default function HomePage() {
           <div className="relative min-w-0 w-full z-20">
             <SectionLabel text={t('home', 'companyProfile')} />
 
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl xl:text-[3.2rem] 2xl:text-[3.9rem] text-white leading-[0.9] tracking-tight mb-8 max-w-[9ch]">
-              <span className="block text-4xl">{t('home', 'engineeringDurability')}</span>
-              <span className="block text-white/30 text-4xl">{t('home', 'durability')}</span>
+            <h2
+              className="font-heading text-white leading-[0.9] tracking-tight mb-8 max-w-full break-words sm:text-4xl md:text-5xl xl:text-[3.2rem] 2xl:text-[3.9rem]"
+              style={{ fontSize: 'clamp(2rem, 8vw, 2.25rem)' }}
+            >
+              <span className="block">{t('home', 'engineeringDurability')}</span>
+              <span className="block text-white/30">{t('home', 'durability')}</span>
             </h2>
 
             <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-[56ch]">
@@ -413,9 +416,12 @@ export default function HomePage() {
               <div className="xl:sticky xl:top-32 w-full max-w-full xl:max-w-[30rem] 2xl:max-w-[34rem]">
                 <SectionLabel text={t('home', 'ourExpertise')} />
 
-                <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[clamp(3.8rem,5vw,5.6rem)] 2xl:text-[clamp(4.5rem,5vw,6.2rem)] leading-[0.92] tracking-tight text-white mb-8 max-w-full">
-                  <span className="block whitespace-nowrap text-5xl">{t('home', 'coreServices').split(' ')[0]}</span>
-                  <span className="block text-primary whitespace-nowrap">{t('home', 'coreServices').split(' ')[1]}</span>
+                <h2
+                  className="font-heading leading-[0.92] tracking-tight text-white mb-8 max-w-full break-words sm:text-4xl md:text-5xl lg:text-6xl xl:text-[clamp(3.8rem,5vw,5.6rem)] 2xl:text-[clamp(4.5rem,5vw,6.2rem)]"
+                  style={{ fontSize: 'clamp(2.2rem, 8vw, 3rem)' }}
+                >
+                  <span className="block sm:whitespace-nowrap">{t('home', 'coreServices').split(' ')[0]}</span>
+                  <span className="block text-primary sm:whitespace-nowrap">{t('home', 'coreServices').split(' ')[1]}</span>
                 </h2>
 
                 <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-12 max-w-[32rem]">
@@ -470,8 +476,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      {/* --- FEATURED PROJECT --- */}
-      <section className="relative w-full py-24 md:py-32 bg-black">
+{/* --- FEATURED PROJECT --- */}
+      <section className="relative w-full py-24 md:py-32 bg-black overflow-hidden">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-[0.72fr_1.28fr] xl:grid-cols-[0.78fr_1.22fr] 2xl:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-10 xl:gap-12 items-center">
             {/* Left Column: Image */}
@@ -487,9 +493,12 @@ export default function HomePage() {
             {/* Right Column: Text Content */}
             <div className="flex flex-col justify-center min-w-0">
               <SectionLabel text={t('home', 'featuredProject')} />
-              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[2.9rem] xl:text-[3.5rem] 2xl:text-[4.1rem] text-white leading-[0.9] tracking-tight mb-8 w-full min-w-0">
-                <span className="block text-5xl">{t('home', 'totalTankFarm')}</span>
-                <span className="block text-primary tracking-[-0.02em] text-5xl">
+              <h2
+                className="font-heading text-white leading-[0.9] tracking-tight mb-8 w-full min-w-0 break-words sm:text-4xl md:text-5xl lg:text-[2.9rem] xl:text-[3.5rem] 2xl:text-[4.1rem]"
+                style={{ fontSize: 'clamp(2rem, 8vw, 3rem)' }}
+              >
+                <span className="block sm:whitespace-nowrap">{t('home', 'totalTankFarm')}</span>
+                <span className="block text-primary tracking-[-0.02em] sm:whitespace-nowrap">
                   {t('home', 'refurbishment')}
                 </span>
               </h2>
