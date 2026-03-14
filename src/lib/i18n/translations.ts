@@ -436,7 +436,7 @@ export const translations: Record<Language, Translations> = {
 
       viewCaseStudy: 'Casestudy Bekijken',
 
-      readyToMobilize: 'KLAAR OM TE STARTEN?',
+      readyToMobilize: 'KLAAR OM TE STARTEN',
       ctaDescription: 'Neem contact op met ons engineeringteam voor een gedetailleerd advies en offerte. Wij reageren op alle industriële aanvragen binnen 24 uur.',
 
       requestQuote: 'Offerte Aanvragen',
