@@ -88,7 +88,7 @@ export const translations: Record<Language, Translations> = {
 
       airlessSpraying: 'Airless Spraying',
       corrosionProtection: 'Corrosion Protection',
-      maintenancePainting: 'Maintenance Painting',
+      chemicalProtection: 'Chemical Protection',
 
       bundContainmentSealing: 'Bund & Containment Sealing',
       tankFoundationWaterproofing: 'Tank Foundation Waterproofing',
@@ -337,7 +337,7 @@ export const translations: Record<Language, Translations> = {
 
       airlessSpraying: 'Airless Spuiten',
       corrosionProtection: 'Corrosiebescherming',
-      maintenancePainting: 'Onderhoudsschilderwerk',
+      chemicalProtection: 'Chemische Bescherming',
 
       bundContainmentSealing: 'Afdichting van Bunds en Opvangzones',
       tankFoundationWaterproofing: 'Waterdichting van Tankfunderingen',
