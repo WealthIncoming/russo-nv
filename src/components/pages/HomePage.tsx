@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 // --- Canonical Data Sources ---
 const SERVICES_DATA = [
   {
-    id: '04',
+    id: '01',
     titleKey: 'industrialPaintingTitle',
     descKey: 'industrialPaintingDesc',
     detailsKeys: [
@@ -21,13 +21,13 @@ const SERVICES_DATA = [
     ]
   },
   {
-    id: '03',
+    id: '02',
     titleKey: 'protectiveCoatingsTitle',
     descKey: 'protectiveCoatingsDesc',
     detailsKeys: ['antiCorrosionSystems', 'chemicalResistance', 'uvProtection']
   },
   {
-    id: '01',
+    id: '03',
     titleKey: 'sandblastingTitle',
     descKey: 'sandblastingDesc',
     detailsKeys: ['surfaceProfileCreation', 'rustScaleRemoval', 'contaminantElimination']
