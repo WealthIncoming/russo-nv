@@ -187,22 +187,27 @@ export default function HomePage() {
         {/* Hero Content */}
         <motion.div
           style={{ opacity: heroOpacity }}
-          className="relative z-10 w-full max-w-[120rem] mx-auto px-6 md:px-12 flex flex-col justify-center h-full pt-20"
+          className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-12 flex flex-col justify-center h-full pt-20"
         >
           <div className="md:border-l md:border-white/20 md:pl-12 mb-8">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-4"
+              className="flex flex-wrap items-center justify-center md:justify-start gap-2 sm:gap-4 mb-4"
             >
-              <span className="font-paragraph text-primary font-bold tracking-widest text-sm uppercase">EST. 1984</span>
-              <span className="h-[1px] w-16 bg-white/20" />
-              <span className="font-paragraph text-white/60 text-sm uppercase tracking-widest">Antwerpen, België</span>
+              <span className="font-paragraph text-primary font-bold tracking-[0.2em] text-[10px] sm:text-sm uppercase">
+                EST. 1984
+              </span>
+              <span className="h-[1px] w-8 sm:w-16 bg-white/20" />
+              <span className="font-paragraph text-white/60 text-[10px] sm:text-sm uppercase tracking-[0.2em]">
+                Antwerpen, België
+              </span>
             </motion.div>
 
             <div className="max-w-full md:max-w-[900px]">
-              <h1 className="font-heading text-[clamp(2.4rem,11vw,4.75rem)] md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] md:leading-[0.85] font-black text-white uppercase tracking-tight md:tracking-tighter text-center md:text-left">
+              {/* Mobile title */}
+              <h1 className="font-heading md:hidden text-[clamp(2.1rem,9vw,3.4rem)] leading-[0.9] font-black text-white uppercase tracking-tight text-center">
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -223,9 +228,37 @@ export default function HomePage() {
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
-                  className="block text-primary text-[0.78em] sm:text-[0.85em] md:text-[1em]"
+                  className="block text-primary text-[0.9em]"
                 >
                   Specialisten
+                </motion.span>
+              </h1>
+
+              {/* Desktop title */}
+              <h1 className="hidden md:block font-heading text-6xl lg:text-7xl xl:text-8xl leading-[0.85] font-black text-white uppercase tracking-tighter text-left">
+                <motion.span
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
+                  className="block"
+                >
+                  Industriële
+                </motion.span>
+                <motion.span
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.1, ease: [0.215, 0.61, 0.355, 1] }}
+                  className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50"
+                >
+                  Coating
+                </motion.span>
+                <motion.span
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
+                  className="block text-primary"
+                >
+                  SPECIALISTEN
                 </motion.span>
               </h1>
             </div>
@@ -235,22 +268,33 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-8 md:pl-12 max-w-4xl w-full"
+            className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-6 md:gap-8 md:pl-12 max-w-4xl w-full"
           >
             <div className="flex-1 min-w-0 text-center md:text-left">
-              <p className="font-paragraph text-white/70 text-lg leading-relaxed max-w-xl">
+              <p className="font-paragraph text-white/70 text-base sm:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
                 {t('home', 'heroSubtitle')}
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0 justify-center md:justify-start">
-              <Link to="/contact" className="group relative overflow-hidden bg-primary px-8 py-4 flex items-center gap-3 whitespace-nowrap">
-                <span className="relative z-10 font-paragraph font-bold uppercase text-white text-sm tracking-wider">{t('home', 'heroCtaMain')}</span>
+            <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0 justify-center md:justify-start w-full sm:w-auto">
+              <Link
+                to="/contact"
+                className="group relative overflow-hidden bg-primary px-6 sm:px-8 py-4 flex items-center justify-center gap-3 whitespace-nowrap"
+              >
+                <span className="relative z-10 font-paragraph font-bold uppercase text-white text-sm tracking-wider">
+                  {t('home', 'heroCtaMain')}
+                </span>
                 <ArrowRight className="relative z-10 w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out mix-blend-overlay" />
               </Link>
-              <Link to="/projects" className="group px-8 py-4 border border-white/30 hover:border-white transition-colors flex items-center gap-3 whitespace-nowrap">
-                <span className="font-paragraph font-bold uppercase text-white text-sm tracking-wider">{t('home', 'heroCtaSecondary')}</span>
+
+              <Link
+                to="/projects"
+                className="group px-6 sm:px-8 py-4 border border-white/30 hover:border-white transition-colors flex items-center justify-center gap-3 whitespace-nowrap"
+              >
+                <span className="font-paragraph font-bold uppercase text-white text-sm tracking-wider">
+                  {t('home', 'heroCtaSecondary')}
+                </span>
               </Link>
             </div>
           </motion.div>
