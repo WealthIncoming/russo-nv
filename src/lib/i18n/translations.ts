@@ -567,6 +567,8 @@ export const translations: Record<Language, Translations> = {
       keyBenefits: 'Belangrijkste Voordelen',
       processOverview: 'Procesoverzicht',
       targetIndustries: 'Doelindustrieën',
+      heroLine1: 'Industriële',
+      heroLine2: 'Diensten',
       learnMore: 'Meer Informatie',
       emptyState: 'Er zijn momenteel geen diensten beschikbaar.',
       ctaTitleLine1: 'EEN',
