@@ -234,6 +234,8 @@ export const translations: Record<Language, Translations> = {
         'Utilizing state-of-the-art high-pressure water jetting technology, we offer efficient and environmentally friendly solutions for industrial cleaning, surface preparation, and material removal. This method is ideal for descaling, paint stripping, concrete hydro-demolition, and cleaning heat exchangers, tanks, and pipelines, providing a powerful yet non-abrasive alternative to traditional methods.',
       hpwjKeyBenefits:
         'Environmentally friendly (no chemicals), non-damaging to substrates, highly effective for stubborn deposits, precise cleaning, reduces dust and debris, safe for hazardous environments.',
+      heroLine1: 'Industrial',
+      heroLine2: 'Services',
       hpwjProcessOverview:
         'Safety setup and containment, selection of appropriate pressure and nozzle type, controlled water jetting application, debris collection and disposal, post-cleaning inspection.',
       hpwjTargetIndustries:
