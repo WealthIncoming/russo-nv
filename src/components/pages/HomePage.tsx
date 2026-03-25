@@ -242,7 +242,7 @@ export default function HomePage() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
                   className="block"
-                >Industriële</motion.span>
+                >Industriëlee</motion.span>
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -475,7 +475,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* --- FEATURED PROJECT --- */}
-      <section className="relative w-full py-24 md:py-32 bg-black overflow-hidden">
+      <section className="relative w-full py-24 md:py-32 bg-black">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-[0.72fr_1.28fr] xl:grid-cols-[0.78fr_1.22fr] 2xl:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-10 xl:gap-12 items-center">
             {/* Left Column: Image */}
@@ -491,12 +491,9 @@ export default function HomePage() {
             {/* Right Column: Text Content */}
             <div className="flex flex-col justify-center min-w-0">
               <SectionLabel text={t('home', 'featuredProject')} />
-              <h2
-                className="font-heading text-white leading-[0.9] tracking-tight mb-8 w-full min-w-0 break-words sm:text-4xl md:text-5xl lg:text-[2.9rem] xl:text-[3.5rem] 2xl:text-[4.1rem]"
-                style={{ fontSize: 'clamp(2rem, 8vw, 3rem)' }}
-              >
-                <span className="block sm:whitespace-nowrap">{t('home', 'totalTankFarm')}</span>
-                <span className="block text-primary tracking-[-0.02em] sm:whitespace-nowrap">
+              <h2 className="font-heading text-white leading-[0.9] tracking-tight mb-8 w-full min-w-0" style={{ fontSize: 'min(3.5rem, 5.5vw)' }}>
+                <span className="block">{t('home', 'totalTankFarm')}</span>
+                <span className="block text-primary tracking-[-0.02em]">
                   {t('home', 'refurbishment')}
                 </span>
               </h2>
