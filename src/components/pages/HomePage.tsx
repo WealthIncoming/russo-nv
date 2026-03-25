@@ -491,7 +491,7 @@ export default function HomePage() {
             {/* Right Column: Text Content */}
             <div className="flex flex-col justify-center min-w-0">
               <SectionLabel text={t('home', 'featuredProject')} />
-              <h2 className="font-heading text-white leading-[0.9] tracking-tight mb-8 w-full min-w-0" style={{ fontSize: 'min(3.5rem, 5.5vw)' }}>
+              <h2 className="font-heading text-white leading-[0.9] tracking-tight mb-8 w-full min-w-0 uppercase" style={{ fontSize: 'min(4.5rem, 7vw)' }}>
                 <span className="block">{t('home', 'totalTankFarm')}</span>
                 <span className="block text-primary tracking-[-0.02em]">
                   {t('home', 'refurbishment')}
