@@ -170,7 +170,7 @@ export default function HomePage() {
         }
       `}</style>
       <Header />
-{/* --- HERO SECTION --- */}
+      {/* --- HERO SECTION --- */}
       <section ref={heroRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center">
         {/* Background Parallax */}
         <motion.div style={{ y: heroY }} className="absolute inset-0 z-0">
@@ -242,9 +242,7 @@ export default function HomePage() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
                   className="block"
-                >
-                  Industriële
-                </motion.span>
+                >Industriële</motion.span>
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -341,7 +339,7 @@ export default function HomePage() {
           }
         `}</style>
       </div>
-{/* --- INTRO / STATS --- */}
+      {/* --- INTRO / STATS --- */}
       <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 xl:py-32 bg-dark-grey overflow-hidden">
         <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] 2xl:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] gap-10 xl:gap-12 2xl:gap-16 items-start">
 
@@ -476,7 +474,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-{/* --- FEATURED PROJECT --- */}
+      {/* --- FEATURED PROJECT --- */}
       <section className="relative w-full py-24 md:py-32 bg-black overflow-hidden">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-[0.72fr_1.28fr] xl:grid-cols-[0.78fr_1.22fr] 2xl:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-10 xl:gap-12 items-center">
