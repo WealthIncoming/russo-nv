@@ -1,19 +1,46 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Calendar, MapPin, ArrowRight } from 'lucide-react';
-import { Image } from '@/components/ui/image';
-import { BaseCrudService } from '@/integrations';
-import { ProjectPortfolio } from '@/entities';
-import { useLanguageStore } from '@/lib/i18n/useLanguage';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import { Image } from '@/components/ui/image';
+import { ProjectPortfolio } from '@/entities';
+import { BaseCrudService } from '@/integrations';
+import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { format } from 'date-fns';
+import { nl } from 'date-fns/locale';
+import { motion } from 'framer-motion';
+import { ArrowRight, Calendar, MapPin } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
+// =============================================================================
+// MAPPING — Connect each CMS project to its translation key prefix.
+// =============================================================================
+const PROJECT_TRANSLATION_MAP: Record<string, string> = {
+  'highway bridge': 'bridge',
+  'pipeline': 'pipeline',
+  'water treatment': 'water',
+  'refinery': 'refinery',
+  'storage tank': 'tank',
+  'steel structure': 'steel',
+};
+
+// =============================================================================
+// HELPER — Find the translation prefix for a given project title.
+// =============================================================================
+function getTranslationPrefix(projectTitle: string | undefined): string | null {
+  if (!projectTitle) return null;
+  const lowerTitle = projectTitle.toLowerCase();
+  for (const [keyword, prefix] of Object.entries(PROJECT_TRANSLATION_MAP)) {
+    if (lowerTitle.includes(keyword)) {
+      return prefix;
+    }
+  }
+  return null;
+}
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<ProjectPortfolio[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { t } = useLanguageStore();
+  const { t, language } = useLanguageStore();
 
   useEffect(() => {
     loadProjects();
@@ -30,10 +57,31 @@ export default function ProjectsPage() {
     }
   };
 
+  // =============================================================================
+  // HELPER — Get translated text for a project field.
+  // =============================================================================
+  const getProjectText = (
+    project: ProjectPortfolio,
+    field: string,
+    fallback: string | undefined
+  ): string => {
+    if (language === 'EN') return fallback || '';
+    const prefix = getTranslationPrefix(project.projectTitle);
+    if (!prefix) return fallback || '';
+    const translationKey = `${prefix}${field}`;
+    const translated = t('projectsCms', translationKey);
+    return translated !== translationKey ? translated : (fallback || '');
+  };
+
+  // =============================================================================
+  // Format date with language-aware locale
+  // =============================================================================
   const formatDate = (date: Date | string | undefined) => {
     if (!date) return 'N/A';
     try {
-      return format(new Date(date), 'MMMM yyyy');
+      return format(new Date(date), 'MMMM yyyy', {
+        locale: language === 'NL' ? nl : undefined,
+      });
     } catch {
       return 'N/A';
     }
@@ -61,13 +109,15 @@ export default function ProjectsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="font-paragraph text-primary text-sm uppercase tracking-wider">Our Work</span>
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-white mt-4 mb-8 leading-none">
-              PROJECT<br />
-              <span className="text-primary">PORTFOLIO</span>
+            <span className="font-paragraph text-primary text-sm uppercase tracking-wider">
+              {t('projects', 'heroLabel')}
+            </span>
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-white mt-4 mb-8 leading-none uppercase">
+              {t('projects', 'heroLine1')}<br />
+              <span className="text-primary">{t('projects', 'heroLine2')}</span>
             </h1>
             <p className="font-paragraph text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed">
-              Showcasing our expertise in large-scale industrial coating projects across multiple sectors and countries
+              {t('projects', 'heroDescription')}
             </p>
           </motion.div>
         </div>
@@ -78,7 +128,9 @@ export default function ProjectsPage() {
         <div className="min-h-[400px]">
           {isLoading ? null : projects.length === 0 ? (
             <div className="text-center py-32">
-              <p className="font-paragraph text-lg text-foreground/60">No projects available at the moment.</p>
+              <p className="font-paragraph text-lg text-foreground/60">
+                {t('projects', 'emptyState')}
+              </p>
             </div>
           ) : (
             <div className="space-y-24">
@@ -123,25 +175,27 @@ export default function ProjectsPage() {
                     <div className="lg:col-span-8">
                       <div className="border-l-4 border-primary pl-8 mb-6">
                         <h2 className="font-heading text-4xl md:text-5xl text-foreground mb-4">
-                          {project.projectTitle}
+                          {getProjectText(project, 'Title', project.projectTitle)}
                         </h2>
                       </div>
 
                       <p className="font-paragraph text-lg text-foreground/80 leading-relaxed mb-8">
-                        {project.projectDescription}
+                        {getProjectText(project, 'Description', project.projectDescription)}
                       </p>
                     </div>
 
                     <div className="lg:col-span-4">
                       <div className="bg-dark-grey/5 border-l-4 border-primary p-8 space-y-6">
                         <div>
-                          <h3 className="font-heading text-xl text-foreground mb-4">Project Details</h3>
+                          <h3 className="font-heading text-xl text-foreground mb-4">
+                            {t('projects', 'projectDetails')}
+                          </h3>
                         </div>
 
                         {project.clientName && (
                           <div>
                             <div className="font-paragraph text-sm text-foreground/60 uppercase tracking-wider mb-2">
-                              Client
+                              {t('projects', 'clientName')}
                             </div>
                             <div className="font-paragraph text-base text-foreground font-bold">
                               {project.clientName}
@@ -154,7 +208,7 @@ export default function ProjectsPage() {
                             <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                             <div>
                               <div className="font-paragraph text-sm text-foreground/60 uppercase tracking-wider mb-2">
-                                Location
+                                {t('projects', 'location')}
                               </div>
                               <div className="font-paragraph text-base text-foreground">
                                 {project.projectLocation}
@@ -168,7 +222,7 @@ export default function ProjectsPage() {
                             <Calendar className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                             <div>
                               <div className="font-paragraph text-sm text-foreground/60 uppercase tracking-wider mb-2">
-                                Completed
+                                {t('projects', 'completionDate')}
                               </div>
                               <div className="font-paragraph text-base text-foreground">
                                 {formatDate(project.completionDate)}
@@ -199,16 +253,16 @@ export default function ProjectsPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight">
-              START YOUR<br />
-              <span className="text-primary">NEXT PROJECT</span>
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight uppercase">
+              {t('projects', 'ctaTitleLine1')}<br />
+              <span className="text-primary">{t('projects', 'ctaTitleHighlight')}</span>
             </h2>
             <p className="font-paragraph text-lg text-white/80 max-w-2xl mx-auto mb-12">
-              Let us bring the same level of expertise and quality to your industrial coating needs
+              {t('projects', 'ctaDescription')}
             </p>
             <Link to="/contact">
               <button className="bg-primary text-primary-foreground font-paragraph font-bold uppercase px-8 py-4 hover:bg-primary/90 transition-colors inline-flex items-center gap-3 group">
-                Request Quote
+                {t('projects', 'ctaButton')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>

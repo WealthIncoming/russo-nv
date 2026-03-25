@@ -225,6 +225,8 @@ export const translations: Record<Language, Translations> = {
       ctaTitleLine2: 'SOLUTION?',
       ctaDescription:
         'Our team can develop tailored coating solutions for your specific industrial requirements',
+      heroLine1: 'Industrial',
+      heroLine2: 'Services',
     },
 
     // Services CMS Content
@@ -234,8 +236,6 @@ export const translations: Record<Language, Translations> = {
         'Utilizing state-of-the-art high-pressure water jetting technology, we offer efficient and environmentally friendly solutions for industrial cleaning, surface preparation, and material removal. This method is ideal for descaling, paint stripping, concrete hydro-demolition, and cleaning heat exchangers, tanks, and pipelines, providing a powerful yet non-abrasive alternative to traditional methods.',
       hpwjKeyBenefits:
         'Environmentally friendly (no chemicals), non-damaging to substrates, highly effective for stubborn deposits, precise cleaning, reduces dust and debris, safe for hazardous environments.',
-      heroLine1: 'Industrial',
-      heroLine2: 'Services',
       hpwjProcessOverview:
         'Safety setup and containment, selection of appropriate pressure and nozzle type, controlled water jetting application, debris collection and disposal, post-cleaning inspection.',
       hpwjTargetIndustries:
@@ -296,11 +296,73 @@ export const translations: Record<Language, Translations> = {
     industries: {
       pageTitle: 'Industries Served',
       pageSubtitle: 'Specialized solutions across diverse industrial sectors',
+      heroLabel: 'Our Reach',
+      heroLine1: 'Industries',
+      heroLine2: 'We Serve',
+      heroDescription: 'Trusted by major industrial sectors across Belgium, Netherlands, France, Germany, and Luxembourg',
       industryOverview: 'Industry Overview',
-      workDescription: 'Work Description',
+      workDescription: 'Our Work',
       keyServices: 'Key Services',
       typicalClients: 'Typical Clients',
       learnMore: 'Learn More',
+      emptyState: 'No industries information available at the moment.',
+      coverageTitleLine1: 'International',
+      coverageTitleHighlight: 'Coverage',
+      coverageDescription: 'Operating across five countries with local expertise and international standards',
+      ctaTitleLine1: 'Your Industry',
+      ctaTitleHighlight: 'Our Expertise',
+      ctaDescription: 'Contact us to discuss how we can support your industrial coating needs',
+      ctaButton: 'Get In Touch',
+      countryBelgium: 'Belgium',
+      countryNetherlands: 'Netherlands',
+      countryFrance: 'France',
+      countryGermany: 'Germany',
+      countryLuxembourg: 'Luxembourg',
+    },
+
+    // Industries CMS Content
+    industriesCms: {
+      marineTitle: 'Marine & Offshore',
+      marineOverview: 'The marine and offshore sector requires robust protection against saltwater corrosion, abrasion, and harsh weather. Our specialized coatings ensure the integrity and longevity of vessels and offshore structures.',
+      marineWorkDescription: 'Our services include coating ship hulls, decks, ballast tanks, offshore rigs, and port infrastructure. We utilize advanced anti-fouling coatings, marine epoxies, and tank linings, coupled with ultra-high pressure (UHP) water blasting for superior surface preparation.',
+      marineKeyServices: 'Anti-fouling coatings, marine epoxies, ballast tank linings, cargo tank coatings, UHP water blasting, surface preparation to NACE/SSPC standards, deck coatings, splash zone protection.',
+      marineTypicalClients: 'Shipyards, commercial shipping companies, offshore drilling companies, port authorities, naval vessels, ferry operators.',
+
+      foodTitle: 'Food & Beverage',
+      foodOverview: 'Maintaining hygienic, safe, and durable surfaces is paramount in the food and beverage industry. Our coatings comply with strict regulatory standards, preventing contamination and ensuring operational efficiency.',
+      foodWorkDescription: 'We apply FDA-compliant and USDA-approved coatings for floors, walls, ceilings, and processing equipment. Our services focus on creating seamless, easy-to-clean, and chemical-resistant surfaces that withstand frequent washdowns and heavy traffic.',
+      foodKeyServices: 'Seamless epoxy flooring systems, antimicrobial coatings, USDA-approved coatings, high-build urethanes, concrete polishing, wall and ceiling coatings, non-slip safety surfaces.',
+      foodTypicalClients: 'Dairies, breweries, meat processing plants, bakeries, bottling facilities, commercial kitchens, food storage warehouses.',
+
+      powerTitle: 'Power Generation',
+      powerOverview: 'Power plants face unique challenges from extreme temperatures, corrosive chemicals, and constant operational demands. Our protective coatings safeguard critical assets, ensuring reliability and extending service life.',
+      powerWorkDescription: 'We provide specialized coating solutions for turbines, cooling towers, structural steel, containment areas, stacks, and other vital components. Our work includes high-temperature coatings, corrosion under insulation (CUI) mitigation, and concrete repair.',
+      powerKeyServices: 'High-temperature coatings, CUI solutions, protective linings, concrete repair and coatings, lead abatement, abrasive blasting, stack coatings, cooling tower coatings.',
+      powerTypicalClients: 'Coal-fired power plants, nuclear power plants, natural gas power plants, renewable energy facilities (wind, solar), hydroelectric dams.',
+
+      manufacturingTitle: 'Manufacturing & Industrial',
+      manufacturingOverview: 'Manufacturing facilities require durable, safe, and aesthetically pleasing surfaces to support continuous operations. Our industrial coatings enhance safety, improve efficiency, and protect valuable assets.',
+      manufacturingWorkDescription: 'We offer a wide range of services including heavy-duty floor coatings, machinery painting, structural steel protection, safety line striping, and specialized equipment coatings. Our solutions are designed to withstand heavy traffic, chemical spills, and mechanical wear.',
+      manufacturingKeyServices: 'Heavy-duty epoxy floor systems, chemical-resistant coatings, anti-slip coatings, machinery repainting, structural steel coatings, abrasive blasting, safety line striping, concrete sealing.',
+      manufacturingTypicalClients: 'Automotive plants, heavy machinery manufacturers, general fabrication shops, warehouses, assembly plants, aerospace facilities.',
+
+      oilgasTitle: 'Oil & Gas',
+      oilgasOverview: 'Operating in some of the harshest environments, the oil and gas sector requires superior protection against corrosion, abrasion, and fire. Our solutions extend asset life and enhance operational safety.',
+      oilgasWorkDescription: 'Our team provides comprehensive coating and surface preparation services for pipelines, storage tanks, offshore platforms, refineries, and processing facilities. This includes anti-corrosion systems, fireproofing, and insulation coatings designed for extreme conditions.',
+      oilgasKeyServices: 'Anti-corrosion coatings, passive fire protection (PFP), thermal insulation coatings, pipeline coatings, abrasive blasting (SSPC standards), tank lining and exterior coating, lead abatement.',
+      oilgasTypicalClients: 'Refineries, offshore drilling platforms, pipeline operators, gas processing plants, storage terminal facilities.',
+
+      chemicalTitle: 'Chemical Processing',
+      chemicalOverview: 'The chemical processing industry demands robust protective coatings to withstand highly corrosive environments, extreme temperatures, and constant chemical exposure. Our services ensure the longevity and safety of critical infrastructure.',
+      chemicalWorkDescription: 'We specialize in applying advanced chemical-resistant coatings and linings to tanks, vessels, secondary containment areas, structural steel, and process equipment. Our work includes surface preparation to stringent standards, ensuring maximum adhesion and performance of specialized coating systems.',
+      chemicalKeyServices: 'Acid-resistant coatings, epoxy tank linings, urethane coatings, secondary containment solutions, abrasive blasting, high-pressure water jetting, concrete restoration.',
+      chemicalTypicalClients: 'Petrochemical plants, fertilizer manufacturers, specialty chemical producers, pharmaceutical facilities, industrial gas suppliers.',
+
+      waterTitle: 'Water & Wastewater Treatment',
+      waterOverview: 'Water and wastewater treatment facilities are constantly exposed to corrosive chemicals, abrasion, and moisture. Our protective coatings are essential for maintaining structural integrity and preventing leaks.',
+      waterWorkDescription: 'We specialize in lining clarifiers, digesters, tanks, sumps, and protecting structural components from the harsh conditions prevalent in these environments. Our work ensures long-term performance and compliance with environmental regulations.',
+      waterKeyServices: 'Chemical-resistant linings, epoxy coatings, urethane coatings, concrete restoration, containment coatings, secondary containment linings, abrasive blasting, manhole rehabilitation.',
+      waterTypicalClients: 'Municipal water treatment plants, industrial wastewater facilities, sewage treatment plants, storm water management facilities, pumping stations.',
     },
 
     // Projects Page
@@ -645,11 +707,73 @@ export const translations: Record<Language, Translations> = {
     industries: {
       pageTitle: 'Bediende Industrieën',
       pageSubtitle: 'Gespecialiseerde oplossingen in diverse industriële sectoren',
+      heroLabel: 'Ons Bereik',
+      heroLine1: 'Industrieën',
+      heroLine2: 'Die Wij Bedienen',
+      heroDescription: 'Vertrouwd door grote industriële sectoren in België, Nederland, Frankrijk, Duitsland en Luxemburg',
       industryOverview: 'Industrieoverzicht',
-      workDescription: 'Werkbeschrijving',
+      workDescription: 'Ons Werk',
       keyServices: 'Belangrijkste Diensten',
       typicalClients: 'Typische Klanten',
       learnMore: 'Meer Informatie',
+      emptyState: 'Er is momenteel geen informatie over industrieën beschikbaar.',
+      coverageTitleLine1: 'Internationaal',
+      coverageTitleHighlight: 'Bereik',
+      coverageDescription: 'Actief in vijf landen met lokale expertise en internationale normen',
+      ctaTitleLine1: 'Uw Industrie',
+      ctaTitleHighlight: 'Onze Expertise',
+      ctaDescription: 'Neem contact met ons op om te bespreken hoe wij uw industriële coatingbehoeften kunnen ondersteunen',
+      ctaButton: 'Neem Contact Op',
+      countryBelgium: 'België',
+      countryNetherlands: 'Nederland',
+      countryFrance: 'Frankrijk',
+      countryGermany: 'Duitsland',
+      countryLuxembourg: 'Luxemburg',
+    },
+
+    // Industries CMS Content
+    industriesCms: {
+      marineTitle: 'Maritiem & Offshore',
+      marineOverview: 'De maritieme en offshore sector vereist robuuste bescherming tegen zoutwatercorrosie, slijtage en extreme weersomstandigheden. Onze gespecialiseerde coatings garanderen de integriteit en levensduur van schepen en offshore constructies.',
+      marineWorkDescription: 'Onze diensten omvatten het coaten van scheepsrompen, dekken, ballasttanks, offshore platforms en haveninfrastructuur. Wij gebruiken geavanceerde aangroeiwerende coatings, maritieme epoxy\'s en tanklinings, gecombineerd met ultrahoge druk (UHP) waterstralen voor een optimale oppervlaktevoorbereiding.',
+      marineKeyServices: 'Aangroeiwerende coatings, maritieme epoxy\'s, ballasttanklinings, vrachtruimcoatings, UHP waterstralen, oppervlaktevoorbereiding volgens NACE/SSPC-normen, dekcoatings, spatzonebescherming.',
+      marineTypicalClients: 'Scheepswerven, commerciële rederijen, offshore boorbedrijven, havenautoriteiten, marineschepen, ferrymaatschappijen.',
+
+      foodTitle: 'Voeding & Dranken',
+      foodOverview: 'Het handhaven van hygiënische, veilige en duurzame oppervlakken is essentieel in de voedings- en drankenindustrie. Onze coatings voldoen aan strenge regelgeving, voorkomen besmetting en garanderen operationele efficiëntie.',
+      foodWorkDescription: 'Wij brengen FDA-conforme en USDA-goedgekeurde coatings aan op vloeren, wanden, plafonds en verwerkingsapparatuur. Onze diensten richten zich op het creëren van naadloze, makkelijk te reinigen en chemisch bestendige oppervlakken die bestand zijn tegen frequente reiniging en zwaar verkeer.',
+      foodKeyServices: 'Naadloze epoxyvloersystemen, antimicrobiële coatings, USDA-goedgekeurde coatings, diklaags urethanen, betonpolijsting, wand- en plafondcoatings, antislipvloeren.',
+      foodTypicalClients: 'Zuivelfabrieken, brouwerijen, vleesverwerkingsbedrijven, bakkerijen, bottelarijen, grootkeukens, voedselopslagmagazijnen.',
+
+      powerTitle: 'Energieopwekking',
+      powerOverview: 'Energiecentrales worden geconfronteerd met unieke uitdagingen door extreme temperaturen, corrosieve chemicaliën en constante operationele eisen. Onze beschermende coatings waarborgen kritieke installaties en verlengen de levensduur.',
+      powerWorkDescription: 'Wij leveren gespecialiseerde coatingoplossingen voor turbines, koeltorens, constructiestaal, opvangzones, schoorstenen en andere vitale onderdelen. Ons werk omvat hogetemperatuurcoatings, bestrijding van corrosie onder isolatie (CUI) en betonherstel.',
+      powerKeyServices: 'Hogetemperatuurcoatings, CUI-oplossingen, beschermende linings, betonherstel en -coatings, loodverwijdering, abrasief stralen, schoorsteen­coatings, koeltorencoatings.',
+      powerTypicalClients: 'Kolencentrales, kerncentrales, aardgascentrales, hernieuwbare energieinstallaties (wind, zon), waterkrachtcentrales.',
+
+      manufacturingTitle: 'Productie & Industrie',
+      manufacturingOverview: 'Productie-installaties vereisen duurzame, veilige en esthetisch hoogwaardige oppervlakken ter ondersteuning van continue bedrijfsvoering. Onze industriële coatings verhogen de veiligheid, verbeteren de efficiëntie en beschermen waardevolle assets.',
+      manufacturingWorkDescription: 'Wij bieden een breed scala aan diensten, waaronder zware vloercoatings, machineschilderwerk, bescherming van constructiestaal, veiligheidsmarkeringen en gespecialiseerde apparatuurcoatings. Onze oplossingen zijn ontworpen om zwaar verkeer, chemische morsen en mechanische slijtage te weerstaan.',
+      manufacturingKeyServices: 'Zware epoxyvloersystemen, chemisch bestendige coatings, antislipcoatings, machinevernissing, constructiestaalcoatings, abrasief stralen, veiligheidsmarkeringen, betonafdichting.',
+      manufacturingTypicalClients: 'Autofabrieken, fabrikanten van zware machines, metaalbewerkingsbedrijven, magazijnen, assemblagefabrieken, luchtvaartfaciliteiten.',
+
+      oilgasTitle: 'Olie & Gas',
+      oilgasOverview: 'De olie- en gassector opereert in de zwaarste omgevingen en vereist superieure bescherming tegen corrosie, slijtage en brand. Onze oplossingen verlengen de levensduur van assets en verhogen de operationele veiligheid.',
+      oilgasWorkDescription: 'Ons team levert uitgebreide coating- en oppervlaktevoorbereidingsdiensten voor pijpleidingen, opslagtanks, offshore platforms, raffinaderijen en verwerkingsinstallaties. Dit omvat anticorrosiesystemen, brandwering en isolatiecoatings ontworpen voor extreme omstandigheden.',
+      oilgasKeyServices: 'Anticorrosiecoatings, passieve brandbescherming (PFP), thermische isolatiecoatings, pijpleidingcoatings, abrasief stralen (SSPC-normen), tanklining en exterieurcoating, loodverwijdering.',
+      oilgasTypicalClients: 'Raffinaderijen, offshore boorplatforms, pijpleidingbeheerders, gasverwerkingsinstallaties, opslagterminalbedrijven.',
+
+      chemicalTitle: 'Chemische Verwerking',
+      chemicalOverview: 'De chemische verwerkingsindustrie vereist robuuste beschermende coatings die bestand zijn tegen sterk corrosieve omgevingen, extreme temperaturen en constante chemische blootstelling. Onze diensten garanderen de levensduur en veiligheid van kritieke infrastructuur.',
+      chemicalWorkDescription: 'Wij zijn gespecialiseerd in het aanbrengen van geavanceerde chemisch bestendige coatings en linings op tanks, vaten, secundaire opvangzones, constructiestaal en procesapparatuur. Ons werk omvat oppervlaktevoorbereiding volgens strenge normen, waardoor maximale hechting en prestatie van gespecialiseerde coatingsystemen wordt gegarandeerd.',
+      chemicalKeyServices: 'Zuurbestendige coatings, epoxy tanklinings, urethaancoatings, secundaire opvangoplossingen, abrasief stralen, hogedruk waterstralen, betonherstel.',
+      chemicalTypicalClients: 'Petrochemische fabrieken, kunstmestproducenten, specialistische chemische producenten, farmaceutische installaties, industriële gasleveranciers.',
+
+      waterTitle: 'Water- & Afvalwaterbehandeling',
+      waterOverview: 'Water- en afvalwaterbehandelingsinstallaties worden voortdurend blootgesteld aan corrosieve chemicaliën, slijtage en vocht. Onze beschermende coatings zijn essentieel voor het behoud van de structurele integriteit en het voorkomen van lekkages.',
+      waterWorkDescription: 'Wij zijn gespecialiseerd in het bekleden van bezinkers, gistingstanks, opslagtanks, putten en het beschermen van constructieve onderdelen tegen de zware omstandigheden in deze omgevingen. Ons werk garandeert langdurige prestaties en naleving van milieuregelgeving.',
+      waterKeyServices: 'Chemisch bestendige linings, epoxycoatings, urethaancoatings, betonherstel, opvangcoatings, secundaire opvanglinings, abrasief stralen, putrehabilitatie.',
+      waterTypicalClients: 'Gemeentelijke waterzuiveringsinstallaties, industriële afvalwaterfaciliteiten, rioolwaterzuiveringsinstallaties, regenwaterbeheerinstallaties, pompstations.',
     },
 
     // Projects Page
