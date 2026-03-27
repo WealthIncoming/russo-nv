@@ -89,7 +89,7 @@ const ParallaxText = ({ children, baseVelocity = 100 }: { children: string; base
   const baseX = useRef(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useSpring(scrollY, { damping: 50, stiffness: 400 });
-  const velocityFactor = useTransform(scrollVelocity, [0, 1000], [0, 5], { clamp: false });
+  const velocityFactor = useTransform(scrollVelocity, [0, 1000], [0, 2], { clamp: false });
   const [x, setX] = useState(0);
   const xRef = useRef(0);
 
