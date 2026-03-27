@@ -418,20 +418,20 @@ export default function HomePage() {
                 <SectionLabel text={t('home', 'ourExpertise')} />
 
                 <h2
-                  className="font-heading leading-[0.92] tracking-tight text-black mb-8 max-w-full break-words sm:text-4xl md:text-5xl lg:text-6xl xl:text-[clamp(3.8rem,5vw,5.6rem)] 2xl:text-[clamp(4.5rem,5vw,6.2rem)]"
+                  className="font-heading leading-[0.92] tracking-tight text-white mb-8 max-w-full break-words sm:text-4xl md:text-5xl lg:text-6xl xl:text-[clamp(3.8rem,5vw,5.6rem)] 2xl:text-[clamp(4.5rem,5vw,6.2rem)]"
                   style={{ fontSize: 'clamp(2.2rem, 8vw, 3rem)' }}
                 >
                   <span className="block sm:whitespace-nowrap">{t('home', 'coreServices').split(' ')[0]}</span>
-                  <span className="block text-black sm:whitespace-nowrap">{t('home', 'coreServices').split(' ')[1]}</span>
+                  <span className="block text-white sm:whitespace-nowrap">{t('home', 'coreServices').split(' ')[1]}</span>
                 </h2>
 
-                <p className="font-paragraph text-black/70 text-base md:text-lg leading-relaxed mb-12 max-w-[32rem]">
+                <p className="font-paragraph text-white/70 text-base md:text-lg leading-relaxed mb-12 max-w-[32rem]">
                   {t('home', 'coreServicesDesc')}
                 </p>
 
                 <Link to="/services">
-                  <button className="group flex items-center gap-4 text-black hover:text-black transition-colors max-w-full">
-                    <div className="w-12 h-12 border border-current flex items-center justify-center rounded-full group-hover:bg-black group-hover:border-black group-hover:text-white transition-all shrink-0">
+                  <button className="group flex items-center gap-4 text-white hover:text-white transition-colors max-w-full">
+                    <div className="w-12 h-12 border border-current flex items-center justify-center rounded-full group-hover:bg-white group-hover:border-white group-hover:text-black transition-all shrink-0">
                       <ArrowUpRight className="w-5 h-5" />
                     </div>
                     <span className="font-paragraph font-bold uppercase tracking-wider text-sm">
