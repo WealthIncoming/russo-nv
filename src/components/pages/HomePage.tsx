@@ -168,20 +168,24 @@ export default function HomePage() {
           background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
                             linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
         }
+        .checkerboard-pattern {
+          background-size: 60px 60px;
+          background-image: 
+            linear-gradient(45deg, #000 25%, transparent 25%),
+            linear-gradient(-45deg, #000 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #000 75%),
+            linear-gradient(-45deg, transparent 75%, #000 75%);
+          background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+          background-color: #ffffff;
+        }
       `}</style>
       <Header />
       {/* --- HERO SECTION --- */}
       <section ref={heroRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center">
         {/* Background Parallax */}
         <motion.div style={{ y: heroY }} className="absolute inset-0 z-0">
-          <Image
-            src="https://static.wixstatic.com/media/3232e5_51222d38774747a49bdf5faf7d72b00a~mv2.png?originWidth=1920&originHeight=1024"
-            alt="Industrial coating facility"
-            className="w-full h-full object-cover opacity-60"
-            width={1920}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black" />
-          <div className="absolute inset-0 grid-bg opacity-30" />
+          <div className="absolute inset-0 checkerboard-pattern" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black" />
         </motion.div>
 
         {/* Hero Content */}
