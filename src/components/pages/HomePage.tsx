@@ -454,8 +454,8 @@ export default function HomePage() {
       {/* --- PARALLAX INDUSTRIES --- */}
       <section className="relative w-full py-40 overflow-hidden bg-white clip-diagonal border-t border-black/10">
         <div className="absolute inset-0 opacity-8 pointer-events-none">
-          <ParallaxText baseVelocity={-2}>{t('home', 'industriesServed')}</ParallaxText>
-          <ParallaxText baseVelocity={2}>{t('home', 'globalReach')}</ParallaxText>
+          <ParallaxText baseVelocity={-0.5}>{t('home', 'industriesServed')}</ParallaxText>
+          <ParallaxText baseVelocity={0.5}>{t('home', 'globalReach')}</ParallaxText>
         </div>
 
         <div className="relative z-10 max-w-[120rem] mx-auto px-6 md:px-12">
