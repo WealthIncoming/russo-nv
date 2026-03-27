@@ -24,12 +24,12 @@ export default function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="w-full bg-white border-b border-dark-grey/20 sticky top-0 z-50">
+    <header className="w-full bg-black border-b border-white/10 sticky top-0 z-50">
       <div className="max-w-[100rem] mx-auto px-4 sm:px-6 xl:px-8">
         <div className="grid grid-cols-[auto_1fr_auto] items-center h-20 xl:h-24 gap-4 xl:gap-6">
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0 whitespace-nowrap">
-            <span className="font-heading text-2xl xl:text-3xl font-bold text-dark-grey">
+            <span className="font-heading text-2xl xl:text-3xl font-bold text-white">
               RUSSO NV
             </span>
           </Link>
@@ -42,15 +42,15 @@ export default function Header() {
                 to={link.path}
                 className={`font-paragraph text-[12px] xl:text-sm uppercase tracking-[0.08em] transition-colors relative whitespace-nowrap ${
                   isActive(link.path)
-                    ? 'text-primary font-bold'
-                    : 'text-foreground hover:text-primary'
+                    ? 'text-white font-bold'
+                    : 'text-white/60 hover:text-white'
                 }`}
               >
                 {t('nav', link.labelKey)}
                 {isActive(link.path) && (
                   <motion.div
                     layoutId="activeNav"
-                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary"
+                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-white"
                   />
                 )}
               </Link>
@@ -60,12 +60,12 @@ export default function Header() {
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-3 xl:gap-4 flex-shrink-0">
             {/* Language Selector */}
-            <div className="flex items-center gap-2 border border-dark-grey/20 px-3 py-2 whitespace-nowrap">
-              <Globe className="w-4 h-4 text-foreground" />
+            <div className="flex items-center gap-2 border border-white/20 px-3 py-2 whitespace-nowrap">
+              <Globe className="w-4 h-4 text-white" />
               <select
                 value={language}
                 onChange={(e) => setLanguage(e.target.value as 'EN' | 'NL')}
-                className="font-paragraph text-sm bg-transparent border-none outline-none cursor-pointer text-foreground"
+                className="font-paragraph text-sm bg-transparent border-none outline-none cursor-pointer text-white"
               >
                 {languages.map((lang) => (
                   <option key={lang} value={lang}>
@@ -78,7 +78,7 @@ export default function Header() {
             {/* Phone CTA */}
             <a
               href="tel:+3234567890"
-              className="flex items-center gap-2 bg-primary text-primary-foreground font-paragraph font-bold uppercase px-4 xl:px-6 py-3 hover:bg-primary/90 transition-colors whitespace-nowrap"
+              className="flex items-center gap-2 bg-white text-black font-paragraph font-bold uppercase px-4 xl:px-6 py-3 hover:bg-white/90 transition-colors whitespace-nowrap"
             >
               <Phone className="w-4 h-4" />
               <span>{t('header', 'callNow')}</span>
@@ -88,7 +88,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-foreground p-2 justify-self-end"
+            className="lg:hidden text-white p-2 justify-self-end"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -103,7 +103,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-dark-grey/20"
+            className="lg:hidden bg-black border-t border-white/10"
           >
             <nav className="px-8 py-6 space-y-4">
               {navLinks.map((link) => (
@@ -113,8 +113,8 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                   className={`block font-paragraph text-sm uppercase tracking-wider py-2 ${
                     isActive(link.path)
-                      ? 'text-primary font-bold border-l-4 border-primary pl-4'
-                      : 'text-foreground hover:text-primary'
+                      ? 'text-white font-bold border-l-4 border-white pl-4'
+                      : 'text-white/60 hover:text-white'
                   }`}
                 >
                   {t('nav', link.labelKey)}
@@ -123,12 +123,12 @@ export default function Header() {
 
               <div className="pt-4 space-y-4">
                 {/* Language Selector Mobile */}
-                <div className="flex items-center gap-2 border border-dark-grey/20 px-4 py-3">
-                  <Globe className="w-4 h-4 text-foreground" />
+                <div className="flex items-center gap-2 border border-white/20 px-4 py-3">
+                  <Globe className="w-4 h-4 text-white" />
                   <select
                     value={language}
                     onChange={(e) => setLanguage(e.target.value as 'EN' | 'NL')}
-                    className="font-paragraph text-sm bg-transparent border-none outline-none cursor-pointer text-foreground flex-1"
+                    className="font-paragraph text-sm bg-transparent border-none outline-none cursor-pointer text-white flex-1"
                   >
                     {languages.map((lang) => (
                       <option key={lang} value={lang}>
@@ -141,7 +141,7 @@ export default function Header() {
                 {/* Phone CTA Mobile */}
                 <a
                   href="tel:+3234567890"
-                  className="flex items-center justify-center gap-3 bg-primary text-primary-foreground font-paragraph font-bold uppercase px-6 py-3 hover:bg-primary/90 transition-colors w-full"
+                  className="flex items-center justify-center gap-3 bg-white text-black font-paragraph font-bold uppercase px-6 py-3 hover:bg-white/90 transition-colors w-full"
                 >
                   <Phone className="w-4 h-4" />
                   <span>{t('header', 'callNow')}</span>

@@ -79,9 +79,9 @@ const CERTIFICATIONS = [
 
 const SectionLabel = ({ text, align = 'left' }: { text: string, align?: 'left' | 'right' | 'center' }) => (
   <div className={`flex items-center gap-3 mb-6 ${align === 'right' ? 'justify-end' : align === 'center' ? 'justify-center' : 'justify-start'}`}>
-    <span className="w-2 h-2 bg-primary rounded-none" />
-    <span className="font-paragraph text-xs font-bold tracking-[0.2em] text-primary uppercase">{text}</span>
-    <span className="h-[1px] w-12 bg-primary/30" />
+    <span className="w-2 h-2 bg-white rounded-none" />
+    <span className="font-paragraph text-xs font-bold tracking-[0.2em] text-white uppercase">{text}</span>
+    <span className="h-[1px] w-12 bg-white/30" />
   </div>
 );
 
@@ -168,20 +168,28 @@ export default function HomePage() {
           background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
                             linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
         }
+        .concrete-texture {
+          background-image: 
+            repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,.02) 2px, rgba(255,255,255,.02) 4px),
+            repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,.02) 2px, rgba(255,255,255,.02) 4px),
+            repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,.01) 10px, rgba(255,255,255,.01) 20px);
+          background-size: 100% 100%, 100% 100%, 100% 100%;
+        }
       `}</style>
       <Header />
       {/* --- HERO SECTION --- */}
-      <section ref={heroRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center">
-        {/* Background Parallax */}
+      <section ref={heroRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-black">
+        {/* Background Parallax with Concrete Texture */}
         <motion.div style={{ y: heroY }} className="absolute inset-0 z-0">
           <Image
             src="https://static.wixstatic.com/media/3232e5_51222d38774747a49bdf5faf7d72b00a~mv2.png?originWidth=1920&originHeight=1024"
             alt="Industrial coating facility"
-            className="w-full h-full object-cover opacity-60"
+            className="w-full h-full object-cover opacity-40"
             width={1920}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black" />
-          <div className="absolute inset-0 grid-bg opacity-30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black" />
+          <div className="absolute inset-0 concrete-texture opacity-40" />
+          <div className="absolute inset-0 grid-bg opacity-20" />
         </motion.div>
 
         {/* Hero Content */}
@@ -229,7 +237,7 @@ export default function HomePage() {
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
-                  className="block text-primary text-[0.88em]"
+                  className="block text-white text-[0.88em]"
                 >
                   Specialisten
                 </motion.span>
@@ -255,7 +263,7 @@ export default function HomePage() {
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
-                  className="block text-primary"
+                  className="block text-white"
                 >
                   SPECIALISTEN
                 </motion.span>
@@ -278,18 +286,17 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0 justify-center md:justify-start w-full sm:w-auto">
               <Link
                 to="/contact"
-                className="group relative overflow-hidden bg-primary px-6 sm:px-8 py-4 flex items-center justify-center gap-3 whitespace-nowrap"
+                className="group relative overflow-hidden bg-white text-black px-6 sm:px-8 py-4 flex items-center justify-center gap-3 whitespace-nowrap hover:bg-white/90 transition-colors"
               >
-                <span className="relative z-10 font-paragraph font-bold uppercase text-white text-sm tracking-wider">
+                <span className="relative z-10 font-paragraph font-bold uppercase text-black text-sm tracking-wider">
                   {t('home', 'heroCtaMain')}
                 </span>
-                <ArrowRight className="relative z-10 w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
-                <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out mix-blend-overlay" />
+                <ArrowRight className="relative z-10 w-4 h-4 text-black group-hover:translate-x-1 transition-transform" />
               </Link>
 
               <Link
                 to="/projects"
-                className="group px-6 sm:px-8 py-4 border border-white/30 hover:border-white transition-colors flex items-center justify-center gap-3 whitespace-nowrap"
+                className="group px-6 sm:px-8 py-4 border border-white hover:bg-white hover:text-black transition-all flex items-center justify-center gap-3 whitespace-nowrap"
               >
                 <span className="font-paragraph font-bold uppercase text-white text-sm tracking-wider">
                   {t('home', 'heroCtaSecondary')}
@@ -307,11 +314,11 @@ export default function HomePage() {
           className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
           <span className="font-paragraph text-[10px] uppercase tracking-[0.3em] text-white/40">{t('home', 'scroll')}</span>
-          <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent" />
+          <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent" />
         </motion.div>
       </section>
       {/* --- MARQUEE --- */}
-      <div className="w-full bg-primary py-4 overflow-hidden border-y border-white/10 relative z-20">
+      <div className="w-full bg-white text-black py-4 overflow-hidden border-y border-black/10 relative z-20">
         <div className="flex items-center whitespace-nowrap animate-marquee-mobile md:animate-marquee-desktop">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center gap-12 mx-6">
@@ -340,35 +347,36 @@ export default function HomePage() {
         `}</style>
       </div>
       {/* --- INTRO / STATS --- */}
-      <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 xl:py-32 bg-dark-grey overflow-hidden">
-        <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] 2xl:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] gap-10 xl:gap-12 2xl:gap-16 items-start">
+      <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 xl:py-32 bg-white overflow-hidden">
+        <div className="absolute inset-0 concrete-texture opacity-5 pointer-events-none" />
+        <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] 2xl:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] gap-10 xl:gap-12 2xl:gap-16 items-start relative z-10">
 
           {/* Left Column */}
           <div className="relative min-w-0 w-full z-20">
             <SectionLabel text={t('home', 'companyProfile')} />
 
             <h2
-              className="font-heading text-white leading-[0.9] tracking-tight mb-8 max-w-full break-words sm:text-4xl md:text-5xl xl:text-[3.2rem] 2xl:text-[3.9rem]"
+              className="font-heading text-black leading-[0.9] tracking-tight mb-8 max-w-full break-words sm:text-4xl md:text-5xl xl:text-[3.2rem] 2xl:text-[3.9rem]"
               style={{ fontSize: 'clamp(2rem, 8vw, 2.25rem)' }}
             >
               <span className="block">{t('home', 'engineeringDurability')}</span>
-              <span className="block text-white/30">{t('home', 'durability')}</span>
+              <span className="block text-black/30">{t('home', 'durability')}</span>
             </h2>
 
-            <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-[56ch]">
+            <p className="font-paragraph text-black/60 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-[56ch]">
               {t('home', 'companyDescription')}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-2xl">
               {STATS_DATA.map((stat, index) => (
-                <div key={index} className="border-t border-white/10 pt-4 min-w-0">
-                  <div className="font-heading text-3xl md:text-4xl text-primary mb-1">
+                <div key={index} className="border-t border-black/10 pt-4 min-w-0">
+                  <div className="font-heading text-3xl md:text-4xl text-black mb-1">
                     {stat.valueKey}
                   </div>
-                  <div className="font-paragraph text-white font-bold text-sm uppercase break-words">
+                  <div className="font-paragraph text-black font-bold text-sm uppercase break-words">
                     {t('home', stat.labelKey)}
                   </div>
-                  <div className="font-paragraph text-white/40 text-xs mt-1 break-words">
+                  <div className="font-paragraph text-black/40 text-xs mt-1 break-words">
                     {t('home', stat.subKey)}
                   </div>
                 </div>
@@ -379,9 +387,9 @@ export default function HomePage() {
           {/* Right Column */}
           <div className="relative min-w-0 w-full z-10">
             <div className="relative w-full h-[420px] md:h-[520px] xl:h-[560px] 2xl:h-[600px] overflow-hidden group rounded-none">
-              <div className="absolute inset-0 border border-white/10 z-10 pointer-events-none" />
-              <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary z-20" />
-              <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary z-20" />
+              <div className="absolute inset-0 border border-black/10 z-10 pointer-events-none" />
+              <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-black z-20" />
+              <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-black z-20" />
 
               <Image
                 src="https://static.wixstatic.com/media/3232e5_ccacd4497b0147e8a64b40b832b79772~mv2.png?originWidth=1152&originHeight=576"
@@ -390,12 +398,12 @@ export default function HomePage() {
                 width={1200}
               />
 
-              <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 z-20 bg-black/80 backdrop-blur-md p-4 md:p-6 border-l-2 border-primary max-w-[85%] sm:max-w-xs">
+              <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 z-20 bg-white/95 backdrop-blur-md p-4 md:p-6 border-l-2 border-black max-w-[85%] sm:max-w-xs">
                 <div className="flex items-center gap-2 mb-2">
-                  <Shield className="w-5 h-5 text-primary" />
-                  <span className="font-heading text-white text-lg">{t('home', 'safetyFirstTitle')}</span>
+                  <Shield className="w-5 h-5 text-black" />
+                  <span className="font-heading text-black text-lg">{t('home', 'safetyFirstTitle')}</span>
                 </div>
-                <p className="font-paragraph text-white/70 text-xs leading-relaxed">
+                <p className="font-paragraph text-black/70 text-xs leading-relaxed">
                   {t('home', 'safetyFirstDesc')}
                 </p>
               </div>
