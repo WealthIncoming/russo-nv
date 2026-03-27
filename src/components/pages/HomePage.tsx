@@ -408,7 +408,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* --- STICKY SERVICES --- */}
-      <section className="relative w-full bg-white py-32 overflow-hidden">
+      <section className="relative w-full bg-black py-32 overflow-hidden">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] 2xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] gap-12 xl:gap-14 2xl:gap-16 items-start">
 
