@@ -408,7 +408,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* --- STICKY SERVICES --- */}
-      <section className="relative w-full bg-white py-32 overflow-hidden">
+      <section className="relative w-full py-32 overflow-hidden bg-secondary">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] 2xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] gap-12 xl:gap-14 2xl:gap-16 items-start">
 
@@ -425,13 +425,13 @@ export default function HomePage() {
                   <span className="block text-black sm:whitespace-nowrap">{t('home', 'coreServices').split(' ')[1]}</span>
                 </h2>
 
-                <p className="font-paragraph text-black/70 text-base md:text-lg leading-relaxed mb-12 max-w-[32rem]">
+                <p className="font-paragraph text-base md:text-lg leading-relaxed mb-12 max-w-[32rem] text-primary-foreground">
                   {t('home', 'coreServicesDesc')}
                 </p>
 
                 <Link to="/services">
                   <button className="group flex items-center gap-4 text-black hover:text-black transition-colors max-w-full">
-                    <div className="w-12 h-12 border border-current flex items-center justify-center rounded-full group-hover:bg-black group-hover:border-black group-hover:text-white transition-all shrink-0">
+                    <div className="w-12 h-12 border border-current flex items-center justify-center rounded-full group-hover:bg-black group-hover:border-black group-hover:text-white transition-all shrink-0 bg-primary-foreground opacity-[1]">
                       <ArrowUpRight className="w-5 h-5" />
                     </div>
                     <span className="font-paragraph font-bold uppercase tracking-wider text-sm text-primary-foreground">
