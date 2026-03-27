@@ -24,7 +24,7 @@ export default function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="w-full bg-white border-b border-dark-grey/20 sticky top-0 z-50">
+    <header className="w-full bg-white border-b border-black/10 sticky top-0 z-50">
       <div className="max-w-[100rem] mx-auto px-4 sm:px-6 xl:px-8">
         <div className="grid grid-cols-[auto_1fr_auto] items-center h-20 xl:h-24 gap-4 xl:gap-6">
           {/* Logo */}
@@ -60,7 +60,7 @@ export default function Header() {
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-3 xl:gap-4 flex-shrink-0">
             {/* Language Selector */}
-            <div className="flex items-center gap-2 border border-dark-grey/20 px-3 py-2 whitespace-nowrap">
+            <div className="flex items-center gap-2 border border-black/20 px-3 py-2 whitespace-nowrap">
               <Globe className="w-4 h-4 text-foreground" />
               <select
                 value={language}
@@ -103,7 +103,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-dark-grey/20"
+            className="lg:hidden bg-white border-t border-black/20"
           >
             <nav className="px-8 py-6 space-y-4">
               {navLinks.map((link) => (
@@ -123,7 +123,7 @@ export default function Header() {
 
               <div className="pt-4 space-y-4">
                 {/* Language Selector Mobile */}
-                <div className="flex items-center gap-2 border border-dark-grey/20 px-4 py-3">
+                <div className="flex items-center gap-2 border border-black/20 px-4 py-3">
                   <Globe className="w-4 h-4 text-foreground" />
                   <select
                     value={language}

@@ -81,7 +81,7 @@ const SectionLabel = ({ text, align = 'left' }: { text: string, align?: 'left' |
   <div className={`flex items-center gap-3 mb-6 ${align === 'right' ? 'justify-end' : align === 'center' ? 'justify-center' : 'justify-start'}`}>
     <span className="w-2 h-2 bg-black rounded-none" />
     <span className="font-paragraph text-xs font-bold tracking-[0.2em] text-black uppercase">{text}</span>
-    <span className="h-[1px] w-12 bg-black/30" />
+    <span className="h-[1px] w-12 bg-black/20" />
   </div>
 );
 
@@ -164,29 +164,27 @@ export default function HomePage() {
           clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
         }
         .grid-bg {
-          background-size: 40px 40px;
-          background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-                            linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+          background-size: 80px 80px;
+          background-image: linear-gradient(to right, rgba(0, 0, 0, 0.015) 1px, transparent 1px),
+                            linear-gradient(to bottom, rgba(0, 0, 0, 0.015) 1px, transparent 1px);
         }
         .industrial-texture {
-          background-image: 
-            repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 0, 0, 0.02) 2px, rgba(0, 0, 0, 0.02) 4px),
-            repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.02) 2px, rgba(0, 0, 0, 0.02) 4px);
+          background-image: none;
         }
       `}</style>
       <Header />
       {/* --- HERO SECTION --- */}
-      <section ref={heroRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-gradient-to-b from-white via-gray-50 to-white">
+      <section ref={heroRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-white">
         {/* Background Parallax */}
         <motion.div style={{ y: heroY }} className="absolute inset-0 z-0">
           <Image
             src="https://static.wixstatic.com/media/3232e5_51222d38774747a49bdf5faf7d72b00a~mv2.png?originWidth=1920&originHeight=1024"
             alt="Industrial coating facility"
-            className="w-full h-full object-cover opacity-35 grayscale"
+            className="w-full h-full object-cover opacity-20 grayscale"
             width={1920}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/70 to-white" />
-          <div className="absolute inset-0 grid-bg opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/85 to-white" />
+          <div className="absolute inset-0 grid-bg opacity-5" />
         </motion.div>
 
         {/* Hero Content */}
@@ -345,7 +343,7 @@ export default function HomePage() {
         `}</style>
       </div>
       {/* --- INTRO / STATS --- */}
-      <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 xl:py-32 bg-gray-100 industrial-texture overflow-hidden">
+      <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 xl:py-32 bg-white industrial-texture overflow-hidden border-t border-black/10">
         <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] 2xl:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] gap-10 xl:gap-12 2xl:gap-16 items-start">
 
           {/* Left Column */}
@@ -454,7 +452,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* --- PARALLAX INDUSTRIES --- */}
-      <section className="relative w-full py-40 overflow-hidden bg-gray-100 clip-diagonal">
+      <section className="relative w-full py-40 overflow-hidden bg-white clip-diagonal border-t border-black/10">
         <div className="absolute inset-0 opacity-8 pointer-events-none">
           <ParallaxText baseVelocity={-2}>{t('home', 'industriesServed')}</ParallaxText>
           <ParallaxText baseVelocity={2}>{t('home', 'globalReach')}</ParallaxText>
@@ -472,7 +470,7 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-black/10 border border-black/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-black border border-black">
             {INDUSTRIES_DATA.map((industry, index) => (
               <IndustryCard key={index} industry={industry} index={index} />
             ))}
@@ -480,11 +478,11 @@ export default function HomePage() {
         </div>
       </section>
       {/* --- FEATURED PROJECT --- */}
-      <section className="relative w-full py-24 md:py-32 bg-white">
+      <section className="relative w-full py-24 md:py-32 bg-black border-t border-black">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-[0.72fr_1.28fr] xl:grid-cols-[0.78fr_1.22fr] 2xl:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-10 xl:gap-12 items-center">
             {/* Left Column: Image */}
-            <div className="relative w-full min-w-0 aspect-video lg:aspect-[4/3] overflow-hidden border border-black/10">
+            <div className="relative w-full min-w-0 aspect-video lg:aspect-[4/3] overflow-hidden border border-white/20">
               <Image
                 src="https://static.wixstatic.com/media/3232e5_227722fce6c544bfa11ad9bde5ff07a5~mv2.png?originWidth=1920&originHeight=1024"
                 alt="Large scale tank farm project"
@@ -496,52 +494,51 @@ export default function HomePage() {
             {/* Right Column: Text Content */}
             <div className="flex flex-col justify-center min-w-0">
               <SectionLabel text={t('home', 'featuredProject')} />
-              <h2 className="font-heading text-black leading-[0.9] tracking-tight mb-8 w-full min-w-0 text-4xl md:text-5xl lg:text-6xl xl:text-7xl uppercase">
+              <h2 className="font-heading text-white leading-[0.9] tracking-tight mb-8 w-full min-w-0 text-4xl md:text-5xl lg:text-6xl xl:text-7xl uppercase">
                 <span className="block">{t('home', 'totalTankFarm')}</span>
-                <span className="block text-black tracking-[-0.02em]">
+                <span className="block text-white tracking-[-0.02em]">
                   {t('home', 'refurbishment')}
                 </span>
               </h2>
               <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-3 sm:gap-6 mb-8 min-w-0">
-                <span className="font-paragraph text-black font-bold text-lg md:text-xl">
+                <span className="font-paragraph text-white font-bold text-lg md:text-xl">
                   {t('home', 'antwerpPort')}
                 </span>
-                <span className="font-paragraph text-black/50 text-sm uppercase tracking-[0.12em]">
+                <span className="font-paragraph text-white/50 text-sm uppercase tracking-[0.12em]">
                   {t('home', 'duration18Months')}
                 </span>
               </div>
 
-              <p className="font-paragraph text-black/70 text-base md:text-lg leading-relaxed mb-8 max-w-[60ch]">
+              <p className="font-paragraph text-white/80 text-base md:text-lg leading-relaxed mb-8 max-w-[60ch]">
                 {t('home', 'projectDescription')}
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10 min-w-0">
-                <div className="border-t border-black/10 pt-4 min-w-0">
-                  <h4 className="font-paragraph text-black/60 text-xs uppercase tracking-widest mb-2">
+                <div className="border-t border-white/20 pt-4 min-w-0">
+                  <h4 className="font-paragraph text-white/60 text-xs uppercase tracking-widest mb-2">
                     {t('home', 'scope')}
                   </h4>
-                  <p className="font-paragraph text-black text-sm leading-relaxed">
+                  <p className="font-paragraph text-white text-sm leading-relaxed">
                     {t('home', 'scopeDesc')}
                   </p>
                 </div>
 
-                <div className="border-t border-black/10 pt-4 min-w-0">
-                  <h4 className="font-paragraph text-black/60 text-xs uppercase tracking-widest mb-2">
+                <div className="border-t border-white/20 pt-4 min-w-0">
+                  <h4 className="font-paragraph text-white/60 text-xs uppercase tracking-widest mb-2">
                     {t('home', 'challenge')}
                   </h4>
-                  <p className="font-paragraph text-black text-sm leading-relaxed">
+                  <p className="font-paragraph text-white text-sm leading-relaxed">
                     {t('home', 'challengeDesc')}
                   </p>
                 </div>
               </div>
 
               <Link to="/projects">
-                <button className="group relative overflow-hidden bg-black px-8 py-4 flex items-center gap-3 whitespace-nowrap w-fit">
-                  <span className="relative z-10 font-paragraph font-bold uppercase text-white text-sm tracking-wider">
+                <button className="group relative overflow-hidden bg-white text-black px-8 py-4 flex items-center gap-3 whitespace-nowrap w-fit hover:bg-gray-100 transition-colors">
+                  <span className="relative z-10 font-paragraph font-bold uppercase text-black text-sm tracking-wider">
                     {t('home', 'viewCaseStudy')}
                   </span>
-                  <ArrowRight className="relative z-10 w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
-                  <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out mix-blend-overlay" />
+                  <ArrowRight className="relative z-10 w-4 h-4 text-black group-hover:translate-x-1 transition-transform" />
                 </button>
               </Link>
             </div>
@@ -549,9 +546,8 @@ export default function HomePage() {
         </div>
       </section>
       {/* --- CTA SECTION --- */}
-      <section className="relative w-full bg-black py-32 overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-30 mix-blend-multiply" />
-        <div className="absolute right-0 top-0 w-1/2 h-full bg-white/5 skew-x-12 transform origin-top" />
+      <section className="relative w-full bg-white py-32 overflow-hidden border-t border-black/10">
+        <div className="absolute inset-0 grid-bg opacity-5 mix-blend-multiply" />
 
         <div className="relative z-10 max-w-[100rem] mx-auto px-6 md:px-12 text-center">
           <motion.div
@@ -560,23 +556,23 @@ export default function HomePage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white mb-8 leading-[0.9]">
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-black mb-8 leading-[0.9]">
               {t('home', 'readyToMobilize')} <br/>
-              <span className="text-white">?</span>
+              <span className="text-black">?</span>
             </h2>
-            <p className="font-paragraph text-white/90 text-xl max-w-2xl mx-auto mb-12 font-medium">
+            <p className="font-paragraph text-black/70 text-xl max-w-2xl mx-auto mb-12 font-medium">
               {t('home', 'ctaDescription')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
-                <button className="bg-white text-black font-paragraph font-bold uppercase px-10 py-5 hover:bg-gray-100 transition-all duration-300 flex items-center gap-3 shadow-xl">
+                <button className="bg-black text-white font-paragraph font-bold uppercase px-10 py-5 hover:bg-black/90 transition-all duration-300 flex items-center gap-3">
                   {t('home', 'requestQuote')}
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
               <Link to="/contact">
-                <button className="bg-transparent border-2 border-white text-white font-paragraph font-bold uppercase px-10 py-5 hover:bg-white hover:text-black transition-all duration-300">
+                <button className="bg-transparent border-2 border-black text-black font-paragraph font-bold uppercase px-10 py-5 hover:bg-black hover:text-white transition-all duration-300">
                   {t('home', 'callUsNow')}
                 </button>
               </Link>
@@ -607,7 +603,7 @@ function StickyServiceCard({ service, index }: { service: typeof SERVICES_DATA[0
     <motion.div
       ref={cardRef}
       style={{ opacity, x }}
-      className="group relative bg-gray-50 border border-black/10 p-8 md:p-12 hover:border-black transition-colors duration-500"
+      className="group relative bg-white border border-black/20 p-8 md:p-12 hover:border-black hover:bg-black/5 transition-all duration-500"
     >
       <div className="absolute top-0 right-0 p-4 opacity-15 font-heading text-6xl text-black group-hover:opacity-10 transition-opacity">
         {service.id}
@@ -632,7 +628,7 @@ function StickyServiceCard({ service, index }: { service: typeof SERVICES_DATA[0
           </ul>
         </div>
 
-        <div className="w-full md:w-48 h-32 bg-gray-200 border border-black/10 relative overflow-hidden">
+        <div className="w-full md:w-48 h-32 bg-white border border-black/20 relative overflow-hidden">
            {/* Placeholder for service specific imagery - using generic for now but styled */}
            <Image
              src="https://static.wixstatic.com/media/3232e5_1f2a1a565833417a9c5c5ea40e20a310~mv2.png?originWidth=384&originHeight=320"
