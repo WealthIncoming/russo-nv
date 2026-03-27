@@ -343,7 +343,7 @@ export default function HomePage() {
         `}</style>
       </div>
       {/* --- INTRO / STATS --- */}
-      <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 xl:py-32 bg-white industrial-texture overflow-hidden border-t border-black/10">
+      <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 xl:py-32 bg-gray-100 industrial-texture overflow-hidden border-t border-black/10">
         <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] 2xl:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] gap-10 xl:gap-12 2xl:gap-16 items-start">
 
           {/* Left Column */}
