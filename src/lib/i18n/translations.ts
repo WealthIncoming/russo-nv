@@ -369,11 +369,41 @@ export const translations: Record<Language, Translations> = {
     projects: {
       pageTitle: 'Project Portfolio',
       pageSubtitle: 'Showcasing our expertise and successful completions',
+      heroLabel: 'Our Work',
+      heroLine1: 'Project',
+      heroLine2: 'Portfolio',
+      heroDescription: 'Showcasing our expertise in large-scale industrial coating projects across multiple sectors and countries',
       projectDetails: 'Project Details',
       clientName: 'Client',
       location: 'Location',
-      completionDate: 'Completion Date',
+      completionDate: 'Completed',
       viewDetails: 'View Details',
+      emptyState: 'No projects available at the moment.',
+      ctaTitleLine1: 'Start Your',
+      ctaTitleHighlight: 'Next Project',
+      ctaDescription: 'Let us bring the same level of expertise and quality to your industrial coating needs',
+      ctaButton: 'Request Quote',
+    },
+
+    // Projects CMS Content
+    projectsCms: {
+      bridgeTitle: 'Highway Bridge Corrosion Protection',
+      bridgeDescription: 'Surface preparation and multi-layer coating application for a major highway bridge. The project aimed to protect the steel structure from environmental degradation, including salt spray and UV radiation. Traffic management and public safety were paramount considerations during execution.',
+
+      pipelineTitle: 'Cross-Country Gas Pipeline Protection',
+      pipelineDescription: 'Application of high-performance anti-corrosion coatings to a 50-mile section of a natural gas pipeline. The project involved surface preparation in challenging terrain and the use of advanced coating systems to withstand extreme environmental conditions and abrasive soil. Strict environmental compliance was maintained throughout.',
+
+      waterTitle: 'Municipal Water Treatment Facility Coatings',
+      waterDescription: 'Application of specialized coatings to concrete and steel structures within a municipal water treatment plant. This included clarifiers, filter beds, and chemical storage areas, requiring potable water approved coatings and robust chemical resistance. Project completed with minimal disruption to water supply.',
+
+      refineryTitle: 'Petrochemical Refinery Unit Maintenance',
+      refineryDescription: 'Specialized coating services for various units within an active petrochemical refinery, including distillation columns, heat exchangers, and piping. The work required adherence to stringent safety protocols and the use of high-temperature resistant coatings to ensure operational integrity.',
+
+      tankTitle: 'Chemical Storage Tank Refurbishment',
+      tankDescription: 'Comprehensive internal and external coating application for a series of large chemical storage tanks to enhance corrosion resistance and extend operational lifespan. Challenges included working in a live plant environment and ensuring minimal disruption to operations. Solutions involved specialized fast-cure coatings and phased execution.',
+
+      steelTitle: 'Industrial Plant Steel Structure Painting',
+      steelDescription: 'Protective coating of structural steel elements for a new manufacturing plant. This included beams, columns, and support frames, requiring durable coatings to resist chemical exposure and provide long-term aesthetic appeal. Complex access requirements were managed with scaffolding and aerial lifts.',
     },
 
     // Safety Page
@@ -780,11 +810,41 @@ export const translations: Record<Language, Translations> = {
     projects: {
       pageTitle: 'Projectportfolio',
       pageSubtitle: 'Onze expertise en succesvolle afronding tonen',
+      heroLabel: 'Ons Werk',
+      heroLine1: 'Project',
+      heroLine2: 'Portfolio',
+      heroDescription: 'Een overzicht van onze expertise in grootschalige industriële coatingprojecten in diverse sectoren en landen',
       projectDetails: 'Projectdetails',
       clientName: 'Klant',
       location: 'Locatie',
-      completionDate: 'Voltooiingsdatum',
+      completionDate: 'Voltooid',
       viewDetails: 'Details Bekijken',
+      emptyState: 'Er zijn momenteel geen projecten beschikbaar.',
+      ctaTitleLine1: 'Start Uw',
+      ctaTitleHighlight: 'Volgend Project',
+      ctaDescription: 'Laat ons dezelfde expertise en kwaliteit inzetten voor uw industriële coatingbehoeften',
+      ctaButton: 'Offerte Aanvragen',
+    },
+
+    // Projects CMS Content
+    projectsCms: {
+      bridgeTitle: 'Corrosiebescherming Snelwegbrug',
+      bridgeDescription: 'Oppervlaktevoorbereiding en meerlaagse coatingtoepassing voor een grote snelwegbrug. Het project was gericht op de bescherming van de staalconstructie tegen omgevingsdegradatie, waaronder zoutnevel en UV-straling. Verkeersbeheer en openbare veiligheid waren cruciale aandachtspunten tijdens de uitvoering.',
+
+      pipelineTitle: 'Bescherming Langeafstandsgaspijpleiding',
+      pipelineDescription: 'Toepassing van hoogwaardige anticorrosiecoatings op een sectie van 80 kilometer van een aardgaspijpleiding. Het project omvatte oppervlaktevoorbereiding in moeilijk terrein en het gebruik van geavanceerde coatingsystemen die bestand zijn tegen extreme omgevingsomstandigheden en abrasieve grond. Strikte milieunaleving werd gedurende het hele project gehandhaafd.',
+
+      waterTitle: 'Coatings Gemeentelijke Waterzuiveringsinstallatie',
+      waterDescription: 'Toepassing van gespecialiseerde coatings op beton- en staalconstructies binnen een gemeentelijke waterzuiveringsinstallatie. Dit omvatte bezinkers, filterbedden en chemische opslagzones, waarvoor drinkwatergecertificeerde coatings en robuuste chemische bestendigheid vereist waren. Het project werd voltooid met minimale verstoring van de watervoorziening.',
+
+      refineryTitle: 'Onderhoud Petrochemische Raffinaderij',
+      refineryDescription: 'Gespecialiseerde coatingdiensten voor diverse eenheden binnen een actieve petrochemische raffinaderij, waaronder destillatiekolommen, warmtewisselaars en leidingwerk. Het werk vereiste naleving van strenge veiligheidsprotocollen en het gebruik van hogetemperatuurbestendige coatings om de operationele integriteit te waarborgen.',
+
+      tankTitle: 'Renovatie Chemische Opslagtanks',
+      tankDescription: 'Uitgebreide interne en externe coatingtoepassing voor een reeks grote chemische opslagtanks om de corrosiebestendigheid te verbeteren en de operationele levensduur te verlengen. Uitdagingen waren onder meer het werken in een actieve fabrieksomgeving en het minimaliseren van de verstoring van de bedrijfsvoering. Oplossingen omvatten gespecialiseerde snelhardende coatings en een gefaseerde uitvoering.',
+
+      steelTitle: 'Schilderwerk Staalconstructie Industriële Fabriek',
+      steelDescription: 'Beschermende coating van constructieve staalelementen voor een nieuwe productiefabriek. Dit omvatte balken, kolommen en draagconstructies, waarvoor duurzame coatings nodig waren die bestand zijn tegen chemische blootstelling en een langdurig esthetisch resultaat bieden. Complexe toegangsvereisten werden beheerd met steigers en hoogwerkers.',
     },
 
     // Safety Page
