@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider, Navigate, Outlet } from 'react-rou
 import { ScrollToTop } from '@/lib/scroll-to-top';
 import ErrorPage from '@/integrations/errorHandlers/ErrorPage';
 import HomePage from '@/components/pages/HomePage';
-import ServicesPage from '@/components/pages/ServicesPage';
+import ServicesPage from '@/ServicesPage';
 import IndustriesPage from '@/components/pages/IndustriesPage';
 import ProjectsPage from '@/components/pages/ProjectsPage';
 import SafetyPage from '@/components/pages/SafetyPage';

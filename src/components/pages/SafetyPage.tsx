@@ -1,21 +1,60 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Shield, CheckCircle, Award, FileCheck, ArrowRight } from 'lucide-react';
-import { Image } from '@/components/ui/image';
-import { BaseCrudService } from '@/integrations';
-import { Certifications, CompanyValues } from '@/entities';
-import { useLanguageStore } from '@/lib/i18n/useLanguage';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import { Image } from '@/components/ui/image';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
+import { Certifications, CompanyValues } from '@/entities';
+import { BaseCrudService } from '@/integrations';
+import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { format } from 'date-fns';
+import { nl } from 'date-fns/locale';
+import { motion } from 'framer-motion';
+import { ArrowRight, Award, CheckCircle, FileCheck, Shield } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
+// =============================================================================
+// MAPPING — Certifications
+// =============================================================================
+const CERT_TRANSLATION_MAP: Record<string, string> = {
+  'nace': 'nace',
+  'iso 14001': 'iso14001',
+  'vca': 'vca',
+  'iso 9001': 'iso9001',
+};
+
+// =============================================================================
+// MAPPING — Company Values
+// =============================================================================
+const VALUE_TRANSLATION_MAP: Record<string, string> = {
+  'communication': 'communication',
+  'quality': 'quality',
+  'expertise': 'expertise',
+  'safety first': 'safetyFirst',
+};
+
+function getCertPrefix(name: string | undefined): string | null {
+  if (!name) return null;
+  const lower = name.toLowerCase();
+  for (const [keyword, prefix] of Object.entries(CERT_TRANSLATION_MAP)) {
+    if (lower.includes(keyword)) return prefix;
+  }
+  return null;
+}
+
+function getValuePrefix(title: string | undefined): string | null {
+  if (!title) return null;
+  const lower = title.toLowerCase();
+  for (const [keyword, prefix] of Object.entries(VALUE_TRANSLATION_MAP)) {
+    if (lower.includes(keyword)) return prefix;
+  }
+  return null;
+}
 
 export default function SafetyPage() {
   const [certifications, setCertifications] = useState<Certifications[]>([]);
   const [companyValues, setCompanyValues] = useState<CompanyValues[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { t } = useLanguageStore();
+  const { t, language } = useLanguageStore();
 
   useEffect(() => {
     loadData();
@@ -39,10 +78,38 @@ export default function SafetyPage() {
   const formatDate = (date: Date | string | undefined) => {
     if (!date) return 'N/A';
     try {
-      return format(new Date(date), 'MMMM yyyy');
+      return format(new Date(date), 'MMMM yyyy', {
+        locale: language === 'NL' ? nl : undefined,
+      });
     } catch {
       return 'N/A';
     }
+  };
+
+  const getCertText = (
+    cert: Certifications,
+    field: string,
+    fallback: string | undefined
+  ): string => {
+    if (language === 'EN') return fallback || '';
+    const prefix = getCertPrefix(cert.certificationName);
+    if (!prefix) return fallback || '';
+    const key = `${prefix}${field}`;
+    const translated = t('safetyCertsCms', key);
+    return translated !== key ? translated : (fallback || '');
+  };
+
+  const getValueText = (
+    value: CompanyValues,
+    field: string,
+    fallback: string | undefined
+  ): string => {
+    if (language === 'EN') return fallback || '';
+    const prefix = getValuePrefix(value.valueTitle);
+    if (!prefix) return fallback || '';
+    const key = `${prefix}${field}`;
+    const translated = t('safetyValuesCms', key);
+    return translated !== key ? translated : (fallback || '');
   };
 
   return (
@@ -67,13 +134,15 @@ export default function SafetyPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="font-paragraph text-primary text-sm uppercase tracking-wider">Our Commitment</span>
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-white mt-4 mb-8 leading-tight sm:leading-none">
-              SAFETY &<br />
-              <span className="text-primary">CERTIFICATIONS</span>
+            <span className="font-paragraph text-primary text-sm uppercase tracking-wider">
+              {t('safety', 'heroLabel')}
+            </span>
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-white mt-4 mb-8 leading-tight sm:leading-none uppercase">
+              {t('safety', 'heroLine1')}<br />
+              <span className="text-primary">{t('safety', 'heroLine2')}</span>
             </h1>
             <p className="font-paragraph text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed">
-              Maintaining the highest standards of safety compliance and quality assurance in every project we undertake
+              {t('safety', 'heroDescription')}
             </p>
           </motion.div>
         </div>
@@ -95,11 +164,11 @@ export default function SafetyPage() {
                 transition={{ duration: 0.6 }}
                 className="text-center mb-16"
               >
-                <h2 className="font-heading text-5xl md:text-6xl text-foreground mb-6">
-                  OUR <span className="text-primary">VALUES</span>
+                <h2 className="font-heading text-5xl md:text-6xl text-foreground mb-6 uppercase">
+                  {t('safety', 'valuesTitle')} <span className="text-primary">{t('safety', 'valuesHighlight')}</span>
                 </h2>
                 <p className="font-paragraph text-lg text-foreground/80 max-w-3xl mx-auto">
-                  Built on decades of experience and unwavering commitment to excellence
+                  {t('safety', 'valuesDescription')}
                 </p>
               </motion.div>
 
@@ -116,13 +185,13 @@ export default function SafetyPage() {
                     >
                       {value.valueTitle && (
                         <h3 className="font-heading text-3xl text-foreground mb-4">
-                          {value.valueTitle}
+                          {getValueText(value, 'Title', value.valueTitle)}
                         </h3>
                       )}
-                      
+
                       {value.valueDescription && (
                         <p className="font-paragraph text-base text-foreground/80 mb-6 leading-relaxed">
-                          {value.valueDescription}
+                          {getValueText(value, 'Description', value.valueDescription)}
                         </p>
                       )}
 
@@ -132,10 +201,10 @@ export default function SafetyPage() {
                             <Shield className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                             <div>
                               <div className="font-paragraph text-sm font-bold text-foreground mb-1">
-                                Safety Compliance
+                                {t('safety', 'safetyCompliance')}
                               </div>
                               <div className="font-paragraph text-sm text-foreground/70">
-                                {value.safetyComplianceDetails}
+                                {getValueText(value, 'Safety', value.safetyComplianceDetails)}
                               </div>
                             </div>
                           </div>
@@ -146,10 +215,10 @@ export default function SafetyPage() {
                             <Award className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                             <div>
                               <div className="font-paragraph text-sm font-bold text-foreground mb-1">
-                                Quality Workmanship
+                                {t('safety', 'qualityWorkmanship')}
                               </div>
                               <div className="font-paragraph text-sm text-foreground/70">
-                                {value.qualityWorkmanship}
+                                {getValueText(value, 'Quality', value.qualityWorkmanship)}
                               </div>
                             </div>
                           </div>
@@ -160,10 +229,10 @@ export default function SafetyPage() {
                             <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                             <div>
                               <div className="font-paragraph text-sm font-bold text-foreground mb-1">
-                                Client Communication
+                                {t('safety', 'clientCommunication')}
                               </div>
                               <div className="font-paragraph text-sm text-foreground/70">
-                                {value.clientCommunication}
+                                {getValueText(value, 'Client', value.clientCommunication)}
                               </div>
                             </div>
                           </div>
@@ -175,7 +244,7 @@ export default function SafetyPage() {
                               {value.yearsOfExperience}+
                             </div>
                             <div className="font-paragraph text-sm text-foreground/60 uppercase tracking-wider">
-                              Years of Experience
+                              {t('safety', 'yearsOfExperience')}
                             </div>
                           </div>
                         )}
@@ -199,17 +268,19 @@ export default function SafetyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-6">
-              INDUSTRY <span className="text-primary">CERTIFICATIONS</span>
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-6 uppercase">
+              {t('safety', 'certsTitle')} <span className="text-primary">{t('safety', 'certsHighlight')}</span>
             </h2>
             <p className="font-paragraph text-lg text-white/80 max-w-3xl mx-auto">
-              Certified and compliant with international safety and quality standards
+              {t('safety', 'certsDescription')}
             </p>
           </motion.div>
 
           {isLoading ? null : certifications.length === 0 ? (
             <div className="text-center py-16">
-              <p className="font-paragraph text-lg text-white/60">Certification information coming soon.</p>
+              <p className="font-paragraph text-lg text-white/60">
+                {t('safety', 'certsEmptyState')}
+              </p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -235,19 +306,19 @@ export default function SafetyPage() {
 
                   {cert.certificationName && (
                     <h3 className="font-heading text-2xl text-white mb-3">
-                      {cert.certificationName}
+                      {getCertText(cert, 'Title', cert.certificationName)}
                     </h3>
                   )}
 
                   {cert.issuingBody && (
                     <div className="font-paragraph text-sm text-white/60 mb-4">
-                      Issued by: {cert.issuingBody}
+                      {t('safety', 'issuedBy')}: {getCertText(cert, 'Issuer', cert.issuingBody)}
                     </div>
                   )}
 
                   {cert.description && (
                     <p className="font-paragraph text-sm text-white/70 mb-6 leading-relaxed">
-                      {cert.description}
+                      {getCertText(cert, 'Description', cert.description)}
                     </p>
                   )}
 
@@ -256,7 +327,7 @@ export default function SafetyPage() {
                       <div className="flex items-center gap-2">
                         <FileCheck className="w-4 h-4 text-primary" />
                         <span className="font-paragraph text-xs text-white/60">
-                          Issued: {formatDate(cert.dateIssued)}
+                          {t('safety', 'dateIssued')}: {formatDate(cert.dateIssued)}
                         </span>
                       </div>
                     )}
@@ -265,7 +336,7 @@ export default function SafetyPage() {
                       <div className="flex items-center gap-2">
                         <FileCheck className="w-4 h-4 text-primary" />
                         <span className="font-paragraph text-xs text-white/60">
-                          Expires: {formatDate(cert.expirationDate)}
+                          {t('safety', 'expirationDate')}: {formatDate(cert.expirationDate)}
                         </span>
                       </div>
                     )}
@@ -277,7 +348,7 @@ export default function SafetyPage() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 font-paragraph text-xs text-primary hover:text-primary/80 transition-colors mt-2"
                       >
-                        View Certificate
+                        {t('safety', 'viewCertificate')}
                         <ArrowRight className="w-3 h-3" />
                       </a>
                     )}
@@ -299,16 +370,16 @@ export default function SafetyPage() {
           className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
         >
           <div>
-            <h2 className="font-heading text-5xl md:text-6xl text-foreground mb-8 leading-tight">
-              SAFETY<br />
-              <span className="text-primary">FIRST</span> ALWAYS
+            <h2 className="font-heading text-5xl md:text-6xl text-foreground mb-8 leading-tight uppercase">
+              {t('safety', 'safetyFirstTitle')}<br />
+              <span className="text-primary">{t('safety', 'safetyFirstHighlight')}</span> {t('safety', 'safetyFirstSuffix')}
             </h2>
             <div className="space-y-6">
               <p className="font-paragraph text-lg text-foreground/80 leading-relaxed">
-                At Russo NV, safety is not just a priority—it's our foundation. Every project begins and ends with comprehensive safety protocols that protect our team, your facility, and the environment.
+                {t('safety', 'safetyFirstDesc1')}
               </p>
               <p className="font-paragraph text-lg text-foreground/80 leading-relaxed">
-                Our commitment to safety compliance has earned us industry-leading certifications and the trust of major industrial clients across five countries.
+                {t('safety', 'safetyFirstDesc2')}
               </p>
             </div>
           </div>
@@ -317,23 +388,23 @@ export default function SafetyPage() {
             {[
               {
                 icon: Shield,
-                title: 'VCA Certified',
-                desc: 'Safety, Health and Environment Checklist for Contractors',
+                titleKey: 'safetyItemVcaTitle',
+                descKey: 'safetyItemVcaDesc',
               },
               {
                 icon: Award,
-                title: 'NACE Standards',
-                desc: 'International corrosion control and coating standards',
+                titleKey: 'safetyItemNaceTitle',
+                descKey: 'safetyItemNaceDesc',
               },
               {
                 icon: FileCheck,
-                title: 'ISO Compliance',
-                desc: 'Quality management and environmental standards',
+                titleKey: 'safetyItemIsoTitle',
+                descKey: 'safetyItemIsoDesc',
               },
               {
                 icon: CheckCircle,
-                title: 'Daily Reporting',
-                desc: 'Transparent project updates and safety documentation',
+                titleKey: 'safetyItemReportingTitle',
+                descKey: 'safetyItemReportingDesc',
               },
             ].map((item, index) => (
               <motion.div
@@ -346,8 +417,12 @@ export default function SafetyPage() {
               >
                 <item.icon className="w-8 h-8 text-primary flex-shrink-0" />
                 <div>
-                  <h3 className="font-heading text-xl text-foreground mb-2">{item.title}</h3>
-                  <p className="font-paragraph text-sm text-foreground/70">{item.desc}</p>
+                  <h3 className="font-heading text-xl text-foreground mb-2">
+                    {t('safety', item.titleKey)}
+                  </h3>
+                  <p className="font-paragraph text-sm text-foreground/70">
+                    {t('safety', item.descKey)}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -364,16 +439,16 @@ export default function SafetyPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight">
-              WORK WITH A<br />
-              <span className="text-primary">CERTIFIED</span> PARTNER
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight uppercase">
+              {t('safety', 'ctaTitleLine1')}<br />
+              <span className="text-primary">{t('safety', 'ctaTitleHighlight')}</span> {t('safety', 'ctaTitleSuffix')}
             </h2>
             <p className="font-paragraph text-lg text-white/80 max-w-2xl mx-auto mb-12">
-              Experience the difference of working with a fully certified and safety-compliant industrial coating partner
+              {t('safety', 'ctaDescription')}
             </p>
             <Link to="/contact">
               <button className="bg-primary text-primary-foreground font-paragraph font-bold uppercase px-8 py-4 hover:bg-primary/90 transition-colors inline-flex items-center gap-3 group">
-                Request Quote
+                {t('safety', 'ctaButton')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
