@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
-import { Image } from '@/components/ui/image';
-import { useLanguageStore } from '@/lib/i18n/useLanguage';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import { Image } from '@/components/ui/image';
 import { useToast } from '@/hooks/use-toast';
+import { useLanguageStore } from '@/lib/i18n/useLanguage';
+import { motion } from 'framer-motion';
+import { Clock, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { useState } from 'react';
 
 export default function ContactPage() {
   const { toast } = useToast();
@@ -31,11 +31,10 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     setTimeout(() => {
       toast({
-        title: 'Quote Request Received',
-        description: 'Thank you for your interest. Our team will contact you within 24 hours.',
+        title: t('contact', 'toastTitle'),
+        description: t('contact', 'toastDescription'),
       });
       setFormData({
         name: '',
@@ -71,13 +70,15 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="font-paragraph text-primary text-sm uppercase tracking-wider">Get In Touch</span>
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white mt-4 mb-8 leading-tight">
-              CONTACT<br />
-              <span className="text-primary">US</span>
+            <span className="font-paragraph text-primary text-sm uppercase tracking-wider">
+              {t('contact', 'heroLabel')}
+            </span>
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white mt-4 mb-8 leading-tight uppercase">
+              {t('contact', 'heroLine1')}<br />
+              <span className="text-primary">{t('contact', 'heroLine2')}</span>
             </h1>
             <p className="font-paragraph text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed">
-              Request a quote or get in touch with our team for your industrial coating project
+              {t('contact', 'heroDescription')}
             </p>
           </motion.div>
         </div>
@@ -95,11 +96,11 @@ export default function ContactPage() {
             className="lg:col-span-7"
           >
             <div className="border-l-4 border-primary pl-8 mb-12">
-              <h2 className="font-heading text-4xl md:text-5xl text-foreground mb-4">
-                REQUEST A QUOTE
+              <h2 className="font-heading text-4xl md:text-5xl text-foreground mb-4 uppercase">
+                {t('contact', 'formTitle')}
               </h2>
               <p className="font-paragraph text-base text-foreground/70">
-                Fill out the form below and our team will get back to you within 24 hours
+                {t('contact', 'formDescription')}
               </p>
             </div>
 
@@ -107,7 +108,7 @@ export default function ContactPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <label htmlFor="name" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
-                    Full Name *
+                    {t('contact', 'name')} *
                   </label>
                   <input
                     type="text"
@@ -122,7 +123,7 @@ export default function ContactPage() {
 
                 <div>
                   <label htmlFor="company" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
-                    Company Name *
+                    {t('contact', 'company')} *
                   </label>
                   <input
                     type="text"
@@ -139,7 +140,7 @@ export default function ContactPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <label htmlFor="email" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
-                    Email Address *
+                    {t('contact', 'email')} *
                   </label>
                   <input
                     type="email"
@@ -154,7 +155,7 @@ export default function ContactPage() {
 
                 <div>
                   <label htmlFor="phone" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
-                    Phone Number *
+                    {t('contact', 'phone')} *
                   </label>
                   <input
                     type="tel"
@@ -170,7 +171,7 @@ export default function ContactPage() {
 
               <div>
                 <label htmlFor="projectType" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
-                  Project Type *
+                  {t('contact', 'projectType')} *
                 </label>
                 <select
                   id="projectType"
@@ -180,21 +181,21 @@ export default function ContactPage() {
                   required
                   className="w-full bg-dark-grey/5 border-2 border-dark-grey/20 px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors"
                 >
-                  <option value="">Select a service</option>
-                  <option value="sandblasting">Sandblasting</option>
-                  <option value="industrial-painting">Industrial Painting</option>
-                  <option value="fireproofing">Fireproofing Coatings</option>
-                  <option value="protective-coatings">Protective Coatings</option>
-                  <option value="coat-removal">Coat Removal</option>
-                  <option value="tank-coating">Tank Coating</option>
-                  <option value="pipeline-coating">Pipeline Coating</option>
-                  <option value="other">Other</option>
+                  <option value="">{t('contact', 'selectService')}</option>
+                  <option value="sandblasting">{t('contact', 'sandblasting')}</option>
+                  <option value="industrial-painting">{t('contact', 'industrialPainting')}</option>
+                  <option value="fireproofing">{t('contact', 'fireproofing')}</option>
+                  <option value="protective-coatings">{t('contact', 'protectiveCoatings')}</option>
+                  <option value="coat-removal">{t('contact', 'coatRemoval')}</option>
+                  <option value="tank-coating">{t('contact', 'tankCoating')}</option>
+                  <option value="pipeline-coating">{t('contact', 'pipelineCoating')}</option>
+                  <option value="other">{t('contact', 'other')}</option>
                 </select>
               </div>
 
               <div>
                 <label htmlFor="message" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
-                  Project Details *
+                  {t('contact', 'projectDetails')} *
                 </label>
                 <textarea
                   id="message"
@@ -204,7 +205,7 @@ export default function ContactPage() {
                   required
                   rows={6}
                   className="w-full bg-dark-grey/5 border-2 border-dark-grey/20 px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors resize-none"
-                  placeholder="Please provide details about your project, timeline, and any specific requirements..."
+                  placeholder={t('contact', 'projectDetailsPlaceholder')}
                 />
               </div>
 
@@ -213,7 +214,7 @@ export default function ContactPage() {
                 disabled={isSubmitting}
                 className="bg-primary text-primary-foreground font-paragraph font-bold uppercase px-8 py-4 hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center gap-3"
               >
-                {isSubmitting ? 'Sending...' : 'Send Request'}
+                {isSubmitting ? t('contact', 'sending') : t('contact', 'send')}
                 <Send className="w-5 h-5" />
               </button>
             </form>
@@ -229,7 +230,7 @@ export default function ContactPage() {
           >
             <div className="bg-dark-grey text-white p-12 space-y-12 sticky top-32">
               <div>
-                <h3 className="font-heading text-3xl mb-8">CONTACT INFO</h3>
+                <h3 className="font-heading text-3xl mb-8 uppercase">{t('contact', 'contactInfo')}</h3>
               </div>
 
               <div className="space-y-8">
@@ -237,7 +238,7 @@ export default function ContactPage() {
                   <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-paragraph text-sm text-white/60 uppercase tracking-wider mb-2">
-                      Phone
+                      {t('contact', 'phoneLabel')}
                     </div>
                     <a
                       href="tel:+3234567890"
@@ -252,7 +253,7 @@ export default function ContactPage() {
                   <Mail className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-paragraph text-sm text-white/60 uppercase tracking-wider mb-2">
-                      Email
+                      {t('contact', 'emailLabel')}
                     </div>
                     <a
                       href="mailto:info@russonv.be"
@@ -267,13 +268,13 @@ export default function ContactPage() {
                   <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-paragraph text-sm text-white/60 uppercase tracking-wider mb-2">
-                      Location
+                      {t('contact', 'locationLabel')}
                     </div>
                     <div className="font-paragraph text-lg text-white">
-                      Antwerp, Belgium
+                      {t('contact', 'locationValue')}
                     </div>
                     <div className="font-paragraph text-sm text-white/70 mt-2">
-                      Serving BE, NL, FR, DE, LU
+                      {t('contact', 'servingRegion')}
                     </div>
                   </div>
                 </div>
@@ -282,12 +283,12 @@ export default function ContactPage() {
                   <Clock className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-paragraph text-sm text-white/60 uppercase tracking-wider mb-2">
-                      Business Hours
+                      {t('contact', 'businessHours')}
                     </div>
                     <div className="font-paragraph text-base text-white space-y-1">
-                      <div>Monday - Friday: 8:00 - 18:00</div>
-                      <div>Saturday: 9:00 - 14:00</div>
-                      <div>Sunday: Closed</div>
+                      <div>{t('contact', 'mondayFriday')}</div>
+                      <div>{t('contact', 'saturday')}</div>
+                      <div>{t('contact', 'sunday')}</div>
                     </div>
                   </div>
                 </div>
@@ -295,10 +296,10 @@ export default function ContactPage() {
 
               <div className="pt-8 border-t border-white/10">
                 <div className="font-paragraph text-sm text-white/60 uppercase tracking-wider mb-4">
-                  Emergency Contact
+                  {t('contact', 'emergencyContact')}
                 </div>
                 <p className="font-paragraph text-sm text-white/80 mb-4">
-                  For urgent project matters outside business hours:
+                  {t('contact', 'emergencyDescription')}
                 </p>
                 <a
                   href="tel:+32498765432"
@@ -322,23 +323,23 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-8">
-              OUR <span className="text-primary">COVERAGE</span>
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-8 uppercase">
+              {t('contact', 'coverageTitle')} <span className="text-primary">{t('contact', 'coverageHighlight')}</span>
             </h2>
             <p className="font-paragraph text-lg text-white/80 max-w-3xl mx-auto mb-16">
-              Based in Antwerp with projects across five European countries
+              {t('contact', 'coverageDescription')}
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
               {[
-                { country: 'Belgium', flag: '🇧🇪' },
-                { country: 'Netherlands', flag: '🇳🇱' },
-                { country: 'France', flag: '🇫🇷' },
-                { country: 'Germany', flag: '🇩🇪' },
-                { country: 'Luxembourg', flag: '🇱🇺' },
+                { countryKey: 'countryBelgium', flag: '🇧🇪' },
+                { countryKey: 'countryNetherlands', flag: '🇳🇱' },
+                { countryKey: 'countryFrance', flag: '🇫🇷' },
+                { countryKey: 'countryGermany', flag: '🇩🇪' },
+                { countryKey: 'countryLuxembourg', flag: '🇱🇺' },
               ].map((location, index) => (
                 <motion.div
-                  key={location.country}
+                  key={location.countryKey}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -346,7 +347,9 @@ export default function ContactPage() {
                   className="bg-white/5 border border-white/10 p-8 hover:border-primary transition-colors"
                 >
                   <div className="text-5xl mb-4">{location.flag}</div>
-                  <div className="font-paragraph text-sm text-white/80">{location.country}</div>
+                  <div className="font-paragraph text-sm text-white/80">
+                    {t('contact', location.countryKey)}
+                  </div>
                 </motion.div>
               ))}
             </div>
