@@ -1,7 +1,10 @@
+import { useLanguageStore } from '@/lib/i18n/useLanguage';
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Facebook, Linkedin, Instagram } from 'lucide-react';
 
 export default function Footer() {
+  const { t } = useLanguageStore();
+
   return (
     <footer className="w-full bg-foreground text-white">
       <div className="max-w-[100rem] mx-auto px-8 py-24">
@@ -12,7 +15,7 @@ export default function Footer() {
               RUSSO <span className="text-primary">NV</span>
             </div>
             <p className="font-paragraph text-sm text-white/80 mb-8 leading-relaxed">
-              Leading industrial coating and surface preparation company serving Belgium and neighboring countries since 1984. Specialized in heavy industry solutions with strict safety compliance.
+              {t('footer', 'companyDescription')}
             </p>
             <div className="flex gap-4">
               <a
@@ -47,63 +50,48 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="lg:col-span-2">
-            <h3 className="font-heading text-xl mb-6 text-primary">Quick Links</h3>
+            <h3 className="font-heading text-xl mb-6 text-primary">{t('footer', 'quickLinks')}</h3>
             <nav className="space-y-3">
-              <Link
-                to="/"
-                className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors"
-              >
-                Home
+              <Link to="/" className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors">
+                {t('nav', 'home')}
               </Link>
-              <Link
-                to="/services"
-                className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors"
-              >
-                Services
+              <Link to="/services" className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors">
+                {t('nav', 'services')}
               </Link>
-              <Link
-                to="/industries"
-                className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors"
-              >
-                Industries Served
+              <Link to="/industries" className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors">
+                {t('footer', 'industrieServed')}
               </Link>
-              <Link
-                to="/projects"
-                className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors"
-              >
-                Projects
+              <Link to="/projects" className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors">
+                {t('nav', 'projects')}
               </Link>
-              <Link
-                to="/about"
-                className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors"
-              >
-                About Us
+              <Link to="/about" className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors">
+                {t('footer', 'aboutUs')}
               </Link>
             </nav>
           </div>
 
           {/* Services */}
           <div className="lg:col-span-3">
-            <h3 className="font-heading text-xl mb-6 text-primary">Our Services</h3>
+            <h3 className="font-heading text-xl mb-6 text-primary">{t('footer', 'ourServices')}</h3>
             <nav className="space-y-3">
-              <div className="font-paragraph text-sm text-white/80">Industrial Painting</div>
-              <div className="font-paragraph text-sm text-white/80">Sandblasting</div>
-              <div className="font-paragraph text-sm text-white/80">Fireproofing Coatings</div>
-              <div className="font-paragraph text-sm text-white/80">Protective Coatings</div>
-              <div className="font-paragraph text-sm text-white/80">Surface Preparation</div>
-              <div className="font-paragraph text-sm text-white/80">Coat Removal</div>
+              <div className="font-paragraph text-sm text-white/80">{t('footer', 'industrialPainting')}</div>
+              <div className="font-paragraph text-sm text-white/80">{t('footer', 'sandblasting')}</div>
+              <div className="font-paragraph text-sm text-white/80">{t('footer', 'fireproofingCoatings')}</div>
+              <div className="font-paragraph text-sm text-white/80">{t('footer', 'protectiveCoatings')}</div>
+              <div className="font-paragraph text-sm text-white/80">{t('footer', 'surfacePreparation')}</div>
+              <div className="font-paragraph text-sm text-white/80">{t('footer', 'coatRemoval')}</div>
             </nav>
           </div>
 
           {/* Contact Info */}
           <div className="lg:col-span-3">
-            <h3 className="font-heading text-xl mb-6 text-primary">Contact</h3>
+            <h3 className="font-heading text-xl mb-6 text-primary">{t('footer', 'contact')}</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                 <div className="font-paragraph text-sm text-white/80">
-                  Antwerp, Belgium<br />
-                  Serving BE, NL, FR, DE, LU
+                  {t('footer', 'location')}<br />
+                  {t('footer', 'servingRegion')}
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -130,19 +118,19 @@ export default function Footer() {
 
         {/* Certifications */}
         <div className="border-t border-white/10 pt-12 mb-12">
-          <h4 className="font-heading text-lg mb-6 text-center">Certified & Compliant</h4>
+          <h4 className="font-heading text-lg mb-6 text-center">{t('footer', 'certifiedCompliant')}</h4>
           <div className="flex flex-wrap justify-center items-center gap-8">
             <div className="font-paragraph text-sm text-white/60 uppercase tracking-wider border border-white/20 px-6 py-3">
-              VCA Certified
+              {t('footer', 'vcaCertified')}
             </div>
             <div className="font-paragraph text-sm text-white/60 uppercase tracking-wider border border-white/20 px-6 py-3">
-              NACE Certified
+              {t('footer', 'naceCertified')}
             </div>
             <div className="font-paragraph text-sm text-white/60 uppercase tracking-wider border border-white/20 px-6 py-3">
-              ISO Certified
+              {t('footer', 'isoCertified')}
             </div>
             <div className="font-paragraph text-sm text-white/60 uppercase tracking-wider border border-white/20 px-6 py-3">
-              Safety Compliant
+              {t('footer', 'safetyCompliant')}
             </div>
           </div>
         </div>
@@ -151,20 +139,20 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-paragraph text-sm text-white/60">
-              © {new Date().getFullYear()} Russo NV. All rights reserved.
+              © {new Date().getFullYear()} Russo NV. {t('footer', 'allRightsReserved')}
             </p>
             <div className="flex gap-6">
               <Link
                 to="/privacy"
                 className="font-paragraph text-sm text-white/60 hover:text-primary transition-colors"
               >
-                Privacy Policy
+                {t('footer', 'privacyPolicy')}
               </Link>
               <Link
                 to="/terms"
                 className="font-paragraph text-sm text-white/60 hover:text-primary transition-colors"
               >
-                Terms of Service
+                {t('footer', 'termsOfService')}
               </Link>
             </div>
           </div>
