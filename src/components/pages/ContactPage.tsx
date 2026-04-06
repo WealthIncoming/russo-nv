@@ -339,7 +339,7 @@ export default function ContactPage() {
                 className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors overflow-hidden break-words text-center"
               >
                 <div className="font-heading text-4xl text-primary mb-4 text-center">EU</div>
-                <div className="font-heading text-2xl text-foreground mb-2 text-center">{t('contact', 'allEurope')}</div>
+                <div className="font-heading text-lg sm:text-xl text-foreground mb-2 text-center">{t('contact', 'allEurope')}</div>
                 <div className="font-paragraph text-sm text-foreground/60 text-center">{t('contact', 'allEuropeDesc')}</div>
               </motion.div>
               <motion.div
@@ -350,7 +350,7 @@ export default function ContactPage() {
                 className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors overflow-hidden break-words"
               >
                 <div className="font-heading text-4xl text-primary mb-4 text-center">24/7</div>
-                <div className="font-heading text-2xl text-foreground mb-2 text-center">{t('contact', 'updatesTitle')}</div>
+                <div className="font-heading text-lg sm:text-xl text-foreground mb-2 text-center">{t('contact', 'updatesTitle')}</div>
                 <div className="font-paragraph text-sm text-foreground/60 text-center">{t('contact', 'updatesDesc')}</div>
               </motion.div>
               <motion.div
@@ -361,7 +361,7 @@ export default function ContactPage() {
                 className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors overflow-hidden break-words"
               >
                 <div className="font-heading text-4xl text-primary mb-4 text-center">QC</div>
-                <div className="font-heading text-2xl text-foreground mb-2 text-center">{t('contact', 'qcTitle')}</div>
+                <div className="font-heading text-lg sm:text-xl text-foreground mb-2 text-center">{t('contact', 'qcTitle')}</div>
                 <div className="font-paragraph text-sm text-foreground/60 text-center">{t('contact', 'qcDesc')}</div>
               </motion.div>
               <motion.div
@@ -372,7 +372,7 @@ export default function ContactPage() {
                 className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors overflow-hidden break-words"
               >
                 <div className="font-heading text-4xl text-primary mb-4 text-center">100%</div>
-                <div className="font-heading text-2xl text-foreground mb-2 text-center">{t('contact', 'safetyTitle')}</div>
+                <div className="font-heading text-lg sm:text-xl text-foreground mb-2 text-center">{t('contact', 'safetyTitle')}</div>
                 <div className="font-paragraph text-sm text-foreground/60 text-center">{t('contact', 'safetyDesc')}</div>
               </motion.div>
             </div>
