@@ -338,7 +338,7 @@ export default function ContactPage() {
                 transition={{ duration: 0.4 }}
                 className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors"
               >
-                <div className="text-5xl mb-4">🇪🇺</div>
+                <div className="font-heading text-4xl text-primary mb-4">EU</div>
                 <div className="font-heading text-2xl text-foreground mb-2">{t('contact', 'allEurope')}</div>
                 <div className="font-paragraph text-sm text-foreground/60">{t('contact', 'allEuropeDesc')}</div>
               </motion.div>
