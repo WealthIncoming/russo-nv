@@ -238,16 +238,14 @@ export default function SafetyPage() {
                           </div>
                         )}
 
-                        {value.yearsOfExperience && (
-                          <div className="mt-6 pt-6 border-t border-dark-grey/20">
-                            <div className="font-heading text-4xl text-primary">
-                              {value.yearsOfExperience}+
-                            </div>
-                            <div className="font-paragraph text-sm text-foreground/60 uppercase tracking-wider">
-                              {t('safety', 'yearsOfExperience')}
-                            </div>
+                        <div className="mt-6 pt-6 border-t border-dark-grey/20">
+                          <div className="font-heading text-4xl text-primary">
+                            24/7
                           </div>
-                        )}
+                          <div className="font-paragraph text-sm text-foreground/60 uppercase tracking-wider">
+                            {t('safety', 'responsiveSupport')}
+                          </div>
+                        </div>
                       </div>
                     </motion.div>
                   ))}
