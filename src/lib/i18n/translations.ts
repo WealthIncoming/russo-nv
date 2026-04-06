@@ -301,6 +301,9 @@ export const translations: Record<Language, Translations> = {
       coatingInspectionTargetIndustries:
         'Oil & Gas, Petrochemical, Marine, Infrastructure, Power Generation, Manufacturing, Water Treatment',
     },
+
+    // Industries Page
+    industries: {
       pageTitle: 'Industries Served',
       pageSubtitle: 'Specialized solutions across diverse industrial sectors',
       heroLabel: 'Our Reach',
