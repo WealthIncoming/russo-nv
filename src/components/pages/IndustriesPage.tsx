@@ -6,14 +6,12 @@ import { IndustriesServed } from '@/entities';
 import { BaseCrudService } from '@/integrations';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Award, Globe, Headphones, MapPin } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // =============================================================================
 // MAPPING — Connect each CMS industry to its translation key prefix.
-// The key is a lowercase keyword to match against the industry name from the DB.
-// The value is the prefix used in the industriesCms translations.
 // =============================================================================
 const INDUSTRY_TRANSLATION_MAP: Record<string, string> = {
   'marine': 'marine',
@@ -25,16 +23,11 @@ const INDUSTRY_TRANSLATION_MAP: Record<string, string> = {
   'water': 'water',
 };
 
-// =============================================================================
-// HELPER — Find the translation prefix for a given industry name.
-// =============================================================================
 function getTranslationPrefix(industryName: string | undefined): string | null {
   if (!industryName) return null;
   const lowerName = industryName.toLowerCase();
   for (const [keyword, prefix] of Object.entries(INDUSTRY_TRANSLATION_MAP)) {
-    if (lowerName.includes(keyword)) {
-      return prefix;
-    }
+    if (lowerName.includes(keyword)) return prefix;
   }
   return null;
 }
@@ -59,11 +52,6 @@ export default function IndustriesPage() {
     }
   };
 
-  // =============================================================================
-  // HELPER — Get translated text for an industry field.
-  // Checks if we're in Dutch, finds the translation prefix, and returns
-  // the translated text or falls back to the original English CMS content.
-  // =============================================================================
   const getIndustryText = (
     industry: IndustriesServed,
     field: string,
@@ -199,7 +187,7 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* Coverage Map Section */}
+      {/* European Coverage Section */}
       <section className="w-full bg-dark-grey py-32">
         <div className="max-w-[100rem] mx-auto px-8">
           <motion.div
@@ -207,40 +195,42 @@ export default function IndustriesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center"
+            className="text-center mb-16"
           >
             <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight uppercase">
               {t('industries', 'coverageTitleLine1')}{' '}
               <span className="text-primary">{t('industries', 'coverageTitleHighlight')}</span>
             </h2>
-            <p className="font-paragraph text-lg text-white/80 max-w-3xl mx-auto mb-16">
+            <p className="font-paragraph text-lg text-white/80 max-w-3xl mx-auto">
               {t('industries', 'coverageDescription')}
             </p>
-
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-              {[
-                { countryKey: 'countryBelgium', code: 'BE' },
-                { countryKey: 'countryNetherlands', code: 'NL' },
-                { countryKey: 'countryFrance', code: 'FR' },
-                { countryKey: 'countryGermany', code: 'DE' },
-                { countryKey: 'countryLuxembourg', code: 'LU' },
-              ].map((location, index) => (
-                <motion.div
-                  key={location.code}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="bg-white/5 border border-white/10 p-8 hover:border-primary transition-colors"
-                >
-                  <div className="font-heading text-4xl text-primary mb-3">{location.code}</div>
-                  <div className="font-paragraph text-sm text-white/80">
-                    {t('industries', location.countryKey)}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: MapPin, labelKey: 'coverageHeadquarters', valueKey: 'coverageHeadquartersValue' },
+              { icon: Globe, labelKey: 'coverageOperations', valueKey: 'coverageOperationsValue' },
+              { icon: Award, labelKey: 'coverageCertifications', valueKey: 'coverageCertificationsValue' },
+              { icon: Headphones, labelKey: 'coverageAvailability', valueKey: 'coverageAvailabilityValue' },
+            ].map((item, index) => (
+              <motion.div
+                key={item.labelKey}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="bg-white/5 border border-white/10 p-8 hover:border-primary transition-colors text-center"
+              >
+                <item.icon className="w-8 h-8 text-primary mx-auto mb-4" />
+                <div className="font-paragraph text-xs text-white/50 uppercase tracking-widest mb-2">
+                  {t('industries', item.labelKey)}
+                </div>
+                <div className="font-heading text-xl text-white">
+                  {t('industries', item.valueKey)}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
