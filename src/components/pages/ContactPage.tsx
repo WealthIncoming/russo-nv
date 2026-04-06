@@ -330,31 +330,11 @@ export default function ContactPage() {
               {t('contact', 'coverageDescription')}
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                { countryKey: 'countryBelgium', flag: '🇧🇪' },
-                { countryKey: 'countryNetherlands', flag: '🇳🇱' },
-                { countryKey: 'countryFrance', flag: '🇫🇷' },
-                { countryKey: 'countryGermany', flag: '🇩🇪' },
-                { countryKey: 'countryLuxembourg', flag: '🇱🇺' },
-                { countryKey: 'countryUK', flag: '🇬🇧' },
-                { countryKey: 'countryScandinavia', flag: '🇸🇪' },
-                { countryKey: 'countryRestOfEurope', flag: '🇪🇺' },
-              ].map((location, index) => (
-                <motion.div
-                  key={location.countryKey}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="bg-white/5 border border-white/10 p-8 hover:border-primary transition-colors"
-                >
-                  <div className="text-5xl mb-4">{location.flag}</div>
-                  <div className="font-paragraph text-sm text-white/80">
-                    {t('contact', location.countryKey)}
-                  </div>
-                </motion.div>
-              ))}
+            <div className="inline-block bg-white/5 border border-white/10 p-10 hover:border-primary transition-colors">
+              <div className="text-6xl mb-4">🇪🇺</div>
+              <div className="font-paragraph text-lg text-white/80">
+                {t('contact', 'allEurope')}
+              </div>
             </div>
           </motion.div>
         </div>

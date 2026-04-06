@@ -650,6 +650,7 @@ export const translations: Record<Language, Translations> = {
       countryUK: 'United Kingdom',
       countryScandinavia: 'Scandinavia',
       countryRestOfEurope: 'Rest of Europe',
+      allEurope: 'All of Europe',
     },
   },
 
@@ -1300,6 +1301,7 @@ export const translations: Record<Language, Translations> = {
       countryUK: 'Verenigd Koninkrijk',
       countryScandinavia: 'Scandinavië',
       countryRestOfEurope: 'Rest van Europa',
+      allEurope: 'Heel Europa',
     },
   },
 };
