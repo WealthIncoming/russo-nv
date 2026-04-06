@@ -336,7 +336,7 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors"
+                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors text-center"
               >
                 <div className="font-heading text-4xl text-primary mb-4">EU</div>
                 <div className="font-heading text-2xl text-foreground mb-2">{t('contact', 'allEurope')}</div>
@@ -347,7 +347,7 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors"
+                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors text-center"
               >
                 <div className="font-heading text-4xl text-primary mb-4">24/7</div>
                 <div className="font-heading text-2xl text-foreground mb-2">{t('contact', 'updatesTitle')}</div>
@@ -358,7 +358,7 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors"
+                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors text-center"
               >
                 <div className="font-heading text-4xl text-primary mb-4">QC</div>
                 <div className="font-heading text-2xl text-foreground mb-2">{t('contact', 'qcTitle')}</div>
@@ -369,7 +369,7 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.3 }}
-                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors"
+                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors text-center"
               >
                 <div className="font-heading text-4xl text-primary mb-4">100%</div>
                 <div className="font-heading text-2xl text-foreground mb-2">{t('contact', 'safetyTitle')}</div>
