@@ -290,16 +290,6 @@ export const translations: Record<Language, Translations> = {
         'Initial surface assessment and masking of sensitive areas, selection of appropriate abrasive media and pressure, controlled blasting to achieve desired surface profile (e.g., SSPC-SP standards), thorough cleaning and dust removal, final inspection.',
       sandblastingAbrasiveTargetIndustries:
         'Oil & Gas, Marine, Manufacturing, Construction, Infrastructure, Chemical Processing, Power Generation',
-
-      coatingInspectionTitle: 'Coating Inspection',
-      coatingInspectionDescription:
-        'Our coating inspection services ensure that all applied protective coatings meet the highest industry standards for quality, performance, and durability. We conduct thorough inspections at every stage of the coating process, from surface preparation to final curing, using certified inspectors and advanced testing equipment. Our services include dry film thickness (DFT) measurement, adhesion testing, holiday detection, and visual inspections to verify compliance with project specifications and international standards such as ISO and NACE.',
-      coatingInspectionKeyBenefits:
-        'Ensures coating quality and compliance with specifications, prevents premature coating failure, improves asset longevity, supports regulatory and client requirements, reduces costly rework, provides documented quality assurance.',
-      coatingInspectionProcessOverview:
-        'Pre-inspection planning and review of specifications, verification of surface preparation standards, in-process inspection during coating application, testing (DFT, adhesion, holiday detection), documentation and reporting, final inspection and handover.',
-      coatingInspectionTargetIndustries:
-        'Oil & Gas, Petrochemical, Marine, Infrastructure, Power Generation, Manufacturing, Water Treatment',
     },
 
     // Industries Page
@@ -309,25 +299,28 @@ export const translations: Record<Language, Translations> = {
       heroLabel: 'Our Reach',
       heroLine1: 'Industries',
       heroLine2: 'We Serve',
-      heroDescription: 'Trusted by major industrial sectors across Belgium, Netherlands, France, Germany, and Luxembourg',
+      heroDescription: 'Trusted by major industrial sectors across Europe, delivering specialized coating solutions wherever they are needed',
       industryOverview: 'Industry Overview',
       workDescription: 'Our Work',
       keyServices: 'Key Services',
       typicalClients: 'Typical Clients',
       learnMore: 'Learn More',
       emptyState: 'No industries information available at the moment.',
-      coverageTitleLine1: 'International',
+      coverageTitleLine1: 'European',
       coverageTitleHighlight: 'Coverage',
-      coverageDescription: 'Operating across five countries with local expertise and international standards',
+      coverageDescription: 'Based in Antwerp, Belgium — serving industrial clients across all of Europe with local expertise and international standards',
+      coverageHeadquarters: 'Headquarters',
+      coverageHeadquartersValue: 'Antwerp, Belgium',
+      coverageOperations: 'Operations',
+      coverageOperationsValue: 'All of Europe',
+      coverageCertifications: 'Certifications',
+      coverageCertificationsValue: 'VCA • NACE • ISO',
+      coverageAvailability: 'Availability',
+      coverageAvailabilityValue: '24/7 Project Support',
       ctaTitleLine1: 'Your Industry',
       ctaTitleHighlight: 'Our Expertise',
-      ctaDescription: 'Contact us to discuss how we can support your industrial coating needs',
+      ctaDescription: 'Contact us to discuss how we can support your industrial coating needs — anywhere in Europe',
       ctaButton: 'Get In Touch',
-      countryBelgium: 'Belgium',
-      countryNetherlands: 'Netherlands',
-      countryFrance: 'France',
-      countryGermany: 'Germany',
-      countryLuxembourg: 'Luxembourg',
     },
 
     // Industries CMS Content
@@ -860,16 +853,6 @@ export const translations: Record<Language, Translations> = {
         'Initiële oppervlakbeoordeling en afscherming van gevoelige zones, keuze van het juiste straalmiddel en de juiste druk, gecontroleerd stralen om het gewenste oppervlakteprofiel te bereiken (bijv. volgens SSPC-SP-normen), grondige reiniging en stofverwijdering, eindinspectie.',
       sandblastingAbrasiveTargetIndustries:
         'Olie en gas, maritieme sector, productie, bouw, infrastructuur, chemische verwerking, energieopwekking',
-
-      coatingInspectionTitle: 'Coatinginspectie',
-      coatingInspectionDescription:
-        'Onze coatinginspectiediensten garanderen dat alle aangebrachte beschermende coatings voldoen aan de hoogste industrienormen op het gebied van kwaliteit, prestatie en duurzaamheid. Wij voeren grondige inspecties uit in elke fase van het coatingproces, van oppervlaktevoorbereiding tot uiteindelijke uitharding, met gecertificeerde inspecteurs en geavanceerde testapparatuur. Onze diensten omvatten droge filmdikte (DFT) meting, hechtingstesten, holidaydetectie en visuele inspecties om conformiteit met projectspecificaties en internationale normen zoals ISO en NACE te verifiëren.',
-      coatingInspectionKeyBenefits:
-        'Garandeert coatingkwaliteit en conformiteit met specificaties, voorkomt vroegtijdig coatingfalen, verbetert de levensduur van assets, ondersteunt regelgevings- en klantvereisten, vermindert kostbaar herstelwerk, biedt gedocumenteerde kwaliteitsborging.',
-      coatingInspectionProcessOverview:
-        'Pre-inspectie planning en beoordeling van specificaties, verificatie van oppervlaktevoorbereidingsnormen, inspectie tijdens coatingtoepassing, testen (DFT, hechting, holidaydetectie), documentatie en rapportage, eindinspectie en oplevering.',
-      coatingInspectionTargetIndustries:
-        'Olie en gas, petrochemie, maritieme sector, infrastructuur, energieopwekking, productie, waterbehandeling',
     },
 
     // Industries Page
@@ -879,25 +862,28 @@ export const translations: Record<Language, Translations> = {
       heroLabel: 'Ons Bereik',
       heroLine1: 'Industrieën',
       heroLine2: 'Die Wij Bedienen',
-      heroDescription: 'Vertrouwd door grote industriële sectoren in België, Nederland, Frankrijk, Duitsland en Luxemburg',
+      heroDescription: 'Vertrouwd door grote industriële sectoren in heel Europa, met gespecialiseerde coatingoplossingen waar ze ook nodig zijn',
       industryOverview: 'Industrieoverzicht',
       workDescription: 'Ons Werk',
       keyServices: 'Belangrijkste Diensten',
       typicalClients: 'Typische Klanten',
       learnMore: 'Meer Informatie',
       emptyState: 'Er is momenteel geen informatie over industrieën beschikbaar.',
-      coverageTitleLine1: 'Internationaal',
+      coverageTitleLine1: 'Europees',
       coverageTitleHighlight: 'Bereik',
-      coverageDescription: 'Actief in vijf landen met lokale expertise en internationale normen',
+      coverageDescription: 'Gevestigd in Antwerpen, België — wij bedienen industriële klanten in heel Europa met lokale expertise en internationale normen',
+      coverageHeadquarters: 'Hoofdkantoor',
+      coverageHeadquartersValue: 'Antwerpen, België',
+      coverageOperations: 'Werkgebied',
+      coverageOperationsValue: 'Heel Europa',
+      coverageCertifications: 'Certificeringen',
+      coverageCertificationsValue: 'VCA • NACE • ISO',
+      coverageAvailability: 'Beschikbaarheid',
+      coverageAvailabilityValue: '24/7 Projectondersteuning',
       ctaTitleLine1: 'Uw Industrie',
       ctaTitleHighlight: 'Onze Expertise',
-      ctaDescription: 'Neem contact met ons op om te bespreken hoe wij uw industriële coatingbehoeften kunnen ondersteunen',
+      ctaDescription: 'Neem contact met ons op om te bespreken hoe wij uw industriële coatingbehoeften kunnen ondersteunen — overal in Europa',
       ctaButton: 'Neem Contact Op',
-      countryBelgium: 'België',
-      countryNetherlands: 'Nederland',
-      countryFrance: 'Frankrijk',
-      countryGermany: 'Duitsland',
-      countryLuxembourg: 'Luxemburg',
     },
 
     // Industries CMS Content
