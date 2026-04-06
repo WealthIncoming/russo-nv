@@ -290,6 +290,16 @@ export const translations: Record<Language, Translations> = {
         'Initial surface assessment and masking of sensitive areas, selection of appropriate abrasive media and pressure, controlled blasting to achieve desired surface profile (e.g., SSPC-SP standards), thorough cleaning and dust removal, final inspection.',
       sandblastingAbrasiveTargetIndustries:
         'Oil & Gas, Marine, Manufacturing, Construction, Infrastructure, Chemical Processing, Power Generation',
+
+      coatingInspectionTitle: 'Coating Inspection',
+      coatingInspectionDescription:
+        'Our coating inspection services ensure that all applied protective coatings meet the highest industry standards for quality, performance, and durability. We conduct thorough inspections at every stage of the coating process, from surface preparation to final curing, using certified inspectors and advanced testing equipment. Our services include dry film thickness (DFT) measurement, adhesion testing, holiday detection, and visual inspections to verify compliance with project specifications and international standards such as ISO and NACE.',
+      coatingInspectionKeyBenefits:
+        'Ensures coating quality and compliance with specifications, prevents premature coating failure, improves asset longevity, supports regulatory and client requirements, reduces costly rework, provides documented quality assurance.',
+      coatingInspectionProcessOverview:
+        'Pre-inspection planning and review of specifications, verification of surface preparation standards, in-process inspection during coating application, testing (DFT, adhesion, holiday detection), documentation and reporting, final inspection and handover.',
+      coatingInspectionTargetIndustries:
+        'Oil & Gas, Petrochemical, Marine, Infrastructure, Power Generation, Manufacturing, Water Treatment',
     },
 
     // Industries Page
@@ -853,6 +863,16 @@ export const translations: Record<Language, Translations> = {
         'Initiële oppervlakbeoordeling en afscherming van gevoelige zones, keuze van het juiste straalmiddel en de juiste druk, gecontroleerd stralen om het gewenste oppervlakteprofiel te bereiken (bijv. volgens SSPC-SP-normen), grondige reiniging en stofverwijdering, eindinspectie.',
       sandblastingAbrasiveTargetIndustries:
         'Olie en gas, maritieme sector, productie, bouw, infrastructuur, chemische verwerking, energieopwekking',
+
+      coatingInspectionTitle: 'Coatinginspectie',
+      coatingInspectionDescription:
+        'Onze coatinginspectiediensten garanderen dat alle aangebrachte beschermende coatings voldoen aan de hoogste industrienormen op het vlak van kwaliteit, prestatie en duurzaamheid. Wij voeren grondige inspecties uit in elke fase van het coatingproces, van oppervlaktevoorbereiding tot uiteindelijke uitharding, met gecertificeerde inspecteurs en geavanceerde testapparatuur. Onze diensten omvatten droge laagdiktemeting (DFT), hechtingsproeven, holidaydetectie en visuele inspecties om de conformiteit met projectspecificaties en internationale normen zoals ISO en NACE te verifiëren.',
+      coatingInspectionKeyBenefits:
+        'Garandeert coatingkwaliteit en conformiteit met specificaties, voorkomt vroegtijdig coatingfalen, verbetert de levensduur van assets, ondersteunt regelgevende en klantvereisten, vermindert kostbaar herwerk, biedt gedocumenteerde kwaliteitsborging.',
+      coatingInspectionProcessOverview:
+        'Pre-inspectieplanning en beoordeling van specificaties, verificatie van oppervlaktevoorbereidingsnormen, tussentijdse inspectie tijdens coatingapplicatie, testen (DFT, hechting, holidaydetectie), documentatie en rapportage, eindinspectie en oplevering.',
+      coatingInspectionTargetIndustries:
+        'Olie en gas, petrochemie, maritieme sector, infrastructuur, energieopwekking, productie, waterbehandeling',
     },
 
     // Industries Page
