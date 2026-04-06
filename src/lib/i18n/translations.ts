@@ -1187,7 +1187,7 @@ export const translations: Record<Language, Translations> = {
       heroLine2: 'Verhaal',
       heroDescription: 'Gespecialiseerde industriële coating- en oppervlaktevoorbereidingsdiensten — gebouwd op praktijkexpertise, veiligheid en compromisloze kwaliteit.',
       storyTitleLine1: 'Gebouwd Op',
-      storyTitleLine2: 'Praktijkexpertise',
+      storyTitleLine2: 'Praktijk Expertise',
       storyParagraph1: 'Russo NV levert gespecialiseerde industriële coating-, oppervlaktevoorbereidings- en assetbeschermingsdiensten voor veeleisende omgevingen in heel België.',
       storyParagraph2: 'Wij ondersteunen opslagterminals, petrochemische installaties, industriële locaties en infrastructuurprojecten met oplossingen die zijn ontworpen om duurzaamheid, veiligheid en langetermijnprestaties te verbeteren.',
       storyParagraph3: 'Onze diensten omvatten tankrenovatie, abrasieve straling, hydrojetting, coatingtoepassing, corrosiebescherming en aanverwante onderhoudswerkzaamheden. Elk project wordt uitgevoerd met een sterke focus op veiligheid, kwaliteitscontrole en heldere communicatie van begin tot eind.',
