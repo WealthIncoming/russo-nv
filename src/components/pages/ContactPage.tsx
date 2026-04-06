@@ -336,11 +336,11 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                className="bg-white/5 border border-white/10 p-8 hover:border-primary transition-colors"
+                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors"
               >
                 <div className="text-5xl mb-4">🇪🇺</div>
-                <div className="font-heading text-2xl text-white mb-2">{t('contact', 'allEurope')}</div>
-                <div className="font-paragraph text-sm text-white/60">{t('contact', 'allEuropeDesc')}</div>
+                <div className="font-heading text-2xl text-foreground mb-2">{t('contact', 'allEurope')}</div>
+                <div className="font-paragraph text-sm text-foreground/60">{t('contact', 'allEuropeDesc')}</div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
