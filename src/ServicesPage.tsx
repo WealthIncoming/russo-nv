@@ -31,6 +31,17 @@ const SERVICE_TRANSLATION_MAP: Record<string, string> = {
   'coating inspection': 'coatingInspection',
 };
 
+// Display order for services on the page
+const SERVICE_DISPLAY_ORDER: string[] = [
+  'industrial coating application',
+  'sandblasting',
+  'corrosion protection',
+  'coating inspection',
+  'high-pressure water jetting',
+  'waterproofing',
+  'fireproofing',
+];
+
 // =============================================================================
 // STEP 2: HELPER FUNCTION — Find the translation prefix for a given service.
 //
@@ -70,7 +81,14 @@ export default function ServicesPage() {
   const loadServices = async () => {
     try {
       const result = await BaseCrudService.getAll<IndustrialServices>('industrialservices');
-      setServices(result.items);
+      const sorted = [...result.items].sort((a, b) => {
+        const aName = (a.serviceName || '').toLowerCase();
+        const bName = (b.serviceName || '').toLowerCase();
+        const aIndex = SERVICE_DISPLAY_ORDER.findIndex(keyword => aName.includes(keyword));
+        const bIndex = SERVICE_DISPLAY_ORDER.findIndex(keyword => bName.includes(keyword));
+        return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
+      });
+      setServices(sorted);
     } catch (error) {
       console.error('Error loading services:', error);
     } finally {
