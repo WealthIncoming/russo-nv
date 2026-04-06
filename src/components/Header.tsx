@@ -29,9 +29,9 @@ export default function Header() {
         <div className="grid grid-cols-[auto_1fr_auto] items-center h-20 xl:h-24 gap-4 xl:gap-6">
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0 whitespace-nowrap">
-            <span className="font-heading text-2xl xl:text-3xl font-bold text-dark-grey">
-              RUSSO NV
-            </span>
+          <span className="font-heading text-2xl xl:text-3xl font-bold text-dark-grey">
+            RUSSO <span className="text-primary">NV</span>
+          </span>
           </Link>
 
           {/* Desktop Navigation */}
