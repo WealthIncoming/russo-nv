@@ -330,13 +330,16 @@ export default function ContactPage() {
               {t('contact', 'coverageDescription')}
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
                 { countryKey: 'countryBelgium', flag: '🇧🇪' },
                 { countryKey: 'countryNetherlands', flag: '🇳🇱' },
                 { countryKey: 'countryFrance', flag: '🇫🇷' },
                 { countryKey: 'countryGermany', flag: '🇩🇪' },
                 { countryKey: 'countryLuxembourg', flag: '🇱🇺' },
+                { countryKey: 'countryUK', flag: '🇬🇧' },
+                { countryKey: 'countryScandinavia', flag: '🇸🇪' },
+                { countryKey: 'countryRestOfEurope', flag: '🇪🇺' },
               ].map((location, index) => (
                 <motion.div
                   key={location.countryKey}
