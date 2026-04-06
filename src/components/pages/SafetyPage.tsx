@@ -137,7 +137,7 @@ export default function SafetyPage() {
             <span className="font-paragraph text-primary text-sm uppercase tracking-wider">
               {t('safety', 'heroLabel')}
             </span>
-            <h1 className="font-heading text-[clamp(1.875rem,5vw,6rem)] text-white mt-4 mb-8 leading-tight uppercase">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-white mt-4 mb-8 leading-tight sm:leading-none uppercase">
               {t('safety', 'heroLine1')}<br />
               <span className="text-primary whitespace-nowrap">{t('safety', 'heroLine2')}</span>
             </h1>
@@ -266,7 +266,7 @@ export default function SafetyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="font-heading text-[clamp(1.5rem,4vw,3.75rem)] text-white mb-6 uppercase">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-6 uppercase">
               {t('safety', 'certsTitle')} <span className="text-primary whitespace-nowrap">{t('safety', 'certsHighlight')}</span>
             </h2>
             <p className="font-paragraph text-lg text-white/80 max-w-3xl mx-auto">
