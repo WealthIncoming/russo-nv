@@ -241,10 +241,10 @@ export default function ContactPage() {
                       {t('contact', 'phoneLabel')}
                     </div>
                     <a
-                      href="tel:+3234567890"
+                      href="tel:+32475434819"
                       className="font-paragraph text-lg text-white hover:text-primary transition-colors"
                     >
-                      +32 3 456 78 90
+                      +32 475 43 48 19
                     </a>
                   </div>
                 </div>
@@ -302,10 +302,10 @@ export default function ContactPage() {
                   {t('contact', 'emergencyDescription')}
                 </p>
                 <a
-                  href="tel:+32498765432"
+                  href="tel:+32475434819"
                   className="font-paragraph text-lg text-primary hover:text-primary/80 transition-colors"
                 >
-                  +32 498 76 54 32
+                  +32 475 43 48 19
                 </a>
               </div>
             </div>

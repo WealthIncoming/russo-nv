@@ -77,7 +77,7 @@ export default function Header() {
 
             {/* Phone CTA */}
             <a
-              href="tel:+3234567890"
+              href="tel:+32475434819"
               className="flex items-center gap-2 bg-primary text-primary-foreground font-paragraph font-bold uppercase px-4 xl:px-6 py-3 hover:bg-primary/90 transition-colors whitespace-nowrap"
             >
               <Phone className="w-4 h-4" />
@@ -140,7 +140,7 @@ export default function Header() {
 
                 {/* Phone CTA Mobile */}
                 <a
-                  href="tel:+3234567890"
+                  href="tel:+32475434819"
                   className="flex items-center justify-center gap-3 bg-primary text-primary-foreground font-paragraph font-bold uppercase px-6 py-3 hover:bg-primary/90 transition-colors w-full"
                 >
                   <Phone className="w-4 h-4" />
