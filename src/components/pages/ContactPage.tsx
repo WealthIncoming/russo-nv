@@ -347,33 +347,33 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="bg-white/5 border border-white/10 p-8 hover:border-primary transition-colors"
+                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors"
               >
                 <div className="font-heading text-4xl text-primary mb-4">24/7</div>
-                <div className="font-heading text-2xl text-white mb-2">{t('contact', 'updatesTitle')}</div>
-                <div className="font-paragraph text-sm text-white/60">{t('contact', 'updatesDesc')}</div>
+                <div className="font-heading text-2xl text-foreground mb-2">{t('contact', 'updatesTitle')}</div>
+                <div className="font-paragraph text-sm text-foreground/60">{t('contact', 'updatesDesc')}</div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="bg-white/5 border border-white/10 p-8 hover:border-primary transition-colors"
+                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors"
               >
                 <div className="font-heading text-4xl text-primary mb-4">QC</div>
-                <div className="font-heading text-2xl text-white mb-2">{t('contact', 'qcTitle')}</div>
-                <div className="font-paragraph text-sm text-white/60">{t('contact', 'qcDesc')}</div>
+                <div className="font-heading text-2xl text-foreground mb-2">{t('contact', 'qcTitle')}</div>
+                <div className="font-paragraph text-sm text-foreground/60">{t('contact', 'qcDesc')}</div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.3 }}
-                className="bg-white/5 border border-white/10 p-8 hover:border-primary transition-colors"
+                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors"
               >
                 <div className="font-heading text-4xl text-primary mb-4">100%</div>
-                <div className="font-heading text-2xl text-white mb-2">{t('contact', 'safetyTitle')}</div>
-                <div className="font-paragraph text-sm text-white/60">{t('contact', 'safetyDesc')}</div>
+                <div className="font-heading text-2xl text-foreground mb-2">{t('contact', 'safetyTitle')}</div>
+                <div className="font-paragraph text-sm text-foreground/60">{t('contact', 'safetyDesc')}</div>
               </motion.div>
             </div>
           </motion.div>
