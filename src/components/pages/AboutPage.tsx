@@ -74,7 +74,7 @@ export default function AboutPage() {
             className="min-w-0 w-full max-w-full space-y-8"
           >
             <div className="border-l-4 border-primary pl-4 sm:pl-8 max-w-full">
-              <h2 className="font-heading text-2xl sm:text-3xl md:text-[2.5rem] lg:text-[3rem] xl:text-[3.5rem] 2xl:text-[4rem] text-foreground leading-[0.95] tracking-tight mb-6 max-w-full uppercase overflow-hidden">
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-[2.5rem] lg:text-[3rem] xl:text-[3.5rem] 2xl:text-[4rem] text-foreground leading-[1.1] tracking-tight mb-6 max-w-full uppercase break-words hyphens-auto">
                 <span className="block">{t('about', 'storyTitleLine1')}</span>
                 <span className="block text-primary">{t('about', 'storyTitleLine2')}</span>
               </h2>
