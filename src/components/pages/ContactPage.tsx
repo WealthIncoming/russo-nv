@@ -330,11 +330,51 @@ export default function ContactPage() {
               {t('contact', 'coverageDescription')}
             </p>
 
-            <div className="inline-block bg-white/5 border border-white/10 p-10 hover:border-primary transition-colors">
-              <div className="text-6xl mb-4">🇪🇺</div>
-              <div className="font-paragraph text-lg text-white/80">
-                {t('contact', 'allEurope')}
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4 }}
+                className="bg-white/5 border border-white/10 p-8 hover:border-primary transition-colors"
+              >
+                <div className="text-5xl mb-4">🇪🇺</div>
+                <div className="font-heading text-2xl text-white mb-2">{t('contact', 'allEurope')}</div>
+                <div className="font-paragraph text-sm text-white/60">{t('contact', 'allEuropeDesc')}</div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="bg-white/5 border border-white/10 p-8 hover:border-primary transition-colors"
+              >
+                <div className="font-heading text-4xl text-primary mb-4">24/7</div>
+                <div className="font-heading text-2xl text-white mb-2">{t('contact', 'updatesTitle')}</div>
+                <div className="font-paragraph text-sm text-white/60">{t('contact', 'updatesDesc')}</div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className="bg-white/5 border border-white/10 p-8 hover:border-primary transition-colors"
+              >
+                <div className="font-heading text-4xl text-primary mb-4">QC</div>
+                <div className="font-heading text-2xl text-white mb-2">{t('contact', 'qcTitle')}</div>
+                <div className="font-paragraph text-sm text-white/60">{t('contact', 'qcDesc')}</div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+                className="bg-white/5 border border-white/10 p-8 hover:border-primary transition-colors"
+              >
+                <div className="font-heading text-4xl text-primary mb-4">100%</div>
+                <div className="font-heading text-2xl text-white mb-2">{t('contact', 'safetyTitle')}</div>
+                <div className="font-paragraph text-sm text-white/60">{t('contact', 'safetyDesc')}</div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
