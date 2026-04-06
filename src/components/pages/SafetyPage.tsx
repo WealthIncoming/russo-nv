@@ -128,7 +128,7 @@ export default function SafetyPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/50" />
         </div>
 
-        <div className="relative z-10 w-full max-w-[100rem] mx-auto px-8 py-24">
+        <div className="relative z-10 w-full max-w-[100rem] mx-auto px-8 py-24 overflow-hidden">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -139,7 +139,7 @@ export default function SafetyPage() {
             </span>
             <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-white mt-4 mb-8 leading-tight sm:leading-none uppercase">
               {t('safety', 'heroLine1')}<br />
-              <span className="text-primary whitespace-nowrap">{t('safety', 'heroLine2')}</span>
+              <span className="text-primary">{t('safety', 'heroLine2')}</span>
             </h1>
             <p className="font-paragraph text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed">
               {t('safety', 'heroDescription')}
@@ -267,7 +267,7 @@ export default function SafetyPage() {
             className="text-center mb-16"
           >
             <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-6 uppercase">
-              {t('safety', 'certsTitle')} <span className="text-primary whitespace-nowrap">{t('safety', 'certsHighlight')}</span>
+              {t('safety', 'certsTitle')} <span className="text-primary">{t('safety', 'certsHighlight')}</span>
             </h2>
             <p className="font-paragraph text-lg text-white/80 max-w-3xl mx-auto">
               {t('safety', 'certsDescription')}
