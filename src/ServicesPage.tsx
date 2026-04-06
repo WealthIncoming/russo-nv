@@ -28,6 +28,7 @@ const SERVICE_TRANSLATION_MAP: Record<string, string> = {
   'corrosion protection': 'corrosionProtection',
   'fireproofing': 'fireproofingThermal',
   'sandblasting': 'sandblastingAbrasive',
+  'coating inspection': 'coatingInspection',
 };
 
 // =============================================================================
