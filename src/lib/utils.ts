@@ -1,4 +1,4 @@
-// This file is needed by Shadcn/UI for utility functions like cn()
+// Utility functions for Shadcn/UI, including the cn() class merging helper
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
