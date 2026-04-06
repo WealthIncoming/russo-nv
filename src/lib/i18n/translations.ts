@@ -417,6 +417,21 @@ export const translations: Record<Language, Translations> = {
 
       steelTitle: 'Industrial Plant Steel Structure Painting',
       steelDescription: 'Protective coating of structural steel elements for a new manufacturing plant. This included beams, columns, and support frames, requiring durable coatings to resist chemical exposure and provide long-term aesthetic appeal. Complex access requirements were managed with scaffolding and aerial lifts.',
+
+      seaTankTitle: 'Tank Refurbishment Program',
+      seaTankDescription: 'Large-scale refurbishment of over 300 storage tanks at Sea Tank Terminal in the Port of Antwerp, one of Europe\'s largest independent tank storage facilities. The project involved deploying advanced hydro-jet robotic technology for exterior surface preparation and coating removal, ensuring precision cleaning with minimal environmental impact. Select tanks also required internal blasting and coating to meet strict chemical storage standards. The sheer scale of the program demanded meticulous project planning, phased execution across multiple tank farms, and continuous coordination with terminal operations to maintain uninterrupted storage capacity throughout the project duration.',
+
+      gtsTitle: 'New Build Coating Program',
+      gtsDescription: 'Complete surface preparation and protective coating application for 16 newly constructed storage tanks at Ghent Tank Storage (GTS) in the Port of Ghent. The project encompassed full interior and exterior sandblasting of all tanks, with selected tanks requiring specialized internal lining systems to accommodate a range of chemical and petroleum products. Working on a new-build site presented unique challenges including coordination with ongoing construction activities, strict timeline adherence to meet commissioning deadlines, and ensuring all coatings met the client\'s stringent specifications for long-term corrosion protection and chemical resistance.',
+
+      cspTitle: 'Crane Refurbishment',
+      cspDescription: 'Full structural refurbishment and corrosion protection of three large ship-to-shore container cranes at CSP Zeebrugge, a major container handling terminal on the Belgian coast. The project involved comprehensive surface preparation, multi-layer anti-corrosion coating application, and tackling of all structural steel components exposed to the harsh maritime environment. Working at significant heights on active port infrastructure required rigorous safety management, specialized access solutions, and close coordination with terminal operations to minimize disruption to vessel loading and unloading schedules.',
+
+      bnfwTitle: 'Food Storage Refurbishment',
+      bnfwDescription: 'Comprehensive interior refurbishment and protective coating application across multiple large food storage warehouse halls at the BNFW facility in Zeebrugge. The project required full surface preparation and application of food-grade coating systems compliant with strict food hygiene regulations and HACCP standards. Each hall underwent complete corrosion treatment and received specialized coatings designed to withstand frequent cleaning cycles, temperature fluctuations, and the demands of an active food storage environment. Phased execution ensured continuous warehouse availability for the client\'s operations throughout the project.',
+
+      itcRubisTitle: 'Anti-Slip & Roof Coating',
+      itcRubisDescription: 'Specialized coating project for eight large storage tanks at the ITC Rubis terminal in Zeebrugge, focusing on anti-slip safety coatings for walkways and access areas, and protective coating application on shell roofs exposed to coastal weather conditions. The anti-slip systems were engineered to meet stringent safety standards for personnel working at height on tank surfaces, while the shell roof coatings provided long-term protection against UV degradation, salt spray corrosion, and rainwater infiltration. All work was carried out in an active terminal environment with strict safety and environmental protocols.',
     },
 
     // Safety Page
@@ -990,6 +1005,21 @@ export const translations: Record<Language, Translations> = {
 
       steelTitle: 'Schilderwerk Staalconstructie Industriële Fabriek',
       steelDescription: 'Beschermende coating van constructieve staalelementen voor een nieuwe productiefabriek. Dit omvatte balken, kolommen en draagconstructies, waarvoor duurzame coatings nodig waren die bestand zijn tegen chemische blootstelling en een langdurig esthetisch resultaat bieden. Complexe toegangsvereisten werden beheerd met steigers en hoogwerkers.',
+
+      seaTankTitle: 'Tankrenovatieprogramma',
+      seaTankDescription: 'Grootschalige renovatie van meer dan 300 opslagtanks bij Sea Tank Terminal in de Haven van Antwerpen, een van Europa\'s grootste onafhankelijke tankopslagfaciliteiten. Het project omvatte de inzet van geavanceerde hydro-jet robottechnologie voor uitwendige oppervlaktevoorbereiding en coatingverwijdering, met minimale milieu-impact. Geselecteerde tanks vereisten ook inwendige straling en coating om te voldoen aan strenge normen voor chemische opslag. De enorme schaal van het programma vereiste nauwgezette projectplanning, gefaseerde uitvoering over meerdere tankparken en voortdurende coördinatie met de terminaloperaties om ononderbroken opslagcapaciteit te garanderen gedurende het gehele project.',
+
+      gtsTitle: 'Coatingprogramma Nieuwbouw',
+      gtsDescription: 'Volledige oppervlaktevoorbereiding en beschermende coatingtoepassing voor 16 nieuw gebouwde opslagtanks bij Ghent Tank Storage (GTS) in de Haven van Gent. Het project omvatte volledige inwendige en uitwendige zandstraling van alle tanks, waarbij geselecteerde tanks gespecialiseerde interne bekledingssystemen vereisten voor een scala aan chemische en petroleumproducten. Werken op een nieuwbouwlocatie bracht unieke uitdagingen met zich mee, waaronder coördinatie met lopende bouwactiviteiten, strikte naleving van de planning om inbedrijfstellingsdeadlines te halen, en het waarborgen dat alle coatings voldeden aan de strenge specificaties van de klant voor langdurige corrosiebescherming en chemische bestendigheid.',
+
+      cspTitle: 'Kraanrenovatie',
+      cspDescription: 'Volledige structurele renovatie en corrosiebescherming van drie grote ship-to-shore containerkranen bij CSP Zeebrugge, een belangrijke containeroverslag­terminal aan de Belgische kust. Het project omvatte uitgebreide oppervlaktevoorbereiding, meerlaagse anticorrosie-coatingtoepassing en de behandeling van alle constructieve staalcomponenten die blootgesteld zijn aan het ruwe maritieme klimaat. Werken op aanzienlijke hoogte op actieve haveninfrastructuur vereiste streng veiligheidsbeheer, gespecialiseerde toegangsoplossingen en nauwe coördinatie met de terminaloperaties om verstoring van het laden en lossen van schepen te minimaliseren.',
+
+      bnfwTitle: 'Renovatie Voedselopslagfaciliteit',
+      bnfwDescription: 'Uitgebreide inwendige renovatie en beschermende coatingtoepassing in meerdere grote voedselopslaghallen bij de BNFW-faciliteit in Zeebrugge. Het project vereiste volledige oppervlaktevoorbereiding en toepassing van voedselveilige coatingsystemen conform strenge voedselhygiënevoorschriften en HACCP-normen. Elke hal onderging een volledige corrosiebehandeling en ontving gespecialiseerde coatings ontworpen om bestand te zijn tegen frequente reinigingscycli, temperatuurschommelingen en de eisen van een actieve voedselopslagomgeving. Gefaseerde uitvoering garandeerde continue beschikbaarheid van de magazijnen voor de bedrijfsvoering van de klant gedurende het gehele project.',
+
+      itcRubisTitle: 'Antislip- & Dakcoating',
+      itcRubisDescription: 'Gespecialiseerd coatingproject voor acht grote opslagtanks bij de ITC Rubis-terminal in Zeebrugge, gericht op antislip-veiligheidscoatings voor looppaden en toegangszones, en beschermende coatingtoepassing op schelpdaken blootgesteld aan kustweersomstandigheden. De antislipsystemen werden ontworpen om te voldoen aan strenge veiligheidsnormen voor personeel dat op hoogte werkt op tankoppervlakken, terwijl de dakcoatings langdurige bescherming boden tegen UV-degradatie, zoutnevelcorrosie en regenwaterinfiltratie. Alle werkzaamheden werden uitgevoerd in een actieve terminalomgeving met strikte veiligheids- en milieuprotocollen.',
     },
 
     // Safety Page

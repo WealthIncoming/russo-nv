@@ -21,6 +21,11 @@ const PROJECT_TRANSLATION_MAP: Record<string, string> = {
   'refinery': 'refinery',
   'storage tank': 'tank',
   'steel structure': 'steel',
+  'tank refurbishment': 'seaTank',
+  'new build coating': 'gts',
+  'crane refurbishment': 'csp',
+  'food storage': 'bnfw',
+  'anti-slip': 'itcRubis',
 };
 
 // =============================================================================
