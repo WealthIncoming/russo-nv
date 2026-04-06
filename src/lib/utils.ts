@@ -1,4 +1,4 @@
-// Utility functions for Shadcn/UI, including the cn() class merging helper
+// Shadcn/UI utility: merges Tailwind classes with cn()
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
