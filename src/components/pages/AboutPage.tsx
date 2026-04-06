@@ -92,17 +92,21 @@ export default function AboutPage() {
               {t('about', 'storyParagraph3')}
             </p>
 
+            <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed max-w-[65ch]">
+              {t('about', 'storyParagraph4')}
+            </p>
+
             <div className="grid grid-cols-2 gap-8 pt-8 max-w-[32rem]">
               <div className="min-w-0">
-                <div className="font-heading text-4xl sm:text-5xl text-primary mb-2">30+</div>
+                <div className="font-heading text-4xl sm:text-5xl text-primary mb-2">24/7</div>
                 <div className="font-paragraph text-sm text-foreground/70 uppercase tracking-wider">
-                  {t('about', 'storyYearsExperience')}
+                  {t('about', 'storyResponsiveSupport')}
                 </div>
               </div>
               <div className="min-w-0">
-                <div className="font-heading text-4xl sm:text-5xl text-primary mb-2">5</div>
+                <div className="font-heading text-4xl sm:text-5xl text-primary mb-2">QC</div>
                 <div className="font-paragraph text-sm text-foreground/70 uppercase tracking-wider">
-                  {t('about', 'storyCountriesServed')}
+                  {t('about', 'storyInspectionQuality')}
                 </div>
               </div>
             </div>
