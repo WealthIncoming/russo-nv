@@ -384,11 +384,13 @@ export default function HomePage() {
               <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary z-20" />
 
               <Image
-                src="https://static.wixstatic.com/media/3232e5_ccacd4497b0147e8a64b40b832b79772~mv2.png?originWidth=1152&originHeight=576"
-                alt="Industrial worker sandblasting"
-                className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700"
+                src="https://static.wixstatic.com/media/3232e5_a79e35e54e6a4a0b89560d676d003be8~mv2.png"
+                className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 my-0 mx-[7px]"
                 width={1200}
-              />
+                originWidth={880}
+                originHeight={1168}
+                focalPointX={63.59255202628693}
+                focalPointY={58.43373493975904} />
 
               <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 z-20 bg-black/80 backdrop-blur-md p-4 md:p-6 border-l-2 border-primary max-w-[85%] sm:max-w-xs">
                 <div className="flex items-center gap-2 mb-2">
