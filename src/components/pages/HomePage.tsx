@@ -481,11 +481,11 @@ export default function HomePage() {
             {/* Left Column: Image */}
             <div className="relative w-full min-w-0 aspect-video xl:aspect-[4/3] overflow-hidden border border-white/10">
               <Image
-                src="https://static.wixstatic.com/media/3232e5_227722fce6c544bfa11ad9bde5ff07a5~mv2.png?originWidth=1920&originHeight=1024"
-                alt="Large scale tank farm project"
-                className="w-full h-full object-cover"
+                src="https://static.wixstatic.com/media/3232e5_8b2cbf3ec2d145bd89b8b1733c9be1ea~mv2.jpg"
+                className="w-full h-full object-cover opacity-[1] shadow-[12px_12px_4px_0px_#d9d9d9] mix-blend-normal"
                 width={1920}
-              />
+                originWidth={4000}
+                originHeight={3000} />
             </div>
 
             {/* Right Column: Text Content */}
