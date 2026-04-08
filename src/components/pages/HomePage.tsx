@@ -384,13 +384,11 @@ export default function HomePage() {
               <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary z-20" />
 
               <Image
-                src="https://static.wixstatic.com/media/3232e5_a79e35e54e6a4a0b89560d676d003be8~mv2.png"
-                className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 my-0 mx-[7px]"
+                src="https://static.wixstatic.com/media/3232e5_93088d46f2354a61a11ecb9602d5231d~mv2.png"
+                className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 my-0 mx-[7px] opacity-[0.27]"
                 width={1200}
-                originWidth={880}
-                originHeight={1168}
-                focalPointX={63.59255202628693}
-                focalPointY={58.43373493975904} />
+                originWidth={1536}
+                originHeight={1024} />
 
               <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 z-20 bg-black/80 backdrop-blur-md p-4 md:p-6 border-l-2 border-primary max-w-[85%] sm:max-w-xs">
                 <div className="flex items-center gap-2 mb-2">
