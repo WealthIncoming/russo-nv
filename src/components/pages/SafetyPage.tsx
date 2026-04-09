@@ -137,7 +137,7 @@ export default function SafetyPage() {
             <span className="font-paragraph text-primary text-sm uppercase tracking-wider">
               {t('safety', 'heroLabel')}
             </span>
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl text-white mt-4 mb-8 leading-tight sm:leading-none uppercase">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[5.5rem] text-white mt-4 mb-8 leading-tight sm:leading-none uppercase">
               {t('safety', 'heroLine1')}<br />
               <span className="text-primary">{t('safety', 'heroLine2')}</span>
             </h1>
@@ -289,7 +289,7 @@ export default function SafetyPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white/5 border border-white/10 p-8 hover:border-primary transition-colors"
+                  className="bg-white/5 border border-white/10 p-8 hover:border-primary transition-colors overflow-hidden"
                 >
                   {cert.logo && (
                     <div className="mb-6 h-24 flex items-center justify-center">
@@ -303,7 +303,7 @@ export default function SafetyPage() {
                   )}
 
                   {cert.certificationName && (
-                    <h3 className="font-heading text-2xl text-white mb-3">
+                    <h3 className="font-heading text-white mb-3 break-words" style={{ fontSize: 'clamp(0.875rem, 1.3vw, 1.25rem)' }}>
                       {getCertText(cert, 'Title', cert.certificationName)}
                     </h3>
                   )}
@@ -368,7 +368,7 @@ export default function SafetyPage() {
           className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
         >
           <div>
-            <h2 className="font-heading text-5xl md:text-6xl text-foreground mb-8 leading-tight uppercase">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-foreground mb-8 leading-tight uppercase">
               {t('safety', 'safetyFirstTitle')}<br />
               <span className="text-primary">{t('safety', 'safetyFirstHighlight')}</span> {t('safety', 'safetyFirstSuffix')}
             </h2>
