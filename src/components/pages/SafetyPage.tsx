@@ -303,7 +303,7 @@ export default function SafetyPage() {
                   )}
 
                   {cert.certificationName && (
-                    <h3 className="font-heading text-white mb-3 break-words" style={{ fontSize: 'clamp(0.875rem, 1.3vw, 1.25rem)' }}>
+                    <h3 className="font-heading text-white mb-3" style={{ fontSize: 'clamp(0.875rem, 1.3vw, 1.25rem)' }}>
                       {getCertText(cert, 'Title', cert.certificationName)}
                     </h3>
                   )}
