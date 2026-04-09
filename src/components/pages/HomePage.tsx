@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, CheckCircle, Clock, Shield, Users } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -86,10 +86,6 @@ const SectionLabel = ({ text, align = 'left' }: { text: string, align?: 'left' |
 );
 
 const ParallaxText = ({ children, baseVelocity = 100 }: { children: string; baseVelocity: number }) => {
-  const baseX = useRef(0);
-  const { scrollY } = useScroll();
-  const scrollVelocity = useSpring(scrollY, { damping: 50, stiffness: 400 });
-  const velocityFactor = useTransform(scrollVelocity, [0, 1000], [0, 5], { clamp: false });
   const [x, setX] = useState(0);
   const xRef = useRef(0);
 
@@ -107,13 +103,7 @@ const ParallaxText = ({ children, baseVelocity = 100 }: { children: string; base
       const delta = (time - lastTime) / 1000; // seconds
       lastTime = time;
 
-      let moveBy = baseVelocity * delta;
-      // Apply velocity from scroll
-      const velocity = velocityFactor.get();
-      if (velocity !== 0) {
-        moveBy += velocity * moveBy;
-      }
-
+      const moveBy = baseVelocity * delta;
       xRef.current += moveBy;
       setX(wrap(-20, -45, xRef.current)); // Wrap between -20% and -45% to create seamless loop effect
       animationFrameId = requestAnimationFrame(animate);
@@ -121,7 +111,7 @@ const ParallaxText = ({ children, baseVelocity = 100 }: { children: string; base
 
     animationFrameId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrameId);
-  }, [baseVelocity, velocityFactor]);
+  }, [baseVelocity]);
 
   return (
     <div className="overflow-hidden whitespace-nowrap flex flex-nowrap">
