@@ -4,7 +4,7 @@ import { Image } from '@/components/ui/image';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { motion } from 'framer-motion';
-import { Clock, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { CheckCircle, Clock, Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
 
 export default function ContactPage() {
@@ -19,6 +19,7 @@ export default function ContactPage() {
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -32,10 +33,6 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     setTimeout(() => {
-      toast({
-        title: t('contact', 'toastTitle'),
-        description: t('contact', 'toastDescription'),
-      });
       setFormData({
         name: '',
         company: '',
@@ -45,6 +42,7 @@ export default function ContactPage() {
         message: '',
       });
       setIsSubmitting(false);
+      setIsSubmitted(true);
     }, 1500);
   };
 
@@ -104,6 +102,28 @@ export default function ContactPage() {
               </p>
             </div>
 
+            {isSubmitted ? (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col items-center justify-center py-16 text-center"
+              >
+                <CheckCircle className="w-16 h-16 text-primary mb-6" />
+                <h3 className="font-heading text-3xl text-foreground mb-4 uppercase">
+                  {t('contact', 'toastTitle')}
+                </h3>
+                <p className="font-paragraph text-lg text-foreground/70 mb-8 max-w-md">
+                  {t('contact', 'toastDescription')}
+                </p>
+                <button
+                  onClick={() => setIsSubmitted(false)}
+                  className="bg-primary text-primary-foreground font-paragraph font-bold uppercase px-8 py-4 hover:bg-primary/90 transition-colors inline-flex items-center gap-3"
+                >
+                  {t('contact', 'sendAnother')}
+                </button>
+              </motion.div>
+            ) : (
             <form onSubmit={handleSubmit} className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
@@ -218,6 +238,7 @@ export default function ContactPage() {
                 <Send className="w-5 h-5" />
               </button>
             </form>
+            )}
           </motion.div>
 
           {/* Contact Info */}
