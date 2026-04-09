@@ -385,7 +385,7 @@ export default function HomePage() {
 
               <Image
                 src="https://static.wixstatic.com/media/3232e5_51fa10f97d774c23858179ced66b46b6~mv2.png"
-                className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 my-0 mx-[7px] opacity-[1]"
+                className="absolute inset-0 w-full h-full object-cover my-0 mx-[7px]"
                 width={1200}
                 originWidth={1536}
                 originHeight={1024} />
