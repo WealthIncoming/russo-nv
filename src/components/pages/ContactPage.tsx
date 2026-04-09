@@ -251,7 +251,7 @@ export default function ContactPage() {
           >
             <div className="bg-dark-grey text-white p-12 space-y-12 sticky top-32">
               <div>
-                <h3 className="font-heading text-2xl md:text-3xl mb-8 uppercase break-words">{t('contact', 'contactInfo')}</h3>
+                <h3 className="font-heading text-xl md:text-2xl mb-8 uppercase">{t('contact', 'contactInfo')}</h3>
               </div>
 
               <div className="space-y-8">
