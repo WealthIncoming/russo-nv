@@ -1,4 +1,3 @@
-import { members } from "@wix/members";
 import { Member } from ".";
 
 export const getCurrentMember = async (): Promise<Member | null> => {
@@ -6,14 +5,18 @@ export const getCurrentMember = async (): Promise<Member | null> => {
     const timeout = new Promise<never>((_, reject) =>
       setTimeout(() => reject(new Error('getCurrentMember timed out')), 5000)
     );
-    const member = await Promise.race([
+    const { members } = await Promise.race([
+      import("@wix/members"),
+      timeout,
+    ]);
+    const result = await Promise.race([
       members.getCurrentMember({ fieldsets: ["FULL"] }),
       timeout,
     ]);
-    if (!member) {
+    if (!result) {
       console.log('==== No member found');
     }
-    return member.member;
+    return result.member;
   } catch (error) {
     console.log(error);
     return null;
