@@ -303,7 +303,7 @@ export default function SafetyPage() {
                   )}
 
                   {cert.certificationName && (
-                    <h3 className="font-heading text-2xl text-white mb-3">
+                    <h3 className="font-heading text-xl text-white mb-3 break-words">
                       {getCertText(cert, 'Title', cert.certificationName)}
                     </h3>
                   )}
