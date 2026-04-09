@@ -13,13 +13,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-4">
             <Link to="/" className="flex items-center mb-6">
-              <Image 
-                src="https://static.wixstatic.com/media/3232e5_648f8bcac8bf401c8bdff7a7ca3f4923~mv2.jpg"
-                alt="RUSSO N.V. Logo"
-                width={100}
-                height={100}
-                className="h-12 w-auto object-contain"
-              />
+
             </Link>
             <div className="font-heading text-3xl mb-6">
               RUSSO <span className="text-primary">NV</span>
