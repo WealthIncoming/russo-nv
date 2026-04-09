@@ -384,8 +384,8 @@ export default function HomePage() {
               <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary z-20" />
 
               <Image
-                src="https://static.wixstatic.com/media/3232e5_93088d46f2354a61a11ecb9602d5231d~mv2.png"
-                className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 my-0 mx-[7px] opacity-[0.27]"
+                src="https://static.wixstatic.com/media/3232e5_609235168e7446549d469e31c9db8348~mv2.png"
+                className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 my-0 mx-[7px] opacity-[1]"
                 width={1200}
                 originWidth={1536}
                 originHeight={1024} />
