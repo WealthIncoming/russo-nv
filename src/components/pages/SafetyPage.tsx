@@ -368,7 +368,7 @@ export default function SafetyPage() {
           className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
         >
           <div>
-            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-foreground mb-8 leading-tight uppercase break-words">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-foreground mb-8 leading-tight uppercase">
               {t('safety', 'safetyFirstTitle')}<br />
               <span className="text-primary">{t('safety', 'safetyFirstHighlight')}</span> {t('safety', 'safetyFirstSuffix')}
             </h2>
