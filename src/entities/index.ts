@@ -119,4 +119,14 @@ export interface ProjectPortfolio {
   projectLocation?: string;
   /** @wixFieldType date */
   completionDate?: Date | string;
+  /** @wixFieldType text */
+  projectName?: string;
+  /** @wixFieldType text */
+  description?: string;
+  /** @wixFieldType text */
+  client?: string;
+  /** @wixFieldType text */
+  location?: string;
+  /** @wixFieldType text */
+  scope?: string;
 }
