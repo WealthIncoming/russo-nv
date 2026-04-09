@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="lg:col-span-4">
             <Link to="/" className="flex items-center mb-6">
               <Image
-                src="https://static.wixstatic.com/media/3232e5_48e2024c6d3f441e817637ccdd99f28f~mv2.png"
+                src="https://static.wixstatic.com/media/3232e5_a7d861cd51974193aa68d7ae45529153~mv2.jpg"
                 alt="Russo NV Logo"
                 width={200}
                 className="h-auto"

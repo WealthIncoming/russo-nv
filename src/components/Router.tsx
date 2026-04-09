@@ -9,17 +9,9 @@ import ProjectsPage from '@/components/pages/ProjectsPage';
 import SafetyPage from '@/components/pages/SafetyPage';
 import AboutPage from '@/components/pages/AboutPage';
 import ContactPage from '@/components/pages/ContactPage';
-import { useEffect, useMemo } from 'react';
-import { useLanguageStore } from '@/lib/i18n/useLanguage';
 
 // Layout component that includes ScrollToTop
 function Layout() {
-  const initializeLanguage = useLanguageStore((state) => state.initializeLanguage);
-  
-  useEffect(() => {
-    initializeLanguage();
-  }, []);
-
   return (
     <>
       <ScrollToTop />

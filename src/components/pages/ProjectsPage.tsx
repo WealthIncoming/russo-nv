@@ -179,7 +179,7 @@ export default function ProjectsPage() {
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                     <div className="lg:col-span-8">
                       <div className="border-l-4 border-primary pl-8 mb-6">
-                        <h2 className="font-heading text-3xl md:text-4xl text-foreground mb-4 break-words">
+                        <h2 className="font-heading text-4xl md:text-5xl text-foreground mb-4">
                           {getProjectText(project, 'Title', project.projectTitle)}
                         </h2>
                       </div>

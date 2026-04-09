@@ -7,30 +7,18 @@ import "@wix/wix-vibe-plugins/plugins-vars.css";
 import "@wix/wix-vibe-plugins/plugins-theme.css";
 import "@/styles/global.css";
 
-let seoTagsServiceConfig;
-try {
-  const seoTimeout = new Promise((_, reject) =>
-    setTimeout(() => reject(new Error('SEO config timed out')), 3000)
-  );
-  seoTagsServiceConfig = await Promise.race([
-    loadSEOTagsServiceConfig({
-      pageUrl: Astro.url.href,
-      itemData: {
-        pageName: 'Home',
-      },
-    }),
-    seoTimeout,
-  ]);
-} catch (e) {
-  console.error('SEO tags config failed or timed out:', e);
-  seoTagsServiceConfig = null;
-}
+const seoTagsServiceConfig = await loadSEOTagsServiceConfig({
+  pageUrl: Astro.url.href,
+  itemData: {
+    pageName: 'Home',
+  },
+});
 ---
 
 <html lang="en" class="w-full h-full">
   <head>
     <Head />
-    {seoTagsServiceConfig && <SEO.Tags seoTagsServiceConfig={seoTagsServiceConfig} slot="seo-tags" />}
+    <SEO.Tags seoTagsServiceConfig={seoTagsServiceConfig} slot="seo-tags" />
   </head>
   <body class="w-full h-full">
     <div id="root" class="w-full h-full">

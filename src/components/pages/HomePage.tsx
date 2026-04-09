@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, CheckCircle, Clock, Shield, Users } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -86,6 +86,10 @@ const SectionLabel = ({ text, align = 'left' }: { text: string, align?: 'left' |
 );
 
 const ParallaxText = ({ children, baseVelocity = 100 }: { children: string; baseVelocity: number }) => {
+  const baseX = useRef(0);
+  const { scrollY } = useScroll();
+  const scrollVelocity = useSpring(scrollY, { damping: 50, stiffness: 400 });
+  const velocityFactor = useTransform(scrollVelocity, [0, 1000], [0, 5], { clamp: false });
   const [x, setX] = useState(0);
   const xRef = useRef(0);
 
@@ -103,7 +107,13 @@ const ParallaxText = ({ children, baseVelocity = 100 }: { children: string; base
       const delta = (time - lastTime) / 1000; // seconds
       lastTime = time;
 
-      const moveBy = baseVelocity * delta;
+      let moveBy = baseVelocity * delta;
+      // Apply velocity from scroll
+      const velocity = velocityFactor.get();
+      if (velocity !== 0) {
+        moveBy += velocity * moveBy;
+      }
+
       xRef.current += moveBy;
       setX(wrap(-20, -45, xRef.current)); // Wrap between -20% and -45% to create seamless loop effect
       animationFrameId = requestAnimationFrame(animate);
@@ -111,7 +121,7 @@ const ParallaxText = ({ children, baseVelocity = 100 }: { children: string; base
 
     animationFrameId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrameId);
-  }, [baseVelocity]);
+  }, [baseVelocity, velocityFactor]);
 
   return (
     <div className="overflow-hidden whitespace-nowrap flex flex-nowrap">
@@ -374,8 +384,8 @@ export default function HomePage() {
               <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary z-20" />
 
               <Image
-                src="https://static.wixstatic.com/media/3232e5_51fa10f97d774c23858179ced66b46b6~mv2.png"
-                className="absolute inset-0 w-full h-full object-cover my-0 mx-[7px]"
+                src="https://static.wixstatic.com/media/3232e5_93088d46f2354a61a11ecb9602d5231d~mv2.png"
+                className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 my-0 mx-[7px] opacity-[0.27]"
                 width={1200}
                 originWidth={1536}
                 originHeight={1024} />

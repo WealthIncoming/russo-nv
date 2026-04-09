@@ -1,4 +1,4 @@
-import type { members } from "@wix/members";
+import { members } from "@wix/members";
 
 export type Member = {
   loginEmail?: members.GetMyMemberResponse['member']['loginEmail']; // type is string
