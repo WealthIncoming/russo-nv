@@ -290,6 +290,7 @@ export default function SafetyPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-white/5 border border-white/10 p-8 hover:border-primary transition-colors overflow-hidden"
+                  style={{ containerType: 'inline-size' }}
                 >
                   {cert.logo && (
                     <div className="mb-6 h-24 flex items-center justify-center">
@@ -303,7 +304,7 @@ export default function SafetyPage() {
                   )}
 
                   {cert.certificationName && (
-                    <h3 className="font-heading text-white mb-3" style={{ fontSize: 'clamp(0.75rem, 1.1vw, 1.125rem)' }}>
+                    <h3 className="font-heading text-white mb-3" style={{ fontSize: 'clamp(0.75rem, 5cqi, 1.125rem)' }}>
                       {getCertText(cert, 'Title', cert.certificationName)}
                     </h3>
                   )}
