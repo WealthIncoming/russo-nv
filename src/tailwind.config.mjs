@@ -19,8 +19,9 @@ export default {
                 '9xl': ['8rem', { lineHeight: '1.0', letterSpacing: '0.0002em', fontWeight: '900' }],
             },
             fontFamily: {
-                heading: "syne",
-                paragraph: "azeret-mono"
+                heading: ["syne"],
+                paragraph: ["azeret-mono"],
+                montserrat: ["montserrat", "sans-serif"]
             },
             colors: {
                 'dark-grey': '#333333',

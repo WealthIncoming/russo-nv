@@ -6,20 +6,20 @@ export default function MaintenancePage() {
     <main className="min-h-screen w-full bg-white flex flex-col items-center justify-center px-6 py-16">
       <div className="max-w-2xl w-full flex flex-col items-center text-center">
         <Image
-          src="https://static.wixstatic.com/media/3232e5_ac4fc036c36a4c538c8683ecd49f6ff8~mv2.png"
-          alt="RUSSO N.V. Logo"
+          src="https://static.wixstatic.com/media/3232e5_48e2024c6d3f441e817637ccdd99f28f~mv2.png"
           width={200}
           height={200}
           className="h-32 sm:h-44 w-auto object-contain mb-10"
-        />
+          originWidth={4167}
+          originHeight={2902} />
 
         <div className="h-[1px] w-16 bg-primary mb-8" />
 
-        <h1 className="font-heading text-xl sm:text-3xl lg:text-4xl font-bold text-foreground uppercase tracking-[0.04em] leading-[1.2] max-w-xl mb-4">
+        <h1 className="text-xl sm:text-3xl text-foreground uppercase tracking-[0.04em] leading-[1.2] max-w-xl mb-4 lg:text-3xl font-bold font-heading">
           Website undergoing protective coating
         </h1>
 
-        <p className="font-paragraph text-sm sm:text-base text-foreground/70 leading-relaxed mb-10">
+        <p className="font-paragraph text-sm sm:text-base text-foreground/70 leading-relaxed mb-10 italic">
           Curing time: soon.
         </p>
 
