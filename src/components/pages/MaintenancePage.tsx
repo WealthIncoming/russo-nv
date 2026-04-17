@@ -6,7 +6,7 @@ export default function MaintenancePage() {
     <main className="min-h-screen w-full bg-white flex flex-col items-center justify-center px-6 py-16">
       <div className="max-w-2xl w-full flex flex-col items-center text-center">
         <Image
-          src="https://static.wixstatic.com/media/3232e5_648f8bcac8bf401c8bdff7a7ca3f4923~mv2.jpg"
+          src="https://static.wixstatic.com/media/3232e5_cffc14f7b6e941a2a550037601b8aa3f~mv2.png"
           alt="RUSSO N.V. Logo"
           width={200}
           height={200}
