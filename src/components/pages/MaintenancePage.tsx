@@ -16,11 +16,11 @@ export default function MaintenancePage() {
         <div className="h-[1px] w-16 bg-primary mb-8" />
 
         <h1 className="font-heading text-3xl sm:text-5xl font-bold text-foreground uppercase tracking-[0.04em] mb-6">
-          Website Under Construction
+          Website undergoing protective coating
         </h1>
 
         <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed mb-12">
-          Website undergoing protective coating. Curing time: soon.
+          Curing time: soon.
         </p>
 
         <div className="w-full border-t border-dark-grey/20 pt-10">
