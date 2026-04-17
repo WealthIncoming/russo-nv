@@ -20,7 +20,7 @@ export default function MaintenancePage() {
         </h1>
 
         <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed mb-12">
-          We're updating our website. We'll be back soon.
+          Website undergoing protective coating. Curing time: soon.
         </p>
 
         <div className="w-full border-t border-dark-grey/20 pt-10">
