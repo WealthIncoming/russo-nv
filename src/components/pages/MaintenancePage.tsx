@@ -15,11 +15,11 @@ export default function MaintenancePage() {
 
         <div className="h-[1px] w-16 bg-primary mb-8" />
 
-        <h1 className="font-heading text-3xl sm:text-5xl font-bold text-foreground uppercase tracking-[0.04em] mb-6">
+        <h1 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground uppercase tracking-[0.02em] leading-[1.15] max-w-xl mb-4">
           Website undergoing protective coating
         </h1>
 
-        <p className="font-paragraph text-base sm:text-lg text-foreground/80 leading-relaxed mb-12">
+        <p className="font-paragraph text-lg sm:text-xl text-foreground/70 leading-relaxed mb-10">
           Curing time: soon.
         </p>
 
