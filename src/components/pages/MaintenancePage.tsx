@@ -15,7 +15,7 @@ export default function MaintenancePage() {
 
         <div className="h-[1px] w-16 bg-primary mb-8" />
 
-        <h1 className="text-xl sm:text-3xl text-foreground uppercase tracking-[0.04em] leading-[1.2] max-w-xl mb-4 lg:text-3xl font-bold font-heading">
+        <h1 className="font-heading text-xl sm:text-3xl lg:text-4xl font-bold text-foreground uppercase tracking-[0.04em] leading-[1.2] max-w-xl mb-4">
           Website undergoing protective coating
         </h1>
 
