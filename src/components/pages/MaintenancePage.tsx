@@ -1,17 +1,17 @@
-import { Mail, Phone } from 'lucide-react';
 import { Image } from '@/components/ui/image';
+import { Mail, Phone } from 'lucide-react';
 
 export default function MaintenancePage() {
   return (
     <main className="min-h-screen w-full bg-white flex flex-col items-center justify-center px-6 py-16">
       <div className="max-w-2xl w-full flex flex-col items-center text-center">
         <Image
-          src="https://static.wixstatic.com/media/3232e5_648f8bcac8bf401c8bdff7a7ca3f4923~mv2.jpg"
-          alt="RUSSO N.V. Logo"
-          width={200}
-          height={200}
+          src="https://static.wixstatic.com/media/3232e5_cffc14f7b6e941a2a550037601b8aa3f~mv2.png"
+          width={400}
+          height={400}
           className="h-28 sm:h-36 w-auto object-contain mb-10"
-        />
+          originWidth={1324}
+          originHeight={1324} />
 
         <div className="h-[1px] w-16 bg-primary mb-8" />
 
