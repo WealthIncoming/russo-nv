@@ -10,7 +10,7 @@ export default function MaintenancePage() {
           alt="RUSSO N.V. Logo"
           width={200}
           height={200}
-          className="h-48 sm:h-64 w-auto object-contain mb-2"
+          className="h-28 sm:h-36 w-auto object-contain mb-10"
         />
 
         <div className="h-[1px] w-16 bg-primary mb-8" />
