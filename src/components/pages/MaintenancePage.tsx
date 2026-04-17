@@ -1,9 +1,45 @@
+import { useState } from 'react';
 import { Mail, Phone } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 
+type Lang = 'NL' | 'EN';
+
+const copy: Record<Lang, { heading: string; subtitle: string; contact: string }> = {
+  NL: {
+    heading: 'Website ondergaat een beschermende coating.',
+    subtitle: 'Uithardingstijd: binnenkort.',
+    contact: 'Contact',
+  },
+  EN: {
+    heading: 'Website undergoing protective coating',
+    subtitle: 'Curing time: soon.',
+    contact: 'Contact',
+  },
+};
+
 export default function MaintenancePage() {
+  const [lang, setLang] = useState<Lang>('NL');
+  const t = copy[lang];
+
   return (
-    <main className="min-h-screen w-full bg-white flex flex-col items-center justify-center px-6 py-16">
+    <main className="min-h-screen w-full bg-white flex flex-col items-center justify-center px-6 py-16 relative">
+      <div className="absolute top-6 right-6 flex items-center gap-1 font-paragraph text-xs font-bold tracking-[0.15em] uppercase">
+        {(['NL', 'EN'] as const).map((code, i) => (
+          <span key={code} className="flex items-center">
+            {i > 0 && <span className="text-dark-grey/30 mx-2">|</span>}
+            <button
+              type="button"
+              onClick={() => setLang(code)}
+              className={`transition-colors ${
+                lang === code ? 'text-primary' : 'text-foreground/50 hover:text-foreground'
+              }`}
+            >
+              {code}
+            </button>
+          </span>
+        ))}
+      </div>
+
       <div className="max-w-2xl w-full flex flex-col items-center text-center">
         <Image
           src="https://static.wixstatic.com/media/3232e5_48e2024c6d3f441e817637ccdd99f28f~mv2.png"
@@ -16,16 +52,16 @@ export default function MaintenancePage() {
         <div className="h-[1px] w-16 bg-primary mb-8" />
 
         <h1 className="font-heading text-xl sm:text-3xl lg:text-4xl font-bold text-foreground uppercase tracking-[0.04em] leading-[1.2] max-w-xl mb-4">
-          Website undergoing protective coating
+          {t.heading}
         </h1>
 
         <p className="font-paragraph text-sm sm:text-base text-foreground/70 leading-relaxed mb-10 italic">
-          Curing time: soon.
+          {t.subtitle}
         </p>
 
         <div className="w-full border-t border-dark-grey/20 pt-10">
           <p className="font-paragraph text-xs font-bold tracking-[0.2em] text-primary uppercase mb-6">
-            Contact
+            {t.contact}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
