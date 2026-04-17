@@ -1,8 +1,10 @@
 import { MemberProvider } from '@/integrations';
 import { createBrowserRouter, RouterProvider, Navigate, Outlet } from 'react-router-dom';
 import { ScrollToTop } from '@/lib/scroll-to-top';
+import { MAINTENANCE_MODE } from '@/config';
 import ErrorPage from '@/integrations/errorHandlers/ErrorPage';
 import HomePage from '@/components/pages/HomePage';
+import MaintenancePage from '@/components/pages/MaintenancePage';
 import ServicesPage from '@/ServicesPage';
 import IndustriesPage from '@/components/pages/IndustriesPage';
 import ProjectsPage from '@/components/pages/ProjectsPage';
@@ -18,6 +20,15 @@ function Layout() {
     </>
   );
 }
+
+const maintenanceRouter = createBrowserRouter([
+  {
+    path: "*",
+    element: <MaintenancePage />,
+  },
+], {
+  basename: import.meta.env.BASE_NAME,
+});
 
 const router = createBrowserRouter([
   {
@@ -87,7 +98,7 @@ const router = createBrowserRouter([
 export default function AppRouter() {
   return (
     <MemberProvider>
-      <RouterProvider router={router} />
+      <RouterProvider router={MAINTENANCE_MODE ? maintenanceRouter : router} />
     </MemberProvider>
   );
 }
