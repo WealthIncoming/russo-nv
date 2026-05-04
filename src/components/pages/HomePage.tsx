@@ -63,16 +63,16 @@ const STATS_DATA = [
   { valueKey: '25+', labelKey: 'statsProjectsPerYear', subKey: 'statsAveragePerYear' },
   { valueKey: '250+', labelKey: 'statsProjectsCompleted', subKey: 'statsIndustrialProjects' },
   { valueKey: '100%', labelKey: 'statsSafetyCertified', subKey: 'statsVcaIso' },
-  { valueKey: '24/7', labelKey: 'Project Updates', subKey: 'Real-time Data' },
+  { valueKey: '24/7', labelKey: 'statsProjectUpdates', subKey: 'statsRealTimeData' },
 ];
 
-const CERTIFICATIONS = [
-  'VCA-P PETROCHEMICAL',
-  'NACE CERTIFIED',
-  'SSPC STANDARDS',
-  'FROSIO INSPECTORS',
-  'APAC CERTIFICATION',
-  'CERTIFIED SAFETY ADVISOR'
+const CERTIFICATION_KEYS = [
+  'certVcaPetrochemical',
+  'certNaceCertified',
+  'certSspcStandards',
+  'certFrosioInspectors',
+  'certApacCertification',
+  'certCertifiedSafetyAdvisor',
 ];
 
 // --- Components ---
@@ -149,7 +149,6 @@ export default function HomePage() {
     offset: ["start start", "end start"]
   });
   const heroY = useTransform(heroScroll, [0, 1], ["0%", "30%"]);
-  const heroTextY = useTransform(heroScroll, [0, 1], ["0%", "50%"]);
   const heroOpacity = useTransform(heroScroll, [0, 0.5], [1, 0]);
 
   const { t } = useLanguageStore();
@@ -315,9 +314,9 @@ export default function HomePage() {
         <div className="flex items-center whitespace-nowrap animate-marquee-mobile md:animate-marquee-desktop">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center gap-12 mx-6">
-              {CERTIFICATIONS.map((cert, idx) => (
+              {CERTIFICATION_KEYS.map((certKey, idx) => (
                 <div key={`${i}-${idx}`} className="flex items-center gap-4">
-                  <span className="font-heading font-bold text-black text-lg sm:text-xl md:text-2xl uppercase tracking-tight">{cert}</span>
+                  <span className="font-heading font-bold text-black text-lg sm:text-xl md:text-2xl uppercase tracking-tight">{t('home', certKey)}</span>
                   <div className="w-2 h-2 bg-black rotate-45" />
                 </div>
               ))}
@@ -348,7 +347,7 @@ export default function HomePage() {
             <SectionLabel text={t('home', 'companyProfile')} />
 
             <h2
-              className="font-heading text-white leading-[0.9] tracking-tight mb-8 max-w-full break-words sm:text-4xl md:text-5xl xl:text-[3.2rem] 2xl:text-[3.9rem]"
+              className="font-heading text-white leading-[0.9] tracking-tight mb-8 max-w-full sm:text-4xl md:text-5xl xl:text-[3.2rem] 2xl:text-[3.9rem]"
               style={{ fontSize: 'clamp(2rem, 8vw, 2.25rem)' }}
             >
               <span className="block">{t('home', 'engineeringDurability')}</span>
@@ -365,10 +364,10 @@ export default function HomePage() {
                   <div className="font-heading text-3xl md:text-4xl text-primary mb-1">
                     {stat.valueKey}
                   </div>
-                  <div className="font-paragraph text-white font-bold text-sm uppercase break-words">
+                  <div className="font-paragraph text-white font-bold text-xs sm:text-sm uppercase">
                     {t('home', stat.labelKey)}
                   </div>
-                  <div className="font-paragraph text-white/40 text-xs mt-1 break-words">
+                  <div className="font-paragraph text-white/40 text-xs mt-1">
                     {t('home', stat.subKey)}
                   </div>
                 </div>
@@ -415,11 +414,11 @@ export default function HomePage() {
                 <SectionLabel text={t('home', 'ourExpertise')} />
 
                 <h2
-                  className="font-heading leading-[0.92] tracking-tight text-white mb-8 max-w-full break-words sm:text-4xl md:text-5xl lg:text-6xl xl:text-[clamp(3.8rem,5vw,5.6rem)] 2xl:text-[clamp(4.5rem,5vw,6.2rem)]"
+                  className="font-heading leading-[0.92] tracking-tight text-white mb-8 max-w-full sm:text-4xl md:text-5xl lg:text-6xl xl:text-[clamp(3.8rem,5vw,5.6rem)] 2xl:text-[clamp(4.5rem,5vw,6.2rem)]"
                   style={{ fontSize: 'clamp(2.2rem, 8vw, 3rem)' }}
                 >
-                  <span className="block sm:whitespace-nowrap">{t('home', 'coreServices').split(' ')[0]}</span>
-                  <span className="block text-primary sm:whitespace-nowrap">{t('home', 'coreServices').split(' ')[1]}</span>
+                  <span className="block sm:whitespace-nowrap">{t('home', 'coreServicesLine1')}</span>
+                  <span className="block text-primary sm:whitespace-nowrap">{t('home', 'coreServicesLine2')}</span>
                 </h2>
 
                 <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-12 max-w-[32rem]">
