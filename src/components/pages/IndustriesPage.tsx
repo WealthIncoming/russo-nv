@@ -37,6 +37,7 @@ function getTranslationPrefix(industryName: string | undefined): string | null {
 // matches above broader ones to avoid accidental collisions.
 const INDUSTRY_IMAGE_OVERRIDES: Array<{ match: string; src: string }> = [
   { match: 'chemical', src: '/images/industry1.jpg' },
+  { match: 'oil', src: '/images/industry2.jpg' },
 ];
 
 function getIndustryImageOverride(industryName: string | undefined): string | undefined {
