@@ -31,6 +31,12 @@ const SERVICE_TRANSLATION_MAP: Record<string, string> = {
   'coating inspection': 'coatingInspection',
 };
 
+// Per-service image overrides keyed by translation prefix.
+// Add an entry here to swap a CMS image for a local optimized one.
+const SERVICE_IMAGE_OVERRIDES: Record<string, string> = {
+  coatingInspection: '/images/services1.jpg',
+};
+
 // Display order for services on the page
 const SERVICE_DISPLAY_ORDER: string[] = [
   'industrial coating application',
@@ -201,12 +207,15 @@ export default function ServicesPage() {
                         <div className="relative h-[300px] sm:h-[380px] lg:h-full min-h-[420px] w-full overflow-hidden group border border-dark-grey/10 bg-dark-grey/5">
                           <Image
                             src={
+                              SERVICE_IMAGE_OVERRIDES[getTranslationPrefix(service.serviceName) || ''] ||
                               service.serviceImage ||
                               'https://static.wixstatic.com/media/3232e5_361542816ae042acac6c1000f5ee8a72~mv2.png?originWidth=768&originHeight=448'
                             }
                             alt={service.serviceName || 'Industrial service'}
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             width={800}
+                            loading="lazy"
+                            decoding="async"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
                           <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-primary z-10" />
