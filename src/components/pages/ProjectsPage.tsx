@@ -43,6 +43,23 @@ function getTranslationPrefix(projectTitle: string | undefined): string | null {
   return null;
 }
 
+// Per-project image overrides. The first entry whose `match` substring
+// appears in the lowercased CMS project title wins. `secondary` is
+// optional — if provided it forces the 2-column layout.
+const PROJECT_IMAGE_OVERRIDES: Array<{ match: string; main: string; secondary?: string }> = [
+  {
+    match: 'new build coating',
+    main: '/images/gts1.jpg',
+    secondary: '/images/gts2.jpg',
+  },
+];
+
+function getProjectImageOverride(projectTitle: string | undefined) {
+  if (!projectTitle) return undefined;
+  const lower = projectTitle.toLowerCase();
+  return PROJECT_IMAGE_OVERRIDES.find(o => lower.includes(o.match));
+}
+
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<ProjectPortfolio[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -144,7 +161,13 @@ export default function ProjectsPage() {
             </div>
           ) : (
             <div className="space-y-24">
-              {projects.map((project, index) => (
+              {projects.map((project, index) => {
+                const imageOverride = getProjectImageOverride(project.projectTitle);
+                const mainSrc = imageOverride?.main || project.mainProjectImage;
+                const secondarySrc = imageOverride?.secondary || project.secondaryProjectImage;
+                const hasSecondary = Boolean(secondarySrc);
+
+                return (
                 <motion.article
                   key={project._id}
                   initial={{ opacity: 0, y: 50 }}
@@ -154,11 +177,11 @@ export default function ProjectsPage() {
                   className="group"
                 >
                   {/* Project Images */}
-                  <div className={`grid grid-cols-1 ${project.secondaryProjectImage ? 'lg:grid-cols-3' : 'lg:grid-cols-1'} gap-6 mb-8`}>
-                    <div className={project.secondaryProjectImage ? 'lg:col-span-2' : ''}>
+                  <div className={`grid grid-cols-1 ${hasSecondary ? 'lg:grid-cols-3' : 'lg:grid-cols-1'} gap-6 mb-8`}>
+                    <div className={hasSecondary ? 'lg:col-span-2' : ''}>
                       <div className="relative h-[280px] sm:h-[360px] lg:h-[500px] overflow-hidden">
                         <Image
-                          src={project.mainProjectImage || 'https://static.wixstatic.com/media/3232e5_f5459a9114494b2681b5a99bcb24a698~mv2.png?originWidth=1152&originHeight=448'}
+                          src={mainSrc || 'https://static.wixstatic.com/media/3232e5_f5459a9114494b2681b5a99bcb24a698~mv2.png?originWidth=1152&originHeight=448'}
                           alt={project.projectTitle || 'Industrial project'}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                           width={1200}
@@ -169,10 +192,10 @@ export default function ProjectsPage() {
                       </div>
                     </div>
 
-                    {project.secondaryProjectImage && (
+                    {hasSecondary && (
                       <div className="relative h-[280px] sm:h-[360px] lg:h-[500px] overflow-hidden">
                         <Image
-                          src={project.secondaryProjectImage}
+                          src={secondarySrc!}
                           alt={project.projectTitle ? `${project.projectTitle} - additional view` : 'Industrial project detail'}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                           width={600}
@@ -252,7 +275,8 @@ export default function ProjectsPage() {
                     <div className="mt-24 border-b border-dark-grey/20" />
                   )}
                 </motion.article>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>
