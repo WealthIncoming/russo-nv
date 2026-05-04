@@ -198,7 +198,7 @@ export default function HomePage() {
             >
               <span className="h-[1px] w-8 sm:w-16 bg-white/20" />
               <span className="font-paragraph text-white/60 text-[10px] sm:text-sm uppercase tracking-[0.2em]">
-                Antwerpen, België
+                {t('home', 'heroLocation')}
               </span>
               <span className="h-[1px] w-8 sm:w-16 bg-white/20" />
             </motion.div>
@@ -215,7 +215,7 @@ export default function HomePage() {
                   transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
                   className="block"
                 >
-                  Industriële
+                  {t('home', 'heroTitleLine1')}
                 </motion.span>
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
@@ -223,7 +223,7 @@ export default function HomePage() {
                   transition={{ duration: 0.8, delay: 0.1, ease: [0.215, 0.61, 0.355, 1] }}
                   className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50"
                 >
-                  Coating
+                  {t('home', 'heroTitleLine2')}
                 </motion.span>
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
@@ -231,7 +231,7 @@ export default function HomePage() {
                   transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
                   className="block text-primary text-[0.88em]"
                 >
-                  Specialisten
+                  {t('home', 'heroTitleLine3')}
                 </motion.span>
               </h1>
 
@@ -242,14 +242,14 @@ export default function HomePage() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
                   className="block"
-                >Industriële</motion.span>
+                >{t('home', 'heroTitleLine1')}</motion.span>
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.1, ease: [0.215, 0.61, 0.355, 1] }}
                   className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50"
                 >
-                  Coating
+                  {t('home', 'heroTitleLine2')}
                 </motion.span>
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
@@ -257,7 +257,7 @@ export default function HomePage() {
                   transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
                   className="block text-primary"
                 >
-                  SPECIALISTEN
+                  {t('home', 'heroTitleLine3')}
                 </motion.span>
               </h1>
             </div>

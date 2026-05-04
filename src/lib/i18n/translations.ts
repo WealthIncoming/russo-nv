@@ -54,6 +54,10 @@ export const translations: Record<Language, Translations> = {
     // Home Page
     home: {
       heroTitle: 'Industrial Coating Excellence',
+      heroTitleLine1: 'Industrial',
+      heroTitleLine2: 'Coating',
+      heroTitleLine3: 'Specialists',
+      heroLocation: 'Antwerp, Belgium',
       heroSubtitle: 'Precision surface preparation and protective coatings for heavy industry',
       heroCtaMain: 'Get Started',
       heroCtaSecondary: 'View Portfolio',
@@ -709,6 +713,10 @@ export const translations: Record<Language, Translations> = {
     // Home Page
     home: {
       heroTitle: 'Industriële Coatingexpertise',
+      heroTitleLine1: 'Industriële',
+      heroTitleLine2: 'Coating',
+      heroTitleLine3: 'Specialisten',
+      heroLocation: 'Antwerpen, België',
       heroSubtitle:
         'Nauwkeurige oppervlaktebehandeling en beschermende coatings voor alle industrieën',
       heroCtaMain: 'Offerte aanvragen',
