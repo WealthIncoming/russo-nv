@@ -40,6 +40,7 @@ const SERVICE_IMAGE_OVERRIDES: Array<{ match: string; src: string }> = [
   { match: 'corrosion protection', src: '/images/services3.jpg' },
   { match: 'coating inspection', src: '/images/services1.jpg' },
   { match: 'water jetting', src: '/images/services6.jpg' },
+  { match: 'waterproofing', src: '/images/services7.jpg' },
 ];
 
 function getServiceImageOverride(serviceName: string | undefined): string | undefined {
