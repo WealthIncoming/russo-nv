@@ -196,7 +196,7 @@ export const translations: Record<Language, Translations> = {
       allIndustry: 'ALL INDUSTRY',
 
       featuredProject: 'Featured Project',
-      totalTankFarm: 'TOTAL TANK FARM',
+      totalTankFarm: 'TANK PARK',
       refurbishment: 'REFURBISHMENT',
       antwerpPort: 'ANTWERP PORT',
       duration18Months: 'Duration: 18 Months',
