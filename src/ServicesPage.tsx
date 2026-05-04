@@ -36,6 +36,7 @@ const SERVICE_TRANSLATION_MAP: Record<string, string> = {
 const SERVICE_IMAGE_OVERRIDES: Record<string, string> = {
   industrialCoatingApplication: '/images/services1.jpg',
   sandblastingAbrasive: '/images/services2.jpg',
+  corrosionProtection: '/images/services3.jpg',
 };
 
 // Display order for services on the page
