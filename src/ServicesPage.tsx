@@ -35,6 +35,7 @@ const SERVICE_TRANSLATION_MAP: Record<string, string> = {
 // Add an entry here to swap a CMS image for a local optimized one.
 const SERVICE_IMAGE_OVERRIDES: Record<string, string> = {
   industrialCoatingApplication: '/images/services1.jpg',
+  sandblastingAbrasive: '/images/services2.jpg',
 };
 
 // Display order for services on the page
