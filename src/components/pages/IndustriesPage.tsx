@@ -51,6 +51,18 @@ function getIndustryImageOverride(industryName: string | undefined): string | un
   return INDUSTRY_IMAGE_OVERRIDES.find(o => lower.includes(o.match))?.src;
 }
 
+// Display order for industries on the page. Anything not matched goes last,
+// in CMS order, so newly-added industries still render without a code change.
+const INDUSTRY_DISPLAY_ORDER: string[] = [
+  'chemical',
+  'oil',
+  'food',
+  'power',
+  'marine',
+  'manufacturing',
+  'water',
+];
+
 export default function IndustriesPage() {
   const [industries, setIndustries] = useState<IndustriesServed[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -63,7 +75,14 @@ export default function IndustriesPage() {
   const loadIndustries = async () => {
     try {
       const result = await BaseCrudService.getAll<IndustriesServed>('industriesserved');
-      setIndustries(result.items);
+      const sorted = [...result.items].sort((a, b) => {
+        const aName = (a.industryName || '').toLowerCase();
+        const bName = (b.industryName || '').toLowerCase();
+        const aIndex = INDUSTRY_DISPLAY_ORDER.findIndex(keyword => aName.includes(keyword));
+        const bIndex = INDUSTRY_DISPLAY_ORDER.findIndex(keyword => bName.includes(keyword));
+        return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
+      });
+      setIndustries(sorted);
     } catch (error) {
       console.error('Error loading industries:', error);
     } finally {
@@ -121,7 +140,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Industries Grid */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 py-32">
+      <section className="w-full max-w-[100rem] mx-auto px-6 sm:px-8 py-20 sm:py-24 xl:py-28">
         <div className="min-h-[400px]">
           {isLoading ? (
             <div className="flex items-center justify-center py-32">
@@ -144,7 +163,7 @@ export default function IndustriesPage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group"
                 >
-                  <div className="relative h-[400px] overflow-hidden mb-6">
+                  <div className="relative h-[260px] sm:h-[340px] lg:h-[400px] overflow-hidden mb-6">
                     <Image
                       src={
                         getIndustryImageOverride(industry.industryName) ||
@@ -158,8 +177,8 @@ export default function IndustriesPage() {
                       decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <h2 className="font-heading text-4xl text-white mb-2">
+                    <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                      <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-white mb-2">
                         {getIndustryText(industry, 'Title', industry.industryName)}
                       </h2>
                     </div>
@@ -184,11 +203,11 @@ export default function IndustriesPage() {
                     )}
 
                     {industry.keyServices && (
-                      <div className="bg-dark-grey/5 p-6">
+                      <div className="bg-dark-grey/5 p-6 min-w-0">
                         <h3 className="font-heading text-xl text-foreground mb-3">
                           {t('industries', 'keyServices')}
                         </h3>
-                        <p className="font-paragraph text-sm text-foreground/70 whitespace-pre-line">
+                        <p className="font-paragraph text-xs sm:text-sm text-foreground/70 whitespace-pre-line">
                           {getIndustryText(industry, 'KeyServices', industry.keyServices)}
                         </p>
                       </div>
