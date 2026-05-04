@@ -31,15 +31,22 @@ const SERVICE_TRANSLATION_MAP: Record<string, string> = {
   'coating inspection': 'coatingInspection',
 };
 
-// Per-service image overrides keyed by translation prefix.
-// Add an entry here to swap a CMS image for a local optimized one.
-const SERVICE_IMAGE_OVERRIDES: Record<string, string> = {
-  industrialCoatingApplication: '/images/services5.jpg',
-  sandblastingAbrasive: '/images/services2.jpg',
-  corrosionProtection: '/images/services3.jpg',
-  coatingInspection: '/images/services1.jpg',
-  hpwj: '/images/services6.jpg',
-};
+// Per-service image overrides. The first entry whose `match` substring
+// appears in the lowercased CMS service name wins. Keep more-specific
+// matches above broader ones to avoid accidental collisions.
+const SERVICE_IMAGE_OVERRIDES: Array<{ match: string; src: string }> = [
+  { match: 'industrial coating', src: '/images/services5.jpg' },
+  { match: 'sandblasting', src: '/images/services2.jpg' },
+  { match: 'corrosion protection', src: '/images/services3.jpg' },
+  { match: 'coating inspection', src: '/images/services1.jpg' },
+  { match: 'water jetting', src: '/images/services6.jpg' },
+];
+
+function getServiceImageOverride(serviceName: string | undefined): string | undefined {
+  if (!serviceName) return undefined;
+  const lower = serviceName.toLowerCase();
+  return SERVICE_IMAGE_OVERRIDES.find(o => lower.includes(o.match))?.src;
+}
 
 // Display order for services on the page
 const SERVICE_DISPLAY_ORDER: string[] = [
@@ -211,7 +218,7 @@ export default function ServicesPage() {
                         <div className="relative h-[300px] sm:h-[380px] lg:h-full min-h-[420px] w-full overflow-hidden group border border-dark-grey/10 bg-dark-grey/5">
                           <Image
                             src={
-                              SERVICE_IMAGE_OVERRIDES[getTranslationPrefix(service.serviceName) || ''] ||
+                              getServiceImageOverride(service.serviceName) ||
                               service.serviceImage ||
                               'https://static.wixstatic.com/media/3232e5_361542816ae042acac6c1000f5ee8a72~mv2.png?originWidth=768&originHeight=448'
                             }
