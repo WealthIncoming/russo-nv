@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
-import { ArrowRight, ArrowUpRight, CheckCircle, Clock, Shield, Users } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, CheckCircle, Clock, MapPin, Shield, Users } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -474,17 +474,50 @@ export default function HomePage() {
         </div>
       </section>
       {/* --- FEATURED PROJECT --- */}
-      <section className="relative w-full py-24 md:py-32 bg-black">
-        <div className="max-w-[120rem] mx-auto px-6 md:px-12 w-full">
-          <div className="grid grid-cols-1 xl:grid-cols-[0.55fr_1.45fr] 2xl:grid-cols-[0.65fr_1.35fr] gap-8 xl:gap-12 items-center">
+      <section className="relative w-full py-24 md:py-32 bg-black overflow-hidden">
+        {/* Decorative background number */}
+        <div
+          aria-hidden="true"
+          className="absolute top-6 right-4 md:top-10 md:right-10 pointer-events-none select-none leading-none"
+        >
+          <span className="font-heading font-black text-white/[0.04] text-[8rem] md:text-[14rem] xl:text-[18rem] tracking-tighter">
+            01
+          </span>
+        </div>
+
+        <div className="relative z-10 max-w-[120rem] mx-auto px-6 md:px-12 w-full">
+          <div className="grid grid-cols-1 xl:grid-cols-[1.1fr_0.9fr] gap-8 xl:gap-12 items-center">
             {/* Left Column: Image */}
-            <div className="relative w-full min-w-0 aspect-video xl:aspect-[4/3] overflow-hidden border border-white/10">
+            <div className="relative w-full min-w-0 aspect-video xl:aspect-[4/3] overflow-hidden border border-white/10 group">
               <Image
                 src="https://static.wixstatic.com/media/3232e5_8b2cbf3ec2d145bd89b8b1733c9be1ea~mv2.jpg"
-                className="w-full h-full object-cover opacity-[1] shadow-[12px_12px_4px_0px_#d9d9d9] mix-blend-normal"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 width={1920}
                 originWidth={4000}
-                originHeight={3000} />
+                originHeight={3000}
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-primary z-10" />
+              <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-primary z-10" />
+
+              {/* Glass overlay card */}
+              <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 z-20 bg-black/80 backdrop-blur-md p-4 md:p-6 border-l-2 border-primary max-w-[85%] sm:max-w-sm">
+                <div className="flex items-center gap-3">
+                  <MapPin className="w-5 h-5 text-primary shrink-0" />
+                  <span className="font-heading text-white text-lg md:text-xl">
+                    {t('home', 'antwerpPort')}
+                  </span>
+                </div>
+                <div className="h-px w-full bg-white/10 my-3" />
+                <div className="flex items-center gap-3">
+                  <Clock className="w-4 h-4 text-primary/80 shrink-0" />
+                  <span className="font-paragraph text-white/60 text-xs uppercase tracking-[0.18em]">
+                    {t('home', 'duration18Months')}
+                  </span>
+                </div>
+              </div>
             </div>
 
             {/* Right Column: Text Content */}
@@ -496,37 +529,28 @@ export default function HomePage() {
                   {t('home', 'refurbishment')}
                 </span>
               </h2>
-              <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-3 sm:gap-6 mb-8 min-w-0">
-                <span className="font-paragraph text-primary font-bold text-lg md:text-xl">
-                  {t('home', 'antwerpPort')}
-                </span>
-                <span className="font-paragraph text-white/40 text-sm uppercase tracking-[0.12em]">
-                  {t('home', 'duration18Months')}
-                </span>
-              </div>
 
               <p className="font-paragraph text-white/70 text-base md:text-lg leading-relaxed mb-8 max-w-[60ch]">
                 {t('home', 'projectDescription')}
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10 min-w-0">
-                <div className="border-t border-white/10 pt-4 min-w-0">
-                  <h4 className="font-paragraph text-white/60 text-xs uppercase tracking-widest mb-2">
-                    {t('home', 'scope')}
-                  </h4>
-                  <p className="font-paragraph text-white text-sm leading-relaxed">
-                    {t('home', 'scopeDesc')}
-                  </p>
-                </div>
-
-                <div className="border-t border-white/10 pt-4 min-w-0">
-                  <h4 className="font-paragraph text-white/60 text-xs uppercase tracking-widest mb-2">
-                    {t('home', 'challenge')}
-                  </h4>
-                  <p className="font-paragraph text-white text-sm leading-relaxed">
-                    {t('home', 'challengeDesc')}
-                  </p>
-                </div>
+              {/* 4-cell project spec strip */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 mb-10">
+                {[
+                  { label: 'specTanksLabel', value: 'specTanksValue' },
+                  { label: 'specSystemLabel', value: 'specSystemValue' },
+                  { label: 'scope', value: 'scopeDesc' },
+                  { label: 'challenge', value: 'challengeDesc' },
+                ].map((spec) => (
+                  <div key={spec.label} className="bg-black p-5 min-w-0">
+                    <div className="font-paragraph text-primary text-[10px] font-bold uppercase tracking-[0.18em] mb-2">
+                      {t('home', spec.label)}
+                    </div>
+                    <p className="font-paragraph text-white text-sm leading-relaxed">
+                      {t('home', spec.value)}
+                    </p>
+                  </div>
+                ))}
               </div>
 
               <Link to="/projects">

@@ -212,6 +212,11 @@ export const translations: Record<Language, Translations> = {
       challengeDesc:
         'Strict environmental controls and continuous operation of adjacent facilities.',
 
+      specTanksLabel: 'Tanks',
+      specTanksValue: '12 storage tanks',
+      specSystemLabel: 'System',
+      specSystemValue: 'Multi-coat epoxy',
+
       viewCaseStudy: 'View Case Study',
 
       readyToMobilize: 'READY TO MOBILIZE',
@@ -883,6 +888,11 @@ export const translations: Record<Language, Translations> = {
       challenge: 'Uitdaging',
       challengeDesc:
         'Strikte milieueisen en continue werking van aangrenzende installaties.',
+
+      specTanksLabel: 'Tanks',
+      specTanksValue: '12 opslagtanks',
+      specSystemLabel: 'Systeem',
+      specSystemValue: 'Meerlaags epoxy',
 
       viewCaseStudy: 'Casestudy Bekijken',
 
