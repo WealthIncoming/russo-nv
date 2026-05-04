@@ -40,6 +40,7 @@ const INDUSTRY_IMAGE_OVERRIDES: Array<{ match: string; src: string }> = [
   { match: 'oil', src: '/images/industry2.jpg' },
   { match: 'food', src: '/images/industry3.jpg' },
   { match: 'power', src: '/images/industry4.jpg' },
+  { match: 'marine', src: '/images/industry5.jpg' },
 ];
 
 function getIndustryImageOverride(industryName: string | undefined): string | undefined {
