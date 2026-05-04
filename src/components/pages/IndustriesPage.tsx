@@ -32,6 +32,19 @@ function getTranslationPrefix(industryName: string | undefined): string | null {
   return null;
 }
 
+// Per-industry image overrides. The first entry whose `match` substring
+// appears in the lowercased CMS industry name wins. Keep more-specific
+// matches above broader ones to avoid accidental collisions.
+const INDUSTRY_IMAGE_OVERRIDES: Array<{ match: string; src: string }> = [
+  { match: 'chemical', src: '/images/industry1.jpg' },
+];
+
+function getIndustryImageOverride(industryName: string | undefined): string | undefined {
+  if (!industryName) return undefined;
+  const lower = industryName.toLowerCase();
+  return INDUSTRY_IMAGE_OVERRIDES.find(o => lower.includes(o.match))?.src;
+}
+
 export default function IndustriesPage() {
   const [industries, setIndustries] = useState<IndustriesServed[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -127,10 +140,16 @@ export default function IndustriesPage() {
                 >
                   <div className="relative h-[400px] overflow-hidden mb-6">
                     <Image
-                      src={industry.industryImage || 'https://static.wixstatic.com/media/3232e5_ee04135720ad4783a7104f3b6a2bfd2e~mv2.png?originWidth=768&originHeight=384'}
+                      src={
+                        getIndustryImageOverride(industry.industryName) ||
+                        industry.industryImage ||
+                        'https://static.wixstatic.com/media/3232e5_ee04135720ad4783a7104f3b6a2bfd2e~mv2.png?originWidth=768&originHeight=384'
+                      }
                       alt={industry.industryName || 'Industrial sector'}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       width={800}
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-8">
