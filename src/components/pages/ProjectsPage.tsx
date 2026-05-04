@@ -1,6 +1,7 @@
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
+import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { ProjectPortfolio } from '@/entities';
 import { BaseCrudService } from '@/integrations';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
@@ -131,7 +132,11 @@ export default function ProjectsPage() {
       {/* Projects Grid */}
       <section className="w-full max-w-[100rem] mx-auto px-8 py-32">
         <div className="min-h-[400px]">
-          {isLoading ? null : projects.length === 0 ? (
+          {isLoading ? (
+            <div className="flex items-center justify-center py-32">
+              <LoadingSpinner />
+            </div>
+          ) : projects.length === 0 ? (
             <div className="text-center py-32">
               <p className="font-paragraph text-lg text-foreground/60">
                 {t('projects', 'emptyState')}
@@ -151,24 +156,28 @@ export default function ProjectsPage() {
                   {/* Project Images */}
                   <div className={`grid grid-cols-1 ${project.secondaryProjectImage ? 'lg:grid-cols-3' : 'lg:grid-cols-1'} gap-6 mb-8`}>
                     <div className={project.secondaryProjectImage ? 'lg:col-span-2' : ''}>
-                      <div className="relative h-[500px] overflow-hidden">
+                      <div className="relative h-[280px] sm:h-[360px] lg:h-[500px] overflow-hidden">
                         <Image
                           src={project.mainProjectImage || 'https://static.wixstatic.com/media/3232e5_f5459a9114494b2681b5a99bcb24a698~mv2.png?originWidth=1152&originHeight=448'}
                           alt={project.projectTitle || 'Industrial project'}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                           width={1200}
+                          loading="lazy"
+                          decoding="async"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                       </div>
                     </div>
 
                     {project.secondaryProjectImage && (
-                      <div className="relative h-[500px] overflow-hidden">
+                      <div className="relative h-[280px] sm:h-[360px] lg:h-[500px] overflow-hidden">
                         <Image
                           src={project.secondaryProjectImage}
-                          alt={`${project.projectTitle} - additional view` || 'Industrial project detail'}
+                          alt={project.projectTitle ? `${project.projectTitle} - additional view` : 'Industrial project detail'}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                           width={600}
+                          loading="lazy"
+                          decoding="async"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                       </div>
