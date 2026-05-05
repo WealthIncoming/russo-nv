@@ -111,10 +111,10 @@ export default function IndustriesPage() {
       <section className="relative w-full max-w-[120rem] mx-auto min-h-[60vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://static.wixstatic.com/media/3232e5_e2084778206b4542b31b6b4f801078bd~mv2.png?originWidth=1152&originHeight=640"
+            src="/images/industries-hero.jpg"
             alt="Industrial facilities we serve"
             className="w-full h-full object-cover"
-            width={1920}
+            width={1152}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/50" />
         </div>
@@ -168,7 +168,7 @@ export default function IndustriesPage() {
                       src={
                         getIndustryImageOverride(industry.industryName) ||
                         industry.industryImage ||
-                        'https://static.wixstatic.com/media/3232e5_ee04135720ad4783a7104f3b6a2bfd2e~mv2.png?originWidth=768&originHeight=384'
+                        '/images/industry-fallback.jpg'
                       }
                       alt={industry.industryName || 'Industrial sector'}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
