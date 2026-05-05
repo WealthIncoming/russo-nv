@@ -80,12 +80,22 @@ export default function Footer() {
           <div className="lg:col-span-3">
             <h3 className="font-heading text-xl mb-6 text-primary">{t('footer', 'ourServices')}</h3>
             <nav className="space-y-3">
-              <div className="font-paragraph text-sm text-white/80">{t('footer', 'industrialPainting')}</div>
-              <div className="font-paragraph text-sm text-white/80">{t('footer', 'sandblasting')}</div>
-              <div className="font-paragraph text-sm text-white/80">{t('footer', 'fireproofingCoatings')}</div>
-              <div className="font-paragraph text-sm text-white/80">{t('footer', 'protectiveCoatings')}</div>
-              <div className="font-paragraph text-sm text-white/80">{t('footer', 'surfacePreparation')}</div>
-              <div className="font-paragraph text-sm text-white/80">{t('footer', 'coatRemoval')}</div>
+              {[
+                { labelKey: 'industrialPainting',    anchor: 'industrialCoatingApplication' },
+                { labelKey: 'sandblasting',          anchor: 'sandblastingAbrasive' },
+                { labelKey: 'fireproofingCoatings',  anchor: 'fireproofingThermal' },
+                { labelKey: 'protectiveCoatings',    anchor: 'corrosionProtection' },
+                { labelKey: 'surfacePreparation',    anchor: 'sandblastingAbrasive' },
+                { labelKey: 'coatRemoval',           anchor: 'sandblastingAbrasive' },
+              ].map((item) => (
+                <Link
+                  key={item.labelKey}
+                  to={`/services#${item.anchor}`}
+                  className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors"
+                >
+                  {t('footer', item.labelKey)}
+                </Link>
+              ))}
             </nav>
           </div>
 

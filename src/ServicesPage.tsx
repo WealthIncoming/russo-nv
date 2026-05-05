@@ -204,15 +204,17 @@ export default function ServicesPage() {
             <div className="space-y-20 sm:space-y-24 xl:space-y-28 min-w-0">
               {services.map((service, index) => {
                 const isReversed = index % 2 === 1;
+                const slug = getTranslationPrefix(service.serviceName) || service._id;
 
                 return (
                   <motion.div
                     key={service._id}
+                    id={slug}
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-100px' }}
                     transition={{ duration: 0.6 }}
-                    className="min-w-0"
+                    className="min-w-0 scroll-mt-24"
                   >
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-16 items-stretch min-w-0">
                       {/* Image Column */}
