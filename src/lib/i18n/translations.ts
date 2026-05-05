@@ -190,6 +190,7 @@ export const translations: Record<Language, Translations> = {
         'Comprehensive surface treatment solutions tailored for the most demanding industrial environments.',
 
       viewAllServices: 'View All Services',
+      viewService: 'View this service',
 
       industriesServed: 'INDUSTRIES SERVED',
       globalReach: 'GLOBAL REACH',
@@ -991,6 +992,7 @@ export const translations: Record<Language, Translations> = {
         'Uitgebreide oplossingen voor oppervlaktebehandeling, afgestemd op de meest veeleisende industriële omgevingen.',
 
       viewAllServices: 'Alle Diensten Bekijken',
+      viewService: 'Bekijk deze dienst',
 
       industriesServed: 'BEDIENDE INDUSTRIEËN',
       globalReach: 'WERKTERREIN',

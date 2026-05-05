@@ -24,11 +24,14 @@ import { Link } from 'react-router-dom';
 const HQ_PHONE = '+32475434819';
 
 // --- Canonical Data Sources ---
+// `anchor` maps each home-page service card to the matching block on the
+// Services page (id derived from SERVICE_TRANSLATION_MAP in ServicesPage.tsx).
 const SERVICES_DATA = [
   {
     id: '01',
     titleKey: 'industrialPaintingTitle',
     descKey: 'industrialPaintingDesc',
+    anchor: 'industrialCoatingApplication',
     detailsKeys: [
       'airlessSpraying',
       'corrosionProtection',
@@ -39,39 +42,48 @@ const SERVICES_DATA = [
     id: '02',
     titleKey: 'protectiveCoatingsTitle',
     descKey: 'protectiveCoatingsDesc',
+    anchor: 'corrosionProtection',
     detailsKeys: ['antiCorrosionSystems', 'chemicalResistance', 'uvProtection']
   },
   {
     id: '03',
     titleKey: 'sandblastingTitle',
     descKey: 'sandblastingDesc',
+    anchor: 'sandblastingAbrasive',
     detailsKeys: ['surfaceProfileCreation', 'rustScaleRemoval', 'contaminantElimination']
   },
   {
     id: '04',
     titleKey: 'fireproofingTitle',
     descKey: 'fireproofingDesc',
+    anchor: 'fireproofingThermal',
     detailsKeys: ['passiveFireProtection', 'hydrocarbonFireDefense', 'thermalInsulation']
   },
   {
-  id: '05',
-  titleKey: 'industrialWaterproofingTitle',
-  descKey: 'industrialWaterproofingDesc',
-  detailsKeys: [
-    'bundContainmentSealing',
-    'tankFoundationWaterproofing',
-    'seamlessMembraneSystems'
-  ]
+    id: '05',
+    titleKey: 'industrialWaterproofingTitle',
+    descKey: 'industrialWaterproofingDesc',
+    anchor: 'waterproofing',
+    detailsKeys: [
+      'bundContainmentSealing',
+      'tankFoundationWaterproofing',
+      'seamlessMembraneSystems'
+    ]
   }
 ];
 
-const INDUSTRIES_DATA: Array<{ titleKey: string; descKey: string; icon: LucideIcon }> = [
-  { titleKey: 'chemicalPlants',         descKey: 'chemicalPlantsDesc',         icon: FlaskConical },
-  { titleKey: 'foodProduction',         descKey: 'foodProductionDesc',         icon: Wheat },
-  { titleKey: 'storageTerminals',       descKey: 'storageTerminalsDesc',       icon: Container },
-  { titleKey: 'industrialConstruction', descKey: 'industrialConstructionDesc', icon: HardHat },
-  { titleKey: 'warehouses',             descKey: 'warehousesDesc',             icon: Warehouse },
-  { titleKey: 'manufacturing',          descKey: 'manufacturingDesc',          icon: Factory },
+// `anchor` maps each card to the matching slug on the Industries page
+// (derived from INDUSTRY_TRANSLATION_MAP in IndustriesPage.tsx). Where the
+// home page doesn't have a 1:1 match (industrial construction, warehouses),
+// we route to the closest sector — manufacturing — so every card lands the
+// visitor on a real, relevant block instead of bouncing them to the page top.
+const INDUSTRIES_DATA: Array<{ titleKey: string; descKey: string; icon: LucideIcon; anchor: string }> = [
+  { titleKey: 'chemicalPlants',         descKey: 'chemicalPlantsDesc',         icon: FlaskConical, anchor: 'chemical' },
+  { titleKey: 'foodProduction',         descKey: 'foodProductionDesc',         icon: Wheat,        anchor: 'food' },
+  { titleKey: 'storageTerminals',       descKey: 'storageTerminalsDesc',       icon: Container,    anchor: 'oilgas' },
+  { titleKey: 'industrialConstruction', descKey: 'industrialConstructionDesc', icon: HardHat,      anchor: 'manufacturing' },
+  { titleKey: 'warehouses',             descKey: 'warehousesDesc',             icon: Warehouse,    anchor: 'manufacturing' },
+  { titleKey: 'manufacturing',          descKey: 'manufacturingDesc',          icon: Factory,      anchor: 'manufacturing' },
 ];
 
 const STATS_DATA = [
@@ -612,32 +624,39 @@ function StickyServiceCard({ service }: { service: typeof SERVICES_DATA[0] }) {
   const serviceTitle = t('home', service.titleKey);
 
   return (
-    <motion.div
-      ref={cardRef}
-      style={{ opacity, x }}
-      className="group relative bg-dark-grey border border-white/10 p-8 md:p-12 hover:border-primary transition-colors duration-500"
-    >
-      <div className="absolute top-0 right-0 p-4 opacity-20 font-heading text-6xl text-white group-hover:opacity-10 transition-opacity">
-        {service.id}
-      </div>
+    <motion.div ref={cardRef} style={{ opacity, x }}>
+      <Link
+        to={`/services#${service.anchor}`}
+        aria-label={`${serviceTitle} — view on services page`}
+        className="group relative block bg-dark-grey border border-white/10 p-8 md:p-12 hover:border-primary transition-colors duration-500"
+      >
+        <div className="absolute top-0 right-0 p-4 opacity-20 font-heading text-6xl text-white group-hover:opacity-10 transition-opacity">
+          {service.id}
+        </div>
 
-      <div className="flex flex-col gap-4 items-start pr-12">
-        <h3 className="font-heading text-3xl md:text-4xl text-white mb-2 group-hover:text-primary transition-colors">
-          {serviceTitle}
-        </h3>
-        <p className="font-paragraph text-white/60 text-sm md:text-base leading-relaxed mb-4 max-w-2xl">
-          {t('home', service.descKey)}
-        </p>
+        <div className="flex flex-col gap-4 items-start pr-12">
+          <h3 className="font-heading text-3xl md:text-4xl text-white mb-2 group-hover:text-primary transition-colors">
+            {serviceTitle}
+          </h3>
+          <p className="font-paragraph text-white/60 text-sm md:text-base leading-relaxed mb-4 max-w-2xl">
+            {t('home', service.descKey)}
+          </p>
 
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
-          {service.detailsKeys.map((detailKey) => (
-            <li key={detailKey} className="flex items-center gap-2 font-paragraph text-xs text-white/80 uppercase tracking-wide">
-              <div className="w-1 h-1 bg-primary" />
-              {t('home', detailKey)}
-            </li>
-          ))}
-        </ul>
-      </div>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
+            {service.detailsKeys.map((detailKey) => (
+              <li key={detailKey} className="flex items-center gap-2 font-paragraph text-xs text-white/80 uppercase tracking-wide">
+                <div className="w-1 h-1 bg-primary" />
+                {t('home', detailKey)}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-2 inline-flex items-center gap-2 font-paragraph text-xs font-bold uppercase tracking-wider text-primary group-hover:gap-3 transition-all">
+            {t('home', 'viewService')}
+            <ArrowUpRight className="w-3.5 h-3.5" />
+          </div>
+        </div>
+      </Link>
     </motion.div>
   );
 }
@@ -646,6 +665,7 @@ function IndustryCard({ industry, index }: { industry: typeof INDUSTRIES_DATA[0]
   const [isHovered, setIsHovered] = useState(false);
   const { t } = useLanguageStore();
   const Icon = industry.icon;
+  const industryTitle = t('home', industry.titleKey);
 
   return (
     <motion.div
@@ -653,34 +673,39 @@ function IndustryCard({ industry, index }: { industry: typeof INDUSTRIES_DATA[0]
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="relative bg-black p-10 h-80 flex flex-col justify-between group overflow-hidden"
     >
-      {/* Hover Background */}
-      <div className={`absolute inset-0 bg-primary transition-transform duration-500 origin-bottom ${isHovered ? 'scale-y-100' : 'scale-y-0'}`} />
+      <Link
+        to={`/industries#${industry.anchor}`}
+        aria-label={`${industryTitle} — view on industries page`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="relative bg-black p-10 h-80 flex flex-col justify-between group overflow-hidden"
+      >
+        {/* Hover Background */}
+        <div className={`absolute inset-0 bg-primary transition-transform duration-500 origin-bottom ${isHovered ? 'scale-y-100' : 'scale-y-0'}`} />
 
-      <div className="relative z-10">
-        <div className="flex justify-between items-start mb-4">
-          <div className={`p-2 border ${isHovered ? 'border-black text-black' : 'border-white/20 text-primary'} transition-colors`}>
-            <Icon className="w-6 h-6" />
+        <div className="relative z-10">
+          <div className="flex justify-between items-start mb-4">
+            <div className={`p-2 border ${isHovered ? 'border-black text-black' : 'border-white/20 text-primary'} transition-colors`}>
+              <Icon className="w-6 h-6" />
+            </div>
+            <span className={`font-paragraph text-xs font-bold ${isHovered ? 'text-black' : 'text-white/30'}`}>0{index + 1}</span>
           </div>
-          <span className={`font-paragraph text-xs font-bold ${isHovered ? 'text-black' : 'text-white/30'}`}>0{index + 1}</span>
+
+          <h3 className={`font-heading text-2xl mb-2 ${isHovered ? 'text-black' : 'text-white'}`}>
+            {industryTitle}
+          </h3>
+          <p className={`font-paragraph text-sm ${isHovered ? 'text-black/80' : 'text-white/50'}`}>
+            {t('home', industry.descKey)}
+          </p>
         </div>
 
-        <h3 className={`font-heading text-2xl mb-2 ${isHovered ? 'text-black' : 'text-white'}`}>
-          {t('home', industry.titleKey)}
-        </h3>
-        <p className={`font-paragraph text-sm ${isHovered ? 'text-black/80' : 'text-white/50'}`}>
-          {t('home', industry.descKey)}
-        </p>
-      </div>
-
-      <div className="relative z-10 flex justify-end">
-        <div className={`w-10 h-10 flex items-center justify-center border ${isHovered ? 'border-black text-black rotate-45' : 'border-white/20 text-white'} transition-all duration-300`}>
-          <ArrowRight className="w-4 h-4" />
+        <div className="relative z-10 flex justify-end">
+          <div className={`w-10 h-10 flex items-center justify-center border ${isHovered ? 'border-black text-black rotate-45' : 'border-white/20 text-white'} transition-all duration-300`}>
+            <ArrowRight className="w-4 h-4" />
+          </div>
         </div>
-      </div>
+      </Link>
     </motion.div>
   );
 }
