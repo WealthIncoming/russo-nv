@@ -50,6 +50,20 @@ function getValuePrefix(title: string | undefined): string | null {
   return null;
 }
 
+const SectionLabel = ({ text }: { text: string }) => (
+  <div className="flex items-center gap-3 mb-6 justify-center">
+    <span className="h-[1px] w-12 bg-primary/30" />
+    <span className="font-paragraph text-xs font-bold tracking-[0.2em] text-primary uppercase">{text}</span>
+    <span className="h-[1px] w-12 bg-primary/30" />
+  </div>
+);
+
+function isCertExpired(date: Date | string | undefined): boolean {
+  if (!date) return false;
+  const d = new Date(date);
+  return !Number.isNaN(d.getTime()) && d < new Date();
+}
+
 export default function SafetyPage() {
   const [certifications, setCertifications] = useState<Certifications[]>([]);
   const [companyValues, setCompanyValues] = useState<CompanyValues[]>([]);
@@ -120,10 +134,10 @@ export default function SafetyPage() {
       <section className="relative w-full max-w-[120rem] mx-auto min-h-[60vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://static.wixstatic.com/media/3232e5_4e1f66c26a204458a1593d2ef3b4693d~mv2.png?originWidth=1152&originHeight=640"
+            src="/images/safety-hero.jpg"
             alt="Safety and certifications in industrial work"
             className="w-full h-full object-cover"
-            width={1920}
+            width={1152}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/50" />
         </div>
@@ -150,41 +164,50 @@ export default function SafetyPage() {
 
       {/* Company Values */}
       <section className="w-full max-w-[100rem] mx-auto px-8 py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
+          <SectionLabel text={t('safety', 'valuesSectionLabel')} />
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-foreground mb-6 uppercase leading-tight">
+            {t('safety', 'valuesTitle')} <span className="text-primary">{t('safety', 'valuesHighlight')}</span>
+          </h2>
+          <p className="font-paragraph text-base sm:text-lg text-foreground/80">
+            {t('safety', 'valuesDescription')}
+          </p>
+        </motion.div>
+
         <div className="min-h-[300px]">
           {isLoading ? (
-            <div className="flex items-center justify-center py-32">
+            <div className="flex items-center justify-center py-24">
               <LoadingSpinner />
+            </div>
+          ) : companyValues.length === 0 ? (
+            <div className="text-center py-16">
+              <p className="font-paragraph text-lg text-foreground/60">
+                {t('safety', 'valuesEmptyState')}
+              </p>
             </div>
           ) : (
             <>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="text-center mb-16"
-              >
-                <h2 className="font-heading text-5xl md:text-6xl text-foreground mb-6 uppercase">
-                  {t('safety', 'valuesTitle')} <span className="text-primary">{t('safety', 'valuesHighlight')}</span>
-                </h2>
-                <p className="font-paragraph text-lg text-foreground/80 max-w-3xl mx-auto">
-                  {t('safety', 'valuesDescription')}
-                </p>
-              </motion.div>
-
-              {companyValues.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
-                  {companyValues.map((value, index) => (
-                    <motion.div
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {companyValues.map((value) => {
+                  const slug = getValuePrefix(value.valueTitle) || value._id;
+                  return (
+                    <motion.article
                       key={value._id}
+                      id={slug}
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="bg-dark-grey/5 border-l-4 border-primary p-8"
+                      transition={{ duration: 0.5 }}
+                      className="bg-dark-grey/5 border-l-4 border-primary p-8 scroll-mt-24"
                     >
                       {value.valueTitle && (
-                        <h3 className="font-heading text-3xl text-foreground mb-4">
+                        <h3 className="font-heading text-2xl sm:text-3xl text-foreground mb-4">
                           {getValueText(value, 'Title', value.valueTitle)}
                         </h3>
                       )}
@@ -237,20 +260,25 @@ export default function SafetyPage() {
                             </div>
                           </div>
                         )}
-
-                        <div className="mt-6 pt-6 border-t border-dark-grey/20">
-                          <div className="font-heading text-4xl text-primary">
-                            24/7
-                          </div>
-                          <div className="font-paragraph text-sm text-foreground/60 uppercase tracking-wider">
-                            {t('safety', 'responsiveSupport')}
-                          </div>
-                        </div>
                       </div>
-                    </motion.div>
-                  ))}
+                    </motion.article>
+                  );
+                })}
+              </div>
+
+              {/* 24/7 callout — single instance, hoisted out of the per-value cards */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="mt-12 max-w-2xl mx-auto text-center bg-primary/10 border-l-4 border-primary p-8"
+              >
+                <div className="font-heading text-5xl text-primary mb-2">24/7</div>
+                <div className="font-paragraph text-sm text-foreground/70 uppercase tracking-wider">
+                  {t('safety', 'responsiveSupport')}
                 </div>
-              ) : null}
+              </motion.div>
             </>
           )}
         </div>
@@ -264,17 +292,22 @@ export default function SafetyPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-6 uppercase">
+            <SectionLabel text={t('safety', 'certsSectionLabel')} />
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-6 uppercase leading-tight">
               {t('safety', 'certsTitle')} <span className="text-primary">{t('safety', 'certsHighlight')}</span>
             </h2>
-            <p className="font-paragraph text-lg text-white/80 max-w-3xl mx-auto">
+            <p className="font-paragraph text-base sm:text-lg text-white/80">
               {t('safety', 'certsDescription')}
             </p>
           </motion.div>
 
-          {isLoading ? null : certifications.length === 0 ? (
+          {isLoading ? (
+            <div className="flex items-center justify-center py-16">
+              <LoadingSpinner />
+            </div>
+          ) : certifications.length === 0 ? (
             <div className="text-center py-16">
               <p className="font-paragraph text-lg text-white/60">
                 {t('safety', 'certsEmptyState')}
@@ -282,78 +315,89 @@ export default function SafetyPage() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {certifications.map((cert, index) => (
-                <motion.div
-                  key={cert._id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white/5 border border-white/10 p-8 hover:border-primary transition-colors overflow-hidden"
-                  style={{ containerType: 'inline-size' }}
-                >
-                  {cert.logo && (
-                    <div className="mb-6 h-24 flex items-center justify-center">
-                      <Image
-                        src={cert.logo}
-                        alt={cert.certificationName || 'Certification logo'}
-                        className="max-h-full w-auto object-contain"
-                        width={200}
-                      />
-                    </div>
-                  )}
-
-                  {cert.certificationName && (
-                    <h3 className="font-heading text-white mb-3" style={{ fontSize: 'clamp(0.75rem, 5cqi, 1.125rem)' }}>
-                      {getCertText(cert, 'Title', cert.certificationName)}
-                    </h3>
-                  )}
-
-                  {cert.issuingBody && (
-                    <div className="font-paragraph text-sm text-white/60 mb-4">
-                      {t('safety', 'issuedBy')}: {getCertText(cert, 'Issuer', cert.issuingBody)}
-                    </div>
-                  )}
-
-                  {cert.description && (
-                    <p className="font-paragraph text-sm text-white/70 mb-6 leading-relaxed">
-                      {getCertText(cert, 'Description', cert.description)}
-                    </p>
-                  )}
-
-                  <div className="space-y-2 pt-4 border-t border-white/10">
-                    {cert.dateIssued && (
-                      <div className="flex items-center gap-2">
-                        <FileCheck className="w-4 h-4 text-primary" />
-                        <span className="font-paragraph text-xs text-white/60">
-                          {t('safety', 'dateIssued')}: {formatDate(cert.dateIssued)}
-                        </span>
+              {certifications.map((cert) => {
+                const slug = getCertPrefix(cert.certificationName) || cert._id;
+                const translatedName = getCertText(cert, 'Title', cert.certificationName);
+                const expired = isCertExpired(cert.expirationDate);
+                return (
+                  <motion.article
+                    key={cert._id}
+                    id={slug}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="bg-white/5 border border-white/10 p-8 hover:border-primary transition-colors overflow-hidden flex flex-col scroll-mt-24"
+                    style={{ containerType: 'inline-size' }}
+                  >
+                    {cert.logo && (
+                      <div className="mb-6 h-24 flex items-center justify-center">
+                        <Image
+                          src={cert.logo}
+                          alt={translatedName || 'Certification logo'}
+                          className="max-h-full w-auto object-contain"
+                          width={200}
+                        />
                       </div>
                     )}
 
-                    {cert.expirationDate && (
-                      <div className="flex items-center gap-2">
-                        <FileCheck className="w-4 h-4 text-primary" />
-                        <span className="font-paragraph text-xs text-white/60">
-                          {t('safety', 'expirationDate')}: {formatDate(cert.expirationDate)}
-                        </span>
+                    {cert.certificationName && (
+                      <h3 className="font-heading text-white mb-3" style={{ fontSize: 'clamp(0.75rem, 5cqi, 1.125rem)' }}>
+                        {translatedName}
+                      </h3>
+                    )}
+
+                    {cert.issuingBody && (
+                      <div className="font-paragraph text-sm text-white/60 mb-4">
+                        {t('safety', 'issuedBy')}: {getCertText(cert, 'Issuer', cert.issuingBody)}
                       </div>
                     )}
 
-                    {cert.certificationUrl && (
-                      <a
-                        href={cert.certificationUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 font-paragraph text-xs text-primary hover:text-primary/80 transition-colors mt-2"
-                      >
-                        {t('safety', 'viewCertificate')}
-                        <ArrowRight className="w-3 h-3" />
-                      </a>
+                    {cert.description && (
+                      <p className="font-paragraph text-sm text-white/70 mb-6 leading-relaxed line-clamp-4">
+                        {getCertText(cert, 'Description', cert.description)}
+                      </p>
                     )}
-                  </div>
-                </motion.div>
-              ))}
+
+                    <div className="space-y-2 pt-4 border-t border-white/10 mt-auto">
+                      {cert.dateIssued && (
+                        <div className="flex items-center gap-2">
+                          <FileCheck className="w-4 h-4 text-primary" />
+                          <span className="font-paragraph text-xs text-white/60">
+                            {t('safety', 'dateIssued')}: {formatDate(cert.dateIssued)}
+                          </span>
+                        </div>
+                      )}
+
+                      {cert.expirationDate && (
+                        <div className="flex items-center gap-2">
+                          <FileCheck className={`w-4 h-4 ${expired ? 'text-destructive' : 'text-primary'}`} />
+                          <span className={`font-paragraph text-xs ${expired ? 'text-destructive' : 'text-white/60'}`}>
+                            {t('safety', 'expirationDate')}: {formatDate(cert.expirationDate)}
+                          </span>
+                          {expired && (
+                            <span className="font-paragraph text-[0.65rem] font-bold uppercase tracking-wider bg-destructive/20 text-destructive px-2 py-0.5">
+                              {t('safety', 'expiredBadge')}
+                            </span>
+                          )}
+                        </div>
+                      )}
+
+                      {cert.certificationUrl && (
+                        <a
+                          href={cert.certificationUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 font-paragraph text-xs text-primary hover:text-primary/80 transition-colors mt-2"
+                        >
+                          {t('safety', 'viewCertificate')}
+                          <ArrowRight className="w-3 h-3" />
+                        </a>
+                      )}
+                    </div>
+                  </motion.article>
+                );
+              })}
             </div>
           )}
         </div>
@@ -361,6 +405,10 @@ export default function SafetyPage() {
 
       {/* Safety Commitment */}
       <section className="w-full max-w-[100rem] mx-auto px-8 py-32">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <SectionLabel text={t('safety', 'commitmentSectionLabel')} />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -369,7 +417,7 @@ export default function SafetyPage() {
           className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
         >
           <div>
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-foreground mb-8 leading-tight uppercase">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground mb-8 leading-tight uppercase">
               {t('safety', 'safetyFirstTitle')}<br />
               <span className="text-primary">{t('safety', 'safetyFirstHighlight')}</span> {t('safety', 'safetyFirstSuffix')}
             </h2>
@@ -386,33 +434,38 @@ export default function SafetyPage() {
           <div className="space-y-6">
             {[
               {
+                id: 'vca',
                 icon: Shield,
                 titleKey: 'safetyItemVcaTitle',
                 descKey: 'safetyItemVcaDesc',
               },
               {
+                id: 'nace',
                 icon: Award,
                 titleKey: 'safetyItemNaceTitle',
                 descKey: 'safetyItemNaceDesc',
               },
               {
+                id: 'iso',
                 icon: FileCheck,
                 titleKey: 'safetyItemIsoTitle',
                 descKey: 'safetyItemIsoDesc',
               },
               {
+                id: 'reporting',
                 icon: CheckCircle,
                 titleKey: 'safetyItemReportingTitle',
                 descKey: 'safetyItemReportingDesc',
               },
-            ].map((item, index) => (
+            ].map((item) => (
               <motion.div
-                key={index}
+                key={item.id}
+                id={`safety-${item.id}`}
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-start gap-4 bg-dark-grey/5 p-6 border-l-4 border-primary"
+                transition={{ duration: 0.5 }}
+                className="flex items-start gap-4 bg-dark-grey/5 p-6 border-l-4 border-primary scroll-mt-24"
               >
                 <item.icon className="w-8 h-8 text-primary flex-shrink-0" />
                 <div>
