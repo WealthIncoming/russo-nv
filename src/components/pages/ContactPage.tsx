@@ -4,8 +4,9 @@ import { Image } from '@/components/ui/image';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { submissions } from '@wix/forms';
 import { motion } from 'framer-motion';
-import { AlertCircle, CheckCircle, Clock, Mail, MapPin, Phone, Send } from 'lucide-react';
-import { useState } from 'react';
+import { AlertCircle, CheckCircle, ChevronDown, Clock, Mail, MapPin, Phone, Search, Send } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { COUNTRIES, DEFAULT_COUNTRY, flagEmoji, type Country } from '@/lib/countries';
 
 const CONTACT_PHONE_DISPLAY = '+32 475 43 48 19';
 const CONTACT_PHONE_HREF = '+32475434819';
@@ -13,7 +14,111 @@ const CONTACT_EMAIL = 'info@russonv.be';
 const WIX_FORM_ID = 'cd161b70-3a80-4193-a8b4-04df43cdcf89';
 // Bump this each time you push code. Visible next to the form heading so you
 // can refresh and instantly tell whether you're testing the latest build.
-const FORM_VERSION = 'v2';
+const FORM_VERSION = 'v3';
+
+// Plausible-phone check on the local-number portion (excludes country dial).
+// 6 digits is loose enough for the shortest national numbers; rejects "test",
+// "12345", and the typical fake-input strings.
+function isPhoneNumberPlausible(localNumber: string): boolean {
+  return localNumber.replace(/\D/g, '').length >= 6;
+}
+
+interface CountrySelectProps {
+  value: Country;
+  onChange: (c: Country) => void;
+  invalid?: boolean;
+}
+
+function CountrySelect({ value, onChange, invalid }: CountrySelectProps) {
+  const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState('');
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const handleClickOutside = (e: MouseEvent) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [open]);
+
+  const q = query.trim().toLowerCase();
+  const filtered = q
+    ? COUNTRIES.filter(
+        c => c.name.toLowerCase().includes(q) || c.dial.includes(q.replace(/^\+/, '')),
+      )
+    : COUNTRIES;
+
+  const borderClass = invalid
+    ? 'border-destructive'
+    : open
+      ? 'border-primary'
+      : 'border-dark-grey/20';
+
+  return (
+    <div ref={wrapperRef} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        className={`flex items-center gap-2 bg-dark-grey/5 border-2 ${borderClass} border-r-0 px-3 py-4 h-full font-paragraph text-base text-foreground hover:bg-dark-grey/10 transition-colors`}
+      >
+        <span className="text-xl leading-none">{flagEmoji(value.iso)}</span>
+        <span className="font-bold">+{value.dial}</span>
+        <ChevronDown className={`w-4 h-4 transition-transform ${open ? 'rotate-180' : ''}`} />
+      </button>
+
+      {open && (
+        <div className="absolute top-full left-0 z-20 mt-1 w-72 max-w-[calc(100vw-2rem)] bg-background border-2 border-dark-grey/20 shadow-lg">
+          <div className="relative border-b border-dark-grey/10">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-foreground/40" />
+            <input
+              type="text"
+              autoFocus
+              value={query}
+              onChange={e => setQuery(e.target.value)}
+              placeholder="Search country"
+              className="w-full bg-transparent pl-9 pr-3 py-3 font-paragraph text-sm text-foreground focus:outline-none"
+            />
+          </div>
+          <ul role="listbox" className="max-h-64 overflow-y-auto">
+            {filtered.length === 0 ? (
+              <li className="px-3 py-3 font-paragraph text-sm text-foreground/60">
+                No matches
+              </li>
+            ) : (
+              filtered.map(c => (
+                <li key={c.iso}>
+                  <button
+                    type="button"
+                    role="option"
+                    aria-selected={c.iso === value.iso}
+                    onClick={() => {
+                      onChange(c);
+                      setOpen(false);
+                      setQuery('');
+                    }}
+                    className={`w-full flex items-center gap-2 px-3 py-2 text-left font-paragraph text-sm hover:bg-primary/10 transition-colors ${
+                      c.iso === value.iso ? 'bg-primary/5 text-primary font-bold' : 'text-foreground'
+                    }`}
+                  >
+                    <span className="text-lg leading-none">{flagEmoji(c.iso)}</span>
+                    <span className="flex-1 truncate">{c.name}</span>
+                    <span className="text-foreground/60">+{c.dial}</span>
+                  </button>
+                </li>
+              ))
+            )}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
 
 const SectionLabel = ({ text, align = 'center' }: { text: string; align?: 'left' | 'center' }) => (
   <div className={`flex items-center gap-3 mb-6 ${align === 'center' ? 'justify-center' : 'justify-start'}`}>
@@ -35,6 +140,8 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [selectedCountry, setSelectedCountry] = useState<Country>(DEFAULT_COUNTRY);
+  const [phoneError, setPhoneError] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -45,8 +152,14 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isPhoneNumberPlausible(formData.phone)) {
+      setPhoneError(true);
+      return;
+    }
     setIsSubmitting(true);
     setSubmitError(null);
+    const localDigits = formData.phone.replace(/\D/g, '');
+    const fullPhone = `+${selectedCountry.dial}${localDigits}`;
     try {
       await submissions.createSubmission({
         formId: WIX_FORM_ID,
@@ -54,7 +167,7 @@ export default function ContactPage() {
           name: formData.name,
           company: formData.company,
           email: formData.email,
-          phone: formData.phone,
+          phone: fullPhone,
           message: formData.message,
         },
       });
@@ -65,6 +178,7 @@ export default function ContactPage() {
         phone: '',
         message: '',
       });
+      setSelectedCountry(DEFAULT_COUNTRY);
       setIsSubmitted(true);
     } catch (error) {
       console.error('Contact form submission failed:', error);
@@ -222,16 +336,32 @@ export default function ContactPage() {
                     <label htmlFor="phone" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
                       {t('contact', 'phone')} *
                     </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      autoComplete="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="w-full bg-dark-grey/5 border-2 border-dark-grey/20 px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors"
-                    />
+                    <div className="flex">
+                      <CountrySelect
+                        value={selectedCountry}
+                        onChange={setSelectedCountry}
+                        invalid={phoneError}
+                      />
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        autoComplete="tel-national"
+                        value={formData.phone}
+                        onChange={(e) => {
+                          handleChange(e);
+                          if (phoneError) setPhoneError(false);
+                        }}
+                        required
+                        placeholder="475 12 34 56"
+                        className={`flex-1 min-w-0 bg-dark-grey/5 border-2 ${phoneError ? 'border-destructive' : 'border-dark-grey/20'} px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors`}
+                      />
+                    </div>
+                    {phoneError && (
+                      <p className="font-paragraph text-sm text-destructive mt-2">
+                        {t('contact', 'phoneInvalid')}
+                      </p>
+                    )}
                   </div>
                 </div>
               </fieldset>
