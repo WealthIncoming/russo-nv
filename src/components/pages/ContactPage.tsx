@@ -5,8 +5,6 @@ import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { submissions } from '@wix/forms';
 import { motion } from 'framer-motion';
 import { AlertCircle, CheckCircle, Clock, Mail, MapPin, Phone, Send } from 'lucide-react';
-import { PhoneInput } from 'react-international-phone';
-import 'react-international-phone/style.css';
 import { useState } from 'react';
 
 const CONTACT_PHONE_DISPLAY = '+32 475 43 48 19';
@@ -15,15 +13,7 @@ const CONTACT_EMAIL = 'info@russonv.be';
 const WIX_FORM_ID = 'cd161b70-3a80-4193-a8b4-04df43cdcf89';
 // Bump this each time you push code. Visible next to the form heading so you
 // can refresh and instantly tell whether you're testing the latest build.
-const FORM_VERSION = 'v3';
-
-// Plausible-phone check: at least 8 digits anywhere in the string. Country
-// code alone (+32) has 2 digits; a real number adds 7-10+ more. Loose enough
-// to accept international formats; strict enough to catch "test", "12345", etc.
-function isPhonePlausible(phone: string): boolean {
-  const digits = phone.replace(/\D/g, '');
-  return digits.length >= 8;
-}
+const FORM_VERSION = 'v2';
 
 const SectionLabel = ({ text, align = 'center' }: { text: string; align?: 'left' | 'center' }) => (
   <div className={`flex items-center gap-3 mb-6 ${align === 'center' ? 'justify-center' : 'justify-start'}`}>
@@ -45,7 +35,6 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const [phoneError, setPhoneError] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -56,10 +45,6 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!isPhonePlausible(formData.phone)) {
-      setPhoneError(true);
-      return;
-    }
     setIsSubmitting(true);
     setSubmitError(null);
     try {
@@ -237,30 +222,16 @@ export default function ContactPage() {
                     <label htmlFor="phone" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
                       {t('contact', 'phone')} *
                     </label>
-                    <PhoneInput
-                      defaultCountry="be"
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      autoComplete="tel"
                       value={formData.phone}
-                      onChange={(phone) => {
-                        setFormData((prev) => ({ ...prev, phone }));
-                        if (phoneError) setPhoneError(false);
-                      }}
-                      inputProps={{
-                        id: 'phone',
-                        name: 'phone',
-                        autoComplete: 'tel',
-                        required: true,
-                      }}
-                      className="phone-input-wrapper"
-                      inputClassName={`!w-full !bg-dark-grey/5 !border-2 ${phoneError ? '!border-destructive' : '!border-dark-grey/20 focus:!border-primary'} !px-4 !py-4 !font-paragraph !text-base !text-foreground !rounded-none !transition-colors !h-auto`}
-                      countrySelectorStyleProps={{
-                        buttonClassName: `!bg-dark-grey/5 !border-2 !border-r-0 ${phoneError ? '!border-destructive' : '!border-dark-grey/20'} !rounded-none !px-3 !h-auto`,
-                      }}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-dark-grey/5 border-2 border-dark-grey/20 px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors"
                     />
-                    {phoneError && (
-                      <p className="font-paragraph text-sm text-destructive mt-2">
-                        {t('contact', 'phoneInvalid')}
-                      </p>
-                    )}
                   </div>
                 </div>
               </fieldset>
