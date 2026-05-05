@@ -352,7 +352,7 @@ export default function HomePage() {
           <div className="relative min-w-0 w-full z-20">
             <SectionLabel text={t('home', 'companyProfile')} />
 
-            <h2 className="font-heading text-white leading-[0.9] tracking-tight mb-8 max-w-full text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl">
+            <h2 className="font-heading text-white leading-[0.9] tracking-tight mb-8 max-w-full text-3xl sm:text-4xl md:text-4xl lg:text-5xl 2xl:text-5xl">
               <span className="block">{t('home', 'engineeringDurability')}</span>
               <span className="block text-white/30">{t('home', 'durability')}</span>
             </h2>
@@ -416,9 +416,9 @@ export default function HomePage() {
               <div className="xl:sticky xl:top-32 w-full max-w-full xl:max-w-[30rem] 2xl:max-w-[34rem]">
                 <SectionLabel text={t('home', 'ourExpertise')} />
 
-                <h2 className="font-heading leading-[0.92] tracking-tight text-white mb-8 max-w-full text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
-                  <span className="block sm:whitespace-nowrap">{t('home', 'coreServicesLine1')}</span>
-                  <span className="block text-primary sm:whitespace-nowrap">{t('home', 'coreServicesLine2')}</span>
+                <h2 className="font-heading leading-[0.92] tracking-tight text-white mb-8 max-w-full text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-6xl">
+                  <span className="block">{t('home', 'coreServicesLine1')}</span>
+                  <span className="block text-primary">{t('home', 'coreServicesLine2')}</span>
                 </h2>
 
                 <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-12 max-w-[32rem]">
