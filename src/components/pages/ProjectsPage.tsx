@@ -67,6 +67,11 @@ const PROJECT_IMAGE_OVERRIDES: Array<{ match: string; main: string; secondary?: 
     main: '/images/kiwi1.jpg',
     secondary: '/images/kiwi2.jpg',
   },
+  {
+    match: 'anti-slip',
+    main: '/images/itc1.jpg',
+    secondary: '/images/itc2.jpg',
+  },
 ];
 
 function getProjectImageOverride(projectTitle: string | undefined) {
