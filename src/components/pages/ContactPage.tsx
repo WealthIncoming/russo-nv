@@ -13,7 +13,7 @@ const CONTACT_EMAIL = 'info@russonv.be';
 const WIX_FORM_ID = 'cd161b70-3a80-4193-a8b4-04df43cdcf89';
 // Bump this each time you push code. Visible next to the form heading so you
 // can refresh and instantly tell whether you're testing the latest build.
-const FORM_VERSION = 'v1';
+const FORM_VERSION = 'v2';
 
 const SectionLabel = ({ text, align = 'center' }: { text: string; align?: 'left' | 'center' }) => (
   <div className={`flex items-center gap-3 mb-6 ${align === 'center' ? 'justify-center' : 'justify-start'}`}>
@@ -30,7 +30,6 @@ export default function ContactPage() {
     company: '',
     email: '',
     phone: '',
-    projectType: '',
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -56,7 +55,6 @@ export default function ContactPage() {
           company: formData.company,
           email: formData.email,
           phone: formData.phone,
-          project: formData.projectType,
           message: formData.message,
         },
       });
@@ -65,7 +63,6 @@ export default function ContactPage() {
         company: '',
         email: '',
         phone: '',
-        projectType: '',
         message: '',
       });
       setIsSubmitted(true);
@@ -241,32 +238,6 @@ export default function ContactPage() {
 
               <fieldset className="space-y-8 border-0 p-0 m-0">
                 <legend className="sr-only">{t('contact', 'fieldsetProject')}</legend>
-                <div>
-                  <label htmlFor="projectType" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
-                    {t('contact', 'projectType')} *
-                  </label>
-                  <select
-                    id="projectType"
-                    name="projectType"
-                    value={formData.projectType}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-dark-grey/5 border-2 border-dark-grey/20 px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors"
-                  >
-                    <option value="">{t('contact', 'selectService')}</option>
-                    <option value="coating-application">{t('contact', 'coatingApplication')}</option>
-                    <option value="sandblasting">{t('contact', 'sandblasting')}</option>
-                    <option value="corrosion-protection">{t('contact', 'corrosionProtection')}</option>
-                    <option value="fireproofing">{t('contact', 'fireproofing')}</option>
-                    <option value="waterproofing">{t('contact', 'waterproofing')}</option>
-                    <option value="water-jetting">{t('contact', 'waterJetting')}</option>
-                    <option value="coating-inspection">{t('contact', 'coatingInspection')}</option>
-                    <option value="tank-coating">{t('contact', 'tankCoating')}</option>
-                    <option value="pipeline-coating">{t('contact', 'pipelineCoating')}</option>
-                    <option value="other">{t('contact', 'other')}</option>
-                  </select>
-                </div>
-
                 <div>
                   <label htmlFor="message" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
                     {t('contact', 'projectDetails')} *
