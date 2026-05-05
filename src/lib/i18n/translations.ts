@@ -174,8 +174,8 @@ export const translations: Record<Language, Translations> = {
       viewProject: 'View Project',
       exploreMore: 'Explore More',
 
-      engineeringDurability: 'LEADERS IN',
-      durability: 'CORROSION PROTECTION',
+      engineeringDurability: 'PROTECTING',
+      durability: 'YOUR ASSETS',
 
       companyDescription:
         'Industrial coating is only as good as the preparation behind it. At Russo, we protect tanks, piping, steelwork, industrial facilities and so much more with careful surface preparation, quality coating systems and safe, reliable execution on site.',
@@ -977,8 +977,8 @@ export const translations: Record<Language, Translations> = {
       viewProject: 'Project Bekijken',
       exploreMore: 'Meer Ontdekken',
 
-      engineeringDurability: 'LEIDEND IN',
-      durability: 'CORROSIE\u00ADBESCHERMING',
+      engineeringDurability: 'BESCHERMING VAN',
+      durability: 'UW INSTALLATIES',
 
       companyDescription:
         'Een industriële coating is maar zo goed als de voorbereiding erachter. Bij Russo beschermen wij tanks, leidingen, staalconstructies, industriële installaties en veel meer met zorgvuldige oppervlaktevoorbereiding, kwalitatieve coatingsystemen en een veilige, betrouwbare uitvoering op de werf.',
