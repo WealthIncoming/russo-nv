@@ -62,6 +62,11 @@ const PROJECT_IMAGE_OVERRIDES: Array<{ match: string; main: string; secondary?: 
     main: '/images/csp1.jpg',
     secondary: '/images/csp2.jpg',
   },
+  {
+    match: 'food storage',
+    main: '/images/kiwi1.jpg',
+    secondary: '/images/kiwi2.jpg',
+  },
 ];
 
 function getProjectImageOverride(projectTitle: string | undefined) {
