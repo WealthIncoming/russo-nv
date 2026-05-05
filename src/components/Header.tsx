@@ -26,6 +26,15 @@ export default function Header() {
 
   return (
     <header className="w-full bg-white border-b border-dark-grey/20 sticky top-0 z-50">
+      {/* Skip-to-content link: invisible until a keyboard user tabs into it,
+          then slides into view. Lets keyboard / screen-reader users bypass
+          the header nav on every page. */}
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:bg-primary focus:text-primary-foreground focus:font-paragraph focus:font-bold focus:uppercase focus:px-4 focus:py-2 focus:tracking-wider focus:text-sm"
+      >
+        {t('header', 'skipToContent')}
+      </a>
       <div className="max-w-[100rem] mx-auto px-4 sm:px-6 xl:px-8">
         <div className="grid grid-cols-[auto_1fr_auto] items-center h-20 xl:h-24 gap-4 xl:gap-6">
           {/* Logo */}

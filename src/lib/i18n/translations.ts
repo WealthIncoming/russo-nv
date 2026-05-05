@@ -22,6 +22,7 @@ export const translations: Record<Language, Translations> = {
     // Header
     header: {
       callNow: 'Call Now',
+      skipToContent: 'Skip to content',
     },
 
     // Footer
@@ -729,6 +730,7 @@ export const translations: Record<Language, Translations> = {
     // Header
     header: {
       callNow: 'Bel Nu',
+      skipToContent: 'Sla over naar inhoud',
     },
 
     // Footer

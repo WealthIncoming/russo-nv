@@ -4,9 +4,24 @@ import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
-import { ArrowRight, ArrowUpRight, CheckCircle, Clock, MapPin, Shield, Users } from 'lucide-react';
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Clock,
+  Container,
+  Factory,
+  FlaskConical,
+  HardHat,
+  MapPin,
+  Shield,
+  Warehouse,
+  Wheat,
+  type LucideIcon,
+} from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+const HQ_PHONE = '+32475434819';
 
 // --- Canonical Data Sources ---
 const SERVICES_DATA = [
@@ -50,21 +65,44 @@ const SERVICES_DATA = [
   }
 ];
 
-const INDUSTRIES_DATA = [
-  { titleKey: 'chemicalPlants', descKey: 'chemicalPlantsDesc' },
-  { titleKey: 'foodProduction', descKey: 'foodProductionDesc' },
-  { titleKey: 'storageTerminals', descKey: 'storageTerminalsDesc' },
-  { titleKey: 'industrialConstruction', descKey: 'industrialConstructionDesc' },
-  { titleKey: 'warehouses', descKey: 'warehousesDesc' },
-  { titleKey: 'manufacturing', descKey: 'manufacturingDesc' },
+const INDUSTRIES_DATA: Array<{ titleKey: string; descKey: string; icon: LucideIcon }> = [
+  { titleKey: 'chemicalPlants',         descKey: 'chemicalPlantsDesc',         icon: FlaskConical },
+  { titleKey: 'foodProduction',         descKey: 'foodProductionDesc',         icon: Wheat },
+  { titleKey: 'storageTerminals',       descKey: 'storageTerminalsDesc',       icon: Container },
+  { titleKey: 'industrialConstruction', descKey: 'industrialConstructionDesc', icon: HardHat },
+  { titleKey: 'warehouses',             descKey: 'warehousesDesc',             icon: Warehouse },
+  { titleKey: 'manufacturing',          descKey: 'manufacturingDesc',          icon: Factory },
 ];
 
 const STATS_DATA = [
-  { valueKey: '25+', labelKey: 'statsProjectsPerYear', subKey: 'statsAveragePerYear' },
-  { valueKey: '250+', labelKey: 'statsProjectsCompleted', subKey: 'statsIndustrialProjects' },
-  { valueKey: '100%', labelKey: 'statsSafetyCertified', subKey: 'statsVcaIso' },
-  { valueKey: '24/7', labelKey: 'statsProjectUpdates', subKey: 'statsRealTimeData' },
+  { value: '25+', labelKey: 'statsProjectsPerYear', subKey: 'statsAveragePerYear' },
+  { value: '250+', labelKey: 'statsProjectsCompleted', subKey: 'statsIndustrialProjects' },
+  { value: '100%', labelKey: 'statsSafetyCertified', subKey: 'statsVcaIso' },
+  { value: '24/7', labelKey: 'statsProjectUpdates', subKey: 'statsRealTimeData' },
 ];
+
+// schema.org Organization JSON-LD — surfaces logo, social profiles, and
+// contact info to search engines when someone Googles "Russo NV".
+const ORGANIZATION_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Russo NV',
+  url: 'https://www.russonv.be',
+  logo: 'https://static.wixstatic.com/media/3232e5_48e2024c6d3f441e817637ccdd99f28f~mv2.png',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    telephone: HQ_PHONE,
+    email: 'info@russonv.be',
+    areaServed: 'Europe',
+    availableLanguage: ['en', 'nl'],
+  },
+  sameAs: [
+    'https://facebook.com',
+    'https://instagram.com',
+    'https://linkedin.com',
+  ],
+};
 
 const CERTIFICATION_KEYS = [
   'certVcaPetrochemical',
@@ -136,12 +174,6 @@ const ParallaxText = ({ children, baseVelocity = 100 }: { children: string; base
 };
 
 export default function HomePage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-
   // Parallax for Hero
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress: heroScroll } = useScroll({
@@ -154,7 +186,11 @@ export default function HomePage() {
   const { t } = useLanguageStore();
 
   return (
-    <div ref={containerRef} className="bg-black min-h-screen text-white selection:bg-primary selection:text-white overflow-clip">
+    <div className="bg-black min-h-screen text-white selection:bg-primary selection:text-white overflow-clip">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSON_LD) }}
+      />
       <style>{`
         .clip-diagonal {
           clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -170,11 +206,11 @@ export default function HomePage() {
       `}</style>
       <Header />
       {/* --- HERO SECTION --- */}
-      <section ref={heroRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center">
+      <section id="main" ref={heroRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center">
         {/* Background Parallax */}
         <motion.div style={{ y: heroY }} className="absolute inset-0 z-0">
           <Image
-            src="https://static.wixstatic.com/media/3232e5_51222d38774747a49bdf5faf7d72b00a~mv2.png?originWidth=1920&originHeight=1024"
+            src="/images/home-hero.jpg"
             alt="Industrial coating facility"
             className="w-full h-full object-cover opacity-60"
             width={1920}
@@ -203,11 +239,7 @@ export default function HomePage() {
             </motion.div>
 
             <div className="w-full max-w-full md:max-w-[900px] mx-auto md:mx-0">
-              {/* Mobile title */}
-              <h1
-                className="font-heading md:hidden leading-[0.88] font-black text-white uppercase tracking-[-0.03em] text-center"
-                style={{ fontSize: 'clamp(2rem, 8vw, 3.15rem)' }}
-              >
+              <h1 className="font-heading font-black text-white uppercase text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.88] md:leading-[0.85] tracking-tight text-center md:text-left">
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -228,33 +260,7 @@ export default function HomePage() {
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
-                  className="block text-primary text-[0.88em]"
-                >
-                  {t('home', 'heroTitleLine3')}
-                </motion.span>
-              </h1>
-
-              {/* Desktop title */}
-              <h1 className="hidden md:block font-heading text-6xl lg:text-7xl xl:text-8xl leading-[0.85] font-black text-white uppercase tracking-tighter text-left">
-                <motion.span
-                  initial={{ y: 100, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
-                  className="block"
-                >{t('home', 'heroTitleLine1')}</motion.span>
-                <motion.span
-                  initial={{ y: 100, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.1, ease: [0.215, 0.61, 0.355, 1] }}
-                  className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50"
-                >
-                  {t('home', 'heroTitleLine2')}
-                </motion.span>
-                <motion.span
-                  initial={{ y: 100, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
-                  className="block text-primary"
+                  className="block text-primary text-[0.88em] md:text-[1em]"
                 >
                   {t('home', 'heroTitleLine3')}
                 </motion.span>
@@ -346,10 +352,7 @@ export default function HomePage() {
           <div className="relative min-w-0 w-full z-20">
             <SectionLabel text={t('home', 'companyProfile')} />
 
-            <h2
-              className="font-heading text-white leading-[0.9] tracking-tight mb-8 max-w-full sm:text-4xl md:text-5xl xl:text-[3.2rem] 2xl:text-[3.9rem]"
-              style={{ fontSize: 'clamp(2rem, 8vw, 2.25rem)' }}
-            >
+            <h2 className="font-heading text-white leading-[0.9] tracking-tight mb-8 max-w-full text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl">
               <span className="block">{t('home', 'engineeringDurability')}</span>
               <span className="block text-white/30">{t('home', 'durability')}</span>
             </h2>
@@ -359,10 +362,10 @@ export default function HomePage() {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-2xl">
-              {STATS_DATA.map((stat, index) => (
-                <div key={index} className="border-t border-white/10 pt-4 min-w-0">
+              {STATS_DATA.map((stat) => (
+                <div key={stat.value} className="border-t border-white/10 pt-4 min-w-0">
                   <div className="font-heading text-3xl md:text-4xl text-primary mb-1">
-                    {stat.valueKey}
+                    {stat.value}
                   </div>
                   <div className="font-paragraph text-white font-bold text-xs sm:text-sm uppercase">
                     {t('home', stat.labelKey)}
@@ -383,11 +386,11 @@ export default function HomePage() {
               <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary z-20" />
 
               <Image
-                src="https://static.wixstatic.com/media/3232e5_51fa10f97d774c23858179ced66b46b6~mv2.png"
-                className="absolute inset-0 w-full h-full object-cover my-0 mx-[7px]"
-                width={1200}
-                originWidth={1536}
-                originHeight={1024} />
+                src="/images/home-stats.jpg"
+                alt="Russo NV team working on industrial coating"
+                className="absolute inset-0 w-full h-full object-cover"
+                width={1536}
+              />
 
               <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 z-20 bg-black/80 backdrop-blur-md p-4 md:p-6 border-l-2 border-primary max-w-[85%] sm:max-w-xs">
                 <div className="flex items-center gap-2 mb-2">
@@ -404,7 +407,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* --- STICKY SERVICES --- */}
-      <section className="relative w-full bg-black py-32 overflow-hidden">
+      <section id="services" className="relative w-full bg-black py-32 overflow-hidden scroll-mt-24">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] 2xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] gap-12 xl:gap-14 2xl:gap-16 items-start">
 
@@ -413,10 +416,7 @@ export default function HomePage() {
               <div className="xl:sticky xl:top-32 w-full max-w-full xl:max-w-[30rem] 2xl:max-w-[34rem]">
                 <SectionLabel text={t('home', 'ourExpertise')} />
 
-                <h2
-                  className="font-heading leading-[0.92] tracking-tight text-white mb-8 max-w-full sm:text-4xl md:text-5xl lg:text-6xl xl:text-[clamp(3.8rem,5vw,5.6rem)] 2xl:text-[clamp(4.5rem,5vw,6.2rem)]"
-                  style={{ fontSize: 'clamp(2.2rem, 8vw, 3rem)' }}
-                >
+                <h2 className="font-heading leading-[0.92] tracking-tight text-white mb-8 max-w-full text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
                   <span className="block sm:whitespace-nowrap">{t('home', 'coreServicesLine1')}</span>
                   <span className="block text-primary sm:whitespace-nowrap">{t('home', 'coreServicesLine2')}</span>
                 </h2>
@@ -440,15 +440,15 @@ export default function HomePage() {
 
             {/* Scrollable Cards */}
             <div className="relative min-w-0 w-full z-10 flex flex-col gap-8">
-              {SERVICES_DATA.map((service, index) => (
-                <StickyServiceCard key={index} service={service} index={index} />
+              {SERVICES_DATA.map((service) => (
+                <StickyServiceCard key={service.id} service={service} />
               ))}
             </div>
           </div>
         </div>
       </section>
       {/* --- PARALLAX INDUSTRIES --- */}
-      <section className="relative w-full py-40 overflow-hidden bg-dark-grey clip-diagonal">
+      <section id="industries" className="relative w-full py-40 overflow-hidden bg-dark-grey clip-diagonal scroll-mt-24">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <ParallaxText baseVelocity={-2}>{t('home', 'industriesServed')}</ParallaxText>
           <ParallaxText baseVelocity={2}>{t('home', 'globalReach')}</ParallaxText>
@@ -474,27 +474,16 @@ export default function HomePage() {
         </div>
       </section>
       {/* --- FEATURED PROJECT --- */}
-      <section className="relative w-full py-24 md:py-32 bg-black overflow-hidden">
-        {/* Decorative background number */}
-        <div
-          aria-hidden="true"
-          className="absolute top-6 right-4 md:top-10 md:right-10 pointer-events-none select-none leading-none"
-        >
-          <span className="font-heading font-black text-white/[0.04] text-[8rem] md:text-[14rem] xl:text-[18rem] tracking-tighter">
-            01
-          </span>
-        </div>
-
+      <section id="featured" className="relative w-full py-24 md:py-32 bg-black overflow-hidden scroll-mt-24">
         <div className="relative z-10 max-w-[120rem] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 xl:grid-cols-[1.1fr_0.9fr] gap-8 xl:gap-12 items-center">
             {/* Left Column: Image */}
             <div className="relative w-full min-w-0 aspect-video xl:aspect-[4/3] overflow-hidden border border-white/10 group">
               <Image
-                src="https://static.wixstatic.com/media/3232e5_8b2cbf3ec2d145bd89b8b1733c9be1ea~mv2.jpg"
+                src="/images/home-featured.jpg"
+                alt={`${t('home', 'totalTankFarm')} ${t('home', 'refurbishment')}`}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                width={1920}
-                originWidth={4000}
-                originHeight={3000}
+                width={2000}
                 loading="lazy"
                 decoding="async"
               />
@@ -525,7 +514,7 @@ export default function HomePage() {
               <SectionLabel text={t('home', 'featuredProject')} />
               <h2 className="font-heading text-white leading-[0.9] tracking-tight mb-8 w-full min-w-0 text-4xl md:text-5xl lg:text-6xl xl:text-4xl 2xl:text-5xl uppercase">
                 <span className="block">{t('home', 'totalTankFarm')}</span>
-                <span className="block text-primary tracking-[-0.02em]">
+                <span className="block text-primary">
                   {t('home', 'refurbishment')}
                 </span>
               </h2>
@@ -567,7 +556,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* --- CTA SECTION --- */}
-      <section className="relative w-full bg-primary py-32 overflow-hidden">
+      <section id="cta" className="relative w-full bg-primary py-32 overflow-hidden scroll-mt-24">
         <div className="absolute inset-0 grid-bg opacity-20 mix-blend-multiply" />
         <div className="absolute right-0 top-0 w-1/2 h-full bg-black/10 skew-x-12 transform origin-top" />
 
@@ -593,11 +582,11 @@ export default function HomePage() {
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
-              <Link to="/contact">
+              <a href={`tel:${HQ_PHONE}`}>
                 <button className="bg-transparent border-2 border-black text-black font-paragraph font-bold uppercase px-10 py-5 hover:bg-black hover:text-white transition-all duration-300">
                   {t('home', 'callUsNow')}
                 </button>
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -609,7 +598,7 @@ export default function HomePage() {
 
 // --- Sub-Components ---
 
-function StickyServiceCard({ service, index }: { service: typeof SERVICES_DATA[0], index: number }) {
+function StickyServiceCard({ service }: { service: typeof SERVICES_DATA[0] }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -620,6 +609,7 @@ function StickyServiceCard({ service, index }: { service: typeof SERVICES_DATA[0
   const x = useTransform(scrollYProgress, [0, 0.5], [50, 0]);
 
   const { t } = useLanguageStore();
+  const serviceTitle = t('home', service.titleKey);
 
   return (
     <motion.div
@@ -631,34 +621,22 @@ function StickyServiceCard({ service, index }: { service: typeof SERVICES_DATA[0
         {service.id}
       </div>
 
-      <div className="flex flex-col md:flex-row gap-8 items-start">
-        <div className="flex-1">
-          <h3 className="font-heading text-3xl md:text-4xl text-white mb-4 group-hover:text-primary transition-colors">
-            {t('home', service.titleKey)}
-          </h3>
-          <p className="font-paragraph text-white/60 text-sm md:text-base leading-relaxed mb-8 max-w-xl">
-            {t('home', service.descKey)}
-          </p>
+      <div className="flex flex-col gap-4 items-start pr-12">
+        <h3 className="font-heading text-3xl md:text-4xl text-white mb-2 group-hover:text-primary transition-colors">
+          {serviceTitle}
+        </h3>
+        <p className="font-paragraph text-white/60 text-sm md:text-base leading-relaxed mb-4 max-w-2xl">
+          {t('home', service.descKey)}
+        </p>
 
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {service.detailsKeys.map((detailKey, i) => (
-              <li key={i} className="flex items-center gap-2 font-paragraph text-xs text-white/80 uppercase tracking-wide">
-                <div className="w-1 h-1 bg-primary" />
-                {t('home', detailKey)}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="w-full md:w-48 h-32 bg-black/20 border border-white/5 relative overflow-hidden">
-           {/* Placeholder for service specific imagery - using generic for now but styled */}
-           <Image
-             src="https://static.wixstatic.com/media/3232e5_1f2a1a565833417a9c5c5ea40e20a310~mv2.png?originWidth=384&originHeight=320"
-             alt={t('home', service.titleKey)}
-             className="w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700"
-             width={400}
-           />
-        </div>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
+          {service.detailsKeys.map((detailKey) => (
+            <li key={detailKey} className="flex items-center gap-2 font-paragraph text-xs text-white/80 uppercase tracking-wide">
+              <div className="w-1 h-1 bg-primary" />
+              {t('home', detailKey)}
+            </li>
+          ))}
+        </ul>
       </div>
     </motion.div>
   );
@@ -667,13 +645,14 @@ function StickyServiceCard({ service, index }: { service: typeof SERVICES_DATA[0
 function IndustryCard({ industry, index }: { industry: typeof INDUSTRIES_DATA[0], index: number }) {
   const [isHovered, setIsHovered] = useState(false);
   const { t } = useLanguageStore();
+  const Icon = industry.icon;
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
+      transition={{ duration: 0.5 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="relative bg-black p-10 h-80 flex flex-col justify-between group overflow-hidden"
@@ -684,10 +663,7 @@ function IndustryCard({ industry, index }: { industry: typeof INDUSTRIES_DATA[0]
       <div className="relative z-10">
         <div className="flex justify-between items-start mb-4">
           <div className={`p-2 border ${isHovered ? 'border-black text-black' : 'border-white/20 text-primary'} transition-colors`}>
-            {index === 0 ? <Shield className="w-6 h-6" /> :
-             index === 1 ? <CheckCircle className="w-6 h-6" /> :
-             index === 2 ? <Clock className="w-6 h-6" /> :
-             <Users className="w-6 h-6" />}
+            <Icon className="w-6 h-6" />
           </div>
           <span className={`font-paragraph text-xs font-bold ${isHovered ? 'text-black' : 'text-white/30'}`}>0{index + 1}</span>
         </div>
