@@ -30,46 +30,52 @@ const HQ_PHONE = '+32475434819';
 const SERVICES_DATA = [
   {
     id: '01',
-    titleKey: 'industrialPaintingTitle',
-    descKey: 'industrialPaintingDesc',
+    titleKey: 'industrialCoatingTitle',
+    descKey: 'industrialCoatingDesc',
     anchor: 'industrialCoatingApplication',
-    detailsKeys: [
-      'airlessSpraying',
-      'corrosionProtection',
-      'chemicalProtection'
-    ]
+    detailsKeys: ['airlessSpraying', 'corrosionProtection', 'chemicalProtection']
   },
   {
     id: '02',
-    titleKey: 'protectiveCoatingsTitle',
-    descKey: 'protectiveCoatingsDesc',
-    anchor: 'corrosionProtection',
-    detailsKeys: ['antiCorrosionSystems', 'chemicalResistance', 'uvProtection']
-  },
-  {
-    id: '03',
-    titleKey: 'sandblastingTitle',
-    descKey: 'sandblastingDesc',
+    titleKey: 'sandBlastingTitle',
+    descKey: 'sandBlastingDesc',
     anchor: 'sandblastingAbrasive',
     detailsKeys: ['surfaceProfileCreation', 'rustScaleRemoval', 'contaminantElimination']
   },
   {
+    id: '03',
+    titleKey: 'corrosionProtectionTitle',
+    descKey: 'corrosionProtectionDesc',
+    anchor: 'corrosionProtection',
+    detailsKeys: ['antiCorrosionSystems', 'chemicalResistance', 'uvProtection']
+  },
+  {
     id: '04',
+    titleKey: 'coatingInspectionTitle',
+    descKey: 'coatingInspectionDesc',
+    anchor: 'coatingInspection',
+    detailsKeys: ['dftVerification', 'adhesionTesting', 'complianceReporting']
+  },
+  {
+    id: '05',
+    titleKey: 'waterjettingTitle',
+    descKey: 'waterjettingDesc',
+    anchor: 'hpwj',
+    detailsKeys: ['uhpSurfacePrep', 'coatingStripping', 'hydroblasting']
+  },
+  {
+    id: '06',
+    titleKey: 'waterproofingTitle',
+    descKey: 'waterproofingDesc',
+    anchor: 'waterproofing',
+    detailsKeys: ['bundContainmentSealing', 'tankFoundationWaterproofing', 'seamlessMembraneSystems']
+  },
+  {
+    id: '07',
     titleKey: 'fireproofingTitle',
     descKey: 'fireproofingDesc',
     anchor: 'fireproofingThermal',
     detailsKeys: ['passiveFireProtection', 'hydrocarbonFireDefense', 'thermalInsulation']
-  },
-  {
-    id: '05',
-    titleKey: 'industrialWaterproofingTitle',
-    descKey: 'industrialWaterproofingDesc',
-    anchor: 'waterproofing',
-    detailsKeys: [
-      'bundContainmentSealing',
-      'tankFoundationWaterproofing',
-      'seamlessMembraneSystems'
-    ]
   }
 ];
 

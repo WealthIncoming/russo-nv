@@ -111,6 +111,34 @@ export const translations: Record<Language, Translations> = {
       tankFoundationWaterproofing: 'Tank Foundation Waterproofing',
       seamlessMembraneSystems: 'Seamless Liquid Membrane Systems',
 
+      // --- Home page service-card titles + descriptions ---
+      industrialCoatingTitle: 'Industrial Coating',
+      industrialCoatingDesc:
+        'Large-scale aesthetic and functional coating application for factories, terminals, and infrastructure.',
+      sandBlastingTitle: 'Sand Blasting',
+      sandBlastingDesc:
+        'Complete surface preparation ensuring optimal coating adhesion through advanced abrasive techniques.',
+      corrosionProtectionTitle: 'Corrosion Protection',
+      corrosionProtectionDesc:
+        'High-performance barrier systems designed to withstand extreme chemical and environmental aggression.',
+      coatingInspectionTitle: 'Coating Inspection',
+      coatingInspectionDesc:
+        'Independent inspection and quality assurance of coating systems — verifying surface preparation, dry film thickness, adhesion, and compliance with project specifications.',
+      waterjettingTitle: 'Waterjetting',
+      waterjettingDesc:
+        'Ultra-high-pressure water jetting for non-abrasive surface preparation, coating removal, and cleaning of contaminated industrial surfaces.',
+      waterproofingTitle: 'Waterproofing',
+      waterproofingDesc:
+        'Seamless industrial waterproofing using the Kemperol 2K-PUR system to protect containment areas, tank foundations, bund walls, and critical infrastructure from water ingress and harsh environmental exposure.',
+
+      // Bullets for the new Coating Inspection + Waterjetting cards
+      dftVerification: 'DFT Verification',
+      adhesionTesting: 'Adhesion Testing',
+      complianceReporting: 'Compliance Reporting',
+      uhpSurfacePrep: 'UHP Surface Prep',
+      coatingStripping: 'Coating Stripping',
+      hydroblasting: 'Hydroblasting',
+
       industriesTitle: 'Industries We Serve',
       industriesSubtitle: 'Trusted by leading companies across sectors',
 
@@ -911,6 +939,34 @@ export const translations: Record<Language, Translations> = {
       bundContainmentSealing: 'Afdichting van Bunds en Opvangzones',
       tankFoundationWaterproofing: 'Waterdichting van Tankfunderingen',
       seamlessMembraneSystems: 'Naadloze Vloeibare Membraansystemen',
+
+      // --- Home page service-card titles + descriptions ---
+      industrialCoatingTitle: 'Industriële Coating',
+      industrialCoatingDesc:
+        'Grootschalige esthetische en functionele coatingapplicaties voor fabrieken, terminals en infrastructuur.',
+      sandBlastingTitle: 'Zandstralen',
+      sandBlastingDesc:
+        'Volledige oppervlaktevoorbereiding voor optimale coatinghechting via geavanceerde abrasieve technieken.',
+      corrosionProtectionTitle: 'Corrosiebescherming',
+      corrosionProtectionDesc:
+        'Hoogwaardige barrièresystemen ontworpen om extreme chemische en milieubelastingen te weerstaan.',
+      coatingInspectionTitle: 'Coatinginspectie',
+      coatingInspectionDesc:
+        'Onafhankelijke inspectie en kwaliteitsborging van coatingsystemen — verificatie van oppervlaktevoorbereiding, droge filmdikte, hechting en naleving van projectspecificaties.',
+      waterjettingTitle: 'Waterjetten',
+      waterjettingDesc:
+        'Ultrahogedruk waterstralen voor niet-abrasieve oppervlaktevoorbereiding, coatingverwijdering en reiniging van vervuilde industriële oppervlakken.',
+      waterproofingTitle: 'Waterdichting',
+      waterproofingDesc:
+        'Naadloze industriële waterdichting met het Kemperol 2K-PUR-systeem om opvangbakken, tankfunderingen, bundwanden en kritische infrastructuur te beschermen tegen waterindringing en zware omgevingsbelastingen.',
+
+      // Bullets for the new Coating Inspection + Waterjetting cards
+      dftVerification: 'DFT-controle',
+      adhesionTesting: 'Hechtingstest',
+      complianceReporting: 'Conformiteitsrapportage',
+      uhpSurfacePrep: 'UHP Oppervlaktevoorbereiding',
+      coatingStripping: 'Coatingverwijdering',
+      hydroblasting: 'Hydroblasten',
 
       industriesTitle: 'Industrieën die Wij Bedienen',
       industriesSubtitle: 'Vertrouwd door toonaangevende bedrijven in diverse sectoren',
