@@ -149,7 +149,7 @@ export default function ProjectsPage() {
             src="/images/projects-hero.jpg"
             alt="Industrial project portfolio"
             className="w-full h-full object-cover"
-            width={1152}
+            width={1672}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/50" />
         </div>
