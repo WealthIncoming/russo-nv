@@ -14,7 +14,36 @@ const CONTACT_EMAIL = 'info@russonv.be';
 const WIX_FORM_ID = 'cd161b70-3a80-4193-a8b4-04df43cdcf89';
 // Bump this each time you push code. Visible next to the form heading so you
 // can refresh and instantly tell whether you're testing the latest build.
-const FORM_VERSION = 'v4';
+const FORM_VERSION = 'v5';
+
+// Address components, used both in the visible UI and the JSON-LD structured
+// data below. Single source of truth for the HQ address.
+const HQ_STREET = 'Taxandriastraat 35';
+const HQ_POSTAL = '2170';
+const HQ_CITY = 'Antwerp';
+const HQ_COUNTRY_CODE = 'BE';
+const GOOGLE_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${HQ_STREET}, ${HQ_POSTAL} ${HQ_CITY}`)}`;
+
+// schema.org LocalBusiness JSON-LD — surfaces address, phone, email, opening
+// hours to search engines so the business shows up in knowledge panels.
+const BUSINESS_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Russo NV',
+  url: 'https://www.russonv.be',
+  telephone: '+32475434819',
+  email: 'info@russonv.be',
+  image: 'https://static.wixstatic.com/media/3232e5_48e2024c6d3f441e817637ccdd99f28f~mv2.png',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: HQ_STREET,
+    postalCode: HQ_POSTAL,
+    addressLocality: HQ_CITY,
+    addressCountry: HQ_COUNTRY_CODE,
+  },
+  openingHours: 'Mo-Fr 08:00-18:30',
+  areaServed: 'Europe',
+};
 
 // Plausible-phone check on the local-number portion (excludes country dial).
 // 6 digits is loose enough for the shortest national numbers; rejects "test",
@@ -33,6 +62,7 @@ function CountrySelect({ value, onChange, invalid }: CountrySelectProps) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const selectedItemRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     if (!open) return;
@@ -45,10 +75,19 @@ function CountrySelect({ value, onChange, invalid }: CountrySelectProps) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [open]);
 
+  // Bring the currently-selected country into view when the dropdown opens —
+  // otherwise it always opens scrolled to the top, hiding the active row.
+  useEffect(() => {
+    if (open && selectedItemRef.current) {
+      selectedItemRef.current.scrollIntoView({ block: 'nearest' });
+    }
+  }, [open]);
+
   const q = query.trim().toLowerCase();
+  const dialQuery = q.replace(/^\+/, '');
   const filtered = q
     ? COUNTRIES.filter(
-        c => c.name.toLowerCase().includes(q) || c.dial.includes(q.replace(/^\+/, '')),
+        c => c.name.toLowerCase().includes(q) || c.dial.startsWith(dialQuery),
       )
     : COUNTRIES;
 
@@ -65,6 +104,7 @@ function CountrySelect({ value, onChange, invalid }: CountrySelectProps) {
         onClick={() => setOpen(o => !o)}
         aria-haspopup="listbox"
         aria-expanded={open}
+        aria-label={`Country code: ${value.name} +${value.dial}`}
         className={`flex items-center gap-2 bg-dark-grey/5 border-2 ${borderClass} border-r-0 px-3 py-4 h-full font-paragraph text-base text-foreground hover:bg-dark-grey/10 transition-colors`}
       >
         <span className="text-xl leading-none">{flagEmoji(value.iso)}</span>
@@ -79,6 +119,7 @@ function CountrySelect({ value, onChange, invalid }: CountrySelectProps) {
             <input
               type="text"
               autoFocus
+              aria-label="Search countries"
               value={query}
               onChange={e => setQuery(e.target.value)}
               placeholder="Search country"
@@ -92,7 +133,7 @@ function CountrySelect({ value, onChange, invalid }: CountrySelectProps) {
               </li>
             ) : (
               filtered.map(c => (
-                <li key={c.iso}>
+                <li key={c.iso} ref={c.iso === value.iso ? selectedItemRef : null}>
                   <button
                     type="button"
                     role="option"
@@ -202,6 +243,10 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(BUSINESS_JSON_LD) }}
+      />
       <Header />
 
       {/* Hero Section */}
@@ -288,10 +333,23 @@ export default function ContactPage() {
               </motion.div>
             ) : (
             <form onSubmit={handleSubmit} className="space-y-10">
-              {/* Honeypot — invisible to humans, bots fill it, we silently drop. */}
+              {/* Honeypot — invisible to humans, bots fill it, we silently drop.
+                  Uses the canonical visually-hidden CSS (clip-path) instead of
+                  off-screen positioning so it doesn't depend on layout context
+                  or risk creating a horizontal scrollbar. */}
               <div
                 aria-hidden="true"
-                className="absolute left-[-9999px] w-px h-px overflow-hidden"
+                style={{
+                  position: 'absolute',
+                  width: '1px',
+                  height: '1px',
+                  padding: 0,
+                  margin: '-1px',
+                  overflow: 'hidden',
+                  clip: 'rect(0,0,0,0)',
+                  whiteSpace: 'nowrap',
+                  border: 0,
+                }}
               >
                 <label htmlFor="website">Website (leave blank)</label>
                 <input
@@ -317,7 +375,7 @@ export default function ContactPage() {
                       id="name"
                       name="name"
                       autoComplete="name"
-                      autoFocus
+                      autoCapitalize="words"
                       value={formData.name}
                       onChange={handleChange}
                       required
@@ -374,6 +432,8 @@ export default function ContactPage() {
                         id="phone"
                         name="phone"
                         autoComplete="tel-national"
+                        aria-invalid={phoneError}
+                        aria-describedby={phoneError ? 'phone-error' : undefined}
                         value={formData.phone}
                         onChange={(e) => {
                           handleChange(e);
@@ -385,7 +445,7 @@ export default function ContactPage() {
                       />
                     </div>
                     {phoneError && (
-                      <p className="font-paragraph text-sm text-destructive mt-2">
+                      <p id="phone-error" className="font-paragraph text-sm text-destructive mt-2">
                         {t('contact', 'phoneInvalid')}
                       </p>
                     )}
@@ -394,7 +454,7 @@ export default function ContactPage() {
               </fieldset>
 
               <fieldset className="space-y-8 border-0 p-0 m-0">
-                <legend className="sr-only">{t('contact', 'fieldsetProject')}</legend>
+                <legend className="sr-only">{t('contact', 'fieldsetMessage')}</legend>
                 <div>
                   <label htmlFor="message" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
                     {t('contact', 'projectDetails')} *
@@ -447,9 +507,15 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5"
           >
-            <div id="info" className="bg-dark-grey text-white p-12 space-y-12 sticky top-24 scroll-mt-24">
+            <address
+              id="info"
+              aria-labelledby="contact-info-heading"
+              className="not-italic bg-dark-grey text-white p-12 space-y-12 lg:sticky lg:top-24 scroll-mt-24"
+            >
               <div>
-                <h3 className="font-heading text-xl md:text-2xl mb-8 uppercase">{t('contact', 'contactInfo')}</h3>
+                <h2 id="contact-info-heading" className="font-heading text-xl md:text-2xl mb-8 uppercase">
+                  {t('contact', 'contactInfo')}
+                </h2>
               </div>
 
               <div className="space-y-8">
@@ -489,12 +555,25 @@ export default function ContactPage() {
                     <div className="font-paragraph text-sm text-white/60 uppercase tracking-wider mb-2">
                       {t('contact', 'locationLabel')}
                     </div>
-                    <div className="font-paragraph text-lg text-white">
+                    <a
+                      href={GOOGLE_MAPS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-paragraph text-lg text-white hover:text-primary transition-colors block"
+                    >
                       {t('contact', 'locationValue')}
-                    </div>
+                    </a>
                     <div className="font-paragraph text-sm text-white/70 mt-2">
                       {t('contact', 'servingRegion')}
                     </div>
+                    <a
+                      href={GOOGLE_MAPS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 mt-2 font-paragraph text-xs text-primary hover:text-primary/80 transition-colors uppercase tracking-wider"
+                    >
+                      {t('contact', 'locationDirections')} →
+                    </a>
                   </div>
                 </div>
 
@@ -504,11 +583,14 @@ export default function ContactPage() {
                     <div className="font-paragraph text-sm text-white/60 uppercase tracking-wider mb-2">
                       {t('contact', 'businessHours')}
                     </div>
-                    <div className="font-paragraph text-base text-white space-y-1">
-                      <div>{t('contact', 'mondayFriday')}</div>
-                      <div>{t('contact', 'saturday')}</div>
-                      <div>{t('contact', 'sunday')}</div>
-                    </div>
+                    <dl className="font-paragraph text-base text-white space-y-1 grid grid-cols-[auto_1fr] gap-x-4">
+                      <dt className="sr-only">{t('contact', 'mondayFriday')}</dt>
+                      <dd className="col-span-2">{t('contact', 'mondayFriday')}</dd>
+                      <dt className="sr-only">{t('contact', 'saturday')}</dt>
+                      <dd className="col-span-2">{t('contact', 'saturday')}</dd>
+                      <dt className="sr-only">{t('contact', 'sunday')}</dt>
+                      <dd className="col-span-2">{t('contact', 'sunday')}</dd>
+                    </dl>
                   </div>
                 </div>
               </div>
@@ -527,13 +609,13 @@ export default function ContactPage() {
                   {CONTACT_PHONE_DISPLAY}
                 </a>
               </div>
-            </div>
+            </address>
           </motion.div>
         </div>
       </section>
 
       {/* Coverage Section */}
-      <section id="coverage" className="w-full bg-secondary py-32 scroll-mt-24">
+      <section id="coverage" className="w-full bg-background py-32 scroll-mt-24">
         <div className="max-w-[100rem] mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -543,10 +625,10 @@ export default function ContactPage() {
             className="text-center max-w-3xl mx-auto"
           >
             <SectionLabel text={t('contact', 'coverageSectionLabel')} />
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-8 uppercase leading-tight">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-foreground mb-8 uppercase leading-tight">
               {t('contact', 'coverageTitle')} <span className="text-primary">{t('contact', 'coverageHighlight')}</span>
             </h2>
-            <p className="font-paragraph text-base sm:text-lg text-white/80 mb-16">
+            <p className="font-paragraph text-base sm:text-lg text-foreground/70 mb-16">
               {t('contact', 'coverageDescription')}
             </p>
           </motion.div>
@@ -564,7 +646,7 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors text-center"
+                className="bg-dark-grey/5 border border-dark-grey/10 p-8 hover:border-primary transition-colors text-center"
               >
                 <div className="font-heading text-3xl sm:text-4xl text-primary mb-4">{item.stat}</div>
                 <div className="font-heading text-base sm:text-lg lg:text-xl text-foreground mb-2">
