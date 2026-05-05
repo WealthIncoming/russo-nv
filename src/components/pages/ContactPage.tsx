@@ -4,7 +4,8 @@ import { Image } from '@/components/ui/image';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { motion } from 'framer-motion';
 import { CheckCircle, Clock, Mail, MapPin, Phone, Send } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { BaseCrudService } from '@/integrations';
 
 const CONTACT_PHONE_DISPLAY = '+32 475 43 48 19';
 const CONTACT_PHONE_HREF = '+32475434819';
@@ -29,6 +30,7 @@ export default function ContactPage() {
     message: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -37,27 +39,54 @@ export default function ContactPage() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // FIXME: temporary mailto: fallback so leads aren't silently lost.
-    // Replace with a real backend (Wix Forms collection / Formspree /
-    // SMTP service) once a destination is chosen.
-    const subject = encodeURIComponent(
-      `Quote request — ${formData.projectType || 'General inquiry'}`
-    );
-    const body = encodeURIComponent(
-      [
-        `Name: ${formData.name}`,
-        `Company: ${formData.company}`,
-        `Email: ${formData.email}`,
-        `Phone: ${formData.phone}`,
-        `Project type: ${formData.projectType}`,
-        '',
-        formData.message,
-      ].join('\n')
-    );
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    
+    try {
+      // Save to CMS collection
+      await BaseCrudService.create('ContactSubmissions', {
+        _id: crypto.randomUUID(),
+        name: formData.name,
+        company: formData.company,
+        email: formData.email,
+        phone: formData.phone,
+        projectType: formData.projectType,
+        message: formData.message,
+        title: `${formData.name} - ${formData.projectType}`,
+      });
+      
+      setIsSubmitted(true);
+      setFormData({
+        name: '',
+        company: '',
+        email: '',
+        phone: '',
+        projectType: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Fallback to mailto if CMS submission fails
+      const subject = encodeURIComponent(
+        `Quote request — ${formData.projectType || 'General inquiry'}`
+      );
+      const body = encodeURIComponent(
+        [
+          `Name: ${formData.name}`,
+          `Company: ${formData.company}`,
+          `Email: ${formData.email}`,
+          `Phone: ${formData.phone}`,
+          `Project type: ${formData.projectType}`,
+          '',
+          formData.message,
+        ].join('\n')
+      );
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+      setIsSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -96,17 +125,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Temp Contact Form */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 py-32">
-        <div className="text-center">
-          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-foreground mb-4 uppercase">
-            Temp Contact Form
-          </h2>
-          <p className="font-paragraph text-base text-foreground/70">
-            This is a temporary contact form section.
-          </p>
-        </div>
-      </section>
+
 
       {/* Contact Form & Info */}
       <section id="form" className="w-full max-w-[100rem] mx-auto px-8 py-32 scroll-mt-24">
@@ -273,9 +292,10 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="bg-primary text-primary-foreground font-paragraph font-bold uppercase px-8 py-4 hover:bg-primary/90 transition-colors inline-flex items-center gap-3"
+                disabled={isSubmitting}
+                className="bg-primary text-primary-foreground font-paragraph font-bold uppercase px-8 py-4 hover:bg-primary/90 transition-colors inline-flex items-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {t('contact', 'send')}
+                {isSubmitting ? 'Sending...' : t('contact', 'send')}
                 <Send className="w-5 h-5" />
               </button>
             </form>
