@@ -178,7 +178,7 @@ export const translations: Record<Language, Translations> = {
       durability: 'CORROSION PROTECTION',
 
       companyDescription:
-        "Russo NV stands at the intersection of industrial power and precision engineering. We don't just paint; we engineer longevity into the critical infrastructure that powers our world. From storage tanks in Antwerp to pipelines in Germany, our work is the first line of defense against corrosion.",
+        'Industrial coating is only as good as the preparation behind it. At Russo, we protect tanks, piping, steelwork, industrial facilities and so much more with careful surface preparation, quality coating systems and safe, reliable execution on site.',
 
       safetyFirstTitle: 'Safety First',
       safetyFirstDesc:
@@ -981,7 +981,7 @@ export const translations: Record<Language, Translations> = {
       durability: 'CORROSIE\u00ADBESCHERMING',
 
       companyDescription:
-        'Russo NV is een toonaangevende specialist in industriële oppervlaktevoorbereiding en hoogwaardige beschermende coatings voor alle soorten industriële oppervlakken. Wij leveren geavanceerde straal- en coatingsoplossingen die kritische installaties beschermen tegen corrosie, slijtage en zware omgevingsinvloeden.',
+        'Een industriële coating is maar zo goed als de voorbereiding erachter. Bij Russo beschermen wij tanks, leidingen, staalconstructies, industriële installaties en veel meer met zorgvuldige oppervlaktevoorbereiding, kwalitatieve coatingsystemen en een veilige, betrouwbare uitvoering op de werf.',
 
       safetyFirstTitle: 'Veiligheid Eerst',
       safetyFirstDesc:
