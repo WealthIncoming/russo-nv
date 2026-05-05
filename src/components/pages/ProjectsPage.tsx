@@ -8,7 +8,7 @@ import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { format } from 'date-fns';
 import { nl } from 'date-fns/locale';
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, MapPin } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Calendar, MapPin, Wrench } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -59,6 +59,14 @@ function getProjectImageOverride(projectTitle: string | undefined) {
   const lower = projectTitle.toLowerCase();
   return PROJECT_IMAGE_OVERRIDES.find(o => lower.includes(o.match));
 }
+
+const SectionLabel = ({ text }: { text: string }) => (
+  <div className="flex items-center gap-3 mb-6 justify-center">
+    <span className="h-[1px] w-12 bg-primary/30" />
+    <span className="font-paragraph text-xs font-bold tracking-[0.2em] text-primary uppercase">{text}</span>
+    <span className="h-[1px] w-12 bg-primary/30" />
+  </div>
+);
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<ProjectPortfolio[]>([]);
@@ -118,10 +126,10 @@ export default function ProjectsPage() {
       <section className="relative w-full max-w-[120rem] mx-auto min-h-[60vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://static.wixstatic.com/media/3232e5_2db4503607404e1eb913f55386b981bc~mv2.png?originWidth=1152&originHeight=640"
+            src="/images/projects-hero.jpg"
             alt="Industrial project portfolio"
             className="w-full h-full object-cover"
-            width={1920}
+            width={1152}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/50" />
         </div>
@@ -148,6 +156,23 @@ export default function ProjectsPage() {
 
       {/* Projects Grid */}
       <section className="w-full max-w-[100rem] mx-auto px-8 py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-20"
+        >
+          <SectionLabel text={t('projects', 'gridSectionLabel')} />
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-foreground leading-tight uppercase">
+            {t('projects', 'gridTitleLine1')}{' '}
+            <span className="text-primary">{t('projects', 'gridTitleHighlight')}</span>
+          </h2>
+          <p className="font-paragraph text-base sm:text-lg text-foreground/70 mt-6 leading-relaxed">
+            {t('projects', 'gridDescription')}
+          </p>
+        </motion.div>
+
         <div className="min-h-[400px]">
           {isLoading ? (
             <div className="flex items-center justify-center py-32">
@@ -166,43 +191,49 @@ export default function ProjectsPage() {
                 const mainSrc = imageOverride?.main || project.mainProjectImage;
                 const secondarySrc = imageOverride?.secondary || project.secondaryProjectImage;
                 const hasSecondary = Boolean(secondarySrc);
+                const slug = getTranslationPrefix(project.projectTitle) || project._id;
+                const translatedTitle = getProjectText(project, 'Title', project.projectTitle);
+                const scopeText = getProjectText(project, 'Scope', project.scope);
 
                 return (
                 <motion.article
                   key={project._id}
+                  id={slug}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="group"
+                  className="group scroll-mt-24"
                 >
                   {/* Project Images */}
                   <div className={`grid grid-cols-1 ${hasSecondary ? 'lg:grid-cols-3' : 'lg:grid-cols-1'} gap-6 mb-8`}>
                     <div className={hasSecondary ? 'lg:col-span-2' : ''}>
-                      <div className="relative h-[280px] sm:h-[360px] lg:h-[500px] overflow-hidden">
+                      <div className="relative h-[280px] sm:h-[360px] lg:h-[500px] xl:h-[600px] 2xl:h-[680px] overflow-hidden">
                         <Image
-                          src={mainSrc || 'https://static.wixstatic.com/media/3232e5_f5459a9114494b2681b5a99bcb24a698~mv2.png?originWidth=1152&originHeight=448'}
-                          alt={project.projectTitle || 'Industrial project'}
+                          src={mainSrc || '/images/project-fallback.jpg'}
+                          alt={translatedTitle || 'Industrial project'}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                           width={1200}
                           loading="lazy"
                           decoding="async"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                       </div>
                     </div>
 
                     {hasSecondary && (
-                      <div className="relative h-[280px] sm:h-[360px] lg:h-[500px] overflow-hidden">
+                      <div className="relative h-[280px] sm:h-[360px] lg:h-[500px] xl:h-[600px] 2xl:h-[680px] overflow-hidden">
                         <Image
                           src={secondarySrc!}
-                          alt={project.projectTitle ? `${project.projectTitle} - additional view` : 'Industrial project detail'}
+                          alt={
+                            translatedTitle
+                              ? `${translatedTitle} — ${t('projects', 'altAdditionalView')}`
+                              : 'Industrial project detail'
+                          }
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                           width={600}
                           loading="lazy"
                           decoding="async"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                       </div>
                     )}
                   </div>
@@ -211,14 +242,28 @@ export default function ProjectsPage() {
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                     <div className="lg:col-span-8">
                       <div className="border-l-4 border-primary pl-8 mb-6">
-                        <h2 className="font-heading text-3xl md:text-4xl text-foreground mb-4 break-words">
-                          {getProjectText(project, 'Title', project.projectTitle)}
+                        {scopeText && (
+                          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary font-paragraph text-xs font-bold uppercase tracking-wider px-3 py-1.5 mb-4">
+                            <Wrench className="w-3.5 h-3.5" />
+                            {scopeText}
+                          </div>
+                        )}
+                        <h2 className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl text-foreground mb-4">
+                          {translatedTitle}
                         </h2>
                       </div>
 
                       <p className="font-paragraph text-lg text-foreground/80 leading-relaxed mb-8">
                         {getProjectText(project, 'Description', project.projectDescription)}
                       </p>
+
+                      <Link
+                        to="/contact"
+                        className="inline-flex items-center gap-2 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all"
+                      >
+                        {t('projects', 'cardCta')}
+                        <ArrowUpRight className="w-4 h-4" />
+                      </Link>
                     </div>
 
                     <div className="lg:col-span-4">
