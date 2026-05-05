@@ -14,7 +14,7 @@ const CONTACT_EMAIL = 'info@russonv.be';
 const WIX_FORM_ID = 'cd161b70-3a80-4193-a8b4-04df43cdcf89';
 // Bump this each time you push code. Visible next to the form heading so you
 // can refresh and instantly tell whether you're testing the latest build.
-const FORM_VERSION = 'v3';
+const FORM_VERSION = 'v4';
 
 // Plausible-phone check on the local-number portion (excludes country dial).
 // 6 digits is loose enough for the shortest national numbers; rejects "test",
@@ -142,6 +142,9 @@ export default function ContactPage() {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<Country>(DEFAULT_COUNTRY);
   const [phoneError, setPhoneError] = useState(false);
+  // Honeypot — kept out of formData so it never participates in resets/submits.
+  // Bots eagerly fill any text field they find; humans never see this one.
+  const [honeypot, setHoneypot] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -152,6 +155,13 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Honeypot trap: if the hidden field has any value, the submitter is
+    // almost certainly a bot. Pretend success so the bot moves on, but never
+    // call the API. No false positives for real users — they never see it.
+    if (honeypot) {
+      setIsSubmitted(true);
+      return;
+    }
     if (!isPhoneNumberPlausible(formData.phone)) {
       setPhoneError(true);
       return;
@@ -278,6 +288,23 @@ export default function ContactPage() {
               </motion.div>
             ) : (
             <form onSubmit={handleSubmit} className="space-y-10">
+              {/* Honeypot — invisible to humans, bots fill it, we silently drop. */}
+              <div
+                aria-hidden="true"
+                className="absolute left-[-9999px] w-px h-px overflow-hidden"
+              >
+                <label htmlFor="website">Website (leave blank)</label>
+                <input
+                  type="text"
+                  id="website"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+              </div>
+
               <fieldset className="space-y-8 border-0 p-0 m-0">
                 <legend className="sr-only">{t('contact', 'fieldsetDetails')}</legend>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
