@@ -480,10 +480,10 @@ export default function HomePage() {
             {/* Left Column: Image */}
             <div className="relative w-full min-w-0 aspect-video xl:aspect-[4/3] overflow-hidden border border-white/10 group">
               <Image
-                src="/images/home-featured.jpg"
+                src="/images/stt1.jpg"
                 alt={`${t('home', 'totalTankFarm')} ${t('home', 'refurbishment')}`}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                width={2000}
+                width={1448}
                 loading="lazy"
                 decoding="async"
               />
