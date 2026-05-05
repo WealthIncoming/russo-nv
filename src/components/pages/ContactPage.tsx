@@ -96,6 +96,18 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Temp Contact Form */}
+      <section className="w-full max-w-[100rem] mx-auto px-8 py-32">
+        <div className="text-center">
+          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-foreground mb-4 uppercase">
+            Temp Contact Form
+          </h2>
+          <p className="font-paragraph text-base text-foreground/70">
+            This is a temporary contact form section.
+          </p>
+        </div>
+      </section>
+
       {/* Contact Form & Info */}
       <section id="form" className="w-full max-w-[100rem] mx-auto px-8 py-32 scroll-mt-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">

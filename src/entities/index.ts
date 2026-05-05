@@ -52,6 +52,31 @@ export interface CompanyValues {
 
 
 /**
+ * Collection ID: ContactSubmissions
+ * Interface for ContactSubmissions
+ */
+export interface ContactSubmissions {
+  _id: string;
+  _createdDate?: Date;
+  _updatedDate?: Date;
+  /** @wixFieldType text */
+  title?: string;
+  /** @wixFieldType text */
+  name?: string;
+  /** @wixFieldType text */
+  company?: string;
+  /** @wixFieldType text */
+  email?: string;
+  /** @wixFieldType text */
+  phone?: string;
+  /** @wixFieldType text */
+  projectType?: string;
+  /** @wixFieldType text */
+  message?: string;
+}
+
+
+/**
  * Collection ID: industrialservices
  * Interface for IndustrialServices
  */
@@ -119,6 +144,14 @@ export interface ProjectPortfolio {
   projectLocation?: string;
   /** @wixFieldType date */
   completionDate?: Date | string;
+  /** @wixFieldType text */
+  projectName?: string;
+  /** @wixFieldType text */
+  description?: string;
+  /** @wixFieldType text */
+  client?: string;
+  /** @wixFieldType text */
+  location?: string;
   /** @wixFieldType text */
   scope?: string;
 }
