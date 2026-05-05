@@ -6,7 +6,7 @@ import { IndustriesServed } from '@/entities';
 import { BaseCrudService } from '@/integrations';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { motion } from 'framer-motion';
-import { ArrowRight, Award, Globe, Headphones, MapPin } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Award, Globe, Headphones, MapPin } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -179,78 +179,105 @@ export default function IndustriesPage() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {industries.map((industry, index) => (
-                <motion.div
-                  key={industry._id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group"
-                >
-                  <div className="relative h-[260px] sm:h-[340px] lg:h-[400px] overflow-hidden mb-6">
-                    <Image
-                      src={
-                        getIndustryImageOverride(industry.industryName) ||
-                        industry.industryImage ||
-                        '/images/industry-fallback.jpg'
-                      }
-                      alt={industry.industryName || 'Industrial sector'}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      width={800}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                      <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-white mb-2">
-                        {getIndustryText(industry, 'Title', industry.industryName)}
-                      </h2>
+              {industries.map((industry, index) => {
+                const isOrphan =
+                  index === industries.length - 1 && industries.length % 2 === 1;
+                const slug = getTranslationPrefix(industry.industryName) || industry._id;
+                const translatedTitle = getIndustryText(industry, 'Title', industry.industryName);
+                const keyServicesText = getIndustryText(industry, 'KeyServices', industry.keyServices);
+                const keyServiceItems = keyServicesText
+                  ? keyServicesText.split(',').map(s => s.trim().replace(/\.$/, '')).filter(Boolean)
+                  : [];
+
+                return (
+                  <motion.article
+                    key={industry._id}
+                    id={slug}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className={`group scroll-mt-24 ${isOrphan ? 'md:col-span-2' : ''}`}
+                  >
+                    <div className="relative h-[260px] sm:h-[340px] lg:h-[400px] overflow-hidden mb-6">
+                      <Image
+                        src={
+                          getIndustryImageOverride(industry.industryName) ||
+                          industry.industryImage ||
+                          '/images/industry-fallback.jpg'
+                        }
+                        alt={translatedTitle || 'Industrial sector'}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        width={isOrphan ? 1600 : 800}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                        <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-white mb-2">
+                          {translatedTitle}
+                        </h2>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="space-y-6">
-                    {industry.industryOverview && (
-                      <p className="font-paragraph text-base text-foreground/80 leading-relaxed">
-                        {getIndustryText(industry, 'Overview', industry.industryOverview)}
-                      </p>
-                    )}
-
-                    {industry.workDescription && (
-                      <div className="border-l-4 border-primary pl-6">
-                        <h3 className="font-heading text-xl text-foreground mb-3">
-                          {t('industries', 'workDescription')}
-                        </h3>
-                        <p className="font-paragraph text-base text-foreground/70 leading-relaxed">
-                          {getIndustryText(industry, 'WorkDescription', industry.workDescription)}
+                    <div className="space-y-6">
+                      {industry.industryOverview && (
+                        <p className="font-paragraph text-base text-foreground/80 leading-relaxed">
+                          {getIndustryText(industry, 'Overview', industry.industryOverview)}
                         </p>
-                      </div>
-                    )}
+                      )}
 
-                    {industry.keyServices && (
-                      <div className="bg-dark-grey/5 p-6 min-w-0">
-                        <h3 className="font-heading text-xl text-foreground mb-3">
-                          {t('industries', 'keyServices')}
-                        </h3>
-                        <p className="font-paragraph text-xs sm:text-sm text-foreground/70 whitespace-pre-line">
-                          {getIndustryText(industry, 'KeyServices', industry.keyServices)}
-                        </p>
-                      </div>
-                    )}
+                      {industry.workDescription && (
+                        <div className="border-l-4 border-primary pl-6">
+                          <h3 className="font-heading text-xl text-foreground mb-3">
+                            {t('industries', 'workDescription')}
+                          </h3>
+                          <p className="font-paragraph text-base text-foreground/70 leading-relaxed">
+                            {getIndustryText(industry, 'WorkDescription', industry.workDescription)}
+                          </p>
+                        </div>
+                      )}
 
-                    {industry.typicalClients && (
-                      <div>
-                        <h3 className="font-heading text-lg text-foreground mb-2">
-                          {t('industries', 'typicalClients')}
-                        </h3>
-                        <p className="font-paragraph text-sm text-foreground/60">
-                          {getIndustryText(industry, 'TypicalClients', industry.typicalClients)}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
+                      {keyServiceItems.length > 0 && (
+                        <div className="bg-dark-grey/5 p-6 min-w-0">
+                          <h3 className="font-heading text-xl text-foreground mb-4">
+                            {t('industries', 'keyServices')}
+                          </h3>
+                          <ul className="flex flex-wrap gap-2">
+                            {keyServiceItems.map((item, i) => (
+                              <li
+                                key={i}
+                                className="font-paragraph text-sm text-foreground/80 bg-background border border-foreground/10 px-3 py-1.5"
+                              >
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {industry.typicalClients && (
+                        <div>
+                          <h3 className="font-heading text-lg text-foreground mb-2">
+                            {t('industries', 'typicalClients')}
+                          </h3>
+                          <p className="font-paragraph text-sm text-foreground/60">
+                            {getIndustryText(industry, 'TypicalClients', industry.typicalClients)}
+                          </p>
+                        </div>
+                      )}
+
+                      <Link
+                        to="/contact"
+                        className="inline-flex items-center gap-2 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all"
+                      >
+                        {t('industries', 'cardCta')}
+                        <ArrowUpRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </motion.article>
+                );
+              })}
             </div>
           )}
         </div>
@@ -304,7 +331,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full bg-foreground py-32">
+      <section className="w-full bg-background py-32">
         <div className="max-w-[100rem] mx-auto px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -312,11 +339,11 @@ export default function IndustriesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight uppercase">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-foreground mb-8 leading-tight uppercase">
               {t('industries', 'ctaTitleLine1')}<br />
               <span className="text-primary">{t('industries', 'ctaTitleHighlight')}</span>
             </h2>
-            <p className="font-paragraph text-lg text-white/80 max-w-2xl mx-auto mb-12">
+            <p className="font-paragraph text-lg text-foreground/70 max-w-2xl mx-auto mb-12">
               {t('industries', 'ctaDescription')}
             </p>
             <Link to="/contact">
