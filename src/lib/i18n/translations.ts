@@ -713,6 +713,94 @@ export const translations: Record<Language, Translations> = {
       safetyTitle: 'Safety Compliance',
       safetyDesc: 'Full adherence to VCA, ISO, and NACE standards on every job site',
     },
+
+    // Legal pages (Privacy Policy and Terms of Service)
+    legal: {
+      heroLabel: 'Legal',
+      lastUpdated: 'Last updated',
+      lastUpdatedDate: '5 May 2026',
+      backToTop: 'Back to top',
+
+      privacyTitle: 'Privacy',
+      privacyTitleHighlight: 'Policy',
+      privacyIntro: 'This Privacy Policy explains how Russo NV collects, uses, and protects personal data through this website. We are committed to handling your information transparently and in line with the EU General Data Protection Regulation (GDPR).',
+
+      privacy1Title: 'Who we are',
+      privacy1Body: 'Russo NV is a Belgian company specialized in industrial coating and surface preparation services. Our registered office is at Taxandriastraat 35, 2170 Antwerp, Belgium. You can reach us at info@russonv.be or +32 475 43 48 19. For privacy-related questions, contact us using the same details. We act as the data controller for personal data processed through this website.',
+
+      privacy2Title: 'What data we collect',
+      privacy2Body: 'We collect personal data that you voluntarily share with us — primarily through the contact form on this website (your name, company, email address, phone number, and the content of your message). We also collect basic technical data automatically when you visit the site (IP address, browser type, pages viewed, referring website) for analytics, security, and to keep the site running properly.',
+
+      privacy3Title: 'How we use your data',
+      privacy3Body: 'We use your personal data to respond to your enquiries and prepare quotes; to manage our business relationship if you become a client; to comply with our legal and regulatory obligations; to maintain and improve the website and our services; and to ensure the security of our website and systems.',
+
+      privacy4Title: 'Legal basis for processing',
+      privacy4Body: 'We process your personal data on the following legal bases under the GDPR: your consent when you submit the contact form; the necessity of processing to take steps at your request prior to entering into a contract; our legitimate interests in operating, securing and improving our business, except where overridden by your rights and freedoms; and compliance with our legal obligations.',
+
+      privacy5Title: 'Sharing your data',
+      privacy5Body: 'We do not sell your personal data. We may share data with service providers who help us operate the website and run our business — including hosting, form processing, email delivery, and analytics — under appropriate contracts and confidentiality obligations. Our website is hosted on the Wix platform, which processes data on our behalf. We may also disclose data to competent authorities when required by law.',
+
+      privacy6Title: 'International transfers',
+      privacy6Body: 'Some of our service providers are located outside the European Economic Area. Where personal data is transferred outside the EEA, we rely on appropriate safeguards such as the European Commission\'s Standard Contractual Clauses or equivalent mechanisms to ensure your data remains protected.',
+
+      privacy7Title: 'How long we keep your data',
+      privacy7Body: 'We keep contact form submissions for as long as necessary to respond to your enquiry and, where applicable, for the duration of any business relationship that follows. After that, we either delete the data or retain it only as long as required by law (for example, accounting and tax records are typically retained for seven years in Belgium).',
+
+      privacy8Title: 'Your rights',
+      privacy8Body: 'Under the GDPR, you have the right to access the personal data we hold about you, to have inaccurate data corrected, to request deletion of your data, to restrict or object to certain processing, and to receive your data in a portable format. You also have the right to lodge a complaint with the Belgian Data Protection Authority (gegevensbeschermingsautoriteit.be) if you believe your rights have been infringed. To exercise these rights, contact us at info@russonv.be.',
+
+      privacy9Title: 'Cookies',
+      privacy9Body: 'Our website uses cookies and similar technologies to function correctly, remember your language preference, and understand how visitors use the site. You can manage cookie preferences through your browser settings. We will update this section as our cookie usage evolves.',
+
+      privacy10Title: 'Security',
+      privacy10Body: 'We take reasonable technical and organisational measures to protect your personal data against unauthorised access, alteration, disclosure, or destruction. However, no system is perfectly secure and we cannot guarantee absolute security. If we become aware of a personal data breach affecting your data, we will notify you and the supervisory authority where required by law.',
+
+      privacy11Title: 'Changes to this policy',
+      privacy11Body: 'We may update this Privacy Policy from time to time to reflect changes in our practices, services, or applicable law. The most recent version will always be available on this page, with the "Last updated" date shown at the top. Continued use of the website after changes are posted constitutes acceptance of the updated policy.',
+
+      privacy12Title: 'Contact us',
+      privacy12Body: 'For any questions about this Privacy Policy or about how we handle your personal data, please contact us at info@russonv.be or by post at Russo NV, Taxandriastraat 35, 2170 Antwerp, Belgium.',
+
+      termsTitle: 'Terms of',
+      termsTitleHighlight: 'Service',
+      termsIntro: 'These Terms of Service govern your use of the website russonv.be. By accessing or using the site, you agree to these Terms. If you do not agree, please do not use the site.',
+
+      terms1Title: 'About these terms',
+      terms1Body: 'These Terms of Service ("Terms") govern your use of the website russonv.be (the "Site"). By accessing or using the Site, you agree to be bound by these Terms. If you do not agree, please do not use the Site. Russo NV ("we", "us", "our") is a Belgian company with its registered office at Taxandriastraat 35, 2170 Antwerp, Belgium.',
+
+      terms2Title: 'Our services',
+      terms2Body: 'The Site provides information about our industrial coating, surface preparation, and related services. The content is for general information only. Any specific commercial relationship — including the scope, pricing, timeline, and terms of work — is governed by a separate written agreement signed between us and our client. Nothing on the Site constitutes a binding offer.',
+
+      terms3Title: 'Acceptable use',
+      terms3Body: 'You agree to use the Site only for lawful purposes. You must not use the Site in any way that could damage, disable, overburden, or impair it; attempt to gain unauthorised access to any part of the Site, our systems, or related networks; use any automated means to scrape or harvest content; transmit harmful code or otherwise interfere with normal use of the Site by others; or impersonate another person or misrepresent your affiliation.',
+
+      terms4Title: 'Intellectual property',
+      terms4Body: 'All content on the Site — including text, graphics, logos, images, and project photography — is owned by Russo NV or used under licence, and is protected by copyright and other intellectual property laws. You may view and print pages from the Site for your personal or internal business use. Any other use, including reproduction, modification, distribution, or commercial use, requires our prior written consent.',
+
+      terms5Title: 'Project photography',
+      terms5Body: 'Photographs of past projects shown on the Site are illustrative of our work. They are protected by copyright and may not be reused without our written permission. Where projects involve client sites, those photos are published with the relevant client\'s consent.',
+
+      terms6Title: 'Third-party links',
+      terms6Body: 'The Site may contain links to external websites that we do not operate or control. We are not responsible for the content, privacy practices, or accuracy of any external site, and including a link does not imply our endorsement of that site or its operator.',
+
+      terms7Title: 'Disclaimer',
+      terms7Body: 'We make reasonable efforts to keep the Site accurate and up to date, but the information is provided "as is" without warranty of any kind, express or implied. We do not warrant that the Site will be uninterrupted, error-free, or secure. Specific commitments about our services are only those set out in the signed agreement applicable to a given project.',
+
+      terms8Title: 'Limitation of liability',
+      terms8Body: 'To the fullest extent permitted by Belgian law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of the Site, including loss of profits, business, or data. Nothing in these Terms excludes or limits liability that cannot be excluded or limited under Belgian law.',
+
+      terms9Title: 'Privacy',
+      terms9Body: 'Our handling of personal data is described in our Privacy Policy, available at russonv.be/privacy. By using the Site, you acknowledge that we will process your personal data as described there.',
+
+      terms10Title: 'Governing law',
+      terms10Body: 'These Terms and your use of the Site are governed by Belgian law. The courts of Antwerp, Belgium have exclusive jurisdiction over any dispute, except where applicable consumer law gives you the right to bring proceedings in your home jurisdiction.',
+
+      terms11Title: 'Changes to these terms',
+      terms11Body: 'We may update these Terms of Service from time to time. The most recent version will always be available on this page, with the "Last updated" date shown at the top. Continued use of the Site after changes are posted constitutes acceptance of the updated Terms.',
+
+      terms12Title: 'Contact us',
+      terms12Body: 'For any questions about these Terms, please contact us at info@russonv.be or by post at Russo NV, Taxandriastraat 35, 2170 Antwerp, Belgium.',
+    },
   },
 
   NL: {
@@ -1424,6 +1512,94 @@ export const translations: Record<Language, Translations> = {
       qcDesc: 'Strenge inspectie in elke fase voor optimale coatingprestaties en duurzaamheid',
       safetyTitle: 'Veiligheid',
       safetyDesc: 'Volledige naleving van VCA-, ISO- en NACE-normen op elke werklocatie',
+    },
+
+    // Legal pages (Privacy Policy and Terms of Service)
+    legal: {
+      heroLabel: 'Juridisch',
+      lastUpdated: 'Laatst bijgewerkt',
+      lastUpdatedDate: '5 mei 2026',
+      backToTop: 'Terug naar boven',
+
+      privacyTitle: 'Privacy',
+      privacyTitleHighlight: 'Beleid',
+      privacyIntro: 'Dit Privacybeleid legt uit hoe Russo NV persoonsgegevens verzamelt, gebruikt en beschermt via deze website. Wij verbinden ons ertoe uw informatie transparant te behandelen, in overeenstemming met de Algemene Verordening Gegevensbescherming (AVG / GDPR) van de EU.',
+
+      privacy1Title: 'Wie wij zijn',
+      privacy1Body: 'Russo NV is een Belgisch bedrijf gespecialiseerd in industriële coating- en oppervlaktevoorbereidingsdiensten. Onze maatschappelijke zetel bevindt zich op Taxandriastraat 35, 2170 Antwerpen, België. U kunt ons bereiken via info@russonv.be of +32 475 43 48 19. Voor privacygerelateerde vragen kunt u dezelfde gegevens gebruiken. Wij treden op als verwerkingsverantwoordelijke voor de persoonsgegevens die via deze website worden verwerkt.',
+
+      privacy2Title: 'Welke gegevens wij verzamelen',
+      privacy2Body: 'Wij verzamelen persoonsgegevens die u vrijwillig met ons deelt — voornamelijk via het contactformulier op deze website (uw naam, bedrijf, e-mailadres, telefoonnummer en de inhoud van uw bericht). Wij verzamelen ook automatisch basale technische gegevens wanneer u de site bezoekt (IP-adres, browsertype, bekeken pagina\'s, verwijzende website) voor analyse, beveiliging en de goede werking van de site.',
+
+      privacy3Title: 'Hoe wij uw gegevens gebruiken',
+      privacy3Body: 'Wij gebruiken uw persoonsgegevens om te reageren op uw vragen en offertes op te stellen; om onze zakelijke relatie te beheren als u klant wordt; om te voldoen aan onze wettelijke en regelgevende verplichtingen; om de website en onze diensten te onderhouden en te verbeteren; en om de beveiliging van onze website en systemen te waarborgen.',
+
+      privacy4Title: 'Rechtsgrond voor verwerking',
+      privacy4Body: 'Wij verwerken uw persoonsgegevens op de volgende rechtsgronden onder de AVG: uw toestemming wanneer u het contactformulier indient; de noodzaak van verwerking om op uw verzoek stappen te ondernemen vóór het sluiten van een overeenkomst; ons gerechtvaardigd belang bij het exploiteren, beveiligen en verbeteren van onze onderneming, behalve waar dit wordt overschreden door uw rechten en vrijheden; en naleving van onze wettelijke verplichtingen.',
+
+      privacy5Title: 'Delen van uw gegevens',
+      privacy5Body: 'Wij verkopen uw persoonsgegevens niet. Wij kunnen gegevens delen met dienstverleners die ons helpen de website en onze onderneming te exploiteren — waaronder hosting, formulierverwerking, e-mailbezorging en analyse — onder passende contracten en geheimhoudingsverplichtingen. Onze website wordt gehost op het Wix-platform, dat gegevens namens ons verwerkt. Wij kunnen ook gegevens vrijgeven aan bevoegde autoriteiten wanneer dit wettelijk vereist is.',
+
+      privacy6Title: 'Internationale doorgifte',
+      privacy6Body: 'Sommige van onze dienstverleners bevinden zich buiten de Europese Economische Ruimte. Wanneer persoonsgegevens buiten de EER worden doorgegeven, vertrouwen wij op passende waarborgen zoals de Standaardcontractbepalingen van de Europese Commissie of gelijkwaardige mechanismen om ervoor te zorgen dat uw gegevens beschermd blijven.',
+
+      privacy7Title: 'Hoe lang wij uw gegevens bewaren',
+      privacy7Body: 'Wij bewaren contactformulierinzendingen zo lang als nodig is om op uw vraag te reageren en, indien van toepassing, voor de duur van de daaropvolgende zakelijke relatie. Daarna verwijderen wij de gegevens of bewaren wij ze enkel zo lang als wettelijk vereist (bijvoorbeeld boekhoudkundige en fiscale documenten worden in België doorgaans zeven jaar bewaard).',
+
+      privacy8Title: 'Uw rechten',
+      privacy8Body: 'Op grond van de AVG heeft u het recht op inzage in de persoonsgegevens die wij over u bewaren, op correctie van onjuiste gegevens, op verwijdering van uw gegevens, op beperking van of bezwaar tegen bepaalde verwerkingen, en op ontvangst van uw gegevens in een overdraagbaar formaat. U heeft ook het recht om een klacht in te dienen bij de Belgische Gegevensbeschermingsautoriteit (gegevensbeschermingsautoriteit.be) als u meent dat uw rechten zijn geschonden. Om deze rechten uit te oefenen, kunt u contact met ons opnemen via info@russonv.be.',
+
+      privacy9Title: 'Cookies',
+      privacy9Body: 'Onze website gebruikt cookies en vergelijkbare technologieën om correct te functioneren, uw taalvoorkeur te onthouden en te begrijpen hoe bezoekers de site gebruiken. U kunt cookievoorkeuren beheren via uw browserinstellingen. Wij zullen deze sectie bijwerken naarmate ons cookiegebruik evolueert.',
+
+      privacy10Title: 'Beveiliging',
+      privacy10Body: 'Wij nemen redelijke technische en organisatorische maatregelen om uw persoonsgegevens te beschermen tegen ongeoorloofde toegang, wijziging, openbaarmaking of vernietiging. Geen enkel systeem is echter perfect veilig en wij kunnen geen absolute beveiliging garanderen. Indien wij kennis krijgen van een datalek dat uw gegevens raakt, zullen wij u en de toezichthoudende autoriteit informeren waar dit wettelijk vereist is.',
+
+      privacy11Title: 'Wijzigingen van dit beleid',
+      privacy11Body: 'Wij kunnen dit Privacybeleid van tijd tot tijd bijwerken om wijzigingen in onze praktijken, diensten of toepasselijke wetgeving te weerspiegelen. De meest recente versie zal altijd op deze pagina beschikbaar zijn, met de datum "Laatst bijgewerkt" bovenaan. Voortgezet gebruik van de website na publicatie van wijzigingen geldt als aanvaarding van het bijgewerkte beleid.',
+
+      privacy12Title: 'Contact',
+      privacy12Body: 'Voor vragen over dit Privacybeleid of over hoe wij uw persoonsgegevens behandelen, kunt u contact met ons opnemen via info@russonv.be of per post aan Russo NV, Taxandriastraat 35, 2170 Antwerpen, België.',
+
+      termsTitle: 'Service',
+      termsTitleHighlight: 'Voorwaarden',
+      termsIntro: 'Deze Servicevoorwaarden regelen uw gebruik van de website russonv.be. Door de site te bezoeken of te gebruiken, gaat u akkoord met deze Voorwaarden. Indien u niet akkoord gaat, gelieve de site niet te gebruiken.',
+
+      terms1Title: 'Over deze voorwaarden',
+      terms1Body: 'Deze Servicevoorwaarden ("Voorwaarden") regelen uw gebruik van de website russonv.be (de "Site"). Door de Site te bezoeken of te gebruiken, gaat u ermee akkoord gebonden te zijn aan deze Voorwaarden. Indien u niet akkoord gaat, gelieve de Site niet te gebruiken. Russo NV ("wij", "ons", "onze") is een Belgisch bedrijf met maatschappelijke zetel op Taxandriastraat 35, 2170 Antwerpen, België.',
+
+      terms2Title: 'Onze diensten',
+      terms2Body: 'De Site biedt informatie over onze industriële coating-, oppervlaktevoorbereidings- en aanverwante diensten. De inhoud is uitsluitend bedoeld voor algemene informatie. Elke specifieke commerciële relatie — inclusief de scope, prijs, planning en voorwaarden van het werk — wordt geregeld door een afzonderlijke schriftelijke overeenkomst die tussen ons en onze klant wordt ondertekend. Niets op de Site vormt een bindend aanbod.',
+
+      terms3Title: 'Aanvaardbaar gebruik',
+      terms3Body: 'U gaat ermee akkoord de Site uitsluitend voor wettelijke doeleinden te gebruiken. U mag de Site niet gebruiken op een manier die deze kan beschadigen, uitschakelen, overbelasten of aantasten; pogingen ondernemen om ongeoorloofde toegang te krijgen tot enig deel van de Site, onze systemen of gerelateerde netwerken; geautomatiseerde middelen gebruiken om inhoud te scrapen of te oogsten; schadelijke code verzenden of anderszins normaal gebruik door anderen verstoren; of zich voordoen als een andere persoon of uw band met een organisatie verkeerd voorstellen.',
+
+      terms4Title: 'Intellectuele eigendom',
+      terms4Body: 'Alle inhoud op de Site — inclusief tekst, afbeeldingen, logo\'s en projectfotografie — is eigendom van Russo NV of wordt onder licentie gebruikt, en wordt beschermd door auteursrecht en andere intellectuele-eigendomsrechten. U mag pagina\'s van de Site bekijken en afdrukken voor persoonlijk of intern zakelijk gebruik. Elk ander gebruik, inclusief reproductie, wijziging, verspreiding of commercieel gebruik, vereist onze voorafgaande schriftelijke toestemming.',
+
+      terms5Title: 'Projectfotografie',
+      terms5Body: 'Foto\'s van eerdere projecten op de Site zijn illustratief voor ons werk. Zij zijn beschermd door auteursrecht en mogen niet zonder onze schriftelijke toestemming worden hergebruikt. Wanneer projecten klantlocaties betreffen, worden die foto\'s gepubliceerd met toestemming van de betreffende klant.',
+
+      terms6Title: 'Links naar derden',
+      terms6Body: 'De Site kan links bevatten naar externe websites die wij niet exploiteren of beheren. Wij zijn niet verantwoordelijk voor de inhoud, privacypraktijken of nauwkeurigheid van enige externe site, en het opnemen van een link impliceert geen goedkeuring van die site of de exploitant ervan.',
+
+      terms7Title: 'Disclaimer',
+      terms7Body: 'Wij doen redelijke inspanningen om de Site nauwkeurig en actueel te houden, maar de informatie wordt verstrekt "zoals ze is" zonder enige uitdrukkelijke of impliciete garantie. Wij garanderen niet dat de Site ononderbroken, foutloos of veilig zal zijn. Specifieke verbintenissen over onze diensten zijn enkel die welke zijn opgenomen in de ondertekende overeenkomst die van toepassing is op een bepaald project.',
+
+      terms8Title: 'Beperking van aansprakelijkheid',
+      terms8Body: 'Voor zover wettelijk toegestaan onder Belgisch recht, zijn wij niet aansprakelijk voor enige indirecte, incidentele, bijzondere, gevolg- of strafschade die voortvloeit uit of verband houdt met uw gebruik van de Site, inclusief verlies van winst, omzet of gegevens. Niets in deze Voorwaarden sluit aansprakelijkheid uit of beperkt deze waar dit niet kan worden uitgesloten of beperkt onder Belgisch recht.',
+
+      terms9Title: 'Privacy',
+      terms9Body: 'Onze omgang met persoonsgegevens wordt beschreven in ons Privacybeleid, beschikbaar op russonv.be/privacy. Door de Site te gebruiken erkent u dat wij uw persoonsgegevens zullen verwerken zoals daarin beschreven.',
+
+      terms10Title: 'Toepasselijk recht',
+      terms10Body: 'Deze Voorwaarden en uw gebruik van de Site worden beheerst door Belgisch recht. De rechtbanken van Antwerpen, België, hebben exclusieve bevoegdheid voor elk geschil, behalve waar toepasselijk consumentenrecht u het recht geeft om procedures aanhangig te maken in uw eigen rechtsgebied.',
+
+      terms11Title: 'Wijzigingen van deze voorwaarden',
+      terms11Body: 'Wij kunnen deze Servicevoorwaarden van tijd tot tijd bijwerken. De meest recente versie zal altijd op deze pagina beschikbaar zijn, met de datum "Laatst bijgewerkt" bovenaan. Voortgezet gebruik van de Site na publicatie van wijzigingen geldt als aanvaarding van de bijgewerkte Voorwaarden.',
+
+      terms12Title: 'Contact',
+      terms12Body: 'Voor vragen over deze Voorwaarden, kunt u contact met ons opnemen via info@russonv.be of per post aan Russo NV, Taxandriastraat 35, 2170 Antwerpen, België.',
     },
   },
 };
