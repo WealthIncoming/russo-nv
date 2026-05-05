@@ -1,10 +1,43 @@
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowUp, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Image } from '@/components/ui/image';
 
+const FOOTER_HQ_ADDRESS = 'Taxandriastraat 35, 2170 Antwerp';
+const FOOTER_GOOGLE_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(FOOTER_HQ_ADDRESS)}`;
+
+const SERVICES = [
+  { labelKey: 'industrialPainting',   anchor: 'industrialCoatingApplication' },
+  { labelKey: 'sandblasting',         anchor: 'sandblastingAbrasive' },
+  { labelKey: 'fireproofingCoatings', anchor: 'fireproofingThermal' },
+  { labelKey: 'protectiveCoatings',   anchor: 'corrosionProtection' },
+  { labelKey: 'surfacePreparation',   anchor: 'sandblastingAbrasive' },
+  { labelKey: 'coatRemoval',          anchor: 'sandblastingAbrasive' },
+];
+
+const QUICK_LINKS = [
+  { to: '/',           labelKey: 'home',             namespace: 'nav' },
+  { to: '/services',   labelKey: 'services',         namespace: 'nav' },
+  { to: '/industries', labelKey: 'industriesServed', namespace: 'footer' },
+  { to: '/projects',   labelKey: 'projects',         namespace: 'nav' },
+  { to: '/safety',     labelKey: 'safety',           namespace: 'nav' },
+  { to: '/about',      labelKey: 'aboutUs',          namespace: 'footer' },
+] as const;
+
+const CERTIFICATIONS = [
+  'vcaCertified',
+  'naceCertified',
+  'isoCertified',
+  'safetyCompliant',
+];
+
 export default function Footer() {
   const { t } = useLanguageStore();
+
+  const handleBackToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <footer className="w-full bg-foreground text-white">
@@ -12,29 +45,21 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-16">
           {/* Company Info */}
           <div className="lg:col-span-4">
-            <Link to="/" className="flex items-center mb-6">
+            <Link to="/" aria-label="Russo NV - Home" className="flex items-center mb-6">
               <Image
-                src="https://static.wixstatic.com/media/3232e5_48e2024c6d3f441e817637ccdd99f28f~mv2.png"
+                src="/images/logo.png"
                 alt="Russo NV Logo"
                 width={200}
+                height={140}
                 className="h-auto"
               />
             </Link>
             <p className="font-paragraph text-sm text-white/80 mb-8 leading-relaxed">
               {t('footer', 'companyDescription')}
             </p>
-            <div className="flex gap-4">
+            <nav aria-label="Social media" className="flex gap-4">
               <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/russo-nv/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
@@ -43,7 +68,7 @@ export default function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/russo.n.v/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
@@ -51,28 +76,22 @@ export default function Footer() {
               >
                 <Instagram className="w-5 h-5" />
               </a>
-            </div>
+            </nav>
           </div>
 
           {/* Quick Links */}
           <div className="lg:col-span-2">
             <h3 className="font-heading text-xl mb-6 text-primary">{t('footer', 'quickLinks')}</h3>
             <nav className="space-y-3">
-              <Link to="/" className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors">
-                {t('nav', 'home')}
-              </Link>
-              <Link to="/services" className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors">
-                {t('nav', 'services')}
-              </Link>
-              <Link to="/industries" className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors">
-                {t('footer', 'industrieServed')}
-              </Link>
-              <Link to="/projects" className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors">
-                {t('nav', 'projects')}
-              </Link>
-              <Link to="/about" className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors">
-                {t('footer', 'aboutUs')}
-              </Link>
+              {QUICK_LINKS.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors"
+                >
+                  {t(link.namespace, link.labelKey)}
+                </Link>
+              ))}
             </nav>
           </div>
 
@@ -80,14 +99,7 @@ export default function Footer() {
           <div className="lg:col-span-3">
             <h3 className="font-heading text-xl mb-6 text-primary">{t('footer', 'ourServices')}</h3>
             <nav className="space-y-3">
-              {[
-                { labelKey: 'industrialPainting',    anchor: 'industrialCoatingApplication' },
-                { labelKey: 'sandblasting',          anchor: 'sandblastingAbrasive' },
-                { labelKey: 'fireproofingCoatings',  anchor: 'fireproofingThermal' },
-                { labelKey: 'protectiveCoatings',    anchor: 'corrosionProtection' },
-                { labelKey: 'surfacePreparation',    anchor: 'sandblastingAbrasive' },
-                { labelKey: 'coatRemoval',           anchor: 'sandblastingAbrasive' },
-              ].map((item) => (
+              {SERVICES.map((item) => (
                 <Link
                   key={item.labelKey}
                   to={`/services#${item.anchor}`}
@@ -100,14 +112,31 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="lg:col-span-3">
+          <address className="lg:col-span-3 not-italic">
             <h3 className="font-heading text-xl mb-6 text-primary">{t('footer', 'contact')}</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                <div className="font-paragraph text-sm text-white/80">
-                  {t('footer', 'location')}<br />
-                  {t('footer', 'servingRegion')}
+                <div>
+                  <a
+                    href={FOOTER_GOOGLE_MAPS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-paragraph text-sm text-white/80 hover:text-primary transition-colors block"
+                  >
+                    {t('footer', 'location')}
+                  </a>
+                  <div className="font-paragraph text-sm text-white/60 mt-1">
+                    {t('footer', 'servingRegion')}
+                  </div>
+                  <a
+                    href={FOOTER_GOOGLE_MAPS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 mt-2 font-paragraph text-xs text-primary hover:text-primary/80 transition-colors uppercase tracking-wider"
+                  >
+                    {t('footer', 'locationDirections')} →
+                  </a>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -129,25 +158,21 @@ export default function Footer() {
                 </a>
               </div>
             </div>
-          </div>
+          </address>
         </div>
 
         {/* Certifications */}
         <div className="border-t border-white/10 pt-12 mb-12">
-          <h4 className="font-heading text-lg mb-6 text-center">{t('footer', 'certifiedCompliant')}</h4>
+          <h3 className="font-heading text-lg mb-6 text-center">{t('footer', 'certifiedCompliant')}</h3>
           <div className="flex flex-wrap justify-center items-center gap-8">
-            <div className="font-paragraph text-sm text-white/60 uppercase tracking-wider border border-white/20 px-6 py-3">
-              {t('footer', 'vcaCertified')}
-            </div>
-            <div className="font-paragraph text-sm text-white/60 uppercase tracking-wider border border-white/20 px-6 py-3">
-              {t('footer', 'naceCertified')}
-            </div>
-            <div className="font-paragraph text-sm text-white/60 uppercase tracking-wider border border-white/20 px-6 py-3">
-              {t('footer', 'isoCertified')}
-            </div>
-            <div className="font-paragraph text-sm text-white/60 uppercase tracking-wider border border-white/20 px-6 py-3">
-              {t('footer', 'safetyCompliant')}
-            </div>
+            {CERTIFICATIONS.map((certKey) => (
+              <div
+                key={certKey}
+                className="font-paragraph text-sm text-white/60 uppercase tracking-wider border border-white/20 px-6 py-3"
+              >
+                {t('footer', certKey)}
+              </div>
+            ))}
           </div>
         </div>
 
@@ -157,7 +182,7 @@ export default function Footer() {
             <p className="font-paragraph text-sm text-white/60">
               © {new Date().getFullYear()} Russo NV. {t('footer', 'allRightsReserved')}
             </p>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap gap-6 items-center justify-center">
               <Link
                 to="/privacy"
                 className="font-paragraph text-sm text-white/60 hover:text-primary transition-colors"
@@ -170,6 +195,14 @@ export default function Footer() {
               >
                 {t('footer', 'termsOfService')}
               </Link>
+              <a
+                href="#top"
+                onClick={handleBackToTop}
+                className="font-paragraph text-sm text-white/60 hover:text-primary transition-colors inline-flex items-center gap-1"
+              >
+                <ArrowUp className="w-3 h-3" />
+                {t('footer', 'backToTop')}
+              </a>
             </div>
           </div>
         </div>
