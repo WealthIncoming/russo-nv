@@ -53,7 +53,7 @@ export default function ContactPage() {
           company: formData.company,
           email: formData.email,
           phone: formData.phone,
-          projectType: formData.projectType,
+          project: formData.projectType,
           message: formData.message,
         },
       });
