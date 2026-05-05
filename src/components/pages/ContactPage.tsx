@@ -2,14 +2,15 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
+import { submissions } from '@wix/forms';
 import { motion } from 'framer-motion';
-import { CheckCircle, Clock, Mail, MapPin, Phone, Send } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { BaseCrudService } from '@/integrations';
+import { AlertCircle, CheckCircle, Clock, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { useState } from 'react';
 
 const CONTACT_PHONE_DISPLAY = '+32 475 43 48 19';
 const CONTACT_PHONE_HREF = '+32475434819';
 const CONTACT_EMAIL = 'info@russonv.be';
+const WIX_FORM_ID = 'cd161b70-3a80-4193-a8b4-04df43cdcf89';
 
 const SectionLabel = ({ text, align = 'center' }: { text: string; align?: 'left' | 'center' }) => (
   <div className={`flex items-center gap-3 mb-6 ${align === 'center' ? 'justify-center' : 'justify-start'}`}>
@@ -29,8 +30,9 @@ export default function ContactPage() {
     projectType: '',
     message: '',
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -42,21 +44,21 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+    setSubmitError(null);
     try {
-      // Save to CMS collection
-      await BaseCrudService.create('ContactSubmissions', {
-        _id: crypto.randomUUID(),
-        name: formData.name,
-        company: formData.company,
-        email: formData.email,
-        phone: formData.phone,
-        projectType: formData.projectType,
-        message: formData.message,
-        title: `${formData.name} - ${formData.projectType}`,
+      await submissions.createSubmission({
+        submission: {
+          formId: WIX_FORM_ID,
+          submissions: {
+            name: formData.name,
+            company: formData.company,
+            email: formData.email,
+            phone: formData.phone,
+            projectType: formData.projectType,
+            message: formData.message,
+          },
+        },
       });
-      
-      setIsSubmitted(true);
       setFormData({
         name: '',
         company: '',
@@ -65,25 +67,12 @@ export default function ContactPage() {
         projectType: '',
         message: '',
       });
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      // Fallback to mailto if CMS submission fails
-      const subject = encodeURIComponent(
-        `Quote request — ${formData.projectType || 'General inquiry'}`
-      );
-      const body = encodeURIComponent(
-        [
-          `Name: ${formData.name}`,
-          `Company: ${formData.company}`,
-          `Email: ${formData.email}`,
-          `Phone: ${formData.phone}`,
-          `Project type: ${formData.projectType}`,
-          '',
-          formData.message,
-        ].join('\n')
-      );
-      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
       setIsSubmitted(true);
+    } catch (error) {
+      console.error('Contact form submission failed:', error);
+      setSubmitError(
+        error instanceof Error ? error.message : 'Unknown error'
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -125,13 +114,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Wix Form Section */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 py-32">
-        <div className="w-full">
-          <wix-form id="contactForm" />
-        </div>
-      </section>
-
       {/* Contact Form & Info */}
       <section id="form" className="w-full max-w-[100rem] mx-auto px-8 py-32 scroll-mt-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
@@ -170,7 +152,10 @@ export default function ContactPage() {
                   {t('contact', 'toastDescription')}
                 </p>
                 <button
-                  onClick={() => setIsSubmitted(false)}
+                  onClick={() => {
+                    setIsSubmitted(false);
+                    setSubmitError(null);
+                  }}
                   className="bg-primary text-primary-foreground font-paragraph font-bold uppercase px-8 py-4 hover:bg-primary/90 transition-colors inline-flex items-center gap-3"
                 >
                   {t('contact', 'sendAnother')}
@@ -295,12 +280,27 @@ export default function ContactPage() {
                 </div>
               </fieldset>
 
+              {submitError && (
+                <div
+                  role="alert"
+                  className="flex items-start gap-3 bg-destructive/10 border-l-4 border-destructive p-4"
+                >
+                  <AlertCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                  <div className="font-paragraph text-sm text-destructive">
+                    <span className="font-bold uppercase tracking-wider block mb-1">
+                      {t('contact', 'submitErrorTitle')}
+                    </span>
+                    {t('contact', 'submitErrorDescription')}
+                  </div>
+                </div>
+              )}
+
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-primary text-primary-foreground font-paragraph font-bold uppercase px-8 py-4 hover:bg-primary/90 transition-colors inline-flex items-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-primary text-primary-foreground font-paragraph font-bold uppercase px-8 py-4 hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center gap-3"
               >
-                {isSubmitting ? 'Sending...' : t('contact', 'send')}
+                {isSubmitting ? t('contact', 'sending') : t('contact', 'send')}
                 <Send className="w-5 h-5" />
               </button>
             </form>
