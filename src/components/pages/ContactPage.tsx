@@ -47,16 +47,14 @@ export default function ContactPage() {
     setSubmitError(null);
     try {
       await submissions.createSubmission({
-        submission: {
-          formId: WIX_FORM_ID,
-          submissions: {
-            name: formData.name,
-            company: formData.company,
-            email: formData.email,
-            phone: formData.phone,
-            projectType: formData.projectType,
-            message: formData.message,
-          },
+        formId: WIX_FORM_ID,
+        submissions: {
+          name: formData.name,
+          company: formData.company,
+          email: formData.email,
+          phone: formData.phone,
+          projectType: formData.projectType,
+          message: formData.message,
         },
       });
       setFormData({
