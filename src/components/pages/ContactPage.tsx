@@ -125,7 +125,12 @@ export default function ContactPage() {
         </div>
       </section>
 
-
+      {/* Wix Form Section */}
+      <section className="w-full max-w-[100rem] mx-auto px-8 py-32">
+        <div className="w-full">
+          <wix-form id="contactForm" />
+        </div>
+      </section>
 
       {/* Contact Form & Info */}
       <section id="form" className="w-full max-w-[100rem] mx-auto px-8 py-32 scroll-mt-24">
