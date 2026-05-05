@@ -51,6 +51,14 @@ function getIndustryImageOverride(industryName: string | undefined): string | un
   return INDUSTRY_IMAGE_OVERRIDES.find(o => lower.includes(o.match))?.src;
 }
 
+const SectionLabel = ({ text }: { text: string }) => (
+  <div className="flex items-center gap-3 mb-6 justify-center">
+    <span className="h-[1px] w-12 bg-primary/30" />
+    <span className="font-paragraph text-xs font-bold tracking-[0.2em] text-primary uppercase">{text}</span>
+    <span className="h-[1px] w-12 bg-primary/30" />
+  </div>
+);
+
 // Display order for industries on the page. Anything not matched goes last,
 // in CMS order, so newly-added industries still render without a code change.
 const INDUSTRY_DISPLAY_ORDER: string[] = [
@@ -141,6 +149,23 @@ export default function IndustriesPage() {
 
       {/* Industries Grid */}
       <section className="w-full max-w-[100rem] mx-auto px-6 sm:px-8 py-20 sm:py-24 xl:py-28">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16 sm:mb-20"
+        >
+          <SectionLabel text={t('industries', 'gridSectionLabel')} />
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-foreground leading-tight uppercase">
+            {t('industries', 'gridTitleLine1')}{' '}
+            <span className="text-primary">{t('industries', 'gridTitleHighlight')}</span>
+          </h2>
+          <p className="font-paragraph text-base sm:text-lg text-foreground/70 mt-6 leading-relaxed">
+            {t('industries', 'gridDescription')}
+          </p>
+        </motion.div>
+
         <div className="min-h-[400px]">
           {isLoading ? (
             <div className="flex items-center justify-center py-32">
