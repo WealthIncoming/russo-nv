@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
+import { useCopyPhone } from '@/lib/use-copy-phone';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import {
   ArrowRight,
@@ -186,6 +187,9 @@ const ParallaxText = ({ children, baseVelocity = 100 }: { children: string; base
 };
 
 export default function HomePage() {
+  const { copied, copy } = useCopyPhone();
+  const onCallClick = () => copy('+32 475 43 48 19');
+
   // Parallax for Hero
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress: heroScroll } = useScroll({
@@ -594,9 +598,9 @@ export default function HomePage() {
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
-              <a href={`tel:${HQ_PHONE}`}>
+              <a href={`tel:${HQ_PHONE}`} onClick={onCallClick}>
                 <button className="bg-transparent border-2 border-black text-black font-paragraph font-bold uppercase px-10 py-5 hover:bg-black hover:text-white transition-all duration-300">
-                  {t('home', 'callUsNow')}
+                  {copied ? t('header', 'numberCopied') : t('home', 'callUsNow')}
                 </button>
               </a>
             </div>

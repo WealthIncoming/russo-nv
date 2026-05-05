@@ -1,14 +1,20 @@
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
+import { useCopyPhone } from '@/lib/use-copy-phone';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Globe, Menu, Phone, X } from 'lucide-react';
+import { Check, Globe, Menu, Phone, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Image } from '@/components/ui/image';
+
+const HEADER_PHONE_DISPLAY = '+32 475 43 48 19';
+const HEADER_PHONE_HREF = '+32475434819';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguageStore();
   const location = useLocation();
+  const { copied, copy } = useCopyPhone();
+  const onCallClick = () => copy(HEADER_PHONE_DISPLAY);
 
   const navLinks = [
     { path: '/', labelKey: 'home' },
@@ -91,11 +97,12 @@ export default function Header() {
 
             {/* Phone CTA */}
             <a
-              href="tel:+32475434819"
+              href={`tel:${HEADER_PHONE_HREF}`}
+              onClick={onCallClick}
               className="flex items-center gap-2 bg-primary text-primary-foreground font-paragraph font-bold uppercase px-4 xl:px-6 py-3 hover:bg-primary/90 transition-colors whitespace-nowrap"
             >
-              <Phone className="w-4 h-4" />
-              <span>{t('header', 'callNow')}</span>
+              {copied ? <Check className="w-4 h-4" /> : <Phone className="w-4 h-4" />}
+              <span>{copied ? t('header', 'numberCopied') : t('header', 'callNow')}</span>
             </a>
           </div>
 
@@ -154,11 +161,12 @@ export default function Header() {
 
                 {/* Phone CTA Mobile */}
                 <a
-                  href="tel:+32475434819"
+                  href={`tel:${HEADER_PHONE_HREF}`}
+                  onClick={onCallClick}
                   className="flex items-center justify-center gap-3 bg-primary text-primary-foreground font-paragraph font-bold uppercase px-6 py-3 hover:bg-primary/90 transition-colors w-full"
                 >
-                  <Phone className="w-4 h-4" />
-                  <span>{t('header', 'callNow')}</span>
+                  {copied ? <Check className="w-4 h-4" /> : <Phone className="w-4 h-4" />}
+                  <span>{copied ? t('header', 'numberCopied') : t('header', 'callNow')}</span>
                 </a>
               </div>
             </nav>
