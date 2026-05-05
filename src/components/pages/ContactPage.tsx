@@ -1,14 +1,24 @@
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
-import { useToast } from '@/hooks/use-toast';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { motion } from 'framer-motion';
 import { CheckCircle, Clock, Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
 
+const CONTACT_PHONE_DISPLAY = '+32 475 43 48 19';
+const CONTACT_PHONE_HREF = '+32475434819';
+const CONTACT_EMAIL = 'info@russonv.be';
+
+const SectionLabel = ({ text, align = 'center' }: { text: string; align?: 'left' | 'center' }) => (
+  <div className={`flex items-center gap-3 mb-6 ${align === 'center' ? 'justify-center' : 'justify-start'}`}>
+    {align === 'center' && <span className="h-[1px] w-12 bg-primary/30" />}
+    <span className="font-paragraph text-xs font-bold tracking-[0.2em] text-primary uppercase">{text}</span>
+    <span className="h-[1px] w-12 bg-primary/30" />
+  </div>
+);
+
 export default function ContactPage() {
-  const { toast } = useToast();
   const { t } = useLanguageStore();
   const [formData, setFormData] = useState({
     name: '',
@@ -18,7 +28,6 @@ export default function ContactPage() {
     projectType: '',
     message: '',
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -28,22 +37,27 @@ export default function ContactPage() {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      setFormData({
-        name: '',
-        company: '',
-        email: '',
-        phone: '',
-        projectType: '',
-        message: '',
-      });
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1500);
+    // FIXME: temporary mailto: fallback so leads aren't silently lost.
+    // Replace with a real backend (Wix Forms collection / Formspree /
+    // SMTP service) once a destination is chosen.
+    const subject = encodeURIComponent(
+      `Quote request — ${formData.projectType || 'General inquiry'}`
+    );
+    const body = encodeURIComponent(
+      [
+        `Name: ${formData.name}`,
+        `Company: ${formData.company}`,
+        `Email: ${formData.email}`,
+        `Phone: ${formData.phone}`,
+        `Project type: ${formData.projectType}`,
+        '',
+        formData.message,
+      ].join('\n')
+    );
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    setIsSubmitted(true);
   };
 
   return (
@@ -54,10 +68,10 @@ export default function ContactPage() {
       <section className="relative w-full max-w-[120rem] mx-auto min-h-[60vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://static.wixstatic.com/media/3232e5_abc4740164f349a88d847d29e75a10b1~mv2.png?originWidth=1152&originHeight=640"
+            src="/images/contact-hero.jpg"
             alt="Contact Russo NV for industrial coating services"
             className="w-full h-full object-cover"
-            width={1920}
+            width={1152}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/50" />
         </div>
@@ -71,7 +85,7 @@ export default function ContactPage() {
             <span className="font-paragraph text-primary text-sm uppercase tracking-wider">
               {t('contact', 'heroLabel')}
             </span>
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white mt-4 mb-8 leading-tight uppercase">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-white mt-4 mb-8 leading-tight sm:leading-none uppercase">
               {t('contact', 'heroLine1')}<br />
               <span className="text-primary">{t('contact', 'heroLine2')}</span>
             </h1>
@@ -83,7 +97,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="w-full max-w-[100rem] mx-auto px-8 py-32">
+      <section id="form" className="w-full max-w-[100rem] mx-auto px-8 py-32 scroll-mt-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Contact Form */}
           <motion.div
@@ -93,8 +107,9 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-7"
           >
+            <SectionLabel text={t('contact', 'formSectionLabel')} align="left" />
             <div className="border-l-4 border-primary pl-8 mb-12">
-              <h2 className="font-heading text-4xl md:text-5xl text-foreground mb-4 uppercase">
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground mb-4 uppercase leading-tight">
                 {t('contact', 'formTitle')}
               </h2>
               <p className="font-paragraph text-base text-foreground/70">
@@ -104,13 +119,15 @@ export default function ContactPage() {
 
             {isSubmitted ? (
               <motion.div
+                role="status"
+                aria-live="polite"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 className="flex flex-col items-center justify-center py-16 text-center"
               >
                 <CheckCircle className="w-16 h-16 text-primary mb-6" />
-                <h3 className="font-heading text-3xl text-foreground mb-4 uppercase">
+                <h3 className="font-heading text-2xl sm:text-3xl text-foreground mb-4 uppercase">
                   {t('contact', 'toastTitle')}
                 </h3>
                 <p className="font-paragraph text-lg text-foreground/70 mb-8 max-w-md">
@@ -124,117 +141,129 @@ export default function ContactPage() {
                 </button>
               </motion.div>
             ) : (
-            <form onSubmit={handleSubmit} className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <form onSubmit={handleSubmit} className="space-y-10">
+              <fieldset className="space-y-8 border-0 p-0 m-0">
+                <legend className="sr-only">{t('contact', 'fieldsetDetails')}</legend>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <label htmlFor="name" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
+                      {t('contact', 'name')} *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      autoComplete="name"
+                      autoFocus
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-dark-grey/5 border-2 border-dark-grey/20 px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="company" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
+                      {t('contact', 'company')} *
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      autoComplete="organization"
+                      value={formData.company}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-dark-grey/5 border-2 border-dark-grey/20 px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <label htmlFor="email" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
+                      {t('contact', 'email')} *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      autoComplete="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-dark-grey/5 border-2 border-dark-grey/20 px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="phone" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
+                      {t('contact', 'phone')} *
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      autoComplete="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-dark-grey/5 border-2 border-dark-grey/20 px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors"
+                    />
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset className="space-y-8 border-0 p-0 m-0">
+                <legend className="sr-only">{t('contact', 'fieldsetProject')}</legend>
                 <div>
-                  <label htmlFor="name" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
-                    {t('contact', 'name')} *
+                  <label htmlFor="projectType" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
+                    {t('contact', 'projectType')} *
                   </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
+                  <select
+                    id="projectType"
+                    name="projectType"
+                    value={formData.projectType}
                     onChange={handleChange}
                     required
                     className="w-full bg-dark-grey/5 border-2 border-dark-grey/20 px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors"
-                  />
+                  >
+                    <option value="">{t('contact', 'selectService')}</option>
+                    <option value="coating-application">{t('contact', 'coatingApplication')}</option>
+                    <option value="sandblasting">{t('contact', 'sandblasting')}</option>
+                    <option value="corrosion-protection">{t('contact', 'corrosionProtection')}</option>
+                    <option value="fireproofing">{t('contact', 'fireproofing')}</option>
+                    <option value="waterproofing">{t('contact', 'waterproofing')}</option>
+                    <option value="water-jetting">{t('contact', 'waterJetting')}</option>
+                    <option value="coating-inspection">{t('contact', 'coatingInspection')}</option>
+                    <option value="tank-coating">{t('contact', 'tankCoating')}</option>
+                    <option value="pipeline-coating">{t('contact', 'pipelineCoating')}</option>
+                    <option value="other">{t('contact', 'other')}</option>
+                  </select>
                 </div>
 
                 <div>
-                  <label htmlFor="company" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
-                    {t('contact', 'company')} *
+                  <label htmlFor="message" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
+                    {t('contact', 'projectDetails')} *
                   </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full bg-dark-grey/5 border-2 border-dark-grey/20 px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors"
+                    rows={6}
+                    className="w-full bg-dark-grey/5 border-2 border-dark-grey/20 px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors resize-none"
+                    placeholder={t('contact', 'projectDetailsPlaceholder')}
                   />
                 </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <label htmlFor="email" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
-                    {t('contact', 'email')} *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-dark-grey/5 border-2 border-dark-grey/20 px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
-                    {t('contact', 'phone')} *
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-dark-grey/5 border-2 border-dark-grey/20 px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="projectType" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
-                  {t('contact', 'projectType')} *
-                </label>
-                <select
-                  id="projectType"
-                  name="projectType"
-                  value={formData.projectType}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-dark-grey/5 border-2 border-dark-grey/20 px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors"
-                >
-                  <option value="">{t('contact', 'selectService')}</option>
-                  <option value="sandblasting">{t('contact', 'sandblasting')}</option>
-                  <option value="industrial-painting">{t('contact', 'industrialPainting')}</option>
-                  <option value="fireproofing">{t('contact', 'fireproofing')}</option>
-                  <option value="protective-coatings">{t('contact', 'protectiveCoatings')}</option>
-                  <option value="coat-removal">{t('contact', 'coatRemoval')}</option>
-                  <option value="tank-coating">{t('contact', 'tankCoating')}</option>
-                  <option value="pipeline-coating">{t('contact', 'pipelineCoating')}</option>
-                  <option value="other">{t('contact', 'other')}</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
-                  {t('contact', 'projectDetails')} *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="w-full bg-dark-grey/5 border-2 border-dark-grey/20 px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors resize-none"
-                  placeholder={t('contact', 'projectDetailsPlaceholder')}
-                />
-              </div>
+              </fieldset>
 
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="bg-primary text-primary-foreground font-paragraph font-bold uppercase px-8 py-4 hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center gap-3"
+                className="bg-primary text-primary-foreground font-paragraph font-bold uppercase px-8 py-4 hover:bg-primary/90 transition-colors inline-flex items-center gap-3"
               >
-                {isSubmitting ? t('contact', 'sending') : t('contact', 'send')}
+                {t('contact', 'send')}
                 <Send className="w-5 h-5" />
               </button>
             </form>
@@ -249,7 +278,7 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5"
           >
-            <div className="bg-dark-grey text-white p-12 space-y-12 sticky top-32">
+            <div id="info" className="bg-dark-grey text-white p-12 space-y-12 sticky top-24 scroll-mt-24">
               <div>
                 <h3 className="font-heading text-xl md:text-2xl mb-8 uppercase">{t('contact', 'contactInfo')}</h3>
               </div>
@@ -262,10 +291,10 @@ export default function ContactPage() {
                       {t('contact', 'phoneLabel')}
                     </div>
                     <a
-                      href="tel:+32475434819"
+                      href={`tel:${CONTACT_PHONE_HREF}`}
                       className="font-paragraph text-lg text-white hover:text-primary transition-colors"
                     >
-                      +32 475 43 48 19
+                      {CONTACT_PHONE_DISPLAY}
                     </a>
                   </div>
                 </div>
@@ -277,10 +306,10 @@ export default function ContactPage() {
                       {t('contact', 'emailLabel')}
                     </div>
                     <a
-                      href="mailto:info@russonv.be"
+                      href={`mailto:${CONTACT_EMAIL}`}
                       className="font-paragraph text-lg text-white hover:text-primary transition-colors"
                     >
-                      info@russonv.be
+                      {CONTACT_EMAIL}
                     </a>
                   </div>
                 </div>
@@ -323,10 +352,10 @@ export default function ContactPage() {
                   {t('contact', 'emergencyDescription')}
                 </p>
                 <a
-                  href="tel:+32475434819"
+                  href={`tel:${CONTACT_PHONE_HREF}`}
                   className="font-paragraph text-lg text-primary hover:text-primary/80 transition-colors"
                 >
-                  +32 475 43 48 19
+                  {CONTACT_PHONE_DISPLAY}
                 </a>
               </div>
             </div>
@@ -334,70 +363,50 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="w-full bg-secondary py-32">
+      {/* Coverage Section */}
+      <section id="coverage" className="w-full bg-secondary py-32 scroll-mt-24">
         <div className="max-w-[100rem] mx-auto px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center"
+            className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-8 uppercase">
+            <SectionLabel text={t('contact', 'coverageSectionLabel')} />
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-8 uppercase leading-tight">
               {t('contact', 'coverageTitle')} <span className="text-primary">{t('contact', 'coverageHighlight')}</span>
             </h2>
-            <p className="font-paragraph text-lg text-white/80 max-w-3xl mx-auto mb-16">
+            <p className="font-paragraph text-base sm:text-lg text-white/80 mb-16">
               {t('contact', 'coverageDescription')}
             </p>
+          </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {[
+              { stat: 'EU', titleKey: 'allEurope', descKey: 'allEuropeDesc' },
+              { stat: '24/7', titleKey: 'updatesTitle', descKey: 'updatesDesc' },
+              { stat: 'QC', titleKey: 'qcTitle', descKey: 'qcDesc' },
+              { stat: '100%', titleKey: 'safetyTitle', descKey: 'safetyDesc' },
+            ].map((item) => (
               <motion.div
+                key={item.stat}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors overflow-hidden break-words text-center"
+                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors text-center"
               >
-                <div className="font-heading text-4xl text-primary mb-4 text-center">EU</div>
-                <div className="font-heading text-lg sm:text-xl text-foreground mb-2 text-center">{t('contact', 'allEurope')}</div>
-                <div className="font-paragraph text-sm text-foreground/60 text-center">{t('contact', 'allEuropeDesc')}</div>
+                <div className="font-heading text-3xl sm:text-4xl text-primary mb-4">{item.stat}</div>
+                <div className="font-heading text-base sm:text-lg lg:text-xl text-foreground mb-2">
+                  {t('contact', item.titleKey)}
+                </div>
+                <div className="font-paragraph text-sm text-foreground/60">
+                  {t('contact', item.descKey)}
+                </div>
               </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors overflow-hidden break-words"
-              >
-                <div className="font-heading text-4xl text-primary mb-4 text-center">24/7</div>
-                <div className="font-heading text-lg sm:text-xl text-foreground mb-2 text-center">{t('contact', 'updatesTitle')}</div>
-                <div className="font-paragraph text-sm text-foreground/60 text-center">{t('contact', 'updatesDesc')}</div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.2 }}
-                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors overflow-hidden break-words"
-              >
-                <div className="font-heading text-4xl text-primary mb-4 text-center">QC</div>
-                <div className="font-heading text-lg sm:text-xl text-foreground mb-2 text-center">{t('contact', 'qcTitle')}</div>
-                <div className="font-paragraph text-sm text-foreground/60 text-center">{t('contact', 'qcDesc')}</div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-                className="bg-white border border-dark-grey/10 p-8 hover:border-primary transition-colors overflow-hidden break-words"
-              >
-                <div className="font-heading text-4xl text-primary mb-4 text-center">100%</div>
-                <div className="font-heading text-lg sm:text-xl text-foreground mb-2 text-center">{t('contact', 'safetyTitle')}</div>
-                <div className="font-paragraph text-sm text-foreground/60 text-center">{t('contact', 'safetyDesc')}</div>
-              </motion.div>
-            </div>
-          </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
