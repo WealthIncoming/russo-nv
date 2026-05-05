@@ -57,6 +57,11 @@ const PROJECT_IMAGE_OVERRIDES: Array<{ match: string; main: string; secondary?: 
     main: '/images/stt1.jpg',
     secondary: '/images/stt2.jpg',
   },
+  {
+    match: 'crane refurbishment',
+    main: '/images/csp1.jpg',
+    secondary: '/images/csp2.jpg',
+  },
 ];
 
 function getProjectImageOverride(projectTitle: string | undefined) {
