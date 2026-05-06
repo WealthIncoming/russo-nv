@@ -295,7 +295,7 @@ export default function SafetyPage() {
             className="text-center max-w-3xl mx-auto mb-16"
           >
             <SectionLabel text={t('safety', 'certsSectionLabel')} />
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-6 uppercase leading-tight">
+            <h2 className="font-heading text-xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-6 uppercase leading-tight">
               {t('safety', 'certsTitle')} <span className="text-primary">{t('safety', 'certsHighlight')}</span>
             </h2>
             <p className="font-paragraph text-base sm:text-lg text-white/80">
