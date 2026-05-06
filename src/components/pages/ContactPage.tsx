@@ -12,10 +12,6 @@ const CONTACT_PHONE_DISPLAY = '+32 475 43 48 19';
 const CONTACT_PHONE_HREF = '+32475434819';
 const CONTACT_EMAIL = 'info@russonv.be';
 const WIX_FORM_ID = 'cd161b70-3a80-4193-a8b4-04df43cdcf89';
-// Bump this each time you push code. Visible next to the form heading so you
-// can refresh and instantly tell whether you're testing the latest build.
-const FORM_VERSION = 'v5';
-
 // Address components, used both in the visible UI and the JSON-LD structured
 // data below. Single source of truth for the HQ address.
 const HQ_STREET = 'Taxandriastraat 35';
@@ -296,9 +292,6 @@ export default function ContactPage() {
             <div className="border-l-4 border-primary pl-8 mb-12">
               <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground mb-4 uppercase leading-tight">
                 {t('contact', 'formTitle')}
-                <span className="ml-3 align-middle font-paragraph text-xs font-bold tracking-wider text-primary/60 normal-case">
-                  {FORM_VERSION}
-                </span>
               </h2>
               <p className="font-paragraph text-base text-foreground/70">
                 {t('contact', 'formDescription')}
