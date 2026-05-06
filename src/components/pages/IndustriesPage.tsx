@@ -154,10 +154,10 @@ export default function IndustriesPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16 sm:mb-20"
+          className="text-center max-w-4xl mx-auto mb-16 sm:mb-20"
         >
           <SectionLabel text={t('industries', 'gridSectionLabel')} />
-          <h2 className="font-heading text-xl sm:text-3xl md:text-5xl lg:text-6xl text-foreground leading-tight uppercase">
+          <h2 className="font-heading text-xl sm:text-2xl md:text-4xl lg:text-5xl text-foreground leading-tight uppercase text-balance">
             {t('industries', 'gridTitleLine1')}{' '}
             <span className="text-primary">{t('industries', 'gridTitleHighlight')}</span>
           </h2>
