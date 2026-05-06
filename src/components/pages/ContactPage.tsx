@@ -378,7 +378,7 @@ export default function ContactPage() {
 
                   <div>
                     <label htmlFor="company" className="font-paragraph text-sm text-foreground/80 uppercase tracking-wider mb-3 block">
-                      {t('contact', 'company')} *
+                      {t('contact', 'company')}
                     </label>
                     <input
                       type="text"
@@ -387,7 +387,6 @@ export default function ContactPage() {
                       autoComplete="organization"
                       value={formData.company}
                       onChange={handleChange}
-                      required
                       className="w-full bg-dark-grey/5 border-2 border-dark-grey/20 px-6 py-4 font-paragraph text-base text-foreground focus:border-primary focus:outline-none transition-colors"
                     />
                   </div>
