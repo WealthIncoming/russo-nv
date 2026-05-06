@@ -109,19 +109,32 @@ export default function ProjectsPage() {
   };
 
   // =============================================================================
-  // HELPER — Get translated text for a project field.
+  // HELPER — Get translated text for a project field. translations.ts is the
+  // source of truth for both EN and NL when a prefix mapping exists; the CMS
+  // fallback is only used for unmapped projects.
   // =============================================================================
   const getProjectText = (
     project: ProjectPortfolio,
     field: string,
     fallback: string | undefined
   ): string => {
-    if (language === 'EN') return fallback || '';
     const prefix = getTranslationPrefix(project.projectTitle);
     if (!prefix) return fallback || '';
     const translationKey = `${prefix}${field}`;
     const translated = t('projectsCms', translationKey);
     return translated !== translationKey ? translated : (fallback || '');
+  };
+
+  // Completion uses the translated date string if present, else falls back to
+  // formatting the CMS date with the active locale.
+  const getProjectCompletion = (project: ProjectPortfolio): string => {
+    const prefix = getTranslationPrefix(project.projectTitle);
+    if (prefix) {
+      const key = `${prefix}Completed`;
+      const translated = t('projectsCms', key);
+      if (translated !== key) return translated;
+    }
+    return formatDate(project.completionDate);
   };
 
   // =============================================================================
@@ -294,44 +307,53 @@ export default function ProjectsPage() {
                           </h3>
                         </div>
 
-                        {project.clientName && (
-                          <div>
-                            <div className="font-paragraph text-sm text-foreground/60 uppercase tracking-wider mb-2">
-                              {t('projects', 'clientName')}
-                            </div>
-                            <div className="font-paragraph text-base text-foreground font-bold">
-                              {project.clientName}
-                            </div>
-                          </div>
-                        )}
-
-                        {project.projectLocation && (
-                          <div className="flex items-start gap-3">
-                            <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                        {(() => {
+                          const clientText = getProjectText(project, 'Client', project.clientName);
+                          return clientText ? (
                             <div>
                               <div className="font-paragraph text-sm text-foreground/60 uppercase tracking-wider mb-2">
-                                {t('projects', 'location')}
+                                {t('projects', 'clientName')}
                               </div>
-                              <div className="font-paragraph text-base text-foreground">
-                                {project.projectLocation}
+                              <div className="font-paragraph text-base text-foreground font-bold">
+                                {clientText}
                               </div>
                             </div>
-                          </div>
-                        )}
+                          ) : null;
+                        })()}
 
-                        {project.completionDate && (
-                          <div className="flex items-start gap-3">
-                            <Calendar className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                            <div>
-                              <div className="font-paragraph text-sm text-foreground/60 uppercase tracking-wider mb-2">
-                                {t('projects', 'completionDate')}
-                              </div>
-                              <div className="font-paragraph text-base text-foreground">
-                                {formatDate(project.completionDate)}
+                        {(() => {
+                          const locationText = getProjectText(project, 'Location', project.projectLocation);
+                          return locationText ? (
+                            <div className="flex items-start gap-3">
+                              <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                              <div>
+                                <div className="font-paragraph text-sm text-foreground/60 uppercase tracking-wider mb-2">
+                                  {t('projects', 'location')}
+                                </div>
+                                <div className="font-paragraph text-base text-foreground">
+                                  {locationText}
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        )}
+                          ) : null;
+                        })()}
+
+                        {(() => {
+                          const completionText = getProjectCompletion(project);
+                          return completionText && completionText !== 'N/A' ? (
+                            <div className="flex items-start gap-3">
+                              <Calendar className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                              <div>
+                                <div className="font-paragraph text-sm text-foreground/60 uppercase tracking-wider mb-2">
+                                  {t('projects', 'completionDate')}
+                                </div>
+                                <div className="font-paragraph text-base text-foreground">
+                                  {completionText}
+                                </div>
+                              </div>
+                            </div>
+                          ) : null;
+                        })()}
                       </div>
                     </div>
                   </div>
