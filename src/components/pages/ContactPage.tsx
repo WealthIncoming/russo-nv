@@ -26,7 +26,7 @@ const BUSINESS_JSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Russo NV',
-  url: 'https://www.russonv.be',
+  url: 'https://www.russonv.com',
   telephone: '+32475434819',
   email: 'info@russonv.be',
   image: 'https://static.wixstatic.com/media/3232e5_48e2024c6d3f441e817637ccdd99f28f~mv2.png',

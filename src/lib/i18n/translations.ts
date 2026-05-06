@@ -810,10 +810,10 @@ export const translations: Record<Language, Translations> = {
 
       termsTitle: 'Terms of',
       termsTitleHighlight: 'Service',
-      termsIntro: 'These Terms of Service govern your use of the website russonv.be. By accessing or using the site, you agree to these Terms. If you do not agree, please do not use the site.',
+      termsIntro: 'These Terms of Service govern your use of the website russonv.com. By accessing or using the site, you agree to these Terms. If you do not agree, please do not use the site.',
 
       terms1Title: 'About these terms',
-      terms1Body: 'These Terms of Service ("Terms") govern your use of the website russonv.be (the "Site"). By accessing or using the Site, you agree to be bound by these Terms. If you do not agree, please do not use the Site. Russo NV ("we", "us", "our") is a Belgian company with its registered office at Taxandriastraat 35, 2170 Antwerp, Belgium.',
+      terms1Body: 'These Terms of Service ("Terms") govern your use of the website russonv.com (the "Site"). By accessing or using the Site, you agree to be bound by these Terms. If you do not agree, please do not use the Site. Russo NV ("we", "us", "our") is a Belgian company with its registered office at Taxandriastraat 35, 2170 Antwerp, Belgium.',
 
       terms2Title: 'Our services',
       terms2Body: 'The Site provides information about our industrial coating, surface preparation, and related services. The content is for general information only. Any specific commercial relationship — including the scope, pricing, timeline, and terms of work — is governed by a separate written agreement signed between us and our client. Nothing on the Site constitutes a binding offer.',
@@ -837,7 +837,7 @@ export const translations: Record<Language, Translations> = {
       terms8Body: 'To the fullest extent permitted by Belgian law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of the Site, including loss of profits, business, or data. Nothing in these Terms excludes or limits liability that cannot be excluded or limited under Belgian law.',
 
       terms9Title: 'Privacy',
-      terms9Body: 'Our handling of personal data is described in our Privacy Policy, available at russonv.be/privacy. By using the Site, you acknowledge that we will process your personal data as described there.',
+      terms9Body: 'Our handling of personal data is described in our Privacy Policy, available at russonv.com/privacy. By using the Site, you acknowledge that we will process your personal data as described there.',
 
       terms10Title: 'Governing law',
       terms10Body: 'These Terms and your use of the Site are governed by Belgian law. The courts of Antwerp, Belgium have exclusive jurisdiction over any dispute, except where applicable consumer law gives you the right to bring proceedings in your home jurisdiction.',
@@ -1657,10 +1657,10 @@ export const translations: Record<Language, Translations> = {
 
       termsTitle: 'Service',
       termsTitleHighlight: 'Voorwaarden',
-      termsIntro: 'Deze Servicevoorwaarden regelen uw gebruik van de website russonv.be. Door de site te bezoeken of te gebruiken, gaat u akkoord met deze Voorwaarden. Indien u niet akkoord gaat, gelieve de site niet te gebruiken.',
+      termsIntro: 'Deze Servicevoorwaarden regelen uw gebruik van de website russonv.com. Door de site te bezoeken of te gebruiken, gaat u akkoord met deze Voorwaarden. Indien u niet akkoord gaat, gelieve de site niet te gebruiken.',
 
       terms1Title: 'Over deze voorwaarden',
-      terms1Body: 'Deze Servicevoorwaarden ("Voorwaarden") regelen uw gebruik van de website russonv.be (de "Site"). Door de Site te bezoeken of te gebruiken, gaat u ermee akkoord gebonden te zijn aan deze Voorwaarden. Indien u niet akkoord gaat, gelieve de Site niet te gebruiken. Russo NV ("wij", "ons", "onze") is een Belgisch bedrijf met maatschappelijke zetel op Taxandriastraat 35, 2170 Antwerpen, België.',
+      terms1Body: 'Deze Servicevoorwaarden ("Voorwaarden") regelen uw gebruik van de website russonv.com (de "Site"). Door de Site te bezoeken of te gebruiken, gaat u ermee akkoord gebonden te zijn aan deze Voorwaarden. Indien u niet akkoord gaat, gelieve de Site niet te gebruiken. Russo NV ("wij", "ons", "onze") is een Belgisch bedrijf met maatschappelijke zetel op Taxandriastraat 35, 2170 Antwerpen, België.',
 
       terms2Title: 'Onze diensten',
       terms2Body: 'De Site biedt informatie over onze industriële coating-, oppervlaktevoorbereidings- en aanverwante diensten. De inhoud is uitsluitend bedoeld voor algemene informatie. Elke specifieke commerciële relatie — inclusief de scope, prijs, planning en voorwaarden van het werk — wordt geregeld door een afzonderlijke schriftelijke overeenkomst die tussen ons en onze klant wordt ondertekend. Niets op de Site vormt een bindend aanbod.',
@@ -1684,7 +1684,7 @@ export const translations: Record<Language, Translations> = {
       terms8Body: 'Voor zover wettelijk toegestaan onder Belgisch recht, zijn wij niet aansprakelijk voor enige indirecte, incidentele, bijzondere, gevolg- of strafschade die voortvloeit uit of verband houdt met uw gebruik van de Site, inclusief verlies van winst, omzet of gegevens. Niets in deze Voorwaarden sluit aansprakelijkheid uit of beperkt deze waar dit niet kan worden uitgesloten of beperkt onder Belgisch recht.',
 
       terms9Title: 'Privacy',
-      terms9Body: 'Onze omgang met persoonsgegevens wordt beschreven in ons Privacybeleid, beschikbaar op russonv.be/privacy. Door de Site te gebruiken erkent u dat wij uw persoonsgegevens zullen verwerken zoals daarin beschreven.',
+      terms9Body: 'Onze omgang met persoonsgegevens wordt beschreven in ons Privacybeleid, beschikbaar op russonv.com/privacy. Door de Site te gebruiken erkent u dat wij uw persoonsgegevens zullen verwerken zoals daarin beschreven.',
 
       terms10Title: 'Toepasselijk recht',
       terms10Body: 'Deze Voorwaarden en uw gebruik van de Site worden beheerst door Belgisch recht. De rechtbanken van Antwerpen, België, hebben exclusieve bevoegdheid voor elk geschil, behalve waar toepasselijk consumentenrecht u het recht geeft om procedures aanhangig te maken in uw eigen rechtsgebied.',

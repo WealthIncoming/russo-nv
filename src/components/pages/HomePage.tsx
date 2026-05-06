@@ -106,7 +106,7 @@ const ORGANIZATION_JSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Russo NV',
-  url: 'https://www.russonv.be',
+  url: 'https://www.russonv.com',
   logo: 'https://static.wixstatic.com/media/3232e5_48e2024c6d3f441e817637ccdd99f28f~mv2.png',
   contactPoint: {
     '@type': 'ContactPoint',
