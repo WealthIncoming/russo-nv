@@ -285,73 +285,73 @@ export const translations: Record<Language, Translations> = {
     servicesCms: {
       hpwjTitle: 'High-Pressure Water Jetting',
       hpwjDescription:
-        'Utilizing state-of-the-art high-pressure water jetting technology, we offer efficient and environmentally friendly solutions for industrial cleaning, surface preparation, and material removal. This method is ideal for descaling, paint stripping, concrete hydro-demolition, and cleaning heat exchangers, tanks, and pipelines, providing a powerful yet non-abrasive alternative to traditional methods.',
+        'High-pressure water jetting is used for industrial cleaning, surface preparation, and removal of deposits, coatings, or contamination. It is a controlled method suitable for tanks, pipes, concrete surfaces, floors, and production areas where water-based cleaning is preferred over abrasive methods.',
       hpwjKeyBenefits:
-        'Environmentally friendly (no chemicals), non-damaging to substrates, highly effective for stubborn deposits, precise cleaning, reduces dust and debris, safe for hazardous environments.',
+        'Effective removal of dirt, deposits, and loose material; reduced dust compared with abrasive blasting; suitable for sensitive areas when properly controlled; and useful for cleaning, preparation, and maintenance work.',
       hpwjProcessOverview:
-        'Safety setup and containment, selection of appropriate pressure and nozzle type, controlled water jetting application, debris collection and disposal, post-cleaning inspection.',
+        'Site preparation and safety setup, selection of the correct pressure and nozzle, controlled water jetting, collection or management of debris and wastewater where required, and post-cleaning inspection.',
       hpwjTargetIndustries:
-        'Refineries, Petrochemical, Marine, Pulp & Paper, Utilities, Food Processing, Construction',
+        'Refineries, petrochemical, marine, pulp & paper, utilities, food processing, construction, industrial facilities.',
 
-      waterproofingTitle: 'Waterproofing (Kemperol System)',
+      waterproofingTitle: 'Industrial Waterproofing (Kemperol System)',
       waterproofingDescription:
-        'Our industrial waterproofing services using the Kemperol 2K-PUR system provide seamless protection for containment areas, tank foundations, bund walls, sumps, and critical infrastructure exposed to water and chemical infiltration. The reinforced liquid membrane forms a fully bonded waterproof barrier that conforms to complex geometries, joints, penetrations, and structural details without seams.\n\nThis cold-applied system offers excellent resistance to standing water, weather exposure, and aggressive industrial environments. By creating a flexible and durable membrane, Kemperol 2K-PUR protects structural substrates from moisture ingress, deterioration, and long-term damage in demanding industrial facilities.',
+        'Industrial waterproofing systems are used to protect concrete, steel, containment areas, bund walls, tank foundations, sumps, roofs, and other surfaces exposed to water or chemical infiltration. Kemperol liquid-applied membranes create a seamless, reinforced waterproofing layer that can adapt to complex details, joints, penetrations, and irregular surfaces.',
       waterproofingKeyBenefits:
-        'Seamless waterproof protection for containment areas and bunds, excellent adhesion to concrete and steel substrates, highly flexible crack-bridging membrane, resistant to standing water and harsh environmental conditions, long-term protection for industrial infrastructure.',
+        'Seamless waterproof protection, strong adhesion to suitable substrates, flexible coverage around details and penetrations, resistance to standing water and weather exposure, and reliable protection for industrial environments.',
       waterproofingProcessOverview:
-        'Inspection and preparation of concrete or steel substrates, cleaning and repair of damaged areas where necessary, application of primer and reinforcement fleece, installation of Kemperol 2K-PUR liquid membrane to create a seamless bonded system, curing and final inspection for quality assurance.',
+        'Inspection of the substrate, cleaning and preparation of the surface, repair of damaged areas where needed, primer application, installation of the reinforced Kemperol membrane system, curing, and final inspection.',
       waterproofingTargetIndustries:
-        'Oil & Gas, Petrochemical, Tank Storage Terminals, Chemical Processing, Industrial Facilities, Infrastructure, Energy & Utilities',
+        'Oil & gas, petrochemical, tank storage terminals, chemical processing, industrial facilities, infrastructure, energy & utilities.',
 
       industrialCoatingApplicationTitle: 'Industrial Coating Application',
       industrialCoatingApplicationDescription:
-        'We specialize in the professional application of high-performance industrial coatings designed to protect assets from corrosion, abrasion, chemical attack, and extreme temperatures. Our expertise covers a broad spectrum of coatings, including epoxies, polyurethanes, zinc-rich primers, and specialized linings, ensuring long-term durability and reduced maintenance costs for critical infrastructure and equipment.',
+        'Industrial coating systems for steel structures, tanks, piping, machinery, and production environments. Each project starts with the right surface preparation, followed by primer and coating application according to the required specification. The goal is durable protection against corrosion, wear, chemicals, and demanding site conditions.',
       industrialCoatingApplicationKeyBenefits:
-        'Enhanced asset protection, extended equipment lifespan, reduced maintenance costs, improved operational safety, compliance with industry standards, aesthetic improvement.',
+        'Durable asset protection, improved resistance to corrosion and wear, cleaner and more consistent finish, support for long-term maintenance planning, and coating systems applied in line with project requirements.',
       industrialCoatingApplicationProcessOverview:
-        'Comprehensive surface preparation (often via blasting), primer application, intermediate coat application (if required), final topcoat application, quality control checks including film thickness and adhesion testing, curing and final inspection.',
+        'Surface assessment, preparation by blasting or cleaning, primer application, intermediate coats where required, final coating application, and quality checks such as film thickness, adhesion, curing, and visual inspection.',
       industrialCoatingApplicationTargetIndustries:
-        'Petrochemical, Marine, Food & Beverage, Pharmaceutical, Automotive, Mining, Water Treatment',
+        'Petrochemical, marine, food & beverage, pharmaceutical, automotive, manufacturing, mining, water treatment.',
 
-      corrosionProtectionTitle: 'Corrosion Protection Services',
+      corrosionProtectionTitle: 'Corrosion Protection',
       corrosionProtectionDescription:
-        'Beyond standard coatings, our specialized corrosion protection services address complex challenges in highly corrosive environments. This includes cathodic protection system installation and maintenance, specialized lining applications for tanks and pipes, and comprehensive corrosion surveys and mitigation strategies. We provide tailored solutions to combat various forms of corrosion, ensuring the long-term integrity of critical assets.',
+        'Corrosion protection focuses on preventing deterioration of steel, tanks, piping, and industrial structures exposed to moisture, chemicals, weather, or aggressive operating conditions. Depending on the environment, the work may include surface preparation, protective coating systems, linings, wraps, or targeted repair solutions.',
       corrosionProtectionKeyBenefits:
-        'Prevents premature asset failure, extends operational life, reduces costly repairs, ensures regulatory compliance, enhances safety, optimizes asset performance.',
+        'Helps reduce corrosion damage, supports asset reliability, extends the service life of steel surfaces, limits the need for premature repairs, and improves protection in demanding industrial environments.',
       corrosionProtectionProcessOverview:
-        'Detailed corrosion assessment and analysis, development of a customized protection plan, surface preparation, application of specialized protective systems (e.g., linings, wraps, CP components), ongoing monitoring and maintenance.',
+        'Inspection of the affected surface, assessment of corrosion type and severity, preparation of the substrate, application of the selected protection system, and final checks to confirm coverage, adhesion, and finish quality.',
       corrosionProtectionTargetIndustries:
-        'Oil & Gas Pipelines, Marine Vessels, Chemical Storage, Wastewater Treatment, Infrastructure (bridges, jetties), Mining',
+        'Oil & gas pipelines, marine vessels, chemical storage, wastewater treatment, infrastructure, mining.',
 
       fireproofingThermalTitle: 'Fireproofing & Thermal Insulation',
       fireproofingThermalDescription:
-        'Our fireproofing and thermal insulation services are crucial for protecting structural steel, vessels, and critical equipment from the devastating effects of fire and extreme temperatures. We apply passive fire protection (PFP) materials, such as intumescent coatings and cementitious sprays, to meet stringent fire resistance ratings, and provide thermal insulation solutions to optimize energy efficiency and process control.',
+        'Fireproofing and thermal insulation systems help protect steel structures, vessels, equipment, and process areas from heat exposure and fire-related damage. Depending on the project requirements, this may include passive fire protection materials, intumescent coatings, cementitious sprays, or insulation systems for temperature control.',
       fireproofingThermalKeyBenefits:
-        'Increased structural integrity during fire, enhanced personnel safety, compliance with fire safety regulations, reduced energy consumption, process temperature stability, asset protection from heat.',
+        'Improved fire protection for structural and process assets, support for safety and compliance requirements, better temperature control, reduced heat loss where insulation is required, and added protection in high-risk industrial environments.',
       fireproofingThermalProcessOverview:
-        'Site assessment and material selection based on fire rating requirements, surface preparation, application of fireproofing or insulation material (spray, trowel, or wrap), curing, thickness verification, and final inspection.',
+        'Review of project and fire-rating requirements, surface preparation, material selection, application by spray, trowel, wrap, or coating system, curing, thickness checks, and final inspection.',
       fireproofingThermalTargetIndustries:
-        'Oil & Gas, Chemical Plants, Commercial Buildings, Power Generation, Manufacturing, Data Centers',
+        'Oil & gas, chemical plants, commercial buildings, power generation, manufacturing, data centers.',
 
-      sandblastingAbrasiveTitle: 'Sandblasting & Abrasive Blasting',
+      sandblastingAbrasiveTitle: 'Abrasive Blasting & Surface Preparation',
       sandblastingAbrasiveDescription:
-        'Our sandblasting and abrasive blasting services provide superior surface preparation for a wide range of industrial applications. We utilize various abrasive media, including sand, grit, and specialized beads, to effectively remove rust, old coatings, scale, and contaminants, creating an optimal profile for subsequent coatings or treatments. This ensures maximum adhesion and longevity of new protective layers.',
+        'Abrasive blasting is used to prepare steel and other industrial surfaces before coating, repair, or inspection. By removing rust, old coatings, scale, and surface contamination, the process creates the correct surface profile for strong coating adhesion and a longer-lasting finish.',
       sandblastingAbrasiveKeyBenefits:
-        'Achieves optimal surface profile for coating adhesion, removes stubborn contaminants, extends coating lifespan, prepares surfaces for inspection and repair, versatile for various materials.',
+        'Removes rust, scale, and old coating layers; improves coating adhesion; prepares surfaces for inspection or repair; and creates a clean, consistent profile before protective systems are applied.',
       sandblastingAbrasiveProcessOverview:
-        'Initial surface assessment and masking of sensitive areas, selection of appropriate abrasive media and pressure, controlled blasting to achieve desired surface profile (e.g., SSPC-SP standards), thorough cleaning and dust removal, final inspection.',
+        'Initial surface assessment, masking of sensitive areas, selection of the appropriate abrasive and pressure, controlled blasting to the required profile, dust and residue removal, and final surface inspection before coating.',
       sandblastingAbrasiveTargetIndustries:
-        'Oil & Gas, Marine, Manufacturing, Construction, Infrastructure, Chemical Processing, Power Generation',
+        'Oil & gas, marine, manufacturing, construction, infrastructure, chemical processing, power generation.',
 
-      coatingInspectionTitle: 'Coating Inspection',
+      coatingInspectionTitle: 'Coating Inspection & Quality Control',
       coatingInspectionDescription:
-        'Our coating inspection services ensure that all applied protective coatings meet the highest industry standards for quality, performance, and durability. We conduct thorough inspections at every stage of the coating process, from surface preparation to final curing, using certified inspectors and advanced testing equipment. Our services include dry film thickness (DFT) measurement, adhesion testing, holiday detection, and visual inspections to verify compliance with project specifications and international standards such as ISO and NACE.',
+        'Coating inspection helps confirm that surface preparation and coating application meet the required project specification. Checks can be carried out before, during, and after application to verify surface condition, coating thickness, adhesion, curing, and overall finish quality.',
       coatingInspectionKeyBenefits:
-        'Ensures coating quality and compliance with specifications, prevents premature coating failure, improves asset longevity, supports regulatory and client requirements, reduces costly rework, provides documented quality assurance.',
+        'Supports consistent coating quality, helps identify issues before handover, reduces the risk of premature coating failure, provides clear project documentation, and gives clients better control over the finished result.',
       coatingInspectionProcessOverview:
-        'Pre-inspection planning and review of specifications, verification of surface preparation standards, in-process inspection during coating application, testing (DFT, adhesion, holiday detection), documentation and reporting, final inspection and handover.',
+        'Review of coating specifications, inspection of surface preparation, in-process checks during application, dry film thickness measurement, adhesion or holiday testing where required, documentation, final inspection, and handover.',
       coatingInspectionTargetIndustries:
-        'Oil & Gas, Petrochemical, Marine, Infrastructure, Power Generation, Manufacturing, Water Treatment',
+        'Oil & gas, petrochemical, marine, infrastructure, power generation, manufacturing, water treatment.',
     },
 
     // Industries Page
@@ -1117,73 +1117,73 @@ export const translations: Record<Language, Translations> = {
     servicesCms: {
       hpwjTitle: 'Hogedruk Waterjetting',
       hpwjDescription:
-        'Met behulp van geavanceerde hogedruk-waterjettingtechnologie bieden wij efficiënte en milieuvriendelijke oplossingen voor industriële reiniging, oppervlaktevoorbereiding en materiaalverwijdering. Deze methode is ideaal voor het verwijderen van kalkaanslag, verf, betonhydrodemolitie en het reinigen van warmtewisselaars, tanks en leidingen, als krachtig maar niet-abrasief alternatief voor traditionele methoden.',
+        'Hogedruk waterjetting wordt gebruikt voor industriële reiniging, oppervlaktevoorbereiding en het verwijderen van afzettingen, coatings of verontreiniging. Het is een gecontroleerde methode die geschikt is voor tanks, leidingen, betonnen oppervlakken, vloeren en productiezones waar waterreiniging de voorkeur krijgt boven abrasieve methoden.',
       hpwjKeyBenefits:
-        'Milieuvriendelijk (zonder chemicaliën), beschadigt de ondergrond niet, zeer doeltreffend tegen hardnekkige afzettingen, nauwkeurige reiniging, minder stof en afval, veilig voor risicovolle omgevingen.',
+        'Doeltreffende verwijdering van vuil, afzettingen en losse materialen; minder stof in vergelijking met abrasief stralen; geschikt voor gevoelige zones bij correcte controle; en bruikbaar voor reiniging, voorbereiding en onderhoud.',
       hpwjProcessOverview:
-        'Veiligheidsmaatregelen en afscherming, keuze van de juiste druk en nozzle, gecontroleerde waterjettingtoepassing, opvang en afvoer van afval, inspectie na de reiniging.',
+        'Voorbereiding van de werkplek en veiligheidsopstelling, keuze van de juiste druk en nozzle, gecontroleerde waterjetting, opvang of beheer van afval en afvalwater waar nodig, en inspectie na de reiniging.',
       hpwjTargetIndustries:
-        'Raffinaderijen, petrochemie, maritieme sector, pulp en papier, nutsvoorzieningen, voedingsindustrie, bouw',
+        'Raffinaderijen, petrochemie, maritieme sector, pulp en papier, nutsvoorzieningen, voedingsindustrie, bouw, industriële installaties.',
 
-      waterproofingTitle: 'Waterdichting (Kemperol-systeem)',
+      waterproofingTitle: 'Industriële Waterdichting (Kemperol-systeem)',
       waterproofingDescription:
-        'Onze industriële waterdichtingsdiensten met het Kemperol 2K-PUR-systeem bieden naadloze bescherming voor opvangzones, tankfunderingen, bundwanden, putten en kritieke infrastructuur die blootgesteld wordt aan water- en chemische indringing. Het versterkte vloeibare membraan vormt een volledig gehechte waterdichte barrière die zich zonder naden aanpast aan complexe vormen, voegen, doorvoeren en constructiedetails.\n\nDit koud aangebrachte systeem biedt uitstekende weerstand tegen stilstaand water, weersinvloeden en agressieve industriële omgevingen. Door een flexibel en duurzaam membraan te creëren, beschermt Kemperol 2K-PUR constructieve ondergronden tegen vochtindringing, aantasting en langdurige schade in veeleisende industriële installaties.',
+        'Industriële waterdichtingssystemen worden gebruikt om beton, staal, opvangzones, bundwanden, tankfunderingen, putten, daken en andere oppervlakken te beschermen tegen water- of chemische indringing. Kemperol vloeibaar aangebrachte membranen vormen een naadloze, gewapende waterdichte laag die zich kan aanpassen aan complexe details, voegen, doorvoeren en onregelmatige oppervlakken.',
       waterproofingKeyBenefits:
-        'Naadloze waterdichte bescherming voor opvangzones en bunds, uitstekende hechting op beton en staal, zeer flexibel scheuroverbruggend membraan, bestand tegen stilstaand water en zware omgevingsomstandigheden, langdurige bescherming van industriële infrastructuur.',
+        'Naadloze waterdichte bescherming, sterke hechting op geschikte ondergronden, flexibele afwerking rond details en doorvoeren, weerstand tegen stilstaand water en weersinvloeden, en betrouwbare bescherming voor industriële omgevingen.',
       waterproofingProcessOverview:
-        'Inspectie en voorbereiding van betonnen of stalen ondergronden, reiniging en herstel van beschadigde zones waar nodig, aanbrengen van primer en wapeningsvlies, installatie van het Kemperol 2K-PUR-vloeibaar membraan als naadloos gehecht systeem, uitharding en eindinspectie voor kwaliteitsborging.',
+        'Inspectie van de ondergrond, reiniging en voorbereiding van het oppervlak, herstel van beschadigde zones waar nodig, aanbrengen van primer, installatie van het gewapende Kemperol-membraansysteem, uitharding en eindinspectie.',
       waterproofingTargetIndustries:
-        'Olie en gas, petrochemie, tankopslagterminals, chemische verwerking, industriële installaties, infrastructuur, energie en nutsvoorzieningen',
+        'Olie en gas, petrochemie, tankopslagterminals, chemische verwerking, industriële installaties, infrastructuur, energie en nutsvoorzieningen.',
 
       industrialCoatingApplicationTitle: 'Industriële Coatingtoepassing',
       industrialCoatingApplicationDescription:
-        'Wij zijn gespecialiseerd in de professionele applicatie van hoogwaardige industriële coatings die installaties beschermen tegen corrosie, slijtage, chemische aantasting en extreme temperaturen. Onze expertise omvat een breed gamma coatings, waaronder epoxy’s, polyurethanen, zinkrijke primers en gespecialiseerde linings, met langdurige duurzaamheid en lagere onderhoudskosten voor kritieke infrastructuur en uitrusting als resultaat.',
+        'Industriële coatingsystemen voor staalconstructies, tanks, leidingen, machines en productieomgevingen. Elk project begint met de juiste oppervlaktevoorbereiding, gevolgd door primer- en coatingapplicatie volgens de vereiste specificatie. Het doel is duurzame bescherming tegen corrosie, slijtage, chemicaliën en veeleisende omstandigheden op de werf.',
       industrialCoatingApplicationKeyBenefits:
-        'Betere bescherming van installaties, langere levensduur van apparatuur, lagere onderhoudskosten, hogere operationele veiligheid, conformiteit met industrienormen, esthetische verbetering.',
+        'Duurzame bescherming van installaties, verbeterde weerstand tegen corrosie en slijtage, een schonere en meer uniforme afwerking, ondersteuning bij langetermijnonderhoud en coatingsystemen aangebracht volgens de projectvereisten.',
       industrialCoatingApplicationProcessOverview:
-        'Volledige oppervlaktevoorbereiding (vaak via stralen), aanbrengen van primer, tussenlaag indien nodig, afwerkingslaag, kwaliteitscontroles zoals laagdiktemeting en hechtingstesten, uitharding en eindinspectie.',
+        'Beoordeling van het oppervlak, voorbereiding door stralen of reinigen, aanbrengen van primer, tussenlagen waar nodig, eindcoating en kwaliteitscontroles zoals laagdiktemeting, hechting, uitharding en visuele inspectie.',
       industrialCoatingApplicationTargetIndustries:
-        'Petrochemie, maritieme sector, voeding en dranken, farmaceutische industrie, automotive, mijnbouw, waterbehandeling',
+        'Petrochemie, maritieme sector, voeding en dranken, farmaceutische industrie, automotive, productie, mijnbouw, waterbehandeling.',
 
-      corrosionProtectionTitle: 'Corrosiebeschermingsdiensten',
+      corrosionProtectionTitle: 'Corrosiebescherming',
       corrosionProtectionDescription:
-        'Naast standaardcoatings pakken onze gespecialiseerde corrosiebeschermingsdiensten complexe uitdagingen aan in sterk corrosieve omgevingen. Dit omvat de installatie en het onderhoud van kathodische beschermingssystemen, gespecialiseerde liningtoepassingen voor tanks en leidingen, en uitgebreide corrosie-inspecties en mitigatiestrategieën. Wij bieden oplossingen op maat om verschillende vormen van corrosie te bestrijden en de integriteit van kritieke assets op lange termijn te waarborgen.',
+        'Corrosiebescherming richt zich op het voorkomen van aantasting van staal, tanks, leidingen en industriële constructies die zijn blootgesteld aan vocht, chemicaliën, weersinvloeden of agressieve werkingsomstandigheden. Afhankelijk van de omgeving kan het werk bestaan uit oppervlaktevoorbereiding, beschermende coatingsystemen, linings, wraps of gerichte herstelloplossingen.',
       corrosionProtectionKeyBenefits:
-        'Voorkomt vroegtijdig falen van assets, verlengt de operationele levensduur, verlaagt dure herstellingen, garandeert naleving van regelgeving, verhoogt de veiligheid, optimaliseert de prestaties van installaties.',
+        'Beperkt corrosieschade, ondersteunt de betrouwbaarheid van installaties, verlengt de levensduur van staal, beperkt vroegtijdige herstellingen en verbetert de bescherming in veeleisende industriële omgevingen.',
       corrosionProtectionProcessOverview:
-        'Gedetailleerde corrosiebeoordeling en analyse, ontwikkeling van een beschermingsplan op maat, oppervlaktevoorbereiding, applicatie van gespecialiseerde beschermingssystemen (zoals linings, wraps en CP-componenten), voortdurende monitoring en onderhoud.',
+        'Inspectie van het aangetaste oppervlak, beoordeling van het type en de ernst van de corrosie, voorbereiding van de ondergrond, aanbrengen van het gekozen beschermingssysteem en eindcontroles om dekking, hechting en afwerkingskwaliteit te bevestigen.',
       corrosionProtectionTargetIndustries:
-        'Olie- en gasleidingen, maritieme vaartuigen, chemische opslag, afvalwaterbehandeling, infrastructuur (bruggen, steigers), mijnbouw',
+        'Olie- en gasleidingen, maritieme vaartuigen, chemische opslag, afvalwaterbehandeling, infrastructuur, mijnbouw.',
 
       fireproofingThermalTitle: 'Brandwering en Thermische Isolatie',
       fireproofingThermalDescription:
-        'Onze diensten op het vlak van brandwering en thermische isolatie zijn cruciaal voor de bescherming van constructiestaal, vaten en kritieke apparatuur tegen de verwoestende effecten van brand en extreme temperaturen. Wij brengen passieve brandbeschermingsmaterialen (PFP) aan, zoals intumescente coatings en cementeuze sprays, om te voldoen aan strenge brandweerstandsvereisten, en leveren thermische isolatieoplossingen om energie-efficiëntie en procesbeheersing te optimaliseren.',
+        'Brandwering- en thermische isolatiesystemen helpen staalconstructies, vaten, apparatuur en proceszones te beschermen tegen hittebelasting en brandgerelateerde schade. Afhankelijk van de projectvereisten kunnen passieve brandbeschermingsmaterialen, intumescente coatings, cementeuze sprays of isolatiesystemen voor temperatuurbeheer worden toegepast.',
       fireproofingThermalKeyBenefits:
-        'Hogere structurele integriteit tijdens brand, verbeterde veiligheid van personeel, conformiteit met brandveiligheidsvoorschriften, lager energieverbruik, stabiele procestemperaturen, bescherming van installaties tegen hitte.',
+        'Verbeterde brandbescherming voor structurele en procesgerelateerde activa, ondersteuning voor veiligheids- en conformiteitsvereisten, betere temperatuurbeheersing, minder warmteverlies waar isolatie vereist is, en extra bescherming in risicovolle industriële omgevingen.',
       fireproofingThermalProcessOverview:
-        'Sitebeoordeling en materiaalkeuze op basis van de vereiste brandweerstand, oppervlaktevoorbereiding, aanbrengen van brandwerend of isolerend materiaal (spuiten, troffelen of wikkelen), uitharding, diktecontrole en eindinspectie.',
+        'Beoordeling van project- en brandweerstandsvereisten, oppervlaktevoorbereiding, materiaalkeuze, applicatie via spuiten, troffelen, wikkelen of coatingsysteem, uitharding, diktecontroles en eindinspectie.',
       fireproofingThermalTargetIndustries:
-        'Olie en gas, chemische installaties, commerciële gebouwen, energieopwekking, productie, datacenters',
+        'Olie en gas, chemische installaties, commerciële gebouwen, energieopwekking, productie, datacenters.',
 
-      sandblastingAbrasiveTitle: 'Zandstralen en Abrasief Stralen',
+      sandblastingAbrasiveTitle: 'Abrasief Stralen & Oppervlaktevoorbereiding',
       sandblastingAbrasiveDescription:
-        'Onze diensten voor zandstralen en abrasief stralen bieden een hoogwaardige oppervlaktevoorbereiding voor uiteenlopende industriële toepassingen. Wij gebruiken verschillende straalmiddelen, waaronder zand, grit en gespecialiseerde korrels, om roest, oude coatings, walshuid en verontreinigingen doeltreffend te verwijderen en een optimaal profiel te creëren voor daaropvolgende coatings of behandelingen. Dit garandeert maximale hechting en een langere levensduur van nieuwe beschermlagen.',
+        'Abrasief stralen wordt gebruikt om staal en andere industriële oppervlakken voor te bereiden vóór het coaten, herstellen of inspecteren. Door roest, oude coatings, walshuid en oppervlakteverontreiniging te verwijderen, ontstaat het juiste oppervlakteprofiel voor sterke coatinghechting en een langere levensduur van de afwerking.',
       sandblastingAbrasiveKeyBenefits:
-        'Creëert een optimaal oppervlakteprofiel voor coatinghechting, verwijdert hardnekkige verontreinigingen, verlengt de levensduur van coatings, bereidt oppervlakken voor op inspectie en herstel, veelzijdig inzetbaar voor diverse materialen.',
+        'Verwijdert roest, walshuid en oude coatinglagen; verbetert de coatinghechting; bereidt oppervlakken voor op inspectie of herstel; en creëert een schoon, consistent profiel voordat beschermende systemen worden aangebracht.',
       sandblastingAbrasiveProcessOverview:
-        'Initiële oppervlakbeoordeling en afscherming van gevoelige zones, keuze van het juiste straalmiddel en de juiste druk, gecontroleerd stralen om het gewenste oppervlakteprofiel te bereiken (bijv. volgens SSPC-SP-normen), grondige reiniging en stofverwijdering, eindinspectie.',
+        'Initiële oppervlakbeoordeling, afschermen van gevoelige zones, keuze van het juiste straalmiddel en de juiste druk, gecontroleerd stralen tot het vereiste profiel, verwijderen van stof en residu, en eindinspectie van het oppervlak vóór het coaten.',
       sandblastingAbrasiveTargetIndustries:
-        'Olie en gas, maritieme sector, productie, bouw, infrastructuur, chemische verwerking, energieopwekking',
+        'Olie en gas, maritieme sector, productie, bouw, infrastructuur, chemische verwerking, energieopwekking.',
 
-      coatingInspectionTitle: 'Coatinginspectie',
+      coatingInspectionTitle: 'Coatinginspectie & Kwaliteitscontrole',
       coatingInspectionDescription:
-        'Onze coatinginspectiediensten garanderen dat alle aangebrachte beschermende coatings voldoen aan de hoogste industrienormen op het vlak van kwaliteit, prestatie en duurzaamheid. Wij voeren grondige inspecties uit in elke fase van het coatingproces, van oppervlaktevoorbereiding tot uiteindelijke uitharding, met gecertificeerde inspecteurs en geavanceerde testapparatuur. Onze diensten omvatten droge laagdiktemeting (DFT), hechtingsproeven, holidaydetectie en visuele inspecties om de conformiteit met projectspecificaties en internationale normen zoals ISO en NACE te verifiëren.',
+        'Coatinginspectie helpt te bevestigen dat oppervlaktevoorbereiding en coatingapplicatie voldoen aan de vereiste projectspecificatie. Controles kunnen vóór, tijdens en na de applicatie worden uitgevoerd om de oppervlakteconditie, coatingdikte, hechting, uitharding en algehele afwerkingskwaliteit te verifiëren.',
       coatingInspectionKeyBenefits:
-        'Garandeert coatingkwaliteit en conformiteit met specificaties, voorkomt vroegtijdig coatingfalen, verbetert de levensduur van assets, ondersteunt regelgevende en klantvereisten, vermindert kostbaar herwerk, biedt gedocumenteerde kwaliteitsborging.',
+        'Ondersteunt een consistente coatingkwaliteit, helpt problemen te identificeren vóór oplevering, verlaagt het risico op vroegtijdig coatingfalen, levert duidelijke projectdocumentatie en geeft klanten meer controle over het eindresultaat.',
       coatingInspectionProcessOverview:
-        'Pre-inspectieplanning en beoordeling van specificaties, verificatie van oppervlaktevoorbereidingsnormen, tussentijdse inspectie tijdens coatingapplicatie, testen (DFT, hechting, holidaydetectie), documentatie en rapportage, eindinspectie en oplevering.',
+        'Beoordeling van coatingspecificaties, controle van de oppervlaktevoorbereiding, tussentijdse controles tijdens applicatie, droge laagdiktemeting, hechtings- of holidaytesten waar vereist, documentatie, eindinspectie en oplevering.',
       coatingInspectionTargetIndustries:
-        'Olie en gas, petrochemie, maritieme sector, infrastructuur, energieopwekking, productie, waterbehandeling',
+        'Olie en gas, petrochemie, maritieme sector, infrastructuur, energieopwekking, productie, waterbehandeling.',
     },
 
     // Industries Page

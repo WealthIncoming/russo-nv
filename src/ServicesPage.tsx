@@ -85,13 +85,7 @@ function getTranslationPrefix(serviceName: string | undefined): string | null {
 export default function ServicesPage() {
   const [services, setServices] = useState<IndustrialServices[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { t, language } = useLanguageStore();
-
-  // ===========================================================================
-  // NOTE: We now also grab `language` from the store (not just `t`).
-  // This lets us check if the user is viewing in Dutch so we know
-  // whether to use translations or just show the original CMS text.
-  // ===========================================================================
+  const { t } = useLanguageStore();
 
   useEffect(() => {
     loadServices();
@@ -132,18 +126,13 @@ export default function ServicesPage() {
     field: string,
     fallback: string | undefined
   ): string => {
-    // If we're in English mode, just show the original CMS content
-    if (language === 'EN') return fallback || '';
-
-    // Try to find a translation prefix for this service
+    // Try to find a translation prefix for this service. If we have one,
+    // translations.ts is the source of truth for both EN and NL — the CMS
+    // is only used as a fallback for unmapped services.
     const prefix = getTranslationPrefix(service.serviceName);
-    if (!prefix) return fallback || ''; // No mapping exists, use English
+    if (!prefix) return fallback || '';
 
-    // Build the translation key (e.g., "hpwj" + "Title" = "hpwjTitle")
     const translationKey = `${prefix}${field}`;
-
-    // Get the translation — if t() returns the key itself, it means
-    // no translation was found, so fall back to the English CMS text
     const translated = t('servicesCms', translationKey);
     return translated !== translationKey ? translated : (fallback || '');
   };
