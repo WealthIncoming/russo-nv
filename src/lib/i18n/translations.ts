@@ -264,7 +264,7 @@ export const translations: Record<Language, Translations> = {
     // Services Page UI
     services: {
       pageTitle: 'Industrial Coating Services',
-      pageSubtitle: 'Comprehensive solutions for surface preparation and protective coatings',
+      pageSubtitle: 'Comprehensive solutions for all kind of industries fullfiling all our clients needs',
       allServices: 'All Services',
       serviceDetails: 'Service Details',
       keyBenefits: 'Key Benefits',
@@ -1096,7 +1096,7 @@ export const translations: Record<Language, Translations> = {
     services: {
       pageTitle: 'Industriële Coatingdiensten',
       pageSubtitle:
-        'Uitgebreide oplossingen voor oppervlaktebehandeling en beschermende coatings',
+        'Uitgebreide oplossingen voor alle soorten industrieën, afgestemd op de behoeften van onze klanten',
       allServices: 'Alle Diensten',
       serviceDetails: 'Servicedetails',
       keyBenefits: 'Belangrijkste Voordelen',
