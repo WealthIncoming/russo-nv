@@ -1,5 +1,5 @@
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
-import { ArrowUp, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowUp, Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Image } from '@/components/ui/image';
 
@@ -75,6 +75,15 @@ export default function Footer() {
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.facebook.com/share/16myRf73Ju/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
               </a>
             </nav>
           </div>
