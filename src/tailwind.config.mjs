@@ -20,7 +20,7 @@ export default {
             },
             fontFamily: {
                 heading: "syne",
-                paragraph: "azeret-mono"
+                paragraph: "Inter"
             },
             colors: {
                 'dark-grey': '#333333',
