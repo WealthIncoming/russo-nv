@@ -1,6 +1,7 @@
 import { MemberProvider } from '@/integrations';
 import { createBrowserRouter, RouterProvider, Navigate, Outlet } from 'react-router-dom';
 import { ScrollToTop } from '@/lib/scroll-to-top';
+import { ScrollUpButton } from '@/components/ui/scroll-up-button';
 import { MAINTENANCE_MODE } from '@/config';
 import ErrorPage from '@/integrations/errorHandlers/ErrorPage';
 import HomePage from '@/components/pages/HomePage';
@@ -18,6 +19,7 @@ function Layout() {
     <>
       <ScrollToTop />
       <Outlet />
+      <ScrollUpButton />
     </>
   );
 }

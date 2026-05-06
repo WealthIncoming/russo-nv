@@ -2,7 +2,6 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
-import { ScrollUpButton } from '@/components/ui/scroll-up-button';
 import { ProjectPortfolio } from '@/entities';
 import { BaseCrudService } from '@/integrations';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
@@ -397,7 +396,6 @@ export default function ProjectsPage() {
       </section>
 
       <Footer />
-      <ScrollUpButton />
     </div>
   );
 }
