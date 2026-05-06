@@ -514,17 +514,17 @@ export default function HomePage() {
               <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-primary z-10" />
 
               {/* Glass overlay card */}
-              <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 z-20 bg-black/80 backdrop-blur-md p-4 md:p-6 border-l-2 border-primary max-w-[85%] sm:max-w-sm">
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-primary shrink-0" />
-                  <span className="font-heading text-white text-lg md:text-xl">
+              <div className="absolute bottom-3 left-3 md:bottom-8 md:left-8 z-20 bg-black/80 backdrop-blur-md p-3 md:p-6 border-l-2 border-primary max-w-[70%] sm:max-w-sm">
+                <div className="flex items-center gap-2 md:gap-3">
+                  <MapPin className="w-4 h-4 md:w-5 md:h-5 text-primary shrink-0" />
+                  <span className="font-heading text-white text-sm md:text-xl">
                     {t('home', 'antwerpPort')}
                   </span>
                 </div>
-                <div className="h-px w-full bg-white/10 my-3" />
-                <div className="flex items-center gap-3">
-                  <Clock className="w-4 h-4 text-primary/80 shrink-0" />
-                  <span className="font-paragraph text-white/60 text-xs uppercase tracking-[0.18em]">
+                <div className="h-px w-full bg-white/10 my-2 md:my-3" />
+                <div className="flex items-center gap-2 md:gap-3">
+                  <Clock className="w-3 h-3 md:w-4 md:h-4 text-primary/80 shrink-0" />
+                  <span className="font-paragraph text-white/60 text-[10px] md:text-xs uppercase tracking-[0.18em]">
                     {t('home', 'duration18Months')}
                   </span>
                 </div>
