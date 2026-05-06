@@ -235,7 +235,7 @@ export const translations: Record<Language, Translations> = {
       duration18Months: 'Duration: 18 Months',
 
       projectDescription:
-        'Large-scale refurbishment project involving abrasive blasting, primer application, and a multi-coat epoxy protection system for critical tank farm infrastructure in the Port of Antwerp.',
+        'Large-scale refurbishment of 12 storage tanks at an industrial storage facility in the Port of Antwerp. The work included abrasive blasting, primer application, and a multi-coat epoxy protection system designed for durable corrosion protection.',
 
       scope: 'Scope',
       scopeDesc:
@@ -1066,7 +1066,7 @@ export const translations: Record<Language, Translations> = {
       duration18Months: 'Duur: 18 maanden',
 
       projectDescription:
-        'Grootschalig renovatieproject met abrasief stralen, primertoepassing en een meerlaags epoxybeschermingssysteem voor kritieke tankparkinfrastructuur in de haven van Antwerpen.',
+        'Grootschalige renovatie van 12 opslagtanks in een industriële opslagfaciliteit in de Haven van Antwerpen. De werkzaamheden omvatten abrasief stralen, primertoepassing en een meerlaags epoxybeschermingssysteem ontworpen voor duurzame corrosiebescherming.',
 
       scope: 'Omvang',
       scopeDesc:
