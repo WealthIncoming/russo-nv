@@ -254,7 +254,7 @@ export const translations: Record<Language, Translations> = {
 
       readyToMobilize: 'READY TO MOBILIZE',
       ctaDescription:
-        'Contact our engineering team for a detailed consultation and quote. We respond to all industrial inquiries within 24 hours.',
+        'Contact our team for a detailed consultation and quote. We respond to all inquiries within 24 hours.',
 
       requestQuote: 'Request Quote',
       callUsNow: 'Call Us Now',
@@ -1085,7 +1085,7 @@ export const translations: Record<Language, Translations> = {
 
       readyToMobilize: 'KLAAR OM TE STARTEN',
       ctaDescription:
-        'Neem contact op met ons engineeringteam voor een gedetailleerd advies en offerte. Wij reageren op alle industriële aanvragen binnen 24 uur.',
+        'Neem contact op met ons team voor een gedetailleerd advies en offerte. Wij reageren op alle aanvragen binnen 24 uur.',
 
       requestQuote: 'Offerte Aanvragen',
       callUsNow: 'Bel Ons Nu',
