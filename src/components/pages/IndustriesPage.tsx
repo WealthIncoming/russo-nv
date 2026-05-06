@@ -157,7 +157,7 @@ export default function IndustriesPage() {
           className="text-center max-w-3xl mx-auto mb-16 sm:mb-20"
         >
           <SectionLabel text={t('industries', 'gridSectionLabel')} />
-          <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-foreground leading-tight uppercase">
+          <h2 className="font-heading text-xl sm:text-3xl md:text-5xl lg:text-6xl text-foreground leading-tight uppercase">
             {t('industries', 'gridTitleLine1')}{' '}
             <span className="text-primary">{t('industries', 'gridTitleHighlight')}</span>
           </h2>
