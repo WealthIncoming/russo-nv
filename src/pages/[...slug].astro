@@ -1,36 +1,100 @@
 ---
-import { SEO } from '@wix/seo/components';
-import { loadSEOTagsServiceConfig } from '@wix/seo/services';
 import { Head } from "@/components/Head";
 import AppRouter from "@/components/Router";
 import "@wix/wix-vibe-plugins/plugins-vars.css";
 import "@wix/wix-vibe-plugins/plugins-theme.css";
 import "@/styles/global.css";
 
-let seoTagsServiceConfig;
-try {
-  const seoTimeout = new Promise((_, reject) =>
-    setTimeout(() => reject(new Error('SEO config timed out')), 3000)
-  );
-  seoTagsServiceConfig = await Promise.race([
-    loadSEOTagsServiceConfig({
-      pageUrl: Astro.url.href,
-      itemData: {
-        pageName: 'Home',
-      },
-    }),
-    seoTimeout,
-  ]);
-} catch (e) {
-  console.error('SEO tags config failed or timed out:', e);
-  seoTagsServiceConfig = null;
-}
+const SITE_URL = 'https://www.russonv.be';
+const DEFAULT_OG_IMAGE = '/images/home-hero.jpg';
+
+type PageMeta = {
+  title: string;
+  description: string;
+  image?: string;
+  noindex?: boolean;
+};
+
+const PAGE_META: Record<string, PageMeta> = {
+  '/': {
+    title: 'Russo NV — Industrial Coating, Sandblasting & Fireproofing | Antwerp, Belgium',
+    description: 'Specialist industrial coating, abrasive blasting, fireproofing and corrosion protection for tanks, pipelines and industrial assets across Europe. VCA & ISO certified, based in Antwerp, Belgium.',
+    image: '/images/home-hero.jpg',
+  },
+  '/services': {
+    title: 'Industrial Coating Services — Abrasive Blasting, Fireproofing, Waterproofing | Russo NV',
+    description: 'Surface preparation and protective coating services: industrial coating application, abrasive blasting, corrosion protection, fireproofing, waterproofing, high-pressure water jetting and coating inspection.',
+    image: '/images/services1.jpg',
+  },
+  '/industries': {
+    title: 'Industries Served — Petrochemical, Marine, Food & Manufacturing | Russo NV',
+    description: 'Russo NV delivers protective coating and surface preparation for petrochemical, marine, food production, manufacturing, oil & gas, chemical and water-treatment sectors across Europe.',
+    image: '/images/industries-hero.jpg',
+  },
+  '/projects': {
+    title: 'Project Portfolio — Tank Refurbishment, Crane Coating, Marine Coatings | Russo NV',
+    description: 'A selection of large-scale industrial coating, blasting and protection projects delivered in Antwerp, Ghent and Zeebrugge — including Sea Tank Terminal, GTS, CSP Zeebrugge, BNFW and ITC Rubis.',
+    image: '/images/projects-hero.jpg',
+  },
+  '/safety': {
+    title: 'Safety & Certifications — VCA, NACE, ISO Compliant | Russo NV',
+    description: 'Russo NV operates under strict safety standards including VCA petrochemical, NACE, SSPC, FROSIO and APAC certifications. Our commitment to compliance protects every project.',
+    image: '/images/safety-hero.jpg',
+  },
+  '/about': {
+    title: 'About Russo NV — Industrial Coating Specialists in Antwerp',
+    description: 'Russo NV is an industrial coating and surface preparation company based in Antwerp, Belgium, serving petrochemical, marine and manufacturing clients across Europe with certified expertise.',
+    image: '/images/about-hero.jpg',
+  },
+  '/contact': {
+    title: 'Contact Russo NV — Industrial Coating Quotes | Antwerp, Belgium',
+    description: 'Get in touch with Russo NV for industrial coating, sandblasting and fireproofing quotes. Taxandriastraat 35, 2170 Antwerp. Call +32 475 43 48 19 or request a quote online.',
+    image: '/images/contact-hero.jpg',
+  },
+  '/privacy': {
+    title: 'Privacy Policy | Russo NV',
+    description: 'How Russo NV collects, stores and processes personal data submitted through our website and contact forms.',
+    noindex: true,
+  },
+  '/terms': {
+    title: 'Terms of Service | Russo NV',
+    description: 'Terms of service governing the use of the Russo NV website and our industrial coating services.',
+    noindex: true,
+  },
+};
+
+// Normalize trailing slashes so /services/ and /services share metadata.
+const rawPath = Astro.url.pathname;
+const normalizedPath = rawPath.length > 1 ? rawPath.replace(/\/$/, '') : rawPath;
+const meta = PAGE_META[normalizedPath] ?? PAGE_META['/'];
+
+const canonical = `${SITE_URL}${normalizedPath === '/' ? '' : normalizedPath}`;
+const ogImage = `${SITE_URL}${meta.image ?? DEFAULT_OG_IMAGE}`;
 ---
 
 <html lang="en" class="w-full h-full">
   <head>
     <Head />
-    {seoTagsServiceConfig && <SEO.Tags seoTagsServiceConfig={seoTagsServiceConfig} slot="seo-tags" />}
+    <title>{meta.title}</title>
+    <meta name="description" content={meta.description} />
+    <link rel="canonical" href={canonical} />
+    {meta.noindex && <meta name="robots" content="noindex, follow" />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Russo NV" />
+    <meta property="og:locale" content="en_BE" />
+    <meta property="og:locale:alternate" content="nl_BE" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:image" content={ogImage} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={meta.title} />
+    <meta name="twitter:description" content={meta.description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" type="image/png" href="/images/logo.png" />
   </head>
   <body class="w-full h-full">
     <div id="root" class="w-full h-full">
