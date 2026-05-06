@@ -239,11 +239,11 @@ export const translations: Record<Language, Translations> = {
 
       scope: 'Scope',
       scopeDesc:
-        'Full abrasive blasting, primer application, and multi-coat epoxy system for 12 storage tanks.',
+        'Abrasive blasting, primer application, and protective epoxy coating of 12 storage tanks.',
 
       challenge: 'Challenge',
       challengeDesc:
-        'Strict environmental controls and continuous operation of adjacent facilities.',
+        'Working under strict environmental controls while adjacent facilities remained in operation.',
 
       specTanksLabel: 'Tanks',
       specTanksValue: '12 storage tanks',
@@ -1070,11 +1070,11 @@ export const translations: Record<Language, Translations> = {
 
       scope: 'Omvang',
       scopeDesc:
-        'Volledig abrasief straalwerk, primertoepassing en een meerlaags epoxysysteem voor 12 opslagtanks.',
+        'Abrasief stralen, primertoepassing en beschermende epoxycoating van 12 opslagtanks.',
 
       challenge: 'Uitdaging',
       challengeDesc:
-        'Strikte milieueisen en continue werking van aangrenzende installaties.',
+        'Werken onder strikte milieueisen terwijl aangrenzende installaties in bedrijf bleven.',
 
       specTanksLabel: 'Tanks',
       specTanksValue: '12 opslagtanks',
