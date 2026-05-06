@@ -292,10 +292,10 @@ export default function SafetyPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-4xl mx-auto mb-16"
           >
             <SectionLabel text={t('safety', 'certsSectionLabel')} />
-            <h2 className="font-heading text-xl sm:text-3xl md:text-5xl lg:text-6xl text-white mb-6 uppercase leading-tight">
+            <h2 className="font-heading text-xl sm:text-2xl md:text-4xl lg:text-5xl text-white mb-6 uppercase leading-tight">
               {t('safety', 'certsTitle')} <span className="text-primary">{t('safety', 'certsHighlight')}</span>
             </h2>
             <p className="font-paragraph text-base sm:text-lg text-white/80">
