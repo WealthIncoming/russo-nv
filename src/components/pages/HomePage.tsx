@@ -640,12 +640,12 @@ function StickyServiceCard({ service }: { service: typeof SERVICES_DATA[0] }) {
         aria-label={`${serviceTitle} — view on services page`}
         className="group relative block bg-dark-grey border border-white/10 p-8 md:p-12 hover:border-primary transition-colors duration-500"
       >
-        <div className="absolute top-0 right-0 p-4 opacity-20 font-heading text-6xl text-white group-hover:opacity-10 transition-opacity">
+        <div className="absolute top-0 right-0 p-4 opacity-20 font-heading text-5xl sm:text-6xl text-white group-hover:opacity-10 transition-opacity">
           {service.id}
         </div>
 
-        <div className="flex flex-col gap-4 items-start pr-12">
-          <h3 className="font-heading text-3xl md:text-4xl text-white mb-2 group-hover:text-primary transition-colors">
+        <div className="flex flex-col gap-4 items-start pr-16 sm:pr-12">
+          <h3 className="font-heading text-2xl sm:text-3xl md:text-4xl text-white mb-2 group-hover:text-primary transition-colors">
             {serviceTitle}
           </h3>
           <p className="font-paragraph text-white/60 text-sm md:text-base leading-relaxed mb-4 max-w-2xl">
