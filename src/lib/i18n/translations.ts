@@ -57,10 +57,10 @@ export const translations: Record<Language, Translations> = {
 
     // Home Page
     home: {
-      heroTitle: 'Industrial Coatings Antwerp',
+      heroTitle: 'Industrial Coating Specialists',
       heroTitleLine1: 'Industrial',
       heroTitleLine2: 'Coatings',
-      heroTitleLine3: 'Antwerp',
+      heroTitleLine3: 'Specialists',
       heroLocation: 'Antwerp, Belgium',
       heroSubtitle: 'Industrial coatings, abrasive blasting, fireproofing and corrosion protection for petrochemical, marine and manufacturing clients across Belgium and the Netherlands.',
       heroImageAlt: 'Russo NV industrial coating crew applying protective coatings on a tank in the Port of Antwerp',
@@ -909,10 +909,10 @@ export const translations: Record<Language, Translations> = {
 
     // Home Page
     home: {
-      heroTitle: 'Industriële Coatings Antwerpen',
+      heroTitle: 'Industriële Coating Specialisten',
       heroTitleLine1: 'Industriële',
       heroTitleLine2: 'Coatings',
-      heroTitleLine3: 'Antwerpen',
+      heroTitleLine3: 'Specialisten',
       heroLocation: 'Antwerpen, België',
       heroSubtitle:
         'Industriële coatings, stralen, brandwerende coatings en corrosiebescherming voor petrochemie, maritieme sector en industrie in heel België en Nederland.',
