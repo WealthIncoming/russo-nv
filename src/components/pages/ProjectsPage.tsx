@@ -162,7 +162,7 @@ export default function ProjectsPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/projects-hero.jpg"
-            alt="Industrial project portfolio"
+            alt={t('projects', 'heroImageAlt')}
             className="w-full h-full object-cover"
             width={1672}
           />

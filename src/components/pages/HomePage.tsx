@@ -246,7 +246,7 @@ export default function HomePage() {
         <motion.div style={{ y: heroY }} className="absolute inset-0 z-0">
           <Image
             src="/images/home-hero.jpg"
-            alt="Industrial coating facility"
+            alt={t('home', 'heroImageAlt')}
             className="w-full h-full object-cover opacity-60"
             width={1920}
           />
@@ -280,7 +280,9 @@ export default function HomePage() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
                   className="block"
-                >IndustriaL</motion.span>
+                >
+                  {t('home', 'heroTitleLine1')}
+                </motion.span>
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -420,7 +422,7 @@ export default function HomePage() {
 
               <Image
                 src="/images/home-stats.jpg"
-                alt="Russo NV team working on industrial coating"
+                alt={t('home', 'teamImageAlt')}
                 className="absolute inset-0 w-full h-full object-cover"
                 width={1536}
               />

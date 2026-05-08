@@ -137,7 +137,7 @@ export default function SafetyPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/safety-hero.jpg"
-            alt="Safety and certifications in industrial work"
+            alt={t('safety', 'heroImageAlt')}
             className="w-full h-full object-cover"
             width={1152}
           />

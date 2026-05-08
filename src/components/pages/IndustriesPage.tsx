@@ -122,7 +122,7 @@ export default function IndustriesPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/industries-hero.jpg"
-            alt="Industrial facilities we serve"
+            alt={t('industries', 'heroImageAlt')}
             className="w-full h-full object-cover"
             width={1152}
           />

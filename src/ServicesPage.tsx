@@ -148,7 +148,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="https://static.wixstatic.com/media/3232e5_9c963dcc60f34f52af898b723a8fc190~mv2.png?originWidth=1152&originHeight=640"
-            alt={t('services', 'pageTitle')}
+            alt={t('services', 'heroImageAlt')}
             className="w-full h-full object-cover"
             width={1920}
           />

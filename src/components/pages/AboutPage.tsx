@@ -27,7 +27,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/about-hero.jpg"
-            alt="Russo NV industrial coating company"
+            alt={t('about', 'heroImageAlt')}
             className="w-full h-full object-cover"
             width={1152}
           />
@@ -68,7 +68,7 @@ export default function AboutPage() {
             <div className="relative h-[420px] sm:h-[500px] lg:h-[600px] w-full overflow-hidden">
               <Image
                 src="/images/about-story.jpg"
-                alt="Russo NV team at work"
+                alt={t('about', 'teamImageAlt')}
                 className="absolute inset-0 w-full h-full object-cover"
                 width={768}
               />

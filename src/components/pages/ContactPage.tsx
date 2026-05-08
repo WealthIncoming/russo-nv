@@ -317,7 +317,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/contact-hero.jpg"
-            alt="Contact Russo NV for industrial coating services"
+            alt={t('contact', 'heroImageAlt')}
             className="w-full h-full object-cover"
             width={1152}
           />
