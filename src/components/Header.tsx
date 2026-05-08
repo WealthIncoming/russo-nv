@@ -3,7 +3,7 @@ import { useLocale } from '@/lib/i18n/useLocale';
 import { useCopyPhone } from '@/lib/use-copy-phone';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Check, Globe, Menu, Phone, X } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Image } from '@/components/ui/image';
 
@@ -12,12 +12,35 @@ const HEADER_PHONE_HREF = '+32475434819';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
   const { t } = useLanguageStore();
   const { locale, localize, swap } = useLocale();
   const location = useLocation();
   const navigate = useNavigate();
   const { copied, copy } = useCopyPhone();
   const onCallClick = () => copy(HEADER_PHONE_DISPLAY);
+
+  // Close mobile menu on route change so navigation always exits the overlay.
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
+
+  // Close mobile menu when the user clicks/taps anywhere outside the header.
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const handlePointerDown = (e: MouseEvent | TouchEvent) => {
+      const target = e.target as Node;
+      if (headerRef.current && !headerRef.current.contains(target)) {
+        setIsMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handlePointerDown);
+    document.addEventListener('touchstart', handlePointerDown);
+    return () => {
+      document.removeEventListener('mousedown', handlePointerDown);
+      document.removeEventListener('touchstart', handlePointerDown);
+    };
+  }, [isMenuOpen]);
 
   const navLinks = [
     { path: '/', labelKey: 'home' },
@@ -39,7 +62,7 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full bg-white border-b border-dark-grey/20 sticky top-0 z-50">
+    <header ref={headerRef} className="w-full bg-white border-b border-dark-grey/20 sticky top-0 z-50">
       {/* Skip-to-content link: invisible until a keyboard user tabs into it,
           then slides into view. Lets keyboard / screen-reader users bypass
           the header nav on every page. */}
