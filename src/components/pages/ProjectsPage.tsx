@@ -153,9 +153,37 @@ export default function ProjectsPage() {
     }
   };
 
+  const SITE_URL = 'https://www.russonv.com';
+  const collectionUrl = `${SITE_URL}${localize('/projects')}`;
+  const collectionSchema = projects.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${collectionUrl}#collection`,
+    name: t('projects', 'pageTitle'),
+    description: t('projects', 'heroDescription'),
+    url: collectionUrl,
+    inLanguage: language === 'EN' ? 'en' : 'nl-BE',
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+    about: { '@id': `${SITE_URL}/#organization` },
+    hasPart: projects.map((p) => ({
+      '@type': 'CreativeWork',
+      name: getProjectText(p, 'Title', p.projectTitle),
+      description: getProjectText(p, 'Description', p.projectDescription),
+      provider: { '@id': `${SITE_URL}/#organization` },
+      ...(p.completionDate ? { dateCreated: new Date(p.completionDate).toISOString() } : {}),
+    })),
+  } : null;
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
+
+      {collectionSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+        />
+      )}
 
       {/* Hero Section */}
       <section className="relative w-full max-w-[120rem] mx-auto min-h-[60vh] flex items-center overflow-hidden">

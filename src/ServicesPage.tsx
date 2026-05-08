@@ -139,9 +139,47 @@ export default function ServicesPage() {
     return translated !== translationKey ? translated : (fallback || '');
   };
 
+  const SITE_URL = 'https://www.russonv.com';
+  const servicesUrl = `${SITE_URL}${localize('/services')}`;
+  const servicesSchema = services.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${servicesUrl}#services`,
+    name: t('services', 'pageTitle'),
+    url: servicesUrl,
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+    about: { '@id': `${SITE_URL}/#organization` },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: services.map((s, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Service',
+          name: getServiceText(s, 'Title', s.serviceName),
+          description: getServiceText(s, 'Description', s.description),
+          provider: { '@id': `${SITE_URL}/#organization` },
+          areaServed: [
+            { '@type': 'Country', name: 'Belgium' },
+            { '@type': 'Country', name: 'Netherlands' },
+            { '@type': 'Country', name: 'Luxembourg' },
+          ],
+          serviceType: getServiceText(s, 'Title', s.serviceName),
+        },
+      })),
+    },
+  } : null;
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
+
+      {servicesSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+        />
+      )}
 
       {/* Hero Section */}
       <section className="relative w-full max-w-[120rem] mx-auto min-h-[60vh] flex items-center overflow-hidden">
