@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
+import { useLocale } from '@/lib/i18n/useLocale';
 import { useCopyPhone } from '@/lib/use-copy-phone';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import {
@@ -105,21 +106,32 @@ const STATS_DATA = [
 const ORGANIZATION_JSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': 'https://www.russonv.com/#organization',
   name: 'Russo NV',
+  alternateName: 'Russo Industriële Coatings',
   url: 'https://www.russonv.com',
   logo: 'https://static.wixstatic.com/media/3232e5_48e2024c6d3f441e817637ccdd99f28f~mv2.png',
+  description: 'Specialist in industriële coatings, stralen en brandwerende coatings in Antwerpen — actief in heel België, Nederland en Luxemburg voor petrochemie, maritieme sector en industrie.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Taxandriastraat 35',
+    postalCode: '2170',
+    addressLocality: 'Antwerp',
+    addressRegion: 'Antwerpen',
+    addressCountry: 'BE',
+  },
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer service',
     telephone: HQ_PHONE,
     email: 'info@russonv.be',
-    areaServed: 'Europe',
-    availableLanguage: ['en', 'nl'],
+    areaServed: ['BE', 'NL', 'LU'],
+    availableLanguage: ['nl', 'en', 'fr'],
   },
   sameAs: [
-    'https://facebook.com',
-    'https://instagram.com',
-    'https://linkedin.com',
+    'https://www.linkedin.com/company/russo-nv/',
+    'https://www.instagram.com/russo.n.v/',
+    'https://www.facebook.com/share/16myRf73Ju/?mibextid=wwXIfr',
   ],
 };
 
@@ -193,6 +205,7 @@ const ParallaxText = ({ children, baseVelocity = 100 }: { children: string; base
 };
 
 export default function HomePage() {
+  const { localize } = useLocale();
   const { copied, copy } = useCopyPhone();
   const onCallClick = () => copy('+32 475 43 48 19');
 
@@ -302,7 +315,7 @@ export default function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0 justify-center md:justify-start w-full sm:w-auto">
               <Link
-                to="/contact"
+                to={localize('/contact')}
                 className="group relative overflow-hidden bg-primary px-6 sm:px-8 py-4 flex items-center justify-center gap-3 whitespace-nowrap"
               >
                 <span className="relative z-10 font-paragraph font-bold uppercase text-white text-sm tracking-wider">
@@ -313,7 +326,7 @@ export default function HomePage() {
               </Link>
 
               <Link
-                to="/projects"
+                to={localize('/projects')}
                 className="group px-6 sm:px-8 py-4 border border-white/30 hover:border-white transition-colors flex items-center justify-center gap-3 whitespace-nowrap"
               >
                 <span className="font-paragraph font-bold uppercase text-white text-sm tracking-wider">
@@ -445,7 +458,7 @@ export default function HomePage() {
                   {t('home', 'coreServicesDesc')}
                 </p>
 
-                <Link to="/services">
+                <Link to={localize('/services')}>
                   <button className="group flex items-center gap-4 text-white hover:text-primary transition-colors max-w-full">
                     <div className="w-12 h-12 border border-current flex items-center justify-center rounded-full group-hover:bg-primary group-hover:border-primary group-hover:text-white transition-all shrink-0">
                       <ArrowUpRight className="w-5 h-5" />
@@ -562,7 +575,7 @@ export default function HomePage() {
                 ))}
               </div>
 
-              <Link to="/projects">
+              <Link to={localize('/projects')}>
                 <button className="group relative overflow-hidden bg-primary px-8 py-4 flex items-center gap-3 whitespace-nowrap w-fit">
                   <span className="relative z-10 font-paragraph font-bold uppercase text-white text-sm tracking-wider">
                     {t('home', 'viewCaseStudy')}
@@ -596,7 +609,7 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link to="/contact">
+              <Link to={localize('/contact')}>
                 <button className="bg-black text-white font-paragraph font-bold uppercase px-10 py-5 hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-3 shadow-xl">
                   {t('home', 'requestQuote')}
                   <ArrowRight className="w-5 h-5" />
@@ -629,12 +642,13 @@ function StickyServiceCard({ service }: { service: typeof SERVICES_DATA[0] }) {
   const x = useTransform(scrollYProgress, [0, 0.5], [50, 0]);
 
   const { t } = useLanguageStore();
+  const { localize } = useLocale();
   const serviceTitle = t('home', service.titleKey);
 
   return (
     <motion.div ref={cardRef} style={{ opacity, x }}>
       <Link
-        to={`/services#${service.anchor}`}
+        to={localize(`/services#${service.anchor}`)}
         aria-label={`${serviceTitle} — view on services page`}
         className="group relative block bg-dark-grey border border-white/10 p-8 md:p-12 hover:border-primary transition-colors duration-500"
       >
@@ -672,6 +686,7 @@ function StickyServiceCard({ service }: { service: typeof SERVICES_DATA[0] }) {
 function IndustryCard({ industry, index }: { industry: typeof INDUSTRIES_DATA[0], index: number }) {
   const [isHovered, setIsHovered] = useState(false);
   const { t } = useLanguageStore();
+  const { localize } = useLocale();
   const Icon = industry.icon;
   const industryTitle = t('home', industry.titleKey);
 
@@ -683,7 +698,7 @@ function IndustryCard({ industry, index }: { industry: typeof INDUSTRIES_DATA[0]
       transition={{ duration: 0.5 }}
     >
       <Link
-        to={`/industries#${industry.anchor}`}
+        to={localize(`/industries#${industry.anchor}`)}
         aria-label={`${industryTitle} — view on industries page`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}

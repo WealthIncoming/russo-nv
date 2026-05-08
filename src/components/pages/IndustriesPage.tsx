@@ -5,6 +5,7 @@ import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { IndustriesServed } from '@/entities';
 import { BaseCrudService } from '@/integrations';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
+import { useLocale } from '@/lib/i18n/useLocale';
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, Award, Globe, Headphones, MapPin } from 'lucide-react';
 import { useEffect, useState } from 'react';
@@ -75,6 +76,7 @@ export default function IndustriesPage() {
   const [industries, setIndustries] = useState<IndustriesServed[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const { t, language } = useLanguageStore();
+  const { localize } = useLocale();
 
   useEffect(() => {
     loadIndustries();
@@ -268,7 +270,7 @@ export default function IndustriesPage() {
                       )}
 
                       <Link
-                        to="/contact"
+                        to={localize('/contact')}
                         className="inline-flex items-center gap-2 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all"
                       >
                         {t('industries', 'cardCta')}
@@ -346,7 +348,7 @@ export default function IndustriesPage() {
             <p className="font-paragraph text-lg text-foreground/70 max-w-2xl mx-auto mb-12">
               {t('industries', 'ctaDescription')}
             </p>
-            <Link to="/contact">
+            <Link to={localize('/contact')}>
               <button className="bg-primary text-primary-foreground font-paragraph font-bold uppercase px-8 py-4 hover:bg-primary/90 transition-colors inline-flex items-center gap-3 group">
                 {t('industries', 'ctaButton')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

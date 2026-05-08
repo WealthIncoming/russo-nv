@@ -1,9 +1,10 @@
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
+import { useLocale } from '@/lib/i18n/useLocale';
 import { useCopyPhone } from '@/lib/use-copy-phone';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Check, Globe, Menu, Phone, X } from 'lucide-react';
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Image } from '@/components/ui/image';
 
 const HEADER_PHONE_DISPLAY = '+32 475 43 48 19';
@@ -11,8 +12,10 @@ const HEADER_PHONE_HREF = '+32475434819';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguageStore();
+  const { t } = useLanguageStore();
+  const { locale, localize, swap } = useLocale();
   const location = useLocation();
+  const navigate = useNavigate();
   const { copied, copy } = useCopyPhone();
   const onCallClick = () => copy(HEADER_PHONE_DISPLAY);
 
@@ -26,9 +29,14 @@ export default function Header() {
     { path: '/contact', labelKey: 'contact' },
   ];
 
-  const languages = ['NL', 'EN'];
+  const languages = ['NL', 'EN'] as const;
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => location.pathname === localize(path);
+
+  const onLanguageChange = (lang: 'EN' | 'NL') => {
+    if (lang === locale) return;
+    navigate(swap(lang));
+  };
 
   return (
     <header className="w-full bg-white border-b border-dark-grey/20 sticky top-0 z-50">
@@ -44,8 +52,8 @@ export default function Header() {
       <div className="max-w-[100rem] mx-auto px-4 sm:px-6 xl:px-8">
         <div className="grid grid-cols-[auto_1fr_auto] items-center h-20 xl:h-24 gap-4 xl:gap-6">
           {/* Logo */}
-          <Link to="/" className="flex items-center flex-shrink-0 whitespace-nowrap">
-            <Image 
+          <Link to={localize('/')} className="flex items-center flex-shrink-0 whitespace-nowrap">
+            <Image
               src="https://static.wixstatic.com/media/3232e5_648f8bcac8bf401c8bdff7a7ca3f4923~mv2.jpg"
               alt="RUSSO N.V. Logo"
               width={120}
@@ -59,7 +67,7 @@ export default function Header() {
             {navLinks.map((link) => (
               <Link
                 key={link.path}
-                to={link.path}
+                to={localize(link.path)}
                 className={`font-paragraph text-[12px] xl:text-sm uppercase tracking-[0.08em] transition-colors relative whitespace-nowrap ${
                   isActive(link.path)
                     ? 'text-primary font-bold'
@@ -83,9 +91,10 @@ export default function Header() {
             <div className="flex items-center gap-2 border border-dark-grey/20 px-3 py-2 whitespace-nowrap">
               <Globe className="w-4 h-4 text-foreground" />
               <select
-                value={language}
-                onChange={(e) => setLanguage(e.target.value as 'EN' | 'NL')}
+                value={locale}
+                onChange={(e) => onLanguageChange(e.target.value as 'EN' | 'NL')}
                 className="font-paragraph text-sm bg-transparent border-none outline-none cursor-pointer text-foreground"
+                aria-label="Language"
               >
                 {languages.map((lang) => (
                   <option key={lang} value={lang}>
@@ -130,7 +139,7 @@ export default function Header() {
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
-                  to={link.path}
+                  to={localize(link.path)}
                   onClick={() => setIsMenuOpen(false)}
                   className={`block font-paragraph text-sm uppercase tracking-wider py-2 ${
                     isActive(link.path)
@@ -147,9 +156,10 @@ export default function Header() {
                 <div className="flex items-center gap-2 border border-dark-grey/20 px-4 py-3">
                   <Globe className="w-4 h-4 text-foreground" />
                   <select
-                    value={language}
-                    onChange={(e) => setLanguage(e.target.value as 'EN' | 'NL')}
+                    value={locale}
+                    onChange={(e) => onLanguageChange(e.target.value as 'EN' | 'NL')}
                     className="font-paragraph text-sm bg-transparent border-none outline-none cursor-pointer text-foreground flex-1"
+                    aria-label="Language"
                   >
                     {languages.map((lang) => (
                       <option key={lang} value={lang}>

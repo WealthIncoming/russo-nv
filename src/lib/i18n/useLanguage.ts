@@ -1,14 +1,13 @@
 import { create } from 'zustand';
 import { Language, translations } from './translations';
+import { detectLocale, DEFAULT_LOCALE } from './routes';
 
-// Get initial language from localStorage or default to Dutch
 const getInitialLanguage = (): Language => {
-  if (typeof window === 'undefined') return 'NL';
+  if (typeof window === 'undefined') return DEFAULT_LOCALE;
   try {
-    const stored = localStorage.getItem('language');
-    return (stored === 'EN' || stored === 'NL') ? stored : 'NL';
+    return detectLocale(window.location.pathname);
   } catch {
-    return 'NL';
+    return DEFAULT_LOCALE;
   }
 };
 
@@ -20,14 +19,7 @@ interface LanguageStore {
 
 export const useLanguageStore = create<LanguageStore>((set, get) => ({
   language: getInitialLanguage(),
-  setLanguage: (lang: Language) => {
-    if (typeof window !== 'undefined') {
-      try {
-        localStorage.setItem('language', lang);
-      } catch {}
-    }
-    set({ language: lang });
-  },
+  setLanguage: (lang: Language) => set({ language: lang }),
   t: (section: string, key: string) => {
     const { language } = get();
     const sectionTranslations = translations[language]?.[section];

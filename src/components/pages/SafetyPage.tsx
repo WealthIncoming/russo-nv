@@ -5,6 +5,7 @@ import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { Certifications, CompanyValues } from '@/entities';
 import { BaseCrudService } from '@/integrations';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
+import { useLocale } from '@/lib/i18n/useLocale';
 import { format } from 'date-fns';
 import { nl } from 'date-fns/locale';
 import { motion } from 'framer-motion';
@@ -69,6 +70,7 @@ export default function SafetyPage() {
   const [companyValues, setCompanyValues] = useState<CompanyValues[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const { t, language } = useLanguageStore();
+  const { localize } = useLocale();
 
   useEffect(() => {
     loadData();
@@ -498,7 +500,7 @@ export default function SafetyPage() {
             <p className="font-paragraph text-lg text-white/80 max-w-2xl mx-auto mb-12">
               {t('safety', 'ctaDescription')}
             </p>
-            <Link to="/contact">
+            <Link to={localize('/contact')}>
               <button className="bg-primary text-primary-foreground font-paragraph font-bold uppercase px-8 py-4 hover:bg-primary/90 transition-colors inline-flex items-center gap-3 group">
                 {t('safety', 'ctaButton')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

@@ -2,6 +2,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
+import { useLocale } from '@/lib/i18n/useLocale';
 import { motion } from 'framer-motion';
 import { ArrowRight, Globe, Target, Users, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -16,6 +17,7 @@ const SectionLabel = ({ text, align = 'center' }: { text: string; align?: 'left'
 
 export default function AboutPage() {
   const { t } = useLanguageStore();
+  const { localize } = useLocale();
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -279,13 +281,13 @@ export default function AboutPage() {
               {t('about', 'ctaDescription')}
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link to="/contact">
+              <Link to={localize('/contact')}>
                 <button className="bg-primary text-primary-foreground font-paragraph font-bold uppercase px-8 py-4 hover:bg-primary/90 transition-colors inline-flex items-center gap-3 group">
                   {t('about', 'ctaButton')}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </Link>
-              <Link to="/projects">
+              <Link to={localize('/projects')}>
                 <button className="bg-transparent text-foreground border-2 border-foreground font-paragraph font-bold uppercase px-8 py-4 hover:bg-foreground hover:text-white transition-colors">
                   {t('about', 'ctaSecondaryButton')}
                 </button>

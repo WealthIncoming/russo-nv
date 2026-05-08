@@ -1,4 +1,5 @@
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
+import { useLocale } from '@/lib/i18n/useLocale';
 import { ArrowUp, Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Image } from '@/components/ui/image';
@@ -33,6 +34,7 @@ const CERTIFICATIONS = [
 
 export default function Footer() {
   const { t } = useLanguageStore();
+  const { localize } = useLocale();
 
   const handleBackToTop = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -45,7 +47,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-16">
           {/* Company Info */}
           <div className="lg:col-span-4">
-            <Link to="/" aria-label="Russo NV - Home" className="flex items-center mb-6">
+            <Link to={localize('/')} aria-label="Russo NV - Home" className="flex items-center mb-6">
               <Image
                 src="/images/logo.png"
                 alt="Russo NV Logo"
@@ -95,7 +97,7 @@ export default function Footer() {
               {QUICK_LINKS.map((link) => (
                 <Link
                   key={link.to}
-                  to={link.to}
+                  to={localize(link.to)}
                   className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors"
                 >
                   {t(link.namespace, link.labelKey)}
@@ -111,7 +113,7 @@ export default function Footer() {
               {SERVICES.map((item) => (
                 <Link
                   key={item.labelKey}
-                  to={`/services#${item.anchor}`}
+                  to={localize(`/services#${item.anchor}`)}
                   className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors"
                 >
                   {t('footer', item.labelKey)}
@@ -193,13 +195,13 @@ export default function Footer() {
             </p>
             <div className="flex flex-wrap gap-6 items-center justify-center">
               <Link
-                to="/privacy"
+                to={localize('/privacy')}
                 className="font-paragraph text-sm text-white/60 hover:text-primary transition-colors"
               >
                 {t('footer', 'privacyPolicy')}
               </Link>
               <Link
-                to="/terms"
+                to={localize('/terms')}
                 className="font-paragraph text-sm text-white/60 hover:text-primary transition-colors"
               >
                 {t('footer', 'termsOfService')}

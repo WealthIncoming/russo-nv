@@ -5,6 +5,7 @@ import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { IndustrialServices } from '@/entities';
 import { BaseCrudService } from '@/integrations';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
+import { useLocale } from '@/lib/i18n/useLocale';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
@@ -86,6 +87,7 @@ export default function ServicesPage() {
   const [services, setServices] = useState<IndustrialServices[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const { t } = useLanguageStore();
+  const { localize } = useLocale();
 
   useEffect(() => {
     loadServices();
@@ -317,7 +319,7 @@ export default function ServicesPage() {
               {t('services', 'ctaDescription')}
             </p>
 
-            <Link to="/contact">
+            <Link to={localize('/contact')}>
               <button className="bg-primary text-primary-foreground font-paragraph font-bold uppercase px-8 py-4 hover:bg-primary/90 transition-colors inline-flex items-center gap-3 group">
                 {t('services', 'learnMore')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

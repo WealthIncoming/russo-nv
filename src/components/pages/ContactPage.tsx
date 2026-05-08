@@ -25,20 +25,87 @@ const GOOGLE_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encod
 const BUSINESS_JSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
+  '@id': 'https://www.russonv.com/#localbusiness',
   name: 'Russo NV',
+  alternateName: 'Russo Industriële Coatings',
+  description: 'Industrieel coatingbedrijf in Antwerpen, gespecialiseerd in industriële coatings, stralen, brandwerende coatings, corrosiebescherming en oppervlaktevoorbehandeling voor petrochemie, maritieme sector en industrie in heel België en de Benelux.',
   url: 'https://www.russonv.com',
   telephone: '+32475434819',
   email: 'info@russonv.be',
+  logo: 'https://static.wixstatic.com/media/3232e5_48e2024c6d3f441e817637ccdd99f28f~mv2.png',
   image: 'https://static.wixstatic.com/media/3232e5_48e2024c6d3f441e817637ccdd99f28f~mv2.png',
+  priceRange: '€€€',
   address: {
     '@type': 'PostalAddress',
     streetAddress: HQ_STREET,
     postalCode: HQ_POSTAL,
     addressLocality: HQ_CITY,
+    addressRegion: 'Antwerpen',
     addressCountry: HQ_COUNTRY_CODE,
   },
-  openingHours: 'Mo-Fr 08:00-18:30',
-  areaServed: 'Europe',
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 51.2654,
+    longitude: 4.4685,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '18:30',
+    },
+  ],
+  areaServed: [
+    { '@type': 'Country', name: 'Belgium' },
+    { '@type': 'Country', name: 'Netherlands' },
+    { '@type': 'Country', name: 'Luxembourg' },
+    { '@type': 'AdministrativeArea', name: 'Flanders' },
+    { '@type': 'City', name: 'Antwerp' },
+    { '@type': 'City', name: 'Ghent' },
+    { '@type': 'City', name: 'Brussels' },
+    { '@type': 'City', name: 'Zeebrugge' },
+  ],
+  knowsLanguage: ['nl', 'en', 'fr'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Industrial Coating Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: 'Industriële coatings' },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: 'Stralen (abrasive blasting)' },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: 'Brandwerende coatings (intumescent fireproofing)' },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: 'Corrosiebescherming' },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: 'Waterdichting' },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: 'Hogedruk waterstralen' },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: 'Coating-inspectie' },
+      },
+    ],
+  },
+  sameAs: [
+    'https://www.linkedin.com/company/russo-nv/',
+    'https://www.instagram.com/russo.n.v/',
+    'https://www.facebook.com/share/16myRf73Ju/?mibextid=wwXIfr',
+  ],
 };
 
 // Plausible-phone check on the local-number portion (excludes country dial).

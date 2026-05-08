@@ -1,5 +1,6 @@
 import { MemberProvider } from '@/integrations';
-import { createBrowserRouter, RouterProvider, Navigate, Outlet } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate, Outlet, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { ScrollToTop } from '@/lib/scroll-to-top';
 import { ScrollUpButton } from '@/components/ui/scroll-up-button';
 import { MAINTENANCE_MODE } from '@/config';
@@ -13,10 +14,23 @@ import SafetyPage from '@/components/pages/SafetyPage';
 import AboutPage from '@/components/pages/AboutPage';
 import ContactPage from '@/components/pages/ContactPage';
 import { PrivacyPage, TermsPage } from '@/components/pages/LegalPage';
-// Layout component that includes ScrollToTop
+import { useLanguageStore } from '@/lib/i18n/useLanguage';
+import { detectLocale } from '@/lib/i18n/routes';
+
+function LanguageSync() {
+  const location = useLocation();
+  const setLanguage = useLanguageStore((s) => s.setLanguage);
+  useEffect(() => {
+    const lang = detectLocale(location.pathname);
+    setLanguage(lang);
+  }, [location.pathname, setLanguage]);
+  return null;
+}
+
 function Layout() {
   return (
     <>
+      <LanguageSync />
       <ScrollToTop />
       <Outlet />
       <ScrollUpButton />
@@ -33,74 +47,28 @@ const maintenanceRouter = createBrowserRouter([
   basename: import.meta.env.BASE_NAME,
 });
 
+const pageChildren = [
+  { index: true, element: <HomePage />, routeMetadata: { pageIdentifier: 'home' } },
+  { path: 'services',   element: <ServicesPage />,   routeMetadata: { pageIdentifier: 'services' } },
+  { path: 'industries', element: <IndustriesPage />, routeMetadata: { pageIdentifier: 'industries' } },
+  { path: 'projects',   element: <ProjectsPage />,   routeMetadata: { pageIdentifier: 'projects' } },
+  { path: 'safety',     element: <SafetyPage />,     routeMetadata: { pageIdentifier: 'safety' } },
+  { path: 'about',      element: <AboutPage />,      routeMetadata: { pageIdentifier: 'about' } },
+  { path: 'contact',    element: <ContactPage />,    routeMetadata: { pageIdentifier: 'contact' } },
+  { path: 'privacy',    element: <PrivacyPage />,    routeMetadata: { pageIdentifier: 'privacy' } },
+  { path: 'terms',      element: <TermsPage />,      routeMetadata: { pageIdentifier: 'terms' } },
+];
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
+      ...pageChildren,
       {
-        index: true,
-        element: <HomePage />,
-        routeMetadata: {
-          pageIdentifier: 'home',
-        },
-      },
-      {
-        path: "services",
-        element: <ServicesPage />,
-        routeMetadata: {
-          pageIdentifier: 'services',
-        },
-      },
-      {
-        path: "industries",
-        element: <IndustriesPage />,
-        routeMetadata: {
-          pageIdentifier: 'industries',
-        },
-      },
-      {
-        path: "projects",
-        element: <ProjectsPage />,
-        routeMetadata: {
-          pageIdentifier: 'projects',
-        },
-      },
-      {
-        path: "safety",
-        element: <SafetyPage />,
-        routeMetadata: {
-          pageIdentifier: 'safety',
-        },
-      },
-      {
-        path: "about",
-        element: <AboutPage />,
-        routeMetadata: {
-          pageIdentifier: 'about',
-        },
-      },
-      {
-        path: "contact",
-        element: <ContactPage />,
-        routeMetadata: {
-          pageIdentifier: 'contact',
-        },
-      },
-      {
-        path: "privacy",
-        element: <PrivacyPage />,
-        routeMetadata: {
-          pageIdentifier: 'privacy',
-        },
-      },
-      {
-        path: "terms",
-        element: <TermsPage />,
-        routeMetadata: {
-          pageIdentifier: 'terms',
-        },
+        path: 'en',
+        children: pageChildren,
       },
       {
         path: "*",
