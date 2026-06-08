@@ -1342,7 +1342,7 @@ export const translations: Record<Language, Translations> = {
       steelTitle: 'Schilderwerk Staalconstructie Industriële Fabriek',
       steelDescription: 'Beschermende coating van constructieve staalelementen voor een nieuwe productiefabriek. Dit omvatte balken, kolommen en draagconstructies, waarvoor duurzame coatings nodig waren die bestand zijn tegen chemische blootstelling en een langdurig esthetisch resultaat bieden. Complexe toegangsvereisten werden beheerd met steigers en hoogwerkers.',
 
-      seaTankTitle: 'Tank Renovatie',
+      seaTankTitle: 'Tank Control',
       seaTankDescription: 'Grootschalige renovatie van 15 opslagtanks bij Sea Tank Terminal in de Haven van Antwerpen. De scope omvatte uitwendige oppervlaktevoorbereiding, verwijdering van bestaande coatinglagen en het aanbrengen van beschermende coatingsystemen voor tanks die worden ingezet in een veeleisende chemische opslagomgeving. Het werk werd in fasen uitgevoerd over de opslagsite, in coördinatie met de terminaloperaties, toegangsvereisten, veiligheidsmaatregelen en milieuvoorschriften.',
       seaTankClient: 'Sea Tank Terminal',
       seaTankLocation: 'Haven van Antwerpen, België',
