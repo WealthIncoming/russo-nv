@@ -86,7 +86,7 @@ function getTranslationPrefix(serviceName: string | undefined): string | null {
 export default function ServicesPage() {
   const [services, setServices] = useState<IndustrialServices[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { t } = useLanguageStore();
+  const { t, language } = useLanguageStore();
   const { localize } = useLocale();
 
   useEffect(() => {
@@ -225,7 +225,7 @@ export default function ServicesPage() {
             </div>
           ) : services.length === 0 ? (
             <div className="text-center py-24 min-w-0">
-              <p className="font-paragraph text-lg text-foreground/60 break-words">
+              <p className="font-paragraph text-lg text-foreground/60">
                 {t('services', 'emptyState')}
               </p>
             </div>
@@ -281,23 +281,27 @@ export default function ServicesPage() {
 
                             {/* Service name — now translated */}
                             <div className="min-w-0">
-                              <h2 className="font-heading text-3xl sm:text-4xl xl:text-5xl text-foreground leading-[0.95] tracking-tight break-words">
+                              <h2 className={`font-heading text-foreground leading-[1.05] tracking-tight ${
+                                language === 'NL'
+                                  ? 'text-xl sm:text-2xl lg:text-3xl xl:text-4xl'
+                                  : 'text-2xl sm:text-3xl lg:text-4xl xl:text-5xl'
+                              }`}>
                                 {getServiceText(service, 'Title', service.serviceName)}
                               </h2>
                             </div>
 
                             {/* Description — now translated */}
-                            <p className="font-paragraph text-base sm:text-lg text-foreground/70 leading-relaxed break-words max-w-[62ch]">
+                            <p className="font-paragraph text-base sm:text-lg text-foreground/70 leading-relaxed max-w-[62ch]">
                               {getServiceText(service, 'Description', service.description)}
                             </p>
 
                             {/* Key Benefits — now translated */}
                             {service.keyBenefits && (
                               <div className="border-t border-dark-grey/10 pt-6 min-w-0 w-full">
-                                <h3 className="font-heading text-lg sm:text-xl text-foreground mb-3 break-words">
+                                <h3 className="font-heading text-lg sm:text-xl text-foreground mb-3">
                                   {t('services', 'keyBenefits')}
                                 </h3>
-                                <p className="font-paragraph text-base text-foreground/70 leading-relaxed whitespace-pre-line break-words">
+                                <p className="font-paragraph text-base text-foreground/70 leading-relaxed whitespace-pre-line">
                                   {getServiceText(service, 'KeyBenefits', service.keyBenefits)}
                                 </p>
                               </div>
@@ -306,10 +310,10 @@ export default function ServicesPage() {
                             {/* Process Overview — now translated */}
                             {service.processOverview && (
                               <div className="border-t border-dark-grey/10 pt-6 min-w-0 w-full">
-                                <h3 className="font-heading text-lg sm:text-xl text-foreground mb-3 break-words">
+                                <h3 className="font-heading text-lg sm:text-xl text-foreground mb-3">
                                   {t('services', 'processOverview')}
                                 </h3>
-                                <p className="font-paragraph text-base text-foreground/70 leading-relaxed whitespace-pre-line break-words">
+                                <p className="font-paragraph text-base text-foreground/70 leading-relaxed whitespace-pre-line">
                                   {getServiceText(service, 'ProcessOverview', service.processOverview)}
                                 </p>
                               </div>
@@ -318,10 +322,10 @@ export default function ServicesPage() {
                             {/* Target Industries — now translated */}
                             {service.targetIndustries && (
                               <div className="border-t border-dark-grey/10 pt-6 min-w-0 w-full">
-                                <h3 className="font-heading text-sm uppercase tracking-widest text-foreground/50 mb-2 break-words">
+                                <h3 className="font-heading text-sm uppercase tracking-widest text-foreground/50 mb-2">
                                   {t('services', 'targetIndustries')}
                                 </h3>
-                                <p className="font-paragraph text-base text-foreground/70 break-words">
+                                <p className="font-paragraph text-base text-foreground/70">
                                   {getServiceText(service, 'TargetIndustries', service.targetIndustries)}
                                 </p>
                               </div>
