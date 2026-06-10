@@ -385,6 +385,15 @@ export default function SafetyPage() {
                         </div>
                       )}
 
+                      {!cert.dateIssued && !cert.expirationDate && (
+                        <div className="flex items-center gap-2">
+                          <Award className="w-4 h-4 text-primary" />
+                          <span className="font-paragraph text-xs text-white/60 italic">
+                            {t('safety', 'certPendingIssuance')}
+                          </span>
+                        </div>
+                      )}
+
                       {cert.certificationUrl && (
                         <a
                           href={cert.certificationUrl}

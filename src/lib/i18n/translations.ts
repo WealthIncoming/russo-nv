@@ -550,6 +550,7 @@ export const translations: Record<Language, Translations> = {
       dateIssued: 'Issued',
       expirationDate: 'Expires',
       viewCertificate: 'View Certificate',
+      certPendingIssuance: 'Awarded — certificate pending issuance',
       safetyFirstTitle: 'Safety',
       safetyFirstHighlight: 'First',
       safetyFirstSuffix: 'Always',
@@ -580,8 +581,8 @@ export const translations: Record<Language, Translations> = {
       iso14001Issuer: 'International Organization for Standardization (ISO)',
       iso14001Description: 'ISO 14001:2015 demonstrates Russo NV\'s commitment to environmental responsibility, providing a framework for managing environmental impacts and improving environmental performance.',
 
-      vcaTitle: 'VCA Full (VOL-VCA)',
-      vcaIssuer: 'SSVV (Stichting Samenwerken Voor Veiligheid)',
+      vcaTitle: 'VCA-Petrochemie (2017/6.0)',
+      vcaIssuer: 'Cetradex Certificatie B.V.',
       vcaDescription: 'The VCA (Veiligheid, Gezondheid en Milieu Checklist Aannemers) certification demonstrates that Russo NV meets strict safety, health, and environmental standards for contractors in high-risk environments.',
 
       iso9001Title: 'ISO 9001:2015 Quality Management System',
@@ -1406,6 +1407,7 @@ export const translations: Record<Language, Translations> = {
       dateIssued: 'Uitgegeven',
       expirationDate: 'Verloopt',
       viewCertificate: 'Certificaat Bekijken',
+      certPendingIssuance: 'Toegekend — certificaat in afwachting van uitgifte',
       safetyFirstTitle: 'Veiligheid',
       safetyFirstHighlight: 'Eerst',
       safetyFirstSuffix: 'Altijd',
@@ -1436,8 +1438,8 @@ export const translations: Record<Language, Translations> = {
       iso14001Issuer: 'International Organization for Standardization (ISO)',
       iso14001Description: 'ISO 14001:2015 toont de toewijding van Russo NV aan milieuverantwoordelijkheid en biedt een kader voor het beheren van milieu-impact en het verbeteren van milieuprestaties.',
 
-      vcaTitle: 'VCA Volledig (VOL-VCA)',
-      vcaIssuer: 'SSVV (Stichting Samenwerken Voor Veiligheid)',
+      vcaTitle: 'VCA-Petrochemie (2017/6.0)',
+      vcaIssuer: 'Cetradex Certificatie B.V.',
       vcaDescription: 'De VCA-certificering (Veiligheid, Gezondheid en Milieu Checklist Aannemers) toont aan dat Russo NV voldoet aan strenge veiligheids-, gezondheids- en milieunormen voor aannemers in risicovolle omgevingen.',
 
       iso9001Title: 'ISO 9001:2015 Kwaliteitsmanagementsysteem',
