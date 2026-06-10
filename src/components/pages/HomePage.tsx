@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { useLocale } from '@/lib/i18n/useLocale';
+import { serializeJsonLd } from '@/lib/json-ld';
 import { useCopyPhone } from '@/lib/use-copy-phone';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import {
@@ -224,7 +225,7 @@ export default function HomePage() {
     <div className="bg-background min-h-screen text-foreground selection:bg-primary selection:text-white overflow-clip">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSON_LD) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(ORGANIZATION_JSON_LD) }}
       />
       <style>{`
         .clip-diagonal {

@@ -6,6 +6,7 @@ import { IndustrialServices } from '@/entities';
 import { BaseCrudService } from '@/integrations';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { useLocale } from '@/lib/i18n/useLocale';
+import { serializeJsonLd } from '@/lib/json-ld';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
@@ -177,7 +178,7 @@ export default function ServicesPage() {
       {servicesSchema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(servicesSchema) }}
         />
       )}
 

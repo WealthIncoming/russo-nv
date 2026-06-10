@@ -6,6 +6,7 @@ import { ProjectPortfolio } from '@/entities';
 import { BaseCrudService } from '@/integrations';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { useLocale } from '@/lib/i18n/useLocale';
+import { serializeJsonLd, toIsoDateOrUndefined } from '@/lib/json-ld';
 import { format } from 'date-fns';
 import { nl } from 'date-fns/locale';
 import { motion } from 'framer-motion';
@@ -165,13 +166,16 @@ export default function ProjectsPage() {
     inLanguage: language === 'EN' ? 'en' : 'nl-BE',
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': `${SITE_URL}/#organization` },
-    hasPart: projects.map((p) => ({
-      '@type': 'CreativeWork',
-      name: getProjectText(p, 'Title', p.projectTitle),
-      description: getProjectText(p, 'Description', p.projectDescription),
-      provider: { '@id': `${SITE_URL}/#organization` },
-      ...(p.completionDate ? { dateCreated: new Date(p.completionDate).toISOString() } : {}),
-    })),
+    hasPart: projects.map((p) => {
+      const completionIso = toIsoDateOrUndefined(p.completionDate);
+      return {
+        '@type': 'CreativeWork',
+        name: getProjectText(p, 'Title', p.projectTitle),
+        description: getProjectText(p, 'Description', p.projectDescription),
+        provider: { '@id': `${SITE_URL}/#organization` },
+        ...(completionIso ? { dateCreated: completionIso } : {}),
+      };
+    }),
   } : null;
 
   return (
@@ -181,7 +185,7 @@ export default function ProjectsPage() {
       {collectionSchema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(collectionSchema) }}
         />
       )}
 

@@ -1,6 +1,7 @@
 ---
 import { Head } from "@/components/Head";
 import AppRouter from "@/components/Router";
+import { serializeJsonLd } from "@/lib/json-ld";
 import "@wix/wix-vibe-plugins/plugins-vars.css";
 import "@wix/wix-vibe-plugins/plugins-theme.css";
 import "@/styles/global.css";
@@ -238,13 +239,13 @@ const websiteSchema = basePath === '/' ? {
     {breadcrumbSchema && (
       <script
         type="application/ld+json"
-        set:html={JSON.stringify(breadcrumbSchema)}
+        set:html={serializeJsonLd(breadcrumbSchema)}
       />
     )}
     {websiteSchema && (
       <script
         type="application/ld+json"
-        set:html={JSON.stringify(websiteSchema)}
+        set:html={serializeJsonLd(websiteSchema)}
       />
     )}
   </head>

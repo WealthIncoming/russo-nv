@@ -2,6 +2,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
+import { serializeJsonLd } from '@/lib/json-ld';
 import { submissions } from '@wix/forms';
 import { motion } from 'framer-motion';
 import { AlertCircle, CheckCircle, ChevronDown, Clock, Mail, MapPin, Phone, Search, Send } from 'lucide-react';
@@ -308,7 +309,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-background">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(BUSINESS_JSON_LD) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(BUSINESS_JSON_LD) }}
       />
       <Header />
 
