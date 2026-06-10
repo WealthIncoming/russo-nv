@@ -515,7 +515,7 @@ export default function HomePage() {
             {/* Left Column: Image */}
             <div className="relative w-full min-w-0 aspect-video xl:aspect-[4/3] overflow-hidden border border-foreground/10 group">
               <Image
-                src="/images/stt1.jpg"
+                src="/images/stt3.jpg"
                 alt={`${t('home', 'totalTankFarm')} ${t('home', 'refurbishment')}`}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 width={1448}

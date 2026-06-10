@@ -51,11 +51,11 @@ const PROJECT_IMAGE_OVERRIDES: Array<{ match: string; main: string; secondary?: 
   {
     match: 'new build coating',
     main: '/images/gts1.jpg',
-    secondary: '/images/gts2.jpg',
+    secondary: '/images/gts3.jpg',
   },
   {
     match: 'tank refurbishment',
-    main: '/images/stt1.jpg',
+    main: '/images/stt3.jpg',
     secondary: '/images/stt2.jpg',
   },
   {
