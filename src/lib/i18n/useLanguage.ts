@@ -1,15 +1,6 @@
 import { create } from 'zustand';
 import { Language, translations } from './translations';
-import { detectLocale, DEFAULT_LOCALE } from './routes';
-
-const getInitialLanguage = (): Language => {
-  if (typeof window === 'undefined') return DEFAULT_LOCALE;
-  try {
-    return detectLocale(window.location.pathname);
-  } catch {
-    return DEFAULT_LOCALE;
-  }
-};
+import { DEFAULT_LOCALE } from './routes';
 
 interface LanguageStore {
   language: Language;
@@ -17,8 +8,12 @@ interface LanguageStore {
   t: (section: string, key: string) => string;
 }
 
+// The store initializes deterministically to DEFAULT_LOCALE on BOTH server and
+// client so the first render matches (no hydration mismatch). The real locale is
+// seeded from the request path in AppRouter's initializer (server + client first
+// paint), and LanguageSync keeps it in sync on subsequent client navigations.
 export const useLanguageStore = create<LanguageStore>((set, get) => ({
-  language: getInitialLanguage(),
+  language: DEFAULT_LOCALE,
   setLanguage: (lang: Language) => set({ language: lang }),
   t: (section: string, key: string) => {
     const { language } = get();

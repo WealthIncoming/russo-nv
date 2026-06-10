@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { Certifications, CompanyValues } from '@/entities';
-import { BaseCrudService } from '@/integrations';
+import { BaseCrudService } from '@/integrations/cms/service';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { useLocale } from '@/lib/i18n/useLocale';
 import { format } from 'date-fns';

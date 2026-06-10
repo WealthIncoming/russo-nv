@@ -3,7 +3,6 @@ import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { serializeJsonLd } from '@/lib/json-ld';
-import { submissions } from '@wix/forms';
 import { motion } from 'framer-motion';
 import { AlertCircle, CheckCircle, ChevronDown, Clock, Mail, MapPin, Phone, Search, Send } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
@@ -276,6 +275,8 @@ export default function ContactPage() {
     const localDigits = formData.phone.replace(/\D/g, '');
     const fullPhone = `+${selectedCountry.dial}${localDigits}`;
     try {
+      // Lazy-loaded so @wix/forms is never in the server-rendered bundle.
+      const { submissions } = await import('@wix/forms');
       await submissions.createSubmission({
         formId: WIX_FORM_ID,
         submissions: {
