@@ -148,7 +148,7 @@ export const translations: Record<Language, Translations> = {
       chemicalPlantsDesc: 'Acid-resistant lining & containment.',
 
       foodProduction: 'Food Production',
-      foodProductionDesc: 'Hygienic, FDA-compliant surfacing.',
+      foodProductionDesc: 'Hygienic, food-safe surfacing.',
 
       storageTerminals: 'Storage Terminals',
       storageTerminalsDesc: 'Tank lining & exterior protection.',
@@ -404,8 +404,8 @@ export const translations: Record<Language, Translations> = {
 
       foodTitle: 'Food & Beverage',
       foodOverview: 'Maintaining hygienic, safe, and durable surfaces is paramount in the food and beverage industry. Our coatings comply with strict regulatory standards, preventing contamination and ensuring operational efficiency.',
-      foodWorkDescription: 'We apply FDA-compliant and USDA-approved coatings for floors, walls, ceilings, and processing equipment. Our services focus on creating seamless, easy-to-clean, and chemical-resistant surfaces that withstand frequent washdowns and heavy traffic.',
-      foodKeyServices: 'Seamless epoxy flooring systems, antimicrobial coatings, USDA-approved coatings, high-build urethanes, concrete polishing, wall and ceiling coatings, non-slip safety surfaces.',
+      foodWorkDescription: 'We apply food-safe coatings that comply with EU food-contact regulations (EC 1935/2004) for floors, walls, ceilings, and processing equipment. Our services focus on creating seamless, easy-to-clean, and chemical-resistant surfaces that support HACCP hygiene standards and withstand frequent washdowns and heavy traffic.',
+      foodKeyServices: 'Seamless epoxy flooring systems, antimicrobial coatings, food-contact compliant coatings, high-build urethanes, concrete polishing, wall and ceiling coatings, non-slip safety surfaces.',
       foodTypicalClients: 'Dairies, breweries, meat processing plants, bakeries, bottling facilities, commercial kitchens, food storage warehouses.',
 
       powerTitle: 'Power Generation',
@@ -1001,7 +1001,7 @@ export const translations: Record<Language, Translations> = {
       chemicalPlantsDesc: 'Zuurbestendige bekleding en opvangsystemen.',
 
       foodProduction: 'Voedingsindustrie',
-      foodProductionDesc: 'Hygiënische, FDA-conforme oppervlakken.',
+      foodProductionDesc: 'Hygiënische, voedselveilige oppervlakken.',
 
       storageTerminals: 'Opslagterminals',
       storageTerminalsDesc: 'Tankbekleding en uitwendige bescherming.',
@@ -1260,8 +1260,8 @@ export const translations: Record<Language, Translations> = {
 
       foodTitle: 'Voeding & Dranken',
       foodOverview: 'Het handhaven van hygiënische, veilige en duurzame oppervlakken is essentieel in de voedings- en drankenindustrie. Onze coatings voldoen aan strenge regelgeving, voorkomen besmetting en garanderen operationele efficiëntie.',
-      foodWorkDescription: 'Wij brengen FDA-conforme en USDA-goedgekeurde coatings aan op vloeren, wanden, plafonds en verwerkingsapparatuur. Onze diensten richten zich op het creëren van naadloze, makkelijk te reinigen en chemisch bestendige oppervlakken die bestand zijn tegen frequente reiniging en zwaar verkeer.',
-      foodKeyServices: 'Naadloze epoxyvloersystemen, antimicrobiële coatings, USDA-goedgekeurde coatings, diklaags urethanen, betonpolijsting, wand- en plafondcoatings, antislipvloeren.',
+      foodWorkDescription: 'Wij brengen voedselveilige coatings aan die voldoen aan de Europese voedselcontactverordening (EG 1935/2004) op vloeren, wanden, plafonds en verwerkingsapparatuur. Onze diensten richten zich op het creëren van naadloze, makkelijk te reinigen en chemisch bestendige oppervlakken die de HACCP-hygiënenormen ondersteunen en bestand zijn tegen frequente reiniging en zwaar verkeer.',
+      foodKeyServices: 'Naadloze epoxyvloersystemen, antimicrobiële coatings, voedselcontactconforme coatings, diklaags urethanen, betonpolijsting, wand- en plafondcoatings, antislipvloeren.',
       foodTypicalClients: 'Zuivelfabrieken, brouwerijen, vleesverwerkingsbedrijven, bakkerijen, bottelarijen, grootkeukens, voedselopslagmagazijnen.',
 
       powerTitle: 'Energieopwekking',
