@@ -221,7 +221,7 @@ export default function HomePage() {
   const { t } = useLanguageStore();
 
   return (
-    <div className="bg-black min-h-screen text-white selection:bg-primary selection:text-white overflow-clip">
+    <div className="bg-background min-h-screen text-foreground selection:bg-primary selection:text-white overflow-clip">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSON_LD) }}
@@ -380,32 +380,32 @@ export default function HomePage() {
         `}</style>
       </div>
       {/* --- INTRO / STATS --- */}
-      <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 xl:py-32 bg-dark-grey overflow-hidden">
+      <section className="relative w-full max-w-[120rem] mx-auto px-6 md:px-12 py-20 md:py-24 xl:py-32 bg-background overflow-hidden">
         <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] 2xl:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] gap-10 xl:gap-12 2xl:gap-16 items-start">
 
           {/* Left Column */}
           <div className="relative min-w-0 w-full z-20">
             <SectionLabel text={t('home', 'companyProfile')} />
 
-            <h2 className="font-heading text-white leading-[0.9] tracking-tight mb-8 max-w-full text-3xl sm:text-4xl md:text-4xl lg:text-5xl 2xl:text-5xl">
+            <h2 className="font-heading text-foreground leading-[0.9] tracking-tight mb-8 max-w-full text-3xl sm:text-4xl md:text-4xl lg:text-5xl 2xl:text-5xl">
               <span className="block">{t('home', 'engineeringDurability')}</span>
-              <span className="block text-white/30">{t('home', 'durability')}</span>
+              <span className="block text-foreground/30">{t('home', 'durability')}</span>
             </h2>
 
-            <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-[56ch]">
+            <p className="font-paragraph text-foreground/70 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-[56ch]">
               {t('home', 'companyDescription')}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-2xl">
               {STATS_DATA.map((stat) => (
-                <div key={stat.value} className="border-t border-white/10 pt-4 min-w-0">
+                <div key={stat.value} className="border-t border-foreground/10 pt-4 min-w-0">
                   <div className="font-heading text-3xl md:text-4xl text-primary mb-1">
                     {stat.value}
                   </div>
-                  <div className="font-paragraph text-white font-bold text-xs sm:text-sm uppercase">
+                  <div className="font-paragraph text-foreground font-bold text-xs sm:text-sm uppercase">
                     {t('home', stat.labelKey)}
                   </div>
-                  <div className="font-paragraph text-white/40 text-xs mt-1">
+                  <div className="font-paragraph text-foreground/50 text-xs mt-1">
                     {t('home', stat.subKey)}
                   </div>
                 </div>
@@ -416,7 +416,7 @@ export default function HomePage() {
           {/* Right Column */}
           <div className="relative min-w-0 w-full z-10">
             <div className="relative w-full h-[420px] md:h-[520px] xl:h-[560px] 2xl:h-[600px] overflow-hidden group rounded-none">
-              <div className="absolute inset-0 border border-white/10 z-10 pointer-events-none" />
+              <div className="absolute inset-0 border border-foreground/10 z-10 pointer-events-none" />
               <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary z-20" />
               <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary z-20" />
 
@@ -442,7 +442,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* --- STICKY SERVICES --- */}
-      <section id="services" className="relative w-full bg-black py-32 overflow-hidden scroll-mt-24">
+      <section id="services" className="relative w-full bg-dark-grey/5 py-32 overflow-hidden scroll-mt-24">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] 2xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] gap-12 xl:gap-14 2xl:gap-16 items-start">
 
@@ -451,17 +451,17 @@ export default function HomePage() {
               <div className="xl:sticky xl:top-32 w-full max-w-full xl:max-w-[30rem] 2xl:max-w-[34rem]">
                 <SectionLabel text={t('home', 'ourExpertise')} />
 
-                <h2 className="font-heading leading-[0.92] tracking-tight text-white mb-8 max-w-full text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-6xl">
+                <h2 className="font-heading leading-[0.92] tracking-tight text-foreground mb-8 max-w-full text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-6xl">
                   <span className="block">{t('home', 'coreServicesLine1')}</span>
                   <span className="block text-primary">{t('home', 'coreServicesLine2')}</span>
                 </h2>
 
-                <p className="font-paragraph text-white/60 text-base md:text-lg leading-relaxed mb-12 max-w-[32rem]">
+                <p className="font-paragraph text-foreground/70 text-base md:text-lg leading-relaxed mb-12 max-w-[32rem]">
                   {t('home', 'coreServicesDesc')}
                 </p>
 
                 <Link to={localize('/services')}>
-                  <button className="group flex items-center gap-4 text-white hover:text-primary transition-colors max-w-full">
+                  <button className="group flex items-center gap-4 text-foreground hover:text-primary transition-colors max-w-full">
                     <div className="w-12 h-12 border border-current flex items-center justify-center rounded-full group-hover:bg-primary group-hover:border-primary group-hover:text-white transition-all shrink-0">
                       <ArrowUpRight className="w-5 h-5" />
                     </div>
@@ -509,11 +509,11 @@ export default function HomePage() {
         </div>
       </section>
       {/* --- FEATURED PROJECT --- */}
-      <section id="featured" className="relative w-full py-24 md:py-32 bg-black overflow-hidden scroll-mt-24">
+      <section id="featured" className="relative w-full py-24 md:py-32 bg-background overflow-hidden scroll-mt-24">
         <div className="relative z-10 max-w-[120rem] mx-auto px-6 md:px-12 w-full">
           <div className="grid grid-cols-1 xl:grid-cols-[1.1fr_0.9fr] gap-8 xl:gap-12 items-center">
             {/* Left Column: Image */}
-            <div className="relative w-full min-w-0 aspect-video xl:aspect-[4/3] overflow-hidden border border-white/10 group">
+            <div className="relative w-full min-w-0 aspect-video xl:aspect-[4/3] overflow-hidden border border-foreground/10 group">
               <Image
                 src="/images/stt1.jpg"
                 alt={`${t('home', 'totalTankFarm')} ${t('home', 'refurbishment')}`}
@@ -547,30 +547,30 @@ export default function HomePage() {
             {/* Right Column: Text Content */}
             <div className="flex flex-col justify-center min-w-0">
               <SectionLabel text={t('home', 'featuredProject')} />
-              <h2 className="font-heading text-white leading-[0.9] tracking-tight mb-8 w-full min-w-0 text-4xl md:text-5xl lg:text-6xl xl:text-4xl uppercase">
+              <h2 className="font-heading text-foreground leading-[0.9] tracking-tight mb-8 w-full min-w-0 text-4xl md:text-5xl lg:text-6xl xl:text-4xl uppercase">
                 <span className="block">{t('home', 'totalTankFarm')}</span>
                 <span className="block text-primary">
                   {t('home', 'refurbishment')}
                 </span>
               </h2>
 
-              <p className="font-paragraph text-white/70 text-base md:text-lg leading-relaxed mb-8 max-w-[60ch]">
+              <p className="font-paragraph text-foreground/70 text-base md:text-lg leading-relaxed mb-8 max-w-[60ch]">
                 {t('home', 'projectDescription')}
               </p>
 
               {/* 4-cell project spec strip */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 mb-10">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-foreground/10 border border-foreground/10 mb-10">
                 {[
                   { label: 'specTanksLabel', value: 'specTanksValue' },
                   { label: 'specSystemLabel', value: 'specSystemValue' },
                   { label: 'scope', value: 'scopeDesc' },
                   { label: 'challenge', value: 'challengeDesc' },
                 ].map((spec) => (
-                  <div key={spec.label} className="bg-black p-5 min-w-0">
+                  <div key={spec.label} className="bg-background p-5 min-w-0">
                     <div className="font-paragraph text-primary text-[10px] font-bold uppercase tracking-[0.18em] mb-2">
                       {t('home', spec.label)}
                     </div>
-                    <p className="font-paragraph text-white text-sm leading-relaxed">
+                    <p className="font-paragraph text-foreground text-sm leading-relaxed">
                       {t('home', spec.value)}
                     </p>
                   </div>
@@ -652,23 +652,23 @@ function StickyServiceCard({ service }: { service: typeof SERVICES_DATA[0] }) {
       <Link
         to={localize(`/services#${service.anchor}`)}
         aria-label={`${serviceTitle} — view on services page`}
-        className="group relative block bg-dark-grey border border-white/10 p-8 md:p-12 hover:border-primary transition-colors duration-500"
+        className="group relative block bg-background border border-foreground/10 p-8 md:p-12 hover:border-primary transition-colors duration-500"
       >
-        <div className="absolute top-0 right-0 p-4 opacity-20 font-heading text-5xl sm:text-6xl text-white group-hover:opacity-10 transition-opacity">
+        <div className="absolute top-0 right-0 p-4 opacity-20 font-heading text-5xl sm:text-6xl text-foreground group-hover:opacity-10 transition-opacity">
           {service.id}
         </div>
 
         <div className="flex flex-col gap-4 items-start pr-16 sm:pr-12">
-          <h3 className="font-heading text-2xl sm:text-3xl md:text-4xl text-white mb-2 group-hover:text-primary transition-colors">
+          <h3 className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground mb-2 group-hover:text-primary transition-colors">
             {serviceTitle}
           </h3>
-          <p className="font-paragraph text-white/60 text-sm md:text-base leading-relaxed mb-4 max-w-2xl">
+          <p className="font-paragraph text-foreground/70 text-sm md:text-base leading-relaxed mb-4 max-w-2xl">
             {t('home', service.descKey)}
           </p>
 
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
             {service.detailsKeys.map((detailKey) => (
-              <li key={detailKey} className="flex items-center gap-2 font-paragraph text-xs text-white/80 uppercase tracking-wide">
+              <li key={detailKey} className="flex items-center gap-2 font-paragraph text-xs text-foreground/80 uppercase tracking-wide">
                 <div className="w-1 h-1 bg-primary" />
                 {t('home', detailKey)}
               </li>
