@@ -223,6 +223,11 @@ export default function HomePage() {
 
   return (
     <div className="bg-background min-h-screen text-foreground selection:bg-primary selection:text-white overflow-clip">
+      <head>
+        <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta httpEquiv="Pragma" content="no-cache" />
+        <meta httpEquiv="Expires" content="0" />
+      </head>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(ORGANIZATION_JSON_LD) }}
