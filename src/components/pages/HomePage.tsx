@@ -289,9 +289,7 @@ export default function HomePage() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.1, ease: [0.215, 0.61, 0.355, 1] }}
                   className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50"
-                >
-                  {t('home', 'heroTitleLine2')}
-                </motion.span>
+                >Coatings</motion.span>
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
