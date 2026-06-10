@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { IndustriesServed } from '@/entities';
-import { BaseCrudService } from '@/integrations/cms/service';
+import { BaseCrudService } from '@/integrations';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { useLocale } from '@/lib/i18n/useLocale';
 import { motion } from 'framer-motion';

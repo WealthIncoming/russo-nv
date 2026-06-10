@@ -16,12 +16,8 @@ const SectionLabel = ({ text, align = 'center' }: { text: string; align?: 'left'
 );
 
 export default function AboutPage() {
-  const { t } = useLanguageStore();
-  // Locale comes from the router (useLocale), not the language store: zustand v5
-  // serves its initial state as the SSR snapshot, so a store-derived `language`
-  // would render the NL branch on /en during SSR + hydration, then flash to EN.
-  // The router locale is deterministic on server and client, so no flash.
-  const { localize, locale } = useLocale();
+  const { t, language } = useLanguageStore();
+  const { localize } = useLocale();
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -48,7 +44,7 @@ export default function AboutPage() {
               {t('about', 'heroLabel')}
             </span>
             <h1 className={`font-heading text-white mt-4 mb-8 leading-tight sm:leading-none uppercase ${
-              locale === 'NL'
+              language === 'NL'
                 ? 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl'
                 : 'text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl'
             }`}>

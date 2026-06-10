@@ -251,7 +251,7 @@ const websiteSchema = basePath === '/' ? {
   </head>
   <body class="w-full h-full">
     <div id="root" class="w-full h-full">
-      <AppRouter client:load initialPath={Astro.url.pathname} />
+      <AppRouter client:only="react" />
     </div>
   </body>
 </html>
