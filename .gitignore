@@ -11,6 +11,9 @@ pnpm-debug.log*
 .DS_Store
 out
 
+# Scratch image for sharing screenshots/visuals with Claude (not a site asset)
+images/check.png
+
 # build output
 # generated types
 dist
