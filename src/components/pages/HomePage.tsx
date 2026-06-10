@@ -132,7 +132,7 @@ const ORGANIZATION_JSON_LD = {
   sameAs: [
     'https://www.linkedin.com/company/russo-nv/',
     'https://www.instagram.com/russo.n.v/',
-    'https://www.facebook.com/share/16myRf73Ju/?mibextid=wwXIfr',
+    'https://www.facebook.com/profile.php?id=61559552162077',
   ],
 };
 
@@ -228,8 +228,13 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(ORGANIZATION_JSON_LD) }}
       />
       <style>{`
-        .clip-diagonal {
-          clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        /* Only clip on md+ where the grid is multi-column and short.
+           On mobile the section is a tall single column, so clipping cut
+           off the last card — leave it unclipped there. */
+        @media (min-width: 768px) {
+          .clip-diagonal {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+          }
         }
         .clip-diagonal-reverse {
           clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);

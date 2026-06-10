@@ -555,6 +555,10 @@ export default function ContactPage() {
                 {isSubmitting ? t('contact', 'sending') : t('contact', 'send')}
                 <Send className="w-5 h-5" />
               </button>
+
+              <p className="font-paragraph text-xs text-white/50 mt-4 max-w-prose">
+                {t('contact', 'privacyNotice')}
+              </p>
             </form>
             )}
           </motion.div>

@@ -238,7 +238,7 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
               'clientChemicalPlants',
               'clientFoodProduction',
@@ -259,9 +259,9 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                className="bg-white/5 border border-white/10 p-6 text-center hover:border-primary transition-colors"
+                className="bg-white/5 border border-white/10 p-4 text-center hover:border-primary transition-colors"
               >
-                <div className="font-paragraph text-sm text-white/80">{t('about', clientKey)}</div>
+                <div className="font-paragraph text-xs sm:text-sm text-white/80">{t('about', clientKey)}</div>
               </motion.div>
             ))}
           </div>

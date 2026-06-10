@@ -190,9 +190,10 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="font-paragraph text-sm text-white/60">
-              © {new Date().getFullYear()} Russo NV. {t('footer', 'allRightsReserved')}
-            </p>
+            <div className="font-paragraph text-sm text-white/60 text-center md:text-left">
+              <p>© {new Date().getFullYear()} Russo NV. {t('footer', 'allRightsReserved')}</p>
+              <p className="text-white/40 mt-1">BTW BE 0453.001.480 · RPR Antwerpen</p>
+            </div>
             <div className="flex flex-wrap gap-6 items-center justify-center">
               <Link
                 to={localize('/privacy')}

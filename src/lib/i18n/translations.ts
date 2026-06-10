@@ -706,6 +706,7 @@ export const translations: Record<Language, Translations> = {
       formSectionLabel: 'Start Your Project',
       formTitle: 'Request A Quote',
       formDescription: 'Fill out the form below and our team will get back to you within 24 hours',
+      privacyNotice: 'By submitting this form, you agree to the processing of your personal data in accordance with our Privacy Policy.',
       fieldsetDetails: 'Your details',
       fieldsetMessage: 'Your message',
       name: 'Full Name',
@@ -785,7 +786,7 @@ export const translations: Record<Language, Translations> = {
       privacyIntro: 'This Privacy Policy explains how Russo NV collects, uses, and protects personal data through this website. We are committed to handling your information transparently and in line with the EU General Data Protection Regulation (GDPR).',
 
       privacy1Title: 'Who we are',
-      privacy1Body: 'Russo NV is a Belgian company specialized in industrial coating and surface preparation services. Our registered office is at Taxandriastraat 35, 2170 Antwerp, Belgium. You can reach us at info@russonv.be or +32 475 43 48 19. For privacy-related questions, contact us using the same details. We act as the data controller for personal data processed through this website.',
+      privacy1Body: 'Russo NV is a Belgian company specialized in industrial coating and surface preparation services. Our registered office is at Taxandriastraat 35, 2170 Antwerp, Belgium. Our enterprise and VAT number is BE 0453.001.480 (RPR Antwerp). You can reach us at info@russonv.be or +32 475 43 48 19. For privacy-related questions, contact us using the same details. We act as the data controller for personal data processed through this website.',
 
       privacy2Title: 'What data we collect',
       privacy2Body: 'We collect personal data that you voluntarily share with us — primarily through the contact form on this website (your name, company, email address, phone number, and the content of your message). We also collect basic technical data automatically when you visit the site (IP address, browser type, pages viewed, referring website) for analytics, security, and to keep the site running properly.',
@@ -825,7 +826,7 @@ export const translations: Record<Language, Translations> = {
       termsIntro: 'These Terms of Service govern your use of the website russonv.com. By accessing or using the site, you agree to these Terms. If you do not agree, please do not use the site.',
 
       terms1Title: 'About these terms',
-      terms1Body: 'These Terms of Service ("Terms") govern your use of the website russonv.com (the "Site"). By accessing or using the Site, you agree to be bound by these Terms. If you do not agree, please do not use the Site. Russo NV ("we", "us", "our") is a Belgian company with its registered office at Taxandriastraat 35, 2170 Antwerp, Belgium.',
+      terms1Body: 'These Terms of Service ("Terms") govern your use of the website russonv.com (the "Site"). By accessing or using the Site, you agree to be bound by these Terms. If you do not agree, please do not use the Site. Russo NV ("we", "us", "our") is a Belgian company with its registered office at Taxandriastraat 35, 2170 Antwerp, Belgium. Our enterprise and VAT number is BE 0453.001.480 (RPR Antwerp).',
 
       terms2Title: 'Our services',
       terms2Body: 'The Site provides information about our industrial coating, surface preparation, and related services. The content is for general information only. Any specific commercial relationship — including the scope, pricing, timeline, and terms of work — is governed by a separate written agreement signed between us and our client. Nothing on the Site constitutes a binding offer.',
@@ -1565,6 +1566,7 @@ export const translations: Record<Language, Translations> = {
       formSectionLabel: 'Start Uw Project',
       formTitle: 'Offerte Aanvragen',
       formDescription: 'Vul het onderstaande formulier in en ons team neemt binnen 24 uur contact met u op',
+      privacyNotice: 'Door dit formulier te verzenden, gaat u akkoord met de verwerking van uw persoonsgegevens zoals beschreven in ons Privacybeleid.',
       fieldsetDetails: 'Uw gegevens',
       fieldsetMessage: 'Uw bericht',
       name: 'Volledige Naam',
@@ -1644,7 +1646,7 @@ export const translations: Record<Language, Translations> = {
       privacyIntro: 'Dit Privacybeleid legt uit hoe Russo NV persoonsgegevens verzamelt, gebruikt en beschermt via deze website. Wij verbinden ons ertoe uw informatie transparant te behandelen, in overeenstemming met de Algemene Verordening Gegevensbescherming (AVG / GDPR) van de EU.',
 
       privacy1Title: 'Wie wij zijn',
-      privacy1Body: 'Russo NV is een Belgisch bedrijf gespecialiseerd in industriële coating- en oppervlaktevoorbereidingsdiensten. Onze maatschappelijke zetel bevindt zich op Taxandriastraat 35, 2170 Antwerpen, België. U kunt ons bereiken via info@russonv.be of +32 475 43 48 19. Voor privacygerelateerde vragen kunt u dezelfde gegevens gebruiken. Wij treden op als verwerkingsverantwoordelijke voor de persoonsgegevens die via deze website worden verwerkt.',
+      privacy1Body: 'Russo NV is een Belgisch bedrijf gespecialiseerd in industriële coating- en oppervlaktevoorbereidingsdiensten. Onze maatschappelijke zetel bevindt zich op Taxandriastraat 35, 2170 Antwerpen, België. Ons ondernemings- en BTW-nummer is BE 0453.001.480 (RPR Antwerpen). U kunt ons bereiken via info@russonv.be of +32 475 43 48 19. Voor privacygerelateerde vragen kunt u dezelfde gegevens gebruiken. Wij treden op als verwerkingsverantwoordelijke voor de persoonsgegevens die via deze website worden verwerkt.',
 
       privacy2Title: 'Welke gegevens wij verzamelen',
       privacy2Body: 'Wij verzamelen persoonsgegevens die u vrijwillig met ons deelt — voornamelijk via het contactformulier op deze website (uw naam, bedrijf, e-mailadres, telefoonnummer en de inhoud van uw bericht). Wij verzamelen ook automatisch basale technische gegevens wanneer u de site bezoekt (IP-adres, browsertype, bekeken pagina\'s, verwijzende website) voor analyse, beveiliging en de goede werking van de site.',
@@ -1684,7 +1686,7 @@ export const translations: Record<Language, Translations> = {
       termsIntro: 'Deze Servicevoorwaarden regelen uw gebruik van de website russonv.com. Door de site te bezoeken of te gebruiken, gaat u akkoord met deze Voorwaarden. Indien u niet akkoord gaat, gelieve de site niet te gebruiken.',
 
       terms1Title: 'Over deze voorwaarden',
-      terms1Body: 'Deze Servicevoorwaarden ("Voorwaarden") regelen uw gebruik van de website russonv.com (de "Site"). Door de Site te bezoeken of te gebruiken, gaat u ermee akkoord gebonden te zijn aan deze Voorwaarden. Indien u niet akkoord gaat, gelieve de Site niet te gebruiken. Russo NV ("wij", "ons", "onze") is een Belgisch bedrijf met maatschappelijke zetel op Taxandriastraat 35, 2170 Antwerpen, België.',
+      terms1Body: 'Deze Servicevoorwaarden ("Voorwaarden") regelen uw gebruik van de website russonv.com (de "Site"). Door de Site te bezoeken of te gebruiken, gaat u ermee akkoord gebonden te zijn aan deze Voorwaarden. Indien u niet akkoord gaat, gelieve de Site niet te gebruiken. Russo NV ("wij", "ons", "onze") is een Belgisch bedrijf met maatschappelijke zetel op Taxandriastraat 35, 2170 Antwerpen, België. Ons ondernemings- en BTW-nummer is BE 0453.001.480 (RPR Antwerpen).',
 
       terms2Title: 'Onze diensten',
       terms2Body: 'De Site biedt informatie over onze industriële coating-, oppervlaktevoorbereidings- en aanverwante diensten. De inhoud is uitsluitend bedoeld voor algemene informatie. Elke specifieke commerciële relatie — inclusief de scope, prijs, planning en voorwaarden van het werk — wordt geregeld door een afzonderlijke schriftelijke overeenkomst die tussen ons en onze klant wordt ondertekend. Niets op de Site vormt een bindend aanbod.',
