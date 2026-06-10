@@ -374,12 +374,13 @@ export default function ProjectsPage() {
 
                         {(() => {
                           const completionText = getProjectCompletion(project);
+                          const isOngoing = completionText === t('projects', 'ongoing');
                           return completionText && completionText !== 'N/A' ? (
                             <div className="flex items-start gap-3">
                               <Calendar className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                               <div>
                                 <div className="font-paragraph text-sm text-foreground/60 uppercase tracking-wider mb-2">
-                                  {t('projects', 'completionDate')}
+                                  {isOngoing ? t('projects', 'statusLabel') : t('projects', 'completionDate')}
                                 </div>
                                 <div className="font-paragraph text-base text-foreground">
                                   {completionText}
