@@ -1,3 +1,4 @@
+import { scrollBehavior } from '@/lib/motion';
 import { ArrowUp } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
@@ -14,7 +15,7 @@ export function ScrollUpButton() {
   }, []);
 
   const handleClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: scrollBehavior() });
   };
 
   return (

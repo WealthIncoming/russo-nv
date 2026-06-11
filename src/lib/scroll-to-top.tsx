@@ -1,3 +1,4 @@
+import { scrollBehavior } from '@/lib/motion';
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -16,7 +17,7 @@ export function ScrollToTop() {
       setTimeout(() => {
         const element = document.getElementById(location.hash.slice(1));
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: scrollBehavior() });
         }
       }, 100);
     } else {

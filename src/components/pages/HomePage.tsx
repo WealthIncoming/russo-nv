@@ -1,12 +1,10 @@
 // HPI 1.7-V
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { useLocale } from '@/lib/i18n/useLocale';
 import { serializeJsonLd } from '@/lib/json-ld';
 import { useCopyPhone } from '@/lib/use-copy-phone';
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from 'framer-motion';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -162,6 +160,9 @@ const ParallaxText = ({ children, baseVelocity = 100 }: { children: string; base
   const velocityFactor = useTransform(scrollVelocity, [0, 1000], [0, 5], { clamp: false });
   const [x, setX] = useState(0);
   const xRef = useRef(0);
+  // WCAG 2.2.2: this rAF loop is JS-driven, so the global reduced-motion CSS
+  // reset can't stop it — skip it entirely and render the text static.
+  const reduceMotion = useReducedMotion();
 
   // Loop logic
   const wrap = (min: number, max: number, v: number) => {
@@ -170,6 +171,7 @@ const ParallaxText = ({ children, baseVelocity = 100 }: { children: string; base
   };
 
   useEffect(() => {
+    if (reduceMotion) return;
     let lastTime = performance.now();
     let animationFrameId: number;
 
@@ -191,7 +193,7 @@ const ParallaxText = ({ children, baseVelocity = 100 }: { children: string; base
 
     animationFrameId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrameId);
-  }, [baseVelocity, velocityFactor]);
+  }, [baseVelocity, velocityFactor, reduceMotion]);
 
   return (
     <div className="overflow-hidden whitespace-nowrap flex flex-nowrap">
@@ -210,7 +212,10 @@ export default function HomePage() {
   const { copied, copy } = useCopyPhone();
   const onCallClick = () => copy('+32 475 43 48 19');
 
-  // Parallax for Hero
+  // Parallax for Hero. Scroll-linked style bindings bypass MotionConfig's
+  // reduced-motion handling, so gate them by hand: static position/opacity
+  // when the user prefers reduced motion.
+  const reduceMotion = useReducedMotion();
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress: heroScroll } = useScroll({
     target: heroRef,
@@ -223,11 +228,6 @@ export default function HomePage() {
 
   return (
     <div className="bg-background min-h-screen text-foreground selection:bg-primary selection:text-white overflow-clip">
-      <head>
-        <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-        <meta httpEquiv="Pragma" content="no-cache" />
-        <meta httpEquiv="Expires" content="0" />
-      </head>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(ORGANIZATION_JSON_LD) }}
@@ -250,11 +250,12 @@ export default function HomePage() {
                             linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
         }
       `}</style>
-      <Header />
       {/* --- HERO SECTION --- */}
-      <section id="main" ref={heroRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center">
+      {/* id="main" lives on the Layout's <main> wrapper now (routes.tsx) —
+          keeping it here too would duplicate the id. */}
+      <section ref={heroRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center">
         {/* Background Parallax */}
-        <motion.div style={{ y: heroY }} className="absolute inset-0 z-0">
+        <motion.div style={reduceMotion ? undefined : { y: heroY }} className="absolute inset-0 z-0">
           <Image
             src="/images/home-hero.jpg"
             alt={t('home', 'heroImageAlt')}
@@ -267,7 +268,7 @@ export default function HomePage() {
 
         {/* Hero Content */}
         <motion.div
-          style={{ opacity: heroOpacity }}
+          style={reduceMotion ? undefined : { opacity: heroOpacity }}
           className="relative z-10 w-full max-w-[120rem] mx-auto px-4 sm:px-6 md:px-12 flex flex-col justify-center h-full pt-20"
         >
           <div className="mb-8 md:border-l md:border-white/20 md:pl-12">
@@ -635,7 +636,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }
@@ -643,6 +643,8 @@ export default function HomePage() {
 // --- Sub-Components ---
 
 function StickyServiceCard({ service }: { service: typeof SERVICES_DATA[0] }) {
+  // Scroll-linked bindings bypass MotionConfig — render static when reduced.
+  const reduceMotion = useReducedMotion();
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -657,7 +659,7 @@ function StickyServiceCard({ service }: { service: typeof SERVICES_DATA[0] }) {
   const serviceTitle = t('home', service.titleKey);
 
   return (
-    <motion.div ref={cardRef} style={{ opacity, x }}>
+    <motion.div ref={cardRef} style={reduceMotion ? undefined : { opacity, x }}>
       <Link
         to={localize(`/services#${service.anchor}`)}
         aria-label={`${serviceTitle} — view on services page`}

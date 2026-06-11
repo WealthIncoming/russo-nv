@@ -1,5 +1,4 @@
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
+import { scrollBehavior } from '@/lib/motion';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { ArrowUp } from 'lucide-react';
 
@@ -34,7 +33,6 @@ export default function LegalPage({
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
 
       {/* Hero */}
       <section className="relative w-full max-w-[120rem] mx-auto bg-foreground py-24 md:py-32">
@@ -87,7 +85,7 @@ export default function LegalPage({
             href="#top"
             onClick={(e) => {
               e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+              window.scrollTo({ top: 0, behavior: scrollBehavior() });
             }}
             className="inline-flex items-center gap-2 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all"
           >
@@ -97,7 +95,6 @@ export default function LegalPage({
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

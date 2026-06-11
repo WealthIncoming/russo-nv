@@ -1,5 +1,3 @@
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { IndustrialServices } from '@/entities';
@@ -163,7 +161,6 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
 
       {servicesSchema && (
         <script
@@ -362,7 +359,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

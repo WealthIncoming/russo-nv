@@ -1,3 +1,4 @@
+import { scrollBehavior } from '@/lib/motion';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { useLocale } from '@/lib/i18n/useLocale';
 import { ArrowUp, Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
@@ -38,7 +39,7 @@ export default function Footer() {
 
   const handleBackToTop = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: scrollBehavior() });
   };
 
   return (

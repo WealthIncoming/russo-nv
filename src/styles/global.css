@@ -3,3 +3,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* WCAG 2.2.2: when the user asks for reduced motion, collapse every CSS
+   animation/transition to a single near-instant frame. This stops the
+   infinite certification marquee and all entrance/hover transitions.
+   JS-driven motion (framer-motion, rAF parallax) is gated separately via
+   MotionConfig reducedMotion="user" and useReducedMotion(). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,7 +1,10 @@
 import { Navigate, Outlet, useLocation, type RouteObject } from 'react-router-dom';
 import { useEffect } from 'react';
+import { MotionConfig } from 'framer-motion';
 import { ScrollToTop } from '@/lib/scroll-to-top';
 import { ScrollUpButton } from '@/components/ui/scroll-up-button';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import ErrorPage from '@/integrations/errorHandlers/ErrorPage';
 import HomePage from '@/components/pages/HomePage';
 import MaintenancePage from '@/components/pages/MaintenancePage';
@@ -33,12 +36,23 @@ function LanguageSync() {
 
 function Layout() {
   return (
-    <>
+    // MotionConfig reducedMotion="user" makes every framer-motion component
+    // respect prefers-reduced-motion (transform/layout animations disabled,
+    // opacity kept) — the CSS half of the reset lives in global.css.
+    <MotionConfig reducedMotion="user">
       <LanguageSync />
       <ScrollToTop />
-      <Outlet />
+      <Header />
+      {/* Single top-level <main>: gives every route a main landmark and a
+          valid #main skip-link target (tabIndex so focus() lands on it).
+          Header/Footer are hoisted here — not inside the pages — so the
+          banner/contentinfo landmarks stay top-level, outside <main>. */}
+      <main id="main" tabIndex={-1}>
+        <Outlet />
+      </main>
+      <Footer />
       <ScrollUpButton />
-    </>
+    </MotionConfig>
   );
 }
 
