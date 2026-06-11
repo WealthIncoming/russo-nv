@@ -110,7 +110,7 @@ export default function AboutPage() {
               {t('about', 'storyParagraph4')}
             </p>
 
-            <div className="grid grid-cols-2 gap-8 pt-8 mt-4 border-t border-foreground/10 max-w-[32rem]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 mt-4 border-t border-foreground/10 max-w-[32rem]">
               <div className="min-w-0">
                 <div className="font-heading text-4xl sm:text-5xl text-primary mb-2">24/7</div>
                 <div className="font-paragraph text-sm text-foreground/70 uppercase tracking-wider">
