@@ -282,7 +282,7 @@ export default function ProjectsPage() {
                     </div>
 
                     {hasSecondary && (
-                      <div className="relative h-[280px] sm:h-[360px] lg:h-[500px] xl:h-[600px] 2xl:h-[680px] overflow-hidden">
+                      <div className="relative lg:h-[500px] xl:h-[600px] 2xl:h-[680px] overflow-hidden">
                         <Image
                           src={secondarySrc!}
                           alt={
@@ -290,7 +290,7 @@ export default function ProjectsPage() {
                               ? `${translatedTitle} — ${t('projects', 'altAdditionalView')}`
                               : 'Industrial project detail'
                           }
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          className="w-full h-auto lg:h-full object-cover transition-transform duration-700 group-hover:scale-105"
                           width={600}
                           loading="lazy"
                           decoding="async"
