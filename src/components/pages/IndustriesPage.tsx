@@ -73,39 +73,29 @@ const INDUSTRY_DISPLAY_ORDER: string[] = [
 ];
 
 export default function IndustriesPage() {
-  const [industries, setIndustries] = useState<IndustriesServed[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const { t, language } = useLanguageStore();
-  const { localize } = useLocale();
-
-  useEffect(() => {
-    loadIndustries();
-  }, []);
-
-  const loadIndustries = async () => {
-    try {
-      const result = await BaseCrudService.getAll<IndustriesServed>('industriesserved');
-      const sorted = [...result.items].sort((a, b) => {
-        const aName = (a.industryName || '').toLowerCase();
-        const bName = (b.industryName || '').toLowerCase();
-        const aIndex = INDUSTRY_DISPLAY_ORDER.findIndex(keyword => aName.includes(keyword));
-        const bIndex = INDUSTRY_DISPLAY_ORDER.findIndex(keyword => bName.includes(keyword));
-        return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
-      });
-      setIndustries(sorted);
-    } catch (error) {
-      console.error('Error loading industries:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  // Seed synchronously from the frozen snapshot so the industries render into the
+  // server HTML (real SSR content) and match on hydration — no loading shell.
+  const [industries] = useState<IndustriesServed[]>(() => {
+    const items = BaseCrudService.getAllItems<IndustriesServed>('industriesserved');
+    return [...items].sort((a, b) => {
+      const aName = (a.industryName || '').toLowerCase();
+      const bName = (b.industryName || '').toLowerCase();
+      const aIndex = INDUSTRY_DISPLAY_ORDER.findIndex(keyword => aName.includes(keyword));
+      const bIndex = INDUSTRY_DISPLAY_ORDER.findIndex(keyword => bName.includes(keyword));
+      return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
+    });
+  });
+  const isLoading = false;
+  const { t } = useLanguageStore();
+  // Router-derived locale (deterministic on server + client) — see ProjectsPage.
+  const { localize, locale } = useLocale();
 
   const getIndustryText = (
     industry: IndustriesServed,
     field: string,
     fallback: string | undefined
   ): string => {
-    if (language === 'EN') return fallback || '';
+    if (locale === 'EN') return fallback || '';
     const prefix = getTranslationPrefix(industry.industryName);
     if (!prefix) return fallback || '';
     const translationKey = `${prefix}${field}`;

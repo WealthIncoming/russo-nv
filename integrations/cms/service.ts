@@ -51,6 +51,16 @@ export class BaseCrudService {
    * `includeRefs` is accepted for call-site compatibility but ignored (the
    * snapshot has no reference fields).
    */
+  /**
+   * Synchronous accessor for a full collection, used by pages that seed their
+   * initial React state during render. Because it reads the bundled snapshot with
+   * no Promise/effect, the data is present in the server-rendered HTML (real SSR
+   * content, not a loading shell) and identical on client hydration.
+   */
+  static getAllItems<T extends WixDataItem>(collectionId: string): T[] {
+    return (collections[collectionId] ?? []) as T[];
+  }
+
   static async getAll<T extends WixDataItem>(
     collectionId: string,
     _includeRefs?: IncludeRefs,

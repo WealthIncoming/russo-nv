@@ -85,32 +85,22 @@ function getTranslationPrefix(serviceName: string | undefined): string | null {
 }
 
 export default function ServicesPage() {
-  const [services, setServices] = useState<IndustrialServices[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const { t, language } = useLanguageStore();
-  const { localize } = useLocale();
-
-  useEffect(() => {
-    loadServices();
-  }, []);
-
-  const loadServices = async () => {
-    try {
-      const result = await BaseCrudService.getAll<IndustrialServices>('industrialservices');
-      const sorted = [...result.items].sort((a, b) => {
-        const aName = (a.serviceName || '').toLowerCase();
-        const bName = (b.serviceName || '').toLowerCase();
-        const aIndex = SERVICE_DISPLAY_ORDER.findIndex(keyword => aName.includes(keyword));
-        const bIndex = SERVICE_DISPLAY_ORDER.findIndex(keyword => bName.includes(keyword));
-        return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
-      });
-      setServices(sorted);
-    } catch (error) {
-      console.error('Error loading services:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  // Seed synchronously from the frozen snapshot so the services render into the
+  // server HTML (real SSR content) and match on hydration — no loading shell.
+  const [services] = useState<IndustrialServices[]>(() => {
+    const items = BaseCrudService.getAllItems<IndustrialServices>('industrialservices');
+    return [...items].sort((a, b) => {
+      const aName = (a.serviceName || '').toLowerCase();
+      const bName = (b.serviceName || '').toLowerCase();
+      const aIndex = SERVICE_DISPLAY_ORDER.findIndex(keyword => aName.includes(keyword));
+      const bIndex = SERVICE_DISPLAY_ORDER.findIndex(keyword => bName.includes(keyword));
+      return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
+    });
+  });
+  const isLoading = false;
+  const { t } = useLanguageStore();
+  // Router-derived locale (deterministic on server + client) — see ProjectsPage.
+  const { localize, locale } = useLocale();
 
   // ===========================================================================
   // STEP 3: HELPER — Get translated text for a service field.
@@ -283,7 +273,7 @@ export default function ServicesPage() {
                             {/* Service name — now translated */}
                             <div className="min-w-0">
                               <h2 className={`font-heading text-foreground leading-[1.05] tracking-tight ${
-                                language === 'NL'
+                                locale === 'NL'
                                   ? 'text-xl sm:text-2xl lg:text-3xl xl:text-4xl'
                                   : 'text-2xl sm:text-3xl lg:text-4xl xl:text-5xl'
                               }`}>

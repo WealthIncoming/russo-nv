@@ -91,25 +91,18 @@ const SectionLabel = ({ text }: { text: string }) => (
 );
 
 export default function ProjectsPage() {
-  const [projects, setProjects] = useState<ProjectPortfolio[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const { t, language } = useLanguageStore();
-  const { localize } = useLocale();
-
-  useEffect(() => {
-    loadProjects();
-  }, []);
-
-  const loadProjects = async () => {
-    try {
-      const result = await BaseCrudService.getAll<ProjectPortfolio>('projectportfolio');
-      setProjects(result.items);
-    } catch (error) {
-      console.error('Error loading projects:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  // Seed synchronously from the frozen snapshot so the projects render into the
+  // server HTML (real SSR content) and match on hydration — no loading shell.
+  const [projects] = useState<ProjectPortfolio[]>(
+    () => BaseCrudService.getAllItems<ProjectPortfolio>('projectportfolio')
+  );
+  const isLoading = false;
+  const { t } = useLanguageStore();
+  // Locale comes from the router, not the language store: zustand serves its
+  // initial (DEFAULT_LOCALE) state as the SSR snapshot, so a store-derived branch
+  // would render NL on /en during SSR + hydration, then flash. The router locale
+  // is deterministic on server and client.
+  const { localize, locale } = useLocale();
 
   // =============================================================================
   // HELPER — Get translated text for a project field. translations.ts is the
@@ -147,7 +140,7 @@ export default function ProjectsPage() {
     if (!date) return 'N/A';
     try {
       return format(new Date(date), 'MMMM yyyy', {
-        locale: language === 'NL' ? nl : undefined,
+        locale: locale === 'NL' ? nl : undefined,
       });
     } catch {
       return 'N/A';
@@ -163,7 +156,7 @@ export default function ProjectsPage() {
     name: t('projects', 'pageTitle'),
     description: t('projects', 'heroDescription'),
     url: collectionUrl,
-    inLanguage: language === 'EN' ? 'en' : 'nl-BE',
+    inLanguage: locale === 'EN' ? 'en' : 'nl-BE',
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': `${SITE_URL}/#organization` },
     hasPart: projects.map((p) => {
@@ -211,7 +204,7 @@ export default function ProjectsPage() {
               {t('projects', 'heroLabel')}
             </span>
             <h1 className={`font-heading text-white mt-4 mb-8 leading-none uppercase ${
-              language === 'NL'
+              locale === 'NL'
                 ? 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl'
                 : 'text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl'
             }`}>

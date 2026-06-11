@@ -66,36 +66,24 @@ function isCertExpired(date: Date | string | undefined): boolean {
 }
 
 export default function SafetyPage() {
-  const [certifications, setCertifications] = useState<Certifications[]>([]);
-  const [companyValues, setCompanyValues] = useState<CompanyValues[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const { t, language } = useLanguageStore();
-  const { localize } = useLocale();
-
-  useEffect(() => {
-    loadData();
-  }, []);
-
-  const loadData = async () => {
-    try {
-      const [certsResult, valuesResult] = await Promise.all([
-        BaseCrudService.getAll<Certifications>('certifications'),
-        BaseCrudService.getAll<CompanyValues>('companyvalues'),
-      ]);
-      setCertifications(certsResult.items);
-      setCompanyValues(valuesResult.items);
-    } catch (error) {
-      console.error('Error loading data:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  // Seed synchronously from the frozen snapshot so certs + values render into the
+  // server HTML (real SSR content) and match on hydration — no loading shell.
+  const [certifications] = useState<Certifications[]>(
+    () => BaseCrudService.getAllItems<Certifications>('certifications')
+  );
+  const [companyValues] = useState<CompanyValues[]>(
+    () => BaseCrudService.getAllItems<CompanyValues>('companyvalues')
+  );
+  const isLoading = false;
+  const { t } = useLanguageStore();
+  // Router-derived locale (deterministic on server + client) — see ProjectsPage.
+  const { localize, locale } = useLocale();
 
   const formatDate = (date: Date | string | undefined) => {
     if (!date) return 'N/A';
     try {
       return format(new Date(date), 'MMMM yyyy', {
-        locale: language === 'NL' ? nl : undefined,
+        locale: locale === 'NL' ? nl : undefined,
       });
     } catch {
       return 'N/A';
@@ -107,7 +95,7 @@ export default function SafetyPage() {
     field: string,
     fallback: string | undefined
   ): string => {
-    if (language === 'EN') return fallback || '';
+    if (locale === 'EN') return fallback || '';
     const prefix = getCertPrefix(cert.certificationName);
     if (!prefix) return fallback || '';
     const key = `${prefix}${field}`;
@@ -120,7 +108,7 @@ export default function SafetyPage() {
     field: string,
     fallback: string | undefined
   ): string => {
-    if (language === 'EN') return fallback || '';
+    if (locale === 'EN') return fallback || '';
     const prefix = getValuePrefix(value.valueTitle);
     if (!prefix) return fallback || '';
     const key = `${prefix}${field}`;
