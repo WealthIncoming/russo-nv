@@ -16,7 +16,8 @@ import AboutPage from '@/components/pages/AboutPage';
 import ContactPage from '@/components/pages/ContactPage';
 import { PrivacyPage, TermsPage } from '@/components/pages/LegalPage';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
-import { detectLocale } from '@/lib/i18n/routes';
+import { detectLocale, delocalize } from '@/lib/i18n/routes';
+import { PAGE_META } from '@/lib/page-meta';
 
 // Shared route configuration as plain data. Crucially this module instantiates
 // NO router (no createBrowserRouter/createMemoryRouter), so it is safe to
@@ -24,12 +25,22 @@ import { detectLocale } from '@/lib/i18n/routes';
 // Router.tsx (memory router on the server, browser router in the client).
 export const basename = import.meta.env.BASE_NAME || '/';
 
-function LanguageSync() {
+function RouteSync() {
   const location = useLocation();
   const setLanguage = useLanguageStore((s) => s.setLanguage);
   useEffect(() => {
     const lang = detectLocale(location.pathname);
     setLanguage(lang);
+    // Keep document.title in sync on client-side navigation. The static HTML
+    // already carries the right per-route <title> (PAGE_META is shared with
+    // [...slug].astro), but a SPA navigation never reloads the document, so
+    // without this the title stays stuck on whichever page was loaded first.
+    const trimmed = location.pathname.length > 1
+      ? location.pathname.replace(/\/+$/, '')
+      : location.pathname;
+    const base = delocalize(trimmed) || '/';
+    const title = PAGE_META[base]?.[lang]?.title;
+    if (title) document.title = title;
   }, [location.pathname, setLanguage]);
   return null;
 }
@@ -40,7 +51,7 @@ function Layout() {
     // respect prefers-reduced-motion (transform/layout animations disabled,
     // opacity kept) — the CSS half of the reset lives in global.css.
     <MotionConfig reducedMotion="user">
-      <LanguageSync />
+      <RouteSync />
       <ScrollToTop />
       <Header />
       {/* Single top-level <main>: gives every route a main landmark and a
