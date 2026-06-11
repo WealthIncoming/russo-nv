@@ -2,9 +2,15 @@
 import { Head } from "@/components/Head";
 import AppRouter from "@/components/Router";
 import { serializeJsonLd } from "@/lib/json-ld";
-import "@wix/wix-vibe-plugins/plugins-vars.css";
-import "@wix/wix-vibe-plugins/plugins-theme.css";
 import "@/styles/global.css";
+
+export function getStaticPaths() {
+  const routes = ['', 'services', 'industries', 'projects', 'safety', 'about', 'contact', 'privacy', 'terms'];
+  return routes.flatMap((r) => [
+    { params: { slug: r === '' ? undefined : r } },
+    { params: { slug: r === '' ? 'en' : `en/${r}` } },
+  ]);
+}
 
 const SITE_URL = 'https://www.russonv.com';
 const DEFAULT_OG_IMAGE = '/images/home-hero.jpg';

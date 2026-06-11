@@ -3,7 +3,6 @@ import Header from '@/components/Header';
 import { Image } from '@/components/ui/image';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { serializeJsonLd } from '@/lib/json-ld';
-import { submissions } from '@wix/forms';
 import { motion } from 'framer-motion';
 import { AlertCircle, CheckCircle, ChevronDown, Clock, Mail, MapPin, Phone, Search, Send } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
@@ -12,7 +11,9 @@ import { COUNTRIES, DEFAULT_COUNTRY, flagEmoji, type Country } from '@/lib/count
 const CONTACT_PHONE_DISPLAY = '+32 475 43 48 19';
 const CONTACT_PHONE_HREF = '+32475434819';
 const CONTACT_EMAIL = 'info@russonv.be';
-const WIX_FORM_ID = 'cd161b70-3a80-4193-a8b4-04df43cdcf89';
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+// Set PUBLIC_WEB3FORMS_KEY in the environment to the Web3Forms access key.
+const WEB3FORMS_ACCESS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
 // Address components, used both in the visible UI and the JSON-LD structured
 // data below. Single source of truth for the HQ address.
 const HQ_STREET = 'Taxandriastraat 35';
@@ -276,16 +277,24 @@ export default function ContactPage() {
     const localDigits = formData.phone.replace(/\D/g, '');
     const fullPhone = `+${selectedCountry.dial}${localDigits}`;
     try {
-      await submissions.createSubmission({
-        formId: WIX_FORM_ID,
-        submissions: {
+      const response = await fetch(WEB3FORMS_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: 'New website enquiry — Russo NV',
+          from_name: 'Russo NV website',
           name: formData.name,
           company: formData.company,
           email: formData.email,
           phone: fullPhone,
           message: formData.message,
-        },
+        }),
       });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result?.success === false) {
+        throw new Error(result?.message || `Submission failed (${response.status})`);
+      }
       setFormData({
         name: '',
         company: '',

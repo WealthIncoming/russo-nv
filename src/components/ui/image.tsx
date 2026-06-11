@@ -1,172 +1,116 @@
-import { type FittingType, getPlaceholder, type ImageTransformOptions, sdk, STATIC_MEDIA_URL } from '@wix/image-kit'
-import { forwardRef, type ImgHTMLAttributes, useEffect, useImperativeHandle, useRef, useState } from 'react'
-import { useSize } from '@/hooks/use-size'
+import { forwardRef, useEffect, useState, type CSSProperties, type ImgHTMLAttributes } from 'react'
 import './image.css'
 import { cn } from '@/lib/utils';
 
+const STATIC_MEDIA_URL = 'https://static.wixstatic.com/media/';
 const FALLBACK_IMAGE_URL = "https://static.wixstatic.com/media/12d367_4f26ccd17f8f4e3a8958306ea08c2332~mv2.png";
 
-type ImageData = {
-  id: string
-  width: number
-  height: number
-  focalPoint?: {
-    x: number
-    y: number
-  }
-}
-
 type WixImageDataProps = {
-  fittingType?: FittingType;
+  fittingType?: 'fill' | 'fit';
   originWidth?: number;
   originHeight?: number;
   focalPointX?: number;
   focalPointY?: number;
 };
 
-const getImageData = (url: string, imageProps: WixImageDataProps): ImageData | undefined => {
-  // wix:image://v1/${uri}/${filename}#originWidth=${width}&originHeight=${height}
-  const wixImagePrefix = 'wix:image://v1/'
-  if (url.startsWith(wixImagePrefix)) {
-    const uri = url.replace(wixImagePrefix, '').split('#')[0].split('/')[0]
+export type ImageProps = ImgHTMLAttributes<HTMLImageElement> & WixImageDataProps;
 
-    const params = new URLSearchParams(url.split('#')[1] || '')
-    const width = parseInt(params.get('originWidth') || '0', 10)
-    const height = parseInt(params.get('originHeight') || '0', 10)
+type ResolvedImage = {
+  url: string;
+  width?: number;
+  height?: number;
+};
 
-    return { id: uri, width, height }
-  } else if (url.startsWith(STATIC_MEDIA_URL)) {
-    const { pathname, searchParams } = new URL(url)
-    const originWidth = imageProps.originWidth || parseInt(searchParams.get('originWidth') || '0', 10)
-    const originHeight = imageProps.originHeight || parseInt(searchParams.get('originHeight') || '0', 10)
-    if (originWidth && originHeight) {
-      const uri = pathname.split('/').slice(2).join('/')
-      const focalPoint =
-        typeof imageProps.focalPointX === 'number' && typeof imageProps.focalPointY === 'number'
-          ? {
-            x: imageProps.focalPointX,
-            y: imageProps.focalPointY,
-          }
-          : undefined
+/**
+ * Resolve a CMS image reference to a plain CDN URL + (optional) intrinsic size.
+ * Handles the two shapes that appear in the frozen CMS data plus pass-through:
+ *   - wix:image://v1/<id>/<filename>#originWidth=..&originHeight=..
+ *   - https://static.wixstatic.com/media/<id>?originWidth=..&originHeight=..
+ *   - any other URL (local /images/.., absolute https) -> used as-is
+ */
+function resolveImage(src: string, props: WixImageDataProps): ResolvedImage {
+  const num = (v: string | null) => {
+    const n = parseInt(v || '0', 10);
+    return Number.isFinite(n) && n > 0 ? n : undefined;
+  };
 
-      return {
-        id: uri,
-        width: originWidth,
-        height: originHeight,
-        focalPoint,
-      }
-    }
+  const wixImagePrefix = 'wix:image://v1/';
+  if (src.startsWith(wixImagePrefix)) {
+    const rest = src.slice(wixImagePrefix.length);
+    const id = rest.split('#')[0].split('/')[0];
+    const params = new URLSearchParams(src.split('#')[1] || '');
+    return {
+      url: `${STATIC_MEDIA_URL}${id}`,
+      width: props.originWidth ?? num(params.get('originWidth')),
+      height: props.originHeight ?? num(params.get('originHeight')),
+    };
   }
+
+  if (src.startsWith(STATIC_MEDIA_URL)) {
+    const url = new URL(src);
+    return {
+      // Strip the metadata query to get the canonical full-resolution media URL.
+      url: `${url.origin}${url.pathname}`,
+      width: props.originWidth ?? num(url.searchParams.get('originWidth')),
+      height: props.originHeight ?? num(url.searchParams.get('originHeight')),
+    };
+  }
+
+  return { url: src, width: props.originWidth, height: props.originHeight };
 }
 
-export type ImageProps = ImgHTMLAttributes<HTMLImageElement> & WixImageDataProps
+export const Image = forwardRef<HTMLImageElement, ImageProps>(
+  ({ src, fittingType = 'fill', originWidth, originHeight, focalPointX, focalPointY, className, style, ...props }, ref) => {
+    const [imgSrc, setImgSrc] = useState<string | undefined>(src);
 
-type ImageWrapperProps = {
-  data: ImageData
-  className?: string
-  style?: React.CSSProperties
-  children: React.ReactNode
-}
+    useEffect(() => {
+      setImgSrc(src);
+    }, [src]);
 
-const ImageWrapper = forwardRef<HTMLSpanElement, ImageWrapperProps>(({ data, className, style, children }, ref) => {
-  const { width, height } = data
+    if (!src) {
+      return <div data-empty-image className={className} style={style} />;
+    }
 
-  // Calculate aspect ratio from original dimensions to prevent zero-height issues
-  // when height: auto is used. The CSS uses :where() for zero specificity,
-  // allowing Tailwind classes like aspect-square to override.
-  const aspectRatio = width && height ? `${width} / ${height}` : undefined
+    const onError = () => setImgSrc(FALLBACK_IMAGE_URL);
+    const isErrorUrl = imgSrc === FALLBACK_IMAGE_URL;
+    const resolved = resolveImage(imgSrc || src, { fittingType, originWidth, originHeight, focalPointX, focalPointY });
+    const objectFit = fittingType === 'fit' ? 'object-contain' : 'object-cover';
 
-  // Default width for when no explicit dimensions are set (intrinsic sizing)
-  // This ensures the wrapper has a non-zero size even without CSS width/height
-  const defaultWidth = width ? `${width}px` : undefined
+    // With intrinsic dimensions, wrap in an aspect-ratio box so layout stays
+    // stable while the image loads (mirrors the previous Wix <Image> behaviour
+    // and reuses the CSS variables defined in image.css).
+    if (resolved.width && resolved.height) {
+      const wrapperStyle = {
+        '--img-aspect-ratio': `${resolved.width} / ${resolved.height}`,
+        '--img-default-width': `${resolved.width}px`,
+        ...style,
+      } as CSSProperties;
 
-  return (
-    <span
-      ref={ref}
-      className={cn('inline-block relative', className)}
-      style={
-        {
-          '--img-aspect-ratio': aspectRatio,
-          '--img-default-width': defaultWidth,
-          ...style,
-        } as React.CSSProperties
-      }
-    >
-      {children}
-    </span>
-  )
-})
-ImageWrapper.displayName = 'ImageWrapper'
-
-type WixImageProps = Omit<ImageProps, 'src'> & { data: ImageData }
-
-const WixImage = forwardRef<HTMLImageElement, WixImageProps>(
-  ({ data, fittingType = 'fill', className, style, ...props }, parentRef) => {
-    const wrapperRef = useRef<HTMLSpanElement | null>(null)
-    const imgRef = useRef<HTMLImageElement | null>(null)
-    const size = useSize(wrapperRef)
-    const { width, height, focalPoint } = data
-
-    // Expose the img ref to the parent component
-    useImperativeHandle(parentRef, () => imgRef.current as HTMLImageElement)
-
-    const imgProps = { ...props } as ImgHTMLAttributes<HTMLImageElement>
-    // Add src (and other props if needed)to the img props
-    if (size) {
-      const scale = fittingType === 'fit' ? sdk.getScaleToFitImageURL : sdk.getScaleToFillImageURL
-      const targetHeight = size.height || height * (size.width / width) || height
-      const targetWidth = size.width || width * (size.height / height) || width
-      const transformOptions: ImageTransformOptions = focalPoint ? { focalPoint } : undefined
-      imgProps.src = scale(data.id, data.width, data.height, targetWidth, targetHeight, transformOptions)
-    } else {
-      // Use a small thumbnail as placeholder until we have the actual size
-      const { uri, ...placeholder } = getPlaceholder(fittingType ?? 'fit', data, { htmlTag: 'img' })
-      imgProps.style = placeholder.css.img as React.CSSProperties
-      imgProps.src = `${STATIC_MEDIA_URL}${uri}`
-      imgProps['data-placeholder-image'] = true
+      return (
+        <span className={cn('inline-block relative', className)} style={wrapperStyle}>
+          <img
+            ref={ref}
+            src={resolved.url}
+            onError={onError}
+            data-error-image={isErrorUrl || undefined}
+            className={cn('w-full h-full inset-0 absolute', objectFit)}
+            {...props}
+          />
+        </span>
+      );
     }
 
     return (
-      <ImageWrapper ref={wrapperRef} data={data} className={className} style={style}>
-        <img
-          ref={imgRef}
-          className={`w-full h-full inset-0 absolute ${fittingType === 'fit' ? 'object-contain' : 'object-cover'}`}
-          {...imgProps}
-        />
-      </ImageWrapper>
-    )
+      <img
+        ref={ref}
+        src={resolved.url}
+        onError={onError}
+        data-error-image={isErrorUrl || undefined}
+        className={className}
+        style={style}
+        {...props}
+      />
+    );
   }
-)
-WixImage.displayName = 'WixImage'
-
-export const Image = forwardRef<HTMLImageElement, ImageProps>(
-  ({ src, fittingType, originWidth, originHeight, focalPointX, focalPointY, ...props }, ref) => {
-    const [imgSrc, setImgSrc] = useState<string | undefined>(src)
-    const additionalImgProps = { fittingType, originWidth, originHeight, focalPointX, focalPointY }
-
-    useEffect(() => {
-      // If src prop changes, update the imgSrc state
-      setImgSrc(prev => {
-        if (prev !== src) {
-          return src
-        }
-        return prev
-      })
-    }, [src])
-
-    if (!src) {
-      return <div data-empty-image ref={ref} {...props} />
-    }
-
-    const imageProps = { ...props, onError: () => setImgSrc(FALLBACK_IMAGE_URL) }
-    const imageData = getImageData(imgSrc, additionalImgProps)
-
-    if (!imageData) {
-      const isErrorUrl = imgSrc === FALLBACK_IMAGE_URL
-      return <img ref={ref} src={imgSrc} {...imageProps} data-error-image={isErrorUrl} />
-    }
-
-    return <WixImage ref={ref} data={imageData} {...imageProps} />
-  }
-)
-Image.displayName = 'Image'
+);
+Image.displayName = 'Image';

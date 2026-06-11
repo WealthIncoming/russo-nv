@@ -1,21 +1,22 @@
-import type { PageMetadata } from "@wix/astro-pages";
-
 /// <reference types="astro/client" />
 /// <reference path="../.astro/types.d.ts" />
 
 declare const Astro: Readonly<import("astro").AstroGlobal>;
 
+// Local replacement for the former `@wix/astro-pages` PageMetadata type.
+type PageMetadata = {
+  pageIdentifier?: string;
+  [key: string]: unknown;
+};
+
 declare global {
-  interface SDKTypeMode {
-    strict: true;
+  interface ImportMetaEnv {
+    readonly BASE_NAME?: string;
+    readonly PUBLIC_WEB3FORMS_KEY?: string;
   }
 
   interface ImportMeta {
     readonly env: ImportMetaEnv;
-  }
-
-  interface ImportMetaEnv {
-    readonly BASE_NAME: string;
   }
 }
 
@@ -27,3 +28,5 @@ declare module "react-router-dom" {
     routeMetadata?: PageMetadata;
   }
 }
+
+export {};

@@ -1,4 +1,3 @@
-import { MemberProvider } from '@/integrations';
 import { createBrowserRouter, RouterProvider, Navigate, Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { ScrollToTop } from '@/lib/scroll-to-top';
@@ -16,6 +15,8 @@ import ContactPage from '@/components/pages/ContactPage';
 import { PrivacyPage, TermsPage } from '@/components/pages/LegalPage';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { detectLocale } from '@/lib/i18n/routes';
+
+const BASENAME = import.meta.env.BASE_NAME || '/';
 
 function LanguageSync() {
   const location = useLocation();
@@ -44,7 +45,7 @@ const maintenanceRouter = createBrowserRouter([
     element: <MaintenancePage />,
   },
 ], {
-  basename: import.meta.env.BASE_NAME,
+  basename: BASENAME,
 });
 
 const pageChildren = [
@@ -77,13 +78,9 @@ const router = createBrowserRouter([
     ],
   },
 ], {
-  basename: import.meta.env.BASE_NAME,
+  basename: BASENAME,
 });
 
 export default function AppRouter() {
-  return (
-    <MemberProvider>
-      <RouterProvider router={MAINTENANCE_MODE ? maintenanceRouter : router} />
-    </MemberProvider>
-  );
+  return <RouterProvider router={MAINTENANCE_MODE ? maintenanceRouter : router} />;
 }

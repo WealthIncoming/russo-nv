@@ -16,6 +16,7 @@
     "allowUnreachableCode": true,
     "verbatimModuleSyntax": false,
     "skipLibCheck": true,
+    "resolveJsonModule": true,
     "noUncheckedIndexedAccess": false,
     "exactOptionalPropertyTypes": false,
     "paths": {
