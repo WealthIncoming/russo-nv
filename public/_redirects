@@ -1,4 +1,6 @@
 https://russonv.com/* https://www.russonv.com/:splat 301
+https://www.russonv.be/* https://www.russonv.com/:splat 301
+https://russonv.be/* https://www.russonv.com/:splat 301
 /gratis-offerte /contact 301
 /diensten /services 301
 /diensten/* /services 301
