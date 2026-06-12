@@ -5,6 +5,7 @@ import { ScrollToTop } from '@/lib/scroll-to-top';
 import { ScrollUpButton } from '@/components/ui/scroll-up-button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import IntroSplash from '@/components/IntroSplash';
 import ErrorPage from '@/integrations/errorHandlers/ErrorPage';
 import HomePage from '@/components/pages/HomePage';
 import MaintenancePage from '@/components/pages/MaintenancePage';
@@ -53,6 +54,7 @@ function Layout() {
     <MotionConfig reducedMotion="user">
       <RouteSync />
       <ScrollToTop />
+      <IntroSplash />
       <Header />
       {/* Single top-level <main>: gives every route a main landmark and a
           valid #main skip-link target (tabIndex so focus() lands on it).
