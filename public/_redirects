@@ -1,1 +1,6 @@
 https://russonv.com/* https://www.russonv.com/:splat 301
+/gratis-offerte /contact 301
+/diensten /services 301
+/diensten/* /services 301
+/over-ons /about 301
+/projecten /projects 301
