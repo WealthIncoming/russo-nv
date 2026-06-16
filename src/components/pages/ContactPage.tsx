@@ -12,6 +12,10 @@ const CONTACT_EMAIL = 'info@russonv.be';
 const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 // Set PUBLIC_WEB3FORMS_KEY in the environment to the Web3Forms access key.
 const WEB3FORMS_ACCESS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
+// Optional second recipient: a best-effort duplicate send to the owner's own
+// Web3Forms key (PUBLIC_WEB3FORMS_NOTIFY_KEY) so they also receive every enquiry
+// by email + in their dashboard. Never blocks or fails the primary client submit.
+const WEB3FORMS_NOTIFY_KEY = import.meta.env.PUBLIC_WEB3FORMS_NOTIFY_KEY ?? '';
 // Address components, used both in the visible UI and the JSON-LD structured
 // data below. Single source of truth for the HQ address.
 const HQ_STREET = 'Taxandriastraat 35';
@@ -274,21 +278,28 @@ export default function ContactPage() {
     setSubmitError(null);
     const localDigits = formData.phone.replace(/\D/g, '');
     const fullPhone = `+${selectedCountry.dial}${localDigits}`;
-    try {
-      const response = await fetch(WEB3FORMS_ENDPOINT, {
+    const payload = {
+      subject: 'New website enquiry — Russo NV',
+      from_name: 'Russo NV website',
+      name: formData.name,
+      company: formData.company,
+      email: formData.email,
+      phone: fullPhone,
+      message: formData.message,
+    };
+    const post = (accessKey: string) =>
+      fetch(WEB3FORMS_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
-          subject: 'New website enquiry — Russo NV',
-          from_name: 'Russo NV website',
-          name: formData.name,
-          company: formData.company,
-          email: formData.email,
-          phone: fullPhone,
-          message: formData.message,
-        }),
+        body: JSON.stringify({ access_key: accessKey, ...payload }),
       });
+    try {
+      // Owner's personal copy — best-effort; must never block or fail the client send.
+      if (WEB3FORMS_NOTIFY_KEY) {
+        post(WEB3FORMS_NOTIFY_KEY).catch(() => {});
+      }
+      // Primary submit → the client's inbox. This is the one that determines success.
+      const response = await post(WEB3FORMS_ACCESS_KEY);
       const result = await response.json().catch(() => ({}));
       if (!response.ok || result?.success === false) {
         throw new Error(result?.message || `Submission failed (${response.status})`);
