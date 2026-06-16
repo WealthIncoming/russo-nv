@@ -588,7 +588,7 @@ export const translations: Record<Language, Translations> = {
       vcaDescription: 'The VCA (Veiligheid, Gezondheid en Milieu Checklist Aannemers) certification demonstrates that Russo NV meets strict safety, health, and environmental standards for contractors in high-risk environments.',
 
       iso9001Title: 'ISO 9001:2015 Quality Management System',
-      iso9001Issuer: 'International Organization for Standardization (ISO)',
+      iso9001Issuer: 'EOS Certification',
       iso9001Description: 'ISO 9001:2015 certifies that Russo NV consistently provides products and services that meet customer and regulatory requirements, and aims to enhance customer satisfaction through effective system application.',
     },
 
@@ -1448,7 +1448,7 @@ export const translations: Record<Language, Translations> = {
       vcaDescription: 'De VCA-certificering (Veiligheid, Gezondheid en Milieu Checklist Aannemers) toont aan dat Russo NV voldoet aan strenge veiligheids-, gezondheids- en milieunormen voor aannemers in risicovolle omgevingen.',
 
       iso9001Title: 'ISO 9001:2015 Kwaliteitsmanagementsysteem',
-      iso9001Issuer: 'International Organization for Standardization (ISO)',
+      iso9001Issuer: 'EOS Certification',
       iso9001Description: 'ISO 9001:2015 certificeert dat Russo NV consequent producten en diensten levert die voldoen aan klant- en regelgevingsvereisten, en streeft naar verhoging van de klanttevredenheid door effectieve systeemtoepassing.',
     },
 

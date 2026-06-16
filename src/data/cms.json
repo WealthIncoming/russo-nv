@@ -209,9 +209,12 @@
     {
       "_id": "e13dc80f-80b7-447b-adc4-358646eaea81",
       "certificationName": "ISO 9001:2015 Quality Management System",
-      "issuingBody": "International Organization for Standardization (ISO)",
+      "issuingBody": "EOS Certification",
       "description": "ISO 9001:2015 certifies that Russo NV consistently provides products and services that meet customer and regulatory requirements, and aims to enhance customer satisfaction through effective system application.",
-      "logo": "https://static.wixstatic.com/media/3232e5_0239bdc2279544e08f20c2557e1fd5a1~mv2.png?originWidth=640&originHeight=640"
+      "logo": "https://static.wixstatic.com/media/3232e5_0239bdc2279544e08f20c2557e1fd5a1~mv2.png?originWidth=640&originHeight=640",
+      "dateIssued": "2026-05-20",
+      "expirationDate": "2029-05-19",
+      "certificationUrl": "/documents/russo-nv-iso-9001-2026-2029.pdf"
     },
     {
       "_id": "a7aa61d1-b6d9-4b17-b076-36ed19f80b72",
