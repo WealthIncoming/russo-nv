@@ -778,7 +778,7 @@ export const translations: Record<Language, Translations> = {
     legal: {
       heroLabel: 'Legal',
       lastUpdated: 'Last updated',
-      lastUpdatedDate: '5 May 2026',
+      lastUpdatedDate: '16 June 2026',
       backToTop: 'Back to top',
 
       privacyTitle: 'Privacy',
@@ -789,7 +789,7 @@ export const translations: Record<Language, Translations> = {
       privacy1Body: 'Russo NV is a Belgian company specialized in industrial coating and surface preparation services. Our registered office is at Taxandriastraat 35, 2170 Antwerp, Belgium. Our enterprise and VAT number is BE 0453.001.480 (RPR Antwerp). You can reach us at info@russonv.be or +32 475 43 48 19. For privacy-related questions, contact us using the same details. We act as the data controller for personal data processed through this website.',
 
       privacy2Title: 'What data we collect',
-      privacy2Body: 'We collect personal data that you voluntarily share with us — primarily through the contact form on this website (your name, company, email address, phone number, and the content of your message). We also collect basic technical data automatically when you visit the site (IP address, browser type, pages viewed, referring website) for analytics, security, and to keep the site running properly.',
+      privacy2Body: 'We collect personal data that you voluntarily share with us — primarily through the contact form on this website (your name, company, email address, phone number, and the content of your message). We also collect basic technical data automatically when you visit the site (IP address, browser type, pages viewed, referring website) for analytics, security, and to keep the site running properly. These automatically collected server logs (including IP address) are kept for up to 90 days and then deleted.',
 
       privacy3Title: 'How we use your data',
       privacy3Body: 'We use your personal data to respond to your enquiries and prepare quotes; to manage our business relationship if you become a client; to comply with our legal and regulatory obligations; to maintain and improve the website and our services; and to ensure the security of our website and systems.',
@@ -798,7 +798,7 @@ export const translations: Record<Language, Translations> = {
       privacy4Body: 'We process your personal data on the following legal bases under the GDPR: your consent when you submit the contact form; the necessity of processing to take steps at your request prior to entering into a contract; our legitimate interests in operating, securing and improving our business, except where overridden by your rights and freedoms; and compliance with our legal obligations.',
 
       privacy5Title: 'Sharing your data',
-      privacy5Body: 'We do not sell your personal data. We may share data with service providers who help us operate the website and run our business — including hosting, form processing, email delivery, and analytics — under appropriate contracts and confidentiality obligations. Our website is hosted on the Wix platform, which processes data on our behalf. We may also disclose data to competent authorities when required by law.',
+      privacy5Body: 'We do not sell your personal data. We may share data with service providers who help us operate the website and run our business — including hosting, form processing, email delivery, and analytics — under appropriate contracts and confidentiality obligations. Our website is hosted on Cloudflare Pages (Cloudflare, Inc.), which processes data on our behalf as our hosting and content-delivery provider; we use Cloudflare Web Analytics, a cookieless and privacy-friendly measurement tool, to understand site traffic; and contact-form submissions are delivered to us through Web3Forms. We may also disclose data to competent authorities when required by law.',
 
       privacy6Title: 'International transfers',
       privacy6Body: 'Some of our service providers are located outside the European Economic Area. Where personal data is transferred outside the EEA, we rely on appropriate safeguards such as the European Commission\'s Standard Contractual Clauses or equivalent mechanisms to ensure your data remains protected.',
@@ -810,7 +810,7 @@ export const translations: Record<Language, Translations> = {
       privacy8Body: 'Under the GDPR, you have the right to access the personal data we hold about you, to have inaccurate data corrected, to request deletion of your data, to restrict or object to certain processing, and to receive your data in a portable format. You also have the right to lodge a complaint with the Belgian Data Protection Authority (gegevensbeschermingsautoriteit.be) if you believe your rights have been infringed. To exercise these rights, contact us at info@russonv.be.',
 
       privacy9Title: 'Cookies',
-      privacy9Body: 'Our website uses cookies and similar technologies to function correctly, remember your language preference, and understand how visitors use the site. You can manage cookie preferences through your browser settings. We will update this section as our cookie usage evolves.',
+      privacy9Body: 'Our website does not use advertising or third-party tracking cookies. We measure visitor traffic with Cloudflare Web Analytics, which is cookieless and does not profile or track individual visitors across websites, together with short-lived server logs (described above) used for security and analytics. Because we set no non-essential cookies, no cookie-consent banner is required. You can still manage cookies and similar storage through your browser settings.',
 
       privacy10Title: 'Security',
       privacy10Body: 'We take reasonable technical and organisational measures to protect your personal data against unauthorised access, alteration, disclosure, or destruction. However, no system is perfectly secure and we cannot guarantee absolute security. If we become aware of a personal data breach affecting your data, we will notify you and the supervisory authority where required by law.',
@@ -1638,7 +1638,7 @@ export const translations: Record<Language, Translations> = {
     legal: {
       heroLabel: 'Juridisch',
       lastUpdated: 'Laatst bijgewerkt',
-      lastUpdatedDate: '5 mei 2026',
+      lastUpdatedDate: '16 juni 2026',
       backToTop: 'Terug naar boven',
 
       privacyTitle: 'Privacy',
@@ -1649,7 +1649,7 @@ export const translations: Record<Language, Translations> = {
       privacy1Body: 'Russo NV is een Belgisch bedrijf gespecialiseerd in industriële coating- en oppervlaktevoorbereidingsdiensten. Onze maatschappelijke zetel bevindt zich op Taxandriastraat 35, 2170 Antwerpen, België. Ons ondernemings- en BTW-nummer is BE 0453.001.480 (RPR Antwerpen). U kunt ons bereiken via info@russonv.be of +32 475 43 48 19. Voor privacygerelateerde vragen kunt u dezelfde gegevens gebruiken. Wij treden op als verwerkingsverantwoordelijke voor de persoonsgegevens die via deze website worden verwerkt.',
 
       privacy2Title: 'Welke gegevens wij verzamelen',
-      privacy2Body: 'Wij verzamelen persoonsgegevens die u vrijwillig met ons deelt — voornamelijk via het contactformulier op deze website (uw naam, bedrijf, e-mailadres, telefoonnummer en de inhoud van uw bericht). Wij verzamelen ook automatisch basale technische gegevens wanneer u de site bezoekt (IP-adres, browsertype, bekeken pagina\'s, verwijzende website) voor analyse, beveiliging en de goede werking van de site.',
+      privacy2Body: 'Wij verzamelen persoonsgegevens die u vrijwillig met ons deelt — voornamelijk via het contactformulier op deze website (uw naam, bedrijf, e-mailadres, telefoonnummer en de inhoud van uw bericht). Wij verzamelen ook automatisch basale technische gegevens wanneer u de site bezoekt (IP-adres, browsertype, bekeken pagina\'s, verwijzende website) voor analyse, beveiliging en de goede werking van de site. Deze automatisch verzamelde serverlogs (waaronder het IP-adres) worden maximaal 90 dagen bewaard en daarna verwijderd.',
 
       privacy3Title: 'Hoe wij uw gegevens gebruiken',
       privacy3Body: 'Wij gebruiken uw persoonsgegevens om te reageren op uw vragen en offertes op te stellen; om onze zakelijke relatie te beheren als u klant wordt; om te voldoen aan onze wettelijke en regelgevende verplichtingen; om de website en onze diensten te onderhouden en te verbeteren; en om de beveiliging van onze website en systemen te waarborgen.',
@@ -1658,7 +1658,7 @@ export const translations: Record<Language, Translations> = {
       privacy4Body: 'Wij verwerken uw persoonsgegevens op de volgende rechtsgronden onder de AVG: uw toestemming wanneer u het contactformulier indient; de noodzaak van verwerking om op uw verzoek stappen te ondernemen vóór het sluiten van een overeenkomst; ons gerechtvaardigd belang bij het exploiteren, beveiligen en verbeteren van onze onderneming, behalve waar dit wordt overschreden door uw rechten en vrijheden; en naleving van onze wettelijke verplichtingen.',
 
       privacy5Title: 'Delen van uw gegevens',
-      privacy5Body: 'Wij verkopen uw persoonsgegevens niet. Wij kunnen gegevens delen met dienstverleners die ons helpen de website en onze onderneming te exploiteren — waaronder hosting, formulierverwerking, e-mailbezorging en analyse — onder passende contracten en geheimhoudingsverplichtingen. Onze website wordt gehost op het Wix-platform, dat gegevens namens ons verwerkt. Wij kunnen ook gegevens vrijgeven aan bevoegde autoriteiten wanneer dit wettelijk vereist is.',
+      privacy5Body: 'Wij verkopen uw persoonsgegevens niet. Wij kunnen gegevens delen met dienstverleners die ons helpen de website en onze onderneming te exploiteren — waaronder hosting, formulierverwerking, e-mailbezorging en analyse — onder passende contracten en geheimhoudingsverplichtingen. Onze website wordt gehost op Cloudflare Pages (Cloudflare, Inc.), dat als onze hosting- en content-deliveryprovider gegevens namens ons verwerkt; wij gebruiken Cloudflare Web Analytics, een cookieloze en privacyvriendelijke meettool, om het siteverkeer te begrijpen; en inzendingen van het contactformulier worden via Web3Forms aan ons bezorgd. Wij kunnen ook gegevens vrijgeven aan bevoegde autoriteiten wanneer dit wettelijk vereist is.',
 
       privacy6Title: 'Internationale doorgifte',
       privacy6Body: 'Sommige van onze dienstverleners bevinden zich buiten de Europese Economische Ruimte. Wanneer persoonsgegevens buiten de EER worden doorgegeven, vertrouwen wij op passende waarborgen zoals de Standaardcontractbepalingen van de Europese Commissie of gelijkwaardige mechanismen om ervoor te zorgen dat uw gegevens beschermd blijven.',
@@ -1670,7 +1670,7 @@ export const translations: Record<Language, Translations> = {
       privacy8Body: 'Op grond van de AVG heeft u het recht op inzage in de persoonsgegevens die wij over u bewaren, op correctie van onjuiste gegevens, op verwijdering van uw gegevens, op beperking van of bezwaar tegen bepaalde verwerkingen, en op ontvangst van uw gegevens in een overdraagbaar formaat. U heeft ook het recht om een klacht in te dienen bij de Belgische Gegevensbeschermingsautoriteit (gegevensbeschermingsautoriteit.be) als u meent dat uw rechten zijn geschonden. Om deze rechten uit te oefenen, kunt u contact met ons opnemen via info@russonv.be.',
 
       privacy9Title: 'Cookies',
-      privacy9Body: 'Onze website gebruikt cookies en vergelijkbare technologieën om correct te functioneren, uw taalvoorkeur te onthouden en te begrijpen hoe bezoekers de site gebruiken. U kunt cookievoorkeuren beheren via uw browserinstellingen. Wij zullen deze sectie bijwerken naarmate ons cookiegebruik evolueert.',
+      privacy9Body: 'Onze website gebruikt geen advertentie- of trackingcookies van derden. Wij meten bezoekersverkeer met Cloudflare Web Analytics, dat cookieloos is en individuele bezoekers niet profileert of over websites volgt, samen met kortstondige serverlogs (hierboven beschreven) voor beveiliging en analyse. Omdat wij geen niet-essentiële cookies plaatsen, is geen cookiebanner vereist. U kunt cookies en vergelijkbare opslag nog steeds beheren via uw browserinstellingen.',
 
       privacy10Title: 'Beveiliging',
       privacy10Body: 'Wij nemen redelijke technische en organisatorische maatregelen om uw persoonsgegevens te beschermen tegen ongeoorloofde toegang, wijziging, openbaarmaking of vernietiging. Geen enkel systeem is echter perfect veilig en wij kunnen geen absolute beveiliging garanderen. Indien wij kennis krijgen van een datalek dat uw gegevens raakt, zullen wij u en de toezichthoudende autoriteit informeren waar dit wettelijk vereist is.',
