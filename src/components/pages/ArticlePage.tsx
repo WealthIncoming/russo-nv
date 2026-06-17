@@ -188,7 +188,7 @@ export default function ArticlePage() {
 
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="font-paragraph text-xs font-bold tracking-[0.2em] text-primary uppercase">{c.category}</span>
-            <h1 className="font-heading text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase leading-tight mt-4 max-w-4xl">
+            <h1 className="font-heading text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase leading-tight mt-4 max-w-3xl">
               {c.title}
             </h1>
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-6 font-paragraph text-sm text-white/70">

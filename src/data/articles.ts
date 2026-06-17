@@ -91,7 +91,7 @@ export const ARTICLES: Article[] = [
       EN: ['surface preparation', 'abrasive blasting steel', 'cleanliness grade Sa 2½', 'surface profile', 'ISO 8501-1', 'industrial coating', 'corrosion protection'],
     },
     NL: {
-      title: 'Hoe bereid je staal voor op een industriële coating?',
+      title: 'Staal voorbereiden voor coating',
       metaTitle: 'Staal voorbereiden voor coating: de complete gids | Russo NV',
       description: 'Een coating is maar zo goed als de voorbereiding eronder. Leer hoe je staal correct ontvet, straalt tot reinheidsgraad Sa 2½ en het juiste straalprofiel haalt, volgens ISO 8501-1.',
       excerpt: 'Het overgrote deel van vroegtijdig coatingfalen ontstaat niet door de verf, maar door de voorbereiding eronder. Dit is hoe je het wél goed doet, stap voor stap, volgens de normen die wij dagelijks toepassen.',
@@ -202,7 +202,7 @@ export const ARTICLES: Article[] = [
       ],
     },
     EN: {
-      title: 'How to prepare steel for an industrial coating',
+      title: 'Preparing steel for coating',
       metaTitle: 'Steel surface preparation: the complete guide | Russo NV',
       description: 'A coating is only as good as the preparation beneath it. Learn how to degrease steel correctly, blast to cleanliness grade Sa 2½ and achieve the right surface profile, to ISO 8501-1.',
       excerpt: 'The vast majority of premature coating failures are caused not by the paint, but by the preparation beneath it. Here is how to get it right, step by step, to the standards we apply every day.',
