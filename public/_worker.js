@@ -21,6 +21,9 @@ const RETENTION_DAYS = 90;
 
 const LEGACY_PATHS = [
   [/^\/gratis-offerte\/?$/, "/contact/"],
+  // Specific legacy .be URL → recapture straight onto the dedicated page
+  // (must come before the general /diensten rule below).
+  [/^\/diensten\/industriele-schilderwerken(\/.*)?$/, "/services/industriele-schilderwerken/"],
   [/^\/diensten(\/.*)?$/, "/services/"],
   [/^\/over-ons\/?$/, "/about/"],
   [/^\/projecten\/?$/, "/projects/"],

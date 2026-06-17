@@ -33,6 +33,7 @@ const SERVICES_DATA = [
     titleKey: 'industrialCoatingTitle',
     descKey: 'industrialCoatingDesc',
     anchor: 'industrialCoatingApplication',
+    href: '/services/industriele-schilderwerken',
     detailsKeys: ['airlessSpraying', 'corrosionProtection', 'chemicalProtection']
   },
   {
@@ -642,7 +643,7 @@ export default function HomePage() {
 
 // --- Sub-Components ---
 
-function StickyServiceCard({ service }: { service: typeof SERVICES_DATA[0] }) {
+function StickyServiceCard({ service }: { service: typeof SERVICES_DATA[number] }) {
   // Scroll-linked bindings bypass MotionConfig — render static when reduced.
   const reduceMotion = useReducedMotion();
   const cardRef = useRef<HTMLDivElement>(null);
@@ -661,7 +662,7 @@ function StickyServiceCard({ service }: { service: typeof SERVICES_DATA[0] }) {
   return (
     <motion.div ref={cardRef} style={reduceMotion ? undefined : { opacity, x }}>
       <Link
-        to={localize(`/services#${service.anchor}`)}
+        to={localize((service as { href?: string }).href ?? `/services#${service.anchor}`)}
         aria-label={`${serviceTitle} — view on services page`}
         className="group relative block bg-background border border-foreground/10 p-8 md:p-12 hover:border-primary transition-colors duration-500"
       >

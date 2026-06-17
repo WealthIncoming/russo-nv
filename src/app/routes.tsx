@@ -16,6 +16,7 @@ import AboutPage from '@/components/pages/AboutPage';
 import ContactPage from '@/components/pages/ContactPage';
 import ArticlesIndexPage from '@/components/pages/ArticlesIndexPage';
 import ArticlePage from '@/components/pages/ArticlePage';
+import IndustrialPaintingPage from '@/components/pages/IndustrialPaintingPage';
 import { PrivacyPage, TermsPage } from '@/components/pages/LegalPage';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { detectLocale, delocalize } from '@/lib/i18n/routes';
@@ -72,6 +73,7 @@ function Layout() {
 const pageChildren: RouteObject[] = [
   { index: true, element: <HomePage />, routeMetadata: { pageIdentifier: 'home' } },
   { path: 'services',   element: <ServicesPage />,   routeMetadata: { pageIdentifier: 'services' } },
+  { path: 'services/industriele-schilderwerken', element: <IndustrialPaintingPage />, routeMetadata: { pageIdentifier: 'service-industrial-painting' } },
   { path: 'industries', element: <IndustriesPage />, routeMetadata: { pageIdentifier: 'industries' } },
   { path: 'projects',   element: <ProjectsPage />,   routeMetadata: { pageIdentifier: 'projects' } },
   { path: 'safety',     element: <SafetyPage />,     routeMetadata: { pageIdentifier: 'safety' } },

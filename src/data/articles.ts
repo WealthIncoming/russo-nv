@@ -97,7 +97,7 @@ export const ARTICLES: Article[] = [
           type: 'p',
           segments: [
             'Een dure coating op slecht voorbereid staal is weggegooid geld. De voorbereiding bepaalt de hechting, en de hechting bepaalt de levensduur. Bij ',
-            { text: 'industriële coatings', to: '/services' },
+            { text: 'industriële schilderwerken', to: '/services/industriele-schilderwerken' },
             ' begint kwaliteit dus nooit bij de verf — ze begint bij het staal eronder.',
           ],
         },
@@ -208,7 +208,7 @@ export const ARTICLES: Article[] = [
           type: 'p',
           segments: [
             'An expensive coating on poorly prepared steel is money wasted. Preparation determines adhesion, and adhesion determines service life. With ',
-            { text: 'industrial coatings', to: '/services' },
+            { text: 'industrial painting', to: '/services/industriele-schilderwerken' },
             ', quality never starts with the paint — it starts with the steel underneath.',
           ],
         },

@@ -6,7 +6,7 @@ import { ARTICLES, findArticle } from "@/data/articles";
 import "@/styles/global.css";
 
 export function getStaticPaths() {
-  const routes = ['', 'services', 'industries', 'projects', 'safety', 'about', 'contact', 'insights', 'privacy', 'terms'];
+  const routes = ['', 'services', 'services/industriele-schilderwerken', 'industries', 'projects', 'safety', 'about', 'contact', 'insights', 'privacy', 'terms'];
   const articleRoutes = ARTICLES.map((a) => `insights/${a.slug}`);
   return [...routes, ...articleRoutes].flatMap((r) => [
     { params: { slug: r === '' ? undefined : r } },
@@ -55,6 +55,7 @@ const ogLocaleAlt = locale === 'EN' ? 'nl_BE' : 'en_BE';
 const BREADCRUMB_LABELS: Record<string, { NL: string; EN: string }> = {
   '/':           { NL: 'Home',           EN: 'Home' },
   '/services':   { NL: 'Diensten',       EN: 'Services' },
+  '/services/industriele-schilderwerken': { NL: 'Industriële schilderwerken', EN: 'Industrial painting' },
   '/industries': { NL: 'Sectoren',       EN: 'Industries' },
   '/projects':   { NL: 'Projecten',      EN: 'Projects' },
   '/safety':     { NL: 'Veiligheid',     EN: 'Safety' },
@@ -70,6 +71,9 @@ const homeUrl = locale === 'EN' ? `${SITE_URL}/en` : `${SITE_URL}/`;
 
 const insightsLabel = locale === 'EN' ? 'Insights' : 'Kenniscentrum';
 const insightsUrl = locale === 'EN' ? `${SITE_URL}/en/insights` : `${SITE_URL}/insights`;
+const isServiceSub = basePath.startsWith('/services/');
+const servicesLabel = locale === 'EN' ? 'Services' : 'Diensten';
+const servicesUrl = locale === 'EN' ? `${SITE_URL}/en/services` : `${SITE_URL}/services`;
 
 const breadcrumbSchema = basePath === '/' ? null : article ? {
   '@context': 'https://schema.org',
@@ -78,6 +82,14 @@ const breadcrumbSchema = basePath === '/' ? null : article ? {
     { '@type': 'ListItem', position: 1, name: homeLabel, item: homeUrl },
     { '@type': 'ListItem', position: 2, name: insightsLabel, item: insightsUrl },
     { '@type': 'ListItem', position: 3, name: article[locale].title, item: canonical },
+  ],
+} : isServiceSub ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: homeLabel, item: homeUrl },
+    { '@type': 'ListItem', position: 2, name: servicesLabel, item: servicesUrl },
+    { '@type': 'ListItem', position: 3, name: BREADCRUMB_LABELS[basePath]?.[locale] ?? localeMeta.title, item: canonical },
   ],
 } : {
   '@context': 'https://schema.org',

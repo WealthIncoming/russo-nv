@@ -45,6 +45,18 @@ export const PAGE_META: Record<string, PageMeta> = {
       image: '/images/services1.jpg',
     },
   },
+  '/services/industriele-schilderwerken': {
+    NL: {
+      title: 'Industriële schilderwerken Antwerpen & België | Russo NV',
+      description: 'Industriële schilderwerken op staal, tanks en installaties — stralen, corrosiebescherming en beschermende coatings, op locatie in heel België. VCA & ISO gecertificeerd.',
+      image: '/images/services5.jpg',
+    },
+    EN: {
+      title: 'Industrial Painting & Coating Services Antwerp | Russo NV',
+      description: 'Industrial painting and protective coating of steel, tanks and installations — blasting, corrosion protection and fireproofing, on-site across Belgium. VCA & ISO certified.',
+      image: '/images/services5.jpg',
+    },
+  },
   '/industries': {
     NL: {
       title: 'Sectoren — Petrochemie, Maritiem, Voeding & Industrie | Russo NV',

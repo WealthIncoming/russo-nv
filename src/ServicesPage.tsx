@@ -283,6 +283,18 @@ export default function ServicesPage() {
                               {getServiceText(service, 'Description', service.description)}
                             </p>
 
+                            {/* Read-more to the dedicated "industriële schilderwerken" landing page.
+                                Descriptive anchor text (the target keyword) — not "lees meer". */}
+                            {slug === 'industrialCoatingApplication' && (
+                              <Link
+                                to={localize('/services/industriele-schilderwerken')}
+                                className="inline-flex items-center gap-2 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all w-fit"
+                              >
+                                {locale === 'NL' ? 'Meer over industriële schilderwerken' : 'More about industrial painting'}
+                                <ArrowRight className="w-4 h-4" />
+                              </Link>
+                            )}
+
                             {/* Key Benefits — now translated */}
                             {service.keyBenefits && (
                               <div className="border-t border-dark-grey/10 pt-6 min-w-0 w-full">

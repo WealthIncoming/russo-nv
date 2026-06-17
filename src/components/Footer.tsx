@@ -9,7 +9,7 @@ const FOOTER_HQ_ADDRESS = 'Taxandriastraat 35, 2170 Antwerp';
 const FOOTER_GOOGLE_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(FOOTER_HQ_ADDRESS)}`;
 
 const SERVICES = [
-  { labelKey: 'industrialPainting',   anchor: 'industrialCoatingApplication' },
+  { labelKey: 'industrialPainting',   anchor: 'industrialCoatingApplication', to: '/services/industriele-schilderwerken' },
   { labelKey: 'sandblasting',         anchor: 'sandblastingAbrasive' },
   { labelKey: 'fireproofingCoatings', anchor: 'fireproofingThermal' },
   { labelKey: 'protectiveCoatings',   anchor: 'corrosionProtection' },
@@ -115,7 +115,7 @@ export default function Footer() {
               {SERVICES.map((item) => (
                 <Link
                   key={item.labelKey}
-                  to={localize(`/services#${item.anchor}`)}
+                  to={localize((item as { to?: string }).to ?? `/services#${item.anchor}`)}
                   className="block font-paragraph text-sm text-white/80 hover:text-primary transition-colors"
                 >
                   {t('footer', item.labelKey)}
