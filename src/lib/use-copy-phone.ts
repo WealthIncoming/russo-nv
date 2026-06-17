@@ -4,7 +4,7 @@ import { useState } from 'react';
  * Helper for the "Call Now" buttons on the site.
  *
  * `tel:` links do nothing visible on desktop browsers when no calling app is
- * registered to handle the protocol — making the button feel broken to a PC
+ * registered to handle the protocol - making the button feel broken to a PC
  * visitor. This hook copies the number to the clipboard and flips a `copied`
  * flag for 2s so the UI can show feedback. Mobile keeps the native dialer
  * behavior via the `tel:` href; the click handler runs in addition, not

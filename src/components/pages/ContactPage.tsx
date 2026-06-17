@@ -24,7 +24,7 @@ const HQ_CITY = 'Antwerp';
 const HQ_COUNTRY_CODE = 'BE';
 const GOOGLE_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${HQ_STREET}, ${HQ_POSTAL} ${HQ_CITY}`)}`;
 
-// schema.org LocalBusiness JSON-LD — surfaces address, phone, email, opening
+// schema.org LocalBusiness JSON-LD - surfaces address, phone, email, opening
 // hours to search engines so the business shows up in knowledge panels.
 const BUSINESS_JSON_LD = {
   '@context': 'https://schema.org',
@@ -142,7 +142,7 @@ function CountrySelect({ value, onChange, invalid }: CountrySelectProps) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [open]);
 
-  // Bring the currently-selected country into view when the dropdown opens —
+  // Bring the currently-selected country into view when the dropdown opens -
   // otherwise it always opens scrolled to the top, hiding the active row.
   useEffect(() => {
     if (open && selectedItemRef.current) {
@@ -250,7 +250,7 @@ export default function ContactPage() {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<Country>(DEFAULT_COUNTRY);
   const [phoneError, setPhoneError] = useState(false);
-  // Honeypot — kept out of formData so it never participates in resets/submits.
+  // Honeypot - kept out of formData so it never participates in resets/submits.
   // Bots eagerly fill any text field they find; humans never see this one.
   const [honeypot, setHoneypot] = useState('');
 
@@ -265,7 +265,7 @@ export default function ContactPage() {
     e.preventDefault();
     // Honeypot trap: if the hidden field has any value, the submitter is
     // almost certainly a bot. Pretend success so the bot moves on, but never
-    // call the API. No false positives for real users — they never see it.
+    // call the API. No false positives for real users - they never see it.
     if (honeypot) {
       setIsSubmitted(true);
       return;
@@ -279,7 +279,7 @@ export default function ContactPage() {
     const localDigits = formData.phone.replace(/\D/g, '');
     const fullPhone = `+${selectedCountry.dial}${localDigits}`;
     const payload = {
-      subject: 'New website enquiry — Russo NV',
+      subject: 'New website enquiry: Russo NV',
       from_name: 'Russo NV website',
       name: formData.name,
       company: formData.company,
@@ -294,7 +294,7 @@ export default function ContactPage() {
         body: JSON.stringify({ access_key: accessKey, ...payload }),
       });
     try {
-      // Owner's personal copy — best-effort; must never block or fail the client send.
+      // Owner's personal copy - best-effort; must never block or fail the client send.
       if (WEB3FORMS_NOTIFY_KEY) {
         post(WEB3FORMS_NOTIFY_KEY).catch(() => {});
       }
@@ -411,7 +411,7 @@ export default function ContactPage() {
               </motion.div>
             ) : (
             <form onSubmit={handleSubmit} className="space-y-10">
-              {/* Honeypot — invisible to humans, bots fill it, we silently drop.
+              {/* Honeypot - invisible to humans, bots fill it, we silently drop.
                   Uses the canonical visually-hidden CSS (clip-path) instead of
                   off-screen positioning so it doesn't depend on layout context
                   or risk creating a horizontal scrollbar. */}

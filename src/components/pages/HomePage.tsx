@@ -83,7 +83,7 @@ const SERVICES_DATA = [
 // `anchor` maps each card to the matching slug on the Industries page
 // (derived from INDUSTRY_TRANSLATION_MAP in IndustriesPage.tsx). Where the
 // home page doesn't have a 1:1 match (industrial construction, warehouses),
-// we route to the closest sector — manufacturing — so every card lands the
+// we route to the closest sector - manufacturing - so every card lands the
 // visitor on a real, relevant block instead of bouncing them to the page top.
 const INDUSTRIES_DATA: Array<{ titleKey: string; descKey: string; icon: LucideIcon; anchor: string }> = [
   { titleKey: 'chemicalPlants',         descKey: 'chemicalPlantsDesc',         icon: FlaskConical, anchor: 'chemical' },
@@ -101,7 +101,7 @@ const STATS_DATA = [
   { value: '24/7', labelKey: 'statsProjectUpdates', subKey: 'statsRealTimeData' },
 ];
 
-// schema.org Organization JSON-LD — surfaces logo, social profiles, and
+// schema.org Organization JSON-LD - surfaces logo, social profiles, and
 // contact info to search engines when someone Googles "Russo NV".
 const ORGANIZATION_JSON_LD = {
   '@context': 'https://schema.org',
@@ -111,7 +111,7 @@ const ORGANIZATION_JSON_LD = {
   alternateName: 'Russo Industriële Coatings',
   url: 'https://www.russonv.com',
   logo: 'https://static.wixstatic.com/media/3232e5_48e2024c6d3f441e817637ccdd99f28f~mv2.png',
-  description: 'Specialist in industriële coatings, stralen en brandwerende coatings in Antwerpen — actief in heel België, Nederland en Luxemburg voor petrochemie, maritieme sector en industrie.',
+  description: 'Specialist in industriële coatings, stralen en brandwerende coatings in Antwerpen, actief in heel België, Nederland en Luxemburg voor petrochemie, maritieme sector en industrie.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Taxandriastraat 35',
@@ -162,7 +162,7 @@ const ParallaxText = ({ children, baseVelocity = 100 }: { children: string; base
   const [x, setX] = useState(0);
   const xRef = useRef(0);
   // WCAG 2.2.2: this rAF loop is JS-driven, so the global reduced-motion CSS
-  // reset can't stop it — skip it entirely and render the text static.
+  // reset can't stop it - skip it entirely and render the text static.
   const reduceMotion = useReducedMotion();
 
   // Loop logic
@@ -236,7 +236,7 @@ export default function HomePage() {
       <style>{`
         /* Only clip on md+ where the grid is multi-column and short.
            On mobile the section is a tall single column, so clipping cut
-           off the last card — leave it unclipped there. */
+           off the last card - leave it unclipped there. */
         @media (min-width: 768px) {
           .clip-diagonal {
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -252,7 +252,7 @@ export default function HomePage() {
         }
       `}</style>
       {/* --- HERO SECTION --- */}
-      {/* id="main" lives on the Layout's <main> wrapper now (routes.tsx) —
+      {/* id="main" lives on the Layout's <main> wrapper now (routes.tsx) -
           keeping it here too would duplicate the id. */}
       <section ref={heroRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center">
         {/* Background Parallax */}
@@ -644,7 +644,7 @@ export default function HomePage() {
 // --- Sub-Components ---
 
 function StickyServiceCard({ service }: { service: typeof SERVICES_DATA[number] }) {
-  // Scroll-linked bindings bypass MotionConfig — render static when reduced.
+  // Scroll-linked bindings bypass MotionConfig - render static when reduced.
   const reduceMotion = useReducedMotion();
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -663,7 +663,7 @@ function StickyServiceCard({ service }: { service: typeof SERVICES_DATA[number] 
     <motion.div ref={cardRef} style={reduceMotion ? undefined : { opacity, x }}>
       <Link
         to={localize((service as { href?: string }).href ?? `/services#${service.anchor}`)}
-        aria-label={`${serviceTitle} — view on services page`}
+        aria-label={`${serviceTitle}: view on services page`}
         className="group relative block bg-background border border-foreground/10 p-8 md:p-12 hover:border-primary transition-colors duration-500"
       >
         <div className="absolute top-0 right-0 p-4 opacity-20 font-heading text-5xl sm:text-6xl text-foreground group-hover:opacity-10 transition-opacity">
@@ -713,7 +713,7 @@ function IndustryCard({ industry, index }: { industry: typeof INDUSTRIES_DATA[0]
     >
       <Link
         to={localize(`/industries#${industry.anchor}`)}
-        aria-label={`${industryTitle} — view on industries page`}
+        aria-label={`${industryTitle}: view on industries page`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className="relative bg-black p-10 h-80 flex flex-col justify-between group overflow-hidden"

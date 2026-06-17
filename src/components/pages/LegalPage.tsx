@@ -14,7 +14,7 @@ interface LegalPageProps {
   titleHighlightKey: string;
   /** Translation key for the short intro paragraph rendered above the section list. */
   introKey: string;
-  /** Section list — each entry maps to a {n}Title / {n}Body translation pair. */
+  /** Section list - each entry maps to a {n}Title / {n}Body translation pair. */
   sections: LegalSection[];
 }
 

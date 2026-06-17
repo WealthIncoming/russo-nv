@@ -12,7 +12,7 @@
 //     WEB_ANALYTICS_TOKEN variable is set.
 //
 // Every binding/variable below is OPTIONAL. If DB, ADMIN_PASSWORD or
-// WEB_ANALYTICS_TOKEN are unset the site behaves exactly as it did before —
+// WEB_ANALYTICS_TOKEN are unset the site behaves exactly as it did before -
 // logging is skipped, the beacon is not injected, and /_visits explains what
 // is still missing. Nothing here can break a page render.
 
@@ -73,7 +73,7 @@ async function logVisit(request, env) {
       await env.DB.prepare(VISITS_DDL).run();
       await insert.run();
     } catch (_) {
-      // Never let analytics break a page render — swallow and move on.
+      // Never let analytics break a page render - swallow and move on.
       return;
     }
   }
@@ -102,7 +102,7 @@ function unauthorized() {
   });
 }
 
-// Length-leaking but value-constant comparison — good enough to blunt timing
+// Length-leaking but value-constant comparison - good enough to blunt timing
 // attacks on a low-value single-user admin page.
 function safeEqual(a, b) {
   if (typeof a !== "string" || typeof b !== "string" || a.length !== b.length) return false;
@@ -138,14 +138,14 @@ function esc(value) {
 }
 
 // ---------------------------------------------------------------------------
-// Classification & parsing — all derived at render time from stored columns
+// Classification & parsing - all derived at render time from stored columns
 // (User-Agent + network), so it applies retroactively to the whole 90-day log.
 // ---------------------------------------------------------------------------
 
 // Known crawlers, SEO/AI bots, scanners and CLI/library agents.
 const BOT_UA_RE = /bot\b|bot\/|crawl|spider|slurp|mediapartners|bingpreview|facebookexternalhit|facebot|ia_archiver|ahrefs|semrush|mj12|dotbot|petal|bytespider|gptbot|chatgpt|oai-searchbot|ccbot|claudebot|claude-web|anthropic|perplexity|amazonbot|applebot|dataforseo|blexbot|seznam|screaming\s?frog|headlesschrome|phantomjs|python-requests|python-urllib|aiohttp|go-http-client|libwww|httpclient|okhttp|scrapy|masscan|zgrab|censys|shodan|nuclei|nmap|wget|curl\/|java\/|jakarta|axios|node-fetch|got\s|lighthouse|pingdom|uptimerobot|statuscake|gtmetrix|site24x7|expanse|internet-?measurement|paloaltonetworks|l9scan|scanner|probe|monitoring/i;
 
-// Hosting / cloud / scanner networks — traffic from here is automated even when
+// Hosting / cloud / scanner networks - traffic from here is automated even when
 // the User-Agent is spoofed to look like a browser.
 const DC_ORG_RE = /amazon|aws|google\s?(llc|cloud|inc)|microsoft|azure|digitalocean|digital\s?ocean|ovh|hetzner|linode|akamai|fastly|vultr|scaleway|contabo|leaseweb|choopa|oracle|alibaba|tencent|huawei|censys|shodan|stretchoid|binaryedge|driftnet|palo\s?alto|internet\s?census|datacamp|m247|cogent|hostwinds|hostinger|namecheap|godaddy|colocrossing|quadranet|servers|data\s?center|datacenter|hosting/i;
 
@@ -180,14 +180,14 @@ function parseUA(ua) {
   let device = "Desktop";
   if (/ipad|tablet|playbook|silk|kindle/i.test(u)) device = "Tablet";
   else if (/mobi|iphone|ipod|windows phone|(android.*mobile)/i.test(u)) device = "Mobile";
-  let os = "—";
+  let os = "-";
   if (/windows nt/i.test(u)) os = "Windows";
   else if (/iphone|ipad|ipod|cpu os|iphone os/i.test(u)) os = "iOS";
   else if (/mac os x|macintosh/i.test(u)) os = "macOS";
   else if (/android/i.test(u)) os = "Android";
   else if (/cros/i.test(u)) os = "ChromeOS";
   else if (/linux/i.test(u)) os = "Linux";
-  let browser = "—";
+  let browser = "-";
   if (/edg(a|ios|)?\//i.test(u)) browser = "Edge";
   else if (/opr\/|opera/i.test(u)) browser = "Opera";
   else if (/samsungbrowser/i.test(u)) browser = "Samsung";
@@ -240,7 +240,7 @@ function sourceOf(referer) {
 }
 
 function prettyPage(path) {
-  if (!path) return "—";
+  if (!path) return "-";
   const en = /^\/en(\/|$)/.test(path);
   let p = path.replace(/^\/en/, "").replace(/\/+$/, "");
   let name;
@@ -402,7 +402,7 @@ async function handleVisits(request, env) {
     const chartBars = days.map((d) => {
       const hH = Math.round((d.h / dayMax) * 100);
       const bH = Math.round((d.b / dayMax) * 100);
-      return `<div class="col" title="${d.ds} — ${d.h} visitors, ${d.b} bots">` +
+      return `<div class="col" title="${d.ds} - ${d.h} visitors, ${d.b} bots">` +
         `<div class="col-bars"><div class="seg human" style="height:${hH}%"></div>` +
         `<div class="seg bot" style="height:${bH}%"></div></div>` +
         `<div class="col-lbl">${esc(d.ds.slice(5))}</div></div>`;
@@ -422,7 +422,7 @@ async function handleVisits(request, env) {
     const browserEntries = topN(countBy(humans, (r) => parseUA(r.ua).browser), 6)
       .map((e) => ({ label: esc(e.key), count: e.count }));
 
-    // Visitor journeys — group each human's hits into sessions (30-min gap).
+    // Visitor journeys - group each human's hits into sessions (30-min gap).
     const byIp = new Map();
     for (const h of humans) {
       let arr = byIp.get(h.ip);
@@ -452,7 +452,7 @@ async function handleVisits(request, env) {
       const place = [s.city, countryName(s.country)].filter(Boolean).join(", ");
       const when = new Date(s.start).toISOString().replace("T", " ").slice(0, 16);
       const mins = Math.max(0, Math.round((s.end - s.start) / 60000));
-      const dur = mins >= 1 ? mins + " min" : "—";
+      const dur = mins >= 1 ? mins + " min" : "-";
       const trail = s.pages.slice(0, 12).map((p) => `<span class="chip">${esc(p)}</span>`).join('<span class="arrow">→</span>');
       const more = s.pages.length > 12 ? ' <span class="muted">…</span>' : "";
       return `<tr><td class="nowrap">${esc(when)}</td>` +
@@ -498,7 +498,7 @@ async function handleVisits(request, env) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Visitor analytics — Russo NV</title>
+<title>Visitor analytics - Russo NV</title>
 <style>
   :root { color-scheme: dark; --bg:#0e0e10; --panel:#17171a; --panel2:#1d1d21; --line:#2a2a2f; --txt:#ececef; --mut:#9a9aa2; --accent:#e4572e; --bot:#52525b; --ok:#3fb950; --dc:#d29922; }
   * { box-sizing: border-box; }
@@ -561,7 +561,7 @@ async function handleVisits(request, env) {
 </style></head>
 <body>
 <header>
-  <div class="brand"><h1>Russo NV — Visitor analytics</h1><span class="pill">${esc(viewLabel)}</span></div>
+  <div class="brand"><h1>Russo NV - Visitor analytics</h1><span class="pill">${esc(viewLabel)}</span></div>
   <div class="sub">Cookieless &amp; server-side · location detected at the Cloudflare edge · data auto-deletes after ${RETENTION_DAYS} days${capped ? " · showing most recent " + fmt(LIMIT) + " events" : ""}</div>
 </header>
 <main>
@@ -581,7 +581,7 @@ async function handleVisits(request, env) {
     <div class="card muted"><div class="n">${fmt(botCount)}</div><div class="l">Bots filtered out</div></div>
   </div>
 
-  <h2>Visits per day — last 30 days</h2>
+  <h2>Visits per day - last 30 days</h2>
   <div class="panel">
     <div class="chart">${chartBars}</div>
     <div class="legend"><span><i style="background:var(--accent)"></i>Real visitors</span><span><i style="background:var(--bot)"></i>Bots / crawlers</span></div>
@@ -596,24 +596,24 @@ async function handleVisits(request, env) {
     <div class="panel"><h3>Browsers</h3>${barList(browserEntries, humans.length, "#d6a25a")}</div>
   </div>
 
-  <h2>Visitor journeys — recent sessions (real visitors)</h2>
+  <h2>Visitor journeys - recent sessions (real visitors)</h2>
   <div class="scroll"><table>
     <thead><tr><th>Started (UTC)</th><th>Location</th><th>Device</th><th>Source</th><th class="num">Pages</th><th>Time</th><th>Path through the site</th></tr></thead>
     <tbody>${journeyRows || '<tr><td colspan="7" class="muted">No multi-page sessions yet.</td></tr>'}</tbody>
   </table></div>
 
-  <h2>Recent visits — latest 300 (${esc(viewLabel)})</h2>
+  <h2>Recent visits - latest 300 (${esc(viewLabel)})</h2>
   <div class="scroll"><table>
     <thead><tr><th>Time (UTC)</th><th>Type</th><th>Location</th><th>IP</th><th>Page</th><th>Source</th><th>Device</th></tr></thead>
     <tbody>${visitRows || '<tr><td colspan="7" class="muted">No visits in this view.</td></tr>'}</tbody>
   </table></div>
 
-  <h2>Daily totals — last 14 days</h2>
+  <h2>Daily totals - last 14 days</h2>
   <table style="max-width:420px"><thead><tr><th>Day</th><th class="num">Visitors</th><th class="num">Bots</th></tr></thead>
     <tbody>${dailyRows}</tbody></table>
 
   <footer>
-    Privacy-friendly analytics — no cookies, no tracking scripts, no consent banner required (GDPR legitimate interest; data auto-deleted after ${RETENTION_DAYS} days).
+    Privacy-friendly analytics - no cookies, no tracking scripts, no consent banner required (GDPR legitimate interest; data auto-deleted after ${RETENTION_DAYS} days).
     Bot detection is heuristic (User-Agent + originating network) and applied across the whole log. ·
     <a href="${csvHref}">CSV</a> · <a href="/_visits.json">JSON</a>
   </footer>
@@ -662,7 +662,7 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
-    // Private dashboard — handled here, never falls through to static assets.
+    // Private dashboard - handled here, never falls through to static assets.
     if (url.pathname === "/_visits" || url.pathname === "/_visits.json" || url.pathname === "/_visits.csv") {
       return handleVisits(request, env);
     }
@@ -671,7 +671,7 @@ export default {
     const response = await env.ASSETS.fetch(request);
     const isHtml = (response.headers.get("content-type") || "").includes("text/html");
 
-    // Log genuine page views only (HTML, GET, 200) on the live host — never
+    // Log genuine page views only (HTML, GET, 200) on the live host - never
     // assets, the admin path, or preview deployments.
     if (
       isHtml && request.method === "GET" && response.status === 200 &&

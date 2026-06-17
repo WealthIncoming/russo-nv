@@ -7,14 +7,14 @@ import { detectLocale } from '@/lib/i18n/routes';
 
 // The client browser router is a module-level singleton: createBrowserRouter
 // attaches history/popstate listeners, so it must be created exactly once even
-// if AppRouter re-mounts. NEVER enable React StrictMode on this island — it
+// if AppRouter re-mounts. NEVER enable React StrictMode on this island - it
 // would double-invoke the initializer below and build two browser routers.
 let browserRouter: ReturnType<typeof createBrowserRouter> | null = null;
 
 function makeRouter(initialPath: string) {
   const config = MAINTENANCE_MODE ? maintenanceRoutes : routes;
   if (import.meta.env.SSR) {
-    // Fresh per-render memory router on the server — never shared across renders.
+    // Fresh per-render memory router on the server - never shared across renders.
     return createMemoryRouter(config, { initialEntries: [initialPath], basename });
   }
   browserRouter ??= createBrowserRouter(config, { basename });

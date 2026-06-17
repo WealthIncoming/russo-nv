@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // =============================================================================
-// STEP 1: MAPPING — Connect each CMS service to its translation key prefix.
+// STEP 1: MAPPING - Connect each CMS service to its translation key prefix.
 //
 // How this works:
 // - Your database stores services with English names like "High-Pressure Water Jetting"
@@ -62,7 +62,7 @@ const SERVICE_DISPLAY_ORDER: string[] = [
 ];
 
 // =============================================================================
-// STEP 2: HELPER FUNCTION — Find the translation prefix for a given service.
+// STEP 2: HELPER FUNCTION - Find the translation prefix for a given service.
 //
 // It takes the service name from your database, lowercases it, and checks if
 // it contains any of the keywords from the map above. If it finds a match,
@@ -79,12 +79,12 @@ function getTranslationPrefix(serviceName: string | undefined): string | null {
     }
   }
 
-  return null; // No match found — will fall back to English CMS content
+  return null; // No match found - will fall back to English CMS content
 }
 
 export default function ServicesPage() {
   // Seed synchronously from the frozen snapshot so the services render into the
-  // server HTML (real SSR content) and match on hydration — no loading shell.
+  // server HTML (real SSR content) and match on hydration - no loading shell.
   const [services] = useState<IndustrialServices[]>(() => {
     const items = BaseCrudService.getAllItems<IndustrialServices>('industrialservices');
     return [...items].sort((a, b) => {
@@ -97,11 +97,11 @@ export default function ServicesPage() {
   });
   const isLoading = false;
   const { t } = useLanguageStore();
-  // Router-derived locale (deterministic on server + client) — see ProjectsPage.
+  // Router-derived locale (deterministic on server + client) - see ProjectsPage.
   const { localize, locale } = useLocale();
 
   // ===========================================================================
-  // STEP 3: HELPER — Get translated text for a service field.
+  // STEP 3: HELPER - Get translated text for a service field.
   //
   // How to read this:
   //   getServiceText(service, 'Title', service.serviceName)
@@ -118,7 +118,7 @@ export default function ServicesPage() {
     fallback: string | undefined
   ): string => {
     // Try to find a translation prefix for this service. If we have one,
-    // translations.ts is the source of truth for both EN and NL — the CMS
+    // translations.ts is the source of truth for both EN and NL - the CMS
     // is only used as a fallback for unmapped services.
     const prefix = getTranslationPrefix(service.serviceName);
     if (!prefix) return fallback || '';
@@ -255,7 +255,7 @@ export default function ServicesPage() {
                         </div>
                       </div>
 
-                      {/* Text Column — UPDATED to use getServiceText() */}
+                      {/* Text Column - UPDATED to use getServiceText() */}
                       <div className={`min-w-0 w-full flex ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
                         <div className="w-full border border-dark-grey/10 bg-white p-6 sm:p-8 xl:p-10 flex flex-col justify-center min-w-0">
                           <div className="space-y-6 min-w-0 w-full">
@@ -267,7 +267,7 @@ export default function ServicesPage() {
                               <div className="h-px flex-1 bg-dark-grey/10" />
                             </div>
 
-                            {/* Service name — now translated */}
+                            {/* Service name - now translated */}
                             <div className="min-w-0">
                               <h2 className={`font-heading text-foreground leading-[1.05] tracking-tight ${
                                 locale === 'NL'
@@ -278,13 +278,13 @@ export default function ServicesPage() {
                               </h2>
                             </div>
 
-                            {/* Description — now translated */}
+                            {/* Description - now translated */}
                             <p className="font-paragraph text-base sm:text-lg text-foreground/70 leading-relaxed max-w-[62ch]">
                               {getServiceText(service, 'Description', service.description)}
                             </p>
 
                             {/* Read-more to the dedicated "industriële schilderwerken" landing page.
-                                Descriptive anchor text (the target keyword) — not "lees meer". */}
+                                Descriptive anchor text (the target keyword) - not "lees meer". */}
                             {slug === 'industrialCoatingApplication' && (
                               <Link
                                 to={localize('/services/industriele-schilderwerken')}
@@ -295,7 +295,7 @@ export default function ServicesPage() {
                               </Link>
                             )}
 
-                            {/* Key Benefits — now translated */}
+                            {/* Key Benefits - now translated */}
                             {service.keyBenefits && (
                               <div className="border-t border-dark-grey/10 pt-6 min-w-0 w-full">
                                 <h3 className="font-heading text-lg sm:text-xl text-foreground mb-3">
@@ -307,7 +307,7 @@ export default function ServicesPage() {
                               </div>
                             )}
 
-                            {/* Process Overview — now translated */}
+                            {/* Process Overview - now translated */}
                             {service.processOverview && (
                               <div className="border-t border-dark-grey/10 pt-6 min-w-0 w-full">
                                 <h3 className="font-heading text-lg sm:text-xl text-foreground mb-3">
@@ -319,7 +319,7 @@ export default function ServicesPage() {
                               </div>
                             )}
 
-                            {/* Target Industries — now translated */}
+                            {/* Target Industries - now translated */}
                             {service.targetIndustries && (
                               <div className="border-t border-dark-grey/10 pt-6 min-w-0 w-full">
                                 <h3 className="font-heading text-sm uppercase tracking-widest text-foreground/50 mb-2">

@@ -139,7 +139,7 @@ export const translations: Record<Language, Translations> = {
         'High-performance barrier systems designed to withstand extreme chemical and environmental aggression.',
       coatingInspectionTitle: 'Coating Inspection',
       coatingInspectionDesc:
-        'Independent inspection and quality assurance of coating systems — verifying surface preparation, dry film thickness, adhesion, and compliance with project specifications.',
+        'Independent inspection and quality assurance of coating systems, verifying surface preparation, dry film thickness, adhesion, and compliance with project specifications.',
       waterjettingTitle: 'Waterjetting',
       waterjettingDesc:
         'Ultra-high-pressure water jetting for non-abrasive surface preparation, coating removal, and cleaning of contaminated industrial surfaces.',
@@ -379,11 +379,11 @@ export const translations: Record<Language, Translations> = {
       heroLine1: 'Industrial',
       heroLine2: 'Sectors',
       heroDescription: 'Industrial coatings and surface preparation for petrochemical, marine, food production, oil & gas, chemical and water-treatment sectors across Belgium and the Benelux.',
-      heroImageAlt: 'Industrial sectors served by Russo NV — petrochemical, marine, manufacturing in Belgium',
+      heroImageAlt: 'Industrial sectors served by Russo NV: petrochemical, marine, manufacturing in Belgium',
       gridSectionLabel: 'Expertise By Sector',
       gridTitleLine1: 'Specialized',
       gridTitleHighlight: 'Solutions',
-      gridDescription: 'From corrosive chemical plants to hygienic food processing facilities — every sector demands its own approach to surface preparation and protective coatings.',
+      gridDescription: 'From corrosive chemical plants to hygienic food processing facilities, every sector demands its own approach to surface preparation and protective coatings.',
       industryOverview: 'Industry Overview',
       workDescription: 'Our Work',
       keyServices: 'Key Services',
@@ -393,7 +393,7 @@ export const translations: Record<Language, Translations> = {
       emptyState: 'No industries information available at the moment.',
       coverageTitleLine1: 'European',
       coverageTitleHighlight: 'Coverage',
-      coverageDescription: 'Based in Antwerp, Belgium — serving industrial clients across all of Europe with local expertise and international standards',
+      coverageDescription: 'Based in Antwerp, Belgium, serving industrial clients across all of Europe with local expertise and international standards',
       coverageHeadquarters: 'Headquarters',
       coverageHeadquartersValue: 'Antwerp, Belgium',
       coverageOperations: 'Operations',
@@ -404,7 +404,7 @@ export const translations: Record<Language, Translations> = {
       coverageAvailabilityValue: '24/7 Project Support',
       ctaTitleLine1: 'Your Industry',
       ctaTitleHighlight: 'Our Expertise',
-      ctaDescription: 'Contact us to discuss how we can support your industrial coating needs — anywhere in Europe',
+      ctaDescription: 'Contact us to discuss how we can support your industrial coating needs, anywhere in Europe',
       ctaButton: 'Get In Touch',
     },
 
@@ -566,11 +566,11 @@ export const translations: Record<Language, Translations> = {
       dateIssued: 'Issued',
       expirationDate: 'Expires',
       viewCertificate: 'View Certificate',
-      certPendingIssuance: 'Awarded — certificate pending issuance',
+      certPendingIssuance: 'Awarded, certificate pending issuance',
       safetyFirstTitle: 'Safety',
       safetyFirstHighlight: 'First',
       safetyFirstSuffix: 'Always',
-      safetyFirstDesc1: 'At Russo NV, safety is not just a priority—it\'s our foundation. Every project begins and ends with comprehensive safety protocols that protect our team, your facility, and the environment.',
+      safetyFirstDesc1: 'At Russo NV, safety is not just a priority, it\'s our foundation. Every project begins and ends with comprehensive safety protocols that protect our team, your facility, and the environment.',
       safetyFirstDesc2: 'Our commitment to safety compliance is backed by all the certifications and trust from all our clients.',
       safetyItemVcaTitle: 'VCA Certified',
       safetyItemVcaDesc: 'Safety, Health and Environment Checklist for Contractors',
@@ -587,7 +587,7 @@ export const translations: Record<Language, Translations> = {
       ctaButton: 'Request Quote',
     },
 
-    // Safety CMS Content — Certifications
+    // Safety CMS Content - Certifications
     safetyCertsCms: {
       naceTitle: 'NACE International Coating Inspector Level 2',
       naceIssuer: 'NACE International (now AMPP)',
@@ -606,7 +606,7 @@ export const translations: Record<Language, Translations> = {
       iso9001Description: 'ISO 9001:2015 certifies that Russo NV consistently provides products and services that meet customer and regulatory requirements, and aims to enhance customer satisfaction through effective system application.',
     },
 
-    // Safety CMS Content — Company Values
+    // Safety CMS Content - Company Values
     safetyValuesCms: {
       communicationTitle: 'Transparent Client Communication',
       communicationDescription: 'Open and honest communication is the cornerstone of successful partnerships, keeping clients informed and engaged every step of the way.',
@@ -644,9 +644,9 @@ export const translations: Record<Language, Translations> = {
       heroLabel: 'About Us',
       heroLine1: 'Coating Specialists',
       heroLine2: 'from Antwerp',
-      heroDescription: 'Specialized industrial coating and surface preparation services — built on practical expertise, safety, and uncompromising quality.',
-      heroImageAlt: 'About Russo NV — industrial coating specialists based in Antwerp, Belgium',
-      teamImageAlt: 'Russo NV crew on site — industrial coatings, blasting and fireproofing specialists in Antwerp',
+      heroDescription: 'Specialized industrial coating and surface preparation services, built on practical expertise, safety, and uncompromising quality.',
+      heroImageAlt: 'About Russo NV: industrial coating specialists based in Antwerp, Belgium',
+      teamImageAlt: 'Russo NV crew on site: industrial coatings, blasting and fireproofing specialists in Antwerp',
       storySectionLabel: 'About Russo NV',
       missionSectionLabel: 'What Drives Us',
       expertiseSectionLabel: 'Service Areas',
@@ -803,7 +803,7 @@ export const translations: Record<Language, Translations> = {
       privacy1Body: 'Russo NV is a Belgian company specialized in industrial coating and surface preparation services. Our registered office is at Taxandriastraat 35, 2170 Antwerp, Belgium. Our enterprise and VAT number is BE 0453.001.480 (RPR Antwerp). You can reach us at info@russonv.be or +32 475 43 48 19. For privacy-related questions, contact us using the same details. We act as the data controller for personal data processed through this website.',
 
       privacy2Title: 'What data we collect',
-      privacy2Body: 'We collect personal data that you voluntarily share with us — primarily through the contact form on this website (your name, company, email address, phone number, and the content of your message). We also collect basic technical data automatically when you visit the site (IP address, browser type, pages viewed, referring website) for analytics, security, and to keep the site running properly. These automatically collected server logs (including IP address) are kept for up to 90 days and then deleted.',
+      privacy2Body: 'We collect personal data that you voluntarily share with us, primarily through the contact form on this website (your name, company, email address, phone number, and the content of your message). We also collect basic technical data automatically when you visit the site (IP address, browser type, pages viewed, referring website) for analytics, security, and to keep the site running properly. These automatically collected server logs (including IP address) are kept for up to 90 days and then deleted.',
 
       privacy3Title: 'How we use your data',
       privacy3Body: 'We use your personal data to respond to your enquiries and prepare quotes; to manage our business relationship if you become a client; to comply with our legal and regulatory obligations; to maintain and improve the website and our services; and to ensure the security of our website and systems.',
@@ -812,7 +812,7 @@ export const translations: Record<Language, Translations> = {
       privacy4Body: 'We process your personal data on the following legal bases under the GDPR: your consent when you submit the contact form; the necessity of processing to take steps at your request prior to entering into a contract; our legitimate interests in operating, securing and improving our business, except where overridden by your rights and freedoms; and compliance with our legal obligations.',
 
       privacy5Title: 'Sharing your data',
-      privacy5Body: 'We do not sell your personal data. We may share data with service providers who help us operate the website and run our business — including hosting, form processing, email delivery, and analytics — under appropriate contracts and confidentiality obligations. Our website is hosted on Cloudflare Pages (Cloudflare, Inc.), which processes data on our behalf as our hosting and content-delivery provider; we use Cloudflare Web Analytics, a cookieless and privacy-friendly measurement tool, to understand site traffic; and contact-form submissions are delivered to us through Web3Forms. We may also disclose data to competent authorities when required by law.',
+      privacy5Body: 'We do not sell your personal data. We may share data with service providers who help us operate the website and run our business, including hosting, form processing, email delivery, and analytics, under appropriate contracts and confidentiality obligations. Our website is hosted on Cloudflare Pages (Cloudflare, Inc.), which processes data on our behalf as our hosting and content-delivery provider; we use Cloudflare Web Analytics, a cookieless and privacy-friendly measurement tool, to understand site traffic; and contact-form submissions are delivered to us through Web3Forms. We may also disclose data to competent authorities when required by law.',
 
       privacy6Title: 'International transfers',
       privacy6Body: 'Some of our service providers are located outside the European Economic Area. Where personal data is transferred outside the EEA, we rely on appropriate safeguards such as the European Commission\'s Standard Contractual Clauses or equivalent mechanisms to ensure your data remains protected.',
@@ -843,13 +843,13 @@ export const translations: Record<Language, Translations> = {
       terms1Body: 'These Terms of Service ("Terms") govern your use of the website russonv.com (the "Site"). By accessing or using the Site, you agree to be bound by these Terms. If you do not agree, please do not use the Site. Russo NV ("we", "us", "our") is a Belgian company with its registered office at Taxandriastraat 35, 2170 Antwerp, Belgium. Our enterprise and VAT number is BE 0453.001.480 (RPR Antwerp).',
 
       terms2Title: 'Our services',
-      terms2Body: 'The Site provides information about our industrial coating, surface preparation, and related services. The content is for general information only. Any specific commercial relationship — including the scope, pricing, timeline, and terms of work — is governed by a separate written agreement signed between us and our client. Nothing on the Site constitutes a binding offer.',
+      terms2Body: 'The Site provides information about our industrial coating, surface preparation, and related services. The content is for general information only. Any specific commercial relationship, including the scope, pricing, timeline, and terms of work, is governed by a separate written agreement signed between us and our client. Nothing on the Site constitutes a binding offer.',
 
       terms3Title: 'Acceptable use',
       terms3Body: 'You agree to use the Site only for lawful purposes. You must not use the Site in any way that could damage, disable, overburden, or impair it; attempt to gain unauthorised access to any part of the Site, our systems, or related networks; use any automated means to scrape or harvest content; transmit harmful code or otherwise interfere with normal use of the Site by others; or impersonate another person or misrepresent your affiliation.',
 
       terms4Title: 'Intellectual property',
-      terms4Body: 'All content on the Site — including text, graphics, logos, images, and project photography — is owned by Russo NV or used under licence, and is protected by copyright and other intellectual property laws. You may view and print pages from the Site for your personal or internal business use. Any other use, including reproduction, modification, distribution, or commercial use, requires our prior written consent.',
+      terms4Body: 'All content on the Site, including text, graphics, logos, images, and project photography, is owned by Russo NV or used under licence, and is protected by copyright and other intellectual property laws. You may view and print pages from the Site for your personal or internal business use. Any other use, including reproduction, modification, distribution, or commercial use, requires our prior written consent.',
 
       terms5Title: 'Project photography',
       terms5Body: 'Photographs of past projects shown on the Site are illustrative of our work. They are protected by copyright and may not be reused without our written permission. Where projects involve client sites, those photos are published with the relevant client\'s consent.',
@@ -1010,7 +1010,7 @@ export const translations: Record<Language, Translations> = {
         'Hoogwaardige barrièresystemen ontworpen om extreme chemische en milieubelastingen te weerstaan.',
       coatingInspectionTitle: 'Coatinginspectie',
       coatingInspectionDesc:
-        'Onafhankelijke inspectie en kwaliteitsborging van coatingsystemen — verificatie van oppervlaktevoorbereiding, droge filmdikte, hechting en naleving van projectspecificaties.',
+        'Onafhankelijke inspectie en kwaliteitsborging van coatingsystemen, verificatie van oppervlaktevoorbereiding, droge filmdikte, hechting en naleving van projectspecificaties.',
       waterjettingTitle: 'Waterjetten',
       waterjettingDesc:
         'Ultrahogedruk waterstralen voor niet-abrasieve oppervlaktevoorbereiding, coatingverwijdering en reiniging van vervuilde industriële oppervlakken.',
@@ -1253,11 +1253,11 @@ export const translations: Record<Language, Translations> = {
       heroLine1: 'Industriële',
       heroLine2: 'Sectoren',
       heroDescription: 'Industriële coatings en oppervlaktevoorbereiding voor petrochemie, maritieme sector, voedingsindustrie, olie & gas, chemie en waterzuivering in heel België en de Benelux.',
-      heroImageAlt: 'Industriële sectoren bediend door Russo NV — petrochemie, maritiem en industrie in België',
+      heroImageAlt: 'Industriële sectoren bediend door Russo NV: petrochemie, maritiem en industrie in België',
       gridSectionLabel: 'Expertise Per Sector',
       gridTitleLine1: 'Gespecialiseerde',
       gridTitleHighlight: 'Oplossingen',
-      gridDescription: 'Van corrosieve chemische installaties tot hygiënische voedselverwerkingsfaciliteiten — elke sector vereist een eigen aanpak van oppervlaktevoorbereiding en beschermende coatings.',
+      gridDescription: 'Van corrosieve chemische installaties tot hygiënische voedselverwerkingsfaciliteiten, elke sector vereist een eigen aanpak van oppervlaktevoorbereiding en beschermende coatings.',
       industryOverview: 'Industrieoverzicht',
       workDescription: 'Ons Werk',
       keyServices: 'Belangrijkste Diensten',
@@ -1267,7 +1267,7 @@ export const translations: Record<Language, Translations> = {
       emptyState: 'Er is momenteel geen informatie over industrieën beschikbaar.',
       coverageTitleLine1: 'Europees',
       coverageTitleHighlight: 'Bereik',
-      coverageDescription: 'Gevestigd in Antwerpen, België — wij bedienen industriële klanten in heel Europa met lokale expertise en internationale normen',
+      coverageDescription: 'Gevestigd in Antwerpen, België, wij bedienen industriële klanten in heel Europa met lokale expertise en internationale normen',
       coverageHeadquarters: 'Hoofdkantoor',
       coverageHeadquartersValue: 'Antwerpen, België',
       coverageOperations: 'Werkgebied',
@@ -1278,7 +1278,7 @@ export const translations: Record<Language, Translations> = {
       coverageAvailabilityValue: '24/7 Projectondersteuning',
       ctaTitleLine1: 'Uw Industrie',
       ctaTitleHighlight: 'Onze Expertise',
-      ctaDescription: 'Neem contact met ons op om te bespreken hoe wij uw industriële coatingbehoeften kunnen ondersteunen — overal in Europa',
+      ctaDescription: 'Neem contact met ons op om te bespreken hoe wij uw industriële coatingbehoeften kunnen ondersteunen, overal in Europa',
       ctaButton: 'Neem Contact Op',
     },
 
@@ -1440,11 +1440,11 @@ export const translations: Record<Language, Translations> = {
       dateIssued: 'Uitgegeven',
       expirationDate: 'Verloopt',
       viewCertificate: 'Certificaat Bekijken',
-      certPendingIssuance: 'Toegekend — certificaat in afwachting van uitgifte',
+      certPendingIssuance: 'Toegekend, certificaat in afwachting van uitgifte',
       safetyFirstTitle: 'Veiligheid',
       safetyFirstHighlight: 'Eerst',
       safetyFirstSuffix: 'Altijd',
-      safetyFirstDesc1: 'Bij Russo NV is veiligheid niet zomaar een prioriteit — het is ons fundament. Elk project begint en eindigt met uitgebreide veiligheidsprotocollen die ons team, uw installatie en het milieu beschermen.',
+      safetyFirstDesc1: 'Bij Russo NV is veiligheid niet zomaar een prioriteit, het is ons fundament. Elk project begint en eindigt met uitgebreide veiligheidsprotocollen die ons team, uw installatie en het milieu beschermen.',
       safetyFirstDesc2: 'Onze toewijding aan veiligheidsnaleving wordt onderbouwd door al onze certificeringen en het vertrouwen van al onze klanten.',
       safetyItemVcaTitle: 'VCA Gecertificeerd',
       safetyItemVcaDesc: 'Veiligheid, Gezondheid en Milieu Checklist Aannemers',
@@ -1461,7 +1461,7 @@ export const translations: Record<Language, Translations> = {
       ctaButton: 'Offerte Aanvragen',
     },
 
-    // Safety CMS Content — Certifications
+    // Safety CMS Content - Certifications
     safetyCertsCms: {
       naceTitle: 'NACE International Coating Inspector Level 2',
       naceIssuer: 'NACE International (nu AMPP)',
@@ -1480,7 +1480,7 @@ export const translations: Record<Language, Translations> = {
       iso9001Description: 'ISO 9001:2015 certificeert dat Russo NV consequent producten en diensten levert die voldoen aan klant- en regelgevingsvereisten, en streeft naar verhoging van de klanttevredenheid door effectieve systeemtoepassing.',
     },
 
-    // Safety CMS Content — Company Values
+    // Safety CMS Content - Company Values
     safetyValuesCms: {
       communicationTitle: 'Transparante Klantcommunicatie',
       communicationDescription: 'Open en eerlijke communicatie is de hoeksteen van succesvolle partnerschappen, waarbij klanten bij elke stap geïnformeerd en betrokken worden gehouden.',
@@ -1518,9 +1518,9 @@ export const translations: Record<Language, Translations> = {
       heroLabel: 'Over Ons',
       heroLine1: 'Coatingspecialist',
       heroLine2: 'uit Antwerpen',
-      heroDescription: 'Gespecialiseerde industriële coating- en oppervlaktevoorbereidingsdiensten — gebouwd op praktijkexpertise, veiligheid en compromisloze kwaliteit.',
-      heroImageAlt: 'Over Russo NV — specialist in industriële coatings uit Antwerpen, België',
-      teamImageAlt: 'Team van Russo NV op locatie — specialisten in industriële coatings, stralen en brandwering in Antwerpen',
+      heroDescription: 'Gespecialiseerde industriële coating- en oppervlaktevoorbereidingsdiensten, gebouwd op praktijkexpertise, veiligheid en compromisloze kwaliteit.',
+      heroImageAlt: 'Over Russo NV: specialist in industriële coatings uit Antwerpen, België',
+      teamImageAlt: 'Team van Russo NV op locatie: specialisten in industriële coatings, stralen en brandwering in Antwerpen',
       storySectionLabel: 'Over Russo NV',
       missionSectionLabel: 'Wat Ons Drijft',
       expertiseSectionLabel: 'Vakgebieden',
@@ -1677,7 +1677,7 @@ export const translations: Record<Language, Translations> = {
       privacy1Body: 'Russo NV is een Belgisch bedrijf gespecialiseerd in industriële coating- en oppervlaktevoorbereidingsdiensten. Onze maatschappelijke zetel bevindt zich op Taxandriastraat 35, 2170 Antwerpen, België. Ons ondernemings- en BTW-nummer is BE 0453.001.480 (RPR Antwerpen). U kunt ons bereiken via info@russonv.be of +32 475 43 48 19. Voor privacygerelateerde vragen kunt u dezelfde gegevens gebruiken. Wij treden op als verwerkingsverantwoordelijke voor de persoonsgegevens die via deze website worden verwerkt.',
 
       privacy2Title: 'Welke gegevens wij verzamelen',
-      privacy2Body: 'Wij verzamelen persoonsgegevens die u vrijwillig met ons deelt — voornamelijk via het contactformulier op deze website (uw naam, bedrijf, e-mailadres, telefoonnummer en de inhoud van uw bericht). Wij verzamelen ook automatisch basale technische gegevens wanneer u de site bezoekt (IP-adres, browsertype, bekeken pagina\'s, verwijzende website) voor analyse, beveiliging en de goede werking van de site. Deze automatisch verzamelde serverlogs (waaronder het IP-adres) worden maximaal 90 dagen bewaard en daarna verwijderd.',
+      privacy2Body: 'Wij verzamelen persoonsgegevens die u vrijwillig met ons deelt, voornamelijk via het contactformulier op deze website (uw naam, bedrijf, e-mailadres, telefoonnummer en de inhoud van uw bericht). Wij verzamelen ook automatisch basale technische gegevens wanneer u de site bezoekt (IP-adres, browsertype, bekeken pagina\'s, verwijzende website) voor analyse, beveiliging en de goede werking van de site. Deze automatisch verzamelde serverlogs (waaronder het IP-adres) worden maximaal 90 dagen bewaard en daarna verwijderd.',
 
       privacy3Title: 'Hoe wij uw gegevens gebruiken',
       privacy3Body: 'Wij gebruiken uw persoonsgegevens om te reageren op uw vragen en offertes op te stellen; om onze zakelijke relatie te beheren als u klant wordt; om te voldoen aan onze wettelijke en regelgevende verplichtingen; om de website en onze diensten te onderhouden en te verbeteren; en om de beveiliging van onze website en systemen te waarborgen.',
@@ -1686,7 +1686,7 @@ export const translations: Record<Language, Translations> = {
       privacy4Body: 'Wij verwerken uw persoonsgegevens op de volgende rechtsgronden onder de AVG: uw toestemming wanneer u het contactformulier indient; de noodzaak van verwerking om op uw verzoek stappen te ondernemen vóór het sluiten van een overeenkomst; ons gerechtvaardigd belang bij het exploiteren, beveiligen en verbeteren van onze onderneming, behalve waar dit wordt overschreden door uw rechten en vrijheden; en naleving van onze wettelijke verplichtingen.',
 
       privacy5Title: 'Delen van uw gegevens',
-      privacy5Body: 'Wij verkopen uw persoonsgegevens niet. Wij kunnen gegevens delen met dienstverleners die ons helpen de website en onze onderneming te exploiteren — waaronder hosting, formulierverwerking, e-mailbezorging en analyse — onder passende contracten en geheimhoudingsverplichtingen. Onze website wordt gehost op Cloudflare Pages (Cloudflare, Inc.), dat als onze hosting- en content-deliveryprovider gegevens namens ons verwerkt; wij gebruiken Cloudflare Web Analytics, een cookieloze en privacyvriendelijke meettool, om het siteverkeer te begrijpen; en inzendingen van het contactformulier worden via Web3Forms aan ons bezorgd. Wij kunnen ook gegevens vrijgeven aan bevoegde autoriteiten wanneer dit wettelijk vereist is.',
+      privacy5Body: 'Wij verkopen uw persoonsgegevens niet. Wij kunnen gegevens delen met dienstverleners die ons helpen de website en onze onderneming te exploiteren, waaronder hosting, formulierverwerking, e-mailbezorging en analyse, onder passende contracten en geheimhoudingsverplichtingen. Onze website wordt gehost op Cloudflare Pages (Cloudflare, Inc.), dat als onze hosting- en content-deliveryprovider gegevens namens ons verwerkt; wij gebruiken Cloudflare Web Analytics, een cookieloze en privacyvriendelijke meettool, om het siteverkeer te begrijpen; en inzendingen van het contactformulier worden via Web3Forms aan ons bezorgd. Wij kunnen ook gegevens vrijgeven aan bevoegde autoriteiten wanneer dit wettelijk vereist is.',
 
       privacy6Title: 'Internationale doorgifte',
       privacy6Body: 'Sommige van onze dienstverleners bevinden zich buiten de Europese Economische Ruimte. Wanneer persoonsgegevens buiten de EER worden doorgegeven, vertrouwen wij op passende waarborgen zoals de Standaardcontractbepalingen van de Europese Commissie of gelijkwaardige mechanismen om ervoor te zorgen dat uw gegevens beschermd blijven.',
@@ -1717,13 +1717,13 @@ export const translations: Record<Language, Translations> = {
       terms1Body: 'Deze Servicevoorwaarden ("Voorwaarden") regelen uw gebruik van de website russonv.com (de "Site"). Door de Site te bezoeken of te gebruiken, gaat u ermee akkoord gebonden te zijn aan deze Voorwaarden. Indien u niet akkoord gaat, gelieve de Site niet te gebruiken. Russo NV ("wij", "ons", "onze") is een Belgisch bedrijf met maatschappelijke zetel op Taxandriastraat 35, 2170 Antwerpen, België. Ons ondernemings- en BTW-nummer is BE 0453.001.480 (RPR Antwerpen).',
 
       terms2Title: 'Onze diensten',
-      terms2Body: 'De Site biedt informatie over onze industriële coating-, oppervlaktevoorbereidings- en aanverwante diensten. De inhoud is uitsluitend bedoeld voor algemene informatie. Elke specifieke commerciële relatie — inclusief de scope, prijs, planning en voorwaarden van het werk — wordt geregeld door een afzonderlijke schriftelijke overeenkomst die tussen ons en onze klant wordt ondertekend. Niets op de Site vormt een bindend aanbod.',
+      terms2Body: 'De Site biedt informatie over onze industriële coating-, oppervlaktevoorbereidings- en aanverwante diensten. De inhoud is uitsluitend bedoeld voor algemene informatie. Elke specifieke commerciële relatie, inclusief de scope, prijs, planning en voorwaarden van het werk, wordt geregeld door een afzonderlijke schriftelijke overeenkomst die tussen ons en onze klant wordt ondertekend. Niets op de Site vormt een bindend aanbod.',
 
       terms3Title: 'Aanvaardbaar gebruik',
       terms3Body: 'U gaat ermee akkoord de Site uitsluitend voor wettelijke doeleinden te gebruiken. U mag de Site niet gebruiken op een manier die deze kan beschadigen, uitschakelen, overbelasten of aantasten; pogingen ondernemen om ongeoorloofde toegang te krijgen tot enig deel van de Site, onze systemen of gerelateerde netwerken; geautomatiseerde middelen gebruiken om inhoud te scrapen of te oogsten; schadelijke code verzenden of anderszins normaal gebruik door anderen verstoren; of zich voordoen als een andere persoon of uw band met een organisatie verkeerd voorstellen.',
 
       terms4Title: 'Intellectuele eigendom',
-      terms4Body: 'Alle inhoud op de Site — inclusief tekst, afbeeldingen, logo\'s en projectfotografie — is eigendom van Russo NV of wordt onder licentie gebruikt, en wordt beschermd door auteursrecht en andere intellectuele-eigendomsrechten. U mag pagina\'s van de Site bekijken en afdrukken voor persoonlijk of intern zakelijk gebruik. Elk ander gebruik, inclusief reproductie, wijziging, verspreiding of commercieel gebruik, vereist onze voorafgaande schriftelijke toestemming.',
+      terms4Body: 'Alle inhoud op de Site, inclusief tekst, afbeeldingen, logo\'s en projectfotografie, is eigendom van Russo NV of wordt onder licentie gebruikt, en wordt beschermd door auteursrecht en andere intellectuele-eigendomsrechten. U mag pagina\'s van de Site bekijken en afdrukken voor persoonlijk of intern zakelijk gebruik. Elk ander gebruik, inclusief reproductie, wijziging, verspreiding of commercieel gebruik, vereist onze voorafgaande schriftelijke toestemming.',
 
       terms5Title: 'Projectfotografie',
       terms5Body: 'Foto\'s van eerdere projecten op de Site zijn illustratief voor ons werk. Zij zijn beschermd door auteursrecht en mogen niet zonder onze schriftelijke toestemming worden hergebruikt. Wanneer projecten klantlocaties betreffen, worden die foto\'s gepubliceerd met toestemming van de betreffende klant.',

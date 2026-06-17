@@ -15,7 +15,7 @@ const SectionLabel = ({ text, align = 'center' }: { text: string; align?: 'left'
 
 export default function AboutPage() {
   const { t } = useLanguageStore();
-  // Router-derived locale (deterministic on server + client) — see ProjectsPage.
+  // Router-derived locale (deterministic on server + client) - see ProjectsPage.
   const { localize, locale } = useLocale();
   return (
     <div className="min-h-screen bg-background">

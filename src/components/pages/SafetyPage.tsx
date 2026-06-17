@@ -12,7 +12,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // =============================================================================
-// MAPPING — Certifications
+// MAPPING - Certifications
 // =============================================================================
 const CERT_TRANSLATION_MAP: Record<string, string> = {
   'nace': 'nace',
@@ -22,7 +22,7 @@ const CERT_TRANSLATION_MAP: Record<string, string> = {
 };
 
 // =============================================================================
-// MAPPING — Company Values
+// MAPPING - Company Values
 // =============================================================================
 const VALUE_TRANSLATION_MAP: Record<string, string> = {
   'communication': 'communication',
@@ -65,7 +65,7 @@ function isCertExpired(date: Date | string | undefined): boolean {
 
 export default function SafetyPage() {
   // Seed synchronously from the frozen snapshot so certs + values render into the
-  // server HTML (real SSR content) and match on hydration — no loading shell.
+  // server HTML (real SSR content) and match on hydration - no loading shell.
   const [certifications] = useState<Certifications[]>(
     () => BaseCrudService.getAllItems<Certifications>('certifications')
   );
@@ -74,7 +74,7 @@ export default function SafetyPage() {
   );
   const isLoading = false;
   const { t } = useLanguageStore();
-  // Router-derived locale (deterministic on server + client) — see ProjectsPage.
+  // Router-derived locale (deterministic on server + client) - see ProjectsPage.
   const { localize, locale } = useLocale();
 
   const formatDate = (date: Date | string | undefined) => {
@@ -253,7 +253,7 @@ export default function SafetyPage() {
                 })}
               </div>
 
-              {/* 24/7 callout — single instance, hoisted out of the per-value cards */}
+              {/* 24/7 callout - single instance, hoisted out of the per-value cards */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

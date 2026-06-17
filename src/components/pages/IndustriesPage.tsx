@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // =============================================================================
-// MAPPING — Connect each CMS industry to its translation key prefix.
+// MAPPING - Connect each CMS industry to its translation key prefix.
 // =============================================================================
 const INDUSTRY_TRANSLATION_MAP: Record<string, string> = {
   'marine': 'marine',
@@ -72,7 +72,7 @@ const INDUSTRY_DISPLAY_ORDER: string[] = [
 
 export default function IndustriesPage() {
   // Seed synchronously from the frozen snapshot so the industries render into the
-  // server HTML (real SSR content) and match on hydration — no loading shell.
+  // server HTML (real SSR content) and match on hydration - no loading shell.
   const [industries] = useState<IndustriesServed[]>(() => {
     const items = BaseCrudService.getAllItems<IndustriesServed>('industriesserved');
     return [...items].sort((a, b) => {
@@ -85,7 +85,7 @@ export default function IndustriesPage() {
   });
   const isLoading = false;
   const { t } = useLanguageStore();
-  // Router-derived locale (deterministic on server + client) — see ProjectsPage.
+  // Router-derived locale (deterministic on server + client) - see ProjectsPage.
   const { localize, locale } = useLocale();
 
   const getIndustryText = (

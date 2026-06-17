@@ -1,4 +1,4 @@
-// Per-route, per-locale page metadata — the single source of truth shared by
+// Per-route, per-locale page metadata - the single source of truth shared by
 // [...slug].astro (static <title>/<meta> in the built HTML) and the router's
 // RouteSync (document.title on client-side navigation). Keep both consumers in
 // mind when editing: keys are *base* paths without the /en prefix.
@@ -59,60 +59,60 @@ export const PAGE_META: Record<string, PageMeta> = {
   },
   '/industries': {
     NL: {
-      title: 'Sectoren — Petrochemie, Maritiem, Voeding & Industrie | Russo NV',
+      title: 'Sectoren: Petrochemie, Maritiem, Voeding & Industrie | Russo NV',
       description: 'Russo NV levert beschermende coatings en oppervlaktevoorbehandeling voor petrochemie, maritieme sector, voedingsindustrie, productie, olie & gas, chemie en waterzuivering in heel België en de Benelux.',
       image: '/images/industries-hero.jpg',
     },
     EN: {
-      title: 'Industries Served — Petrochemical, Marine, Food & Manufacturing | Russo NV',
+      title: 'Industries Served: Petrochemical, Marine, Food & Manufacturing | Russo NV',
       description: 'Russo NV delivers protective coating and surface preparation for petrochemical, marine, food production, manufacturing, oil & gas, chemical and water-treatment sectors across Europe.',
       image: '/images/industries-hero.jpg',
     },
   },
   '/projects': {
     NL: {
-      title: 'Projectenportfolio — Industriële Coating & Stralen | Russo NV',
-      description: 'Een selectie van grootschalige industriële coating-, straal- en beschermingsprojecten in Antwerpen, Gent en Zeebrugge — waaronder Sea Tank Terminal, GTS, CSP Zeebrugge, BNFW en ITC Rubis.',
+      title: 'Projectenportfolio: Industriële Coating & Stralen | Russo NV',
+      description: 'Een selectie van grootschalige industriële coating-, straal- en beschermingsprojecten in Antwerpen, Gent en Zeebrugge, waaronder Sea Tank Terminal, GTS, CSP Zeebrugge, BNFW en ITC Rubis.',
       image: '/images/projects-hero.jpg',
     },
     EN: {
-      title: 'Project Portfolio — Industrial Coating & Blasting | Russo NV',
-      description: 'A selection of large-scale industrial coating, blasting and protection projects delivered in Antwerp, Ghent and Zeebrugge — including Sea Tank Terminal, GTS, CSP Zeebrugge, BNFW and ITC Rubis.',
+      title: 'Project Portfolio: Industrial Coating & Blasting | Russo NV',
+      description: 'A selection of large-scale industrial coating, blasting and protection projects delivered in Antwerp, Ghent and Zeebrugge, including Sea Tank Terminal, GTS, CSP Zeebrugge, BNFW and ITC Rubis.',
       image: '/images/projects-hero.jpg',
     },
   },
   '/safety': {
     NL: {
-      title: 'Veiligheid & Certificeringen — VCA, NACE, ISO Gecertificeerd | Russo NV',
+      title: 'Veiligheid & Certificeringen: VCA, NACE, ISO Gecertificeerd | Russo NV',
       description: 'Russo NV werkt onder strikte veiligheidsnormen waaronder VCA petrochemie, NACE, SSPC, FROSIO en APAC certificeringen. Onze toewijding aan compliance beschermt elk project.',
       image: '/images/safety-hero.jpg',
     },
     EN: {
-      title: 'Safety & Certifications — VCA, NACE, ISO Compliant | Russo NV',
+      title: 'Safety & Certifications: VCA, NACE, ISO Compliant | Russo NV',
       description: 'Russo NV operates under strict safety standards including VCA petrochemical, NACE, SSPC, FROSIO and APAC certifications. Our commitment to compliance protects every project.',
       image: '/images/safety-hero.jpg',
     },
   },
   '/about': {
     NL: {
-      title: 'Over Russo NV — Specialist in Industriële Coatings in Antwerpen',
+      title: 'Over Russo NV: Specialist in Industriële Coatings in Antwerpen',
       description: 'Russo NV is een industrieel coating- en oppervlaktevoorbehandelingsbedrijf in Antwerpen, België, dat petrochemie-, maritieme en industriële klanten in heel Europa bedient met gecertificeerde expertise.',
       image: '/images/about-hero.jpg',
     },
     EN: {
-      title: 'About Russo NV — Industrial Coating Specialists in Antwerp',
+      title: 'About Russo NV: Industrial Coating Specialists in Antwerp',
       description: 'Russo NV is an industrial coating and surface preparation company based in Antwerp, Belgium, serving petrochemical, marine and manufacturing clients across Europe with certified expertise.',
       image: '/images/about-hero.jpg',
     },
   },
   '/contact': {
     NL: {
-      title: 'Contacteer Russo NV — Offertes voor Industriële Coatings | Antwerpen',
+      title: 'Contacteer Russo NV: Offertes voor Industriële Coatings | Antwerpen',
       description: 'Neem contact op met Russo NV voor offertes voor industriële coatings, stralen en brandwerende coatings. Taxandriastraat 35, 2170 Antwerpen. Bel +32 475 43 48 19 of vraag online een offerte aan.',
       image: '/images/contact-hero.jpg',
     },
     EN: {
-      title: 'Contact Russo NV — Industrial Coating Quotes | Antwerp, Belgium',
+      title: 'Contact Russo NV: Industrial Coating Quotes | Antwerp, Belgium',
       description: 'Get in touch with Russo NV for industrial coating, sandblasting and fireproofing quotes. Taxandriastraat 35, 2170 Antwerp. Call +32 475 43 48 19 or request a quote online.',
       image: '/images/contact-hero.jpg',
     },

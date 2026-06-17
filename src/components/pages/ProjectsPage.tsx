@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // =============================================================================
-// MAPPING — Connect each CMS project to its translation key prefix.
+// MAPPING - Connect each CMS project to its translation key prefix.
 // =============================================================================
 const PROJECT_TRANSLATION_MAP: Record<string, string> = {
   'highway bridge': 'bridge',
@@ -30,7 +30,7 @@ const PROJECT_TRANSLATION_MAP: Record<string, string> = {
 };
 
 // =============================================================================
-// HELPER — Find the translation prefix for a given project title.
+// HELPER - Find the translation prefix for a given project title.
 // =============================================================================
 function getTranslationPrefix(projectTitle: string | undefined): string | null {
   if (!projectTitle) return null;
@@ -45,7 +45,7 @@ function getTranslationPrefix(projectTitle: string | undefined): string | null {
 
 // Per-project image overrides. The first entry whose `match` substring
 // appears in the lowercased CMS project title wins. `secondary` is
-// optional — if provided it forces the 2-column layout.
+// optional - if provided it forces the 2-column layout.
 const PROJECT_IMAGE_OVERRIDES: Array<{ match: string; main: string; secondary?: string }> = [
   {
     match: 'new build coating',
@@ -90,7 +90,7 @@ const SectionLabel = ({ text }: { text: string }) => (
 
 export default function ProjectsPage() {
   // Seed synchronously from the frozen snapshot so the projects render into the
-  // server HTML (real SSR content) and match on hydration — no loading shell.
+  // server HTML (real SSR content) and match on hydration - no loading shell.
   const [projects] = useState<ProjectPortfolio[]>(
     () => BaseCrudService.getAllItems<ProjectPortfolio>('projectportfolio')
   );
@@ -103,7 +103,7 @@ export default function ProjectsPage() {
   const { localize, locale } = useLocale();
 
   // =============================================================================
-  // HELPER — Get translated text for a project field. translations.ts is the
+  // HELPER - Get translated text for a project field. translations.ts is the
   // source of truth for both EN and NL when a prefix mapping exists; the CMS
   // fallback is only used for unmapped projects.
   // =============================================================================
@@ -287,7 +287,7 @@ export default function ProjectsPage() {
                           src={secondarySrc!}
                           alt={
                             translatedTitle
-                              ? `${translatedTitle} — ${t('projects', 'altAdditionalView')}`
+                              ? `${translatedTitle}: ${t('projects', 'altAdditionalView')}`
                               : 'Industrial project detail'
                           }
                           className="w-full h-auto lg:h-full object-cover transition-transform duration-700 group-hover:scale-105"

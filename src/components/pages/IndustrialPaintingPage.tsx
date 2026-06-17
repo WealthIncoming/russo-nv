@@ -261,7 +261,7 @@ export default function IndustrialPaintingPage() {
         </Link>
       </section>
 
-      {/* Sectors — each links to its section on the Industries page */}
+      {/* Sectors - each links to its section on the Industries page */}
       <section className="w-full bg-foreground text-white">
         <div className="max-w-[100rem] mx-auto px-8 py-20 lg:py-24">
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl uppercase mb-12 leading-tight">{c.sectorsTitle}</h2>

@@ -24,7 +24,7 @@ import { PAGE_META } from '@/lib/page-meta';
 
 // Shared route configuration as plain data. Crucially this module instantiates
 // NO router (no createBrowserRouter/createMemoryRouter), so it is safe to
-// evaluate on the server — the router itself is built per-environment in
+// evaluate on the server - the router itself is built per-environment in
 // Router.tsx (memory router on the server, browser router in the client).
 export const basename = import.meta.env.BASE_NAME || '/';
 
@@ -52,14 +52,14 @@ function Layout() {
   return (
     // MotionConfig reducedMotion="user" makes every framer-motion component
     // respect prefers-reduced-motion (transform/layout animations disabled,
-    // opacity kept) — the CSS half of the reset lives in global.css.
+    // opacity kept) - the CSS half of the reset lives in global.css.
     <MotionConfig reducedMotion="user">
       <RouteSync />
       <ScrollToTop />
       <Header />
       {/* Single top-level <main>: gives every route a main landmark and a
           valid #main skip-link target (tabIndex so focus() lands on it).
-          Header/Footer are hoisted here — not inside the pages — so the
+          Header/Footer are hoisted here - not inside the pages - so the
           banner/contentinfo landmarks stay top-level, outside <main>. */}
       <main id="main" tabIndex={-1}>
         <Outlet />

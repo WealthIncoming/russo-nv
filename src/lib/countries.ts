@@ -1,5 +1,5 @@
 // Static country data for the contact-form phone input.
-// No runtime fetch, no third-party dep — the flag emoji is generated from the
+// No runtime fetch, no third-party dep - the flag emoji is generated from the
 // ISO 3166-1 alpha-2 code at render time, so each row only needs name + dial.
 //
 // Ordering: Belgium (HQ) is pinned first, followed by its main trade
