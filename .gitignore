@@ -11,8 +11,12 @@ pnpm-debug.log*
 .DS_Store
 out
 
-# Scratch image for sharing screenshots/visuals with Claude (not a site asset)
+# Scratch images for sharing screenshots/visuals with Claude (not site assets)
 images/check.png
+images/screenshot.png
+
+# Large local binaries that are not part of the site
+*.exe
 
 # build output
 # generated types

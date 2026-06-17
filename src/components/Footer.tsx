@@ -24,6 +24,7 @@ const QUICK_LINKS = [
   { to: '/projects',   labelKey: 'projects',         namespace: 'nav' },
   { to: '/safety',     labelKey: 'safety',           namespace: 'nav' },
   { to: '/about',      labelKey: 'aboutUs',          namespace: 'footer' },
+  { to: '/insights',   labelKey: 'insights',         namespace: 'nav' },
 ] as const;
 
 const CERTIFICATIONS = [

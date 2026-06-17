@@ -105,6 +105,18 @@ export const PAGE_META: Record<string, PageMeta> = {
       image: '/images/contact-hero.jpg',
     },
   },
+  '/insights': {
+    NL: {
+      title: 'Kenniscentrum — Industriële Coatings & Stralen | Russo NV',
+      description: 'Praktische gidsen en expertise over industriële coatings, stralen, oppervlaktevoorbereiding en corrosiebescherming — van het team van Russo NV in Antwerpen.',
+      image: '/images/services1.jpg',
+    },
+    EN: {
+      title: 'Insights — Industrial Coating & Blasting Knowledge | Russo NV',
+      description: 'Practical guides and expertise on industrial coating, blasting, surface preparation and corrosion protection — from the Russo NV team in Antwerp.',
+      image: '/images/services1.jpg',
+    },
+  },
   '/privacy': {
     NL: {
       title: 'Privacybeleid | Russo NV',

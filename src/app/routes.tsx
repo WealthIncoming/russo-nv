@@ -14,6 +14,8 @@ import ProjectsPage from '@/components/pages/ProjectsPage';
 import SafetyPage from '@/components/pages/SafetyPage';
 import AboutPage from '@/components/pages/AboutPage';
 import ContactPage from '@/components/pages/ContactPage';
+import ArticlesIndexPage from '@/components/pages/ArticlesIndexPage';
+import ArticlePage from '@/components/pages/ArticlePage';
 import { PrivacyPage, TermsPage } from '@/components/pages/LegalPage';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { detectLocale, delocalize } from '@/lib/i18n/routes';
@@ -75,6 +77,8 @@ const pageChildren: RouteObject[] = [
   { path: 'safety',     element: <SafetyPage />,     routeMetadata: { pageIdentifier: 'safety' } },
   { path: 'about',      element: <AboutPage />,      routeMetadata: { pageIdentifier: 'about' } },
   { path: 'contact',    element: <ContactPage />,    routeMetadata: { pageIdentifier: 'contact' } },
+  { path: 'insights',         element: <ArticlesIndexPage />, routeMetadata: { pageIdentifier: 'insights' } },
+  { path: 'insights/:slug',   element: <ArticlePage />,       routeMetadata: { pageIdentifier: 'article' } },
   { path: 'privacy',    element: <PrivacyPage />,    routeMetadata: { pageIdentifier: 'privacy' } },
   { path: 'terms',      element: <TermsPage />,      routeMetadata: { pageIdentifier: 'terms' } },
 ];

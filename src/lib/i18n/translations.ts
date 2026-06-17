@@ -17,6 +17,20 @@ export const translations: Record<Language, Translations> = {
       safety: 'Safety',
       about: 'About',
       contact: 'Contact',
+      insights: 'Insights',
+    },
+
+    // Insights / Kenniscentrum
+    insights: {
+      kicker: 'Insights',
+      heroTitle: 'Knowledge & expertise in industrial coatings',
+      heroSubtitle: 'Practical guides and field-tested insight on surface preparation, blasting, fireproofing and corrosion protection — written by the Russo NV team.',
+      readArticle: 'Read article',
+      minRead: 'min read',
+      by: 'By',
+      backToOverview: 'Back to Insights',
+      relatedTitle: 'Related articles',
+      empty: 'Articles are coming soon.',
     },
 
     // Header
@@ -873,6 +887,20 @@ export const translations: Record<Language, Translations> = {
       safety: 'Veiligheid',
       about: 'Over Ons',
       contact: 'Contact',
+      insights: 'Kenniscentrum',
+    },
+
+    // Kenniscentrum / Insights
+    insights: {
+      kicker: 'Kenniscentrum',
+      heroTitle: 'Kennis & expertise in industriële coatings',
+      heroSubtitle: 'Praktische gidsen en inzichten uit de praktijk over oppervlaktevoorbereiding, stralen, brandwerende coatings en corrosiebescherming — geschreven door het team van Russo NV.',
+      readArticle: 'Lees artikel',
+      minRead: 'min leestijd',
+      by: 'Door',
+      backToOverview: 'Terug naar het Kenniscentrum',
+      relatedTitle: 'Gerelateerde artikels',
+      empty: 'Binnenkort verschijnen hier artikels.',
     },
 
     // Header

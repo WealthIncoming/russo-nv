@@ -49,6 +49,7 @@ export default function Header() {
     { path: '/projects', labelKey: 'projects' },
     { path: '/safety', labelKey: 'safety' },
     { path: '/about', labelKey: 'about' },
+    { path: '/insights', labelKey: 'insights' },
     { path: '/contact', labelKey: 'contact' },
   ];
 

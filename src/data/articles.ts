@@ -1,0 +1,343 @@
+// ---------------------------------------------------------------------------
+// Articles ("Kenniscentrum" / "Insights") — single source of truth.
+//
+// To publish a new article: append ONE entry to the ARTICLES array below.
+// Everything else derives from it automatically:
+//   - static page generation + routing  (src/pages/[...slug].astro getStaticPaths)
+//   - SEO <title>/<meta>/canonical/hreflang + Article JSON-LD ([...slug].astro)
+//   - the index grid + article page      (ArticlesIndexPage / ArticlePage)
+//   - sitemap entries (with lastmod)     (src/pages/sitemap-feed.ts)
+//   - the RSS feed                       (src/pages/insights/rss.xml.ts)
+//
+// This module is PURE DATA (no React / no browser APIs) so it is safe to import
+// both in the Astro frontmatter (server) and in the React components.
+//
+// Slugs are shared across locales (one URL slug, NL at /insights/<slug>, EN at
+// /en/insights/<slug>) — matching the site's existing "English slug + localized
+// content" pattern (e.g. NL "Diensten" lives at /services). SEO for each market
+// is carried by the per-locale title/description/headings/body, not the slug.
+// ---------------------------------------------------------------------------
+
+export type Locale = 'NL' | 'EN';
+
+/** A run of text that may contain inline internal links (good for SEO). */
+export type Segment = string | { text: string; to: string };
+
+export type ArticleBlock =
+  | { type: 'p'; text?: string; segments?: Segment[] }
+  | { type: 'h2'; text: string }
+  | { type: 'h3'; text: string }
+  | { type: 'ul'; items: string[] }
+  | { type: 'ol'; items: string[] }
+  | { type: 'quote'; text: string; cite?: string }
+  | { type: 'image'; src: string; alt: string; caption?: string }
+  | { type: 'table'; caption?: string; headers: string[]; rows: string[][] }
+  | { type: 'callout'; title: string; items: string[] }
+  | { type: 'cta'; title: string; text: string; buttonLabel: string; to: string };
+
+export interface ArticleContent {
+  /** H1, also the human headline. */
+  title: string;
+  /** <title> tag — keep ≤ ~60 chars, keyword-first, brand suffix. */
+  metaTitle: string;
+  /** meta description — ≤ ~155 chars, compelling + keyworded. */
+  description: string;
+  /** Short summary for the index card + the intro lede. */
+  excerpt: string;
+  /** Localized category label (chip). */
+  category: string;
+  body: ArticleBlock[];
+}
+
+export interface Article {
+  /** Shared URL slug across locales. Descriptive, hyphenated, stable. */
+  slug: string;
+  /** ISO date published. */
+  date: string;
+  /** ISO date last updated (defaults to `date`). */
+  updated?: string;
+  author: string;
+  /** Hero image, served from /public/images. Swap for a real job photo. */
+  heroImage: string;
+  heroAlt: Record<Locale, string>;
+  keywords: Record<Locale, string[]>;
+  NL: ArticleContent;
+  EN: ArticleContent;
+}
+
+export const ARTICLE_BASE = '/insights';
+export const articleUrl = (slug: string) => `${ARTICLE_BASE}/${slug}`;
+
+// ---------------------------------------------------------------------------
+// The articles. Newest belongs anywhere — sortedArticles() orders by date.
+// ---------------------------------------------------------------------------
+
+export const ARTICLES: Article[] = [
+  {
+    slug: 'steel-surface-preparation',
+    date: '2026-06-17',
+    author: 'Russo NV',
+    heroImage: '/images/services3.jpg',
+    heroAlt: {
+      NL: 'Industriële straalwerken op staal — oppervlaktevoorbereiding tot reinheidsgraad Sa 2½ door Russo NV in Antwerpen',
+      EN: 'Abrasive blasting of steel — surface preparation to cleanliness grade Sa 2½ by Russo NV in Antwerp',
+    },
+    keywords: {
+      NL: ['oppervlaktevoorbereiding', 'staal stralen', 'reinheidsgraad Sa 2½', 'straalprofiel', 'ISO 8501-1', 'industriële coating', 'corrosiebescherming'],
+      EN: ['surface preparation', 'abrasive blasting steel', 'cleanliness grade Sa 2½', 'surface profile', 'ISO 8501-1', 'industrial coating', 'corrosion protection'],
+    },
+    NL: {
+      title: 'Hoe bereid je staal voor op een industriële coating?',
+      metaTitle: 'Staal voorbereiden voor coating: de complete gids | Russo NV',
+      description: 'Een coating is maar zo goed als de voorbereiding eronder. Leer hoe je staal correct ontvet, straalt tot reinheidsgraad Sa 2½ en het juiste straalprofiel haalt — volgens ISO 8501-1.',
+      excerpt: 'Het overgrote deel van vroegtijdig coatingfalen ontstaat niet door de verf, maar door de voorbereiding eronder. Dit is hoe je het wél goed doet — stap voor stap, volgens de normen die wij dagelijks toepassen.',
+      category: 'Oppervlaktevoorbereiding',
+      body: [
+        {
+          type: 'p',
+          segments: [
+            'Een dure coating op slecht voorbereid staal is weggegooid geld. De voorbereiding bepaalt de hechting, en de hechting bepaalt de levensduur. Bij ',
+            { text: 'industriële coatings', to: '/services' },
+            ' begint kwaliteit dus nooit bij de verf — ze begint bij het staal eronder.',
+          ],
+        },
+        { type: 'h2', text: 'Waarom voorbereiding bepaalt of je coating slaagt' },
+        {
+          type: 'p',
+          text: 'Een coating hecht mechanisch én chemisch aan de ondergrond. Vet, roest, walshuid (mill scale) en oplosbare zouten verhinderen die hechting. Wordt er over zo’n laag heen gecoat, dan laat de coating na verloop van tijd los — blaarvorming, onderroest, delaminatie. De ondergrond zorgvuldig reinigen en de juiste ruwheid creëren is daarom geen formaliteit, maar de bepalende stap.',
+        },
+        { type: 'h2', text: 'Stap 1 — Ontvetten en reinigen' },
+        {
+          type: 'p',
+          text: 'Vóór er ook maar één korrel straalmiddel raakt, moet het oppervlak vrij zijn van olie, vet en vuil. Stralen over vet wrijft de vervuiling net dieper in én besmet je straalmiddel. Let in het bijzonder op:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Olie en vet — verwijderen met een geschikt ontvettingsmiddel (conform SSPC-SP 1), niet enkel met water.',
+            'Oplosbare zouten (chloriden) — onzichtbaar maar berucht; ze trekken vocht aan onder de coating. Meten en zo nodig stoomreinigen.',
+            'Stof, los vuil en oude, loszittende verf — mechanisch verwijderen.',
+          ],
+        },
+        { type: 'h2', text: 'Stap 2 — Stralen tot de juiste reinheidsgraad (ISO 8501-1)' },
+        {
+          type: 'p',
+          text: 'De internationale norm ISO 8501-1 beschrijft visuele reinheidsgraden voor gestraald staal. Welke graad je nodig hebt, schrijft de coatingfabrikant voor in het technische datablad. Voor de meeste industriële beschermsystemen is dat Sa 2½.',
+        },
+        {
+          type: 'table',
+          caption: 'Reinheidsgraden voor stralen volgens ISO 8501-1',
+          headers: ['Graad', 'Omschrijving', 'Typisch gebruik'],
+          rows: [
+            ['Sa 1', 'Licht stralen — losse walshuid, roest en verf verwijderd', 'Zelden voldoende voor industriële coatings'],
+            ['Sa 2', 'Grondig stralen — bijna alle verontreiniging weg', 'Lichtere beschermsystemen'],
+            ['Sa 2½', 'Zeer grondig stralen — enkel lichte schaduwen/strepen toegestaan', 'Standaard voor de meeste industriële & petrochemische systemen'],
+            ['Sa 3', 'Stralen tot wit metaal — visueel volledig schoon', 'Zwaarste belasting: immersie, tankbekleding'],
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Vraag in de praktijk altijd het datablad op: coaten op een te lage graad doet de garantie van de fabrikant vervallen en is de meest voorkomende oorzaak van vroegtijdig falen.',
+        },
+        { type: 'h2', text: 'Stap 3 — Het juiste straalprofiel (ankerprofiel)' },
+        {
+          type: 'p',
+          text: 'Stralen doet meer dan reinigen: het creëert ruwheid — het “ankerprofiel” waarin de coating zich vastzet. Te glad en de coating heeft geen grip; te ruw en de pieken steken door de laagdikte heen en roesten als eerste door.',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Het vereiste profiel (vaak 30–75 µm Rz) staat in het datablad en hangt af van het coatingsysteem en de laagdikte.',
+            'De korrel (grit vs. gritmix) en de straaldruk bepalen het profiel — grover straalmiddel geeft een dieper profiel.',
+            'Meet het profiel objectief met profieltape (testex) of een ruwheidsmeter; vertrouw niet op het oog.',
+          ],
+        },
+        { type: 'h2', text: 'Stap 4 — Klimaat, dauwpunt en timing' },
+        {
+          type: 'p',
+          text: 'Gestraald staal is chemisch “naakt” en roest verbluffend snel (flash rust). Het klimaat op het moment van stralen én coaten is daarom cruciaal:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'De staaltemperatuur moet minstens 3 °C boven het dauwpunt liggen, anders condenseert vocht op het oppervlak.',
+            'Houd de relatieve luchtvochtigheid in de gaten (richtwaarde < 85 %).',
+            'Coat binnen het door de fabrikant voorgeschreven venster — vaak dezelfde dag, vóór er flash rust ontstaat.',
+          ],
+        },
+        {
+          type: 'callout',
+          title: 'Belangrijkste punten',
+          items: [
+            'Voorbereiding — niet de verf — bepaalt of een coating standhoudt.',
+            'Ontvet eerst; stralen over vet besmet alles.',
+            'Sa 2½ is de standaard reinheidsgraad voor de meeste industriële systemen.',
+            'Meet het straalprofiel; gok het niet.',
+            'Respecteer dauwpunt en herverf-venster — coat vóór flash rust.',
+          ],
+        },
+        { type: 'h2', text: 'Veelgemaakte fouten' },
+        {
+          type: 'ul',
+          items: [
+            'Coaten over flash rust of zichtbare onderroest.',
+            'Oplosbare zouten negeren omdat ze onzichtbaar zijn.',
+            'Een verkeerd (te glad of te ruw) straalprofiel.',
+            'Klimaatcontrole overslaan en bij te hoge vochtigheid doorwerken.',
+            'Het herverf-venster van de primer overschrijden.',
+          ],
+        },
+        { type: 'h2', text: 'Hulp nodig bij uw project?' },
+        {
+          type: 'cta',
+          title: 'Voorbereiding die wél standhoudt',
+          text: 'Russo NV verzorgt stralen, oppervlaktevoorbehandeling en industriële coatings volgens VCA- en ISO-normen, met meetbare reinheidsgraden en gecontroleerde straalprofielen. Vraag vrijblijvend een offerte of advies aan.',
+          buttonLabel: 'Vraag een offerte aan',
+          to: '/contact',
+        },
+      ],
+    },
+    EN: {
+      title: 'How to prepare steel for an industrial coating',
+      metaTitle: 'Steel surface preparation: the complete guide | Russo NV',
+      description: 'A coating is only as good as the preparation beneath it. Learn how to degrease steel correctly, blast to cleanliness grade Sa 2½ and achieve the right surface profile — to ISO 8501-1.',
+      excerpt: 'The vast majority of premature coating failures are caused not by the paint, but by the preparation beneath it. Here is how to get it right — step by step, to the standards we apply every day.',
+      category: 'Surface preparation',
+      body: [
+        {
+          type: 'p',
+          segments: [
+            'An expensive coating on poorly prepared steel is money wasted. Preparation determines adhesion, and adhesion determines service life. With ',
+            { text: 'industrial coatings', to: '/services' },
+            ', quality never starts with the paint — it starts with the steel underneath.',
+          ],
+        },
+        { type: 'h2', text: 'Why preparation decides whether your coating succeeds' },
+        {
+          type: 'p',
+          text: 'A coating bonds to the substrate both mechanically and chemically. Grease, rust, mill scale and soluble salts all block that bond. Coat over such a layer and the coating eventually lets go — blistering, under-rust, delamination. Cleaning the substrate thoroughly and creating the right roughness is therefore not a formality; it is the decisive step.',
+        },
+        { type: 'h2', text: 'Step 1 — Degrease and clean' },
+        {
+          type: 'p',
+          text: 'Before a single grain of abrasive hits the steel, the surface must be free of oil, grease and dirt. Blasting over grease rubs the contamination in deeper and contaminates your abrasive. Pay particular attention to:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Oil and grease — remove with a suitable degreaser (to SSPC-SP 1), not water alone.',
+            'Soluble salts (chlorides) — invisible but notorious; they draw moisture under the coating. Test and steam-clean where needed.',
+            'Dust, loose dirt and old, flaking paint — remove mechanically.',
+          ],
+        },
+        { type: 'h2', text: 'Step 2 — Blast to the right cleanliness grade (ISO 8501-1)' },
+        {
+          type: 'p',
+          text: 'The international standard ISO 8501-1 defines visual cleanliness grades for blasted steel. Which grade you need is specified by the coating manufacturer in the technical data sheet. For most industrial protective systems that is Sa 2½.',
+        },
+        {
+          type: 'table',
+          caption: 'Blast-cleaning grades to ISO 8501-1',
+          headers: ['Grade', 'Description', 'Typical use'],
+          rows: [
+            ['Sa 1', 'Light blast — loose mill scale, rust and paint removed', 'Rarely sufficient for industrial coatings'],
+            ['Sa 2', 'Thorough blast — nearly all contamination removed', 'Lighter protective systems'],
+            ['Sa 2½', 'Very thorough blast — only light shadows/streaks allowed', 'Standard for most industrial & petrochemical systems'],
+            ['Sa 3', 'Blast to white metal — visually completely clean', 'Most severe service: immersion, tank lining'],
+          ],
+        },
+        {
+          type: 'p',
+          text: 'In practice, always pull the data sheet: coating to a grade below spec voids the manufacturer’s warranty and is the most common cause of premature failure.',
+        },
+        { type: 'h2', text: 'Step 3 — The right surface profile (anchor pattern)' },
+        {
+          type: 'p',
+          text: 'Blasting does more than clean: it creates roughness — the “anchor pattern” the coating grips into. Too smooth and the coating has no grip; too rough and the peaks protrude through the film thickness and rust through first.',
+        },
+        {
+          type: 'ul',
+          items: [
+            'The required profile (often 30–75 µm Rz) is given in the data sheet and depends on the coating system and film thickness.',
+            'The abrasive (grit vs. grit mix) and blast pressure set the profile — coarser media give a deeper profile.',
+            'Measure the profile objectively with profile tape (Testex) or a roughness gauge; don’t trust the eye.',
+          ],
+        },
+        { type: 'h2', text: 'Step 4 — Climate, dew point and timing' },
+        {
+          type: 'p',
+          text: 'Freshly blasted steel is chemically “naked” and rusts remarkably fast (flash rust). The climate at the moment of blasting and coating is therefore critical:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Steel temperature must be at least 3 °C above the dew point, or moisture condenses on the surface.',
+            'Keep an eye on relative humidity (guideline < 85 %).',
+            'Coat within the manufacturer’s specified window — often the same day, before flash rust forms.',
+          ],
+        },
+        {
+          type: 'callout',
+          title: 'Key takeaways',
+          items: [
+            'Preparation — not the paint — determines whether a coating lasts.',
+            'Degrease first; blasting over grease contaminates everything.',
+            'Sa 2½ is the standard cleanliness grade for most industrial systems.',
+            'Measure the surface profile; don’t guess it.',
+            'Respect the dew point and recoat window — coat before flash rust.',
+          ],
+        },
+        { type: 'h2', text: 'Common mistakes' },
+        {
+          type: 'ul',
+          items: [
+            'Coating over flash rust or visible under-rust.',
+            'Ignoring soluble salts because they are invisible.',
+            'A wrong (too smooth or too rough) surface profile.',
+            'Skipping climate checks and working on through high humidity.',
+            'Exceeding the primer’s recoat window.',
+          ],
+        },
+        { type: 'h2', text: 'Need help with your project?' },
+        {
+          type: 'cta',
+          title: 'Preparation that actually lasts',
+          text: 'Russo NV delivers blasting, surface preparation and industrial coatings to VCA and ISO standards, with measured cleanliness grades and controlled surface profiles. Request a no-obligation quote or advice.',
+          buttonLabel: 'Request a quote',
+          to: '/contact',
+        },
+      ],
+    },
+  },
+];
+
+// ---------------------------------------------------------------------------
+// Helpers (pure)
+// ---------------------------------------------------------------------------
+
+export function sortedArticles(): Article[] {
+  // Newest first. ISO date strings sort lexicographically.
+  return [...ARTICLES].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+}
+
+export function findArticle(slug: string): Article | undefined {
+  return ARTICLES.find((a) => a.slug === slug);
+}
+
+export function relatedArticles(slug: string, limit = 3): Article[] {
+  return sortedArticles().filter((a) => a.slug !== slug).slice(0, limit);
+}
+
+/** Rough reading time (200 wpm) from a locale's content. */
+export function readingMinutes(content: ArticleContent): number {
+  let words = `${content.title} ${content.excerpt}`.split(/\s+/).length;
+  for (const block of content.body) {
+    if ('text' in block && block.text) words += block.text.split(/\s+/).length;
+    if ('segments' in block && block.segments) {
+      for (const s of block.segments) words += (typeof s === 'string' ? s : s.text).split(/\s+/).length;
+    }
+    if ('items' in block && block.items) words += block.items.join(' ').split(/\s+/).length;
+    if ('rows' in block && block.rows) words += block.rows.flat().join(' ').split(/\s+/).length;
+  }
+  return Math.max(1, Math.round(words / 200));
+}
