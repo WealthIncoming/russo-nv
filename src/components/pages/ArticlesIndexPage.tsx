@@ -30,7 +30,7 @@ export default function ArticlesIndexPage() {
               {t('insights', 'kicker')}
             </span>
           </div>
-          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase leading-tight max-w-4xl">
+          <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase leading-tight max-w-3xl">
             {t('insights', 'heroTitle')}
           </h1>
           <p className="font-paragraph text-base sm:text-lg text-white/80 mt-6 max-w-2xl leading-relaxed">
