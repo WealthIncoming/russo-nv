@@ -148,8 +148,8 @@ export const ARTICLES: Article[] = [
           src: '/images/step1.jpg',
           width: 1200,
           height: 900,
-          alt: 'Gereinigde stalen constructie met boutverbindingen, klaar voor coating',
-          caption: 'Stap 1: het staal grondig gereinigd voor de volgende bewerking.',
+          alt: 'Olievervuiling op een vers gestraald staaloppervlak',
+          caption: 'Olievervuiling op vers gestraald staal: ontvet eerst, anders besmet je de coating én het straalmiddel.',
         },
         { type: 'h2', text: 'Stap 2: stralen tot de juiste reinheidsgraad (ISO 8501-1)' },
         {
@@ -176,8 +176,8 @@ export const ARTICLES: Article[] = [
           src: '/images/step2.jpg',
           width: 1200,
           height: 900,
-          alt: 'Gestraald staaloppervlak met zichtbare straaltextuur in strijklicht',
-          caption: 'Het straalprofiel wordt zichtbaar in strijklicht.',
+          alt: 'Staal gestraald tot reinheidsgraad Sa 2½',
+          caption: 'Zo ziet staal eruit gestraald tot reinheidsgraad Sa 2½.',
         },
         { type: 'h2', text: 'Stap 3: het juiste straalprofiel (ankerprofiel)' },
         {
@@ -347,8 +347,8 @@ export const ARTICLES: Article[] = [
           src: '/images/step1.jpg',
           width: 1200,
           height: 900,
-          alt: 'Cleaned steel structure with bolted joints, ready for coating',
-          caption: 'Step 1: the steel thoroughly cleaned before the next operation.',
+          alt: 'Oil contamination on a freshly blasted steel surface',
+          caption: 'Oil contamination on freshly blasted steel: degrease first, or it contaminates the coating and your abrasive.',
         },
         { type: 'h2', text: 'Step 2: blast to the right cleanliness grade (ISO 8501-1)' },
         {
@@ -375,8 +375,8 @@ export const ARTICLES: Article[] = [
           src: '/images/step2.jpg',
           width: 1200,
           height: 900,
-          alt: 'Blast-cleaned steel surface with visible blast texture in raking light',
-          caption: 'The blast profile catching the raking light.',
+          alt: 'Steel blasted to cleanliness grade Sa 2½',
+          caption: 'How steel looks when blasted to cleanliness grade Sa 2½.',
         },
         { type: 'h2', text: 'Step 3: the right surface profile (anchor pattern)' },
         {
