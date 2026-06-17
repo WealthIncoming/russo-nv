@@ -313,6 +313,24 @@ export default function ContactPage() {
       });
       setSelectedCountry(DEFAULT_COUNTRY);
       setIsSubmitted(true);
+      // Fire-and-forget: let our own (cookieless) analytics tie this conversion
+      // to the visitor's session. Name + company only; email/phone stay in the
+      // inbox. Never blocks or fails the real submit (errors swallowed).
+      try {
+        fetch('/_event', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            type: 'contact',
+            name: payload.name,
+            company: payload.company,
+            page: window.location.pathname,
+          }),
+          keepalive: true,
+        }).catch(() => {});
+      } catch {
+        /* ignore */
+      }
     } catch (error) {
       console.error('Contact form submission failed:', error);
       setSubmitError(

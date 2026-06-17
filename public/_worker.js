@@ -89,6 +89,65 @@ async function logVisit(request, env) {
 }
 
 // ---------------------------------------------------------------------------
+// Contact-form conversions (D1)
+//
+// The contact form fires a same-origin POST /_event on a successful Web3Forms
+// submit. We record name + company only (the lead's email/phone already go to
+// the inbox via Web3Forms; we don't duplicate that PII here). Matched back to a
+// visitor session by IP + time on the /_visits dashboard. Same 90-day expiry.
+// ---------------------------------------------------------------------------
+
+const FORM_EVENTS_DDL =
+  "CREATE TABLE IF NOT EXISTS form_events (" +
+  "id INTEGER PRIMARY KEY AUTOINCREMENT, ts TEXT NOT NULL, ip TEXT, " +
+  "country TEXT, city TEXT, region TEXT, org TEXT, page TEXT, " +
+  "name TEXT, company TEXT)";
+
+async function logFormEvent(request, env) {
+  const noContent = new Response(null, { status: 204, headers: { "cache-control": "no-store" } });
+  if (!env.DB) return noContent;
+
+  // Light anti-abuse: only accept same-site submissions.
+  const origin = request.headers.get("Origin") || "";
+  if (origin && !(origin.includes("russonv.") || origin.endsWith(".pages.dev"))) return noContent;
+
+  let body = {};
+  try { body = await request.json(); } catch (_) { body = {}; }
+  const cap = (v, n) => (typeof v === "string" && v ? v.slice(0, n) : null);
+
+  const cf = request.cf || {};
+  const insert = env.DB.prepare(
+    "INSERT INTO form_events (ts, ip, country, city, region, org, page, name, company) " +
+    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+  ).bind(
+    new Date().toISOString(),
+    request.headers.get("CF-Connecting-IP") || null,
+    cf.country || null,
+    cf.city || null,
+    cf.region || null,
+    cf.asOrganization || null,
+    cap(body.page, 256),
+    cap(body.name, 200),
+    cap(body.company, 200)
+  );
+
+  try {
+    await insert.run();
+  } catch (_) {
+    try {
+      await env.DB.prepare(FORM_EVENTS_DDL).run();
+      await insert.run();
+    } catch (_) { /* never let a beacon error surface */ }
+  }
+
+  if (Math.random() < 0.05) {
+    const cutoff = new Date(Date.now() - RETENTION_DAYS * 86400000).toISOString();
+    try { await env.DB.prepare("DELETE FROM form_events WHERE ts < ?").bind(cutoff).run(); } catch (_) { /* ignore */ }
+  }
+  return noContent;
+}
+
+// ---------------------------------------------------------------------------
 // /_visits dashboard (HTTP Basic Auth)
 // ---------------------------------------------------------------------------
 
@@ -378,6 +437,24 @@ async function handleVisits(request, env) {
     const todayStart = (() => { const d = new Date(); d.setUTCHours(0, 0, 0, 0); return d.getTime(); })();
     const tsMs = (r) => Date.parse(r.ts) || 0;
 
+    // Contact-form leads (conversions). A missing table just means "none yet".
+    let formEvents = [];
+    try {
+      formEvents = (await env.DB.prepare(
+        "SELECT ts, ip, country, city, region, org, page, name, company FROM form_events ORDER BY ts DESC LIMIT 1000"
+      ).all()).results || [];
+    } catch (_) { formEvents = []; }
+    const leadsTotal = formEvents.length;
+    const leadsToday = formEvents.filter((fe) => tsMs(fe) >= todayStart).length;
+    const leads24 = formEvents.filter((fe) => tsMs(fe) >= now - dayMs).length;
+    const CONVERT_BUFFER = 30 * 60000; // a submit up to 30 min after the last page view still counts
+    const eventsByIp = new Map();
+    for (const fe of formEvents) {
+      let a = eventsByIp.get(fe.ip);
+      if (!a) { a = []; eventsByIp.set(fe.ip, a); }
+      a.push(fe);
+    }
+
     const uniqueHumans = new Set(humans.map((h) => h.ip)).size;
     const humansToday = humans.filter((h) => tsMs(h) >= todayStart).length;
     const humans7 = humans.filter((h) => tsMs(h) >= now - 7 * dayMs).length;
@@ -446,22 +523,45 @@ async function handleVisits(request, env) {
       }
     }
     sessions.sort((a, b) => b.start - a.start);
+    const sessionLead = (s) => {
+      const evs = eventsByIp.get(s.ip);
+      if (!evs) return null;
+      return evs.find((e) => { const t = tsMs(e); return t >= s.start - 5 * 60000 && t <= s.end + CONVERT_BUFFER; }) || null;
+    };
     const journeyRows = sessions.slice(0, 25).map((s) => {
       const ua = parseUA(s.ua);
-      const loc = [s.city, s.region ? null : null, s.country].filter(Boolean); // city + country only
       const place = [s.city, countryName(s.country)].filter(Boolean).join(", ");
       const when = new Date(s.start).toISOString().replace("T", " ").slice(0, 16);
       const mins = Math.max(0, Math.round((s.end - s.start) / 60000));
       const dur = mins >= 1 ? mins + " min" : "-";
+      const lead = sessionLead(s);
+      const leadChip = lead ? `<span class="chip lead">✉ Lead${lead.name ? " · " + esc(lead.name) : ""}</span> ` : "";
       const trail = s.pages.slice(0, 12).map((p) => `<span class="chip">${esc(p)}</span>`).join('<span class="arrow">→</span>');
       const more = s.pages.length > 12 ? ' <span class="muted">…</span>' : "";
-      return `<tr><td class="nowrap">${esc(when)}</td>` +
+      return `<tr${lead ? ' class="converted"' : ""}><td class="nowrap">${esc(when)}</td>` +
         `<td>${flag(s.country)} ${esc(place)}</td>` +
         `<td><span class="badge">${esc(ua.device)}</span> ${esc(ua.browser)}</td>` +
         `<td>${esc(sourceOf(s.referer))}</td>` +
         `<td class="num">${s.pages.length}</td>` +
         `<td class="muted small nowrap">${dur}</td>` +
-        `<td class="journey">${trail}${more}</td></tr>`;
+        `<td class="journey">${leadChip}${trail}${more}</td></tr>`;
+    }).join("");
+
+    // Dedicated leads list: each submission with the journey that led to it.
+    const leadRows = formEvents.slice(0, 50).map((fe) => {
+      const when = (fe.ts || "").replace("T", " ").slice(0, 16);
+      const place = [fe.city, countryName(fe.country)].filter(Boolean).join(", ");
+      const who = [fe.name, fe.company].filter(Boolean).map(esc).join(" · ") || '<span class="muted">(no name given)</span>';
+      const evt = tsMs(fe);
+      const sess = sessions.find((s) => s.ip === fe.ip && evt >= s.start - 5 * 60000 && evt <= s.end + CONVERT_BUFFER);
+      const trail = sess
+        ? sess.pages.slice(0, 14).map((p) => `<span class="chip">${esc(p)}</span>`).join('<span class="arrow">→</span>')
+        : `<span class="chip">${esc(prettyPage(fe.page))}</span>`;
+      return `<tr class="converted"><td class="nowrap">${esc(when)}</td>` +
+        `<td>${who}</td>` +
+        `<td>${flag(fe.country)} ${esc(place)}</td>` +
+        `<td>${esc(prettyPage(fe.page))}</td>` +
+        `<td class="journey">${trail}</td></tr>`;
     }).join("");
 
     // Recent visits table.
@@ -492,6 +592,11 @@ async function handleVisits(request, env) {
       : `<a class="btn" href="/_visits?bots=1">🤖 Include bots (${fmt(botCount)})</a>`;
     const csvHref = showBots ? "/_visits.csv?bots=1" : "/_visits.csv";
     const viewLabel = showBots ? "All traffic" : "Real visitors";
+
+    const alertBanner = leads24 > 0
+      ? `<div class="alert">🔔 <strong>${fmt(leads24)}</strong> new contact-form ${leads24 === 1 ? "lead" : "leads"} in the last 24 hours` +
+        `${leadsToday > 0 ? ` (${fmt(leadsToday)} today)` : ""}. Jump to <a href="#leads">leads</a>.</div>`
+      : "";
 
     const html = `<!doctype html>
 <html lang="en"><head>
@@ -552,6 +657,12 @@ async function handleVisits(request, env) {
   .badge.ok { background:rgba(63,185,80,.13); color:#6fd585; border-color:rgba(63,185,80,.35); }
   .badge.bot { background:rgba(228,87,46,.13); color:#f0a085; border-color:rgba(228,87,46,.3); }
   .badge.dc { background:rgba(210,153,34,.13); color:#e0bf6a; border-color:rgba(210,153,34,.3); }
+  .alert { background:rgba(63,185,80,.12); border:1px solid rgba(63,185,80,.4); color:#8fe0a0; border-radius:10px; padding:12px 16px; margin:0 0 20px; font-size:13.5px; }
+  .alert a { color:#bff0c9; }
+  .card.lead { background:linear-gradient(160deg,#0f2417,#17171a); border-color:#1f5a36; }
+  .card.lead .n { color:var(--ok); }
+  tr.converted { background:rgba(63,185,80,.06); }
+  .chip.lead { background:rgba(63,185,80,.14); border-color:rgba(63,185,80,.4); color:#8fe0a0; font-weight:600; }
   .journey { line-height:2; }
   .chip { display:inline-block; background:#202024; border:1px solid #303036; border-radius:6px; padding:1px 8px; font-size:11.5px; }
   .arrow { color:#5a5a63; margin:0 5px; }
@@ -565,6 +676,7 @@ async function handleVisits(request, env) {
   <div class="sub">Cookieless &amp; server-side · location detected at the Cloudflare edge · data auto-deletes after ${RETENTION_DAYS} days${capped ? " · showing most recent " + fmt(LIMIT) + " events" : ""}</div>
 </header>
 <main>
+  ${alertBanner}
   <div class="controls">
     ${toggle}
     <a class="btn" href="${csvHref}">⬇ Download CSV</a>
@@ -574,12 +686,19 @@ async function handleVisits(request, env) {
 
   <div class="cards">
     <div class="card hero"><div class="n">${fmt(uniqueHumans)}</div><div class="l">Real visitors (unique)</div></div>
+    <div class="card lead"><div class="n">${fmt(leadsTotal)}</div><div class="l">Contact-form leads</div></div>
     <div class="card"><div class="n">${fmt(humans.length)}</div><div class="l">Human page views</div></div>
     <div class="card"><div class="n">${fmt(humansToday)}</div><div class="l">Visits today</div></div>
     <div class="card"><div class="n">${fmt(humans7)}</div><div class="l">Last 7 days</div></div>
     <div class="card"><div class="n">${fmt(humans30)}</div><div class="l">Last 30 days</div></div>
     <div class="card muted"><div class="n">${fmt(botCount)}</div><div class="l">Bots filtered out</div></div>
   </div>
+
+  ${leadRows ? `<h2 id="leads">Contact-form leads: who filled in the form</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Time (UTC)</th><th>Lead</th><th>Location</th><th>Submitted from</th><th>Path through the site</th></tr></thead>
+    <tbody>${leadRows}</tbody>
+  </table></div>` : ""}
 
   <h2>Visits per day - last 30 days</h2>
   <div class="panel">
@@ -660,6 +779,11 @@ export default {
       if (wrongHost) url.hostname = CANONICAL_HOST;
       if (legacy) url.pathname = legacy;
       return Response.redirect(url.toString(), 301);
+    }
+
+    // Contact-form conversion beacon (fire-and-forget from the contact page).
+    if (url.pathname === "/_event" && request.method === "POST") {
+      return logFormEvent(request, env);
     }
 
     // Private dashboard - handled here, never falls through to static assets.
