@@ -81,7 +81,7 @@ export const ARTICLES: Article[] = [
     slug: 'steel-surface-preparation',
     date: '2026-06-17',
     author: 'Russo NV',
-    heroImage: '/images/services3.jpg',
+    heroImage: '/images/article1.jpg',
     heroAlt: {
       NL: 'Industriële straalwerken op staal: oppervlaktevoorbereiding tot reinheidsgraad Sa 2½ door Russo NV in Antwerpen',
       EN: 'Abrasive blasting of steel: surface preparation to cleanliness grade Sa 2½ by Russo NV in Antwerp',
