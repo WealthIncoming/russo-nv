@@ -69,6 +69,8 @@ export interface Article {
   authorBio?: Record<Locale, string>;
   /** Author profile URL (e.g. LinkedIn) → schema.org Person.sameAs. */
   authorUrl?: string;
+  /** Author headshot, served from /public/images → bio box + Person.image. */
+  authorImage?: string;
   /** Hero image, served from /public/images. Swap for a real job photo. */
   heroImage: string;
   heroAlt: Record<Locale, string>;
@@ -97,7 +99,8 @@ export const ARTICLES: Article[] = [
       NL: 'Stig Vanmarsenille is NACE Level 2 coating inspector bij Russo NV en begeleidde meer dan 70 industriële straal- en coatingprojecten, van tankbekleding tot staalconstructies in de petrochemie.',
       EN: 'Stig Vanmarsenille is a NACE Level 2 coating inspector at Russo NV and has overseen more than 70 industrial blasting and coating projects, from tank lining to structural steel in petrochemicals.',
     },
-    // authorUrl: 'https://www.linkedin.com/in/...', // add Stig's LinkedIn → Person.sameAs
+    authorUrl: 'https://www.linkedin.com/in/stig-vanmarsenille-747176b9/',
+    authorImage: '/images/author-stig.jpg',
     heroImage: '/images/article1.jpg',
     heroAlt: {
       NL: 'Industriële straalwerken op staal: oppervlaktevoorbereiding tot reinheidsgraad Sa 2½ door Russo NV in Antwerpen',

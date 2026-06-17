@@ -231,9 +231,18 @@ export default function ArticlePage() {
                 {locale === 'NL' ? 'Over de auteur' : 'About the author'}
               </p>
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-14 h-14 rounded-full bg-foreground text-white font-heading text-lg flex items-center justify-center">
-                  {article.author.split(' ').map((w) => w[0]).slice(0, 2).join('')}
-                </div>
+                {article.authorImage ? (
+                  <Image
+                    src={article.authorImage}
+                    alt={article.author}
+                    width={112}
+                    className="flex-shrink-0 w-14 h-14 rounded-full object-cover"
+                  />
+                ) : (
+                  <div className="flex-shrink-0 w-14 h-14 rounded-full bg-foreground text-white font-heading text-lg flex items-center justify-center">
+                    {article.author.split(' ').map((w) => w[0]).slice(0, 2).join('')}
+                  </div>
+                )}
                 <div>
                   <p className="font-heading text-lg text-foreground leading-tight">{article.author}</p>
                   {article.authorRole && (

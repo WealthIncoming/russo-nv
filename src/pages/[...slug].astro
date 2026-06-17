@@ -126,6 +126,7 @@ const articleSchema = article ? {
     '@type': 'Person',
     name: article.author,
     ...(article.authorRole ? { jobTitle: article.authorRole[locale] } : {}),
+    ...(article.authorImage ? { image: `${SITE_URL}${article.authorImage}` } : {}),
     worksFor: { '@type': 'Organization', name: 'Russo NV', url: SITE_URL },
     knowsAbout: ['Industrial coatings', 'Surface preparation', 'Abrasive blasting', 'Corrosion protection'],
     ...(article.authorUrl ? { sameAs: [article.authorUrl] } : {}),
