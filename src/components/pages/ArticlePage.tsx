@@ -97,7 +97,7 @@ export default function ArticlePage() {
         return (
           <blockquote key={i} className="border-l-4 border-primary pl-6 my-8 font-heading text-xl sm:text-2xl text-foreground leading-snug">
             {block.text}
-            {block.cite && <cite className="block mt-3 font-paragraph text-sm not-italic text-foreground/50">— {block.cite}</cite>}
+            {block.cite && <cite className="block mt-3 font-paragraph text-sm not-italic text-foreground/50">{block.cite}</cite>}
           </blockquote>
         );
       case 'image':

@@ -30,7 +30,7 @@ export const GET: APIRoute = () => {
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Russo NV — Kenniscentrum</title>
+    <title>Russo NV Kenniscentrum</title>
     <link>${SITE_URL}${ARTICLE_BASE}</link>
     <atom:link href="${SITE_URL}${ARTICLE_BASE}/rss.xml" rel="self" type="application/rss+xml" />
     <description>Praktische gidsen en expertise over industriële coatings, stralen en corrosiebescherming van Russo NV.</description>

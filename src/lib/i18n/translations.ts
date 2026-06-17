@@ -24,7 +24,7 @@ export const translations: Record<Language, Translations> = {
     insights: {
       kicker: 'Insights',
       heroTitle: 'Knowledge & expertise in industrial coatings',
-      heroSubtitle: 'Practical guides and field-tested insight on surface preparation, blasting, fireproofing and corrosion protection — written by the Russo NV team.',
+      heroSubtitle: 'Practical guides and field-tested insight on surface preparation, blasting, fireproofing and corrosion protection, written by the Russo NV team.',
       readArticle: 'Read article',
       minRead: 'min read',
       by: 'By',
@@ -894,7 +894,7 @@ export const translations: Record<Language, Translations> = {
     insights: {
       kicker: 'Kenniscentrum',
       heroTitle: 'Kennis & expertise in industriële coatings',
-      heroSubtitle: 'Praktische gidsen en inzichten uit de praktijk over oppervlaktevoorbereiding, stralen, brandwerende coatings en corrosiebescherming — geschreven door het team van Russo NV.',
+      heroSubtitle: 'Praktische gidsen en inzichten uit de praktijk over oppervlaktevoorbereiding, stralen, brandwerende coatings en corrosiebescherming, geschreven door het team van Russo NV.',
       readArticle: 'Lees artikel',
       minRead: 'min leestijd',
       by: 'Door',

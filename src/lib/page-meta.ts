@@ -48,12 +48,12 @@ export const PAGE_META: Record<string, PageMeta> = {
   '/services/industriele-schilderwerken': {
     NL: {
       title: 'Industriële schilderwerken Antwerpen & België | Russo NV',
-      description: 'Industriële schilderwerken op staal, tanks en installaties — stralen, corrosiebescherming en beschermende coatings, op locatie in heel België. VCA & ISO gecertificeerd.',
+      description: 'Industriële schilderwerken op staal, tanks en installaties: stralen, corrosiebescherming en beschermende coatings, op locatie in heel België. VCA & ISO gecertificeerd.',
       image: '/images/services5.jpg',
     },
     EN: {
       title: 'Industrial Painting & Coating Services Antwerp | Russo NV',
-      description: 'Industrial painting and protective coating of steel, tanks and installations — blasting, corrosion protection and fireproofing, on-site across Belgium. VCA & ISO certified.',
+      description: 'Industrial painting and protective coating of steel, tanks and installations: blasting, corrosion protection and fireproofing, on-site across Belgium. VCA & ISO certified.',
       image: '/images/services5.jpg',
     },
   },
@@ -119,13 +119,13 @@ export const PAGE_META: Record<string, PageMeta> = {
   },
   '/insights': {
     NL: {
-      title: 'Kenniscentrum — Industriële Coatings & Stralen | Russo NV',
-      description: 'Praktische gidsen en expertise over industriële coatings, stralen, oppervlaktevoorbereiding en corrosiebescherming — van het team van Russo NV in Antwerpen.',
+      title: 'Kenniscentrum voor Industriële Coatings & Stralen | Russo NV',
+      description: 'Praktische gidsen en expertise over industriële coatings, stralen, oppervlaktevoorbereiding en corrosiebescherming, van het team van Russo NV in Antwerpen.',
       image: '/images/services1.jpg',
     },
     EN: {
-      title: 'Insights — Industrial Coating & Blasting Knowledge | Russo NV',
-      description: 'Practical guides and expertise on industrial coating, blasting, surface preparation and corrosion protection — from the Russo NV team in Antwerp.',
+      title: 'Insights on Industrial Coating & Blasting | Russo NV',
+      description: 'Practical guides and expertise on industrial coating, blasting, surface preparation and corrosion protection, from the Russo NV team in Antwerp.',
       image: '/images/services1.jpg',
     },
   },
