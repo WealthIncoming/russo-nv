@@ -20,6 +20,8 @@ const CANONICAL_HOST = "www.russonv.com";
 const RETENTION_DAYS = 90;
 
 const LEGACY_PATHS = [
+  // Old sitemap path (pre-self-host Wix workaround) → canonical /sitemap.xml.
+  [/^\/sitemap-feed\/?$/, "/sitemap.xml"],
   [/^\/gratis-offerte\/?$/, "/contact/"],
   // Specific legacy .be URL → recapture straight onto the dedicated page
   // (must come before the general /diensten rule below).
@@ -523,6 +525,20 @@ async function handleVisits(request, env) {
       }
     }
     sessions.sort((a, b) => b.start - a.start);
+
+    // New vs returning visitor: count distinct sessions per IP (a 30-min+ gap is
+    // a new session, typically a return visit). IP-based, so it's a close
+    // estimate, dynamic/shared IPs can blur it.
+    const ipSessionCount = new Map();
+    for (const s of sessions) ipSessionCount.set(s.ip, (ipSessionCount.get(s.ip) || 0) + 1);
+    const returningVisitors = [...ipSessionCount.values()].filter((c) => c > 1).length;
+    const visitorBadge = (ip) => {
+      const c = ipSessionCount.get(ip) || 1;
+      return c > 1
+        ? `<span class="badge ret" title="Seen across ${c} sessions">Returning · ${c}×</span>`
+        : '<span class="badge new">New</span>';
+    };
+
     const sessionLead = (s) => {
       const evs = eventsByIp.get(s.ip);
       if (!evs) return null;
@@ -540,6 +556,7 @@ async function handleVisits(request, env) {
       const more = s.pages.length > 12 ? ' <span class="muted">…</span>' : "";
       return `<tr${lead ? ' class="converted"' : ""}><td class="nowrap">${esc(when)}</td>` +
         `<td>${flag(s.country)} ${esc(place)}</td>` +
+        `<td>${visitorBadge(s.ip)}</td>` +
         `<td><span class="badge">${esc(ua.device)}</span> ${esc(ua.browser)}</td>` +
         `<td>${esc(sourceOf(s.referer))}</td>` +
         `<td class="num">${s.pages.length}</td>` +
@@ -574,8 +591,9 @@ async function handleVisits(request, env) {
           ? `<span class="badge bot" title="${esc(v.ua || "")}">${esc(v._name)}</span>`
           : `<span class="badge dc" title="${esc(v.org || "")}">Datacenter</span>`);
       const place = [v.city, countryName(v.country)].filter(Boolean).join(", ");
+      const newRet = v._kind === "human" ? " " + visitorBadge(v.ip) : "";
       return `<tr><td class="nowrap">${esc((v.ts || "").replace("T", " ").slice(0, 16))}</td>` +
-        `<td>${badge}</td>` +
+        `<td>${badge}${newRet}</td>` +
         `<td>${flag(v.country)} ${esc(place)}</td>` +
         `<td class="mono small">${esc(v.ip)}</td>` +
         `<td>${esc(prettyPage(v.path))}</td>` +
@@ -663,6 +681,8 @@ async function handleVisits(request, env) {
   .card.lead .n { color:var(--ok); }
   tr.converted { background:rgba(63,185,80,.06); }
   .chip.lead { background:rgba(63,185,80,.14); border-color:rgba(63,185,80,.4); color:#8fe0a0; font-weight:600; }
+  .badge.new { background:rgba(90,141,214,.14); color:#9cc0f0; border-color:rgba(90,141,214,.4); }
+  .badge.ret { background:rgba(176,127,214,.16); color:#c6a3e6; border-color:rgba(176,127,214,.4); }
   .journey { line-height:2; }
   .chip { display:inline-block; background:#202024; border:1px solid #303036; border-radius:6px; padding:1px 8px; font-size:11.5px; }
   .arrow { color:#5a5a63; margin:0 5px; }
@@ -687,6 +707,7 @@ async function handleVisits(request, env) {
   <div class="cards">
     <div class="card hero"><div class="n">${fmt(uniqueHumans)}</div><div class="l">Real visitors (unique)</div></div>
     <div class="card lead"><div class="n">${fmt(leadsTotal)}</div><div class="l">Contact-form leads</div></div>
+    <div class="card"><div class="n">${fmt(returningVisitors)}</div><div class="l">Returning visitors</div></div>
     <div class="card"><div class="n">${fmt(humans.length)}</div><div class="l">Human page views</div></div>
     <div class="card"><div class="n">${fmt(humansToday)}</div><div class="l">Visits today</div></div>
     <div class="card"><div class="n">${fmt(humans7)}</div><div class="l">Last 7 days</div></div>
@@ -717,8 +738,8 @@ async function handleVisits(request, env) {
 
   <h2>Visitor journeys - recent sessions (real visitors)</h2>
   <div class="scroll"><table>
-    <thead><tr><th>Started (UTC)</th><th>Location</th><th>Device</th><th>Source</th><th class="num">Pages</th><th>Time</th><th>Path through the site</th></tr></thead>
-    <tbody>${journeyRows || '<tr><td colspan="7" class="muted">No multi-page sessions yet.</td></tr>'}</tbody>
+    <thead><tr><th>Started (UTC)</th><th>Location</th><th>Visitor</th><th>Device</th><th>Source</th><th class="num">Pages</th><th>Time</th><th>Path through the site</th></tr></thead>
+    <tbody>${journeyRows || '<tr><td colspan="8" class="muted">No multi-page sessions yet.</td></tr>'}</tbody>
   </table></div>
 
   <h2>Recent visits - latest 300 (${esc(viewLabel)})</h2>

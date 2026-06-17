@@ -6,7 +6,7 @@
 //   - static page generation + routing  (src/pages/[...slug].astro getStaticPaths)
 //   - SEO <title>/<meta>/canonical/hreflang + Article JSON-LD ([...slug].astro)
 //   - the index grid + article page      (ArticlesIndexPage / ArticlePage)
-//   - sitemap entries (with lastmod)     (src/pages/sitemap-feed.ts)
+//   - sitemap entries (with lastmod)     (src/pages/sitemap.xml.ts)
 //   - the RSS feed                       (src/pages/insights/rss.xml.ts)
 //
 // This module is PURE DATA (no React / no browser APIs) so it is safe to import
