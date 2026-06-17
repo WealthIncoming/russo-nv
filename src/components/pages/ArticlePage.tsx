@@ -103,7 +103,15 @@ export default function ArticlePage() {
       case 'image':
         return (
           <figure key={i} className="my-8">
-            <Image src={block.src} alt={block.alt} className="w-full h-auto" width={768} />
+            <Image
+              src={block.src}
+              alt={block.alt}
+              className="w-full"
+              originWidth={block.width}
+              originHeight={block.height}
+              loading="lazy"
+              decoding="async"
+            />
             {block.caption && (
               <figcaption className="font-paragraph text-sm text-foreground/50 mt-2 text-center">{block.caption}</figcaption>
             )}

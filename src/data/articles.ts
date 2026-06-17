@@ -34,7 +34,7 @@ export type ArticleBlock =
   | { type: 'ul'; items: string[] }
   | { type: 'ol'; items: string[] }
   | { type: 'quote'; text: string; cite?: string }
-  | { type: 'image'; src: string; alt: string; caption?: string }
+  | { type: 'image'; src: string; alt: string; caption?: string; width?: number; height?: number }
   | { type: 'table'; caption?: string; headers: string[]; rows: string[][] }
   | { type: 'callout'; title: string; items: string[] }
   | { type: 'faq'; items: { q: string; a: string }[] }
@@ -143,6 +143,14 @@ export const ARTICLES: Article[] = [
             'Stof, los vuil en oude, loszittende verf: mechanisch verwijderen.',
           ],
         },
+        {
+          type: 'image',
+          src: '/images/step1.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Gereinigde stalen constructie met boutverbindingen, klaar voor coating',
+          caption: 'Stap 1: het staal grondig gereinigd voor de volgende bewerking.',
+        },
         { type: 'h2', text: 'Stap 2: stralen tot de juiste reinheidsgraad (ISO 8501-1)' },
         {
           type: 'p',
@@ -163,6 +171,14 @@ export const ARTICLES: Article[] = [
           type: 'p',
           text: 'Vraag in de praktijk altijd het datablad op: coaten op een te lage graad doet de garantie van de fabrikant vervallen en is de meest voorkomende oorzaak van vroegtijdig falen.',
         },
+        {
+          type: 'image',
+          src: '/images/step2.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Gestraald staaloppervlak met zichtbare straaltextuur in strijklicht',
+          caption: 'Het straalprofiel wordt zichtbaar in strijklicht.',
+        },
         { type: 'h2', text: 'Stap 3: het juiste straalprofiel (ankerprofiel)' },
         {
           type: 'p',
@@ -176,6 +192,14 @@ export const ARTICLES: Article[] = [
             'Meet het profiel objectief met profieltape (testex) of een ruwheidsmeter; vertrouw niet op het oog.',
           ],
         },
+        {
+          type: 'image',
+          src: '/images/step3.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Het straalprofiel meten met een Elcometer-meetklok in µm',
+          caption: 'Het profiel objectief meten in µm, niet schatten op het oog.',
+        },
         { type: 'h2', text: 'Stap 4: klimaat, dauwpunt en timing' },
         {
           type: 'p',
@@ -188,6 +212,14 @@ export const ARTICLES: Article[] = [
             'Houd de relatieve luchtvochtigheid in de gaten (richtwaarde onder 85 %).',
             'Coat binnen het door de fabrikant voorgeschreven venster, vaak dezelfde dag, vóór er flash rust ontstaat.',
           ],
+        },
+        {
+          type: 'image',
+          src: '/images/step4.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Elcometer dauwpuntmeter toont luchtvochtigheid, oppervlaktetemperatuur en dauwpunt',
+          caption: 'Luchtvochtigheid, oppervlaktetemperatuur en dauwpunt controleren voor het coaten.',
         },
         { type: 'h2', text: 'Stap 5: meten, documenteren en de juiste korrel kiezen' },
         {
@@ -210,6 +242,14 @@ export const ARTICLES: Article[] = [
             { text: 'gerealiseerde projecten', to: '/projects' },
             ' om te zien hoe we deze aanpak in de praktijk toepassen.',
           ],
+        },
+        {
+          type: 'image',
+          src: '/images/step5.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Inspectierapport met ISO 8502 metingen voor klimaat, stof en oplosbare zouten',
+          caption: 'Elke meting gedocumenteerd volgens ISO 8502.',
         },
         {
           type: 'callout',
@@ -302,6 +342,14 @@ export const ARTICLES: Article[] = [
             'Dust, loose dirt and old, flaking paint: remove mechanically.',
           ],
         },
+        {
+          type: 'image',
+          src: '/images/step1.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Cleaned steel structure with bolted joints, ready for coating',
+          caption: 'Step 1: the steel thoroughly cleaned before the next operation.',
+        },
         { type: 'h2', text: 'Step 2: blast to the right cleanliness grade (ISO 8501-1)' },
         {
           type: 'p',
@@ -322,6 +370,14 @@ export const ARTICLES: Article[] = [
           type: 'p',
           text: 'In practice, always pull the data sheet: coating to a grade below spec voids the manufacturer’s warranty and is the most common cause of premature failure.',
         },
+        {
+          type: 'image',
+          src: '/images/step2.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Blast-cleaned steel surface with visible blast texture in raking light',
+          caption: 'The blast profile catching the raking light.',
+        },
         { type: 'h2', text: 'Step 3: the right surface profile (anchor pattern)' },
         {
           type: 'p',
@@ -335,6 +391,14 @@ export const ARTICLES: Article[] = [
             'Measure the profile objectively with profile tape (Testex) or a roughness gauge; don’t trust the eye.',
           ],
         },
+        {
+          type: 'image',
+          src: '/images/step3.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Measuring the surface profile with an Elcometer dial gauge in µm',
+          caption: 'Measuring the profile objectively in µm, not judging by eye.',
+        },
         { type: 'h2', text: 'Step 4: climate, dew point and timing' },
         {
           type: 'p',
@@ -347,6 +411,14 @@ export const ARTICLES: Article[] = [
             'Keep an eye on relative humidity (guideline under 85 %).',
             'Coat within the manufacturer’s specified window, often the same day, before flash rust forms.',
           ],
+        },
+        {
+          type: 'image',
+          src: '/images/step4.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Elcometer dew-point meter showing humidity, surface temperature and dew point',
+          caption: 'Checking humidity, surface temperature and dew point before coating.',
         },
         { type: 'h2', text: 'Step 5: measure, document and choose the right abrasive' },
         {
@@ -369,6 +441,14 @@ export const ARTICLES: Article[] = [
             { text: 'completed projects', to: '/projects' },
             ' for how we apply this approach in the field.',
           ],
+        },
+        {
+          type: 'image',
+          src: '/images/step5.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Inspection report logging ISO 8502 readings for climate, dust and soluble salts',
+          caption: 'Every reading documented to ISO 8502.',
         },
         {
           type: 'callout',
