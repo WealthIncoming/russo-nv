@@ -149,6 +149,17 @@ export default function ArticlePage() {
             </ul>
           </aside>
         );
+      case 'faq':
+        return (
+          <div key={i} className="my-8 border-t border-dark-grey/15">
+            {block.items.map((it, j) => (
+              <div key={j} className="border-b border-dark-grey/15 py-5">
+                <h3 className="font-heading text-lg sm:text-xl text-foreground leading-snug mb-2">{it.q}</h3>
+                <p className="font-paragraph text-base text-foreground/80 leading-relaxed">{it.a}</p>
+              </div>
+            ))}
+          </div>
+        );
       case 'cta':
         return (
           <div key={i} className="my-12 bg-foreground text-white p-8 sm:p-10">
@@ -192,7 +203,10 @@ export default function ArticlePage() {
               {c.title}
             </h1>
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-6 font-paragraph text-sm text-white/70">
-              <span>{t('insights', 'by')} {article.author}</span>
+              <span>
+                {t('insights', 'by')} {article.author}
+                {article.authorRole && <span className="text-white/50">, {article.authorRole[locale]}</span>}
+              </span>
               <span className="text-white/30">•</span>
               <time dateTime={article.date}>{formatDate(article.date, locale)}</time>
               <span className="text-white/30">•</span>
@@ -209,6 +223,42 @@ export default function ArticlePage() {
             {c.excerpt}
           </p>
           {c.body.map(renderBlock)}
+
+          {/* Author / E-E-A-T */}
+          {article.authorBio && (
+            <aside className="mt-14 pt-8 border-t border-dark-grey/15">
+              <p className="font-paragraph text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">
+                {locale === 'NL' ? 'Over de auteur' : 'About the author'}
+              </p>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-14 h-14 rounded-full bg-foreground text-white font-heading text-lg flex items-center justify-center">
+                  {article.author.split(' ').map((w) => w[0]).slice(0, 2).join('')}
+                </div>
+                <div>
+                  <p className="font-heading text-lg text-foreground leading-tight">{article.author}</p>
+                  {article.authorRole && (
+                    <p className="font-paragraph text-xs font-bold uppercase tracking-wider text-primary mt-0.5">
+                      {article.authorRole[locale]}
+                    </p>
+                  )}
+                  <p className="font-paragraph text-sm text-foreground/70 leading-relaxed mt-2 max-w-2xl">
+                    {article.authorBio[locale]}
+                  </p>
+                  {article.authorUrl && (
+                    <a
+                      href={article.authorUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 font-paragraph text-sm font-bold text-primary hover:text-primary/80 mt-3"
+                    >
+                      LinkedIn
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </aside>
+          )}
 
           {/* Back link */}
           <div className="mt-14 pt-8 border-t border-dark-grey/15">

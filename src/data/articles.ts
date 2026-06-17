@@ -37,6 +37,7 @@ export type ArticleBlock =
   | { type: 'image'; src: string; alt: string; caption?: string }
   | { type: 'table'; caption?: string; headers: string[]; rows: string[][] }
   | { type: 'callout'; title: string; items: string[] }
+  | { type: 'faq'; items: { q: string; a: string }[] }
   | { type: 'cta'; title: string; text: string; buttonLabel: string; to: string };
 
 export interface ArticleContent {
@@ -60,7 +61,14 @@ export interface Article {
   date: string;
   /** ISO date last updated (defaults to `date`). */
   updated?: string;
+  /** Byline name. A named, credentialed human strengthens E-E-A-T. */
   author: string;
+  /** Author credential / job title, shown in the byline + bio (localized). */
+  authorRole?: Record<Locale, string>;
+  /** Short author bio for the end-of-article E-E-A-T box (localized). */
+  authorBio?: Record<Locale, string>;
+  /** Author profile URL (e.g. LinkedIn) → schema.org Person.sameAs. */
+  authorUrl?: string;
   /** Hero image, served from /public/images. Swap for a real job photo. */
   heroImage: string;
   heroAlt: Record<Locale, string>;
@@ -80,7 +88,16 @@ export const ARTICLES: Article[] = [
   {
     slug: 'steel-surface-preparation',
     date: '2026-06-17',
-    author: 'Russo NV',
+    author: 'Stig Vanmarsenille',
+    authorRole: {
+      NL: 'NACE Level 2 coating inspector',
+      EN: 'NACE Level 2 coating inspector',
+    },
+    authorBio: {
+      NL: 'Stig Vanmarsenille is NACE Level 2 coating inspector bij Russo NV en begeleidde meer dan 70 industriële straal- en coatingprojecten, van tankbekleding tot staalconstructies in de petrochemie.',
+      EN: 'Stig Vanmarsenille is a NACE Level 2 coating inspector at Russo NV and has overseen more than 70 industrial blasting and coating projects, from tank lining to structural steel in petrochemicals.',
+    },
+    // authorUrl: 'https://www.linkedin.com/in/...', // add Stig's LinkedIn → Person.sameAs
     heroImage: '/images/article1.jpg',
     heroAlt: {
       NL: 'Industriële straalwerken op staal: oppervlaktevoorbereiding tot reinheidsgraad Sa 2½ door Russo NV in Antwerpen',
@@ -169,6 +186,28 @@ export const ARTICLES: Article[] = [
             'Coat binnen het door de fabrikant voorgeschreven venster, vaak dezelfde dag, vóór er flash rust ontstaat.',
           ],
         },
+        { type: 'h2', text: 'Stap 5: meten, documenteren en de juiste korrel kiezen' },
+        {
+          type: 'p',
+          text: 'Een goede voorbereiding is meetbaar. Leg elke kritische parameter objectief vast: zo toon je achteraf aan dat er volgens spec gewerkt is en vermijd je discussie bij oplevering.',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Oplosbare zouten: meet de geleidbaarheid volgens ISO 8502 (bijvoorbeeld de Bresle-methode) voordat je coat.',
+            'Straalprofiel: bepaal de ruwheidsklasse volgens ISO 8503 (fijn, medium of grof) met profieltape of een ruwheidsmeter.',
+            'Klimaat: log doorlopend staaltemperatuur, luchttemperatuur, relatieve luchtvochtigheid en dauwpunt.',
+            'Korrelkeuze: stem het straalmiddel af op het doel. Garnet en staalgrit geven een hoekig, dieper profiel, gladde korrel of straalgrind een ondieper profiel.',
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'Die meetcultuur is precies wat een industriële coating jarenlang laat standhouden. Bekijk onze ',
+            { text: 'gerealiseerde projecten', to: '/projects' },
+            ' om te zien hoe we deze aanpak in de praktijk toepassen.',
+          ],
+        },
         {
           type: 'callout',
           title: 'Belangrijkste punten',
@@ -189,6 +228,32 @@ export const ARTICLES: Article[] = [
             'Een verkeerd (te glad of te ruw) straalprofiel.',
             'Klimaatcontrole overslaan en bij te hoge vochtigheid doorwerken.',
             'Het herverf-venster van de primer overschrijden.',
+          ],
+        },
+        { type: 'h2', text: 'Veelgestelde vragen' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'Wat betekent reinheidsgraad Sa 2½?',
+              a: 'Sa 2½ is een visuele reinheidsgraad uit ISO 8501-1 voor gestraald staal. Het oppervlak is zeer grondig gestraald: walshuid, roest en oude verf zijn verwijderd, enkel lichte schaduwen of strepen blijven toegelaten. Het is de standaard voor de meeste industriële beschermsystemen.',
+            },
+            {
+              q: 'Hoe lang mag gestraald staal blootliggen voordat je coat?',
+              a: 'Zo kort mogelijk. Vers gestraald staal roest snel (flash rust), bij vochtig weer vaak al binnen enkele uren. Coat bij voorkeur dezelfde dag, binnen het venster dat de fabrikant voorschrijft, en altijd voordat er nieuwe roest ontstaat.',
+            },
+            {
+              q: 'Welk straalprofiel heb ik nodig?',
+              a: 'Dat staat in het technische datablad van de coating, doorgaans 30 tot 75 µm Rz. Te glad geeft onvoldoende hechting, te ruw laat de pieken door de laagdikte steken. Meet het profiel objectief met profieltape of een ruwheidsmeter, schat het niet op het oog.',
+            },
+            {
+              q: 'Wat is flash rust en hoe voorkom je het?',
+              a: 'Flash rust is de dunne roestlaag die ontstaat op vers gestraald, chemisch "naakt" staal zodra het vocht raakt. Coaten over flash rust verzwakt de hechting. Klimaatcontrole (staal boven het dauwpunt houden) en snel overschilderen voorkomen het.',
+            },
+            {
+              q: 'Waarom zijn oplosbare zouten zo belangrijk?',
+              a: 'Oplosbare zouten zoals chloriden zijn onzichtbaar, maar trekken vocht aan onder de coating en veroorzaken blaarvorming en onderroest. Stralen alleen verwijdert ze niet betrouwbaar. Meet ze volgens ISO 8502 en stoomreinig waar nodig.',
+            },
           ],
         },
         { type: 'h2', text: 'Hulp nodig bij uw project?' },
@@ -280,6 +345,28 @@ export const ARTICLES: Article[] = [
             'Coat within the manufacturer’s specified window, often the same day, before flash rust forms.',
           ],
         },
+        { type: 'h2', text: 'Step 5: measure, document and choose the right abrasive' },
+        {
+          type: 'p',
+          text: 'Good preparation is measurable. Record every critical parameter objectively: it proves afterwards that the work met spec and prevents disputes at handover.',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Soluble salts: measure conductivity to ISO 8502 (for example the Bresle method) before coating.',
+            'Surface profile: determine the roughness grade to ISO 8503 (fine, medium or coarse) with profile tape or a roughness gauge.',
+            'Climate: continuously log steel temperature, air temperature, relative humidity and dew point.',
+            'Abrasive choice: match the media to the goal. Garnet and steel grit give an angular, deeper profile; smoother media or steel shot a shallower one.',
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'That measurement culture is exactly what makes an industrial coating last for years. See our ',
+            { text: 'completed projects', to: '/projects' },
+            ' for how we apply this approach in the field.',
+          ],
+        },
         {
           type: 'callout',
           title: 'Key takeaways',
@@ -300,6 +387,32 @@ export const ARTICLES: Article[] = [
             'A wrong (too smooth or too rough) surface profile.',
             'Skipping climate checks and working on through high humidity.',
             'Exceeding the primer’s recoat window.',
+          ],
+        },
+        { type: 'h2', text: 'Frequently asked questions' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'What does cleanliness grade Sa 2½ mean?',
+              a: 'Sa 2½ is a visual cleanliness grade from ISO 8501-1 for blasted steel. The surface is blasted very thoroughly: mill scale, rust and old paint are removed, with only light shadows or streaks allowed. It is the standard for most industrial protective systems.',
+            },
+            {
+              q: 'How long can blasted steel be left before coating?',
+              a: 'As short as possible. Freshly blasted steel rusts quickly (flash rust), often within hours in humid weather. Coat the same day where possible, within the window the manufacturer specifies, and always before new rust forms.',
+            },
+            {
+              q: 'Which surface profile do I need?',
+              a: 'It is given in the coating’s technical data sheet, typically 30 to 75 µm Rz. Too smooth gives poor adhesion; too rough lets the peaks protrude through the film. Measure the profile objectively with profile tape or a roughness gauge rather than judging by eye.',
+            },
+            {
+              q: 'What is flash rust and how do you prevent it?',
+              a: 'Flash rust is the thin layer of rust that forms on freshly blasted, chemically "naked" steel as soon as it meets moisture. Coating over flash rust weakens adhesion. Climate control (keeping the steel above the dew point) and recoating quickly prevent it.',
+            },
+            {
+              q: 'Why do soluble salts matter so much?',
+              a: 'Soluble salts such as chlorides are invisible but draw moisture under the coating, causing blistering and under-rust. Blasting alone does not remove them reliably. Measure them to ISO 8502 and steam-clean where needed.',
+            },
           ],
         },
         { type: 'h2', text: 'Need help with your project?' },
@@ -336,6 +449,10 @@ export function relatedArticles(slug: string, limit = 3): Article[] {
 export function readingMinutes(content: ArticleContent): number {
   let words = `${content.title} ${content.excerpt}`.split(/\s+/).length;
   for (const block of content.body) {
+    if (block.type === 'faq') {
+      for (const it of block.items) words += `${it.q} ${it.a}`.split(/\s+/).length;
+      continue;
+    }
     if ('text' in block && block.text) words += block.text.split(/\s+/).length;
     if ('segments' in block && block.segments) {
       for (const s of block.segments) words += (typeof s === 'string' ? s : s.text).split(/\s+/).length;

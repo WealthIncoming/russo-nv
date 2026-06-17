@@ -2,7 +2,7 @@
 import { Head } from "@/components/Head";
 import AppRouter from "@/components/Router";
 import { serializeJsonLd } from "@/lib/json-ld";
-import { ARTICLES, findArticle } from "@/data/articles";
+import { ARTICLES, findArticle, type ArticleBlock } from "@/data/articles";
 import "@/styles/global.css";
 
 export function getStaticPaths() {
@@ -122,7 +122,14 @@ const articleSchema = article ? {
   datePublished: article.date,
   dateModified: article.updated ?? article.date,
   inLanguage: locale === 'EN' ? 'en' : 'nl-BE',
-  author: { '@type': 'Organization', name: article.author, url: SITE_URL },
+  author: {
+    '@type': 'Person',
+    name: article.author,
+    ...(article.authorRole ? { jobTitle: article.authorRole[locale] } : {}),
+    worksFor: { '@type': 'Organization', name: 'Russo NV', url: SITE_URL },
+    knowsAbout: ['Industrial coatings', 'Surface preparation', 'Abrasive blasting', 'Corrosion protection'],
+    ...(article.authorUrl ? { sameAs: [article.authorUrl] } : {}),
+  },
   publisher: {
     '@type': 'Organization',
     name: 'Russo NV',
@@ -130,6 +137,30 @@ const articleSchema = article ? {
   },
   keywords: article.keywords[locale].join(', '),
 } : null;
+
+// FAQ rich result: build FAQPage schema from the article's faq block (if any).
+const faqItems = article
+  ? (article[locale].body.find((b) => b.type === 'faq') as Extract<ArticleBlock, { type: 'faq' }> | undefined)?.items
+  : undefined;
+const faqSchema = faqItems && faqItems.length ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((it) => ({
+    '@type': 'Question',
+    name: it.q,
+    acceptedAnswer: { '@type': 'Answer', text: it.a },
+  })),
+} : null;
+
+// OG/Twitter image alt + dimensions (read real dims at build; degrade gracefully).
+const ogImageAlt = article ? article.heroAlt[locale] : localeMeta.title;
+let ogImageDims: { width: number; height: number } | null = null;
+try {
+  const sharp = (await import('sharp')).default;
+  const rel = (localeMeta.image ?? DEFAULT_OG_IMAGE).replace(/^\//, '');
+  const md = await sharp(`public/${rel}`).metadata();
+  if (md.width && md.height) ogImageDims = { width: md.width, height: md.height };
+} catch {}
 ---
 
 <html lang={htmlLang} class="w-full h-full">
@@ -153,6 +184,9 @@ const articleSchema = article ? {
     <meta property="og:title" content={localeMeta.title} />
     <meta property="og:description" content={localeMeta.description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    {ogImageDims && <meta property="og:image:width" content={String(ogImageDims.width)} />}
+    {ogImageDims && <meta property="og:image:height" content={String(ogImageDims.height)} />}
     {article && <meta property="article:published_time" content={article.date} />}
     {article && <meta property="article:modified_time" content={article.updated ?? article.date} />}
     {article && <meta property="article:section" content={article[locale].category} />}
@@ -162,6 +196,7 @@ const articleSchema = article ? {
     <meta name="twitter:title" content={localeMeta.title} />
     <meta name="twitter:description" content={localeMeta.description} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
 
     <link rel="icon" type="image/png" href="/images/logo.png" />
     {(article || basePath === '/insights') && (
@@ -184,6 +219,12 @@ const articleSchema = article ? {
       <script
         type="application/ld+json"
         set:html={serializeJsonLd(articleSchema)}
+      />
+    )}
+    {faqSchema && (
+      <script
+        type="application/ld+json"
+        set:html={serializeJsonLd(faqSchema)}
       />
     )}
   </head>
