@@ -134,6 +134,156 @@ function esc(value) {
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
 
+// ---------------------------------------------------------------------------
+// Classification & parsing — all derived at render time from stored columns
+// (User-Agent + network), so it applies retroactively to the whole 90-day log.
+// ---------------------------------------------------------------------------
+
+// Known crawlers, SEO/AI bots, scanners and CLI/library agents.
+const BOT_UA_RE = /bot\b|bot\/|crawl|spider|slurp|mediapartners|bingpreview|facebookexternalhit|facebot|ia_archiver|ahrefs|semrush|mj12|dotbot|petal|bytespider|gptbot|chatgpt|oai-searchbot|ccbot|claudebot|claude-web|anthropic|perplexity|amazonbot|applebot|dataforseo|blexbot|seznam|screaming\s?frog|headlesschrome|phantomjs|python-requests|python-urllib|aiohttp|go-http-client|libwww|httpclient|okhttp|scrapy|masscan|zgrab|censys|shodan|nuclei|nmap|wget|curl\/|java\/|jakarta|axios|node-fetch|got\s|lighthouse|pingdom|uptimerobot|statuscake|gtmetrix|site24x7|expanse|internet-?measurement|paloaltonetworks|l9scan|scanner|probe|monitoring/i;
+
+// Hosting / cloud / scanner networks — traffic from here is automated even when
+// the User-Agent is spoofed to look like a browser.
+const DC_ORG_RE = /amazon|aws|google\s?(llc|cloud|inc)|microsoft|azure|digitalocean|digital\s?ocean|ovh|hetzner|linode|akamai|fastly|vultr|scaleway|contabo|leaseweb|choopa|oracle|alibaba|tencent|huawei|censys|shodan|stretchoid|binaryedge|driftnet|palo\s?alto|internet\s?census|datacamp|m247|cogent|hostwinds|hostinger|namecheap|godaddy|colocrossing|quadranet|servers|data\s?center|datacenter|hosting/i;
+
+const BOT_NAMES = {
+  googlebot: "Googlebot", bingbot: "Bingbot", yandexbot: "YandexBot", duckduckbot: "DuckDuckBot",
+  baiduspider: "Baiduspider", applebot: "Applebot", gptbot: "GPTBot", "oai-searchbot": "OpenAI",
+  chatgpt: "ChatGPT", claudebot: "ClaudeBot", "claude-web": "Claude", anthropic: "Anthropic",
+  perplexitybot: "PerplexityBot", ahrefsbot: "AhrefsBot", semrushbot: "SemrushBot", mj12bot: "MJ12bot",
+  dotbot: "DotBot", petalbot: "PetalBot", bytespider: "Bytespider", amazonbot: "Amazonbot",
+  facebookexternalhit: "Facebook", ccbot: "CCBot", dataforseo: "DataForSEO", censys: "Censys (scanner)",
+  masscan: "masscan (scanner)", zgrab: "zgrab (scanner)", nuclei: "nuclei (scanner)",
+  curl: "curl", wget: "wget", "python-requests": "Python script", scrapy: "Scrapy",
+};
+
+function classifyVisit(ua, org) {
+  const u = (ua || "").trim();
+  if (!u) return { kind: "bot", name: "No user-agent" };
+  if (BOT_UA_RE.test(u)) {
+    const lower = u.toLowerCase();
+    for (const key in BOT_NAMES) {
+      if (lower.includes(key)) return { kind: "bot", name: BOT_NAMES[key] };
+    }
+    const m = u.match(/([a-z0-9.\-]*bot)/i);
+    return { kind: "bot", name: m ? m[1] : "Bot / crawler" };
+  }
+  if (org && DC_ORG_RE.test(org)) return { kind: "datacenter", name: "Datacenter / automated" };
+  return { kind: "human", name: "Human" };
+}
+
+function parseUA(ua) {
+  const u = ua || "";
+  let device = "Desktop";
+  if (/ipad|tablet|playbook|silk|kindle/i.test(u)) device = "Tablet";
+  else if (/mobi|iphone|ipod|windows phone|(android.*mobile)/i.test(u)) device = "Mobile";
+  let os = "—";
+  if (/windows nt/i.test(u)) os = "Windows";
+  else if (/iphone|ipad|ipod|cpu os|iphone os/i.test(u)) os = "iOS";
+  else if (/mac os x|macintosh/i.test(u)) os = "macOS";
+  else if (/android/i.test(u)) os = "Android";
+  else if (/cros/i.test(u)) os = "ChromeOS";
+  else if (/linux/i.test(u)) os = "Linux";
+  let browser = "—";
+  if (/edg(a|ios|)?\//i.test(u)) browser = "Edge";
+  else if (/opr\/|opera/i.test(u)) browser = "Opera";
+  else if (/samsungbrowser/i.test(u)) browser = "Samsung";
+  else if (/firefox\/|fxios/i.test(u)) browser = "Firefox";
+  else if (/chrome\/|crios/i.test(u)) browser = "Chrome";
+  else if (/safari\//i.test(u) && /version\//i.test(u)) browser = "Safari";
+  return { device, os, browser };
+}
+
+function flag(cc) {
+  if (!cc || cc.length !== 2 || !/^[a-z]{2}$/i.test(cc)) return "";
+  const up = cc.toUpperCase();
+  return String.fromCodePoint(...[...up].map((c) => 127397 + c.charCodeAt(0)));
+}
+
+const COUNTRY_NAMES = {
+  BE: "Belgium", NL: "Netherlands", LU: "Luxembourg", FR: "France", DE: "Germany",
+  GB: "United Kingdom", US: "United States", IE: "Ireland", ES: "Spain", IT: "Italy",
+  PT: "Portugal", PL: "Poland", RO: "Romania", SE: "Sweden", NO: "Norway", DK: "Denmark",
+  FI: "Finland", CH: "Switzerland", AT: "Austria", CZ: "Czechia", SK: "Slovakia", HU: "Hungary",
+  GR: "Greece", BG: "Bulgaria", HR: "Croatia", IN: "India", CN: "China", RU: "Russia",
+  UA: "Ukraine", TR: "Turkey", BR: "Brazil", CA: "Canada", MX: "Mexico", AU: "Australia",
+  JP: "Japan", KR: "South Korea", SG: "Singapore", HK: "Hong Kong", AE: "UAE", SA: "Saudi Arabia",
+  IL: "Israel", MA: "Morocco", EG: "Egypt", ZA: "South Africa", NG: "Nigeria", VN: "Vietnam",
+  ID: "Indonesia", TH: "Thailand", PH: "Philippines",
+};
+function countryName(cc) {
+  return COUNTRY_NAMES[(cc || "").toUpperCase()] || cc || "Unknown";
+}
+
+function sourceOf(referer) {
+  if (!referer) return "Direct";
+  let host = "";
+  try { host = new URL(referer).hostname.replace(/^www\./, ""); } catch (_) { host = String(referer); }
+  const h = host.toLowerCase();
+  if (h.includes("russonv.")) return "Internal";
+  if (h.includes("google")) return "Google";
+  if (h.includes("bing")) return "Bing";
+  if (h.includes("duckduckgo")) return "DuckDuckGo";
+  if (h.includes("yahoo")) return "Yahoo";
+  if (h.includes("ecosia")) return "Ecosia";
+  if (h.includes("linkedin") || h === "lnkd.in") return "LinkedIn";
+  if (h.includes("facebook") || h === "fb.com") return "Facebook";
+  if (h.includes("instagram")) return "Instagram";
+  if (h.includes("twitter") || h === "t.co" || h === "x.com") return "X / Twitter";
+  if (h.includes("youtube") || h === "youtu.be") return "YouTube";
+  if (h.includes("whatsapp")) return "WhatsApp";
+  if (h.includes("gmail") || h.includes("mail.")) return "Email";
+  return host || "Referral";
+}
+
+function prettyPage(path) {
+  if (!path) return "—";
+  const en = /^\/en(\/|$)/.test(path);
+  let p = path.replace(/^\/en/, "").replace(/\/+$/, "");
+  let name;
+  if (p === "" || p === "/") name = "Home";
+  else {
+    name = p.split("/").filter(Boolean)
+      .map((s) => s.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()))
+      .join(" / ");
+  }
+  return en ? name + " · EN" : name;
+}
+
+function csvCell(v) {
+  return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"';
+}
+
+function topN(map, n) {
+  return [...map.entries()].sort((a, b) => b[1] - a[1]).slice(0, n).map(([key, count]) => ({ key, count }));
+}
+
+function countBy(arr, fn) {
+  const m = new Map();
+  for (const r of arr) {
+    const k = fn(r);
+    if (k == null || k === "") continue;
+    m.set(k, (m.get(k) || 0) + 1);
+  }
+  return m;
+}
+
+// Render a labelled horizontal-bar breakdown. `label` may contain trusted HTML
+// (flags); caller is responsible for escaping the dynamic text portion.
+function barList(entries, total, accent) {
+  if (!entries.length) return '<div class="muted small">No data yet.</div>';
+  const max = Math.max(...entries.map((e) => e.count), 1);
+  return entries.map((e) => {
+    const pct = Math.round((e.count / max) * 100);
+    const share = total ? Math.round((e.count / total) * 100) : 0;
+    return `<div class="bar"><div class="bar-label">${e.label}</div>` +
+      `<div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${accent || "#e4572e"}"></div></div>` +
+      `<div class="bar-val">${e.count}<span class="bar-pct">${share}%</span></div></div>`;
+  }).join("");
+}
+
+const fmt = (n) => Number(n || 0).toLocaleString("en-US");
+
 async function handleVisits(request, env) {
   const auth = checkAuth(request, env);
   if (auth === "unset") {
@@ -154,102 +304,329 @@ async function handleVisits(request, env) {
 
   const url = new URL(request.url);
   const wantsJson = url.pathname.endsWith(".json") || url.searchParams.get("format") === "json";
+  const wantsCsv = url.pathname.endsWith(".csv") || url.searchParams.get("format") === "csv";
+  const showBots = url.searchParams.get("bots") === "1" || url.searchParams.get("bots") === "show";
 
-  let recent = [], daily = [], totals = { hits: 0, visitors: 0 };
+  const LIMIT = 6000;
+  let rows = [];
   try {
-    recent = (await env.DB.prepare(
-      "SELECT ts, ip, country, city, region, org, path, referer, ua " +
-      "FROM visits ORDER BY ts DESC LIMIT 300"
+    rows = (await env.DB.prepare(
+      "SELECT ts, ip, country, city, region, org, path, referer, ua FROM visits ORDER BY ts DESC LIMIT " + LIMIT
     ).all()).results || [];
-    daily = (await env.DB.prepare(
-      "SELECT substr(ts, 1, 10) AS day, COUNT(*) AS hits, COUNT(DISTINCT ip) AS visitors " +
-      "FROM visits GROUP BY day ORDER BY day DESC LIMIT 30"
-    ).all()).results || [];
-    totals = (await env.DB.prepare(
-      "SELECT COUNT(*) AS hits, COUNT(DISTINCT ip) AS visitors FROM visits"
-    ).first()) || totals;
   } catch (_) {
-    // Table not created until the first visit is logged.
     return plain("No visits recorded yet. Check back after the site receives traffic.");
   }
+  if (!rows.length) return plain("No visits recorded yet. Check back after the site receives traffic.");
 
-  if (wantsJson) {
-    return new Response(JSON.stringify({ totals, daily, recent }, null, 2), {
-      headers: { "content-type": "application/json; charset=UTF-8", "cache-control": "no-store" },
-    });
-  }
+  try {
+    const capped = rows.length >= LIMIT;
+    for (const r of rows) {
+      const c = classifyVisit(r.ua, r.org);
+      r._kind = c.kind;
+      r._name = c.name;
+    }
+    const humans = rows.filter((r) => r._kind === "human");
+    const botCount = rows.length - humans.length;
 
-  const dailyRows = daily.map((d) =>
-    `<tr><td>${esc(d.day)}</td><td class="num">${d.hits}</td><td class="num">${d.visitors}</td></tr>`
-  ).join("");
+    // ---- JSON API ----
+    if (wantsJson) {
+      const payload = {
+        generatedAt: new Date().toISOString(),
+        window: capped ? "most recent " + LIMIT + " events" : "all events (<= 90 days)",
+        totals: {
+          events: rows.length,
+          humanViews: humans.length,
+          bots: botCount,
+          uniqueHumanVisitors: new Set(humans.map((h) => h.ip)).size,
+        },
+        visits: rows.map((r) => ({
+          ts: r.ts, kind: r._kind, ip: r.ip, country: r.country, city: r.city,
+          region: r.region, network: r.org, page: r.path, source: sourceOf(r.referer),
+          referer: r.referer, ua: r.ua,
+        })),
+      };
+      return new Response(JSON.stringify(payload, null, 2), {
+        headers: { "content-type": "application/json; charset=UTF-8", "cache-control": "no-store" },
+      });
+    }
 
-  const visitRows = recent.map((v) => `<tr>
-    <td class="nowrap">${esc((v.ts || "").replace("T", " ").slice(0, 16))}</td>
-    <td class="mono">${esc(v.ip)}</td>
-    <td>${esc([v.city, v.region, v.country].filter(Boolean).join(", "))}</td>
-    <td>${esc(v.org)}</td>
-    <td class="mono">${esc(v.path)}</td>
-    <td class="muted">${esc((v.referer || "").slice(0, 60))}</td>
-    <td class="muted small">${esc((v.ua || "").slice(0, 90))}</td>
-  </tr>`).join("");
+    // ---- CSV export ----
+    if (wantsCsv) {
+      const set = showBots ? rows : humans;
+      const header = "timestamp,kind,detail,ip,country,city,region,network,page,source,device,os,browser,referer,user_agent";
+      const lines = set.map((r) => {
+        const ua = parseUA(r.ua);
+        return [r.ts, r._kind, r._name, r.ip, countryName(r.country), r.city, r.region, r.org,
+          r.path, sourceOf(r.referer), ua.device, ua.os, ua.browser, r.referer, r.ua]
+          .map(csvCell).join(",");
+      });
+      return new Response([header, ...lines].join("\r\n"), {
+        headers: {
+          "content-type": "text/csv; charset=UTF-8",
+          "content-disposition": 'attachment; filename="russonv-visitors.csv"',
+          "cache-control": "no-store",
+        },
+      });
+    }
 
-  const html = `<!doctype html>
+    // ---- Aggregates for the HTML dashboard ----
+    const now = Date.now();
+    const dayMs = 86400000;
+    const todayStart = (() => { const d = new Date(); d.setUTCHours(0, 0, 0, 0); return d.getTime(); })();
+    const tsMs = (r) => Date.parse(r.ts) || 0;
+
+    const uniqueHumans = new Set(humans.map((h) => h.ip)).size;
+    const humansToday = humans.filter((h) => tsMs(h) >= todayStart).length;
+    const humans7 = humans.filter((h) => tsMs(h) >= now - 7 * dayMs).length;
+    const humans30 = humans.filter((h) => tsMs(h) >= now - 30 * dayMs).length;
+
+    // Daily chart (human vs bot), last 30 calendar days incl. empty days.
+    const byDay = new Map();
+    for (const r of rows) {
+      const day = (r.ts || "").slice(0, 10);
+      if (!day) continue;
+      const e = byDay.get(day) || { h: 0, b: 0 };
+      if (r._kind === "human") e.h++; else e.b++;
+      byDay.set(day, e);
+    }
+    const days = [];
+    for (let i = 29; i >= 0; i--) {
+      const ds = new Date(todayStart - i * dayMs).toISOString().slice(0, 10);
+      const e = byDay.get(ds) || { h: 0, b: 0 };
+      days.push({ ds, h: e.h, b: e.b });
+    }
+    const dayMax = Math.max(...days.map((d) => d.h + d.b), 1);
+    const chartBars = days.map((d) => {
+      const hH = Math.round((d.h / dayMax) * 100);
+      const bH = Math.round((d.b / dayMax) * 100);
+      return `<div class="col" title="${d.ds} — ${d.h} visitors, ${d.b} bots">` +
+        `<div class="col-bars"><div class="seg human" style="height:${hH}%"></div>` +
+        `<div class="seg bot" style="height:${bH}%"></div></div>` +
+        `<div class="col-lbl">${esc(d.ds.slice(5))}</div></div>`;
+    }).join("");
+
+    // Breakdowns (real visitors by default; include bots when toggled).
+    const base = showBots ? rows : humans;
+    const total = base.length;
+    const countryEntries = topN(countBy(base, (r) => r.country), 8)
+      .map((e) => ({ label: `${flag(e.key)} ${esc(countryName(e.key))}`, count: e.count }));
+    const pageEntries = topN(countBy(base, (r) => r.path), 8)
+      .map((e) => ({ label: esc(prettyPage(e.key)), count: e.count }));
+    const sourceEntries = topN(countBy(base, (r) => sourceOf(r.referer)), 8)
+      .map((e) => ({ label: esc(e.key), count: e.count }));
+    const deviceEntries = topN(countBy(humans, (r) => parseUA(r.ua).device), 4)
+      .map((e) => ({ label: esc(e.key), count: e.count }));
+    const browserEntries = topN(countBy(humans, (r) => parseUA(r.ua).browser), 6)
+      .map((e) => ({ label: esc(e.key), count: e.count }));
+
+    // Visitor journeys — group each human's hits into sessions (30-min gap).
+    const byIp = new Map();
+    for (const h of humans) {
+      let arr = byIp.get(h.ip);
+      if (!arr) { arr = []; byIp.set(h.ip, arr); }
+      arr.push(h);
+    }
+    const SESSION_GAP = 30 * 60000;
+    const sessions = [];
+    for (const [ip, list] of byIp) {
+      list.sort((a, b) => tsMs(a) - tsMs(b));
+      let cur = null;
+      for (const r of list) {
+        const t = tsMs(r);
+        if (!cur || t - cur.end > SESSION_GAP) {
+          cur = { ip, country: r.country, city: r.city, region: r.region, ua: r.ua, referer: r.referer, start: t, end: t, pages: [] };
+          sessions.push(cur);
+        }
+        cur.end = t;
+        const pg = prettyPage(r.path);
+        if (cur.pages[cur.pages.length - 1] !== pg) cur.pages.push(pg);
+      }
+    }
+    sessions.sort((a, b) => b.start - a.start);
+    const journeyRows = sessions.slice(0, 25).map((s) => {
+      const ua = parseUA(s.ua);
+      const loc = [s.city, s.region ? null : null, s.country].filter(Boolean); // city + country only
+      const place = [s.city, countryName(s.country)].filter(Boolean).join(", ");
+      const when = new Date(s.start).toISOString().replace("T", " ").slice(0, 16);
+      const mins = Math.max(0, Math.round((s.end - s.start) / 60000));
+      const dur = mins >= 1 ? mins + " min" : "—";
+      const trail = s.pages.slice(0, 12).map((p) => `<span class="chip">${esc(p)}</span>`).join('<span class="arrow">→</span>');
+      const more = s.pages.length > 12 ? ' <span class="muted">…</span>' : "";
+      return `<tr><td class="nowrap">${esc(when)}</td>` +
+        `<td>${flag(s.country)} ${esc(place)}</td>` +
+        `<td><span class="badge">${esc(ua.device)}</span> ${esc(ua.browser)}</td>` +
+        `<td>${esc(sourceOf(s.referer))}</td>` +
+        `<td class="num">${s.pages.length}</td>` +
+        `<td class="muted small nowrap">${dur}</td>` +
+        `<td class="journey">${trail}${more}</td></tr>`;
+    }).join("");
+
+    // Recent visits table.
+    const recentList = (showBots ? rows : humans).slice(0, 300);
+    const visitRows = recentList.map((v) => {
+      const ua = parseUA(v.ua);
+      const badge = v._kind === "human"
+        ? '<span class="badge ok">Human</span>'
+        : (v._kind === "bot"
+          ? `<span class="badge bot" title="${esc(v.ua || "")}">${esc(v._name)}</span>`
+          : `<span class="badge dc" title="${esc(v.org || "")}">Datacenter</span>`);
+      const place = [v.city, countryName(v.country)].filter(Boolean).join(", ");
+      return `<tr><td class="nowrap">${esc((v.ts || "").replace("T", " ").slice(0, 16))}</td>` +
+        `<td>${badge}</td>` +
+        `<td>${flag(v.country)} ${esc(place)}</td>` +
+        `<td class="mono small">${esc(v.ip)}</td>` +
+        `<td>${esc(prettyPage(v.path))}</td>` +
+        `<td>${esc(sourceOf(v.referer))}</td>` +
+        `<td class="small">${esc(ua.device)} · ${esc(ua.browser)} <span class="muted">${esc(ua.os)}</span></td></tr>`;
+    }).join("");
+
+    const dailyRows = [...days].reverse().slice(0, 14).map((d) =>
+      `<tr><td>${esc(d.ds)}</td><td class="num">${d.h}</td><td class="num">${d.b}</td></tr>`
+    ).join("");
+
+    const toggle = showBots
+      ? '<a class="btn" href="/_visits">👤 Real visitors only</a>'
+      : `<a class="btn" href="/_visits?bots=1">🤖 Include bots (${fmt(botCount)})</a>`;
+    const csvHref = showBots ? "/_visits.csv?bots=1" : "/_visits.csv";
+    const viewLabel = showBots ? "All traffic" : "Real visitors";
+
+    const html = `<!doctype html>
 <html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Visitor log — Russo NV</title>
+<title>Visitor analytics — Russo NV</title>
 <style>
-  :root { color-scheme: dark; }
+  :root { color-scheme: dark; --bg:#0e0e10; --panel:#17171a; --panel2:#1d1d21; --line:#2a2a2f; --txt:#ececef; --mut:#9a9aa2; --accent:#e4572e; --bot:#52525b; --ok:#3fb950; --dc:#d29922; }
   * { box-sizing: border-box; }
-  body { margin: 0; background: #0f0f10; color: #e7e7e9; font: 14px/1.5 -apple-system, Segoe UI, Roboto, sans-serif; }
-  header { background: #1a1a1d; padding: 20px 24px; border-bottom: 2px solid #e4572e; }
-  h1 { margin: 0; font-size: 18px; letter-spacing: .04em; text-transform: uppercase; }
-  .sub { color: #9a9aa0; font-size: 12px; margin-top: 4px; }
-  main { padding: 24px; max-width: 1200px; margin: 0 auto; }
-  .cards { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
-  .card { background: #1a1a1d; border: 1px solid #2a2a2e; border-radius: 8px; padding: 16px 20px; min-width: 160px; }
-  .card .n { font-size: 28px; font-weight: 700; color: #e4572e; }
-  .card .l { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: #9a9aa0; }
-  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: #9a9aa0; margin: 28px 0 10px; }
-  table { width: 100%; border-collapse: collapse; background: #161618; border: 1px solid #2a2a2e; border-radius: 8px; overflow: hidden; }
-  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid #232327; vertical-align: top; }
-  th { background: #1f1f23; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: #9a9aa0; position: sticky; top: 0; }
-  tr:last-child td { border-bottom: 0; }
-  .num { text-align: right; font-variant-numeric: tabular-nums; }
-  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
-  .muted { color: #8a8a90; }
-  .small { font-size: 12px; }
-  .nowrap { white-space: nowrap; }
-  .daily { max-width: 420px; }
-  footer { color: #6a6a70; font-size: 12px; padding: 24px; max-width: 1200px; margin: 0 auto; }
+  body { margin:0; background:var(--bg); color:var(--txt); font:14px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
+  a { color:inherit; }
+  header { background:linear-gradient(180deg,#1c1c20,#161619); padding:22px 26px; border-bottom:2px solid var(--accent); }
+  .brand { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  h1 { margin:0; font-size:17px; letter-spacing:.06em; text-transform:uppercase; }
+  .pill { font-size:11px; color:var(--accent); border:1px solid var(--accent); border-radius:999px; padding:2px 10px; letter-spacing:.05em; }
+  .sub { color:var(--mut); font-size:12px; margin-top:6px; }
+  main { padding:24px 26px 60px; max-width:1240px; margin:0 auto; }
+  .controls { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:0 0 22px; }
+  .btn { font-size:12.5px; background:var(--panel2); border:1px solid var(--line); border-radius:7px; padding:7px 13px; text-decoration:none; color:var(--txt); transition:border-color .15s; }
+  .btn:hover { border-color:var(--accent); }
+  .view { color:var(--mut); font-size:12px; margin-left:auto; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin-bottom:30px; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:11px; padding:16px 18px; }
+  .card.hero { background:linear-gradient(160deg,#241410,#17171a); border-color:#5a2a1a; }
+  .card .n { font-size:30px; font-weight:750; line-height:1.1; letter-spacing:-.01em; }
+  .card.hero .n { color:var(--accent); font-size:34px; }
+  .card .l { font-size:10.5px; text-transform:uppercase; letter-spacing:.09em; color:var(--mut); margin-top:6px; }
+  .card.muted .n { color:var(--mut); }
+  h2 { font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--mut); margin:34px 0 12px; }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:11px; padding:18px 20px; }
+  .chart { display:flex; align-items:flex-end; gap:3px; height:150px; padding-top:6px; }
+  .col { flex:1; min-width:0; display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; }
+  .col-bars { flex:1; width:100%; max-width:22px; margin:0 auto; display:flex; flex-direction:column-reverse; justify-content:flex-start; background:#202024; border-radius:3px; overflow:hidden; }
+  .seg { width:100%; }
+  .seg.human { background:var(--accent); }
+  .seg.bot { background:var(--bot); }
+  .col-lbl { font-size:8.5px; color:#70707a; transform:rotate(-90deg); white-space:nowrap; height:34px; line-height:1; margin-top:2px; }
+  .legend { display:flex; gap:18px; margin-top:14px; font-size:12px; color:var(--mut); }
+  .legend i { display:inline-block; width:11px; height:11px; border-radius:3px; margin-right:6px; vertical-align:-1px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+  .grid .panel h3 { margin:0 0 12px; font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--mut); }
+  .bar { display:grid; grid-template-columns:1fr 90px auto; align-items:center; gap:10px; margin:7px 0; font-size:13px; }
+  .bar-label { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .bar-track { background:#202024; border-radius:4px; height:8px; overflow:hidden; }
+  .bar-fill { height:100%; border-radius:4px; }
+  .bar-val { font-variant-numeric:tabular-nums; color:var(--txt); font-size:12.5px; white-space:nowrap; }
+  .bar-pct { color:var(--mut); margin-left:6px; }
+  table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--line); border-radius:11px; overflow:hidden; }
+  th, td { text-align:left; padding:9px 13px; border-bottom:1px solid #232327; vertical-align:top; }
+  th { background:var(--panel2); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--mut); }
+  tr:last-child td { border-bottom:0; }
+  tbody tr:hover { background:#1b1b1f; }
+  .num { text-align:right; font-variant-numeric:tabular-nums; }
+  .mono { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+  .muted { color:var(--mut); } .small { font-size:12px; } .nowrap { white-space:nowrap; }
+  .badge { display:inline-block; font-size:11px; padding:1px 8px; border-radius:999px; background:#26262b; color:#cfcfd6; border:1px solid #34343b; }
+  .badge.ok { background:rgba(63,185,80,.13); color:#6fd585; border-color:rgba(63,185,80,.35); }
+  .badge.bot { background:rgba(228,87,46,.13); color:#f0a085; border-color:rgba(228,87,46,.3); }
+  .badge.dc { background:rgba(210,153,34,.13); color:#e0bf6a; border-color:rgba(210,153,34,.3); }
+  .journey { line-height:2; }
+  .chip { display:inline-block; background:#202024; border:1px solid #303036; border-radius:6px; padding:1px 8px; font-size:11.5px; }
+  .arrow { color:#5a5a63; margin:0 5px; }
+  .scroll { overflow-x:auto; }
+  footer { color:#62626a; font-size:12px; margin-top:34px; border-top:1px solid var(--line); padding-top:18px; }
+  footer a { color:var(--mut); }
 </style></head>
 <body>
 <header>
-  <h1>Russo NV — Visitor log</h1>
-  <div class="sub">Cookieless, server-side. IP &amp; location logged at the edge · rows auto-deleted after ${RETENTION_DAYS} days.</div>
+  <div class="brand"><h1>Russo NV — Visitor analytics</h1><span class="pill">${esc(viewLabel)}</span></div>
+  <div class="sub">Cookieless &amp; server-side · location detected at the Cloudflare edge · data auto-deletes after ${RETENTION_DAYS} days${capped ? " · showing most recent " + fmt(LIMIT) + " events" : ""}</div>
 </header>
 <main>
-  <div class="cards">
-    <div class="card"><div class="n">${totals.hits}</div><div class="l">Page views (90d)</div></div>
-    <div class="card"><div class="n">${totals.visitors}</div><div class="l">Unique IPs (90d)</div></div>
-    <div class="card"><div class="n">${daily[0] ? daily[0].hits : 0}</div><div class="l">Views today/last day</div></div>
+  <div class="controls">
+    ${toggle}
+    <a class="btn" href="${csvHref}">⬇ Download CSV</a>
+    <a class="btn" href="/_visits.json">{ } JSON</a>
+    <span class="view">Breakdowns &amp; journeys reflect: <strong>${esc(viewLabel)}</strong></span>
   </div>
 
-  <h2>Per day (last 30 days)</h2>
-  <table class="daily"><thead><tr><th>Day</th><th class="num">Views</th><th class="num">Unique IPs</th></tr></thead>
-    <tbody>${dailyRows || '<tr><td colspan="3" class="muted">No data yet.</td></tr>'}</tbody></table>
+  <div class="cards">
+    <div class="card hero"><div class="n">${fmt(uniqueHumans)}</div><div class="l">Real visitors (unique)</div></div>
+    <div class="card"><div class="n">${fmt(humans.length)}</div><div class="l">Human page views</div></div>
+    <div class="card"><div class="n">${fmt(humansToday)}</div><div class="l">Visits today</div></div>
+    <div class="card"><div class="n">${fmt(humans7)}</div><div class="l">Last 7 days</div></div>
+    <div class="card"><div class="n">${fmt(humans30)}</div><div class="l">Last 30 days</div></div>
+    <div class="card muted"><div class="n">${fmt(botCount)}</div><div class="l">Bots filtered out</div></div>
+  </div>
 
-  <h2>Recent visits (latest 300)</h2>
-  <table><thead><tr><th>Time (UTC)</th><th>IP</th><th>Location</th><th>Network</th><th>Page</th><th>Referrer</th><th>Device</th></tr></thead>
-    <tbody>${visitRows || '<tr><td colspan="7" class="muted">No visits yet.</td></tr>'}</tbody></table>
+  <h2>Visits per day — last 30 days</h2>
+  <div class="panel">
+    <div class="chart">${chartBars}</div>
+    <div class="legend"><span><i style="background:var(--accent)"></i>Real visitors</span><span><i style="background:var(--bot)"></i>Bots / crawlers</span></div>
+  </div>
+
+  <h2>Where your visitors come from</h2>
+  <div class="grid">
+    <div class="panel"><h3>Top countries</h3>${barList(countryEntries, total)}</div>
+    <div class="panel"><h3>Most-viewed pages</h3>${barList(pageEntries, total, "#5a8dd6")}</div>
+    <div class="panel"><h3>Traffic sources</h3>${barList(sourceEntries, total, "#3fb27f")}</div>
+    <div class="panel"><h3>Devices</h3>${barList(deviceEntries, humans.length, "#b07fd6")}</div>
+    <div class="panel"><h3>Browsers</h3>${barList(browserEntries, humans.length, "#d6a25a")}</div>
+  </div>
+
+  <h2>Visitor journeys — recent sessions (real visitors)</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Started (UTC)</th><th>Location</th><th>Device</th><th>Source</th><th class="num">Pages</th><th>Time</th><th>Path through the site</th></tr></thead>
+    <tbody>${journeyRows || '<tr><td colspan="7" class="muted">No multi-page sessions yet.</td></tr>'}</tbody>
+  </table></div>
+
+  <h2>Recent visits — latest 300 (${esc(viewLabel)})</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Time (UTC)</th><th>Type</th><th>Location</th><th>IP</th><th>Page</th><th>Source</th><th>Device</th></tr></thead>
+    <tbody>${visitRows || '<tr><td colspan="7" class="muted">No visits in this view.</td></tr>'}</tbody>
+  </table></div>
+
+  <h2>Daily totals — last 14 days</h2>
+  <table style="max-width:420px"><thead><tr><th>Day</th><th class="num">Visitors</th><th class="num">Bots</th></tr></thead>
+    <tbody>${dailyRows}</tbody></table>
+
+  <footer>
+    Privacy-friendly analytics — no cookies, no tracking scripts, no consent banner required (GDPR legitimate interest; data auto-deleted after ${RETENTION_DAYS} days).
+    Bot detection is heuristic (User-Agent + originating network) and applied across the whole log. ·
+    <a href="${csvHref}">CSV</a> · <a href="/_visits.json">JSON</a>
+  </footer>
 </main>
-<footer>Raw JSON: <span class="mono">/_visits.json</span> · This page is noindexed and password-protected.</footer>
 </body></html>`;
 
-  return new Response(html, {
-    headers: { "content-type": "text/html; charset=UTF-8", "cache-control": "no-store" },
-  });
+    return new Response(html, {
+      headers: { "content-type": "text/html; charset=UTF-8", "cache-control": "no-store" },
+    });
+  } catch (err) {
+    return plain(
+      "Visitor dashboard hit an error while rendering:\n  " + (err && err.message ? err.message : String(err)) +
+      "\n\nThe raw data is still available at /_visits.json",
+      200
+    );
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -283,7 +660,7 @@ export default {
     }
 
     // Private dashboard — handled here, never falls through to static assets.
-    if (url.pathname === "/_visits" || url.pathname === "/_visits.json") {
+    if (url.pathname === "/_visits" || url.pathname === "/_visits.json" || url.pathname === "/_visits.csv") {
       return handleVisits(request, env);
     }
 
