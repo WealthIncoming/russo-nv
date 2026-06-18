@@ -71,9 +71,9 @@ export const translations: Record<Language, Translations> = {
 
     // Home Page
     home: {
-      heroTitle: 'Industrial Coating Specialists',
+      heroTitle: 'Industrial Painting Specialists',
       heroTitleLine1: 'Industrial',
-      heroTitleLine2: 'Coatings',
+      heroTitleLine2: 'Painting',
       heroTitleLine3: 'Specialists',
       heroLocation: 'Antwerp, Belgium',
       heroSubtitle: 'Industrial coatings, abrasive blasting, fireproofing and corrosion protection for petrochemical, marine and manufacturing clients across Belgium and the Netherlands.',
@@ -941,9 +941,9 @@ export const translations: Record<Language, Translations> = {
 
     // Home Page
     home: {
-      heroTitle: 'Industriële Coating Specialisten',
+      heroTitle: 'Industriële Schilderwerken Specialisten',
       heroTitleLine1: 'Industriële',
-      heroTitleLine2: 'Coatings',
+      heroTitleLine2: 'Schilderwerken',
       heroTitleLine3: 'Specialisten',
       heroLocation: 'Antwerpen, België',
       heroSubtitle:
