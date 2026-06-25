@@ -208,7 +208,7 @@ const BOT_UA_RE = /bot\b|bot\/|crawl|spider|slurp|mediapartners|bingpreview|face
 
 // Hosting / cloud / scanner networks - traffic from here is automated even when
 // the User-Agent is spoofed to look like a browser.
-const DC_ORG_RE = /amazon|aws|google\s?(llc|cloud|inc)|microsoft|azure|digitalocean|digital\s?ocean|ovh|hetzner|linode|akamai|fastly|vultr|scaleway|contabo|leaseweb|choopa|oracle|alibaba|tencent|huawei|censys|shodan|stretchoid|binaryedge|driftnet|palo\s?alto|internet\s?census|datacamp|m247|cogent|hostwinds|hostinger|namecheap|godaddy|colocrossing|quadranet|servers|data\s?center|datacenter|hosting/i;
+const DC_ORG_RE = /amazon|aws|google\s?(llc|cloud|inc)|microsoft|azure|digitalocean|digital\s?ocean|ovh|hetzner|linode|akamai|fastly|vultr|scaleway|contabo|leaseweb|choopa|oracle|alibaba|tencent|huawei|censys|shodan|stretchoid|binaryedge|driftnet|palo\s?alto|internet\s?census|datacamp|m247|cogent|hostwinds|hostinger|namecheap|godaddy|colocrossing|quadranet|servers|data\s?center|datacenter|hosting|\bvpn\b|proxy|\brelay\b|colocation|code200|collyer|aventice|sabotage|techoff|cia\s?triad|mod\s?mission|aceville|artikel\s?10/i;
 
 const BOT_NAMES = {
   googlebot: "Googlebot", bingbot: "Bingbot", yandexbot: "YandexBot", duckduckbot: "DuckDuckBot",
@@ -221,9 +221,10 @@ const BOT_NAMES = {
   curl: "curl", wget: "wget", "python-requests": "Python script", scrapy: "Scrapy",
 };
 
-function classifyVisit(ua, org) {
+function classifyVisit(ua, org, country) {
   const u = (ua || "").trim();
   if (!u) return { kind: "bot", name: "No user-agent" };
+  if ((country || "").toUpperCase() === "T1") return { kind: "bot", name: "Tor" };
   if (BOT_UA_RE.test(u)) {
     const lower = u.toLowerCase();
     for (const key in BOT_NAMES) {
@@ -385,9 +386,29 @@ async function handleVisits(request, env) {
   try {
     const capped = rows.length >= LIMIT;
     for (const r of rows) {
-      const c = classifyVisit(r.ua, r.org);
+      const c = classifyVisit(r.ua, r.org, r.country);
       r._kind = c.kind;
       r._name = c.name;
+    }
+    // Behavioural pass: catch bots that wear a real browser User-Agent from an
+    // unlisted (residential/proxy) network - either one IP hammering the site,
+    // or one exact User-Agent spread across a fleet of one-hit IPs. Skips the
+    // home market (BE/NL/LU) entirely, so a real Belgian/Dutch visitor sharing a
+    // common phone UA is never hidden; only foreign automated traffic is hit.
+    {
+      const FLOOD = 20, UA_FLEET = 20, HOME = { BE: 1, NL: 1, LU: 1 };
+      const ipHits = new Map(), uaIps = new Map();
+      for (const r of rows) {
+        if (r._kind !== "human") continue;
+        ipHits.set(r.ip, (ipHits.get(r.ip) || 0) + 1);
+        let s = uaIps.get(r.ua); if (!s) { s = new Set(); uaIps.set(r.ua, s); }
+        s.add(r.ip);
+      }
+      for (const r of rows) {
+        if (r._kind !== "human" || HOME[(r.country || "").toUpperCase()]) continue;
+        if ((ipHits.get(r.ip) || 0) > FLOOD) { r._kind = "bot"; r._name = "High-volume IP"; }
+        else if (r.ua && (uaIps.get(r.ua) || new Set()).size >= UA_FLEET) { r._kind = "bot"; r._name = "Bot fleet (shared UA)"; }
+      }
     }
     const humans = rows.filter((r) => r._kind === "human");
     const botCount = rows.length - humans.length;
