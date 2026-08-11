@@ -78,10 +78,10 @@ export default function Header() {
           {/* Logo */}
           <Link to={localize('/')} className="flex items-center flex-shrink-0 whitespace-nowrap">
             <Image
-              src="https://static.wixstatic.com/media/3232e5_648f8bcac8bf401c8bdff7a7ca3f4923~mv2.jpg"
+              src="/images/logo-header.jpg"
               alt="RUSSO N.V. Logo"
-              width={120}
-              height={120}
+              width={459}
+              height={320}
               className="h-16 xl:h-20 w-auto object-contain"
             />
           </Link>

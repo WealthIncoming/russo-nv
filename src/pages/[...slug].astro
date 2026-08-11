@@ -171,6 +171,11 @@ try {
     <Head />
     <title>{localeMeta.title}</title>
     <meta name="description" content={localeMeta.description} />
+    {/* LCP: fetch this route's hero image at highest priority, before the
+        browser discovers it inside the rendered body. */}
+    {localeMeta.image && (
+      <link rel="preload" as="image" href={localeMeta.image} fetchpriority="high" />
+    )}
     <link rel="canonical" href={canonical} />
     {isNoindex && <meta name="robots" content="noindex, follow" />}
 

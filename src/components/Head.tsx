@@ -3,13 +3,21 @@ export const Head = () => {
     <>
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      {/* Fonts */}
-      <link rel="preconnect" href="https://static.parastorage.com" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      {/* Fonts are self-hosted (see src/styles/fonts.css). Preload the two
+          latin variable fonts so text renders without a CSS-then-font chain. */}
       <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+        rel="preload"
+        as="font"
+        type="font/woff2"
+        href="/fonts/inter/inter-var-latin.woff2"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preload"
+        as="font"
+        type="font/woff2"
+        href="/fonts/syne/v24/8vIH7w4qzmVxm2BL9G78HEY.woff2"
+        crossOrigin="anonymous"
       />
     </>
   );
