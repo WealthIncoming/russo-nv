@@ -22,13 +22,15 @@ const RETENTION_DAYS = 90;
 const LEGACY_PATHS = [
   // Old sitemap path (pre-self-host Wix workaround) → canonical /sitemap.xml.
   [/^\/sitemap-feed\/?$/, "/sitemap.xml"],
-  [/^\/gratis-offerte\/?$/, "/contact/"],
+  // Targets are slash-less: the site builds with format:"file" (see
+  // astro.config.mjs), so /path is the canonical 200 and /path/ 308s to it.
+  [/^\/gratis-offerte\/?$/, "/contact"],
   // Specific legacy .be URL → recapture straight onto the dedicated page
   // (must come before the general /diensten rule below).
-  [/^\/diensten\/industriele-schilderwerken(\/.*)?$/, "/services/industriele-schilderwerken/"],
-  [/^\/diensten(\/.*)?$/, "/services/"],
-  [/^\/over-ons\/?$/, "/about/"],
-  [/^\/projecten\/?$/, "/projects/"],
+  [/^\/diensten\/industriele-schilderwerken(\/.*)?$/, "/services/industriele-schilderwerken"],
+  [/^\/diensten(\/.*)?$/, "/services"],
+  [/^\/over-ons\/?$/, "/about"],
+  [/^\/projecten\/?$/, "/projects"],
 ];
 
 function legacyTarget(pathname) {
