@@ -311,7 +311,7 @@ export const ARTICLES: Article[] = [
         {
           type: 'cta',
           title: 'Voorbereiding die wél standhoudt',
-          text: 'Russo NV verzorgt stralen, oppervlaktevoorbehandeling en industriële coatings volgens VCA- en ISO-normen, met meetbare reinheidsgraden en gecontroleerde straalprofielen. Vraag vrijblijvend een offerte of advies aan.',
+          text: 'Russo NV verzorgt stralen, oppervlaktevoorbehandeling en industriële coatings, uitgevoerd onder VCA-gecertificeerde veiligheidsprocedures en volgens de toepasselijke ISO-normen, met meetbare reinheidsgraden en gecontroleerde straalprofielen. Vraag vrijblijvend een offerte of advies aan.',
           buttonLabel: 'Vraag een offerte aan',
           to: '/contact',
         },
@@ -518,7 +518,7 @@ export const ARTICLES: Article[] = [
         {
           type: 'cta',
           title: 'Preparation that actually lasts',
-          text: 'Russo NV delivers blasting, surface preparation and industrial coatings to VCA and ISO standards, with measured cleanliness grades and controlled surface profiles. Request a no-obligation quote or advice.',
+          text: 'Russo NV delivers blasting, surface preparation and industrial coatings, performed under VCA-certified safety procedures and to the applicable ISO standards, with measured cleanliness grades and controlled surface profiles. Request a no-obligation quote or advice.',
           buttonLabel: 'Request a quote',
           to: '/contact',
         },
@@ -541,7 +541,7 @@ export const ARTICLES: Article[] = [
     authorImage: '/images/author-stig.jpg',
     heroImage: '/images/tank-lining-hero.jpg',
     heroAlt: {
-      NL: 'Binnenzijde van een opslagtank tijdens tank lining werken: gestraalde tankbodem en afgeschermde zones door Russo NV',
+      NL: 'Binnenzijde van een opslagtank tijdens tankliningwerken: gestraalde tankbodem en afgeschermde zones door Russo NV',
       EN: 'Inside a storage tank during tank lining works: blasted tank floor and protected zones by Russo NV',
     },
     keywords: {
@@ -551,7 +551,7 @@ export const ARTICLES: Article[] = [
     NL: {
       title: 'Tankcoating en tank lining: zo wordt een opslagtank duurzaam beschermd',
       metaTitle: 'Tankcoating en tank lining: de complete gids | Russo NV',
-      description: 'Hoe wordt een opslagtank vanbinnen en vanbuiten beschermd? Van straalwerk en zoutmetingen tot het liningsysteem, laagdiktes en holiday detectie, volgens ISO en NACE.',
+      description: 'Praktische gids over tankcoating en tank lining: systeemkeuze, stralen, zout- en stofmetingen, laagdikte en holiday detectie voor opslagtanks.',
       excerpt: 'Een tankbekleding werkt onder de zwaarst denkbare omstandigheden: permanent ondergedompeld in het opgeslagen product. Dit is hoe een professionele tank lining tot stand komt, van voorbereiding tot vonktest, volgens de normen die wij dagelijks toepassen.',
       category: 'Tankbescherming',
       body: [
@@ -562,6 +562,11 @@ export const ARTICLES: Article[] = [
             { text: 'industriële schilderwerken', to: '/services/industriele-schilderwerken' },
             ' aan tanks de strengste eisen van het vak, en begint alles bij de voorbereiding.',
           ],
+        },
+        { type: 'h2', text: 'Wat is het verschil tussen tankcoating en tank lining?' },
+        {
+          type: 'p',
+          text: 'Tankcoating is de brede term voor elke beschermlaag op een opslagtank, binnen én buiten. Tank lining (of tankbekleding) is specifieker: het inwendige, immersiebestendige systeem dat in direct contact staat met het opgeslagen product. In de praktijk lopen beide termen door elkaar; in dit artikel behandelen we ze allebei, met de nadruk op de lining, want daar liggen de eisen het hoogst.',
         },
         { type: 'h2', text: 'Waarom een tank de zwaarste omgeving is voor een coating' },
         {
@@ -576,7 +581,7 @@ export const ARTICLES: Article[] = [
         {
           type: 'ul',
           items: [
-            'Binnen: chemisch resistente systemen, doorgaans epoxy fenolisch of epoxy novolac, aangebracht in een of twee lagen tot 300 à 500 µm droge laagdikte.',
+            'Binnen: chemisch resistente systemen, doorgaans epoxy fenolisch of epoxy novolac. De totale droge laagdikte varieert per product en toepassing van ongeveer 300 µm tot meer dan 1.000 µm; het datablad en de projectspecificatie zijn altijd bepalend.',
             'Buiten: een klassiek meerlaagssysteem met zinkrijke primer, epoxy tussenlaag en polyurethaan toplaag voor kleur- en UV-vastheid.',
             'Tankdaken en looppaden: aanvullend antislip- en dakcoatingwerk, vaak gecombineerd met valbeveiligingszones.',
           ],
@@ -594,8 +599,9 @@ export const ARTICLES: Article[] = [
             ['Diesel, gasolie, stookolie', 'Epoxy (standaard of fenolisch)', 'Geleidbaarheid en statische oplading'],
             ['Chemicaliën en solventen', 'Epoxy novolac of fenolisch', 'Resistentielijst fabrikant is bindend'],
             ['Proceswater, bluswater', 'Epoxy, oplosmiddelvrij', 'Osmosebestendigheid'],
-            ['Voeding en drinkwater', 'Gecertificeerde epoxy (o.a. KTW, WRAS)', 'Certificaat en volledige uitharding'],
-            ['Hoge temperatuur of wisselende lading', 'Epoxy novolac, glass flake versterkt', 'Thermische cycli en schokbelasting'],
+            ['Drinkwater', 'Gecertificeerde epoxy', 'Goedkeuring per land (Belgaqua, KTW, WRAS)'],
+            ['Voeding en eetbare oliën', 'Epoxy met voedselcontactgoedkeuring', 'Goedkeuring per product en toepassing'],
+            ['Hoge temperatuur of wisselende lading', 'Epoxy novolac, met glasvlokken versterkt', 'Thermische cycli en schokbelasting'],
           ],
         },
         { type: 'h2', text: 'De uitvoering, stap voor stap' },
@@ -610,13 +616,13 @@ export const ARTICLES: Article[] = [
           segments: [
             'Voor immersiedienst schrijven fabrikanten reinheidsgraad Sa 2½ tot Sa 3 voor, met een hoekig straalprofiel afgestemd op de laagdikte. Hoe dat stralen precies in zijn werk gaat, van reinheidsgraden tot straalprofiel, lees je in onze gids over ',
             { text: 'staal voorbereiden voor coating', to: '/insights/steel-surface-preparation' },
-            '. In een tank komt daar één factor bij: al het straalstof moet er ook weer uit, tot de laatste gram.',
+            '. In een tank komt daar één factor bij: al het straalstof moet er ook weer uit, tot de laatste gram, gecontroleerd met de stoftest volgens ISO 8502-3.',
           ],
         },
         { type: 'h3', text: '3. Oplosbare zouten meten' },
         {
           type: 'p',
-          text: 'Chloriden en sulfaten op het staal trekken later vocht door de coating heen (osmose) en zijn in immersiedienst dé verborgen faalfactor. We meten ze met de Bresle-methode volgens ISO 8502, en reinigen en meten opnieuw tot de waarde onder de grens van de fabrikant ligt, doorgaans 20 tot 50 mg/m² afhankelijk van het product.',
+          text: 'Chloriden en sulfaten op het staal trekken later vocht door de coating heen (osmose) en zijn in immersiedienst dé verborgen faalfactor. We meten ze met de Bresle-methode volgens ISO 8502-6 (of via de geleidbaarheid volgens ISO 8502-9), en reinigen en meten opnieuw tot de waarde onder de grens van de fabrikant ligt, doorgaans 20 tot 50 mg/m² afhankelijk van het product.',
         },
         {
           type: 'image',
@@ -629,7 +635,7 @@ export const ARTICLES: Article[] = [
         { type: 'h3', text: '4. Klimaatbeheersing' },
         {
           type: 'p',
-          text: 'In een gesloten tank bepaal je het klimaat zelf. Met droging en ventilatie houden we de relatieve vochtigheid laag en het staal boven het dauwpunt, zodat er geen flash rust ontstaat tussen stralen en coaten. Klimaatdata worden doorlopend gelogd, van eerste straalbeurt tot laatste laag.',
+          text: 'In een gesloten tank bepaal je het klimaat zelf. Met droging en ventilatie houden we de relatieve vochtigheid laag en het staal boven het dauwpunt, zodat er geen vliegroest (flash rust) ontstaat tussen stralen en coaten. Klimaatdata worden doorlopend gelogd, van eerste straalbeurt tot laatste laag.',
         },
         { type: 'h3', text: '5. Stripe coats en applicatie' },
         {
@@ -640,9 +646,9 @@ export const ARTICLES: Article[] = [
         {
           type: 'ul',
           items: [
-            'Droge laagdikte (DFT): gemeten volgens een vast raster over bodem en wand; het gemiddelde én de minima moeten binnen spec liggen.',
-            'Holiday detectie (vonktest): een hoogspanningstest die elke porie of pinhole in de lining opspoort. In immersiedienst is één gemiste porie voldoende voor doorroest, dus deze test is niet onderhandelbaar.',
-            'Hechting en uitharding: adhesietesten en controle van de uithardingsgraad vóór de tank weer in dienst gaat.',
+            'Droge laagdikte (DFT): gemeten volgens een vast raster over bodem en wand (ISO 19840); het gemiddelde én de minima moeten binnen de projectspecificatie liggen.',
+            'Holiday detectie (poriëntest): met een laagspannings- of hoogspanningsdetector, afhankelijk van het systeem en de laagdikte, worden poriën en pinholes in de lining opgespoord. In immersiedienst is één gemiste porie voldoende voor doorroesting, dus deze test is niet onderhandelbaar.',
+            'Hechting en uitharding: controle van de uithardingsgraad en, waar voorgeschreven, een hechtingsproef vóór de tank weer in dienst gaat.',
             'Rapportage: alle metingen (klimaat, zouten, profiel, DFT, vonktest) in één inspectiedossier voor eigenaar en inspecteur.',
           ],
         },
@@ -661,7 +667,7 @@ export const ARTICLES: Article[] = [
         {
           type: 'p',
           segments: [
-            'Niet elke tank hoeft meteen volledig opnieuw bekleed te worden. Bij lokale schade kan spotrepair een volwaardige oplossing zijn: de zones worden plaatselijk gestraald (bijvoorbeeld met vacustralen, zonder gritverspreiding), de randen aangeschuurd en het systeem laag per laag hersteld tot de originele laagdikte. Is de lining op leeftijd, breed onthecht of chemisch aangetast, dan is volledig herbekleden de enige duurzame keuze. Bekijk onze ',
+            'Niet elke tank hoeft meteen volledig opnieuw bekleed te worden. Bij lokale schade kan een lokale reparatie (spot repair) een volwaardige oplossing zijn: de zones worden plaatselijk gestraald (bijvoorbeeld met vacustralen, zonder gritverspreiding), de randen aangeschuurd en het systeem laag per laag hersteld tot de originele laagdikte. Is de lining op leeftijd, op grote schaal onthecht of chemisch aangetast, dan is volledig herbekleden de enige duurzame keuze. Bekijk onze ',
             { text: 'gerealiseerde tankprojecten', to: '/projects' },
             ' om te zien hoe beide aanpakken er in de praktijk uitzien.',
           ],
@@ -684,11 +690,11 @@ export const ARTICLES: Article[] = [
           items: [
             {
               q: 'Hoe lang gaat een tankcoating mee?',
-              a: 'Een professioneel aangebrachte tank lining gaat doorgaans 10 tot 20 jaar mee, afhankelijk van het opgeslagen product, de temperatuur en het aantal productwissels. Periodieke inspectie (visueel en met laagdiktemetingen) verlengt de levensduur, omdat lokale schade dan hersteld wordt vóór er onderroest ontstaat.',
+              a: 'Als vuistregel gaat een professioneel aangebrachte tank lining 10 tot 20 jaar mee, maar een universele levensduur bestaat niet: het opgeslagen product, de temperatuur, het reinigingsregime en het aantal productwissels maken het verschil. Periodieke inspectie (visueel en met laagdiktemetingen) verlengt de levensduur, omdat lokale schade dan hersteld wordt vóór er onderroest ontstaat.',
             },
             {
               q: 'Wat is holiday detectie of een vonktest?',
-              a: 'Een holiday test spoort onzichtbare poriën en pinholes in een coating op met een hoogspanningselektrode. Op elke plek waar de lining onderbroken is, slaat een vonk over naar het geleidende staal. In immersiedienst is deze test essentieel: één gemiste porie volstaat voor lokale doorroest van de tankwand.',
+              a: 'Een holiday test spoort onzichtbare poriën en pinholes in een coating op met een laagspannings- of hoogspanningsdetector, afhankelijk van het systeem en de laagdikte; methode en testspanning volgen het datablad en de projectspecificatie. In immersiedienst is deze test essentieel: één gemiste porie volstaat voor lokale doorroesting van de tankwand.',
             },
             {
               q: 'Welke coating is geschikt voor chemicaliënopslag?',
@@ -708,7 +714,7 @@ export const ARTICLES: Article[] = [
         {
           type: 'cta',
           title: 'Tankbescherming volgens de norm',
-          text: 'Russo NV verzorgt tankcoating en tank lining van straalwerk tot vonktest, volgens VCA- en ISO-normen en met een volledig meetdossier bij oplevering. Vraag vrijblijvend een offerte of advies aan.',
+          text: 'Russo NV verzorgt tankcoating en tank lining van straalwerk tot poriëntest, uitgevoerd onder VCA-gecertificeerde veiligheidsprocedures en volgens de toepasselijke ISO- en AMPP-inspectienormen, met een volledig meetdossier bij oplevering. Vraag vrijblijvend een offerte of advies aan.',
           buttonLabel: 'Vraag een offerte aan',
           to: '/contact',
         },
@@ -717,7 +723,7 @@ export const ARTICLES: Article[] = [
     EN: {
       title: 'Tank coating and tank lining: how storage tanks get lasting protection',
       metaTitle: 'Tank coating and tank lining: the complete guide | Russo NV',
-      description: 'How is a storage tank protected inside and out? From blasting and salt testing to lining systems, film thickness and holiday testing, to ISO and NACE standards.',
+      description: 'A practical guide to tank coating and tank lining: system selection, blasting, salt and dust testing, DFT checks and holiday detection.',
       excerpt: 'A tank lining works under the harshest conditions imaginable: permanently immersed in the stored product. This is how a professional tank lining is built, from preparation to spark testing, following the standards we apply every day.',
       category: 'Tank protection',
       body: [
@@ -728,6 +734,11 @@ export const ARTICLES: Article[] = [
             { text: 'industrial painting', to: '/services/industriele-schilderwerken' },
             ' on tanks is held to the most demanding standards in the trade, and why everything starts with preparation.',
           ],
+        },
+        { type: 'h2', text: 'What is the difference between tank coating and tank lining?' },
+        {
+          type: 'p',
+          text: 'Tank coating is the broad term for any protective layer on a storage tank, inside and out. Tank lining is more specific: the internal, immersion-grade system in direct contact with the stored product. In practice the terms are used interchangeably; this article covers both, with the emphasis on the lining, because that is where the requirements are highest.',
         },
         { type: 'h2', text: 'Why a tank is the harshest environment for any coating' },
         {
@@ -742,7 +753,7 @@ export const ARTICLES: Article[] = [
         {
           type: 'ul',
           items: [
-            'Interior: chemically resistant systems, typically epoxy phenolic or epoxy novolac, applied in one or two coats to 300 to 500 µm dry film thickness.',
+            'Interior: chemically resistant systems, typically epoxy phenolic or epoxy novolac. Total dry film thickness varies by product and service conditions from roughly 300 µm to more than 1,000 µm; the data sheet and project specification always govern.',
             'Exterior: a classic multi-coat system with zinc-rich primer, epoxy intermediate and polyurethane topcoat for colour and UV stability.',
             'Tank roofs and walkways: additional anti-slip and roof coating work, often combined with fall-protection zones.',
           ],
@@ -755,12 +766,13 @@ export const ARTICLES: Article[] = [
         {
           type: 'table',
           caption: 'Typical lining systems per stored product',
-          headers: ['Stored product', 'Typical lining system', 'Point of attention'],
+          headers: ['Stored product', 'Typical lining system', 'Key consideration'],
           rows: [
             ['Diesel, gas oil, fuel oil', 'Epoxy (standard or phenolic)', 'Conductivity and static charge'],
             ['Chemicals and solvents', 'Epoxy novolac or phenolic', 'Manufacturer resistance list is binding'],
             ['Process water, firefighting water', 'Solvent-free epoxy', 'Osmosis resistance'],
-            ['Food and drinking water', 'Certified epoxy (e.g. KTW, WRAS)', 'Certification and full cure'],
+            ['Drinking water', 'Certified epoxy', 'Approval per country (Belgaqua, KTW, WRAS)'],
+            ['Food products and edible oils', 'Epoxy with food-contact approval', 'Approval per product and application'],
             ['High temperature or changing cargo', 'Epoxy novolac, glass flake reinforced', 'Thermal cycling and impact'],
           ],
         },
@@ -768,7 +780,7 @@ export const ARTICLES: Article[] = [
         { type: 'h3', text: '1. Gas-freeing, cleaning and inspection' },
         {
           type: 'p',
-          text: 'A tank is a confined space: gas-free measurement, ventilation and permits come before anything else. Product residue is then removed and the condition of floor, shell and weld seams is assessed. Pitting corrosion or floor deformation must surface now, not after blasting.',
+          text: 'A tank is a confined space: atmospheric testing to confirm gas-free conditions, ventilation and permits come before anything else. Product residue is then removed and the condition of floor, shell and weld seams is assessed. Pitting corrosion or floor deformation must surface now, not after blasting.',
         },
         { type: 'h3', text: '2. Blasting to Sa 2½ or Sa 3' },
         {
@@ -776,13 +788,13 @@ export const ARTICLES: Article[] = [
           segments: [
             'For immersion service, manufacturers specify cleanliness grade Sa 2½ to Sa 3, with an angular blast profile matched to the film thickness. How that blasting works in detail, from cleanliness grades to surface profile, is covered in our guide on ',
             { text: 'preparing steel for coating', to: '/insights/steel-surface-preparation' },
-            '. Inside a tank one extra factor applies: every gram of blast dust has to come back out as well.',
+            '. Inside a tank one extra factor applies: every gram of blast dust has to come back out as well, verified with the dust test to ISO 8502-3.',
           ],
         },
         { type: 'h3', text: '3. Measuring soluble salts' },
         {
           type: 'p',
-          text: 'Chlorides and sulphates on the steel later draw moisture through the coating (osmosis) and are the hidden failure factor in immersion service. We measure them with the Bresle method to ISO 8502, then clean and re-measure until the value sits below the manufacturer limit, typically 20 to 50 mg/m² depending on the product.',
+          text: 'Chlorides and sulphates on the steel later draw moisture through the coating (osmosis) and are the hidden failure factor in immersion service. We measure them with the Bresle method to ISO 8502-6 (or via conductivity to ISO 8502-9), then clean and re-measure until the value sits below the manufacturer limit, typically 20 to 50 mg/m² depending on the product.',
         },
         {
           type: 'image',
@@ -806,9 +818,9 @@ export const ARTICLES: Article[] = [
         {
           type: 'ul',
           items: [
-            'Dry film thickness (DFT): measured on a fixed grid across floor and shell; both the average and the minima must be within spec.',
-            'Holiday detection (spark testing): a high-voltage test that finds every pore or pinhole in the lining. In immersion service a single missed pore is enough for through-rusting, so this test is non-negotiable.',
-            'Adhesion and cure: adhesion tests and cure verification before the tank is returned to service.',
+            'Dry film thickness (DFT): measured on a fixed grid across floor and shell (ISO 19840); both the average and the minima must be within the project specification.',
+            'Holiday detection: low-voltage or high-voltage detection, depending on the coating system and film thickness, traces pores and pinholes in the lining. In immersion service a single missed pore is enough for through-rusting, so this test is non-negotiable.',
+            'Adhesion and cure: cure verification and, where specified, adhesion testing before the tank is returned to service.',
             'Reporting: all measurements (climate, salts, profile, DFT, spark test) in one inspection dossier for owner and inspector.',
           ],
         },
@@ -850,11 +862,11 @@ export const ARTICLES: Article[] = [
           items: [
             {
               q: 'How long does a tank coating last?',
-              a: 'A professionally applied tank lining typically lasts 10 to 20 years, depending on the stored product, temperature and the number of cargo changes. Periodic inspection (visual plus film thickness measurements) extends that life, because local damage gets repaired before under-rusting can develop.',
+              a: 'As a rule of thumb, a professionally applied tank lining lasts 10 to 20 years, but there is no universal service life: the stored product, temperature, cleaning regime and number of cargo changes make the difference. Periodic inspection (visual plus film thickness measurements) extends that life, because local damage gets repaired before under-rusting can develop.',
             },
             {
               q: 'What is holiday detection or spark testing?',
-              a: 'A holiday test finds invisible pores and pinholes in a coating using a high-voltage electrode. Wherever the lining is interrupted, a spark jumps to the conductive steel. In immersion service this test is essential: one missed pore is enough for local through-rusting of the tank shell.',
+              a: 'A holiday test finds invisible pores and pinholes in a coating using a low-voltage or high-voltage detector, depending on the coating system and film thickness; the method and test voltage follow the data sheet and project specification. In immersion service this test is essential: one missed pore is enough for local through-rusting of the tank shell.',
             },
             {
               q: 'Which coating suits chemical storage?',
@@ -866,7 +878,7 @@ export const ARTICLES: Article[] = [
             },
             {
               q: 'Can a damaged tank lining be repaired locally?',
-              a: 'Yes. With local damage the zones are blasted locally, the edges of the existing coating are feathered and the original system is rebuilt coat by coat to the specified thickness, followed by a new spark test on the repaired zones. The condition is that the surrounding lining still adheres well.',
+              a: 'Yes. With local damage the zones are blasted locally, the edges of the existing coating are feathered and the original system is rebuilt coat by coat to the specified thickness, followed by a new holiday test on the repaired zones, provided the surrounding lining still adheres well.',
             },
           ],
         },
@@ -874,7 +886,7 @@ export const ARTICLES: Article[] = [
         {
           type: 'cta',
           title: 'Tank protection to the standard',
-          text: 'Russo NV delivers tank coating and tank lining from blasting to spark testing, to VCA and ISO standards, with a complete measurement dossier at handover. Request a no-obligation quote or advice.',
+          text: 'Russo NV delivers tank coating and tank lining from blasting to holiday testing, performed under VCA-certified safety procedures and the applicable ISO and AMPP inspection standards, with a complete measurement dossier at handover. Request a no-obligation quote or advice.',
           buttonLabel: 'Request a quote',
           to: '/contact',
         },
