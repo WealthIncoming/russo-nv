@@ -75,7 +75,7 @@ const PROJECT_IMAGE_OVERRIDES: Array<{ match: string; main: string; secondary?: 
   },
   {
     match: 'silo renovation',
-    main: '/images/albeton2.jpg',
+    main: '/images/albeton-main.jpg',
     secondary: '/images/albeton1.jpg',
   },
 ];
