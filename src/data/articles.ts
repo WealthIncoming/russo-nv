@@ -96,8 +96,8 @@ export const ARTICLES: Article[] = [
       EN: 'NACE Level 2 coating inspector',
     },
     authorBio: {
-      NL: 'Stig Vanmarsenille is NACE Level 2 coating inspector bij Russo NV en begeleidde meer dan 70 industriële straal- en coatingprojecten, van tankbekleding tot staalconstructies in de petrochemie.',
-      EN: 'Stig Vanmarsenille is a NACE Level 2 coating inspector at Russo NV and has overseen more than 70 industrial blasting and coating projects, from tank lining to structural steel in petrochemicals.',
+      NL: 'Stig Vanmarsenille is NACE Level 2 coating inspector bij Russo NV. Hij keurt en begeleidt dagelijks industriële straal- en coatingwerken op de werf, van tankbekleding tot staalconstructies in de petrochemie.',
+      EN: 'Stig Vanmarsenille is a NACE Level 2 coating inspector at Russo NV. He inspects and supervises industrial blasting and coating work on site every day, from tank linings to structural steel in petrochemicals.',
     },
     authorUrl: 'https://www.linkedin.com/in/stig-vanmarsenille-747176b9/',
     authorImage: '/images/author-stig.jpg',
@@ -534,8 +534,8 @@ export const ARTICLES: Article[] = [
       EN: 'NACE Level 2 coating inspector',
     },
     authorBio: {
-      NL: 'Stig Vanmarsenille is NACE Level 2 coating inspector bij Russo NV en begeleidde meer dan 70 industriële straal- en coatingprojecten, van tankbekleding tot staalconstructies in de petrochemie.',
-      EN: 'Stig Vanmarsenille is a NACE Level 2 coating inspector at Russo NV and has overseen more than 70 industrial blasting and coating projects, from tank lining to structural steel in petrochemicals.',
+      NL: 'Stig Vanmarsenille is NACE Level 2 coating inspector bij Russo NV. Hij keurt en begeleidt dagelijks industriële straal- en coatingwerken op de werf, van tankbekleding tot staalconstructies in de petrochemie.',
+      EN: 'Stig Vanmarsenille is a NACE Level 2 coating inspector at Russo NV. He inspects and supervises industrial blasting and coating work on site every day, from tank linings to structural steel in petrochemicals.',
     },
     authorUrl: 'https://www.linkedin.com/in/stig-vanmarsenille-747176b9/',
     authorImage: '/images/author-stig.jpg',
