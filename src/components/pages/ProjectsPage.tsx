@@ -27,6 +27,7 @@ const PROJECT_TRANSLATION_MAP: Record<string, string> = {
   'crane refurbishment': 'csp',
   'food storage': 'bnfw',
   'anti-slip': 'itcRubis',
+  'silo renovation': 'albeton',
 };
 
 // =============================================================================
@@ -71,6 +72,11 @@ const PROJECT_IMAGE_OVERRIDES: Array<{ match: string; main: string; secondary?: 
     match: 'anti-slip',
     main: '/images/itc1.jpg',
     secondary: '/images/itc2.jpg',
+  },
+  {
+    match: 'silo renovation',
+    main: '/images/albeton2.jpg',
+    secondary: '/images/albeton1.jpg',
   },
 ];
 

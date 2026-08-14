@@ -63,6 +63,7 @@ export default function Header() {
   };
 
   return (
+    <>
     <header ref={headerRef} className="w-full bg-white border-b border-dark-grey/20 sticky top-0 z-50">
       {/* Skip-to-content link: invisible until a keyboard user tabs into it,
           then slides into view. Lets keyboard / screen-reader users bypass
@@ -135,7 +136,7 @@ export default function Header() {
               className="flex items-center gap-2 bg-primary text-primary-foreground font-paragraph font-bold uppercase px-4 xl:px-6 py-3 hover:bg-primary/90 transition-colors whitespace-nowrap"
             >
               {copied ? <Check className="w-4 h-4" /> : <Phone className="w-4 h-4" />}
-              <span>{copied ? t('header', 'numberCopied') : t('header', 'callNow')}</span>
+              <span>{copied ? t('header', 'numberCopied') : HEADER_PHONE_DISPLAY}</span>
             </a>
           </div>
 
@@ -208,5 +209,16 @@ export default function Header() {
         )}
       </AnimatePresence>
     </header>
+
+      {/* Mobile sticky click-to-call bar: always visible, never collides with the menu */}
+      <a
+        href={`tel:${HEADER_PHONE_HREF}`}
+        onClick={onCallClick}
+        className="lg:hidden fixed bottom-0 inset-x-0 z-50 flex items-center justify-center gap-2 bg-primary text-primary-foreground font-paragraph font-bold uppercase py-3.5 shadow-[0_-2px_12px_rgba(0,0,0,0.18)]"
+      >
+        {copied ? <Check className="w-5 h-5" /> : <Phone className="w-5 h-5" />}
+        <span>{copied ? t('header', 'numberCopied') : `${t('header', 'callNow')}: ${HEADER_PHONE_DISPLAY}`}</span>
+      </a>
+    </>
   );
 }

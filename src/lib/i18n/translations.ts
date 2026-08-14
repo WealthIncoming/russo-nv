@@ -531,6 +531,11 @@ export const translations: Record<Language, Translations> = {
       itcRubisClient: 'ITC Rubis',
       itcRubisLocation: 'Zeebrugge, Belgium',
       itcRubisCompleted: 'August 2025',
+      albetonTitle: 'Silo Renovation',
+      albetonDescription: 'Complete renovation and repainting of the cement silos and surrounding steel infrastructure at the Albeton concrete plant in Diemen, near Amsterdam. The scope covered treatment of all corrosion spots, full sanding and cleaning of the surfaces, local touch-ups and the application of a complete new finishing coat across the silos, support structures, piping and conveyor installation. All work was carried out at height while the plant remained fully operational: mixer trucks kept loading beneath the silos and the conveyor belts stayed in service, which required careful phasing, strict safety measures and close coordination with daily production. The full renovation was delivered in two and a half weeks.',
+      albetonClient: 'Albeton',
+      albetonLocation: 'Diemen (Amsterdam), the Netherlands',
+      albetonCompleted: '2026',
     },
 
     // Safety Page
@@ -1405,6 +1410,11 @@ export const translations: Record<Language, Translations> = {
       itcRubisClient: 'ITC Rubis',
       itcRubisLocation: 'Zeebrugge, België',
       itcRubisCompleted: 'augustus 2025',
+      albetonTitle: 'Silorenovatie',
+      albetonDescription: 'Volledige renovatie en herschildering van de cementsilo’s en de omliggende staalstructuur bij de betoncentrale van Albeton in Diemen, bij Amsterdam. De scope omvatte de behandeling van alle roestplekken, het volledig schuren en reinigen van de oppervlakken, plaatselijke bijwerkingen en het aanbrengen van een volledig nieuwe afwerkingslaag op de silo’s, draagstructuren, leidingen en de transportbandinstallatie. Alle werken werden op hoogte uitgevoerd terwijl de fabriek volledig operationeel bleef: mixerwagens laadden onder de silo’s en de transportbanden bleven in dienst, wat een strakke fasering, strikte veiligheidsmaatregelen en nauwe afstemming met de dagelijkse productie vereiste. De volledige renovatie werd in tweeënhalve week opgeleverd.',
+      albetonClient: 'Albeton',
+      albetonLocation: 'Diemen (Amsterdam), Nederland',
+      albetonCompleted: '2026',
     },
 
     // Safety Page
