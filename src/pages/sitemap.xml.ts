@@ -7,6 +7,7 @@ const PAGES = [
   { path: '/',           priority: '1.0', changefreq: 'weekly' },
   { path: '/services',   priority: '0.9', changefreq: 'monthly' },
   { path: '/services/industriele-schilderwerken', priority: '0.9', changefreq: 'monthly' },
+  { path: '/services/tankcoating', priority: '0.9', changefreq: 'monthly' },
   { path: '/industries', priority: '0.8', changefreq: 'monthly' },
   { path: '/projects',   priority: '0.8', changefreq: 'monthly' },
   { path: '/safety',     priority: '0.7', changefreq: 'monthly' },

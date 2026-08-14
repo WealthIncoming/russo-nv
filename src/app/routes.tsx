@@ -17,6 +17,7 @@ import ContactPage from '@/components/pages/ContactPage';
 import ArticlesIndexPage from '@/components/pages/ArticlesIndexPage';
 import ArticlePage from '@/components/pages/ArticlePage';
 import IndustrialPaintingPage from '@/components/pages/IndustrialPaintingPage';
+import TankCoatingPage from '@/components/pages/TankCoatingPage';
 import { PrivacyPage, TermsPage } from '@/components/pages/LegalPage';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { detectLocale, delocalize } from '@/lib/i18n/routes';
@@ -74,6 +75,7 @@ const pageChildren: RouteObject[] = [
   { index: true, element: <HomePage />, routeMetadata: { pageIdentifier: 'home' } },
   { path: 'services',   element: <ServicesPage />,   routeMetadata: { pageIdentifier: 'services' } },
   { path: 'services/industriele-schilderwerken', element: <IndustrialPaintingPage />, routeMetadata: { pageIdentifier: 'service-industrial-painting' } },
+  { path: 'services/tankcoating', element: <TankCoatingPage />, routeMetadata: { pageIdentifier: 'service-tank-coating' } },
   { path: 'industries', element: <IndustriesPage />, routeMetadata: { pageIdentifier: 'industries' } },
   { path: 'projects',   element: <ProjectsPage />,   routeMetadata: { pageIdentifier: 'projects' } },
   { path: 'safety',     element: <SafetyPage />,     routeMetadata: { pageIdentifier: 'safety' } },

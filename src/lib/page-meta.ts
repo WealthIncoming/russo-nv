@@ -57,6 +57,18 @@ export const PAGE_META: Record<string, PageMeta> = {
       image: '/images/services5.jpg',
     },
   },
+  '/services/tankcoating': {
+    NL: {
+      title: 'Tankcoating & Tank Lining voor Opslagtanks | Russo NV',
+      description: 'Tankcoating en tank lining voor opslagtanks: inwendige linings, uitwendige coatings en spot repair. 39 tanks bekleed op Belgische terminals. VCA & ISO gecertificeerd.',
+      image: '/images/gts1.jpg',
+    },
+    EN: {
+      title: 'Tank Coating & Tank Lining for Storage Tanks | Russo NV',
+      description: 'Tank coating and tank lining for storage tanks: internal linings, external coatings and spot repair. 39 tanks coated on Belgian terminals. VCA & ISO certified.',
+      image: '/images/gts1.jpg',
+    },
+  },
   '/industries': {
     NL: {
       title: 'Sectoren: Petrochemie, Maritiem, Voeding & Industrie | Russo NV',

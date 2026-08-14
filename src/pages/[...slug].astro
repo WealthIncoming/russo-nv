@@ -6,7 +6,7 @@ import { ARTICLES, findArticle, type ArticleBlock } from "@/data/articles";
 import "@/styles/global.css";
 
 export function getStaticPaths() {
-  const routes = ['', 'services', 'services/industriele-schilderwerken', 'industries', 'projects', 'safety', 'about', 'contact', 'insights', 'privacy', 'terms'];
+  const routes = ['', 'services', 'services/industriele-schilderwerken', 'services/tankcoating', 'industries', 'projects', 'safety', 'about', 'contact', 'insights', 'privacy', 'terms'];
   const articleRoutes = ARTICLES.map((a) => `insights/${a.slug}`);
   return [...routes, ...articleRoutes].flatMap((r) => [
     { params: { slug: r === '' ? undefined : r } },
@@ -58,6 +58,7 @@ const BREADCRUMB_LABELS: Record<string, { NL: string; EN: string }> = {
   '/':           { NL: 'Home',           EN: 'Home' },
   '/services':   { NL: 'Diensten',       EN: 'Services' },
   '/services/industriele-schilderwerken': { NL: 'Industriële schilderwerken', EN: 'Industrial painting' },
+  '/services/tankcoating': { NL: 'Tankcoating & tank lining', EN: 'Tank coating & lining' },
   '/industries': { NL: 'Sectoren',       EN: 'Industries' },
   '/projects':   { NL: 'Projecten',      EN: 'Projects' },
   '/safety':     { NL: 'Veiligheid',     EN: 'Safety' },

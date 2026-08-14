@@ -10,6 +10,7 @@ const FOOTER_GOOGLE_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=
 
 const SERVICES = [
   { labelKey: 'industrialPainting',   anchor: 'industrialCoatingApplication', to: '/services/industriele-schilderwerken' },
+  { labelKey: 'tankCoatingLining',    anchor: 'corrosionProtection',          to: '/services/tankcoating' },
   { labelKey: 'sandblasting',         anchor: 'sandblastingAbrasive' },
   { labelKey: 'fireproofingCoatings', anchor: 'fireproofingThermal' },
   { labelKey: 'protectiveCoatings',   anchor: 'corrosionProtection' },

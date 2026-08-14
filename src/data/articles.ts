@@ -710,6 +710,14 @@ export const ARTICLES: Article[] = [
             },
           ],
         },
+        {
+          type: 'p',
+          segments: [
+            'Benieuwd hoe wij dit als aannemer aanpakken, van straalwerk tot poriëntest? Bekijk onze dienstenpagina over ',
+            { text: 'tankcoating en tank lining', to: '/services/tankcoating' },
+            '.',
+          ],
+        },
         { type: 'h2', text: 'Hulp nodig bij uw tankproject?' },
         {
           type: 'cta',
@@ -880,6 +888,14 @@ export const ARTICLES: Article[] = [
               q: 'Can a damaged tank lining be repaired locally?',
               a: 'Yes. With local damage the zones are blasted locally, the edges of the existing coating are feathered and the original system is rebuilt coat by coat to the specified thickness, followed by a new holiday test on the repaired zones, provided the surrounding lining still adheres well.',
             },
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'Curious how we handle this as a contractor, from blasting to holiday testing? Have a look at our ',
+            { text: 'tank coating and tank lining', to: '/services/tankcoating' },
+            ' service page.',
           ],
         },
         { type: 'h2', text: 'Need help with your tank project?' },
