@@ -25,12 +25,12 @@ export const PAGE_META: Record<string, PageMeta> = {
     NL: {
       title: 'Industriële Schilderwerken & Stralen Antwerpen | Russo NV',
       description: 'Specialist in industriële schilderwerken, coatings, stralen, brandwerende coatings en corrosiebescherming voor tanks en pijpleidingen. VCA & ISO gecertificeerd, Antwerpen.',
-      image: '/images/home-hero.jpg',
+      image: '/images/og-card.jpg',
     },
     EN: {
       title: 'Industrial Painting & Sandblasting in Antwerp | Russo NV',
       description: 'Specialist industrial painting, coating, blasting, fireproofing and corrosion protection for tanks, pipelines and industrial assets. VCA & ISO certified, Antwerp.',
-      image: '/images/home-hero.jpg',
+      image: '/images/og-card.jpg',
     },
   },
   '/services': {
