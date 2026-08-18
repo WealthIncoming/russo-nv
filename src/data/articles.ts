@@ -568,6 +568,22 @@ export const ARTICLES: Article[] = [
           type: 'p',
           text: 'Tankcoating is de brede term voor elke beschermlaag op een opslagtank, binnen én buiten. Tank lining (of tankbekleding) is specifieker: het inwendige, immersiebestendige systeem dat in direct contact staat met het opgeslagen product. In de praktijk lopen beide termen door elkaar; in dit artikel behandelen we ze allebei, met de nadruk op de lining, want daar liggen de eisen het hoogst.',
         },
+        {
+          type: 'image',
+          src: '/images/tank-coating-exterior.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Buitenzijde van een opslagtank na tankcoating: wit meerlaagssysteem op tank T 296 van 3.053 m³',
+          caption: 'Tankcoating: de buitenzijde van een opslagtank, hier afgewerkt in een wit meerlaagssysteem dat weer, UV en zeelucht moet weerstaan.',
+        },
+        {
+          type: 'image',
+          src: '/images/tank-lining-interior.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Binnenzijde van een opslagtank met lichtblauwe tank lining op wand, dak en verwarmingsspiralen',
+          caption: 'Tank lining: de binnenzijde, volledig bekleed met een immersiebestendig systeem dat dag en nacht in contact staat met het opgeslagen product.',
+        },
         { type: 'h2', text: 'Waarom een tank de zwaarste omgeving is voor een coating' },
         {
           type: 'p',
@@ -610,6 +626,14 @@ export const ARTICLES: Article[] = [
           type: 'p',
           text: 'Een tank is een besloten ruimte: gasvrijmeting, ventilatie en vergunningen komen vóór alles. Daarna wordt productresidu verwijderd en de staat van bodem, wand en lasnaden beoordeeld. Putcorrosie of bodemvervorming moet nu aan het licht komen, niet na het stralen.',
         },
+        {
+          type: 'image',
+          src: '/images/tank-cleaning.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Tankwand tijdens de reiniging met krijtmarkeringen die de waszones per aantal wasbeurten aanduiden',
+          caption: 'Reiniging van de tankwand: elke zone wordt gemarkeerd en gewassen tot al het productresidu verwijderd is.',
+        },
         { type: 'h3', text: '2. Stralen tot Sa 2½ of Sa 3' },
         {
           type: 'p',
@@ -618,6 +642,14 @@ export const ARTICLES: Article[] = [
             { text: 'staal voorbereiden voor coating', to: '/insights/steel-surface-preparation' },
             '. In een tank komt daar één factor bij: al het straalstof moet er ook weer uit, tot de laatste gram, gecontroleerd met de stoftest volgens ISO 8502-3.',
           ],
+        },
+        {
+          type: 'image',
+          src: '/images/tank-blasting-sa25.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Vers gestraalde onderste wandring in een opslagtank, blank staal tot reinheidsgraad Sa 2½',
+          caption: 'Vers gestraald staal onderaan de tankwand: de reinheidsgraad Sa 2½ tekent zich scherp af tegen de nog te stralen wand erboven.',
         },
         { type: 'h3', text: '3. Oplosbare zouten meten' },
         {
@@ -636,6 +668,14 @@ export const ARTICLES: Article[] = [
         {
           type: 'p',
           text: 'In een gesloten tank bepaal je het klimaat zelf. Met droging en ventilatie houden we de relatieve vochtigheid laag en het staal boven het dauwpunt, zodat er geen vliegroest (flash rust) ontstaat tussen stralen en coaten. Klimaatdata worden doorlopend gelogd, van eerste straalbeurt tot laatste laag.',
+        },
+        {
+          type: 'image',
+          src: '/images/tank-climate-log.jpg',
+          width: 900,
+          height: 900,
+          alt: 'Dauwpuntmeter in een opslagtank: 13,4 procent relatieve vochtigheid en staal 27,4 graden boven het dauwpunt',
+          caption: 'De klimaatlogger tijdens de werken: 13,4 % relatieve vochtigheid en staal ruim 27 °C boven het dauwpunt, ver binnen de veilige marge tegen vliegroest.',
         },
         { type: 'h3', text: '5. Stripe coats en applicatie' },
         {
@@ -748,6 +788,22 @@ export const ARTICLES: Article[] = [
           type: 'p',
           text: 'Tank coating is the broad term for any protective layer on a storage tank, inside and out. Tank lining is more specific: the internal, immersion-grade system in direct contact with the stored product. In practice the terms are used interchangeably; this article covers both, with the emphasis on the lining, because that is where the requirements are highest.',
         },
+        {
+          type: 'image',
+          src: '/images/tank-coating-exterior.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Exterior of a storage tank after tank coating: white multi-coat system on tank T 296 of 3,053 m³',
+          caption: 'Tank coating: the exterior of a storage tank, finished here in a white multi-coat system built to withstand weather, UV and sea air.',
+        },
+        {
+          type: 'image',
+          src: '/images/tank-lining-interior.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Interior of a storage tank with a light blue tank lining on shell, roof and heating coils',
+          caption: 'Tank lining: the interior, fully lined with an immersion-grade system in contact with the stored product day and night.',
+        },
         { type: 'h2', text: 'Why a tank is the harshest environment for any coating' },
         {
           type: 'p',
@@ -790,6 +846,14 @@ export const ARTICLES: Article[] = [
           type: 'p',
           text: 'A tank is a confined space: atmospheric testing to confirm gas-free conditions, ventilation and permits come before anything else. Product residue is then removed and the condition of floor, shell and weld seams is assessed. Pitting corrosion or floor deformation must surface now, not after blasting.',
         },
+        {
+          type: 'image',
+          src: '/images/tank-cleaning.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Tank shell during cleaning with chalk markings indicating the wash zones and number of wash passes',
+          caption: 'Cleaning the tank shell: every zone is marked and washed until all product residue is gone.',
+        },
         { type: 'h3', text: '2. Blasting to Sa 2½ or Sa 3' },
         {
           type: 'p',
@@ -798,6 +862,14 @@ export const ARTICLES: Article[] = [
             { text: 'preparing steel for coating', to: '/insights/steel-surface-preparation' },
             '. Inside a tank one extra factor applies: every gram of blast dust has to come back out as well, verified with the dust test to ISO 8502-3.',
           ],
+        },
+        {
+          type: 'image',
+          src: '/images/tank-blasting-sa25.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Freshly blasted lower shell ring inside a storage tank, bare steel to cleanliness grade Sa 2½',
+          caption: 'Freshly blasted steel at the base of the tank shell: cleanliness grade Sa 2½ stands out sharply against the untreated shell above.',
         },
         { type: 'h3', text: '3. Measuring soluble salts' },
         {
@@ -816,6 +888,14 @@ export const ARTICLES: Article[] = [
         {
           type: 'p',
           text: 'Inside a closed tank you set the climate yourself. With dehumidification and ventilation we keep relative humidity low and the steel above the dew point, so no flash rust forms between blasting and coating. Climate data is logged continuously, from the first blast to the final coat.',
+        },
+        {
+          type: 'image',
+          src: '/images/tank-climate-log.jpg',
+          width: 900,
+          height: 900,
+          alt: 'Dew point meter inside a storage tank: 13.4 percent relative humidity and steel 27.4 degrees above the dew point',
+          caption: 'The climate logger during the works: 13.4% relative humidity and steel a full 27 °C above the dew point, well within the safe margin against flash rust.',
         },
         { type: 'h3', text: '5. Stripe coats and application' },
         {
