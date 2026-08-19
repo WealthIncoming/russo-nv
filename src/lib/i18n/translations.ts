@@ -940,7 +940,7 @@ export const translations: Record<Language, Translations> = {
       vcaCertified: 'VCA Gecertificeerd',
       naceCertified: 'NACE Gecertificeerd',
       isoCertified: 'ISO Gecertificeerd',
-      safetyCompliant: 'Veiligheidsvoldoende',
+      safetyCompliant: 'Conform veiligheidsnormen',
       allRightsReserved: 'Alle rechten voorbehouden.',
       privacyPolicy: 'Privacybeleid',
       termsOfService: 'Servicevoorwaarden',

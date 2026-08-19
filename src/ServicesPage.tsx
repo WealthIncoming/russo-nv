@@ -173,7 +173,7 @@ export default function ServicesPage() {
       <section className="relative w-full max-w-[120rem] mx-auto min-h-[60vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://static.wixstatic.com/media/3232e5_9c963dcc60f34f52af898b723a8fc190~mv2.png?originWidth=1152&originHeight=640"
+            src="/images/legacy/wx-9c963dcc60f3.jpg"
             alt={t('services', 'heroImageAlt')}
             className="w-full h-full object-cover"
             width={1920}
@@ -241,7 +241,7 @@ export default function ServicesPage() {
                             src={
                               getServiceImageOverride(service.serviceName) ||
                               service.serviceImage ||
-                              'https://static.wixstatic.com/media/3232e5_361542816ae042acac6c1000f5ee8a72~mv2.png?originWidth=768&originHeight=448'
+                              '/images/legacy/wx-361542816ae0.jpg'
                             }
                             alt={service.serviceName || 'Industrial service'}
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

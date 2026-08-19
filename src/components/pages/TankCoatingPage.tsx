@@ -49,7 +49,7 @@ const CONTENT = {
     scopeTitle: 'Wat onze tankcoating omvat',
     scope: [
       { title: 'Inwendige tank linings', text: 'Chemisch resistente systemen (epoxy fenolisch, epoxy novolac, glasvlokversterkt) voor immersiedienst, afgestemd op het opgeslagen product.' },
-      { title: 'Uitwendige tankcoating', text: 'Meerlaagssystemen tegen corrosie, UV en zeelucht (tot klasse C5-M), voor tankwanden, daken en staalstructuren.' },
+      { title: 'Uitwendige tankcoating', text: 'Meerlaagssystemen tegen corrosie, UV en zeelucht (tot klasse C5, voorheen C5-M), voor tankwanden, daken en staalstructuren.' },
       { title: 'Tankdaken & antislip', text: 'Dakcoatings tegen weersinvloeden en antislipsystemen voor looppaden en toegangszones op de tank.' },
       { title: 'Spot repair & renovatie', text: 'Lokale herstelling van beschadigde linings, onder meer met vacustralen: geen gritverspreiding, minimale impact op de terminal.' },
       { title: 'Straalwerk in besloten ruimte', text: 'Stralen tot Sa 2½ of Sa 3 in de tank, met zout- en stofmetingen (ISO 8502) en gecontroleerd klimaat.' },
@@ -68,7 +68,7 @@ const CONTENT = {
     sectorsTitle: 'Voor welke sectoren',
     whyTitle: 'Waarom Russo NV',
     why: [
-      { icon: BadgeCheck, title: 'Gecertificeerd', text: 'VCA en ISO 9001, werkend volgens ISO 8501/8502, ISO 19840 en AMPP-inspectienormen.' },
+      { icon: BadgeCheck, to: '/safety', title: 'Gecertificeerd', text: 'VCA en ISO 9001, werkend volgens ISO 8501/8502, ISO 19840 en AMPP-inspectienormen.' },
       { icon: ClipboardCheck, title: 'Terminal-referenties', text: '39 tanks bekleed voor Sea Tank Terminal, Ghent Transport & Storage en ITC Rubis, inwendig en uitwendig.' },
       { icon: Ruler, title: 'Meetbare kwaliteit', text: 'Reinheidsgraad, zouten, laagdikte en poriëntest: alles wordt gemeten en gerapporteerd.' },
       { icon: Clock, title: 'Minimale downtime', text: 'Gefaseerde uitvoering in operationele terminals, afgestemd op uw planning en producthandling.' },
@@ -101,7 +101,7 @@ const CONTENT = {
     scopeTitle: 'What our tank coating covers',
     scope: [
       { title: 'Internal tank linings', text: 'Chemically resistant systems (epoxy phenolic, epoxy novolac, glass flake reinforced) for immersion service, matched to the stored product.' },
-      { title: 'External tank coating', text: 'Multi-coat systems against corrosion, UV and sea air (up to class C5-M), for tank shells, roofs and steel structures.' },
+      { title: 'External tank coating', text: 'Multi-coat systems against corrosion, UV and sea air (up to class C5, formerly C5-M), for tank shells, roofs and steel structures.' },
       { title: 'Tank roofs & anti-slip', text: 'Roof coatings against the weather and anti-slip systems for walkways and access zones on the tank.' },
       { title: 'Spot repair & refurbishment', text: 'Local repair of damaged linings, including vacuum blasting: no grit spread, minimal impact on the terminal.' },
       { title: 'Confined-space blasting', text: 'Blasting to Sa 2½ or Sa 3 inside the tank, with salt and dust testing (ISO 8502) and a controlled climate.' },
@@ -120,7 +120,7 @@ const CONTENT = {
     sectorsTitle: 'Sectors we serve',
     whyTitle: 'Why Russo NV',
     why: [
-      { icon: BadgeCheck, title: 'Certified', text: 'VCA and ISO 9001, working to ISO 8501/8502, ISO 19840 and AMPP inspection standards.' },
+      { icon: BadgeCheck, to: '/safety', title: 'Certified', text: 'VCA and ISO 9001, working to ISO 8501/8502, ISO 19840 and AMPP inspection standards.' },
       { icon: ClipboardCheck, title: 'Terminal references', text: '39 tanks coated for Sea Tank Terminal, Ghent Transport & Storage and ITC Rubis, internal and external.' },
       { icon: Ruler, title: 'Measurable quality', text: 'Cleanliness grade, salts, film thickness and holiday testing: everything is measured and reported.' },
       { icon: Clock, title: 'Minimal downtime', text: 'Phased execution on live terminals, planned around your operations and product handling.' },
@@ -282,7 +282,13 @@ export default function TankCoatingPage() {
           {c.why.map((w) => (
             <div key={w.title} className="border-l-4 border-primary pl-6">
               <w.icon className="w-9 h-9 text-primary mb-4" />
-              <h3 className="font-heading text-xl text-foreground mb-2">{w.title}</h3>
+              {'to' in w ? (
+                <Link to={localize(w.to)}>
+                  <h3 className="font-heading text-xl text-foreground mb-2 hover:text-primary transition-colors">{w.title}</h3>
+                </Link>
+              ) : (
+                <h3 className="font-heading text-xl text-foreground mb-2">{w.title}</h3>
+              )}
               <p className="font-paragraph text-sm text-foreground/70 leading-relaxed">{w.text}</p>
             </div>
           ))}

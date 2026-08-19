@@ -2,7 +2,7 @@
   "_meta": {
     "source": "Wix CMS export (siteId a29b1c3f-d486-44fd-b8b5-963634ce844f)",
     "exportedOn": "2026-06-11",
-    "note": "Frozen snapshot of the 5 live CMS collections for the self-hosted build. System fields (_owner/_createdDate/_updatedDate) stripped; _id kept for traceability. Image URLs still point at static.wixstatic.com and will be localised in the image phase. One serviceImage uses the wix:image:// scheme and needs conversion."
+    "note": "Frozen snapshot of the 5 live CMS collections for the self-hosted build. System fields (_owner/_createdDate/_updatedDate) stripped; _id kept for traceability. All image URLs localised to /images/legacy/ on 2026-08-19 (Wix dependency removed ahead of the Wix plan cancellation)."
   },
   "projectportfolio": [
     {
@@ -21,8 +21,8 @@
       "clientName": "Sea Tank Terminal",
       "projectLocation": "Port of Antwerp, Belgium",
       "completionDate": "2025-10-15",
-      "mainProjectImage": "https://static.wixstatic.com/media/3232e5_8b2cbf3ec2d145bd89b8b1733c9be1ea~mv2.jpg?originWidth=4000&originHeight=3000",
-      "secondaryProjectImage": "https://static.wixstatic.com/media/3232e5_140243a4f7574269bede3f994e878ef2~mv2.jpg?originWidth=3000&originHeight=4000",
+      "mainProjectImage": "/images/legacy/wx-8b2cbf3ec2d1.jpg",
+      "secondaryProjectImage": "/images/legacy/wx-140243a4f757.jpg",
       "projectDescription": "Large-scale refurbishment of 15 storage tanks at Sea Tank Terminal in the Port of Antwerp, one of Europe's largest independent tank storage facilities. The project involved deploying advanced hydro-jet robotic technology for exterior surface preparation and coating removal, ensuring precision cleaning with minimal environmental impact. Select tanks also required internal blasting and coating to meet strict chemical storage standards. The scale of the program demanded meticulous project planning, phased execution across multiple tank farms, and continuous coordination with terminal operations to maintain uninterrupted storage capacity throughout the project duration."
     },
     {
@@ -31,8 +31,8 @@
       "clientName": "Ghent Tank Storage (GTS)",
       "projectLocation": "Port of Ghent, Belgium",
       "completionDate": "2026-04-01",
-      "mainProjectImage": "https://static.wixstatic.com/media/3232e5_fd4045ae4292476bad43a5a4426d290e~mv2.jpg?originWidth=800&originHeight=600",
-      "secondaryProjectImage": "https://static.wixstatic.com/media/3232e5_430858b3521f47f88af21a65644db968~mv2.jpeg?originWidth=1200&originHeight=1600",
+      "mainProjectImage": "/images/legacy/wx-fd4045ae4292.jpg",
+      "secondaryProjectImage": "/images/legacy/wx-430858b3521f.jpg",
       "projectDescription": "Complete surface preparation and protective coating application for 16 newly constructed storage tanks at Ghent Tank Storage (GTS) in the Port of Ghent. The project encompassed full interior and exterior sandblasting of all tanks, with selected tanks requiring specialized internal lining systems to accommodate a range of chemical and petroleum products. Working on a new-build site presented unique challenges including coordination with ongoing construction activities, strict timeline adherence to meet commissioning deadlines, and ensuring all coatings met the client's stringent specifications for long-term corrosion protection and chemical resistance."
     },
     {
@@ -41,8 +41,8 @@
       "clientName": "CSP Zeebrugge",
       "projectLocation": "Zeebrugge, Belgium",
       "completionDate": "2025-11-20",
-      "mainProjectImage": "https://static.wixstatic.com/media/3232e5_40e3be8b625f4701879673566a5bc1d2~mv2.jpg?originWidth=800&originHeight=1422",
-      "secondaryProjectImage": "https://static.wixstatic.com/media/3232e5_c16bd391ffd94e1b919a08a58fbe39c0~mv2.jpg?originWidth=800&originHeight=600",
+      "mainProjectImage": "/images/legacy/wx-40e3be8b625f.jpg",
+      "secondaryProjectImage": "/images/legacy/wx-c16bd391ffd9.jpg",
       "projectDescription": "Full structural refurbishment and corrosion protection of three large ship-to-shore container cranes at CSP Zeebrugge, a major container handling terminal on the Belgian coast. The project involved comprehensive surface preparation, multi-layer anti-corrosion coating application, and tackling of all structural steel components exposed to the harsh maritime environment. Working at significant heights on active port infrastructure required rigorous safety management, specialized access solutions, and close coordination with terminal operations to minimize disruption to vessel loading and unloading schedules."
     },
     {
@@ -51,8 +51,8 @@
       "clientName": "BNFW",
       "projectLocation": "Zeebrugge, Belgium",
       "completionDate": "2025-05-15",
-      "mainProjectImage": "https://static.wixstatic.com/media/3232e5_8a3b8baaf72548ab80778365e9d521a2~mv2.jpg?originWidth=800&originHeight=960",
-      "secondaryProjectImage": "https://static.wixstatic.com/media/3232e5_df8300d0016349178d55bf685e93dd4f~mv2.jpg?originWidth=4032&originHeight=3024",
+      "mainProjectImage": "/images/legacy/wx-8a3b8baaf725.jpg",
+      "secondaryProjectImage": "/images/legacy/wx-df8300d00163.jpg",
       "projectDescription": "Comprehensive interior refurbishment and protective coating application across multiple large food storage warehouse halls at the BNFW facility in Zeebrugge. The project required full surface preparation and application of food-grade coating systems compliant with strict food hygiene regulations and HACCP standards. Each hall underwent complete corrosion treatment and received specialized coatings designed to withstand frequent cleaning cycles, temperature fluctuations, and the demands of an active food storage environment. Phased execution ensured continuous warehouse availability for the client's operations throughout the project."
     },
     {
@@ -61,8 +61,8 @@
       "clientName": "ITC Rubis",
       "projectLocation": "Zeebrugge, Belgium",
       "completionDate": "2025-08-20",
-      "mainProjectImage": "https://static.wixstatic.com/media/3232e5_c44c54cf00b948c5a23073de29c91cbc~mv2.jpg?originWidth=4000&originHeight=3000",
-      "secondaryProjectImage": "https://static.wixstatic.com/media/3232e5_902cf0f69cd44fe09315460d9905cd3b~mv2.jpg?originWidth=3000&originHeight=4000",
+      "mainProjectImage": "/images/legacy/wx-c44c54cf00b9.jpg",
+      "secondaryProjectImage": "/images/legacy/wx-902cf0f69cd4.jpg",
       "projectDescription": "Specialized coating project for eight large storage tanks at the ITC Rubis terminal in Zeebrugge, focusing on anti-slip safety coatings for walkways and access areas, and protective coating application on shell roofs exposed to coastal weather conditions. The anti-slip systems were engineered to meet stringent safety standards for personnel working at height on tank surfaces, while the shell roof coatings provided long-term protection against UV degradation, salt spray corrosion, and rainwater infiltration. All work was carried out in an active terminal environment with strict safety and environmental protocols."
     }
   ],
@@ -70,7 +70,7 @@
     {
       "_id": "b2a22a3a-f592-44cc-9a22-efc0384df1a8",
       "serviceName": "Coating Inspection",
-      "serviceImage": "https://static.wixstatic.com/media/3232e5_34a08d520e034c2d909815ea77cc2f15~mv2.png?originWidth=640&originHeight=640",
+      "serviceImage": "/images/legacy/wx-34a08d520e03.jpg",
       "description": "Our coating inspection services ensure that all applied protective coatings meet the highest industry standards for quality, performance, and durability. We conduct thorough inspections at every stage of the coating process, from surface preparation to final curing, using certified inspectors and advanced testing equipment. Our services include dry film thickness (DFT) measurement, adhesion testing, holiday detection, and visual inspections to verify compliance with project specifications and international standards such as ISO and NACE.",
       "processOverview": "Pre-inspection planning and review of specifications, verification of surface preparation standards, in-process inspection during coating application, testing (DFT, adhesion, holiday detection), documentation and reporting, final inspection and handover.",
       "keyBenefits": "Ensures coating quality and compliance with specifications, prevents premature coating failure, improves asset longevity, supports regulatory and client requirements, reduces costly rework, provides documented quality assurance.",
@@ -79,7 +79,7 @@
     {
       "_id": "332ef426-30c5-4543-bb4b-c23320d9354c",
       "serviceName": "Waterproofing (Kemperol System)",
-      "serviceImage": "wix:image://v1/3232e5_c4c4428a9d81404abe2da0bb6b84d468~mv2.png/ChatGPT%20Image%20Mar%2013,%202026,%2005_05_31%20PM.png#originWidth=1536&originHeight=1024",
+      "serviceImage": "/images/legacy/wx-c4c4428a9d81.jpg",
       "description": "Our industrial waterproofing services using the Kemperol 2K-PUR system provide seamless protection for containment areas, tank foundations, bund walls, sumps, and critical infrastructure exposed to water and chemical infiltration. The reinforced liquid membrane forms a fully bonded waterproof barrier that conforms to complex geometries, joints, penetrations, and structural details without seams.\n\nThis cold-applied system offers excellent resistance to standing water, weather exposure, and aggressive industrial environments. By creating a flexible and durable membrane, Kemperol 2K-PUR protects structural substrates from moisture ingress, deterioration, and long-term damage in demanding industrial facilities.",
       "processOverview": "Inspection and preparation of concrete or steel substrates, cleaning and repair of damaged areas where necessary, application of primer and reinforcement fleece, installation of Kemperol 2K-PUR liquid membrane to create a seamless bonded system, curing and final inspection for quality assurance.",
       "keyBenefits": "Seamless waterproof protection for containment areas and bunds, excellent adhesion to concrete and steel substrates, highly flexible crack-bridging membrane, resistant to standing water and harsh environmental conditions, long-term protection for industrial infrastructure.",
@@ -88,7 +88,7 @@
     {
       "_id": "abd6dbe6-4c85-4238-8c89-b22d917ffdf8",
       "serviceName": "Sandblasting & Abrasive Blasting",
-      "serviceImage": "https://static.wixstatic.com/media/3232e5_09cd6dc6636a45a68522c6d89b9adc76~mv2.png?originWidth=640&originHeight=640",
+      "serviceImage": "/images/legacy/wx-09cd6dc6636a.jpg",
       "description": "Our sandblasting and abrasive blasting services provide superior surface preparation for a wide range of industrial applications. We utilize various abrasive media, including sand, grit, and specialized beads, to effectively remove rust, old coatings, scale, and contaminants, creating an optimal profile for subsequent coatings or treatments. This ensures maximum adhesion and longevity of new protective layers.",
       "processOverview": "Initial surface assessment and masking of sensitive areas, selection of appropriate abrasive media and pressure, controlled blasting to achieve desired surface profile (e.g., SSPC-SP standards), thorough cleaning and dust removal, final inspection.",
       "keyBenefits": "Achieves optimal surface profile for coating adhesion, removes stubborn contaminants, extends coating lifespan, prepares surfaces for inspection and repair, versatile for various materials.",
@@ -97,7 +97,7 @@
     {
       "_id": "3645a6d8-8e69-48c8-ac41-327f5fc98f7e",
       "serviceName": "Industrial Coating Application",
-      "serviceImage": "https://static.wixstatic.com/media/3232e5_34a08d520e034c2d909815ea77cc2f15~mv2.png?originWidth=640&originHeight=640",
+      "serviceImage": "/images/legacy/wx-34a08d520e03.jpg",
       "description": "We specialize in the professional application of high-performance industrial coatings designed to protect assets from corrosion, abrasion, chemical attack, and extreme temperatures. Our expertise covers a broad spectrum of coatings, including epoxies, polyurethanes, zinc-rich primers, and specialized linings, ensuring long-term durability and reduced maintenance costs for critical infrastructure and equipment.",
       "processOverview": "Comprehensive surface preparation (often via blasting), primer application, intermediate coat application (if required), final topcoat application, quality control checks including film thickness and adhesion testing, curing and final inspection.",
       "keyBenefits": "Enhanced asset protection, extended equipment lifespan, reduced maintenance costs, improved operational safety, compliance with industry standards, aesthetic improvement.",
@@ -106,7 +106,7 @@
     {
       "_id": "a7b3c17c-bef9-46bc-8223-58854d5e2753",
       "serviceName": "Fireproofing & Thermal Insulation",
-      "serviceImage": "https://static.wixstatic.com/media/3232e5_065279953e4d40d584084a5d87138c52~mv2.png?originWidth=640&originHeight=640",
+      "serviceImage": "/images/legacy/wx-065279953e4d.jpg",
       "description": "Our fireproofing and thermal insulation services are crucial for protecting structural steel, vessels, and critical equipment from the devastating effects of fire and extreme temperatures. We apply passive fire protection (PFP) materials, such as intumescent coatings and cementitious sprays, to meet stringent fire resistance ratings, and provide thermal insulation solutions to optimize energy efficiency and process control.",
       "processOverview": "Site assessment and material selection based on fire rating requirements, surface preparation, application of fireproofing or insulation material (spray, trowel, or wrap), curing, thickness verification, and final inspection.",
       "keyBenefits": "Increased structural integrity during fire, enhanced personnel safety, compliance with fire safety regulations, reduced energy consumption, process temperature stability, asset protection from heat.",
@@ -115,7 +115,7 @@
     {
       "_id": "13f95f00-75a0-4342-8c35-72415bf9d943",
       "serviceName": "High-Pressure Water Jetting",
-      "serviceImage": "https://static.wixstatic.com/media/3232e5_82431131e6874486b0915f3f5f203dd2~mv2.png?originWidth=640&originHeight=640",
+      "serviceImage": "/images/legacy/wx-82431131e687.jpg",
       "description": "Utilizing state-of-the-art high-pressure water jetting technology, we offer efficient and environmentally friendly solutions for industrial cleaning, surface preparation, and material removal. This method is ideal for descaling, paint stripping, concrete hydro-demolition, and cleaning heat exchangers, tanks, and pipelines, providing a powerful yet non-abrasive alternative to traditional methods.",
       "processOverview": "Safety setup and containment, selection of appropriate pressure and nozzle type, controlled water jetting application, debris collection and disposal, post-cleaning inspection.",
       "keyBenefits": "Environmentally friendly (no chemicals), non-damaging to substrates, highly effective for stubborn deposits, precise cleaning, reduces dust and debris, safe for hazardous environments.",
@@ -124,7 +124,7 @@
     {
       "_id": "96e770be-2ab5-43bf-945e-7897b65ba28d",
       "serviceName": "Corrosion Protection Services",
-      "serviceImage": "https://static.wixstatic.com/media/3232e5_fd619f73ed8c4a2c93f069921507e4db~mv2.png?originWidth=640&originHeight=640",
+      "serviceImage": "/images/legacy/wx-fd619f73ed8c.jpg",
       "description": "Beyond standard coatings, our specialized corrosion protection services address complex challenges in highly corrosive environments. This includes cathodic protection system installation and maintenance, specialized lining applications for tanks and pipes, and comprehensive corrosion surveys and mitigation strategies. We provide tailored solutions to combat various forms of corrosion, ensuring the long-term integrity of critical assets.",
       "processOverview": "Detailed corrosion assessment and analysis, development of a customized protection plan, surface preparation, application of specialized protective systems (e.g., linings, wraps, CP components), ongoing monitoring and maintenance.",
       "keyBenefits": "Prevents premature asset failure, extends operational life, reduces costly repairs, ensures regulatory compliance, enhances safety, optimizes asset performance.",
@@ -135,7 +135,7 @@
     {
       "_id": "f8ab403c-ddb3-4a31-9192-d0891f504d69",
       "industryName": "Chemical Processing",
-      "industryImage": "https://static.wixstatic.com/media/3232e5_c13ea9f625f0452caafe475d30b31910~mv2.png?originWidth=640&originHeight=640",
+      "industryImage": "/images/legacy/wx-c13ea9f625f0.jpg",
       "industryOverview": "The chemical processing industry demands robust protective coatings to withstand highly corrosive environments, extreme temperatures, and constant chemical exposure. Our services ensure the longevity and safety of critical infrastructure.",
       "workDescription": "We specialize in applying advanced chemical-resistant coatings and linings to tanks, vessels, secondary containment areas, structural steel, and process equipment. Our work includes surface preparation to stringent standards, ensuring maximum adhesion and performance of specialized coating systems.",
       "keyServices": "Acid-resistant coatings, epoxy tank linings, urethane coatings, secondary containment solutions, abrasive blasting, high-pressure water jetting, concrete restoration.",
@@ -144,7 +144,7 @@
     {
       "_id": "f2ae1ad4-7cd7-4801-97c0-ab8c812943f8",
       "industryName": "Oil & Gas",
-      "industryImage": "https://static.wixstatic.com/media/3232e5_fc5fa9f932fa4e8cb5d57eeabd4bdc9b~mv2.png?originWidth=640&originHeight=640",
+      "industryImage": "/images/legacy/wx-fc5fa9f932fa.jpg",
       "industryOverview": "Operating in some of the harshest environments, the oil and gas sector requires superior protection against corrosion, abrasion, and fire. Our solutions extend asset life and enhance operational safety.",
       "workDescription": "Our team provides comprehensive coating and surface preparation services for pipelines, storage tanks, offshore platforms, refineries, and processing facilities. This includes anti-corrosion systems, fireproofing, and insulation coatings designed for extreme conditions.",
       "keyServices": "Anti-corrosion coatings, passive fire protection (PFP), thermal insulation coatings, pipeline coatings, abrasive blasting (SSPC standards), tank lining and exterior coating, lead abatement.",
@@ -153,7 +153,7 @@
     {
       "_id": "6a1c6c83-621e-474b-9e40-251fc3ba5b3c",
       "industryName": "Food & Beverage",
-      "industryImage": "https://static.wixstatic.com/media/3232e5_cbb3a8e58f344dddb0a95636d6001484~mv2.png?originWidth=640&originHeight=640",
+      "industryImage": "/images/legacy/wx-cbb3a8e58f34.jpg",
       "industryOverview": "Maintaining hygienic, safe, and durable surfaces is paramount in the food and beverage industry. Our coatings comply with strict regulatory standards, preventing contamination and ensuring operational efficiency.",
       "workDescription": "We apply FDA-compliant and USDA-approved coatings for floors, walls, ceilings, and processing equipment. Our services focus on creating seamless, easy-to-clean, and chemical-resistant surfaces that withstand frequent washdowns and heavy traffic.",
       "keyServices": "Seamless epoxy flooring systems, antimicrobial coatings, USDA-approved coatings, high-build urethanes, concrete polishing, wall and ceiling coatings, non-slip safety surfaces.",
@@ -162,7 +162,7 @@
     {
       "_id": "ad6dd652-2f30-4616-823c-9532b19285c3",
       "industryName": "Power Generation",
-      "industryImage": "https://static.wixstatic.com/media/3232e5_b3334ae0a6c946eea14cb57d2a52c0c1~mv2.png?originWidth=640&originHeight=640",
+      "industryImage": "/images/legacy/wx-b3334ae0a6c9.jpg",
       "industryOverview": "Power plants face unique challenges from extreme temperatures, corrosive chemicals, and constant operational demands. Our protective coatings safeguard critical assets, ensuring reliability and extending service life.",
       "workDescription": "We provide specialized coating solutions for turbines, cooling towers, structural steel, containment areas, stacks, and other vital components. Our work includes high-temperature coatings, corrosion under insulation (CUI) mitigation, and concrete repair.",
       "keyServices": "High-temperature coatings, CUI solutions, protective linings, concrete repair and coatings, lead abatement, abrasive blasting, stack coatings, cooling tower coatings.",
@@ -171,7 +171,7 @@
     {
       "_id": "5f4ea88b-3a7b-49a7-bfe1-65f592591eab",
       "industryName": "Marine & Offshore",
-      "industryImage": "https://static.wixstatic.com/media/3232e5_446edb878b9d46b7ae70e410ff7d5666~mv2.png?originWidth=640&originHeight=640",
+      "industryImage": "/images/legacy/wx-446edb878b9d.jpg",
       "industryOverview": "The marine and offshore sector requires robust protection against saltwater corrosion, abrasion, and harsh weather. Our specialized coatings ensure the integrity and longevity of vessels and offshore structures.",
       "workDescription": "Our services include coating ship hulls, decks, ballast tanks, offshore rigs, and port infrastructure. We utilize advanced anti-fouling coatings, marine epoxies, and tank linings, coupled with ultra-high pressure (UHP) water blasting for superior surface preparation.",
       "keyServices": "Anti-fouling coatings, marine epoxies, ballast tank linings, cargo tank coatings, UHP water blasting, surface preparation to NACE/SSPC standards, deck coatings, splash zone protection.",
@@ -180,7 +180,7 @@
     {
       "_id": "c2f37492-4456-4176-8a82-7d861fa84a70",
       "industryName": "Manufacturing & Industrial",
-      "industryImage": "https://static.wixstatic.com/media/3232e5_7cc535cc3ad546fd9b97b3fc61469476~mv2.png?originWidth=640&originHeight=640",
+      "industryImage": "/images/legacy/wx-7cc535cc3ad5.jpg",
       "industryOverview": "Manufacturing facilities require durable, safe, and aesthetically pleasing surfaces to support continuous operations. Our industrial coatings enhance safety, improve efficiency, and protect valuable assets.",
       "workDescription": "We offer a wide range of services including heavy-duty floor coatings, machinery painting, structural steel protection, safety line striping, and specialized equipment coatings. Our solutions are designed to withstand heavy traffic, chemical spills, and mechanical wear.",
       "keyServices": "Heavy-duty epoxy floor systems, chemical-resistant coatings, anti-slip coatings, machinery repainting, structural steel coatings, abrasive blasting, safety line striping, concrete sealing.",
@@ -189,7 +189,7 @@
     {
       "_id": "fcb5417b-2ce5-4aac-94d7-f7976a88887d",
       "industryName": "Water & Wastewater Treatment",
-      "industryImage": "https://static.wixstatic.com/media/3232e5_fa0ab6dc2dbd4c78ad261a288a7d2cd3~mv2.png?originWidth=640&originHeight=640",
+      "industryImage": "/images/legacy/wx-fa0ab6dc2dbd.jpg",
       "industryOverview": "Water and wastewater treatment facilities are constantly exposed to corrosive chemicals, abrasion, and moisture. Our protective coatings are essential for maintaining structural integrity and preventing leaks.",
       "workDescription": "We specialize in lining clarifiers, digesters, tanks, sumps, and protecting structural components from the harsh conditions prevalent in these environments. Our work ensures long-term performance and compliance with environmental regulations.",
       "keyServices": "Chemical-resistant linings, epoxy coatings, urethane coatings, concrete restoration, containment coatings, secondary containment linings, abrasive blasting, manhole rehabilitation.",
@@ -202,7 +202,7 @@
       "certificationName": "VCA-Petrochemie (2017/6.0)",
       "issuingBody": "Cetradex Certificatie B.V.",
       "description": "The VCA (Veiligheid, Gezondheid en Milieu Checklist Aannemers) certification demonstrates that Russo NV meets strict safety, health, and environmental standards for contractors in high-risk environments.",
-      "logo": "https://static.wixstatic.com/media/3232e5_8cfb6b1b18094938bde12d346b1952b9~mv2.png?originWidth=640&originHeight=640",
+      "logo": "/images/legacy/wx-8cfb6b1b1809.jpg",
       "dateIssued": "2024-03-10",
       "expirationDate": "2027-03-09",
       "certificationUrl": "/documents/russo-nv-vca-petrochemie-2024-2027.pdf"
@@ -212,7 +212,7 @@
       "certificationName": "NACE International Coating Inspector Level 2",
       "issuingBody": "NACE International (now AMPP)",
       "description": "This certification validates Russo NV's expertise in protective coating inspection, ensuring high-quality application and corrosion prevention in industrial settings.",
-      "logo": "https://static.wixstatic.com/media/3232e5_f723caaaf844440f98f8c09627bfdb59~mv2.png?originWidth=640&originHeight=640",
+      "logo": "/images/legacy/wx-f723caaaf844.jpg",
       "expirationDate": "2026-12-01",
       "certificationUrl": "/documents/russo-nv-nace-ampp-coatings-inspector-2026.pdf"
     },
@@ -221,7 +221,7 @@
       "certificationName": "ISO 9001:2015 Quality Management System",
       "issuingBody": "EOS Certification",
       "description": "ISO 9001:2015 certifies that Russo NV consistently provides products and services that meet customer and regulatory requirements, and aims to enhance customer satisfaction through effective system application.",
-      "logo": "https://static.wixstatic.com/media/3232e5_0239bdc2279544e08f20c2557e1fd5a1~mv2.png?originWidth=640&originHeight=640",
+      "logo": "/images/legacy/wx-0239bdc22795.jpg",
       "dateIssued": "2026-05-20",
       "expirationDate": "2029-05-19",
       "certificationUrl": "/documents/russo-nv-iso-9001-2026-2029.pdf"
@@ -231,7 +231,7 @@
       "certificationName": "ISO 14001:2015 Environmental Management System",
       "issuingBody": "International Organization for Standardization (ISO)",
       "description": "ISO 14001:2015 demonstrates Russo NV's commitment to environmental responsibility, providing a framework for managing environmental impacts and improving environmental performance.",
-      "logo": "https://static.wixstatic.com/media/3232e5_f62385e884cd4502a45b4427fe9194cb~mv2.png?originWidth=640&originHeight=640"
+      "logo": "/images/legacy/wx-f62385e884cd.jpg"
     }
   ],
   "companyvalues": [

@@ -42,7 +42,7 @@ export default function MaintenancePage() {
 
       <div className="max-w-2xl w-full flex flex-col items-center text-center">
         <Image
-          src="https://static.wixstatic.com/media/3232e5_48e2024c6d3f441e817637ccdd99f28f~mv2.png"
+          src="/images/logo.png"
           width={200}
           height={200}
           className="h-32 sm:h-44 w-auto object-contain mb-10"

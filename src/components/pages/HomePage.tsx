@@ -110,7 +110,7 @@ const ORGANIZATION_JSON_LD = {
   name: 'Russo NV',
   alternateName: 'Russo Industriële Coatings',
   url: 'https://www.russonv.com',
-  logo: 'https://static.wixstatic.com/media/3232e5_48e2024c6d3f441e817637ccdd99f28f~mv2.png',
+  logo: 'https://www.russonv.com/images/logo.png',
   description: 'Specialist in industriële coatings, stralen en brandwerende coatings in Antwerpen, actief in heel België, Nederland en Luxemburg voor petrochemie, maritieme sector en industrie.',
   address: {
     '@type': 'PostalAddress',

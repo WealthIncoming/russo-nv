@@ -15,6 +15,7 @@ const SITE_URL = 'https://www.russonv.com';
 const HERO_IMAGE = '/images/services5.jpg';
 const PHONE_HREF = '+32475434819';
 const ARTICLE_TO = '/insights/steel-surface-preparation';
+const ARTICLE_ISO_TO = '/insights/corrosion-protection-iso-12944';
 
 const RELATED = [
   { to: '/services#sandblastingAbrasive', NL: 'Stralen & oppervlaktevoorbereiding', EN: 'Blasting & surface preparation' },
@@ -66,10 +67,11 @@ const CONTENT = {
       { step: '05', title: 'Inspectie & oplevering', text: 'Laagdiktemeting, controle en rapportage als bewijs dat de specificatie gehaald is.' },
     ],
     processLink: 'Lees meer: hoe bereid je staal voor op coating',
+    processLinkIso: 'Lees ook: corrosiebescherming volgens ISO 12944',
     sectorsTitle: 'Voor welke sectoren',
     whyTitle: 'Waarom Russo NV',
     why: [
-      { icon: BadgeCheck, title: 'Gecertificeerd', text: 'VCA en ISO 9001, werkend volgens NACE/SSPC- en ISO 12944-normen.' },
+      { icon: BadgeCheck, to: '/safety', title: 'Gecertificeerd', text: 'VCA en ISO 9001, werkend volgens NACE/SSPC- en ISO 12944-normen.' },
       { icon: MapPin, title: 'Op locatie', text: 'Wij komen naar uw site, overal in België en de Benelux, ook in productieomgevingen.' },
       { icon: Ruler, title: 'Meetbare kwaliteit', text: 'Reinheidsgraad, straalprofiel en laagdikte worden gemeten en gerapporteerd.' },
       { icon: ClipboardCheck, title: 'Bewezen referenties', text: 'Grootschalige projecten voor o.a. Sea Tank Terminal, Ghent Transport & Storage, CSP terminals, Pfizer en Katoennatie.' },
@@ -81,7 +83,7 @@ const CONTENT = {
       { q: 'Werken jullie op locatie?', a: 'Ja. Het grootste deel van onze industriële schilderwerken voeren we uit op locatie: in raffinaderijen, op tankterminals, in de haven van Antwerpen en op industriële sites in heel België en de Benelux.' },
       { q: 'Welke coatingsystemen gebruiken jullie?', a: 'Afhankelijk van de blootstelling: zinkrijke primers, epoxy tussenlagen, polyurethaan toplagen en intumescente brandwerende coatings. Het systeem wordt gekozen volgens de corrosieklasse (ISO 12944) en de specificatie van de fabrikant.' },
       { q: 'Welke normen en certificeringen volgen jullie?', a: 'We werken VCA- en ISO 9001-gecertificeerd, volgens ISO 8501 (reinheidsgraden), ISO 12944 (corrosiebescherming) en NACE/SSPC-richtlijnen. Inspecties gebeuren met gekalibreerde meetapparatuur.' },
-      { q: 'Hoe lang gaat een industriële coating mee?', a: 'Een correct opgebouwd systeem op goed voorbereid staal gaat doorgaans 15 tot 25 jaar mee, afhankelijk van de blootstellingsklasse en het onderhoud. De voorbereiding is daarbij de bepalende factor.' },
+      { q: 'Hoe lang gaat een industriële coating mee?', a: 'Een correct opgebouwd systeem op goed voorbereid staal gaat doorgaans 15 tot 25 jaar mee, afhankelijk van de blootstellingsklasse en het onderhoud. Belangrijk: dat is de ontwerpverwachting tot het eerste grote onderhoud volgens ISO 12944, geen garantietermijn. De voorbereiding is daarbij de bepalende factor.' },
     ],
     ctaTitle: 'Klaar voor een offerte?',
     ctaText: 'Bezorg ons uw specificatie of plan een korte inspectie. U krijgt een duidelijke offerte voor uw industriële schilderwerken.',
@@ -118,10 +120,11 @@ const CONTENT = {
       { step: '05', title: 'Inspection & handover', text: 'Film-thickness measurement, checks and reporting as proof the specification was met.' },
     ],
     processLink: 'Read more: how to prepare steel for coating',
+    processLinkIso: 'Also read: corrosion protection to ISO 12944',
     sectorsTitle: 'Sectors we serve',
     whyTitle: 'Why Russo NV',
     why: [
-      { icon: BadgeCheck, title: 'Certified', text: 'VCA and ISO 9001, working to NACE/SSPC and ISO 12944 standards.' },
+      { icon: BadgeCheck, to: '/safety', title: 'Certified', text: 'VCA and ISO 9001, working to NACE/SSPC and ISO 12944 standards.' },
       { icon: MapPin, title: 'On-site', text: 'We come to your site, anywhere in Belgium and the Benelux, including live production environments.' },
       { icon: Ruler, title: 'Measurable quality', text: 'Cleanliness grade, surface profile and film thickness are measured and reported.' },
       { icon: ClipboardCheck, title: 'Proven references', text: 'Large-scale projects for clients including Sea Tank Terminal, Ghent Transport & Storage, CSP terminals, Pfizer and Katoennatie.' },
@@ -133,7 +136,7 @@ const CONTENT = {
       { q: 'Do you work on-site?', a: 'Yes. We carry out most of our industrial painting on-site: in refineries, on tank terminals, in the Port of Antwerp and at industrial sites across Belgium and the Benelux.' },
       { q: 'Which coating systems do you use?', a: 'Depending on the exposure: zinc-rich primers, epoxy intermediates, polyurethane top coats and intumescent fireproofing coatings. The system is chosen to the corrosion class (ISO 12944) and the manufacturer’s specification.' },
       { q: 'Which standards and certifications do you follow?', a: 'We are VCA and ISO 9001 certified, working to ISO 8501 (cleanliness grades), ISO 12944 (corrosion protection) and NACE/SSPC guidelines. Inspections use calibrated measuring equipment.' },
-      { q: 'How long does an industrial coating last?', a: 'A correctly built system on well-prepared steel typically lasts 15 to 25 years, depending on the exposure class and maintenance. Preparation is the decisive factor.' },
+      { q: 'How long does an industrial coating last?', a: 'A correctly built system on well-prepared steel typically lasts 15 to 25 years, depending on the exposure class and maintenance. Important: that is the design expectation until first major maintenance according to ISO 12944, not a guarantee period. Preparation is the decisive factor.' },
     ],
     ctaTitle: 'Ready for a quote?',
     ctaText: 'Send us your specification or schedule a short inspection and you’ll get a clear quote for your industrial painting.',
@@ -255,10 +258,16 @@ export default function IndustrialPaintingPage() {
             </li>
           ))}
         </ol>
-        <Link to={localize(ARTICLE_TO)} className="inline-flex items-center gap-2 mt-10 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all">
-          {c.processLink}
-          <ArrowUpRight className="w-4 h-4" />
-        </Link>
+        <div className="flex flex-col gap-3 mt-10">
+          <Link to={localize(ARTICLE_TO)} className="inline-flex items-center gap-2 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all w-fit">
+            {c.processLink}
+            <ArrowUpRight className="w-4 h-4" />
+          </Link>
+          <Link to={localize(ARTICLE_ISO_TO)} className="inline-flex items-center gap-2 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all w-fit">
+            {c.processLinkIso}
+            <ArrowUpRight className="w-4 h-4" />
+          </Link>
+        </div>
       </section>
 
       {/* Sectors - each links to its section on the Industries page */}
@@ -283,7 +292,13 @@ export default function IndustrialPaintingPage() {
           {c.why.map((w) => (
             <div key={w.title} className="border-l-4 border-primary pl-6">
               <w.icon className="w-9 h-9 text-primary mb-4" />
-              <h3 className="font-heading text-xl text-foreground mb-2">{w.title}</h3>
+              {'to' in w ? (
+                <Link to={localize(w.to)}>
+                  <h3 className="font-heading text-xl text-foreground mb-2 hover:text-primary transition-colors">{w.title}</h3>
+                </Link>
+              ) : (
+                <h3 className="font-heading text-xl text-foreground mb-2">{w.title}</h3>
+              )}
               <p className="font-paragraph text-sm text-foreground/70 leading-relaxed">{w.text}</p>
             </div>
           ))}

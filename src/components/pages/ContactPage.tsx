@@ -39,8 +39,8 @@ const BUSINESS_JSON_LD = {
   url: 'https://www.russonv.com',
   telephone: '+32475434819',
   email: 'info@russonv.be',
-  logo: 'https://static.wixstatic.com/media/3232e5_48e2024c6d3f441e817637ccdd99f28f~mv2.png',
-  image: 'https://static.wixstatic.com/media/3232e5_48e2024c6d3f441e817637ccdd99f28f~mv2.png',
+  logo: 'https://www.russonv.com/images/logo.png',
+  image: 'https://www.russonv.com/images/logo.png',
   priceRange: '€€€',
   address: {
     '@type': 'PostalAddress',
