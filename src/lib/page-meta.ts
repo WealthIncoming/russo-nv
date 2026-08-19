@@ -120,12 +120,12 @@ export const PAGE_META: Record<string, PageMeta> = {
   '/contact': {
     NL: {
       title: 'Contacteer Russo NV: Offertes voor Industriële Coatings | Antwerpen',
-      description: 'Neem contact op met Russo NV voor offertes voor industriële coatings, stralen en brandwerende coatings. Taxandriastraat 35, 2170 Antwerpen. Bel +32 475 43 48 19 of vraag online een offerte aan.',
+      description: 'Neem contact op met Russo NV voor offertes voor industriële coatings, stralen en brandwerende coatings. Taxandriastraat 33-35, 2170 Antwerpen. Bel +32 475 43 48 19 of vraag online een offerte aan.',
       image: '/images/contact-hero.jpg',
     },
     EN: {
       title: 'Contact Russo NV: Industrial Coating Quotes | Antwerp, Belgium',
-      description: 'Get in touch with Russo NV for industrial coating, sandblasting and fireproofing quotes. Taxandriastraat 35, 2170 Antwerp. Call +32 475 43 48 19 or request a quote online.',
+      description: 'Get in touch with Russo NV for industrial coating, sandblasting and fireproofing quotes. Taxandriastraat 33-35, 2170 Antwerp. Call +32 475 43 48 19 or request a quote online.',
       image: '/images/contact-hero.jpg',
     },
   },

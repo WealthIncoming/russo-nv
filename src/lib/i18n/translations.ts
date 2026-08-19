@@ -56,7 +56,7 @@ export const translations: Record<Language, Translations> = {
       coatRemoval: 'Coat Removal',
       companyDescription:
         'Leading industrial coating and surface preparation company serving Belgium and neighboring countries since 1994. Specialized in heavy industry solutions with strict safety compliance.',
-      location: 'Taxandriastraat 35, 2170 Antwerp',
+      location: 'Taxandriastraat 33-35, 2170 Antwerp',
       locationDirections: 'Open in Google Maps',
       backToTop: 'Back to top',
       servingRegion: 'Serving all of Europe',
@@ -558,7 +558,7 @@ export const translations: Record<Language, Translations> = {
       expiredBadge: 'Expired',
       valuesTitle: 'Our',
       valuesHighlight: 'Values',
-      valuesDescription: 'Built on decades of experience and unwavering commitment to excellence',
+      valuesDescription: 'Built on more than 30 years of experience since 1994 and unwavering commitment to excellence',
       safetyCompliance: 'Safety Compliance',
       qualityWorkmanship: 'Quality Workmanship',
       clientCommunication: 'Client Communication',
@@ -626,8 +626,8 @@ export const translations: Record<Language, Translations> = {
       qualityQuality: 'From initial design to final execution, every step is performed to the highest industry standards, guaranteeing lasting value, structural integrity, and aesthetic appeal.',
       qualityClient: 'Regular progress reports, quality assurance checks, and material selections are shared with clients, inviting feedback and ensuring alignment with their vision.',
 
-      expertiseTitle: 'Decades of Expertise',
-      expertiseDescription: 'With over two decades in the industry, our extensive experience translates into efficient, reliable, and innovative solutions for complex projects.',
+      expertiseTitle: '30+ Years of Expertise',
+      expertiseDescription: 'Active in the industry since 1994: more than 30 years of knowledge and experience translate into efficient, reliable and innovative solutions for complex projects.',
       expertiseSafety: 'Our extensive experience has allowed us to develop robust safety management systems and best practices that consistently exceed industry benchmarks.',
       expertiseQuality: 'Years of hands-on experience have honed our skills, enabling us to consistently deliver exceptional workmanship and overcome challenges on even the most complex projects.',
       expertiseClient: 'Our seasoned project managers are adept at communicating complex technical details, project timelines, and potential solutions clearly and concisely to clients.',
@@ -763,7 +763,7 @@ export const translations: Record<Language, Translations> = {
       phoneLabel: 'Phone',
       emailLabel: 'Email',
       locationLabel: 'Location',
-      locationValue: 'Taxandriastraat 35, 2170 Antwerp',
+      locationValue: 'Taxandriastraat 33-35, 2170 Antwerp',
       locationDirections: 'Open in Google Maps',
       servingRegion: 'Serving all of Europe',
       businessHours: 'Business Hours',
@@ -806,7 +806,7 @@ export const translations: Record<Language, Translations> = {
       privacyIntro: 'This Privacy Policy explains how Russo NV collects, uses, and protects personal data through this website. We are committed to handling your information transparently and in line with the EU General Data Protection Regulation (GDPR).',
 
       privacy1Title: 'Who we are',
-      privacy1Body: 'Russo NV is a Belgian company specialized in industrial coating and surface preparation services. Our registered office is at Taxandriastraat 35, 2170 Antwerp, Belgium. Our enterprise and VAT number is BE 0453.001.480 (RPR Antwerp). You can reach us at info@russonv.be or +32 475 43 48 19. For privacy-related questions, contact us using the same details. We act as the data controller for personal data processed through this website.',
+      privacy1Body: 'Russo NV is a Belgian company specialized in industrial coating and surface preparation services. Our registered office is at Taxandriastraat 33-35, 2170 Antwerp, Belgium. Our enterprise and VAT number is BE 0453.001.480 (RPR Antwerp). You can reach us at info@russonv.be or +32 475 43 48 19. For privacy-related questions, contact us using the same details. We act as the data controller for personal data processed through this website.',
 
       privacy2Title: 'What data we collect',
       privacy2Body: 'We collect personal data that you voluntarily share with us, primarily through the contact form on this website (your name, company, email address, phone number, and the content of your message). We also collect basic technical data automatically when you visit the site (IP address, browser type, pages viewed, referring website) for analytics, security, and to keep the site running properly. These automatically collected server logs (including IP address) are kept for up to 90 days and then deleted.',
@@ -839,14 +839,14 @@ export const translations: Record<Language, Translations> = {
       privacy11Body: 'We may update this Privacy Policy from time to time to reflect changes in our practices, services, or applicable law. The most recent version will always be available on this page, with the "Last updated" date shown at the top. Continued use of the website after changes are posted constitutes acceptance of the updated policy.',
 
       privacy12Title: 'Contact us',
-      privacy12Body: 'For any questions about this Privacy Policy or about how we handle your personal data, please contact us at info@russonv.be or by post at Russo NV, Taxandriastraat 35, 2170 Antwerp, Belgium.',
+      privacy12Body: 'For any questions about this Privacy Policy or about how we handle your personal data, please contact us at info@russonv.be or by post at Russo NV, Taxandriastraat 33-35, 2170 Antwerp, Belgium.',
 
       termsTitle: 'Terms of',
       termsTitleHighlight: 'Service',
       termsIntro: 'These Terms of Service govern your use of the website russonv.com. By accessing or using the site, you agree to these Terms. If you do not agree, please do not use the site.',
 
       terms1Title: 'About these terms',
-      terms1Body: 'These Terms of Service ("Terms") govern your use of the website russonv.com (the "Site"). By accessing or using the Site, you agree to be bound by these Terms. If you do not agree, please do not use the Site. Russo NV ("we", "us", "our") is a Belgian company with its registered office at Taxandriastraat 35, 2170 Antwerp, Belgium. Our enterprise and VAT number is BE 0453.001.480 (RPR Antwerp).',
+      terms1Body: 'These Terms of Service ("Terms") govern your use of the website russonv.com (the "Site"). By accessing or using the Site, you agree to be bound by these Terms. If you do not agree, please do not use the Site. Russo NV ("we", "us", "our") is a Belgian company with its registered office at Taxandriastraat 33-35, 2170 Antwerp, Belgium. Our enterprise and VAT number is BE 0453.001.480 (RPR Antwerp).',
 
       terms2Title: 'Our services',
       terms2Body: 'The Site provides information about our industrial coating, surface preparation, and related services. The content is for general information only. Any specific commercial relationship, including the scope, pricing, timeline, and terms of work, is governed by a separate written agreement signed between us and our client. Nothing on the Site constitutes a binding offer.',
@@ -879,7 +879,7 @@ export const translations: Record<Language, Translations> = {
       terms11Body: 'We may update these Terms of Service from time to time. The most recent version will always be available on this page, with the "Last updated" date shown at the top. Continued use of the Site after changes are posted constitutes acceptance of the updated Terms.',
 
       terms12Title: 'Contact us',
-      terms12Body: 'For any questions about these Terms, please contact us at info@russonv.be or by post at Russo NV, Taxandriastraat 35, 2170 Antwerp, Belgium.',
+      terms12Body: 'For any questions about these Terms, please contact us at info@russonv.be or by post at Russo NV, Taxandriastraat 33-35, 2170 Antwerp, Belgium.',
     },
   },
 
@@ -932,7 +932,7 @@ export const translations: Record<Language, Translations> = {
       coatRemoval: 'Coatingverwijdering',
       companyDescription:
         'Toonaangevend bedrijf in industriële coating en oppervlaktebehandeling dat België en buurlanden sinds 1994 bedient. Gespecialiseerd in zware industrieoplossingen met strikte veiligheidsnaleving.',
-      location: 'Taxandriastraat 35, 2170 Antwerpen',
+      location: 'Taxandriastraat 33-35, 2170 Antwerpen',
       locationDirections: 'Openen in Google Maps',
       backToTop: 'Terug naar boven',
       servingRegion: 'Actief in heel Europa',
@@ -1438,7 +1438,7 @@ export const translations: Record<Language, Translations> = {
       expiredBadge: 'Verlopen',
       valuesTitle: 'Onze',
       valuesHighlight: 'Waarden',
-      valuesDescription: 'Gebouwd op decennia van ervaring en een onwrikbare toewijding aan excellentie',
+      valuesDescription: 'Gebouwd op meer dan 30 jaar ervaring sinds 1994 en een onwrikbare toewijding aan excellentie',
       safetyCompliance: 'Veiligheidsnaleving',
       qualityWorkmanship: 'Kwaliteitsvakmanschap',
       clientCommunication: 'Klantcommunicatie',
@@ -1506,8 +1506,8 @@ export const translations: Record<Language, Translations> = {
       qualityQuality: 'Van ontwerp tot oplevering wordt elke stap uitgevoerd volgens de hoogste industrienormen, met een blijvende waarde, structurele integriteit en esthetische uitstraling als resultaat.',
       qualityClient: 'Regelmatige voortgangsrapporten, kwaliteitsborgingscontroles en materiaalselecties worden gedeeld met klanten, waarbij feedback wordt uitgenodigd en afstemming op hun visie wordt gegarandeerd.',
 
-      expertiseTitle: 'Decennia van Expertise',
-      expertiseDescription: 'Met meer dan twee decennia ervaring in de sector vertalen onze uitgebreide kennis en ervaring zich in efficiënte, betrouwbare en innovatieve oplossingen voor complexe projecten.',
+      expertiseTitle: 'Meer dan 30 jaar expertise',
+      expertiseDescription: 'Actief in de sector sinds 1994: meer dan 30 jaar kennis en ervaring vertalen zich in efficiënte, betrouwbare en innovatieve oplossingen voor complexe projecten.',
       expertiseSafety: 'Onze uitgebreide ervaring heeft ons in staat gesteld robuuste veiligheidsmanagementsystemen en best practices te ontwikkelen die consequent de industrienormen overtreffen.',
       expertiseQuality: 'Jarenlange praktijkervaring heeft onze vaardigheden aangescherpt, waardoor wij consequent uitzonderlijk vakmanschap leveren en uitdagingen overwinnen bij zelfs de meest complexe projecten.',
       expertiseClient: 'Onze ervaren projectmanagers communiceren complexe technische details, projecttijdlijnen en mogelijke oplossingen helder en bondig naar klanten.',
@@ -1643,7 +1643,7 @@ export const translations: Record<Language, Translations> = {
       phoneLabel: 'Telefoon',
       emailLabel: 'E-mail',
       locationLabel: 'Locatie',
-      locationValue: 'Taxandriastraat 35, 2170 Antwerpen',
+      locationValue: 'Taxandriastraat 33-35, 2170 Antwerpen',
       locationDirections: 'Openen in Google Maps',
       servingRegion: 'Actief in heel Europa',
       businessHours: 'Kantooruren',
@@ -1686,7 +1686,7 @@ export const translations: Record<Language, Translations> = {
       privacyIntro: 'Dit Privacybeleid legt uit hoe Russo NV persoonsgegevens verzamelt, gebruikt en beschermt via deze website. Wij verbinden ons ertoe uw informatie transparant te behandelen, in overeenstemming met de Algemene Verordening Gegevensbescherming (AVG / GDPR) van de EU.',
 
       privacy1Title: 'Wie wij zijn',
-      privacy1Body: 'Russo NV is een Belgisch bedrijf gespecialiseerd in industriële coating- en oppervlaktevoorbereidingsdiensten. Onze maatschappelijke zetel bevindt zich op Taxandriastraat 35, 2170 Antwerpen, België. Ons ondernemings- en BTW-nummer is BE 0453.001.480 (RPR Antwerpen). U kunt ons bereiken via info@russonv.be of +32 475 43 48 19. Voor privacygerelateerde vragen kunt u dezelfde gegevens gebruiken. Wij treden op als verwerkingsverantwoordelijke voor de persoonsgegevens die via deze website worden verwerkt.',
+      privacy1Body: 'Russo NV is een Belgisch bedrijf gespecialiseerd in industriële coating- en oppervlaktevoorbereidingsdiensten. Onze maatschappelijke zetel bevindt zich op Taxandriastraat 33-35, 2170 Antwerpen, België. Ons ondernemings- en BTW-nummer is BE 0453.001.480 (RPR Antwerpen). U kunt ons bereiken via info@russonv.be of +32 475 43 48 19. Voor privacygerelateerde vragen kunt u dezelfde gegevens gebruiken. Wij treden op als verwerkingsverantwoordelijke voor de persoonsgegevens die via deze website worden verwerkt.',
 
       privacy2Title: 'Welke gegevens wij verzamelen',
       privacy2Body: 'Wij verzamelen persoonsgegevens die u vrijwillig met ons deelt, voornamelijk via het contactformulier op deze website (uw naam, bedrijf, e-mailadres, telefoonnummer en de inhoud van uw bericht). Wij verzamelen ook automatisch basale technische gegevens wanneer u de site bezoekt (IP-adres, browsertype, bekeken pagina\'s, verwijzende website) voor analyse, beveiliging en de goede werking van de site. Deze automatisch verzamelde serverlogs (waaronder het IP-adres) worden maximaal 90 dagen bewaard en daarna verwijderd.',
@@ -1719,14 +1719,14 @@ export const translations: Record<Language, Translations> = {
       privacy11Body: 'Wij kunnen dit Privacybeleid van tijd tot tijd bijwerken om wijzigingen in onze praktijken, diensten of toepasselijke wetgeving te weerspiegelen. De meest recente versie zal altijd op deze pagina beschikbaar zijn, met de datum "Laatst bijgewerkt" bovenaan. Voortgezet gebruik van de website na publicatie van wijzigingen geldt als aanvaarding van het bijgewerkte beleid.',
 
       privacy12Title: 'Contact',
-      privacy12Body: 'Voor vragen over dit Privacybeleid of over hoe wij uw persoonsgegevens behandelen, kunt u contact met ons opnemen via info@russonv.be of per post aan Russo NV, Taxandriastraat 35, 2170 Antwerpen, België.',
+      privacy12Body: 'Voor vragen over dit Privacybeleid of over hoe wij uw persoonsgegevens behandelen, kunt u contact met ons opnemen via info@russonv.be of per post aan Russo NV, Taxandriastraat 33-35, 2170 Antwerpen, België.',
 
       termsTitle: 'Service',
       termsTitleHighlight: 'Voorwaarden',
       termsIntro: 'Deze Servicevoorwaarden regelen uw gebruik van de website russonv.com. Door de site te bezoeken of te gebruiken, gaat u akkoord met deze Voorwaarden. Indien u niet akkoord gaat, gelieve de site niet te gebruiken.',
 
       terms1Title: 'Over deze voorwaarden',
-      terms1Body: 'Deze Servicevoorwaarden ("Voorwaarden") regelen uw gebruik van de website russonv.com (de "Site"). Door de Site te bezoeken of te gebruiken, gaat u ermee akkoord gebonden te zijn aan deze Voorwaarden. Indien u niet akkoord gaat, gelieve de Site niet te gebruiken. Russo NV ("wij", "ons", "onze") is een Belgisch bedrijf met maatschappelijke zetel op Taxandriastraat 35, 2170 Antwerpen, België. Ons ondernemings- en BTW-nummer is BE 0453.001.480 (RPR Antwerpen).',
+      terms1Body: 'Deze Servicevoorwaarden ("Voorwaarden") regelen uw gebruik van de website russonv.com (de "Site"). Door de Site te bezoeken of te gebruiken, gaat u ermee akkoord gebonden te zijn aan deze Voorwaarden. Indien u niet akkoord gaat, gelieve de Site niet te gebruiken. Russo NV ("wij", "ons", "onze") is een Belgisch bedrijf met maatschappelijke zetel op Taxandriastraat 33-35, 2170 Antwerpen, België. Ons ondernemings- en BTW-nummer is BE 0453.001.480 (RPR Antwerpen).',
 
       terms2Title: 'Onze diensten',
       terms2Body: 'De Site biedt informatie over onze industriële coating-, oppervlaktevoorbereidings- en aanverwante diensten. De inhoud is uitsluitend bedoeld voor algemene informatie. Elke specifieke commerciële relatie, inclusief de scope, prijs, planning en voorwaarden van het werk, wordt geregeld door een afzonderlijke schriftelijke overeenkomst die tussen ons en onze klant wordt ondertekend. Niets op de Site vormt een bindend aanbod.',
@@ -1759,7 +1759,7 @@ export const translations: Record<Language, Translations> = {
       terms11Body: 'Wij kunnen deze Servicevoorwaarden van tijd tot tijd bijwerken. De meest recente versie zal altijd op deze pagina beschikbaar zijn, met de datum "Laatst bijgewerkt" bovenaan. Voortgezet gebruik van de Site na publicatie van wijzigingen geldt als aanvaarding van de bijgewerkte Voorwaarden.',
 
       terms12Title: 'Contact',
-      terms12Body: 'Voor vragen over deze Voorwaarden, kunt u contact met ons opnemen via info@russonv.be of per post aan Russo NV, Taxandriastraat 35, 2170 Antwerpen, België.',
+      terms12Body: 'Voor vragen over deze Voorwaarden, kunt u contact met ons opnemen via info@russonv.be of per post aan Russo NV, Taxandriastraat 33-35, 2170 Antwerpen, België.',
     },
   },
 };

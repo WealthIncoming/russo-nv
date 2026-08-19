@@ -21,7 +21,7 @@ const WEB3FORMS_NOTIFY_KEY = import.meta.env.PUBLIC_WEB3FORMS_NOTIFY_KEY ?? '';
 const WEB3FORMS_GIANNA_KEY = import.meta.env.PUBLIC_WEB3FORMS_GIANNA_KEY ?? '';
 // Address components, used both in the visible UI and the JSON-LD structured
 // data below. Single source of truth for the HQ address.
-const HQ_STREET = 'Taxandriastraat 35';
+const HQ_STREET = 'Taxandriastraat 33-35';
 const HQ_POSTAL = '2170';
 const HQ_CITY = 'Antwerp';
 const HQ_COUNTRY_CODE = 'BE';
@@ -111,7 +111,7 @@ const BUSINESS_JSON_LD = {
   sameAs: [
     'https://www.linkedin.com/company/russo-nv/',
     'https://www.instagram.com/russo.n.v/',
-    'https://www.facebook.com/share/16myRf73Ju/?mibextid=wwXIfr',
+    'https://www.facebook.com/profile.php?id=61559552162077',
   ],
 };
 

@@ -114,7 +114,7 @@ const ORGANIZATION_JSON_LD = {
   description: 'Specialist in industriële coatings, stralen en brandwerende coatings in Antwerpen, actief in heel België, Nederland en Luxemburg voor petrochemie, maritieme sector en industrie.',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Taxandriastraat 35',
+    streetAddress: 'Taxandriastraat 33-35',
     postalCode: '2170',
     addressLocality: 'Antwerp',
     addressRegion: 'Antwerpen',

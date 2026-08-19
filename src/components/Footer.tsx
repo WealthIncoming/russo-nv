@@ -5,7 +5,7 @@ import { ArrowUp, Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'luc
 import { Link } from 'react-router-dom';
 import { Image } from '@/components/ui/image';
 
-const FOOTER_HQ_ADDRESS = 'Taxandriastraat 35, 2170 Antwerp';
+const FOOTER_HQ_ADDRESS = 'Taxandriastraat 33-35, 2170 Antwerp';
 const FOOTER_GOOGLE_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(FOOTER_HQ_ADDRESS)}`;
 
 const SERVICES = [
@@ -82,7 +82,7 @@ export default function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="https://www.facebook.com/share/16myRf73Ju/?mibextid=wwXIfr"
+                href="https://www.facebook.com/profile.php?id=61559552162077"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
