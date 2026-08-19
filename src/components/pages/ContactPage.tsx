@@ -16,6 +16,9 @@ const WEB3FORMS_ACCESS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
 // Web3Forms key (PUBLIC_WEB3FORMS_NOTIFY_KEY) so they also receive every enquiry
 // by email + in their dashboard. Never blocks or fails the primary client submit.
 const WEB3FORMS_NOTIFY_KEY = import.meta.env.PUBLIC_WEB3FORMS_NOTIFY_KEY ?? '';
+// Optional third recipient: the CEO's copy (PUBLIC_WEB3FORMS_GIANNA_KEY),
+// same best-effort semantics as the owner copy above.
+const WEB3FORMS_GIANNA_KEY = import.meta.env.PUBLIC_WEB3FORMS_GIANNA_KEY ?? '';
 // Address components, used both in the visible UI and the JSON-LD structured
 // data below. Single source of truth for the HQ address.
 const HQ_STREET = 'Taxandriastraat 35';
@@ -297,6 +300,10 @@ export default function ContactPage() {
       // Owner's personal copy - best-effort; must never block or fail the client send.
       if (WEB3FORMS_NOTIFY_KEY) {
         post(WEB3FORMS_NOTIFY_KEY).catch(() => {});
+      }
+      // CEO's copy - same best-effort rules.
+      if (WEB3FORMS_GIANNA_KEY) {
+        post(WEB3FORMS_GIANNA_KEY).catch(() => {});
       }
       // Primary submit → the client's inbox. This is the one that determines success.
       const response = await post(WEB3FORMS_ACCESS_KEY);

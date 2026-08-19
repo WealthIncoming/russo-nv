@@ -13,6 +13,7 @@ declare global {
   interface ImportMetaEnv {
     readonly BASE_NAME?: string;
     readonly PUBLIC_WEB3FORMS_KEY?: string;
+    readonly PUBLIC_WEB3FORMS_GIANNA_KEY?: string;
   }
 
   interface ImportMeta {
