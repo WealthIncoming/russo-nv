@@ -992,6 +992,7 @@ export const ARTICLES: Article[] = [
   {
     slug: 'corrosion-protection-iso-12944',
     date: '2026-08-19',
+    updated: '2026-08-19',
     author: 'Stig Vanmarsenille',
     authorRole: {
       NL: 'NACE Level 2 coating inspector',
@@ -1024,13 +1025,13 @@ export const ARTICLES: Article[] = [
           segments: [
             'Staal roest niet overal even snel. Een loods in de Kempen is een andere wereld dan een kaaimuurconstructie in de haven van Antwerpen, en wie op beide plaatsen hetzelfde verfsysteem zet, betaalt ofwel te veel, ofwel veel te vroeg opnieuw. Daarom bestaat er één internationale kapstok voor ',
             { text: 'industriële schilderwerken', to: '/services/industriele-schilderwerken' },
-            ' op staal: ISO 12944. Wie die norm begrijpt, begrijpt elke offerte, elk bestek en elke garantiediscussie.',
+            ' op staal met verfsystemen: ISO 12944, dé internationale referentie voor dit vakgebied. Wie die norm begrijpt, begrijpt elke offerte, elk bestek en elke garantiediscussie.',
           ],
         },
         { type: 'h2', text: 'Wat is ISO 12944?' },
         {
           type: 'p',
-          text: 'ISO 12944 is de internationale norm voor corrosiebescherming van staalconstructies met verfsystemen. De norm bestaat uit meerdere delen die samen het volledige traject afdekken: de omgevingsclassificatie (deel 2), ontwerpprincipes (deel 3), oppervlaktetypes en voorbereiding (deel 4), de verfsystemen zelf (deel 5), laboratoriumtesten (deel 6), uitvoering en toezicht (deel 7) en specificaties voor nieuwbouw en onderhoud (deel 8). Sinds de herziening van 2018 is er ook deel 9, specifiek voor offshore en andere extreme omstandigheden. In de praktijk draait bijna elke keuze om twee vragen: in welke corrosiviteitsklasse staat de constructie, en hoe lang moet het systeem meegaan?',
+          text: 'ISO 12944 is de internationale norm voor corrosiebescherming van staalconstructies met verfsystemen. De norm bestaat uit meerdere delen die samen het volledige traject afdekken: de omgevingsclassificatie (deel 2), ontwerpprincipes (deel 3), oppervlaktetypes en voorbereiding (deel 4), de verfsystemen zelf (deel 5), laboratoriumtesten (deel 6), uitvoering en toezicht (deel 7) en specificaties voor nieuwbouw en onderhoud (deel 8). Tijdens de herzieningscyclus van 2017 tot 2019 kwam daar deel 9 bij, specifiek voor offshore en andere extreme omstandigheden. In de praktijk draait bijna elke keuze om twee vragen: in welke corrosiviteitsklasse staat de constructie, en hoe lang moet het systeem meegaan?',
         },
         { type: 'h2', text: 'De corrosiviteitsklassen: van C1 tot CX' },
         {
@@ -1047,45 +1048,63 @@ export const ARTICLES: Article[] = [
             ['C3', 'Gemiddeld', 'Stedelijke en licht industriële atmosfeer, productiehallen met vocht'],
             ['C4', 'Hoog', 'Industriële zones en kustgebieden met matige zoutbelasting, chemische installaties'],
             ['C5', 'Zeer hoog', 'Industriële omgeving met agressieve atmosfeer, kust- en havengebieden met hoge zoutbelasting'],
-            ['CX', 'Extreem', 'Offshore, getijdenzones, extreme industriële omstandigheden (sinds de 2018-revisie)'],
-            ['Im1 tot Im4', 'Immersie', 'Constructies onder water of in de bodem: steigers, damwanden, leidingen, tanks'],
+            ['CX', 'Extreem', 'Offshore, getijdenzones, extreme industriële omstandigheden (sinds de 2017-revisie)'],
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Voor constructies onder water of in de bodem gelden aparte immersieklassen:',
+        },
+        {
+          type: 'table',
+          caption: 'Immersieklassen volgens ISO 12944-2',
+          headers: ['Klasse', 'Blootstelling'],
+          rows: [
+            ['Im1', 'Zoet water'],
+            ['Im2', 'Zee- of brakwater zonder kathodische bescherming'],
+            ['Im3', 'Bodem'],
+            ['Im4', 'Zee- of brakwater met kathodische bescherming'],
           ],
         },
         {
           type: 'p',
           segments: [
-            'De haven van Antwerpen, Gent en Zeebrugge, waar het grootste deel van ons werk zich afspeelt, valt vrijwel altijd in C4 tot C5: industriële atmosfeer, zeelucht en chemische belasting tegelijk. Voor ondergedompelde delen gelden de Im-klassen, een wereld apart die we uitgebreid behandelen in onze gids over ',
+            'Belangrijke nuance: de Im-klassen bepalen niet automatisch het systeem voor de binnenzijde van een opslagtank. ISO 12944 sluit tankinterieurs, pijpleidingen en ingegraven constructies uitdrukkelijk uit; daar wegen het opgeslagen product, de temperatuur, de chemische resistentie en de goedkeuring van de fabrikant. Die wereld behandelen we apart in onze gids over ',
             { text: 'tankcoating en tank lining', to: '/insights/tank-coating-lining' },
             '.',
           ],
         },
+        {
+          type: 'p',
+          text: 'En de klasse zelf? Die hangt af van de werkelijke blootstelling, niet van het adres. In de havens van Antwerpen, Gent en Zeebrugge worden veel constructies beoordeeld als C4 tot C5, maar op terminalprojecten classificeren wij nooit een hele site in één keer: beschut staal onder een luifel, zones met permanente condensatie, buitenstaal in de zeewind en aanlandige spatzones kunnen binnen dezelfde installatie elk een andere beoordeling vragen. De klassebepaling gebeurt per constructie en per blootstellingszone.',
+        },
         { type: 'h2', text: 'Levensduurbereiken: hoe lang moet het systeem meegaan?' },
         {
           type: 'p',
-          text: 'De tweede as van de norm is de verwachte levensduur tot het eerste grote onderhoud. ISO 12944 onderscheidt vier bereiken: laag (tot 7 jaar), gemiddeld (7 tot 15 jaar), hoog (15 tot 25 jaar) en, sinds 2018, zeer hoog (meer dan 25 jaar). Belangrijk om te weten: dit is geen garantietermijn maar een ontwerpverwachting. De combinatie van corrosiviteitsklasse en levensduurbereik bepaalt samen hoe zwaar het systeem moet zijn. C5 met een hoge levensduurverwachting vraagt een fundamenteel ander pakket dan C3 met een gemiddelde verwachting.',
+          text: 'De tweede as van de norm is de verwachte levensduur tot het eerste grote onderhoud. ISO 12944 onderscheidt vier bereiken: laag (tot 7 jaar), gemiddeld (7 tot 15 jaar), hoog (15 tot 25 jaar) en, sinds de 2017-revisie, zeer hoog (meer dan 25 jaar). Belangrijk om te weten: dit is geen garantietermijn maar een ontwerpverwachting. De combinatie van corrosiviteitsklasse en levensduurbereik bepaalt samen hoe zwaar het systeem moet zijn. C5 met een hoge levensduurverwachting vraagt een fundamenteel ander pakket dan C3 met een gemiddelde verwachting.',
         },
         { type: 'h2', text: 'Hoe een coatingsysteem is opgebouwd' },
         {
           type: 'p',
-          text: 'Een corrosiewerend systeem is altijd een gelaagd geheel waarin elke laag een eigen taak heeft:',
+          text: 'Eerst een misverstand uit de wereld: ISO 12944 schrijft geen universeel recept voor per klasse. Het systeem wordt gekozen op basis van de klasse, de gewenste levensduur, de ondergrond, de voorbereiding, de blootstelling en de goedgekeurde systeemdocumentatie van de fabrikant. Wat wel altijd terugkomt, is de gelaagde opbouw waarin elke laag een eigen taak heeft:',
         },
         {
           type: 'ul',
           items: [
-            'Grondlaag (primer): de corrosiewering zelf. Voor zware klassen meestal een zinkrijke primer: het zink beschermt het staal zelfs bij een beschadiging (kathodische werking).',
+            'Grondlaag (primer): zorgt voor hechting en de eerste corrosiewering. Afhankelijk van het gekozen systeem is dat een zinkrijke primer (het zink beschermt het staal zelfs bij een beschadiging, kathodische werking) of een primer met een ander beschermingsmechanisme.',
             'Tussenlagen: bouwen de laagdikte op en vormen de barrière tegen vocht en zuurstof. Doorgaans epoxy, vaak met micaceous iron oxide (MIO) voor extra barrièrewerking.',
             'Toplaag: beschermt tegen UV en weer, bepaalt kleur en glans. Meestal polyurethaan; voor extreme UV-eisen polysiloxaan.',
           ],
         },
         {
           type: 'p',
-          text: 'De totale droge laagdikte stijgt mee met de klasse: waar C3 vaak rond 160 tot 200 µm uitkomt, zit C4 typisch op 200 tot 240 µm en C5 op 260 tot 320 µm of meer, verdeeld over drie of meer lagen. De exacte opbouw en laagdiktes staan per systeem in deel 5 van de norm en in het datablad van de fabrikant; daar wordt nooit van afgeweken.',
+          text: 'De totale droge laagdikte stijgt mee met de klasse. Ter indicatie, en nadrukkelijk geen normwaarden: C3-systemen komen vaak rond 160 tot 200 µm uit, C4 typisch op 200 tot 240 µm en C5 op 260 tot 320 µm of meer, verdeeld over drie of meer lagen. De nominale laagdikte (NDFT) en het aantal lagen volgen altijd uit het complete, geteste systeem en de duurzaamheidsklasse, zoals vastgelegd in deel 5 van de norm en het datablad van de fabrikant; daar wordt nooit van afgeweken.',
         },
         { type: 'h2', text: 'De voorbereiding bepaalt of het systeem zijn levensduur haalt' },
         {
           type: 'p',
           segments: [
-            'ISO 12944 is er duidelijk over: het beste systeem faalt op een slechte ondergrond. Deel 4 verwijst rechtstreeks naar de reinheidsgraden van ISO 8501-1 (voor zware klassen doorgaans Sa 2½) en het bijbehorende straalprofiel. Hoe die voorbereiding er in de praktijk uitziet, van ontvetten tot zoutmeting, lees je stap voor stap in onze gids ',
+            'ISO 12944 is er duidelijk over: het beste systeem faalt op een slechte ondergrond. Deel 4 verwijst rechtstreeks naar de reinheidsgraden van ISO 8501-1 en het bijbehorende straalprofiel; voor gestraald staal in zware systemen wordt doorgaans Sa 2½ gespecificeerd, maar de vereiste voorbereidingsgraad volgt altijd uit het gekozen systeem en de projectspecificatie. Hoe die voorbereiding er in de praktijk uitziet, van ontvetten tot zoutmeting, lees je stap voor stap in onze gids ',
             { text: 'staal voorbereiden voor coating', to: '/insights/steel-surface-preparation' },
             '. Reken er als vuistregel op dat de helft van de kwaliteit van een corrosiewerend systeem in de voorbereiding zit.',
           ],
@@ -1099,15 +1118,37 @@ export const ARTICLES: Article[] = [
             ' tonen beide routes in de praktijk.',
           ],
         },
+        { type: 'h2', text: 'Wat moet een volledige ISO 12944-specificatie bevatten?' },
+        {
+          type: 'p',
+          text: '"C5" alleen is geen specificatie. Een volledig bestek volgens ISO 12944 legt minstens dit vast:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'De corrosiviteitsklasse per constructie(deel) en blootstellingszone.',
+            'De duurzaamheidsklasse (laag, gemiddeld, hoog of zeer hoog).',
+            'De ondergrond en de vereiste voorbereidingsgraad (bv. Sa 2½) met straalprofiel.',
+            'Het coatingsysteem met NDFT per laag en het totale systeem, volgens de goedgekeurde systeemdocumentatie.',
+            'Stripe coats op lasnaden, randen en bouten.',
+            'De applicatiecondities (klimaatvenster, overschildertermijnen).',
+            'De inspectiemethode en acceptatiecriteria bij oplevering.',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Ontbreekt een van deze elementen, dan is de kans groot dat aannemer en opdrachtgever bij oplevering over iets anders blijken te spreken. Een compleet bestek beschermt beide partijen.',
+        },
         {
           type: 'callout',
           title: 'Belangrijkste punten',
           items: [
             'ISO 12944 koppelt de omgeving (C1 tot CX en Im) aan de zwaarte van het coatingsysteem.',
-            'De Belgische havens zitten vrijwel altijd in C4 tot C5: onderschat de klasse niet.',
+            'Veel constructies in de Belgische havens worden beoordeeld als C4 tot C5, per blootstellingszone bepaald.',
             'Levensduurbereik is een ontwerpkeuze: laag, gemiddeld, hoog of zeer hoog (25+ jaar).',
-            'Zinkrijke primer + epoxy tussenlagen + PU toplaag is de ruggengraat van de meeste zware systemen.',
-            'De helft van de kwaliteit zit in de voorbereiding (Sa 2½ en het juiste profiel).',
+            'Zinkrijke primers, epoxy tussenlagen en PU toplagen vormen de ruggengraat van veel zware systemen.',
+            'De helft van de kwaliteit zit in de voorbereiding; de vereiste graad volgt uit systeem en bestek.',
+            'De NDFT volgt uit het geteste systeem, niet uit de klasse alleen.',
           ],
         },
         { type: 'h2', text: 'Veelgemaakte fouten' },
@@ -1134,16 +1175,28 @@ export const ARTICLES: Article[] = [
               a: 'De norm werkt met levensduurbereiken tot het eerste grote onderhoud: laag (tot 7 jaar), gemiddeld (7 tot 15), hoog (15 tot 25) en zeer hoog (meer dan 25 jaar). Welk bereik haalbaar is, hangt af van de klasse, het gekozen systeem, de laagdikte en vooral de kwaliteit van voorbereiding en applicatie.',
             },
             {
-              q: 'Waarom een zinkrijke primer?',
-              a: 'Zink beschermt staal ook wanneer de coating plaatselijk beschadigd raakt: het offert zichzelf op in plaats van het staal (kathodische bescherming). Daarom is een zinkrijke primer de standaardbasis voor zware klassen als C4 en C5, in combinatie met epoxy tussenlagen en een UV-vaste toplaag.',
+              q: 'Wanneer is een zinkrijke primer aangewezen?',
+              a: 'Zink beschermt staal ook wanneer de coating plaatselijk beschadigd raakt: het offert zichzelf op in plaats van het staal (kathodische bescherming). Daarom kiezen veel goedgekeurde systemen voor zware klassen als C4 en C5 een zinkrijke basis, gecombineerd met epoxy tussenlagen en een UV-vaste toplaag. Verplicht is het niet: het gekozen, geteste systeem bepaalt de primer.',
+            },
+            {
+              q: 'Schrijft ISO 12944 een minimale laagdikte voor?',
+              a: 'Nee, niet per klasse. Er bestaat geen laagdikte die automatisch bij C3, C4 of C5 hoort. De nominale droge laagdikte (NDFT) en het aantal lagen volgen uit het complete, geteste systeem en de gekozen duurzaamheidsklasse, zoals vastgelegd in deel 5 en het datablad van de fabrikant. De projectspecificatie legt die waarden vast, samen met de meet- en acceptatiecriteria.',
+            },
+            {
+              q: 'Geldt ISO 12944 ook voor de binnenzijde van opslagtanks?',
+              a: 'Nee. Tankinterieurs, pijpleidingen en ingegraven constructies vallen uitdrukkelijk buiten de norm. Voor een tank lining wegen het opgeslagen product, de temperatuur, de chemische resistentie en de goedkeuring van de fabrikant; zie daarvoor onze aparte gids over tankcoating en tank lining.',
             },
             {
               q: 'Wat kost corrosiebescherming per m²?',
               a: 'Dat hangt af van de klasse, het systeem, de laagdikte, de staat van de ondergrond en de bereikbaarheid. Een C3-systeem in een werkplaats is een andere som dan een C5-systeem op hoogte in een actieve terminal. Omdat elk project verschilt, rekenen we op basis van een inspectie of uw bestek.',
             },
             {
-              q: 'Kan een bestaande constructie naar een hogere klasse gebracht worden?',
-              a: 'Ja. Na beoordeling van de bestaande coating wordt de constructie gestraald tot de vereiste reinheidsgraad en wordt een zwaarder systeem opgebouwd volgens de gewenste klasse en levensduur. Bij gedeeltelijke aantasting kan dat gefaseerd, zodat de site operationeel blijft.',
+              q: 'Welke informatie is nodig voor een accurate offerte?',
+              a: 'Minstens: de locatie en omgeving (of de vastgelegde klasse), het te behandelen oppervlak in m², de staat van de bestaande coating of het staal, de gewenste levensduur, de bereikbaarheid (hoogte, stellingen, actieve site) en het bestek of de systeemvoorkeur indien aanwezig. Met die elementen kan een offerte zonder verrassingen opgemaakt worden; ontbreekt er iets, dan plannen we een korte inspectie.',
+            },
+            {
+              q: 'Kan een bestaand coatingsysteem verzwaard worden voor een agressievere omgeving of langere levensduur?',
+              a: 'Ja. Na beoordeling van de bestaande coating wordt de constructie gestraald tot de vereiste reinheidsgraad en wordt een zwaarder systeem opgebouwd, passend bij de beoordeelde blootstelling en de gewenste levensduur. Bij gedeeltelijke aantasting kan dat gefaseerd, zodat de site operationeel blijft.',
             },
           ],
         },
@@ -1159,8 +1212,8 @@ export const ARTICLES: Article[] = [
     },
     EN: {
       title: 'Corrosion protection to ISO 12944: categories, systems and durability',
-      metaTitle: 'Corrosion protection to ISO 12944: the guide | Russo NV',
-      description: 'How do you choose the right coating system for steel? Corrosivity categories C1 to CX, durability ranges and system build-up of ISO 12944, explained practically.',
+      metaTitle: 'ISO 12944 Corrosion Protection: Categories & Systems | Russo NV',
+      description: 'ISO 12944 explained: compare C1 to CX corrosivity categories, durability classes, surface preparation and coating systems for steel.',
       excerpt: 'Every steel project raises the same question: which coating system, how many coats, what film thickness? The answer lives in one standard: ISO 12944. This is how to read and apply it, without paying for over- or under-protection.',
       category: 'Corrosion protection',
       body: [
@@ -1169,13 +1222,13 @@ export const ARTICLES: Article[] = [
           segments: [
             'Steel does not rust at the same speed everywhere. A warehouse in the Campine countryside is a different world from a quay structure in the Port of Antwerp, and whoever applies the same paint system in both places either pays too much, or repaints far too soon. That is why there is one international framework for ',
             { text: 'industrial painting', to: '/services/industriele-schilderwerken' },
-            ' on steel: ISO 12944. Understand the standard and you understand every quotation, every specification and every warranty discussion.',
+            ' on steel with protective paint systems: ISO 12944, the main international reference for this field. Understand the standard and you understand every quotation, every specification and every warranty discussion.',
           ],
         },
         { type: 'h2', text: 'What is ISO 12944?' },
         {
           type: 'p',
-          text: 'ISO 12944 is the international standard for corrosion protection of steel structures by protective paint systems. It consists of several parts that together cover the whole journey: environment classification (part 2), design considerations (part 3), surface types and preparation (part 4), the paint systems themselves (part 5), laboratory testing (part 6), execution and supervision (part 7) and specifications for new work and maintenance (part 8). Since the 2018 revision there is also part 9, specifically for offshore and other extreme conditions. In practice, almost every choice comes down to two questions: which corrosivity category does the structure sit in, and how long must the system last?',
+          text: 'ISO 12944 is the international standard for corrosion protection of steel structures by protective paint systems. It consists of several parts that together cover the whole journey: environment classification (part 2), design considerations (part 3), surface types and preparation (part 4), the paint systems themselves (part 5), laboratory testing (part 6), execution and supervision (part 7) and specifications for new work and maintenance (part 8). The 2017 to 2019 revision cycle added part 9, specifically for offshore and other extreme conditions. In practice, almost every choice comes down to two questions: which corrosivity category does the structure sit in, and how long must the system last?',
         },
         { type: 'h2', text: 'The corrosivity categories: from C1 to CX' },
         {
@@ -1192,45 +1245,63 @@ export const ARTICLES: Article[] = [
             ['C3', 'Medium', 'Urban and light industrial atmosphere, production halls with humidity'],
             ['C4', 'High', 'Industrial zones and coastal areas with moderate salinity, chemical plants'],
             ['C5', 'Very high', 'Industrial environments with aggressive atmosphere, coastal and port areas with high salinity'],
-            ['CX', 'Extreme', 'Offshore, tidal zones, extreme industrial conditions (since the 2018 revision)'],
-            ['Im1 to Im4', 'Immersion', 'Structures under water or in soil: jetties, sheet piling, pipelines, tanks'],
+            ['CX', 'Extreme', 'Offshore, tidal zones, extreme industrial conditions (since the 2017 revision)'],
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Structures under water or in soil have their own immersion categories:',
+        },
+        {
+          type: 'table',
+          caption: 'Immersion categories to ISO 12944-2',
+          headers: ['Category', 'Exposure'],
+          rows: [
+            ['Im1', 'Fresh water'],
+            ['Im2', 'Sea or brackish water without cathodic protection'],
+            ['Im3', 'Soil'],
+            ['Im4', 'Sea or brackish water with cathodic protection'],
           ],
         },
         {
           type: 'p',
           segments: [
-            'The ports of Antwerp, Ghent and Zeebrugge, where most of our work takes place, almost always sit in C4 to C5: industrial atmosphere, sea air and chemical exposure combined. Submerged parts fall under the Im categories, a world of their own that we cover in depth in our guide on ',
+            'An important nuance: the Im categories do not automatically determine the system for the inside of a storage tank. ISO 12944 explicitly excludes tank interiors, pipelines and buried structures; there, the stored product, temperature, chemical resistance and manufacturer approval govern. We cover that world separately in our guide on ',
             { text: 'tank coating and tank lining', to: '/insights/tank-coating-lining' },
             '.',
           ],
         },
+        {
+          type: 'p',
+          text: 'And the category itself? It depends on the actual exposure, not the address. In the ports of Antwerp, Ghent and Zeebrugge many structures are assessed as C4 to C5, but on terminal projects we never classify an entire site in one go: sheltered steel under a canopy, zones with permanent condensation, external steel in the sea wind and splash zones can each require a different assessment within the same installation. Classification is done per structure and per exposure zone.',
+        },
         { type: 'h2', text: 'Durability ranges: how long must the system last?' },
         {
           type: 'p',
-          text: 'The second axis of the standard is the expected life until first major maintenance. ISO 12944 distinguishes four ranges: low (up to 7 years), medium (7 to 15 years), high (15 to 25 years) and, since 2018, very high (more than 25 years). Important: this is a design expectation, not a guarantee period. The combination of corrosivity category and durability range together determines how heavy the system must be. C5 with a high durability expectation demands a fundamentally different package than C3 with a medium one.',
+          text: 'The second axis of the standard is the expected life until first major maintenance. ISO 12944 distinguishes four ranges: low (up to 7 years), medium (7 to 15 years), high (15 to 25 years) and, since the 2017 revision, very high (more than 25 years). Important: this is a design expectation, not a guarantee period. The combination of corrosivity category and durability range together determines how heavy the system must be. C5 with a high durability expectation demands a fundamentally different package than C3 with a medium one.',
         },
         { type: 'h2', text: 'How a coating system is built up' },
         {
           type: 'p',
-          text: 'A corrosion protection system is always a layered whole in which every coat has its own job:',
+          text: 'First, a misconception to clear up: ISO 12944 does not prescribe one universal recipe per category. The system is selected using the category, the required durability, the substrate, the preparation, the exposure conditions and the manufacturer approved system documentation. What always returns is the layered build-up in which every coat has its own job:',
         },
         {
           type: 'ul',
           items: [
-            'Primer: the corrosion protection itself. For heavy categories usually zinc-rich: the zinc protects the steel even at a damage point (cathodic action).',
+            'Primer: provides adhesion and the first stage of corrosion protection. Depending on the selected system it is zinc-rich (the zinc protects the steel even at a damage point, cathodic action) or uses another protective mechanism.',
             'Intermediate coats: build the film thickness and form the barrier against moisture and oxygen. Typically epoxy, often with micaceous iron oxide (MIO) for extra barrier effect.',
             'Topcoat: protects against UV and weather, provides colour and gloss. Usually polyurethane; polysiloxane for extreme UV demands.',
           ],
         },
         {
           type: 'p',
-          text: 'Total dry film thickness rises with the category: where C3 often lands around 160 to 200 µm, C4 typically sits at 200 to 240 µm and C5 at 260 to 320 µm or more, spread over three or more coats. The exact build-up and thicknesses are specified per system in part 5 of the standard and in the manufacturer data sheet; those are never deviated from.',
+          text: 'Total dry film thickness rises with the category. As an indication, and explicitly not standard requirements: C3 systems often land around 160 to 200 µm, C4 typically at 200 to 240 µm and C5 at 260 to 320 µm or more, spread over three or more coats. The nominal dry film thickness (NDFT) and the number of coats always follow from the complete, tested system and the durability class, as laid down in part 5 of the standard and the manufacturer data sheet; those are never deviated from.',
         },
         { type: 'h2', text: 'Preparation decides whether the system reaches its design life' },
         {
           type: 'p',
           segments: [
-            'ISO 12944 is explicit: the best system fails on a poor substrate. Part 4 refers directly to the cleanliness grades of ISO 8501-1 (typically Sa 2½ for heavy categories) and the matching surface profile. What that preparation looks like in practice, from degreasing to salt testing, is covered step by step in our guide on ',
+            'ISO 12944 is explicit: the best system fails on a poor substrate. Part 4 refers directly to the cleanliness grades of ISO 8501-1 and the matching surface profile; Sa 2½ is commonly specified for blast-cleaned steel in high-performance systems, but the required preparation grade always follows from the selected system and the project specification. What that preparation looks like in practice, from degreasing to salt testing, is covered step by step in our guide on ',
             { text: 'preparing steel for coating', to: '/insights/steel-surface-preparation' },
             '. As a rule of thumb, half the quality of a corrosion protection system lives in the preparation.',
           ],
@@ -1244,15 +1315,37 @@ export const ARTICLES: Article[] = [
             ' show both routes in practice.',
           ],
         },
+        { type: 'h2', text: 'What must a complete ISO 12944 specification contain?' },
+        {
+          type: 'p',
+          text: '"C5" alone is not a specification. A complete specification to ISO 12944 pins down at least the following:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'The corrosivity category per structure (part) and exposure zone.',
+            'The durability class (low, medium, high or very high).',
+            'The substrate and the required preparation grade (e.g. Sa 2½) with surface profile.',
+            'The coating system with NDFT per coat and in total, according to the approved system documentation.',
+            'Stripe coats on weld seams, edges and bolts.',
+            'The application conditions (climate window, overcoating intervals).',
+            'The inspection method and acceptance criteria at handover.',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'When one of these elements is missing, contractor and client tend to discover at handover that they were talking about different things. A complete specification protects both parties.',
+        },
         {
           type: 'callout',
           title: 'Key takeaways',
           items: [
             'ISO 12944 links the environment (C1 to CX and Im) to the weight of the coating system.',
-            'The Belgian ports almost always sit in C4 to C5: do not underestimate the category.',
+            'Many structures in the Belgian ports are assessed as C4 to C5, determined per exposure zone.',
             'Durability range is a design choice: low, medium, high or very high (25+ years).',
-            'Zinc-rich primer + epoxy intermediates + PU topcoat is the backbone of most heavy-duty systems.',
-            'Half the quality lives in the preparation (Sa 2½ and the correct profile).',
+            'Zinc-rich primers, epoxy intermediates and PU topcoats form the backbone of many heavy-duty systems.',
+            'Half the quality lives in the preparation; the required grade follows from system and specification.',
+            'The NDFT follows from the tested system, not from the category alone.',
           ],
         },
         { type: 'h2', text: 'Common mistakes' },
@@ -1279,16 +1372,28 @@ export const ARTICLES: Article[] = [
               a: 'The standard works with durability ranges until first major maintenance: low (up to 7 years), medium (7 to 15), high (15 to 25) and very high (more than 25 years). Which range is achievable depends on the category, the chosen system, the film thickness and above all the quality of preparation and application.',
             },
             {
-              q: 'Why a zinc-rich primer?',
-              a: 'Zinc protects steel even when the coating is locally damaged: it sacrifices itself instead of the steel (cathodic protection). That makes a zinc-rich primer the standard base for heavy categories like C4 and C5, combined with epoxy intermediates and a UV-stable topcoat.',
+              q: 'When is a zinc-rich primer appropriate?',
+              a: 'Zinc protects steel even when the coating is locally damaged: it sacrifices itself instead of the steel (cathodic protection). That is why many approved systems for heavy categories like C4 and C5 use a zinc-rich base, combined with epoxy intermediates and a UV-stable topcoat. It is not compulsory: the selected, tested system determines the primer.',
+            },
+            {
+              q: 'Does ISO 12944 specify a minimum coating thickness?',
+              a: 'No, not per category. There is no film thickness that automatically belongs to C3, C4 or C5. The nominal dry film thickness (NDFT) and number of coats follow from the complete, tested system and the chosen durability class, as laid down in part 5 and the manufacturer data sheet. The project specification records those values, together with the measurement and acceptance criteria.',
+            },
+            {
+              q: 'Does ISO 12944 apply to the inside of storage tanks?',
+              a: 'No. Tank interiors, pipelines and buried structures fall explicitly outside the standard. For a tank lining, the stored product, temperature, chemical resistance and manufacturer approval govern; see our separate guide on tank coating and tank lining.',
             },
             {
               q: 'What does corrosion protection cost per m²?',
               a: 'That depends on the category, the system, the film thickness, the condition of the substrate and accessibility. A C3 system in a workshop is a different calculation than a C5 system at height on a live terminal. Because every project differs, we quote based on an inspection or your specification.',
             },
             {
-              q: 'Can an existing structure be upgraded to a higher category?',
-              a: 'Yes. After assessing the existing coating, the structure is blasted to the required cleanliness grade and a heavier system is built up to the desired category and durability. With partial degradation this can be phased, so the site stays operational.',
+              q: 'What information is needed for an accurate quotation?',
+              a: 'At minimum: the location and environment (or the specified category), the surface area in m², the condition of the existing coating or steel, the required durability, accessibility (height, scaffolding, live site) and the specification or system preference if available. With those elements a quotation without surprises can be drawn up; if something is missing, we plan a short inspection.',
+            },
+            {
+              q: 'Can an existing coating system be upgraded for a more corrosive environment or longer durability?',
+              a: 'Yes. After assessing the existing coating, the structure is blasted to the required cleanliness grade and a heavier system is built up, matched to the assessed exposure and the required durability. With partial degradation this can be phased, so the site stays operational.',
             },
           ],
         },
