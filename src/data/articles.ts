@@ -540,10 +540,10 @@ export const ARTICLES: Article[] = [
     },
     authorUrl: 'https://www.linkedin.com/in/stig-vanmarsenille-747176b9/',
     authorImage: '/images/author-stig.jpg',
-    heroImage: '/images/tank-lining-hero.jpg',
+    heroImage: '/images/tank-lining-hero2.jpg',
     heroAlt: {
-      NL: 'Binnenzijde van een opslagtank tijdens tankliningwerken: gestraalde tankbodem en afgeschermde zones door Russo NV',
-      EN: 'Inside a storage tank during tank lining works: blasted tank floor and protected zones by Russo NV',
+      NL: 'Vers afgewerkte tank lining: glanzende gecoate tankbodem met afgeplakte verwarmingsspiralen',
+      EN: 'Freshly finished tank lining: glossy coated tank floor with masked heating coils',
     },
     keywords: {
       NL: ['tankcoating', 'tank lining', 'tankbekleding', 'opslagtank coaten', 'epoxy tankcoating', 'holiday detectie', 'ISO 8501-1', 'chemische resistentie'],
