@@ -528,6 +528,7 @@ export const ARTICLES: Article[] = [
   {
     slug: 'tank-coating-lining',
     date: '2026-08-14',
+    updated: '2026-08-19',
     author: 'Stig Vanmarsenille',
     authorRole: {
       NL: 'NACE Level 2 coating inspector',
@@ -645,6 +646,14 @@ export const ARTICLES: Article[] = [
         },
         {
           type: 'image',
+          src: '/images/tank-blasting.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Straler aan het werk in een donkere tank, straalnevel in het lamplicht',
+          caption: 'Stralen in de tank: zwaar werk in een besloten ruimte, met ademlucht en continue afzuiging.',
+        },
+        {
+          type: 'image',
           src: '/images/tank-blasting-sa25.jpg',
           width: 1200,
           height: 900,
@@ -671,6 +680,14 @@ export const ARTICLES: Article[] = [
         },
         {
           type: 'image',
+          src: '/images/tank-dehumidifier.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Drogings- en ventilatie-opstelling naast de tank tijdens de coatingwerken',
+          caption: 'De drooginstallatie draait dag en nacht naast de tank: het klimaat binnen bepaalt de kwaliteit.',
+        },
+        {
+          type: 'image',
           src: '/images/tank-climate-log.jpg',
           width: 900,
           height: 900,
@@ -682,6 +699,14 @@ export const ARTICLES: Article[] = [
           type: 'p',
           text: 'Lasnaden, hoeken en bouten krijgen eerst een handmatige stripe coat: precies op die plekken trekt een gespoten laag zich dun. Daarna wordt het systeem airless gespoten in gecontroleerde banen tot de voorgeschreven laagdikte, met natte-laagdiktemetingen tijdens het werk en droge-laagdiktemetingen (DFT) na uitharding van elke laag.',
         },
+        {
+          type: 'image',
+          src: '/images/tank-spray.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Applicateur in beschermpak spuit de lining airless aan in de tank',
+          caption: 'Airless applicatie van de lining, in gecontroleerde banen tot de voorgeschreven laagdikte.',
+        },
         { type: 'h2', text: 'Kwaliteitscontrole vóór ingebruikname' },
         {
           type: 'ul',
@@ -691,6 +716,14 @@ export const ARTICLES: Article[] = [
             'Hechting en uitharding: controle van de uithardingsgraad en, waar voorgeschreven, een hechtingsproef vóór de tank weer in dienst gaat.',
             'Rapportage: alle metingen (klimaat, zouten, profiel, DFT, vonktest) in één inspectiedossier voor eigenaar en inspecteur.',
           ],
+        },
+        {
+          type: 'image',
+          src: '/images/tank-finished.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Afgewerkte tank lining: strak gecoate wanden, dak en leidingwerk',
+          caption: 'Het eindresultaat: een strak afgewerkte lining, klaar voor de poriëntest en oplevering.',
         },
         {
           type: 'callout',
@@ -711,6 +744,14 @@ export const ARTICLES: Article[] = [
             { text: 'gerealiseerde tankprojecten', to: '/projects' },
             ' om te zien hoe beide aanpakken er in de praktijk uitzien.',
           ],
+        },
+        {
+          type: 'image',
+          src: '/images/tank-touchup.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Plaatselijke herstelling van de lining: afgeplakte zone wordt laag per laag bijgewerkt',
+          caption: 'Spot repair in de praktijk: de afgeplakte zone wordt laag per laag hersteld tot de originele laagdikte.',
         },
         { type: 'h2', text: 'Veelgemaakte fouten' },
         {
@@ -865,6 +906,14 @@ export const ARTICLES: Article[] = [
         },
         {
           type: 'image',
+          src: '/images/tank-blasting.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Blaster at work in a dark tank, blast mist in the lamp light',
+          caption: 'Blasting inside the tank: heavy work in a confined space, with breathing air and continuous extraction.',
+        },
+        {
+          type: 'image',
           src: '/images/tank-blasting-sa25.jpg',
           width: 1200,
           height: 900,
@@ -891,6 +940,14 @@ export const ARTICLES: Article[] = [
         },
         {
           type: 'image',
+          src: '/images/tank-dehumidifier.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Dehumidification and ventilation setup next to the tank during coating works',
+          caption: 'The dehumidification rig runs day and night next to the tank: the climate inside determines the quality.',
+        },
+        {
+          type: 'image',
           src: '/images/tank-climate-log.jpg',
           width: 900,
           height: 900,
@@ -902,6 +959,14 @@ export const ARTICLES: Article[] = [
           type: 'p',
           text: 'Weld seams, corners and bolts first receive a manual stripe coat: exactly where a sprayed film pulls thin. The system is then airless-sprayed in controlled passes to the specified thickness, with wet film measurements during the work and dry film thickness (DFT) checks after each coat has cured.',
         },
+        {
+          type: 'image',
+          src: '/images/tank-spray.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Applicator in protective suit spraying the lining airless inside the tank',
+          caption: 'Airless application of the lining, in controlled passes to the specified film thickness.',
+        },
         { type: 'h2', text: 'Quality control before the tank returns to service' },
         {
           type: 'ul',
@@ -911,6 +976,14 @@ export const ARTICLES: Article[] = [
             'Adhesion and cure: cure verification and, where specified, adhesion testing before the tank is returned to service.',
             'Reporting: all measurements (climate, salts, profile, DFT, spark test) in one inspection dossier for owner and inspector.',
           ],
+        },
+        {
+          type: 'image',
+          src: '/images/tank-finished.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Finished tank lining: cleanly coated shell, roof and pipework',
+          caption: 'The end result: a cleanly finished lining, ready for the holiday test and handover.',
         },
         {
           type: 'callout',
@@ -931,6 +1004,14 @@ export const ARTICLES: Article[] = [
             { text: 'completed tank projects', to: '/projects' },
             ' to see what both approaches look like in practice.',
           ],
+        },
+        {
+          type: 'image',
+          src: '/images/tank-touchup.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Local lining repair: masked zone being rebuilt coat by coat',
+          caption: 'Spot repair in practice: the masked zone is rebuilt coat by coat to the original film thickness.',
         },
         { type: 'h2', text: 'Common mistakes' },
         {
@@ -1004,10 +1085,10 @@ export const ARTICLES: Article[] = [
     },
     authorUrl: 'https://www.linkedin.com/in/stig-vanmarsenille-747176b9/',
     authorImage: '/images/author-stig.jpg',
-    heroImage: '/images/step2.jpg',
+    heroImage: '/images/article3-hero.jpg',
     heroAlt: {
-      NL: 'Gestraald staal klaar voor een corrosiewerend coatingsysteem volgens ISO 12944',
-      EN: 'Blasted steel ready for a corrosion protection coating system to ISO 12944',
+      NL: 'Russo NV inspecteert een tankwand met afbladderende coating en corrosie in de haven',
+      EN: 'Russo NV inspecting a tank shell with flaking coating and corrosion in the port',
     },
     keywords: {
       NL: ['corrosiebescherming', 'ISO 12944', 'corrosiviteitsklasse', 'C5 kustklimaat', 'conservering staal', 'coatingsysteem', 'zinkrijke primer', 'levensduur coating'],
@@ -1078,6 +1159,22 @@ export const ARTICLES: Article[] = [
           type: 'p',
           text: 'En de klasse zelf? Die hangt af van de werkelijke blootstelling, niet van het adres. In de havens van Antwerpen, Gent en Zeebrugge worden veel constructies beoordeeld als C4 tot C5, maar op terminalprojecten classificeren wij nooit een hele site in één keer: beschut staal onder een luifel, zones met permanente condensatie, buitenstaal in de zeewind en aanlandige spatzones kunnen binnen dezelfde installatie elk een andere beoordeling vragen. De klassebepaling gebeurt per constructie en per blootstellingszone.',
         },
+        {
+          type: 'image',
+          src: '/images/iso-c5-omgeving.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Vers gecoat tankdak in de haven: industriële atmosfeer, zeelucht en chemie in één omgeving',
+          caption: 'Een klassieke C4/C5-omgeving: industrie, zeelucht en chemie in één beeld. Het vers gecoate dak op de voorgrond is eigen werk.',
+        },
+        {
+          type: 'image',
+          src: '/images/iso-pitting.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Close-up van putcorrosie (pitting) in een stalen oppervlak',
+          caption: 'Wat er gebeurt zonder passende bescherming: putcorrosie (pitting) vreet zich lokaal in het staal.',
+        },
         { type: 'h2', text: 'Levensduurbereiken: hoe lang moet het systeem meegaan?' },
         {
           type: 'p',
@@ -1100,6 +1197,14 @@ export const ARTICLES: Article[] = [
           type: 'p',
           text: 'De totale droge laagdikte stijgt mee met de klasse. Ter indicatie, en nadrukkelijk geen normwaarden: C3-systemen komen vaak rond 160 tot 200 µm uit, C4 typisch op 200 tot 240 µm en C5 op 260 tot 320 µm of meer, verdeeld over drie of meer lagen. De nominale laagdikte (NDFT) en het aantal lagen volgen altijd uit het complete, geteste systeem en de duurzaamheidsklasse, zoals vastgelegd in deel 5 van de norm en het datablad van de fabrikant; daar wordt nooit van afgeweken.',
         },
+        {
+          type: 'image',
+          src: '/images/iso-second-layer.jpg',
+          width: 675,
+          height: 1200,
+          alt: 'Applicatie van een tweede laag met airless spuitapparatuur vanop een stelling',
+          caption: 'Laag per laag opbouwen: de tweede laag gaat erop, elke laag met zijn eigen taak en laagdikte.',
+        },
         { type: 'h2', text: 'De voorbereiding bepaalt of het systeem zijn levensduur haalt' },
         {
           type: 'p',
@@ -1108,6 +1213,14 @@ export const ARTICLES: Article[] = [
             { text: 'staal voorbereiden voor coating', to: '/insights/steel-surface-preparation' },
             '. Reken er als vuistregel op dat de helft van de kwaliteit van een corrosiewerend systeem in de voorbereiding zit.',
           ],
+        },
+        {
+          type: 'image',
+          src: '/images/iso-spot-blast.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Plaatselijk gestraalde zone op een geklonken tankbodem, klaar voor herstel',
+          caption: 'Plaatselijk gestraald tot op blank staal: zo begint elk duurzaam herstel.',
         },
         { type: 'h2', text: 'Nieuwbouw of onderhoud: twee verschillende sommen' },
         {
@@ -1138,6 +1251,14 @@ export const ARTICLES: Article[] = [
         {
           type: 'p',
           text: 'Ontbreekt een van deze elementen, dan is de kans groot dat aannemer en opdrachtgever bij oplevering over iets anders blijken te spreken. Een compleet bestek beschermt beide partijen.',
+        },
+        {
+          type: 'image',
+          src: '/images/iso-dft.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'DFT-meting met een Elcometer op een afgewerkte coating, meetwaarde 385 µm',
+          caption: 'Meten is weten: DFT-controle op de afgewerkte coating, hier 385 µm.',
         },
         {
           type: 'callout',
@@ -1275,6 +1396,22 @@ export const ARTICLES: Article[] = [
           type: 'p',
           text: 'And the category itself? It depends on the actual exposure, not the address. In the ports of Antwerp, Ghent and Zeebrugge many structures are assessed as C4 to C5, but on terminal projects we never classify an entire site in one go: sheltered steel under a canopy, zones with permanent condensation, external steel in the sea wind and splash zones can each require a different assessment within the same installation. Classification is done per structure and per exposure zone.',
         },
+        {
+          type: 'image',
+          src: '/images/iso-c5-omgeving.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Freshly coated tank roof in the port: industrial atmosphere, sea air and chemistry in one environment',
+          caption: 'A classic C4/C5 environment: industry, sea air and chemistry in one frame. The freshly coated roof in the foreground is our own work.',
+        },
+        {
+          type: 'image',
+          src: '/images/iso-pitting.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Close-up of pitting corrosion in a steel surface',
+          caption: 'What happens without proper protection: pitting corrosion eating locally into the steel.',
+        },
         { type: 'h2', text: 'Durability ranges: how long must the system last?' },
         {
           type: 'p',
@@ -1297,6 +1434,14 @@ export const ARTICLES: Article[] = [
           type: 'p',
           text: 'Total dry film thickness rises with the category. As an indication, and explicitly not standard requirements: C3 systems often land around 160 to 200 µm, C4 typically at 200 to 240 µm and C5 at 260 to 320 µm or more, spread over three or more coats. The nominal dry film thickness (NDFT) and the number of coats always follow from the complete, tested system and the durability class, as laid down in part 5 of the standard and the manufacturer data sheet; those are never deviated from.',
         },
+        {
+          type: 'image',
+          src: '/images/iso-second-layer.jpg',
+          width: 675,
+          height: 1200,
+          alt: 'Applying a second coat with airless spray equipment from scaffolding',
+          caption: 'Building up coat by coat: the second layer goes on, each coat with its own job and thickness.',
+        },
         { type: 'h2', text: 'Preparation decides whether the system reaches its design life' },
         {
           type: 'p',
@@ -1305,6 +1450,14 @@ export const ARTICLES: Article[] = [
             { text: 'preparing steel for coating', to: '/insights/steel-surface-preparation' },
             '. As a rule of thumb, half the quality of a corrosion protection system lives in the preparation.',
           ],
+        },
+        {
+          type: 'image',
+          src: '/images/iso-spot-blast.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Locally blasted zone on a riveted tank floor, ready for repair',
+          caption: 'Locally blasted to bare steel: this is how every durable repair starts.',
         },
         { type: 'h2', text: 'New build or maintenance: two different calculations' },
         {
@@ -1335,6 +1488,14 @@ export const ARTICLES: Article[] = [
         {
           type: 'p',
           text: 'When one of these elements is missing, contractor and client tend to discover at handover that they were talking about different things. A complete specification protects both parties.',
+        },
+        {
+          type: 'image',
+          src: '/images/iso-dft.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'DFT measurement with an Elcometer on a finished coating, reading 385 µm',
+          caption: 'Measuring is knowing: DFT check on the finished coating, here 385 µm.',
         },
         {
           type: 'callout',
