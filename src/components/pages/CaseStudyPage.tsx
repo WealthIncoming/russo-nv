@@ -64,7 +64,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudy }) {
       {/* Facts strip */}
       <section className="w-full bg-dark-grey/[0.04] border-b border-dark-grey/10">
         <div className="max-w-[100rem] mx-auto px-8 py-10">
-          <dl className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-6">
+          <dl className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-6">
             {c.facts.map((f) => (
               <div key={f.label}>
                 <dt className="font-paragraph text-xs text-foreground/60 uppercase tracking-wider mb-1">{f.label}</dt>

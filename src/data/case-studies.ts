@@ -69,6 +69,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         { label: 'Scope', value: 'Silo’s, draagstructuren, leidingwerk en transportinstallatie' },
         { label: 'Doorlooptijd', value: '2,5 weken' },
         { label: 'Productie', value: 'Centrale bleef volledig in bedrijf' },
+        { label: 'Coatingsysteem', value: 'SigmaCover 350 + SigmaDur 550H (PPG)' },
+        { label: 'Kleuren', value: 'RAL 5009, RAL 7022, RAL 1003' },
         { label: 'Oplevering', value: 'Augustus 2026' },
       ],
       sections: [
@@ -89,7 +91,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         {
           title: 'De aanpak',
           paragraphs: [
-            'We werkten de installatie zone per zone af, telkens in dezelfde volgorde: eerst de corrosieplekken behandelen, dan het volledige oppervlak schuren en reinigen, plaatselijk bijwerken waar de ondergrond dat vroeg, en afsluiten met de nieuwe afwerklaag. Zo kreeg elke zone zijn volledige opbouw voor we naar de volgende schoven, en bleef het aantal ingenomen werkzones op elk moment beperkt.',
+            'We werkten de installatie zone per zone af, telkens in dezelfde volgorde. Eerst het volledige oppervlak grondig reinigen onder hoge druk, roestige zones handmatig ontroesten tot St2/St3 en de bestaande coating volledig opschuren zodat de nieuwe lagen zich kunnen vastzetten. Daarna stofvrij maken, en pas dan verf.',
+            'De opbouw was een drielaags PPG Sigma-systeem: kale en geroeste plekken kregen eerst een plaatselijke primer SigmaCover 350 Alu, daarna volgde een volledige tussenlaag SigmaCover 350 en tot slot de polyurethaan eindlaag SigmaDur 550H, per zone in zijn eigen kleur: blauw (RAL 5009) op de silo’s, grijs (RAL 7022) op de onderstellen en geel (RAL 1003) op de accenten. Zo kreeg elke zone zijn volledige systeem voor we naar de volgende schoven, en bleef het aantal ingenomen werkzones op elk moment beperkt.',
             'Door die fasering kon de productie blijven draaien terwijl de installatie zichtbaar vernieuwde: geen grote stilgelegde zones, wel elke week een stuk installatie dat af was.',
           ],
         },
@@ -97,7 +100,7 @@ export const CASE_STUDIES: CaseStudy[] = [
           title: 'Het resultaat',
           paragraphs: [
             'De volledige renovatie werd opgeleverd in twee en een halve week, zonder productiestilstand. De silo’s, draagstructuren, het leidingwerk en de transportinstallatie kregen hun complete nieuwe afwerklaag, en Albeton hield er een installatie aan over die weer jaren tegen het Nederlandse klimaat kan.',
-            'Voor ons was dit project ook het bewijs dat onze werkwijze de grens over reist: dezelfde fasering en veiligheidsaanpak die we dagelijks toepassen in de Antwerpse haven, werkt net zo goed op een operationele site in Nederland.',
+            'Parallel aan Diemen voerde ons team ook straal- en schilderwerken uit op de Albeton-site in Amsterdam, met stralen tot Sa 2,5 en hetzelfde coatingsysteem. Voor ons was dit dubbelproject het bewijs dat onze werkwijze de grens over reist: dezelfde fasering en veiligheidsaanpak die we dagelijks toepassen in de Antwerpse haven, werkt net zo goed op operationele sites in Nederland.',
           ],
         },
       ],
@@ -124,6 +127,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         { label: 'Scope', value: 'Silos, support structures, piping and conveyor installation' },
         { label: 'Duration', value: '2.5 weeks' },
         { label: 'Production', value: 'Plant remained fully operational' },
+        { label: 'Coating system', value: 'SigmaCover 350 + SigmaDur 550H (PPG)' },
+        { label: 'Colours', value: 'RAL 5009, RAL 7022, RAL 1003' },
         { label: 'Completion', value: 'August 2026' },
       ],
       sections: [
@@ -144,7 +149,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         {
           title: 'The approach',
           paragraphs: [
-            'We worked through the installation zone by zone, each time in the same order: treat the corrosion spots first, then sand and clean the full surface, touch up locally where the substrate required it, and finish with the new topcoat. That way every zone received its complete build-up before we moved to the next one, and the number of occupied work zones stayed limited at any moment.',
+            'We worked through the installation zone by zone, each time in the same order. First a thorough high-pressure clean of the full surface, manual derusting of corroded zones to St2/St3 and complete sanding of the existing coating so the new layers can key in. Then dust-free, and only then paint.',
+            'The build-up was a three-coat PPG Sigma system: bare and rusted spots first received a local primer of SigmaCover 350 Alu, then a full intermediate coat of SigmaCover 350, and finally the polyurethane topcoat SigmaDur 550H, each zone in its own colour: blue (RAL 5009) on the silos, grey (RAL 7022) on the support structures and yellow (RAL 1003) on the accents. That way every zone received its complete system before we moved to the next one, and the number of occupied work zones stayed limited at any moment.',
             'That phasing let production keep running while the installation visibly renewed: no large shut-down zones, but every week another part of the plant finished.',
           ],
         },
@@ -152,7 +158,7 @@ export const CASE_STUDIES: CaseStudy[] = [
           title: 'The result',
           paragraphs: [
             'The full renovation was delivered in two and a half weeks, without a production stop. The silos, support structures, piping and conveyor installation received their complete new finishing coat, and Albeton kept an installation that can face the Dutch climate for years again.',
-            'For us this project also proved that our way of working travels across the border: the same phasing and safety approach we apply daily in the port of Antwerp works just as well on an operational site in the Netherlands.',
+            'In parallel with Diemen, our team also carried out blasting and painting works at the Albeton site in Amsterdam, with blasting to Sa 2.5 and the same coating system. For us this double project proved that our way of working travels across the border: the same phasing and safety approach we apply daily in the port of Antwerp works just as well on operational sites in the Netherlands.',
           ],
         },
       ],
