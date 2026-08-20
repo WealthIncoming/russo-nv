@@ -69,6 +69,18 @@ export const PAGE_META: Record<string, PageMeta> = {
       image: '/images/gts1.jpg',
     },
   },
+  '/services/industrieel-stralen': {
+    NL: {
+      title: 'Industrieel Stralen & Gritstralen op Locatie | Russo NV',
+      description: 'Industrieel stralen tot Sa 2½ of Sa 3: gritstralen, vacüümstralen zonder gritverspreiding en straalwerk in tanks. Op locatie in heel België. VCA & ISO gecertificeerd.',
+      image: '/images/services2.jpg',
+    },
+    EN: {
+      title: 'Industrial Blasting & Surface Preparation | Russo NV',
+      description: 'Industrial blasting to Sa 2½ or Sa 3: grit blasting, vacuum blasting without grit spread and in-tank blasting. On-site across Belgium. VCA & ISO certified.',
+      image: '/images/services2.jpg',
+    },
+  },
   '/industries': {
     NL: {
       title: 'Sectoren: Petrochemie, Maritiem, Voeding & Industrie | Russo NV',

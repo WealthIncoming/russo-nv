@@ -295,6 +295,17 @@ export default function ServicesPage() {
                               </Link>
                             )}
 
+                            {/* Read-more to the dedicated blasting landing page. */}
+                            {slug === 'sandblastingAbrasive' && (
+                              <Link
+                                to={localize('/services/industrieel-stralen')}
+                                className="inline-flex items-center gap-2 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all w-fit"
+                              >
+                                {locale === 'NL' ? 'Meer over industrieel stralen' : 'More about industrial blasting'}
+                                <ArrowRight className="w-4 h-4" />
+                              </Link>
+                            )}
+
                             {/* Read-more to the dedicated tankcoating landing page. */}
                             {slug === 'corrosionProtection' && (
                               <Link

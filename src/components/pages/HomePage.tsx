@@ -41,6 +41,7 @@ const SERVICES_DATA = [
     titleKey: 'sandBlastingTitle',
     descKey: 'sandBlastingDesc',
     anchor: 'sandblastingAbrasive',
+    href: '/services/industrieel-stralen',
     detailsKeys: ['surfaceProfileCreation', 'rustScaleRemoval', 'contaminantElimination']
   },
   {
