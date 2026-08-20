@@ -25,6 +25,10 @@ const LEGACY_PATHS = [
   // Targets are slash-less: the site builds with format:"file" (see
   // astro.config.mjs), so /path is the canonical 200 and /path/ 308s to it.
   [/^\/gratis-offerte\/?$/, "/contact"],
+  // Remaining legacy .be pages (verified against the Wayback Machine crawl of
+  // the old site, 2026-08-20): the thank-you page and the old privacy policy.
+  [/^\/bedankt-voor-uw-aanvraag\/?$/, "/contact"],
+  [/^\/privacy-policy\/?$/, "/privacy"],
   // Specific legacy .be URL → recapture straight onto the dedicated page
   // (must come before the general /diensten rule below).
   [/^\/diensten\/industriele-schilderwerken(\/.*)?$/, "/services/industriele-schilderwerken"],
