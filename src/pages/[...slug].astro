@@ -3,12 +3,14 @@ import { Head } from "@/components/Head";
 import AppRouter from "@/components/Router";
 import { serializeJsonLd } from "@/lib/json-ld";
 import { ARTICLES, findArticle, type ArticleBlock } from "@/data/articles";
+import { CASE_STUDIES } from "@/data/case-studies";
 import "@/styles/global.css";
 
 export function getStaticPaths() {
   const routes = ['', 'services', 'services/industriele-schilderwerken', 'services/tankcoating', 'services/industrieel-stralen', 'services/corrosiebescherming', 'industries', 'projects', 'safety', 'about', 'contact', 'insights', 'privacy', 'terms'];
   const articleRoutes = ARTICLES.map((a) => `insights/${a.slug}`);
-  return [...routes, ...articleRoutes].flatMap((r) => [
+  const caseStudyRoutes = CASE_STUDIES.map((c) => `projects/${c.slug}`);
+  return [...routes, ...articleRoutes, ...caseStudyRoutes].flatMap((r) => [
     { params: { slug: r === '' ? undefined : r } },
     { params: { slug: r === '' ? 'en' : `en/${r}` } },
   ]);
@@ -79,6 +81,9 @@ const insightsUrl = locale === 'EN' ? `${SITE_URL}/en/insights` : `${SITE_URL}/i
 const isServiceSub = basePath.startsWith('/services/');
 const servicesLabel = locale === 'EN' ? 'Services' : 'Diensten';
 const servicesUrl = locale === 'EN' ? `${SITE_URL}/en/services` : `${SITE_URL}/services`;
+const caseStudy = basePath.startsWith('/projects/') ? CASE_STUDIES.find((c) => `/projects/${c.slug}` === basePath) : null;
+const projectsLabel = locale === 'EN' ? 'Projects' : 'Projecten';
+const projectsUrl = locale === 'EN' ? `${SITE_URL}/en/projects` : `${SITE_URL}/projects`;
 
 const breadcrumbSchema = basePath === '/' ? null : article ? {
   '@context': 'https://schema.org',
@@ -87,6 +92,14 @@ const breadcrumbSchema = basePath === '/' ? null : article ? {
     { '@type': 'ListItem', position: 1, name: homeLabel, item: homeUrl },
     { '@type': 'ListItem', position: 2, name: insightsLabel, item: insightsUrl },
     { '@type': 'ListItem', position: 3, name: article[locale].title, item: canonical },
+  ],
+} : caseStudy ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: homeLabel, item: homeUrl },
+    { '@type': 'ListItem', position: 2, name: projectsLabel, item: projectsUrl },
+    { '@type': 'ListItem', position: 3, name: caseStudy.breadcrumb[locale], item: canonical },
   ],
 } : isServiceSub ? {
   '@context': 'https://schema.org',

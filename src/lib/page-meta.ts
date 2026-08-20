@@ -188,3 +188,10 @@ export const PAGE_META: Record<string, PageMeta> = {
     noindex: true,
   },
 };
+
+// Case-study pages: meta lives in the case-study data itself; register each
+// entry under its /projects/<slug> base path so astro + RouteSync find it.
+import { CASE_STUDIES } from '@/data/case-studies';
+for (const cs of CASE_STUDIES) {
+  PAGE_META[`/projects/${cs.slug}`] = cs.meta;
+}

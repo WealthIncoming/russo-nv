@@ -20,10 +20,12 @@ import IndustrialPaintingPage from '@/components/pages/IndustrialPaintingPage';
 import TankCoatingPage from '@/components/pages/TankCoatingPage';
 import BlastingPage from '@/components/pages/BlastingPage';
 import CorrosionProtectionPage from '@/components/pages/CorrosionProtectionPage';
+import CaseStudyPage from '@/components/pages/CaseStudyPage';
 import { PrivacyPage, TermsPage } from '@/components/pages/LegalPage';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { detectLocale, delocalize } from '@/lib/i18n/routes';
 import { PAGE_META } from '@/lib/page-meta';
+import { CASE_STUDIES } from '@/data/case-studies';
 
 // Shared route configuration as plain data. Crucially this module instantiates
 // NO router (no createBrowserRouter/createMemoryRouter), so it is safe to
@@ -85,6 +87,8 @@ const pageChildren: RouteObject[] = [
   { path: 'safety',     element: <SafetyPage />,     routeMetadata: { pageIdentifier: 'safety' } },
   { path: 'about',      element: <AboutPage />,      routeMetadata: { pageIdentifier: 'about' } },
   { path: 'contact',    element: <ContactPage />,    routeMetadata: { pageIdentifier: 'contact' } },
+  // Case-study detail pages, one route per entry in case-studies.ts.
+  ...CASE_STUDIES.map((s) => ({ path: `projects/${s.slug}`, element: <CaseStudyPage study={s} />, routeMetadata: { pageIdentifier: 'case-study' } })),
   { path: 'insights',         element: <ArticlesIndexPage />, routeMetadata: { pageIdentifier: 'insights' } },
   { path: 'insights/:slug',   element: <ArticlePage />,       routeMetadata: { pageIdentifier: 'article' } },
   { path: 'privacy',    element: <PrivacyPage />,    routeMetadata: { pageIdentifier: 'privacy' } },

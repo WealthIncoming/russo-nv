@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import { sortedArticles, ARTICLE_BASE } from '@/data/articles';
+import { CASE_STUDIES } from '@/data/case-studies';
 
 const SITE_URL = 'https://www.russonv.com';
 
@@ -16,6 +17,7 @@ const PAGES = [
   { path: '/about',      priority: '0.7', changefreq: 'monthly' },
   { path: '/contact',    priority: '0.9', changefreq: 'monthly' },
   { path: ARTICLE_BASE,  priority: '0.8', changefreq: 'weekly' },
+  ...CASE_STUDIES.map((c) => ({ path: `/projects/${c.slug}`, priority: '0.7', changefreq: 'monthly' })),
 ];
 
 const enPath = (path: string) => (path === '/' ? '/en' : `/en${path}`);

@@ -30,6 +30,12 @@ const PROJECT_TRANSLATION_MAP: Record<string, string> = {
   'silo renovation': 'albeton',
 };
 
+// Cards with a full case-study page get a read-more link (keyed by the same
+// translation prefix the card anchors use).
+const CASE_STUDY_LINKS: Record<string, string> = {
+  albeton: '/projects/silo-renovatie-albeton',
+};
+
 // =============================================================================
 // HELPER - Find the translation prefix for a given project title.
 // =============================================================================
@@ -324,13 +330,24 @@ export default function ProjectsPage() {
                         {getProjectText(project, 'Description', project.projectDescription)}
                       </p>
 
-                      <Link
-                        to={localize('/contact')}
-                        className="inline-flex items-center gap-2 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all"
-                      >
-                        {t('projects', 'cardCta')}
-                        <ArrowUpRight className="w-4 h-4" />
-                      </Link>
+                      <div className="flex flex-wrap gap-x-8 gap-y-3">
+                        {slug && CASE_STUDY_LINKS[slug] && (
+                          <Link
+                            to={localize(CASE_STUDY_LINKS[slug])}
+                            className="inline-flex items-center gap-2 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all"
+                          >
+                            {locale === 'NL' ? 'Lees de case study' : 'Read the case study'}
+                            <ArrowUpRight className="w-4 h-4" />
+                          </Link>
+                        )}
+                        <Link
+                          to={localize('/contact')}
+                          className="inline-flex items-center gap-2 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all"
+                        >
+                          {t('projects', 'cardCta')}
+                          <ArrowUpRight className="w-4 h-4" />
+                        </Link>
+                      </div>
                     </div>
 
                     <div className="lg:col-span-4">
