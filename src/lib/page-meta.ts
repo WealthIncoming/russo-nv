@@ -81,6 +81,18 @@ export const PAGE_META: Record<string, PageMeta> = {
       image: '/images/services2.jpg',
     },
   },
+  '/services/corrosiebescherming': {
+    NL: {
+      title: 'Corrosiebescherming & Conservering Staal | Russo NV',
+      description: 'Corrosiebescherming volgens ISO 12944: complete coatingsystemen van C2 tot C5, nieuwbouw en onderhoud. Stralen, conserveren en inspecteren in één hand.',
+      image: '/images/article3-hero.jpg',
+    },
+    EN: {
+      title: 'Corrosion Protection & Steel Preservation | Russo NV',
+      description: 'Corrosion protection to ISO 12944: complete coating systems from C2 to C5, new-build and maintenance. Blasting, coating and inspection in one hand.',
+      image: '/images/article3-hero.jpg',
+    },
+  },
   '/industries': {
     NL: {
       title: 'Sectoren: Petrochemie, Maritiem, Voeding & Industrie | Russo NV',

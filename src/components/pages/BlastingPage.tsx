@@ -20,7 +20,7 @@ const ARTICLE_TO = '/insights/steel-surface-preparation';
 const RELATED = [
   { to: '/services/industriele-schilderwerken', NL: 'Industriële schilderwerken', EN: 'Industrial painting' },
   { to: '/services/tankcoating', NL: 'Tankcoating & tank lining', EN: 'Tank coating & lining' },
-  { to: '/services#corrosionProtection', NL: 'Corrosiebescherming', EN: 'Corrosion protection' },
+  { to: '/services/corrosiebescherming', NL: 'Corrosiebescherming', EN: 'Corrosion protection' },
   { to: '/services#coatingInspection', NL: 'Coating-inspectie', EN: 'Coating inspection' },
 ];
 

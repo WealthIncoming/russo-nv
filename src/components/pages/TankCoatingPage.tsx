@@ -19,7 +19,7 @@ const ARTICLE_TO = '/insights/tank-coating-lining';
 const RELATED = [
   { to: '/services/industriele-schilderwerken', NL: 'Industriële schilderwerken', EN: 'Industrial painting' },
   { to: '/services#sandblastingAbrasive', NL: 'Stralen & oppervlaktevoorbereiding', EN: 'Blasting & surface preparation' },
-  { to: '/services#corrosionProtection', NL: 'Corrosiebescherming', EN: 'Corrosion protection' },
+  { to: '/services/corrosiebescherming', NL: 'Corrosiebescherming', EN: 'Corrosion protection' },
   { to: '/services#coatingInspection', NL: 'Coating-inspectie', EN: 'Coating inspection' },
 ];
 

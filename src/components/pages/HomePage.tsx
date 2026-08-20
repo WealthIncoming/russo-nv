@@ -49,6 +49,7 @@ const SERVICES_DATA = [
     titleKey: 'corrosionProtectionTitle',
     descKey: 'corrosionProtectionDesc',
     anchor: 'corrosionProtection',
+    href: '/services/corrosiebescherming',
     detailsKeys: ['antiCorrosionSystems', 'chemicalResistance', 'uvProtection']
   },
   {

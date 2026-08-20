@@ -13,7 +13,7 @@ const SERVICES = [
   { labelKey: 'tankCoatingLining',    anchor: 'corrosionProtection',          to: '/services/tankcoating' },
   { labelKey: 'sandblasting',         anchor: 'sandblastingAbrasive',         to: '/services/industrieel-stralen' },
   { labelKey: 'fireproofingCoatings', anchor: 'fireproofingThermal' },
-  { labelKey: 'protectiveCoatings',   anchor: 'corrosionProtection' },
+  { labelKey: 'protectiveCoatings',   anchor: 'corrosionProtection',          to: '/services/corrosiebescherming' },
   { labelKey: 'surfacePreparation',   anchor: 'sandblastingAbrasive' },
   { labelKey: 'coatRemoval',          anchor: 'sandblastingAbrasive' },
 ];
