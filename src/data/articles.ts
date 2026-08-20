@@ -1569,6 +1569,345 @@ export const ARTICLES: Article[] = [
       ],
     },
   },
+  {
+    slug: 'fireproof-coating-steel',
+    date: '2026-08-20',
+    author: 'Stig Vanmarsenille',
+    authorRole: {
+      NL: 'NACE Level 2 coating inspector',
+      EN: 'NACE Level 2 coating inspector',
+    },
+    authorBio: {
+      NL: 'Stig Vanmarsenille is NACE Level 2 coating inspector bij Russo NV. Hij keurt en begeleidt dagelijks industriële straal- en coatingwerken op de werf, van tankbekleding tot staalconstructies in de petrochemie.',
+      EN: 'Stig Vanmarsenille is a NACE Level 2 coating inspector at Russo NV. He inspects and supervises industrial blasting and coating work on site every day, from tank linings to structural steel in petrochemicals.',
+    },
+    authorUrl: 'https://www.linkedin.com/in/stig-vanmarsenille-747176b9/',
+    authorImage: '/images/author-stig.jpg',
+    // TEMP hero: reuses article #1's image until Bruno supplies a real fireproofing photo.
+    heroImage: '/images/article1.jpg',
+    heroAlt: {
+      NL: 'Industriële staalstructuur behandeld door Russo NV',
+      EN: 'Industrial steel structure treated by Russo NV',
+    },
+    keywords: {
+      NL: ['brandwerende coating', 'brandwerende verf staal', 'intumescerende coating', 'passieve brandbeveiliging', 'brandweerstand R60', 'profielfactor', 'cementgebonden spuitmortel', 'brandwerend schilderwerk'],
+      EN: ['fireproof coating', 'intumescent coating', 'passive fire protection', 'fire resistance R60', 'section factor', 'cementitious fireproofing', 'structural steel fire protection'],
+    },
+    NL: {
+      title: 'Brandwerende coating op staal: systemen, laagdiktes en brandweerstand',
+      metaTitle: 'Brandwerende coating voor staal: de gids | Russo NV',
+      description: 'Hoe haal je R30 tot R120 op een staalstructuur? Intumescerende en cementgebonden systemen, de profielfactor en laagdiktes, praktisch uitgelegd vanaf de werf.',
+      excerpt: 'Onbeschermd staal verliest bij brand in enkele minuten zijn draagkracht. Een brandwerende coating koopt de minuten die het verschil maken. Dit is hoe intumescerende en cementgebonden systemen werken, en waar een specificatie op staat of valt.',
+      category: 'Brandbeveiliging',
+      body: [
+        {
+          type: 'p',
+          text: 'Staal brandt niet, maar het bezwijkt wel. Rond 500 tot 600 °C verliest constructiestaal ongeveer de helft van zijn draagkracht, en bij een volontwikkelde brand worden die temperaturen binnen enkele minuten gehaald. Een onbeschermde ligger of kolom geeft het dan op lang voordat iedereen het gebouw uit is. Daarom eisen de voorschriften voor dragende staalstructuren een brandweerstand, uitgedrukt in minuten: R30, R60, R120.',
+        },
+        {
+          type: 'p',
+          segments: [
+            'Die minuten haal je met passieve brandbeveiliging: een laag die het staal isoleert van de hitte, zonder dat er iets moet worden geactiveerd. Geen sprinklers of detectie, maar bescherming die er gewoon staat, dag en nacht. In dit artikel leggen we uit hoe de twee belangrijkste coatingfamilies werken, hoe je een specificatie leest en waar het in de praktijk misloopt. ',
+            { text: 'Brandwerende systemen zijn een vast onderdeel van ons werkpakket', to: '/services#fireproofingThermal' },
+            '.',
+          ],
+        },
+        { type: 'h2', text: 'Waarom minuten tellen: de logica achter R-waarden' },
+        {
+          type: 'p',
+          text: 'De R-waarde uit EN 13501-2 zegt hoeveel minuten een dragend element zijn functie behoudt onder de standaard brandkromme. R60 betekent dus niet dat het gebouw na een uur verloren is, maar dat de constructie minstens 60 minuten gegarandeerd blijft dragen: tijd voor evacuatie en voor de brandweer om binnen te gaan. Welke R-waarde vereist is, volgt uit de Belgische basisnormen voor brandpreventie en het advies van de brandweer of het studiebureau, op basis van het gebouwtype, de hoogte en het gebruik.',
+        },
+        {
+          type: 'p',
+          text: 'In de petrochemie ligt de lat anders: daar rekent men vaak met een koolwaterstofbrandkromme, die veel sneller en veel heter stijgt dan een gewone gebouwbrand. Systemen voor die omgevingen zijn daarop getest en gedimensioneerd; een product voor kantoorgebouwen kun je daar niet zomaar inzetten.',
+        },
+        { type: 'h2', text: 'De families van passieve brandbeveiliging' },
+        {
+          type: 'table',
+          caption: 'De drie meest gebruikte beschermingsvormen voor staal, naast elkaar',
+          headers: ['', 'Intumescerende coating', 'Cementgebonden spuitmortel', 'Plaatbekleding'],
+          rows: [
+            ['Dikte', 'Honderden µm tot enkele mm', 'Centimeters', 'Centimeters'],
+            ['Gewicht', 'Verwaarloosbaar', 'Aanzienlijk', 'Beperkt'],
+            ['Uitzicht', 'Als geschilderd staal, profiel blijft zichtbaar', 'Ruw, industrieel', 'Kokervormig, profiel verdwijnt'],
+            ['Typische toepassing', 'Zichtstaal, gebouwen, retrofit', 'Petrochemie, hoge R-waarden, koolwaterstofbrand', 'Utiliteitsbouw, verborgen staal'],
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Russo NV past zowel intumescerende als cementgebonden systemen toe. De keuze volgt uit de vereiste brandweerstand, het brandscenario, het gewenste uitzicht en het budget: voor zichtbaar staal in een gebouw is intumescerend meestal de logische keuze, voor een pijpenbrug op een raffinaderij vaak spuitmortel.',
+        },
+        { type: 'h2', text: 'Hoe een intumescerende coating werkt' },
+        {
+          type: 'p',
+          text: 'Bij kamertemperatuur is een intumescerende coating gewoon een dunne, strakke verflaag. Wordt het oppervlak echter 200 tot 300 °C warm, dan start een chemische reactie: de laag schuimt op tot tientallen keren haar oorspronkelijke dikte en vormt een isolerende koollaag, de char. Die schuimlaag vertraagt de opwarming van het staal en houdt het onder de kritieke temperatuur, minutenlang.',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Het systeem bestaat altijd uit drie geteste onderdelen: een compatibele primer, de reactieve laag en meestal een afwerklaag die de reactieve laag beschermt tegen vocht.',
+            'De reactieve laag is het brandwerende hart; de laagdikte ervan bepaalt de gehaalde R-waarde.',
+            'Binnen volstaat soms een systeem zonder afwerklaag; buiten of in vochtige ruimtes is een sealer of topcoat verplicht, anders degradeert de reactieve laag voor de brand er ooit is.',
+          ],
+        },
+        { type: 'h2', text: 'De profielfactor: waarom het ene profiel meer coating vraagt' },
+        {
+          type: 'p',
+          text: 'Twee kolommen met dezelfde R-eis kunnen een totaal verschillende laagdikte nodig hebben. De sleutel is de profielfactor: de verhouding tussen de verhitte omtrek van het profiel en zijn staaldoorsnede. Een zwaar, gedrongen profiel warmt traag op en heeft een lage profielfactor; een slank, dunwandig profiel warmt snel op en heeft een hoge. Hoe hoger de profielfactor, hoe dikker de brandwerende laag moet zijn voor dezelfde R-waarde.',
+        },
+        {
+          type: 'p',
+          text: 'Elke fabrikant publiceert daarvoor beladingstabellen: per profielfactor en per R-waarde de vereiste droge laagdikte. Die tabellen zijn het resultaat van de brandproeven waarmee het systeem is beoordeeld, en ze zijn bindend. Een offerte of specificatie die één laagdikte over de hele structuur legt, zonder naar de profielen te kijken, is een rode vlag: op de slanke profielen is dat te weinig, op de zware betaal je te veel.',
+        },
+        { type: 'h2', text: 'Applicatie: waar het in de praktijk op aankomt' },
+        {
+          type: 'p',
+          segments: [
+            'Net als bij elk coatingsysteem begint het bij de ondergrond: ',
+            { text: 'gestraald of anderszins correct voorbereid staal', to: '/insights/steel-surface-preparation' },
+            ' en een primer die door de fabrikant met de reactieve laag is getest. Daarna is het een kwestie van discipline:',
+          ],
+        },
+        {
+          type: 'ul',
+          items: [
+            'Laagdikte opbouwen in meerdere gangen: intumescerende producten hebben een maximale natte laagdikte per gang, en te dik in één keer aanbrengen geeft zakkers en een laag die niet doordroogt.',
+            'Droogtijden tussen de gangen respecteren, zeker bij lage temperaturen en hoge luchtvochtigheid.',
+            'Klimaatgrenzen bewaken zoals bij elk verfsysteem: staaltemperatuur boven het dauwpunt, relatieve vochtigheid binnen de grenzen van het datablad.',
+            'Aansluitingen, boutverbindingen en randen verdienen extra aandacht: precies daar wordt een laag gauw te dun.',
+            'De afwerklaag pas aanbrengen als de reactieve laag zijn dikte en droging heeft; hij beschermt het systeem decennialang tegen vocht en UV.',
+          ],
+        },
+        { type: 'h2', text: 'Kwaliteitscontrole: meten, per profiel, met registratie' },
+        {
+          type: 'p',
+          text: 'Omdat de laagdikte rechtstreeks de brandweerstand bepaalt, is de controle strenger dan bij een gewone verflaag. Per element wordt de droge laagdikte gemeten en vergeleken met de waarde uit de beladingstabel voor dát profiel. De metingen worden geregistreerd per profieltype en locatie, zodat het opleverdossier aantoont dat elke ligger en kolom zijn vereiste dikte heeft. Beschadigingen die tijdens de bouw ontstaan, worden hersteld tot de volledige systeemopbouw, niet gewoon bijgetipt.',
+        },
+        { type: 'h2', text: 'Brandwerend én corrosiebestendig tegelijk' },
+        {
+          type: 'p',
+          segments: [
+            'Een brandwerend systeem is tegelijk een verfsysteem dat jarenlang tegen zijn omgeving moet kunnen. In een droge kantooromgeving is dat eenvoudig; op een buitenstructuur of in de industrie moet de opbouw ook de ',
+            { text: 'corrosiviteitsklasse van de omgeving', to: '/insights/corrosion-protection-iso-12944' },
+            ' aankunnen. Fabrikanten geven daarvoor per systeem aan tot welke omgevingsklasse het is beoordeeld en welke primer en topcoat daarbij horen. De twee functies vechten om dezelfde vierkante meter: wie ze los van elkaar specificeert, komt op de werf in de problemen.',
+          ],
+        },
+        { type: 'h2', text: 'Zo controleer je een brandwerende specificatie' },
+        {
+          type: 'callout',
+          title: 'Checklist: staat dit in de specificatie?',
+          items: [
+            'De vereiste R-waarde per element, met de bron van die eis (basisnormen, brandweeradvies, studiebureau).',
+            'Het brandscenario: standaard gebouwbrand of koolwaterstofbrand.',
+            'Het volledige, geteste systeem: primer, reactieve laag of mortel, afwerklaag, van één fabrikant.',
+            'Laagdiktes per profielfactor volgens de beladingstabel, niet één dikte voor alles.',
+            'De omgevingsklasse waarin het systeem moet overleven, met bijhorende afwerking.',
+            'Meet- en registratie-eisen voor de oplevering, per element.',
+            'De herstelmethode voor beschadigingen tijdens en na de bouw.',
+          ],
+        },
+        { type: 'h2', text: 'Veelgestelde vragen' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'Wat is het verschil tussen brandwerende verf en gewone verf?',
+              a: 'Gewone verf beschermt tegen corrosie en geeft kleur; ze doet niets bij brand. Een intumescerende (brandwerende) coating bevat componenten die bij 200 tot 300 °C opschuimen tot een dikke, isolerende koollaag die het staal minutenlang onder zijn kritieke temperatuur houdt. Het is constructieve bescherming die toevallig op verf lijkt, met bijbehorende proeven, beladingstabellen en controle-eisen.',
+            },
+            {
+              q: 'Welke brandweerstand heeft mijn gebouw nodig?',
+              a: 'Dat bepaalt niet de schilder maar de regelgeving: de Belgische basisnormen voor brandpreventie leggen per gebouwtype en hoogte vast welke R-waarde de structuur moet halen, en de brandweer of het studiebureau vertaalt dat naar de elementen. Onze rol begint daarna: het systeem en de laagdiktes selecteren die die eis aantoonbaar halen.',
+            },
+            {
+              q: 'Kan een brandwerende coating over bestaande verf worden aangebracht?',
+              a: 'Alleen als de bestaande laag compatibel, draagkrachtig en door de fabrikant aanvaard is, en dat is eerder uitzondering dan regel. Meestal wordt de oude verf verwijderd of grondig behandeld tot een ondergrond waarop het geteste systeem mag staan. Een brandwerende laag op een loszittende oude verflaag is bij brand waardeloos: de schuimlaag valt er gewoon af.',
+            },
+            {
+              q: 'Werkt een intumescerende coating ook buiten?',
+              a: 'Ja, mits het systeem daarvoor beoordeeld is en de voorgeschreven afwerklaag wordt aangebracht. Vocht is de vijand: een onbeschermde reactieve laag neemt water op en verliest na verloop van tijd zijn werking. Voor buitentoepassingen en industriële omgevingen bestaan systemen met bijpassende topcoats die tegelijk de corrosiebescherming leveren.',
+            },
+            {
+              q: 'Hoe lang gaat een brandwerend systeem mee en welk onderhoud vraagt het?',
+              a: 'Correct aangebracht en afgewerkt gaat een systeem decennia mee. Het onderhoud is vooral visueel: periodiek controleren op mechanische beschadiging, vochtschade en aantasting van de afwerklaag, en herstellingen uitvoeren volgens de systeemopbouw. Elke beschadiging is een gat in de brandweerstand, dus herstel hoort bij het beheer van het gebouw.',
+            },
+            {
+              q: 'Wat kost brandwerend schilderwerk per m²?',
+              a: 'De prijs wordt gedreven door de vereiste R-waarde, de profielfactoren van de structuur (die de laagdiktes bepalen), het brandscenario, de bereikbaarheid en de staat van de ondergrond. R30 op zware profielen in een loods is een andere som dan R120 op slank zichtstaal. Wij rekenen op basis van de beladingstabellen en een opname of de specificatie, zodat de offerte klopt met wat er werkelijk moet hangen.',
+            },
+            {
+              q: 'Kan brandbeveiliging achteraf op een bestaand gebouw worden aangebracht?',
+              a: 'Ja, dat gebeurt vaak: bij herbestemming, na een strengere brandweereis of bij een verkoop. Intumescerende coatings zijn daarvoor de meest gebruikte oplossing omdat ze dun zijn, het uitzicht behouden en zonder zware ingrepen op bestaande profielen kunnen. De ondergrond bepaalt het werk: bestaande verflagen moeten beoordeeld en meestal verwijderd worden.',
+            },
+          ],
+        },
+        { type: 'h2', text: 'Hulp nodig bij uw project?' },
+        {
+          type: 'cta',
+          title: 'Brandweerstand die aantoonbaar klopt',
+          text: 'Russo NV brengt intumescerende en cementgebonden systemen aan volgens de beladingstabellen van de fabrikant, met laagdiktemetingen en registratie per element. Vraag vrijblijvend een offerte of advies aan.',
+          buttonLabel: 'Vraag een offerte aan',
+          to: '/contact',
+        },
+      ],
+    },
+    EN: {
+      title: 'Fireproof coatings for steel: systems, thicknesses and fire ratings',
+      metaTitle: 'Fireproof & Intumescent Coatings for Steel | Russo NV',
+      description: 'How do you achieve R30 to R120 on a steel structure? Intumescent and cementitious systems, the section factor and film thicknesses, explained from the field.',
+      excerpt: 'Unprotected steel loses its load-bearing capacity within minutes in a fire. A fireproof coating buys the minutes that matter. This is how intumescent and cementitious systems work, and where a specification stands or falls.',
+      category: 'Fire protection',
+      body: [
+        {
+          type: 'p',
+          text: 'Steel does not burn, but it does fail. Around 500 to 600 °C structural steel loses roughly half its load-bearing capacity, and a fully developed fire reaches those temperatures within minutes. An unprotected beam or column then gives up long before everyone is out of the building. That is why regulations demand a fire resistance for load-bearing steel structures, expressed in minutes: R30, R60, R120.',
+        },
+        {
+          type: 'p',
+          segments: [
+            'Those minutes are bought with passive fire protection: a layer that insulates the steel from the heat without anything needing to be activated. No sprinklers or detection, but protection that is simply there, day and night. In this article we explain how the two main coating families work, how to read a specification and where things go wrong in practice. ',
+            { text: 'Fireproofing systems are a core part of our scope', to: '/services#fireproofingThermal' },
+            '.',
+          ],
+        },
+        { type: 'h2', text: 'Why minutes count: the logic behind R ratings' },
+        {
+          type: 'p',
+          text: 'The R rating from EN 13501-2 states how many minutes a load-bearing element keeps its function under the standard fire curve. R60 does not mean the building is lost after an hour; it means the structure is guaranteed to keep carrying for at least 60 minutes: time to evacuate and for the fire brigade to go in. Which R rating is required follows from the Belgian basic fire prevention standards and the advice of the fire brigade or the engineering office, based on building type, height and use.',
+        },
+        {
+          type: 'p',
+          text: 'In petrochemicals the bar sits elsewhere: there, design is often based on a hydrocarbon fire curve, which rises far faster and hotter than an ordinary building fire. Systems for those environments are tested and dimensioned accordingly; a product intended for office buildings cannot simply be used there.',
+        },
+        { type: 'h2', text: 'The families of passive fire protection' },
+        {
+          type: 'table',
+          caption: 'The three most common protection forms for steel, side by side',
+          headers: ['', 'Intumescent coating', 'Cementitious spray', 'Board cladding'],
+          rows: [
+            ['Thickness', 'Hundreds of µm to a few mm', 'Centimetres', 'Centimetres'],
+            ['Weight', 'Negligible', 'Considerable', 'Limited'],
+            ['Appearance', 'Like painted steel, profile stays visible', 'Rough, industrial', 'Boxed in, profile disappears'],
+            ['Typical use', 'Visible steel, buildings, retrofit', 'Petrochemicals, high R ratings, hydrocarbon fire', 'Non-residential construction, hidden steel'],
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Russo NV applies both intumescent and cementitious systems. The choice follows from the required fire resistance, the fire scenario, the desired appearance and the budget: for visible steel in a building, intumescent is usually the logical choice; for a pipe rack on a refinery, often spray-applied mortar.',
+        },
+        { type: 'h2', text: 'How an intumescent coating works' },
+        {
+          type: 'p',
+          text: 'At room temperature an intumescent coating is simply a thin, neat paint film. But when the surface reaches 200 to 300 °C, a chemical reaction starts: the film foams up to tens of times its original thickness and forms an insulating carbon layer, the char. That foam layer slows the heating of the steel and keeps it below its critical temperature, for minutes on end.',
+        },
+        {
+          type: 'ul',
+          items: [
+            'The system always consists of three tested parts: a compatible primer, the reactive layer and usually a finish coat that protects the reactive layer from moisture.',
+            'The reactive layer is the fireproofing heart; its film thickness determines the achieved R rating.',
+            'Indoors a system without a finish coat is sometimes acceptable; outdoors or in humid spaces a sealer or topcoat is mandatory, otherwise the reactive layer degrades long before any fire.',
+          ],
+        },
+        { type: 'h2', text: 'The section factor: why one profile needs more coating than another' },
+        {
+          type: 'p',
+          text: 'Two columns with the same R requirement can need completely different film thicknesses. The key is the section factor: the ratio between the heated perimeter of the profile and its steel cross-section. A heavy, stocky profile heats up slowly and has a low section factor; a slender, thin-walled profile heats up fast and has a high one. The higher the section factor, the thicker the fireproofing layer must be for the same R rating.',
+        },
+        {
+          type: 'p',
+          text: 'Every manufacturer publishes loading tables for this: per section factor and per R rating, the required dry film thickness. Those tables are the result of the fire tests the system was assessed with, and they are binding. A quotation or specification that puts one film thickness across the whole structure, without looking at the profiles, is a red flag: too little on the slender profiles, and you overpay on the heavy ones.',
+        },
+        { type: 'h2', text: 'Application: what it comes down to in practice' },
+        {
+          type: 'p',
+          segments: [
+            'As with any coating system it starts with the substrate: ',
+            { text: 'blasted or otherwise correctly prepared steel', to: '/insights/steel-surface-preparation' },
+            ' and a primer tested by the manufacturer with the reactive layer. After that it is a matter of discipline:',
+          ],
+        },
+        {
+          type: 'ul',
+          items: [
+            'Build the film in multiple passes: intumescent products have a maximum wet film thickness per pass, and applying too thick in one go causes sags and a film that never dries through.',
+            'Respect drying times between passes, especially at low temperatures and high humidity.',
+            'Guard the climate limits as with any paint system: steel temperature above the dew point, relative humidity within the data sheet limits.',
+            'Connections, bolted joints and edges deserve extra attention: exactly there a film easily runs thin.',
+            'Apply the finish coat only once the reactive layer has its thickness and drying; it protects the system against moisture and UV for decades.',
+          ],
+        },
+        { type: 'h2', text: 'Quality control: measured, per profile, with records' },
+        {
+          type: 'p',
+          text: 'Because the film thickness directly determines the fire resistance, the control is stricter than for an ordinary paint layer. Per element the dry film thickness is measured and compared with the value from the loading table for that specific profile. The measurements are recorded per profile type and location, so the handover dossier proves that every beam and column carries its required thickness. Damage that occurs during construction is repaired to the full system build-up, not just touched in.',
+        },
+        { type: 'h2', text: 'Fireproof and corrosion-resistant at the same time' },
+        {
+          type: 'p',
+          segments: [
+            'A fireproofing system is at the same time a paint system that must survive its environment for years. In a dry office environment that is simple; on an outdoor structure or in industry the build-up must also handle the ',
+            { text: 'corrosivity category of the environment', to: '/insights/corrosion-protection-iso-12944' },
+            '. Manufacturers state per system up to which environmental category it has been assessed and which primer and topcoat belong with it. The two functions fight over the same square metre: specify them separately and you will pay for it on site.',
+          ],
+        },
+        { type: 'h2', text: 'How to check a fireproofing specification' },
+        {
+          type: 'callout',
+          title: 'Checklist: is this in the specification?',
+          items: [
+            'The required R rating per element, with the source of that requirement (basic standards, fire brigade advice, engineering office).',
+            'The fire scenario: standard building fire or hydrocarbon fire.',
+            'The complete, tested system: primer, reactive layer or mortar, finish coat, from one manufacturer.',
+            'Film thicknesses per section factor according to the loading table, not one thickness for everything.',
+            'The environmental category the system must survive in, with matching finish.',
+            'Measurement and recording requirements for handover, per element.',
+            'The repair method for damage during and after construction.',
+          ],
+        },
+        { type: 'h2', text: 'Frequently asked questions' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'What is the difference between fireproof paint and ordinary paint?',
+              a: 'Ordinary paint protects against corrosion and provides colour; it does nothing in a fire. An intumescent (fireproof) coating contains components that foam up at 200 to 300 °C into a thick, insulating char layer that keeps the steel below its critical temperature for minutes on end. It is structural protection that happens to look like paint, with matching tests, loading tables and control requirements.',
+            },
+            {
+              q: 'Which fire resistance does my building need?',
+              a: 'That is decided not by the painter but by regulation: the Belgian basic fire prevention standards lay down per building type and height which R rating the structure must achieve, and the fire brigade or engineering office translates that to the elements. Our role starts after that: selecting the system and film thicknesses that demonstrably meet the requirement.',
+            },
+            {
+              q: 'Can a fireproof coating be applied over existing paint?',
+              a: 'Only if the existing layer is compatible, sound and accepted by the manufacturer, and that is the exception rather than the rule. Usually the old paint is removed or thoroughly treated down to a substrate the tested system is allowed to sit on. A fireproofing layer on top of a loose old paint film is worthless in a fire: the char simply falls off.',
+            },
+            {
+              q: 'Does an intumescent coating also work outdoors?',
+              a: 'Yes, provided the system has been assessed for it and the prescribed finish coat is applied. Moisture is the enemy: an unprotected reactive layer absorbs water and loses its function over time. For outdoor and industrial environments there are systems with matching topcoats that deliver the corrosion protection at the same time.',
+            },
+            {
+              q: 'How long does a fireproofing system last and what maintenance does it need?',
+              a: 'Correctly applied and finished, a system lasts for decades. Maintenance is mainly visual: periodically check for mechanical damage, moisture damage and degradation of the finish coat, and carry out repairs to the full system build-up. Every damage is a hole in the fire resistance, so repair belongs to the management of the building.',
+            },
+            {
+              q: 'What does fireproof painting cost per m²?',
+              a: 'The price is driven by the required R rating, the section factors of the structure (which set the film thicknesses), the fire scenario, accessibility and the condition of the substrate. R30 on heavy profiles in a warehouse is a different calculation than R120 on slender visible steel. We quote from the loading tables and a survey or your specification, so the price matches what actually has to go on.',
+            },
+            {
+              q: 'Can fire protection be added to an existing building?',
+              a: 'Yes, that happens often: at a change of use, after a stricter fire brigade requirement or at a sale. Intumescent coatings are the most used solution for this because they are thin, preserve the appearance and can go onto existing profiles without heavy interventions. The substrate determines the work: existing paint layers must be assessed and usually removed.',
+            },
+          ],
+        },
+        { type: 'h2', text: 'Need help with your project?' },
+        {
+          type: 'cta',
+          title: 'Fire resistance that demonstrably adds up',
+          text: 'Russo NV applies intumescent and cementitious systems according to the manufacturer loading tables, with film thickness measurements and records per element. Request a no-obligation quote or advice.',
+          buttonLabel: 'Request a quote',
+          to: '/contact',
+        },
+      ],
+    },
+  },
 ];
 
 // ---------------------------------------------------------------------------
