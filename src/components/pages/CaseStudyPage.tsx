@@ -55,7 +55,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudy }) {
           </nav>
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <span className="font-paragraph text-xs font-bold tracking-[0.2em] text-primary uppercase">{c.kicker}</span>
-            <h1 className="font-heading text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl uppercase leading-[0.95] mt-4 max-w-4xl">{c.h1}</h1>
+            <h1 className="font-heading text-white text-2xl sm:text-3xl md:text-4xl uppercase leading-tight mt-4 max-w-3xl">{c.h1}</h1>
             <p className="font-paragraph text-base sm:text-lg text-white/85 mt-6 max-w-2xl leading-relaxed">{c.heroSub}</p>
           </motion.div>
         </div>
