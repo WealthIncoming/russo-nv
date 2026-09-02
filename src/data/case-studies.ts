@@ -174,6 +174,140 @@ export const CASE_STUDIES: CaseStudy[] = [
       backToProjects: 'All projects',
     },
   },
+  {
+    slug: 'tankcoating-gts-gent',
+    client: 'Ghent Tank Storage (GTS)',
+    completion: '2026-04-01',
+    heroImage: '/images/gts1.jpg',
+    secondaryImage: '/images/gts3.jpg',
+    breadcrumb: { NL: 'Tankcoating GTS Gent', EN: 'GTS Ghent tank coating' },
+    meta: {
+      NL: {
+        title: 'Tankcoating in Gent: 16 nieuwbouwtanks bij GTS | Russo NV',
+        description: 'Volledige oppervlaktevoorbereiding en coating van 16 nieuwe opslagtanks bij Ghent Tank Storage in de haven van Gent, binnen- en buitenzijde, inclusief inwendige linings.',
+        image: '/images/gts1.jpg',
+      },
+      EN: {
+        title: 'Tank Coating in Ghent: 16 New-Build Tanks at GTS | Russo NV',
+        description: 'Complete surface preparation and coating of 16 newly built storage tanks at Ghent Tank Storage in the Port of Ghent, inside and out, including internal linings.',
+        image: '/images/gts1.jpg',
+      },
+    },
+    NL: {
+      kicker: 'Case study',
+      h1: 'Tankcoating voor 16 nieuwbouwtanks bij GTS, haven van Gent',
+      heroSub: 'Volledige oppervlaktevoorbereiding en beschermende coating van 16 nieuw gebouwde opslagtanks, binnen- en buitenzijde, met gespecialiseerde inwendige linings voor chemische en petroleumproducten. Opgeleverd op een werkende nieuwbouwsite, binnen de commissioningdeadlines.',
+      heroAlt: 'Nieuwbouw opslagtanks bij Ghent Tank Storage in de haven van Gent, gecoat door Russo NV',
+      secondaryAlt: 'Coatingwerken aan een opslagtank bij GTS in Gent',
+      facts: [
+        { label: 'Klant', value: 'Ghent Tank Storage (GTS)' },
+        { label: 'Locatie', value: 'Haven van Gent, Belgi\u00eb' },
+        { label: 'Scope', value: '16 nieuwbouwtanks, binnen- en buitenzijde' },
+        { label: 'Specialiteit', value: 'Inwendige linings voor chemie en petroleum' },
+        { label: 'Voorbereiding', value: 'Volledig stralen, in- en uitwendig' },
+        { label: 'Site', value: 'Actieve nieuwbouwwerf' },
+        { label: 'Deadline', value: 'Commissioningplanning gehaald' },
+        { label: 'Oplevering', value: 'April 2026' },
+      ],
+      sections: [
+        {
+          title: 'De opdracht',
+          paragraphs: [
+            'Ghent Tank Storage bouwde in de haven van Gent een reeks nieuwe opslagtanks en zocht een partij die de volledige coatingscope in één kon nemen: zestien nieuw geconstrueerde tanks, van kaal staal tot beschermd systeem, zowel de buitenzijde als de binnenzijde.',
+            'Een deel van de tanks was bestemd voor chemische en petroleumproducten en vroeg daarom om gespecialiseerde inwendige liningsystemen: bekledingen die naast corrosiebescherming ook chemische resistentie leveren, afgestemd op het opgeslagen product.',
+          ],
+        },
+        {
+          title: 'De uitdaging: coaten op een werkende nieuwbouwwerf',
+          paragraphs: [
+            'Op een nieuwbouwsite ben je nooit alleen. Terwijl wij straalden en coatten, liepen de constructiewerken door en stonden de commissioningdata van de terminal vast. Dat vroeg om strakke coordinatie met de andere aannemers, werkvolgordes per tank en een planning die geen ruimte liet om een tank te laten aanslepen.',
+            'Binnenwerk in tanks betekent bovendien werken in besloten ruimte: gecontroleerde toegang, ventilatie, klimaatbeheersing en metingen voor elke stap.',
+          ],
+        },
+        {
+          title: 'De aanpak',
+          paragraphs: [
+            'Elke tank doorliep dezelfde keten. Eerst volledig stralen, binnen en buiten, tot de reinheidsgraad die het coatingsysteem vraagt, met controle van reinheid en straalprofiel voor vrijgave. Daarna de systeemopbouw laag per laag, met klimaatmetingen voor elke coatingactiviteit en laagdiktemetingen na elke laag.',
+            'Voor de tanks met inwendige lining werd het systeem afgestemd op het toekomstige product, aangebracht onder gecontroleerde condities en volledig gedocumenteerd. Zo kreeg de terminal per tank een dossier dat aantoont wat er op het staal zit, van straalverslag tot einddiktes.',
+          ],
+        },
+        {
+          title: 'Het resultaat',
+          paragraphs: [
+            'Zestien tanks, binnen en buiten beschermd en klaar voor decennia dienst in het havenklimaat van Gent, opgeleverd binnen de commissioningplanning van de terminal. De combinatie van stralen, coating en lining in één hield de planning strak en de verantwoordelijkheid ondubbelzinnig.',
+            'GTS bleef na dit programma een vaste klant: ook voor latere projecten in de haven van Gent staat Russo NV op de terminal aan het werk.',
+          ],
+        },
+      ],
+      related: [
+        { to: '/services/tankcoating', label: 'Tankcoating & tank lining' },
+        { to: '/services/industrieel-stralen', label: 'Industrieel stralen' },
+        { to: '/services/corrosiebescherming', label: 'Corrosiebescherming' },
+      ],
+      relatedTitle: 'Diensten in dit project',
+      ctaTitle: 'Tanks te coaten in Gent of elders?',
+      ctaText: 'Van nieuwbouwtanks tot renovatie van bestaande tankparken: bezorg ons uw specificatie en u krijgt een duidelijke aanpak met systeemkeuze, planning en offerte.',
+      ctaButton: 'Vraag een offerte aan',
+      backToProjects: 'Alle projecten',
+    },
+    EN: {
+      kicker: 'Case study',
+      h1: 'Tank coating for 16 new-build tanks at GTS, Port of Ghent',
+      heroSub: 'Complete surface preparation and protective coating of 16 newly constructed storage tanks, inside and out, with specialized internal linings for chemical and petroleum products. Delivered on an active new-build site, within the commissioning deadlines.',
+      heroAlt: 'New-build storage tanks at Ghent Tank Storage in the Port of Ghent, coated by Russo NV',
+      secondaryAlt: 'Coating works on a storage tank at GTS in Ghent',
+      facts: [
+        { label: 'Client', value: 'Ghent Tank Storage (GTS)' },
+        { label: 'Location', value: 'Port of Ghent, Belgium' },
+        { label: 'Scope', value: '16 new-build tanks, interior and exterior' },
+        { label: 'Specialty', value: 'Internal linings for chemicals and petroleum' },
+        { label: 'Preparation', value: 'Full blasting, inside and out' },
+        { label: 'Site', value: 'Active construction site' },
+        { label: 'Deadline', value: 'Commissioning schedule met' },
+        { label: 'Completion', value: 'April 2026' },
+      ],
+      sections: [
+        {
+          title: 'The assignment',
+          paragraphs: [
+            'Ghent Tank Storage built a series of new storage tanks in the Port of Ghent and looked for one party to take the complete coating scope in one hand: sixteen newly constructed tanks, from bare steel to protected system, both exterior and interior.',
+            'Part of the tanks was destined for chemical and petroleum products and therefore required specialized internal lining systems: coatings that deliver chemical resistance on top of corrosion protection, matched to the stored product.',
+          ],
+        },
+        {
+          title: 'The challenge: coating on an active new-build site',
+          paragraphs: [
+            'On a new-build site you are never alone. While we blasted and coated, construction continued around us and the terminal commissioning dates were fixed. That demanded tight coordination with the other contractors, work sequences per tank and a schedule with no room to let a tank drag.',
+            'Interior work in tanks also means confined-space conditions: controlled access, ventilation, climate control and measurements before every step.',
+          ],
+        },
+        {
+          title: 'The approach',
+          paragraphs: [
+            'Every tank went through the same chain. First full blasting, inside and out, to the cleanliness grade the coating system demands, with cleanliness and profile checks before release. Then the system build-up coat by coat, with climate measurements before every coating activity and film thickness measurements after every coat.',
+            'For the tanks with internal linings, the system was matched to the future product, applied under controlled conditions and fully documented. The terminal received a dossier per tank proving what sits on the steel, from blasting report to final thicknesses.',
+          ],
+        },
+        {
+          title: 'The result',
+          paragraphs: [
+            'Sixteen tanks, protected inside and out and ready for decades of service in the Ghent port climate, delivered within the terminal commissioning schedule. Blasting, coating and lining in one hand kept the planning tight and the responsibility unambiguous.',
+            'GTS remained a regular client after this program: Russo NV keeps working on the terminal in the Port of Ghent on later projects as well.',
+          ],
+        },
+      ],
+      related: [
+        { to: '/services/tankcoating', label: 'Tank coating & lining' },
+        { to: '/services/industrieel-stralen', label: 'Industrial blasting' },
+        { to: '/services/corrosiebescherming', label: 'Corrosion protection' },
+      ],
+      relatedTitle: 'Services in this project',
+      ctaTitle: 'Tanks to coat in Ghent or elsewhere?',
+      ctaText: 'From new-build tanks to renovation of existing tank farms: send us your specification and you will receive a clear approach with system choice, planning and quote.',
+      ctaButton: 'Request a quote',
+      backToProjects: 'All projects',
+    },
+  },
 ];
 
 export function findCaseStudy(slug: string): CaseStudy | undefined {

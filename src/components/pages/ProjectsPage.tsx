@@ -34,6 +34,7 @@ const PROJECT_TRANSLATION_MAP: Record<string, string> = {
 // translation prefix the card anchors use).
 const CASE_STUDY_LINKS: Record<string, string> = {
   albeton: '/projects/silo-renovatie-albeton',
+  gts: '/projects/tankcoating-gts-gent',
 };
 
 // =============================================================================
