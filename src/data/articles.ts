@@ -1569,6 +1569,120 @@ export const ARTICLES: Article[] = [
       ],
     },
   },
+  {
+    slug: 'gianna-russo-top-100-tank-storage-influencers',
+    date: '2026-08-22',
+    author: 'Russo NV',
+    heroImage: '/images/tank-finished.jpg',
+    heroAlt: {
+      NL: 'Afgewerkte opslagtank op een Belgische terminal, gecoat door Russo NV',
+      EN: 'Finished storage tank at a Belgian terminal, coated by Russo NV',
+    },
+    keywords: {
+      NL: ['Gianna Russo', 'Top 100 Tank Storage Influencers', 'Storage Terminals Magazine', 'tankopslag', 'Russo NV', 'tankterminal'],
+      EN: ['Gianna Russo', 'Top 100 Tank Storage Influencers', 'Storage Terminals Magazine', 'tank storage', 'Russo NV', 'tank terminal'],
+    },
+    NL: {
+      title: 'Gianna Russo opgenomen in de Top 100 Tank Storage Influencers 2027',
+      metaTitle: 'Gianna Russo in Top 100 Tank Storage Influencers | Russo NV',
+      description: 'CEO Gianna Russo is opgenomen in de Top 100 Tank Storage Influencers Guide 2027 van Storage Terminals Magazine, een internationale erkenning uit de tankopslagsector.',
+      excerpt: 'Storage Terminals Magazine nam onze CEO Gianna Russo op in zijn Top 100 Tank Storage Influencers Guide 2027. Een internationale erkenning, en voor ons team een bevestiging van de koers die we samen varen.',
+      category: 'Bedrijfsnieuws',
+      body: [
+        {
+          type: 'p',
+          text: 'Eind augustus kregen we nieuws binnen waar we stil van werden, en daarna vooral heel trots: onze CEO Gianna Russo is opgenomen in de Top 100 Tank Storage Influencers Guide 2027 van Storage Terminals Magazine. Daarmee staat ze op een internationale lijst van mensen die de tankopslagsector wereldwijd vormgeven.',
+        },
+        { type: 'h2', text: 'Wat is de Top 100 Tank Storage Influencers Guide?' },
+        {
+          type: 'p',
+          text: 'Storage Terminals Magazine is een internationaal vakblad dat zich volledig toelegt op de tankopslagsector: terminals, operatoren, dienstverleners en de technologie daarrond. De redactie stelt de jaarlijkse Top 100 gids samen over een periode van maanden, op basis van gesprekken met operatoren, terminaleigenaars, dienstverleners en experts van over de hele wereld. De gids erkent mensen met een aantoonbare invloed op veiligheid, kennisdeling, professionalisering en de energietransitie binnen de sector, en wordt verspreid op conferenties en beurzen wereldwijd.',
+        },
+        {
+          type: 'quote',
+          text: 'De gids zet de mensen in de kijker die innovatie en excellentie in de wereldwijde tankopslag aandrijven.',
+          cite: 'Storage Terminals Magazine',
+        },
+        { type: 'h2', text: 'Waarom deze erkenning telt' },
+        {
+          type: 'p',
+          segments: [
+            'De tankopslagsector wordt gedomineerd door grote internationale spelers. Dat een Belgisch familiebedrijf uit Antwerpen op deze lijst staat, naast CEO\'s van wereldwijde terminalgroepen en sectorfederaties, zegt iets over de weg die Russo NV de voorbije jaren heeft afgelegd. Ons team werkt dag in dag uit op opslagtanks op Belgische terminals, van ',
+            { text: 'tankcoating en tank lining', to: '/services/tankcoating' },
+            ' tot volledige renovaties van tankparken, zoals recent op ',
+            { text: 'een terminal in de haven van Gent', to: '/projects/tankcoating-gts-gent' },
+            '. Die dagelijkse aanwezigheid op de werf, gecombineerd met meer dan dertig jaar ervaring sinds 1994, is precies het soort praktijkgedreven leiderschap dat de gids wil erkennen.',
+          ],
+        },
+        { type: 'h2', text: 'Uitreiking in Londen' },
+        {
+          type: 'p',
+          text: 'De erkenning wordt gevierd op het Top 100 netwerkevent in Londen, dat traditioneel plaatsvindt tijdens International Energy Week begin volgend jaar. Gianna zal daar aanwezig zijn, tussen collega\'s uit de hele wereld.',
+        },
+        {
+          type: 'p',
+          text: 'Vanwege het voltallige team: proficiat, Gianna. Deze erkenning is verdiend.',
+        },
+        {
+          type: 'cta',
+          title: 'Werken met een erkend team?',
+          text: 'Ontdek hoe Russo NV opslagtanks straalt, coat en renoveert op terminals in heel België.',
+          buttonLabel: 'Bekijk onze projecten',
+          to: '/projects',
+        },
+      ],
+    },
+    EN: {
+      title: 'Gianna Russo named in the Top 100 Tank Storage Influencers 2027',
+      metaTitle: 'Gianna Russo in Top 100 Tank Storage Influencers | Russo NV',
+      description: 'CEO Gianna Russo has been included in the Top 100 Tank Storage Influencers Guide 2027 by Storage Terminals Magazine, an international recognition from the tank storage sector.',
+      excerpt: 'Storage Terminals Magazine included our CEO Gianna Russo in its Top 100 Tank Storage Influencers Guide 2027. An international recognition, and for our team a confirmation of the course we are on together.',
+      category: 'Company news',
+      body: [
+        {
+          type: 'p',
+          text: 'In late August we received news that made us pause, and then made us very proud: our CEO Gianna Russo has been included in the Top 100 Tank Storage Influencers Guide 2027 of Storage Terminals Magazine. That places her on an international list of people shaping the tank storage sector worldwide.',
+        },
+        { type: 'h2', text: 'What is the Top 100 Tank Storage Influencers Guide?' },
+        {
+          type: 'p',
+          text: 'Storage Terminals Magazine is an international trade publication dedicated entirely to the tank storage sector: terminals, operators, service providers and the technology around them. The editorial team compiles the annual Top 100 guide over a period of months, based on conversations with operators, terminal owners, service providers and experts from around the world. The guide recognizes people with a demonstrable influence on safety, knowledge sharing, professionalisation and the energy transition within the sector, and is distributed at conferences and exhibitions worldwide.',
+        },
+        {
+          type: 'quote',
+          text: 'The guide spotlights the people driving innovation and excellence in tank storage worldwide.',
+          cite: 'Storage Terminals Magazine',
+        },
+        { type: 'h2', text: 'Why this recognition matters' },
+        {
+          type: 'p',
+          segments: [
+            'The tank storage sector is dominated by large international players. That a Belgian family company from Antwerp appears on this list, alongside CEOs of global terminal groups and sector federations, says something about the road Russo NV has travelled in recent years. Our team works on storage tanks at Belgian terminals every single day, from ',
+            { text: 'tank coating and tank lining', to: '/services/tankcoating' },
+            ' to full tank farm renovations, such as recently at ',
+            { text: 'a terminal in the port of Ghent', to: '/projects/tankcoating-gts-gent' },
+            '. That daily presence in the field, combined with more than thirty years of experience since 1994, is exactly the kind of hands-on leadership the guide sets out to recognize.',
+          ],
+        },
+        { type: 'h2', text: 'Ceremony in London' },
+        {
+          type: 'p',
+          text: 'The recognition is celebrated at the Top 100 networking event in London, traditionally held during International Energy Week early next year. Gianna will be there, among peers from all over the world.',
+        },
+        {
+          type: 'p',
+          text: 'From the entire team: congratulations, Gianna. This recognition is well deserved.',
+        },
+        {
+          type: 'cta',
+          title: 'Work with a recognized team?',
+          text: 'Discover how Russo NV blasts, coats and renovates storage tanks on terminals across Belgium.',
+          buttonLabel: 'View our projects',
+          to: '/projects',
+        },
+      ],
+    },
+  },
 ];
 
 // ---------------------------------------------------------------------------
