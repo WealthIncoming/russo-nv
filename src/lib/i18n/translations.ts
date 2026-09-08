@@ -48,7 +48,7 @@ export const translations: Record<Language, Translations> = {
       aboutUs: 'About Us',
       industriesServed: 'Industries Served',
       industrialPainting: 'Industrial Painting',
-      tankCoatingLining: 'Tank Coating & Lining',
+      tankCoatingLining: 'Tank Coating & Tank Lining',
       sandblasting: 'Sandblasting',
       fireproofingCoatings: 'Fireproofing Coatings',
       protectiveCoatings: 'Protective Coatings',

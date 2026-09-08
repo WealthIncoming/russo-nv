@@ -24,7 +24,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   '/': {
     NL: {
       title: 'Industriële Schilderwerken & Stralen Antwerpen | Russo NV',
-      description: 'Specialist in industriële schilderwerken, coatings, stralen, brandwerende coatings en corrosiebescherming voor tanks en pijpleidingen. VCA & ISO gecertificeerd, Antwerpen.',
+      description: 'Industrieel schildersbedrijf in Antwerpen: industriële schilderwerken en verfwerken, coatings, stralen, brandwerende coatings en corrosiebescherming voor tanks en pijpleidingen. VCA & ISO gecertificeerd.',
       image: '/images/og-card.jpg',
     },
     EN: {
@@ -48,7 +48,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   '/services/industriele-schilderwerken': {
     NL: {
       title: 'Industriële schilderwerken Antwerpen & België | Russo NV',
-      description: 'Industriële schilderwerken op staal, tanks en installaties: stralen, corrosiebescherming en beschermende coatings, op locatie in heel België. VCA & ISO gecertificeerd.',
+      description: 'Industriële schilderwerken en verfwerken op staal, tanks en installaties: stralen, corrosiebescherming en beschermende coatings, op locatie in heel België. VCA & ISO gecertificeerd.',
       image: '/images/services5.jpg',
     },
     EN: {
@@ -131,8 +131,8 @@ export const PAGE_META: Record<string, PageMeta> = {
   },
   '/about': {
     NL: {
-      title: 'Over Russo NV: Specialist in Industriële Coatings in Antwerpen',
-      description: 'Russo NV is een industrieel coating- en oppervlaktevoorbehandelingsbedrijf in Antwerpen, België, dat petrochemie-, maritieme en industriële klanten in heel Europa bedient met gecertificeerde expertise.',
+      title: 'Over Russo NV: Industrieel Schildersbedrijf in Antwerpen',
+      description: 'Russo NV is een industrieel schildersbedrijf en coatingspecialist in Antwerpen, België, dat petrochemie-, maritieme en industriële klanten in heel Europa bedient met gecertificeerde expertise.',
       image: '/images/about-hero.jpg',
     },
     EN: {

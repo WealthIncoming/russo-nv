@@ -323,7 +323,7 @@ export default function ServicesPage() {
                                 to={localize('/services/tankcoating')}
                                 className="inline-flex items-center gap-2 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all w-fit"
                               >
-                                {locale === 'NL' ? 'Meer over tankcoating & tank lining' : 'More about tank coating & lining'}
+                                {locale === 'NL' ? 'Meer over tankcoating & tank lining' : 'More about tank coating & tank lining'}
                                 <ArrowRight className="w-4 h-4" />
                               </Link>
                             )}
