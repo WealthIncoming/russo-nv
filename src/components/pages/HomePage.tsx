@@ -118,7 +118,7 @@ const ORGANIZATION_JSON_LD = {
     '@type': 'PostalAddress',
     streetAddress: 'Taxandriastraat 33-35',
     postalCode: '2170',
-    addressLocality: 'Antwerp',
+    addressLocality: 'Antwerpen',
     addressRegion: 'Antwerpen',
     addressCountry: 'BE',
   },
@@ -134,6 +134,7 @@ const ORGANIZATION_JSON_LD = {
     'https://www.linkedin.com/company/russo-nv/',
     'https://www.instagram.com/russo.n.v/',
     'https://www.facebook.com/profile.php?id=61559552162077',
+    'https://www.google.com/maps/place/?q=place_id:ChIJQU2g0Kr3w0cRsCPrvdW4X94',
   ],
 };
 
@@ -297,13 +298,13 @@ export default function HomePage() {
                   className="block"
                 >
                   {t('home', 'heroTitleLine1')}
-                </motion.span>
+                </motion.span>{' '}
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.1, ease: [0.215, 0.61, 0.355, 1] }}
                   className="block text-white/90 lg:text-[0.92em] xl:text-[0.85em]"
-                >{t('home', 'heroTitleLine2')}</motion.span>
+                >{t('home', 'heroTitleLine2')}</motion.span>{' '}
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -401,12 +402,17 @@ export default function HomePage() {
             <SectionLabel text={t('home', 'companyProfile')} />
 
             <h2 className="font-heading text-foreground leading-[0.9] tracking-tight mb-8 max-w-full text-3xl sm:text-4xl md:text-4xl lg:text-5xl 2xl:text-5xl">
-              <span className="block">{t('home', 'engineeringDurability')}</span>
+              <span className="block">{t('home', 'engineeringDurability')}</span>{' '}
               <span className="block text-foreground/30">{t('home', 'durability')}</span>
             </h2>
 
-            <p className="font-paragraph text-foreground/70 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-[56ch]">
+            <p className="font-paragraph text-foreground/70 text-base md:text-lg leading-relaxed mb-6 max-w-[56ch]">
               {t('home', 'companyDescription')}
+            </p>
+
+            <p className="font-paragraph text-foreground/70 text-base md:text-lg leading-relaxed mb-10 md:mb-12 max-w-[56ch]">
+              {t('home', 'industrialPaintingProof')}{' '}
+              <Link to={localize('/services/industriele-schilderwerken')} className="text-primary underline underline-offset-4 hover:text-primary/80">{t('home', 'industrialPaintingProofLink')}</Link>
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-2xl">
@@ -465,7 +471,7 @@ export default function HomePage() {
                 <SectionLabel text={t('home', 'ourExpertise')} />
 
                 <h2 className="font-heading leading-[0.92] tracking-tight text-foreground mb-8 max-w-full text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-6xl">
-                  <span className="block">{t('home', 'coreServicesLine1')}</span>
+                  <span className="block">{t('home', 'coreServicesLine1')}</span>{' '}
                   <span className="block text-primary">{t('home', 'coreServicesLine2')}</span>
                 </h2>
 
@@ -561,7 +567,7 @@ export default function HomePage() {
             <div className="flex flex-col justify-center min-w-0">
               <SectionLabel text={t('home', 'featuredProject')} />
               <h2 className="font-heading text-foreground leading-[0.9] tracking-tight mb-8 w-full min-w-0 text-4xl md:text-5xl lg:text-6xl xl:text-4xl uppercase">
-                <span className="block">{t('home', 'totalTankFarm')}</span>
+                <span className="block">{t('home', 'totalTankFarm')}</span>{' '}
                 <span className="block text-primary">
                   {t('home', 'refurbishment')}
                 </span>

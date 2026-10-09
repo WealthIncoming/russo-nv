@@ -9,6 +9,8 @@ export type LocaleMeta = {
   title: string;
   description: string;
   image?: string;
+  // Optional LCP hero (preloaded); falls back to `image`, which also feeds OG/Twitter.
+  heroImage?: string;
 };
 
 export type PageMeta = {
@@ -24,13 +26,15 @@ export const PAGE_META: Record<string, PageMeta> = {
   '/': {
     NL: {
       title: 'Industriële Schilderwerken & Stralen Antwerpen | Russo NV',
-      description: 'Industrieel schildersbedrijf in Antwerpen: industriële schilderwerken en verfwerken, coatings, stralen, brandwerende coatings en corrosiebescherming voor tanks en pijpleidingen. VCA & ISO gecertificeerd.',
+      description: 'Industriële schilderwerken in Antwerpen en heel België: stralen, coatings, corrosiebescherming en tankcoating voor de industrie. VCA en ISO gecertificeerd.',
       image: '/images/og-card.jpg',
+      heroImage: '/images/home-hero.jpg',
     },
     EN: {
       title: 'Industrial Painting & Sandblasting in Antwerp | Russo NV',
-      description: 'Specialist industrial painting, coating, blasting, fireproofing and corrosion protection for tanks, pipelines and industrial assets. VCA & ISO certified, Antwerp.',
+      description: 'Industrial painting, coating and blasting in Antwerp and across Belgium: corrosion protection and tank coating for industry. VCA and ISO certified.',
       image: '/images/og-card.jpg',
+      heroImage: '/images/home-hero.jpg',
     },
   },
   '/services': {
@@ -47,8 +51,8 @@ export const PAGE_META: Record<string, PageMeta> = {
   },
   '/services/industriele-schilderwerken': {
     NL: {
-      title: 'Industriële schilderwerken Antwerpen & België | Russo NV',
-      description: 'Industriële schilderwerken en verfwerken op staal, tanks en installaties: stralen, corrosiebescherming en beschermende coatings, op locatie in heel België. VCA & ISO gecertificeerd.',
+      title: 'Industrieel schildersbedrijf: onderhoudsschilderwerken | Russo NV',
+      description: 'Industrieel schildersbedrijf voor onderhoudsschilderwerken en verfwerken op staal, tanks en installaties, op locatie in heel België. VCA en ISO gecertificeerd.',
       image: '/images/services5.jpg',
     },
     EN: {
@@ -96,12 +100,12 @@ export const PAGE_META: Record<string, PageMeta> = {
   '/industries': {
     NL: {
       title: 'Sectoren: Petrochemie, Maritiem, Voeding & Industrie | Russo NV',
-      description: 'Russo NV levert beschermende coatings en oppervlaktevoorbehandeling voor petrochemie, maritieme sector, voedingsindustrie, productie, olie & gas, chemie en waterzuivering in heel België en de Benelux.',
+      description: 'Beschermende coatings en oppervlaktevoorbehandeling voor petrochemie, maritiem, voeding, productie, olie en gas, chemie en waterzuivering in heel België.',
       image: '/images/industries-hero.jpg',
     },
     EN: {
       title: 'Industries Served: Petrochemical, Marine, Food & Manufacturing | Russo NV',
-      description: 'Russo NV delivers protective coating and surface preparation for petrochemical, marine, food production, manufacturing, oil & gas, chemical and water-treatment sectors across Europe.',
+      description: 'Protective coating and surface preparation for petrochemical, marine, food, manufacturing, oil and gas, chemical and water-treatment sites across Europe.',
       image: '/images/industries-hero.jpg',
     },
   },
@@ -132,7 +136,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   '/about': {
     NL: {
       title: 'Over Russo NV: Industrieel Schildersbedrijf in Antwerpen',
-      description: 'Russo NV is een industrieel schildersbedrijf en coatingspecialist in Antwerpen, België, dat petrochemie-, maritieme en industriële klanten in heel Europa bedient met gecertificeerde expertise.',
+      description: 'Industrieel schildersbedrijf en coatingspecialist in Antwerpen: VCA en ISO gecertificeerd, actief voor petrochemie, maritiem en industrie in heel België.',
       image: '/images/about-hero.jpg',
     },
     EN: {

@@ -1,5 +1,7 @@
-// Dedicated service "spoke" page targeting the head keyword
-// "industriële schilderwerken" (high volume, low difficulty). This is the
+// Dedicated service "spoke" page. Since Oct 2026 the HOMEPAGE owns the head
+// keyword "industriële schilderwerken"; this page targets the maintenance and
+// company variants ("industrieel schildersbedrijf", "onderhoudsschilderwerken")
+// and links up to the homepage with the exact head-term anchor. This is the
 // template for future service spokes: bespoke, keyword-optimized content with
 // in-body Service + FAQPage JSON-LD. Meta/title live in PAGE_META; the 3-level
 // breadcrumb is built in [...slug].astro. Reached via the Services read-more,
@@ -39,16 +41,17 @@ const CONTENT = {
   NL: {
     kicker: 'Diensten',
     breadcrumbServices: 'Diensten',
-    breadcrumbHere: 'Industriële schilderwerken',
-    h1: 'Industriële schilderwerken',
-    heroSub: 'Beschermende coatings op staal, tanks, leidingen en installaties. Vakkundig aangebracht op locatie in Antwerpen en heel België. VCA- en ISO-gecertificeerd.',
+    breadcrumbHere: 'Industrieel schildersbedrijf',
+    h1: 'Industrieel schildersbedrijf voor onderhoudsschilderwerken',
+    heroSub: 'Onderhoudsschilderwerken en verfwerken op staal, tanks, leidingen en installaties. Vakkundig uitgevoerd op locatie in Antwerpen en heel België. VCA- en ISO-gecertificeerd.',
     ctaPrimary: 'Vraag een offerte aan',
     ctaPhone: 'Bel +32 475 43 48 19',
     intro: [
       'Industriële schilderwerken draaien om bescherming, niet om esthetiek. Een correct opgebouwd coatingsysteem beschermt staal jarenlang tegen corrosie, chemicaliën, hitte en slijtage. Dat begint bij een vakkundige oppervlaktevoorbereiding. Russo NV verzorgt het volledige traject: van stralen en grondlagen tot de afwerkende toplaag, met meetbare kwaliteit op elke stap.',
       'We werken hoofdzakelijk op locatie: in raffinaderijen, op tankterminals, in de haven van Antwerpen en op industriële sites in heel België en de Benelux. Onze ploegen zijn VCA-gecertificeerd en werken volgens ISO 12944 en de specificaties van de coatingfabrikant.',
     ],
-    scopeTitle: 'Wat onze industriële schilderwerken omvatten',
+    introLink: { before: 'Als industrieel schildersbedrijf voert Russo NV ', anchor: 'industriële schilderwerken', after: ' uit in heel Vlaanderen, van nieuwbouw tot onderhoud. Op deze pagina leest u hoe we onderhoudsschilderwerken aan bestaande installaties aanpakken.' },
+    scopeTitle: 'Wat onze onderhoudsschilderwerken omvatten',
     scope: [
       { title: 'Oppervlaktevoorbereiding & stralen', text: 'Stralen tot reinheidsgraad Sa 2½ of Sa 3 met het juiste ankerprofiel. Dit is de basis van elke duurzame coating.' },
       { title: 'Grond- en tussenlagen', text: 'Zinkrijke primers en epoxy tussenlagen die de eerste en belangrijkste corrosiebarrière vormen.' },
@@ -101,6 +104,7 @@ const CONTENT = {
       'Industrial painting is about protection, not aesthetics. A correctly built coating system protects steel for years against corrosion, chemicals, heat and wear. It all starts with expert surface preparation. Russo NV handles the whole process: from blasting and primers to the finishing top coat, with measurable quality at every step.',
       'We work mainly on-site: in refineries, on tank terminals, in the Port of Antwerp and at industrial sites across Belgium and the Benelux. Our crews are VCA-certified and work to ISO 12944 and the coating manufacturer’s specification.',
     ],
+    introLink: { before: 'As an industrial painting contractor, Russo NV delivers ', anchor: 'industrial painting', after: ' across Flanders, from new-build to maintenance. This page covers how we approach maintenance painting of existing installations.' },
     scopeTitle: 'What our industrial painting covers',
     scope: [
       { title: 'Surface preparation & blasting', text: 'Blasting to cleanliness grade Sa 2½ or Sa 3 with the correct anchor profile, the basis of any durable coating.' },
@@ -154,7 +158,7 @@ export default function IndustrialPaintingPage() {
     '@type': 'Service',
     '@id': `${pageUrl}#service`,
     name: c.h1,
-    serviceType: locale === 'NL' ? 'Industriële schilderwerken' : 'Industrial painting',
+    serviceType: locale === 'NL' ? 'Onderhoudsschilderwerken en industrieel schilderwerk' : 'Industrial painting',
     description: c.heroSub,
     url: pageUrl,
     image: `${SITE_URL}${HERO_IMAGE}`,
@@ -225,6 +229,11 @@ export default function IndustrialPaintingPage() {
           {c.intro.map((p, i) => (
             <p key={i} className="font-paragraph text-lg sm:text-xl text-foreground/80 leading-relaxed">{p}</p>
           ))}
+          <p className="font-paragraph text-lg sm:text-xl text-foreground/80 leading-relaxed">
+            {c.introLink.before}
+            <Link to={localize('/')} className="text-primary underline underline-offset-4 hover:text-primary/80">{c.introLink.anchor}</Link>
+            {c.introLink.after}
+          </p>
         </div>
       </section>
 

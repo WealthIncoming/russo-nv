@@ -222,6 +222,8 @@ export const translations: Record<Language, Translations> = {
       engineeringDurability: 'PROTECTING',
       durability: 'YOUR ASSETS',
 
+      industrialPaintingProof: 'Russo NV carries out industrial painting across Flanders: in the port of Antwerp, on tank terminals in Ghent and Zeebrugge and on industrial sites into the Netherlands. From blasting to top coat, with measured film thickness and VCA-certified crews.',
+      industrialPaintingProofLink: 'Also for maintenance painting of existing installations.',
       companyDescription:
         'Industrial coating is only as good as the preparation behind it. At Russo, we protect tanks, piping, steelwork, industrial facilities and so much more with careful surface preparation, quality coating systems and safe, reliable execution on site.',
 
@@ -923,7 +925,7 @@ export const translations: Record<Language, Translations> = {
       contact: 'Contact',
       aboutUs: 'Over Ons',
       industriesServed: 'Bediende Industrieën',
-      industrialPainting: 'Industrieel Schilderen',
+      industrialPainting: 'Industrieel schildersbedrijf',
       tankCoatingLining: 'Tankcoating & Tank Lining',
       sandblasting: 'Zandstralen',
       fireproofingCoatings: 'Brandwerende Coatings',
@@ -1101,6 +1103,8 @@ export const translations: Record<Language, Translations> = {
       engineeringDurability: 'BESCHERMING VAN',
       durability: 'UW INSTALLATIES',
 
+      industrialPaintingProof: 'Russo NV voert industriële schilderwerken uit in heel Vlaanderen: in de haven van Antwerpen, op tankterminals in Gent en Zeebrugge en op industriële sites tot in Nederland. Van stralen tot toplaag, met gemeten laagdikte en VCA-gecertificeerde ploegen.',
+      industrialPaintingProofLink: 'Ook voor onderhoudsschilderwerken aan bestaande installaties.',
       companyDescription:
         'Een industriële coating is maar zo goed als de voorbereiding erachter. Bij Russo beschermen wij tanks, leidingen, staalconstructies, industriële installaties en veel meer met zorgvuldige oppervlaktevoorbereiding, kwalitatieve coatingsystemen en een veilige, betrouwbare uitvoering op de werf.',
 

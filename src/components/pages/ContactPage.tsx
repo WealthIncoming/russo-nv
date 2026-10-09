@@ -23,7 +23,7 @@ const WEB3FORMS_GIANNA_KEY = import.meta.env.PUBLIC_WEB3FORMS_GIANNA_KEY ?? '';
 // data below. Single source of truth for the HQ address.
 const HQ_STREET = 'Taxandriastraat 33-35';
 const HQ_POSTAL = '2170';
-const HQ_CITY = 'Antwerp';
+const HQ_CITY = 'Antwerpen';
 const HQ_COUNTRY_CODE = 'BE';
 const GOOGLE_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${HQ_STREET}, ${HQ_POSTAL} ${HQ_CITY}`)}`;
 
@@ -37,6 +37,7 @@ const BUSINESS_JSON_LD = {
   alternateName: 'Russo Industriële Coatings',
   description: 'Industrieel coatingbedrijf in Antwerpen, gespecialiseerd in industriële coatings, stralen, brandwerende coatings, corrosiebescherming en oppervlaktevoorbehandeling voor petrochemie, maritieme sector en industrie in heel België en de Benelux.',
   url: 'https://www.russonv.com',
+  hasMap: 'https://www.google.com/maps/place/?q=place_id:ChIJQU2g0Kr3w0cRsCPrvdW4X94',
   telephone: '+32475434819',
   email: 'info@russonv.be',
   logo: 'https://www.russonv.com/images/logo.png',
@@ -52,8 +53,8 @@ const BUSINESS_JSON_LD = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 51.2654,
-    longitude: 4.4685,
+    latitude: 51.2397,
+    longitude: 4.4354,
   },
   openingHoursSpecification: [
     {

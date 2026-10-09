@@ -121,7 +121,7 @@ export const ARTICLES: Article[] = [
           type: 'p',
           segments: [
             'Een dure coating op slecht voorbereid staal is weggegooid geld. De voorbereiding bepaalt de hechting, en de hechting bepaalt de levensduur. Bij ',
-            { text: 'industriële schilderwerken', to: '/services/industriele-schilderwerken' },
+            { text: 'industriële schilderwerken', to: '/' },
             ' begint kwaliteit dus nooit bij de verf, maar bij het staal eronder.',
           ],
         },
@@ -560,7 +560,7 @@ export const ARTICLES: Article[] = [
           type: 'p',
           segments: [
             'Geen enkele coating wordt zwaarder belast dan een tank lining. Waar een gevelcoating af en toe regen ziet, staat een tankbekleding dag en nacht in direct contact met brandstof, chemicaliën of proceswater. Eén zwakke plek volstaat voor corrosie, productvervuiling of een afkeuring bij inspectie. Daarom gelden bij ',
-            { text: 'industriële schilderwerken', to: '/services/industriele-schilderwerken' },
+            { text: 'industriële schilderwerken', to: '/' },
             ' aan tanks de strengste eisen van het vak, en begint alles bij de voorbereiding.',
           ],
         },
@@ -1105,7 +1105,7 @@ export const ARTICLES: Article[] = [
           type: 'p',
           segments: [
             'Staal roest niet overal even snel. Een loods in de Kempen is een andere wereld dan een kaaimuurconstructie in de haven van Antwerpen, en wie op beide plaatsen hetzelfde verfsysteem zet, betaalt ofwel te veel, ofwel veel te vroeg opnieuw. Daarom bestaat er één internationale kapstok voor ',
-            { text: 'industriële schilderwerken', to: '/services/industriele-schilderwerken' },
+            { text: 'industriële schilderwerken', to: '/' },
             ' op staal met verfsystemen: ISO 12944, dé internationale referentie voor dit vakgebied. Wie die norm begrijpt, begrijpt elke offerte, elk bestek en elke garantiediscussie.',
           ],
         },

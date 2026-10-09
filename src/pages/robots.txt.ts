@@ -3,6 +3,8 @@ import type { APIRoute } from 'astro';
 export const GET: APIRoute = () => {
   const body = `User-agent: *
 Allow: /
+Disallow: /_visits
+Disallow: /_event
 
 Sitemap: https://www.russonv.com/sitemap.xml
 `;

@@ -191,8 +191,8 @@ try {
     <meta name="trustpilot-one-time-domain-verification-id" content="c6697447-7f04-44bf-be21-4636156d0443" />
     {/* LCP: fetch this route's hero image at highest priority, before the
         browser discovers it inside the rendered body. */}
-    {localeMeta.image && (
-      <link rel="preload" as="image" href={localeMeta.image} fetchpriority="high" />
+    {(localeMeta.heroImage ?? localeMeta.image) && (
+      <link rel="preload" as="image" href={localeMeta.heroImage ?? localeMeta.image} fetchpriority="high" />
     )}
     <link rel="canonical" href={canonical} />
     {isNoindex && <meta name="robots" content="noindex, follow" />}

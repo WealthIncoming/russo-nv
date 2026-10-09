@@ -106,7 +106,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
       related: [
         { to: '/services/corrosiebescherming', label: 'Corrosiebescherming & conservering' },
-        { to: '/services/industriele-schilderwerken', label: 'Industriële schilderwerken' },
+        { to: '/', label: 'Industriële schilderwerken' },
         { to: '/services/industrieel-stralen', label: 'Industrieel stralen' },
       ],
       relatedTitle: 'Diensten in dit project',

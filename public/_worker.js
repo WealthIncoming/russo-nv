@@ -857,9 +857,11 @@ export default {
       out = injectBeacon(out, env.WEB_ANALYTICS_TOKEN);
     }
 
+    out = new Response(out.body, out);
     if (isPreview) {
-      out = new Response(out.body, out);
       out.headers.set("X-Robots-Tag", "noindex");
+    } else {
+      out.headers.set("Strict-Transport-Security", "max-age=31536000");
     }
 
     return out;
