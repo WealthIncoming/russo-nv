@@ -61,7 +61,7 @@ const BUSINESS_JSON_LD = {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       opens: '08:00',
-      closes: '18:30',
+      closes: '17:00',
     },
   ],
   areaServed: [
