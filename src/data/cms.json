@@ -202,7 +202,7 @@
       "certificationName": "VCA-Petrochemie (2017/6.0)",
       "issuingBody": "Cetradex Certificatie B.V.",
       "description": "The VCA (Veiligheid, Gezondheid en Milieu Checklist Aannemers) certification demonstrates that Russo NV meets strict safety, health, and environmental standards for contractors in high-risk environments.",
-      "logo": "/images/legacy/wx-8cfb6b1b1809.jpg",
+      "logo": "/images/certs/vca-petrochemie.png",
       "dateIssued": "2024-03-10",
       "expirationDate": "2027-03-09",
       "certificationUrl": "/documents/russo-nv-vca-petrochemie-2024-2027.pdf"
@@ -212,7 +212,7 @@
       "certificationName": "NACE International Coating Inspector Level 2",
       "issuingBody": "NACE International (now AMPP)",
       "description": "This certification validates Russo NV's expertise in protective coating inspection, ensuring high-quality application and corrosion prevention in industrial settings.",
-      "logo": "/images/legacy/wx-f723caaaf844.jpg",
+      "logo": "/images/certs/nace-ampp.png",
       "expirationDate": "2026-12-01",
       "certificationUrl": "/documents/russo-nv-nace-ampp-coatings-inspector-2026.pdf"
     },
@@ -221,7 +221,7 @@
       "certificationName": "ISO 9001:2015 Quality Management System",
       "issuingBody": "EOS Certification",
       "description": "ISO 9001:2015 certifies that Russo NV consistently provides products and services that meet customer and regulatory requirements, and aims to enhance customer satisfaction through effective system application.",
-      "logo": "/images/legacy/wx-0239bdc22795.jpg",
+      "logo": "/images/certs/iso-9001.png",
       "dateIssued": "2026-05-20",
       "expirationDate": "2029-05-19",
       "certificationUrl": "/documents/russo-nv-iso-9001-2026-2029.pdf"
@@ -231,7 +231,7 @@
       "certificationName": "ISO 14001:2015 Environmental Management System",
       "issuingBody": "International Organization for Standardization (ISO)",
       "description": "ISO 14001:2015 demonstrates Russo NV's commitment to environmental responsibility, providing a framework for managing environmental impacts and improving environmental performance.",
-      "logo": "/images/legacy/wx-f62385e884cd.jpg"
+      "logo": "/images/certs/iso-14001.png"
     }
   ],
   "companyvalues": [
