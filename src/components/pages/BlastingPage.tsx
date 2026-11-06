@@ -22,6 +22,8 @@ const RELATED = [
   { to: '/services/tankcoating', NL: 'Tankcoating & tank lining', EN: 'Tank coating & lining' },
   { to: '/services/corrosiebescherming', NL: 'Corrosiebescherming', EN: 'Corrosion protection' },
   { to: '/services#coatingInspection', NL: 'Coating-inspectie', EN: 'Coating inspection' },
+  { to: '/insights/gritstralen', NL: 'Wat is gritstralen?', EN: 'What is grit blasting?' },
+  { to: '/insights/reinheidsgraden-staal', NL: 'Reinheidsgraden van staal', EN: 'Steel cleanliness grades' },
 ];
 
 // Sector cards link to the matching section on the Industries page.
@@ -45,7 +47,7 @@ const CONTENT = {
     ctaPhone: 'Bel +32 475 43 48 19',
     intro: [
       'Elke duurzame industriële coating begint bij het stralen. De reinheidsgraad en het straalprofiel bepalen hoe goed het systeem hecht, en dus hoe lang het meegaat. Russo NV voert industrieel straalwerk uit met een eigen vloot straalketels, compressoren en nakoelers: van volledige tankwanden tot plaatselijk herstel met vacuümstralen.',
-      'We stralen hoofdzakelijk op locatie: op tankterminals, in raffinaderijen, op werven en industriële sites in heel België en de Benelux. Reinheidsgraad, straalprofiel en klimaat worden gemeten en vastgelegd, zodat de opvolgende coating aantoonbaar op een correcte ondergrond staat.',
+      'Gritstralen en staal stralen doen we hoofdzakelijk op locatie: op tankterminals, in raffinaderijen, op werven en industriële sites in heel België en de Benelux, zoals inwendig bij Sea Tank Terminal in Antwerpen en op de nieuwbouwtanks van GTS in Gent. Reinheidsgraad, straalprofiel en klimaat worden gemeten en vastgelegd, zodat de opvolgende coating aantoonbaar op een correcte ondergrond staat.',
     ],
     scopeTitle: 'Wat ons straalwerk omvat',
     scope: [
@@ -76,7 +78,7 @@ const CONTENT = {
     ],
     faqTitle: 'Veelgestelde vragen',
     faq: [
-      { q: 'Wat is het verschil tussen zandstralen en gritstralen?', a: 'In de volksmond heet alles "zandstralen", maar stralen met echt zand is in België al decennia verboden (silicose). Industrieel straalwerk gebeurt met grit: hoekige straalmiddelen zoals staalgrit of smeltslak die het staal reinigen én het ankerprofiel creëren waar de coating zich in vastzet. Voor gevels en meubels bestaan zachtere technieken; ons werk is industrieel stralen van staal.' },
+      { q: 'Wat is het verschil tussen zandstralen en gritstralen?', a: 'In de volksmond heet alles "zandstralen", maar droog stralen met korrels die meer dan 1% vrij kristallijn silica bevatten, is in België volledig verboden (silicose). Industrieel straalwerk gebeurt met grit: hoekige straalmiddelen zoals staalgrit of smeltslak die het staal reinigen én het ankerprofiel creëren waar de coating zich in vastzet. Voor gevels en meubels bestaan zachtere technieken; ons werk is industrieel stralen van staal.' },
       { q: 'Welke reinheidsgraad heb ik nodig?', a: 'Dat schrijft het coatingsysteem voor. Voor de meeste industriële beschermsystemen is dat Sa 2½ volgens ISO 8501-1; voor immersiedienst zoals tankbekleding vaak Sa 2½ tot Sa 3. Het technische datablad van de coating is altijd leidend; wij stralen en meten tot die graad aantoonbaar gehaald is.' },
       { q: 'Kunnen jullie stralen zonder stofoverlast?', a: 'Ja. Met vacuümstralen wordt het grit aan de kop direct terug afgezogen: geen gritverspreiding en nauwelijks stof. Dat maakt plaatselijk herstel mogelijk in operationele installaties, naast gevoelige apparatuur en op plaatsen waar open stralen verboden is.' },
       { q: 'Wat kost industrieel stralen per m²?', a: 'De prijs hangt af van de reinheidsgraad, de staat van de ondergrond, de bereikbaarheid en of er afscherming of afzuiging nodig is. Open gritstralen van grote oppervlakken is een andere som dan vacuümstralen van herstelzones. Omdat elk project verschilt, maken we een offerte op maat na een inspectie of op basis van uw specificatie.' },
@@ -97,7 +99,7 @@ const CONTENT = {
     ctaPhone: 'Call +32 475 43 48 19',
     intro: [
       'Every durable industrial coating starts with the blasting. The cleanliness grade and surface profile determine how well the system adheres, and therefore how long it lasts. Russo NV performs industrial blasting with its own fleet of blast pots, compressors and aftercoolers: from complete tank shells to local repair with vacuum blasting.',
-      'We blast mainly on-site: on tank terminals, in refineries, on yards and industrial sites across Belgium and the Benelux. Cleanliness grade, surface profile and climate are measured and recorded, so the coating that follows demonstrably sits on a correct substrate.',
+      'We do grit blasting and steel blasting mainly on-site: on tank terminals, in refineries, on yards and industrial sites across Belgium and the Benelux, such as inside the tanks at Sea Tank Terminal in Antwerp and on the new-build tanks of GTS in Ghent. Cleanliness grade, surface profile and climate are measured and recorded, so the coating that follows demonstrably sits on a correct substrate.',
     ],
     scopeTitle: 'What our blasting covers',
     scope: [
@@ -128,7 +130,7 @@ const CONTENT = {
     ],
     faqTitle: 'Frequently asked questions',
     faq: [
-      { q: 'What is the difference between sandblasting and grit blasting?', a: 'Colloquially everything is called "sandblasting", but blasting with actual sand has been banned in Belgium for decades (silicosis). Industrial blasting uses grit: angular abrasives such as steel grit or slag that clean the steel and create the anchor profile the coating locks into. Softer techniques exist for facades and furniture; our work is industrial blasting of steel.' },
+      { q: 'What is the difference between sandblasting and grit blasting?', a: 'Colloquially everything is called "sandblasting", but dry blasting with grains containing more than 1% free crystalline silica is fully banned in Belgium (silicosis). Industrial blasting uses grit: angular abrasives such as steel grit or slag that clean the steel and create the anchor profile the coating locks into. Softer techniques exist for facades and furniture; our work is industrial blasting of steel.' },
       { q: 'Which cleanliness grade do I need?', a: 'The coating system prescribes it. For most industrial protective systems that is Sa 2½ to ISO 8501-1; for immersion service such as tank linings often Sa 2½ to Sa 3. The technical data sheet is always leading; we blast and measure until that grade is demonstrably reached.' },
       { q: 'Can you blast without dust nuisance?', a: 'Yes. With vacuum blasting the grit is extracted straight back at the head: no grit spread and hardly any dust. That makes local repair possible in operational installations, next to sensitive equipment and where open blasting is prohibited.' },
       { q: 'What does industrial blasting cost per m²?', a: 'The price depends on the cleanliness grade, the condition of the substrate, accessibility and whether containment or extraction is needed. Open grit blasting of large surfaces is a different calculation than vacuum blasting of repair zones. Because every project differs, we quote after an inspection or based on your specification.' },
@@ -317,7 +319,7 @@ export default function BlastingPage() {
       {/* Related services */}
       <section className="w-full max-w-[100rem] mx-auto px-8 py-16 lg:py-20">
         <h2 className="font-heading text-xl sm:text-2xl text-foreground uppercase mb-8">{c.relatedTitle}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {RELATED.map((r) => (
             <Link key={r.to} to={localize(r.to)} className="group flex items-center justify-between border border-dark-grey/15 bg-white p-5 hover:border-primary transition-colors">
               <span className="font-paragraph text-sm font-bold text-foreground group-hover:text-primary transition-colors">{r[locale]}</span>

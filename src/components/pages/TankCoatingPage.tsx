@@ -21,6 +21,8 @@ const RELATED = [
   { to: '/services#sandblastingAbrasive', NL: 'Stralen & oppervlaktevoorbereiding', EN: 'Blasting & surface preparation' },
   { to: '/services/corrosiebescherming', NL: 'Corrosiebescherming', EN: 'Corrosion protection' },
   { to: '/services#coatingInspection', NL: 'Coating-inspectie', EN: 'Coating inspection' },
+  { to: '/insights/uhp-waterstralen', NL: 'UHP-waterstralen', EN: 'UHP water jetting' },
+  { to: '/insights/chemische-bestendigheid-coatings', NL: 'Chemische bestendigheid van coatings', EN: 'Chemical resistance of coatings' },
 ];
 
 // Sector cards link to the matching section on the Industries page.
@@ -316,7 +318,7 @@ export default function TankCoatingPage() {
       {/* Related services */}
       <section className="w-full max-w-[100rem] mx-auto px-8 py-16 lg:py-20">
         <h2 className="font-heading text-xl sm:text-2xl text-foreground uppercase mb-8">{c.relatedTitle}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {RELATED.map((r) => (
             <Link key={r.to} to={localize(r.to)} className="group flex items-center justify-between border border-dark-grey/15 bg-white p-5 hover:border-primary transition-colors">
               <span className="font-paragraph text-sm font-bold text-foreground group-hover:text-primary transition-colors">{r[locale]}</span>

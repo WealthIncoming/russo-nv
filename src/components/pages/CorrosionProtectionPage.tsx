@@ -22,6 +22,8 @@ const RELATED = [
   { to: '/services/industrieel-stralen', NL: 'Industrieel stralen', EN: 'Industrial blasting' },
   { to: '/services/tankcoating', NL: 'Tankcoating & tank lining', EN: 'Tank coating & lining' },
   { to: '/services#coatingInspection', NL: 'Coating-inspectie', EN: 'Coating inspection' },
+  { to: '/insights/corrosiebestrijding', NL: 'Corrosiebestrijding: methodes vergeleken', EN: 'Corrosion control: methods compared' },
+  { to: '/insights/corrosieklassen-belgie', NL: 'Corrosieklassen in België', EN: 'Corrosivity classes in Belgium' },
 ];
 
 // Sector cards link to the matching section on the Industries page.
@@ -44,7 +46,7 @@ const CONTENT = {
     ctaPrimary: 'Vraag een offerte aan',
     ctaPhone: 'Bel +32 475 43 48 19',
     intro: [
-      'Roest stopt nooit uit zichzelf. Elke staalconstructie die onbeschermd buiten staat, in een haven, naast een chemische installatie of gewoon in het Belgische klimaat, levert elk jaar staal in. Corrosiebescherming is de vakdiscipline die dat proces stillegt: het juiste coatingsysteem, op een correct voorbereide ondergrond, in de voorgeschreven laagdiktes.',
+      'Roest stopt nooit uit zichzelf. Elke staalconstructie die onbeschermd buiten staat, in een haven, naast een chemische installatie of gewoon in het Belgische klimaat, levert elk jaar staal in. Corrosiebescherming is de vakdiscipline die dat proces stillegt: het juiste coatingsysteem, op een correct voorbereide ondergrond, in de voorgeschreven laagdiktes. Staat er al roest, dan begint het bij corrosiebestrijding: de aangetaste zones saneren en het systeem zo opbouwen dat de schade niet terugkomt.',
       'Russo NV conserveert staal sinds 1994: staalconstructies, tankparken, pijpbruggen, loodsen en installaties, in nieuwbouw en in onderhoud. We bepalen de corrosiviteitsklasse van de omgeving, adviseren het systeem en voeren het volledige traject uit met eigen materieel: stralen, applicatie en inspectie, gedocumenteerd tot en met het opleverdossier.',
     ],
     scopeTitle: 'Wat onze corrosiebescherming omvat',
@@ -76,6 +78,7 @@ const CONTENT = {
     ],
     faqTitle: 'Veelgestelde vragen',
     faq: [
+      { q: 'Wat is het verschil tussen corrosiebestrijding en corrosiebescherming?', a: 'De termen worden door elkaar gebruikt. Corrosiebestrijding gaat meestal over het aanpakken van bestaande of dreigende roest, corrosiebescherming over het systeem dat het staal daarna blijvend beschermt. In de praktijk horen ze bij elkaar: eerst saneren en voorbereiden, dan een systeem dat past bij de corrosieklasse.' },
       { q: 'Wat kost corrosiebescherming per m²?', a: 'De prijs hangt af van de corrosiviteitsklasse, het systeem, de staat van de ondergrond en de bereikbaarheid. Een C3-systeem in een loods is een andere som dan een C5-systeem op hoogte op een operationeel terrein. Omdat elk project verschilt, rekenen we op basis van een inspectie of uw specificatie: zo klopt de offerte met wat er werkelijk moet gebeuren.' },
       { q: 'Hoe lang gaat een coatingsysteem mee?', a: 'ISO 12944 rekent met levensduurklassen tot meer dan 25 jaar voor de zwaarste systemen. In de praktijk bepalen drie dingen de haalbare levensduur: de kwaliteit van de voorbereiding, de systeemkeuze ten opzichte van de werkelijke omgeving en het onderhoud. Een correct aangebracht systeem in de juiste klasse haalt zijn ontwerpverwachting; een gemiste stap in de voorbereiding kost jaren.' },
       { q: 'Welk systeem heeft mijn omgeving nodig?', a: 'Dat volgt uit de corrosiviteitsklasse: van C2 voor droge binnenruimtes tot C5 voor kust- en industriegebieden zoals de Antwerpse haven. Per klasse en gewenste levensduur schrijft ISO 12944 geteste systeemopbouwen voor. Wij bepalen de klasse ter plaatse en adviseren het systeem dat beschermt zonder te veel te kosten.' },
@@ -96,7 +99,7 @@ const CONTENT = {
     ctaPrimary: 'Request a quote',
     ctaPhone: 'Call +32 475 43 48 19',
     intro: [
-      'Rust never stops by itself. Every steel structure standing unprotected outdoors, in a port, next to a chemical plant or simply in the Belgian climate, gives up steel every year. Corrosion protection is the discipline that halts that process: the right coating system, on a correctly prepared substrate, at the specified film thicknesses.',
+      'Rust never stops by itself. Every steel structure standing unprotected outdoors, in a port, next to a chemical plant or simply in the Belgian climate, gives up steel every year. Corrosion protection is the discipline that halts that process: the right coating system, on a correctly prepared substrate, at the specified film thicknesses. If rust is already there, it starts with corrosion control: remediating the affected zones and building the system so the damage does not come back.',
       'Russo NV has been preserving steel since 1994: structures, tank farms, pipe racks, warehouses and installations, in new-build and in maintenance. We determine the corrosivity category of the environment, advise the system and deliver the complete scope with our own equipment: blasting, application and inspection, documented through to the handover dossier.',
     ],
     scopeTitle: 'What our corrosion protection covers',
@@ -128,6 +131,7 @@ const CONTENT = {
     ],
     faqTitle: 'Frequently asked questions',
     faq: [
+      { q: 'What is the difference between corrosion control and corrosion protection?', a: 'The terms are used interchangeably. Corrosion control usually means dealing with existing or imminent rust, corrosion protection the system that protects the steel permanently afterwards. In practice they belong together: first remediate and prepare, then a system that suits the corrosivity category.' },
       { q: 'What does corrosion protection cost per m²?', a: 'The price depends on the corrosivity category, the system, the condition of the substrate and accessibility. A C3 system in a warehouse is a different calculation than a C5 system at height on an operational site. Because every project differs, we quote from an inspection or your specification, so the price matches what actually has to happen.' },
       { q: 'How long does a coating system last?', a: 'ISO 12944 works with durability ranges up to more than 25 years for the heaviest systems. In practice three things determine the achievable life: the quality of the preparation, the system choice against the real environment and the maintenance. A correctly applied system in the right category meets its design expectation; a missed step in preparation costs years.' },
       { q: 'Which system does my environment need?', a: 'That follows from the corrosivity category: from C2 for dry interiors to C5 for coastal and industrial areas such as the port of Antwerp. Per category and required durability, ISO 12944 prescribes tested system build-ups. We determine the category on site and advise the system that protects without overspending.' },
@@ -317,7 +321,7 @@ export default function CorrosionProtectionPage() {
       {/* Related services */}
       <section className="w-full max-w-[100rem] mx-auto px-8 py-16 lg:py-20">
         <h2 className="font-heading text-xl sm:text-2xl text-foreground uppercase mb-8">{c.relatedTitle}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {RELATED.map((r) => (
             <Link key={r.to} to={localize(r.to)} className="group flex items-center justify-between border border-dark-grey/15 bg-white p-5 hover:border-primary transition-colors">
               <span className="font-paragraph text-sm font-bold text-foreground group-hover:text-primary transition-colors">{r[locale]}</span>

@@ -89,6 +89,7 @@ export const articleUrl = (slug: string) => `${ARTICLE_BASE}/${slug}`;
 export const ARTICLES: Article[] = [
   {
     slug: 'steel-surface-preparation',
+    updated: '2026-11-06',
     date: '2026-06-17',
     author: 'Stig Vanmarsenille',
     authorRole: {
@@ -155,6 +156,16 @@ export const ARTICLES: Article[] = [
         {
           type: 'p',
           text: 'De internationale norm ISO 8501-1 beschrijft visuele reinheidsgraden voor gestraald staal. Welke graad je nodig hebt, schrijft de coatingfabrikant voor in het technische datablad. Voor de meeste industriële beschermsystemen is dat Sa 2½.',
+        },
+        {
+          type: 'p',
+          segments: [
+            'Alle graden, ook St 2 en St 3 voor mechanisch reinigen en de Wa-graden voor waterstralen, staan in ons overzicht van de ',
+            { text: 'reinheidsgraden van staal', to: '/insights/reinheidsgraden-staal' },
+            '. Hoe het stralen zelf werkt en welk straalmiddel je kiest, lees je in ',
+            { text: 'wat is gritstralen', to: '/insights/gritstralen' },
+            '.',
+          ],
         },
         {
           type: 'table',
@@ -362,6 +373,16 @@ export const ARTICLES: Article[] = [
         {
           type: 'p',
           text: 'The international standard ISO 8501-1 defines visual cleanliness grades for blasted steel. Which grade you need is specified by the coating manufacturer in the technical data sheet. For most industrial protective systems that is Sa 2½.',
+        },
+        {
+          type: 'p',
+          segments: [
+            'All grades, including St 2 and St 3 for mechanical cleaning and the Wa grades for water jetting, are in our overview of ',
+            { text: 'steel cleanliness grades', to: '/insights/reinheidsgraden-staal' },
+            '. How blasting itself works and which abrasive to choose is covered in ',
+            { text: 'what is grit blasting', to: '/insights/gritstralen' },
+            '.',
+          ],
         },
         {
           type: 'table',
@@ -1072,6 +1093,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'corrosion-protection-iso-12944',
+    updated: '2026-11-06',
     date: '2026-08-19',
     updated: '2026-08-19',
     author: 'Stig Vanmarsenille',
@@ -1158,6 +1180,31 @@ export const ARTICLES: Article[] = [
         {
           type: 'p',
           text: 'En de klasse zelf? Die hangt af van de werkelijke blootstelling, niet van het adres. In de havens van Antwerpen, Gent en Zeebrugge worden veel constructies beoordeeld als C4 tot C5, maar op terminalprojecten classificeren wij nooit een hele site in één keer: beschut staal onder een luifel, zones met permanente condensatie, buitenstaal in de zeewind en aanlandige spatzones kunnen binnen dezelfde installatie elk een andere beoordeling vragen. De klassebepaling gebeurt per constructie en per blootstellingszone.',
+        },
+        { type: 'h3', text: 'Wat betekent C3 volgens ISO 12944?' },
+        {
+          type: 'p',
+          text: 'C3 staat voor een gemiddelde corrosiviteit. Buiten gaat het om een stedelijke of licht industriële atmosfeer en kustgebieden met weinig zout, binnen om productieruimtes met vocht, zoals brouwerijen en wasserijen. Onbeschermd koolstofstaal verliest er in het eerste jaar 25 tot 50 µm.',
+        },
+        { type: 'h3', text: 'Wat betekent C4?' },
+        {
+          type: 'p',
+          text: 'C4 staat voor een hoge corrosiviteit: industriële zones en kustgebieden met matig zout, en binnen bijvoorbeeld chemische installaties. Het staalverlies in het eerste jaar loopt op tot 50 tot 80 µm. Dit is de klasse waar het coatingsysteem duidelijk zwaarder wordt dan een gewone onderhoudsverf.',
+        },
+        { type: 'h3', text: 'Wat betekent C5?' },
+        {
+          type: 'p',
+          text: 'C5 staat voor een zeer hoge corrosiviteit: industriële zones met hoge vochtigheid en een agressieve atmosfeer, en kustgebieden met veel zout. Het staalverlies bedraagt 80 tot 200 µm in het eerste jaar. Vroeger maakte de norm hier onderscheid tussen C5-I en C5-M, sinds 2017 is dat gewoon C5, met CX als extra klasse voor extreme omgevingen.',
+        },
+        {
+          type: 'p',
+          segments: [
+            'Welke klasse gebruikelijk is per type locatie, van de kust tot het binnenland, zetten we op een rij in ons overzicht van de ',
+            { text: 'corrosieklassen in België', to: '/insights/corrosieklassen-belgie' },
+            '. Staat er al roest op het staal? Lees dan eerst over de methodes van ',
+            { text: 'corrosiebestrijding', to: '/insights/corrosiebestrijding' },
+            '.',
+          ],
         },
         {
           type: 'image',
@@ -1395,6 +1442,31 @@ export const ARTICLES: Article[] = [
         {
           type: 'p',
           text: 'And the category itself? It depends on the actual exposure, not the address. In the ports of Antwerp, Ghent and Zeebrugge many structures are assessed as C4 to C5, but on terminal projects we never classify an entire site in one go: sheltered steel under a canopy, zones with permanent condensation, external steel in the sea wind and splash zones can each require a different assessment within the same installation. Classification is done per structure and per exposure zone.',
+        },
+        { type: 'h3', text: 'What does C3 mean in ISO 12944?' },
+        {
+          type: 'p',
+          text: 'C3 stands for medium corrosivity. Outdoors it covers urban or lightly industrial atmospheres and coastal areas with little salt, indoors production rooms with moisture, such as breweries and laundries. Unprotected carbon steel loses 25 to 50 µm there in the first year.',
+        },
+        { type: 'h3', text: 'What does C4 mean?' },
+        {
+          type: 'p',
+          text: 'C4 stands for high corrosivity: industrial zones and coastal areas with moderate salt, and indoors for example chemical plants. Steel loss in the first year rises to 50 to 80 µm. This is the class where the coating system becomes clearly heavier than ordinary maintenance paint.',
+        },
+        { type: 'h3', text: 'What does C5 mean?' },
+        {
+          type: 'p',
+          text: 'C5 stands for very high corrosivity: industrial zones with high humidity and an aggressive atmosphere, and coastal areas with a lot of salt. Steel loss is 80 to 200 µm in the first year. The standard used to distinguish C5-I and C5-M here, since 2017 it is simply C5, with CX as an extra class for extreme environments.',
+        },
+        {
+          type: 'p',
+          segments: [
+            'Which class is usual per type of location, from the coast to inland, is listed in our overview of ',
+            { text: 'corrosivity classes in Belgium', to: '/insights/corrosieklassen-belgie' },
+            '. Is there already rust on the steel? Read about the methods of ',
+            { text: 'corrosion control', to: '/insights/corrosiebestrijding' },
+            ' first.',
+          ],
         },
         {
           type: 'image',
@@ -2414,6 +2486,1690 @@ export const ARTICLES: Article[] = [
           text: 'Send us the product, concentration, temperature and tank details. Together with the coating manufacturer, we look at which system fits and how it is carried out on site.',
           buttonLabel: 'Request a quote',
           to: '/contact',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'corrosiebestrijding',
+    date: '2026-11-06',
+    author: 'Stig Vanmarsenille',
+    authorRole: {
+      NL: 'NACE Level 2 coating inspector',
+      EN: 'NACE Level 2 coating inspector',
+    },
+    authorBio: {
+      NL: 'Stig Vanmarsenille is NACE Level 2 coating inspector bij Russo NV. Hij keurt en begeleidt dagelijks industriële straal- en coatingwerken op de werf, van tankbekleding tot staalconstructies in de petrochemie.',
+      EN: 'Stig Vanmarsenille is a NACE Level 2 coating inspector at Russo NV. He inspects and supervises industrial blasting and coating work on site every day, from tank linings to structural steel in petrochemicals.',
+    },
+    authorUrl: 'https://www.linkedin.com/in/stig-vanmarsenille-747176b9/',
+    authorImage: '/images/author-stig.jpg',
+    heroImage: '/images/iso-pitting.jpg',
+    heroAlt: {
+      NL: 'Close-up van putcorrosie (pitting) in een stalen oppervlak',
+      EN: 'Close-up of pitting corrosion in a steel surface',
+    },
+    keywords: {
+      NL: ['corrosiebestrijding', 'corrosie staal voorkomen', 'corrosiebescherming', 'kathodische bescherming', 'thermisch verzinken', 'metalliseren', 'corrosie onder isolatie'],
+      EN: ['corrosion control', 'preventing steel corrosion', 'corrosion protection', 'cathodic protection', 'hot-dip galvanizing', 'thermal spray', 'corrosion under insulation'],
+    },
+    NL: {
+      title: 'Corrosiebestrijding van staal: welke methode past wanneer?',
+      metaTitle: 'Corrosiebestrijding staal: methodes vergeleken | Russo NV',
+      description: 'Coating, thermisch verzinken, metalliseren, kathodische bescherming of rvs? De methodes van corrosiebestrijding naast elkaar, met hun grenzen.',
+      excerpt: 'Roest is een chemisch proces dat je niet stopt met een verflaag alleen. Dit zijn de methodes van corrosiebestrijding, hoe ze werken, waar ze ophouden en hoe je kiest voor een bestaande installatie.',
+      category: 'Corrosiebescherming',
+      body: [
+        {
+          type: 'p',
+          segments: [
+            'Staal wil terug naar wat het ooit was: ijzererts. Zolang er ijzer, water en zuurstof samenkomen, loopt dat proces door, en zouten of zuren versnellen het sterk. Corrosiebestrijding is alles wat dat proces vertraagt of onderbreekt. Bij ',
+            { text: 'industriële schilderwerken', to: '/' },
+            ' is een coatingsysteem de bekendste methode, maar het is lang niet de enige. Welke methode de juiste is, hangt af van het object, de omgeving en of het staal al in dienst staat.',
+          ],
+        },
+        { type: 'h2', text: 'Wat is corrosiebestrijding precies?' },
+        {
+          type: 'p',
+          text: 'Corrosie is een elektrochemische reactie. Op het staaloppervlak ontstaan kleine anodes en kathodes, en vocht fungeert als geleider tussen die twee. Elke vorm van corrosiebestrijding pakt een van die schakels aan:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Een barrière tussen staal en omgeving, zoals een coating.',
+            'Een metaal dat zichzelf opoffert in plaats van het staal, zoals zink.',
+            'Een elektrische sturing van de reactie: kathodische bescherming.',
+            'Een ander materiaal dat de reactie veel trager laat verlopen, zoals roestvast staal.',
+            'Een omgeving of ontwerp waarin het staal minder lang nat blijft.',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Corrosiebestrijding en corrosiebescherming worden in de praktijk door elkaar gebruikt. Wij spreken van bestrijding als er al corrosie aanwezig is en de vraag is hoe je die stopt, en van bescherming als het om het systeem gaat dat herhaling voorkomt.',
+        },
+        { type: 'h2', text: 'De methodes naast elkaar' },
+        {
+          type: 'table',
+          caption: 'De gangbare methodes voor staal, met hun sterkte en hun grens',
+          headers: ['Methode', 'Hoe het werkt', 'Sterk in', 'Grens'],
+          rows: [
+            ['Coatingsysteem', 'Barrière, soms met een zinkrijke primer', 'Op locatie uitvoerbaar, ook in bedrijf; onderhoudbaar; grote objecten', 'Staat of valt met de voorbereiding en vraagt onderhoud'],
+            ['Thermisch verzinken', 'Dompelen in gesmolten zink, zink offert zichzelf op', 'Lange levensduur op nieuwe profielen, hekken en bordessen', 'Alleen in een zinkerij, afmetingen beperkt door het bad'],
+            ['Metalliseren', 'Gespoten laag zink of aluminium, meestal met een afdichting', 'Kan ook op locatie; geen warmte-inbreng zoals bij dompelen', 'Vraagt zeer zuiver gestraald staal, doorgaans Sa 3'],
+            ['Kathodische bescherming', 'Opofferingsanodes of opgedrukte stroom', 'Ondergedompeld of ingegraven staal: kades, leidingen, tankbodems', 'Werkt niet in de open lucht; vaak gecombineerd met een coating'],
+            ['Materiaalkeuze', 'Roestvast staal, duplex of aluminium', 'Procesleidingen en plaatsen die moeilijk bereikbaar zijn', 'Hogere investering; chloriden blijven een risico'],
+            ['Ontwerp en omgeving', 'Geen waterzakken, afgeronde randen, ontvochtiging', 'Voorkomt het probleem in plaats van het op te lossen', 'Vooral mogelijk bij nieuwbouw en grote aanpassingen'],
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'De ontwerpregels die corrosie beperken staan in ISO 12944-3. Voor bestaande staalconstructies en tankparken blijft een coatingsysteem bijna altijd de praktische keuze, omdat het op locatie kan en zonder dat de installatie moet worden gedemonteerd. Hoe zo\'n systeem wordt opgebouwd, lees je in onze gids over ',
+            { text: 'corrosiebescherming volgens ISO 12944', to: '/insights/corrosion-protection-iso-12944' },
+            '.',
+          ],
+        },
+        { type: 'h2', text: 'Hoe kies je de juiste methode?' },
+        {
+          type: 'ol',
+          items: [
+            'Bepaal de omgeving. Een loods in het binnenland vraagt iets anders dan een pijpbrug in de haven. Bekijk daarvoor de corrosiviteitsklasse.',
+            'Bepaal de gewenste levensduur tot het eerste groot onderhoud, en wat stilstand kost.',
+            'Kijk of het object mag bewegen. Past het in een zinkbad, of staat het vast in een installatie?',
+            'Bekijk de toegang: hoogte, besloten ruimte, ATEX-zones en werkvergunningen bepalen wat haalbaar is.',
+            'Vergelijk de totale kost over de hele levensduur, niet alleen de eerste aanleg.',
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'Twijfel je over de omgeving? In ons overzicht van de ',
+            { text: 'corrosieklassen in België', to: '/insights/corrosieklassen-belgie' },
+            ' vind je de gebruikelijke klassen per type locatie.',
+          ],
+        },
+        { type: 'h2', text: 'Corrosie stoppen op een bestaande installatie' },
+        {
+          type: 'p',
+          text: 'Bij staal dat al in dienst staat, begint het bij een inspectie. De roestgraad wordt beoordeeld volgens ISO 4628-3, op een schaal van Ri 0 tot Ri 5. Op basis daarvan zijn er drie richtingen:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Plaatselijk herstel: alleen de aangetaste plekken worden gereinigd en opgebouwd. Dat is zinvol zolang de bestaande coating nog goed hecht en de roest beperkt blijft.',
+            'Overcoaten na reiniging: de oude laag blijft staan en krijgt een nieuwe afwerking. Dat kan alleen als de hechting is gecontroleerd en de lagen compatibel zijn.',
+            'Volledige renovatie: alles terug naar het staal, met stralen of waterstralen, en een nieuw systeem.',
+          ],
+        },
+        {
+          type: 'image',
+          src: '/images/iso-spot-blast.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Plaatselijk gestraalde zone op een geklonken tankbodem, klaar voor herstel',
+          caption: 'Plaatselijk herstel: de aangetaste zone wordt tot op het staal gereinigd, zodat de nieuwe opbouw op een gezonde ondergrond komt.',
+        },
+        {
+          type: 'p',
+          segments: [
+            'Hoe grondig de ondergrond moet zijn, volgt uit de ',
+            { text: 'reinheidsgraden uit ISO 8501-1', to: '/insights/reinheidsgraden-staal' },
+            '. Op locatie combineren we die voorbereiding vaak met de planning van de site, zoals bij de ',
+            { text: 'kranen van CSP Zeebrugge', to: '/projects/kranen-coating-csp-zeebrugge' },
+            ', waar de terminal gewoon bleef werken.',
+          ],
+        },
+        { type: 'h2', text: 'Waar corrosiebestrijding in de praktijk misloopt' },
+        {
+          type: 'ul',
+          items: [
+            'Roest wordt overschilderd zonder de oorzaak weg te nemen. De nieuwe laag zit dan op een ondergrond die verder blijft reageren.',
+            'Oplosbare zouten blijven achter op het staal. Ze trekken vocht aan onder de film en veroorzaken blaasjes.',
+            'Randen, lassen en bouten krijgen geen extra laag. Daar begint de roest meestal als eerste.',
+            'Corrosie onder isolatie wordt niet gezien. Isolatie houdt vocht vast tegen warme en koude leidingen, en de schade blijft lang verborgen.',
+            'Er is geen onderhoudsplan. Vroeg plaatselijk herstel kost een fractie van een volledige renovatie enkele jaren later.',
+          ],
+        },
+        { type: 'h2', text: 'Veelgestelde vragen' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'Wat is het verschil tussen corrosiebestrijding en corrosiebescherming?',
+              a: 'De termen worden vaak door elkaar gebruikt. Corrosiebestrijding verwijst meestal naar het aanpakken van bestaande of dreigende corrosie, corrosiebescherming naar het systeem dat het staal blijvend beschermt, zoals een coating volgens ISO 12944.',
+            },
+            {
+              q: 'Is thermisch verzinken altijd beter dan schilderen?',
+              a: 'Nee. Thermisch verzinken is sterk bij nieuwe onderdelen die in een zinkbad passen. Voor grote of vaste constructies, tanks en installaties in bedrijf is het niet mogelijk, en dan is een coatingsysteem de logische keuze. Beide kunnen ook gecombineerd worden.',
+            },
+            {
+              q: 'Kan ik roest gewoon overschilderen?',
+              a: 'Alleen bij lichte vliegroest en met een product dat daarvoor bedoeld is, op advies van de fabrikant. Over actieve roest of losse schilfers schilderen geeft binnen korte tijd opnieuw schade, omdat de corrosie onder de film verdergaat.',
+            },
+            {
+              q: 'Wat is corrosie onder isolatie?',
+              a: 'Vocht dat in de isolatie van leidingen of tanks dringt, blijft tegen het staal staan en veroorzaakt daar verborgen corrosie. De schade wordt vaak pas zichtbaar als de isolatie wordt verwijderd. Bij inspecties en renovaties verdient die zone daarom aparte aandacht.',
+            },
+            {
+              q: 'Hoe vaak moet staal opnieuw geschilderd worden?',
+              a: 'Dat hangt af van de omgeving, het systeem en de voorbereiding. ISO 12944 werkt met levensduurbereiken als ontwerpverwachting, niet als garantie. Regelmatige inspectie en plaatselijk herstel rekken de levensduur aanzienlijk.',
+            },
+          ],
+        },
+        {
+          type: 'cta',
+          title: 'Corrosie op een installatie of staalconstructie?',
+          text: 'Stuur ons foto\'s en de omgeving van het object. Wij bekijken of plaatselijk herstel volstaat of dat een renovatie nodig is.',
+          buttonLabel: 'Bekijk corrosiebescherming',
+          to: '/services/corrosiebescherming',
+        },
+      ],
+    },
+    EN: {
+      title: 'Corrosion control for steel: which method fits when?',
+      metaTitle: 'Corrosion control for steel: methods compared | Russo NV',
+      description: 'Coating, hot-dip galvanizing, thermal spray, cathodic protection or stainless steel? The methods of corrosion control side by side, with their limits.',
+      excerpt: 'Rust is a chemical process you do not stop with a coat of paint alone. These are the methods of corrosion control, how they work, where they stop and how to choose for an existing installation.',
+      category: 'Corrosion protection',
+      body: [
+        {
+          type: 'p',
+          segments: [
+            'Steel wants to go back to what it once was: iron ore. As long as iron, water and oxygen come together the process continues, and salts or acids speed it up considerably. Corrosion control is everything that slows or interrupts that process. In ',
+            { text: 'industrial painting', to: '/' },
+            ', a coating system is the best known method, but far from the only one. The right method depends on the object, the environment and whether the steel is already in service.',
+          ],
+        },
+        { type: 'h2', text: 'What exactly is corrosion control?' },
+        {
+          type: 'p',
+          text: 'Corrosion is an electrochemical reaction. Small anodes and cathodes form on the steel surface, and moisture acts as the conductor between them. Every form of corrosion control targets one of those links:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'A barrier between steel and environment, such as a coating.',
+            'A metal that sacrifices itself instead of the steel, such as zinc.',
+            'An electrical control of the reaction: cathodic protection.',
+            'A different material in which the reaction runs far more slowly, such as stainless steel.',
+            'An environment or design in which the steel stays wet for less time.',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Corrosion control and corrosion protection are used interchangeably in practice. We speak of control when corrosion is already present and the question is how to stop it, and of protection when it is about the system that prevents it from coming back.',
+        },
+        { type: 'h2', text: 'The methods side by side' },
+        {
+          type: 'table',
+          caption: 'The common methods for steel, with their strength and their limit',
+          headers: ['Method', 'How it works', 'Strong in', 'Limit'],
+          rows: [
+            ['Coating system', 'Barrier, sometimes with a zinc-rich primer', 'Can be done on site, also in operation; maintainable; large objects', 'Depends on the preparation and needs maintenance'],
+            ['Hot-dip galvanizing', 'Dipping in molten zinc; the zinc sacrifices itself', 'Long service life on new sections, fencing and platforms', 'Only in a galvanizing plant, size limited by the bath'],
+            ['Thermal spray', 'Sprayed layer of zinc or aluminium, usually with a sealer', 'Also possible on site; no heat input as with dipping', 'Needs very clean blasted steel, usually Sa 3'],
+            ['Cathodic protection', 'Sacrificial anodes or impressed current', 'Submerged or buried steel: quays, pipelines, tank floors', 'Does not work in open air; often combined with a coating'],
+            ['Material choice', 'Stainless steel, duplex or aluminium', 'Process piping and places that are hard to reach', 'Higher investment; chlorides remain a risk'],
+            ['Design and environment', 'No water traps, rounded edges, dehumidification', 'Prevents the problem instead of solving it', 'Mainly possible in new build and major modifications'],
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'The design rules that limit corrosion are in ISO 12944-3. For existing steel structures and tank farms, a coating system is almost always the practical choice, because it can be done on site without dismantling the installation. How such a system is built up is covered in our guide to ',
+            { text: 'corrosion protection to ISO 12944', to: '/insights/corrosion-protection-iso-12944' },
+            '.',
+          ],
+        },
+        { type: 'h2', text: 'How do you choose the right method?' },
+        {
+          type: 'ol',
+          items: [
+            'Determine the environment. A shed inland asks for something different than a pipe bridge in the port. Look at the corrosivity class for this.',
+            'Determine the required service life until the first major maintenance, and what downtime costs.',
+            'Check whether the object can move. Does it fit in a galvanizing bath, or is it fixed in an installation?',
+            'Look at access: height, confined space, ATEX zones and work permits decide what is feasible.',
+            'Compare the total cost over the whole service life, not only the first application.',
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'Unsure about the environment? Our overview of ',
+            { text: 'corrosivity classes in Belgium', to: '/insights/corrosieklassen-belgie' },
+            ' lists the usual classes per type of location.',
+          ],
+        },
+        { type: 'h2', text: 'Stopping corrosion on an existing installation' },
+        {
+          type: 'p',
+          text: 'For steel already in service, it starts with an inspection. The degree of rusting is assessed to ISO 4628-3, on a scale from Ri 0 to Ri 5. That leaves three directions:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Local repair: only the affected spots are cleaned and rebuilt. This makes sense as long as the existing coating still adheres well and rust remains limited.',
+            'Overcoating after cleaning: the old layer stays and receives a new finish. This is only possible once adhesion has been checked and the layers are compatible.',
+            'Full refurbishment: everything back to the steel, by blasting or water jetting, with a new system.',
+          ],
+        },
+        {
+          type: 'image',
+          src: '/images/iso-spot-blast.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Locally blasted zone on a riveted tank floor, ready for repair',
+          caption: 'Local repair: the affected zone is cleaned down to the steel, so the new build-up sits on a sound substrate.',
+        },
+        {
+          type: 'p',
+          segments: [
+            'How thorough the preparation must be follows from the ',
+            { text: 'cleanliness grades in ISO 8501-1', to: '/insights/reinheidsgraden-staal' },
+            '. On site we often combine that preparation with the site planning, as with the ',
+            { text: 'cranes at CSP Zeebrugge', to: '/projects/kranen-coating-csp-zeebrugge' },
+            ', where the terminal simply kept working.',
+          ],
+        },
+        { type: 'h2', text: 'Where corrosion control goes wrong in practice' },
+        {
+          type: 'ul',
+          items: [
+            'Rust is painted over without removing the cause. The new layer then sits on a substrate that keeps reacting.',
+            'Soluble salts stay on the steel. They attract moisture under the film and cause blisters.',
+            'Edges, welds and bolts get no extra coat. That is usually where the rust starts first.',
+            'Corrosion under insulation goes unseen. Insulation holds moisture against hot and cold pipes, and the damage stays hidden for a long time.',
+            'There is no maintenance plan. Early local repair costs a fraction of a full refurbishment a few years later.',
+          ],
+        },
+        { type: 'h2', text: 'Frequently asked questions' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'What is the difference between corrosion control and corrosion protection?',
+              a: 'The terms are often used interchangeably. Corrosion control usually refers to dealing with existing or imminent corrosion, corrosion protection to the system that protects the steel permanently, such as a coating to ISO 12944.',
+            },
+            {
+              q: 'Is hot-dip galvanizing always better than painting?',
+              a: 'No. Hot-dip galvanizing is strong on new parts that fit in a zinc bath. For large or fixed structures, tanks and installations in service it is not possible, and a coating system is the logical choice. The two can also be combined.',
+            },
+            {
+              q: 'Can I simply paint over rust?',
+              a: 'Only with light flash rust and a product meant for it, on the manufacturer’s advice. Painting over active rust or loose flakes gives new damage within a short time, because corrosion continues under the film.',
+            },
+            {
+              q: 'What is corrosion under insulation?',
+              a: 'Moisture that enters the insulation of pipes or tanks stays against the steel and causes hidden corrosion there. The damage often only becomes visible when the insulation is removed. That zone therefore deserves separate attention during inspections and refurbishments.',
+            },
+            {
+              q: 'How often does steel need repainting?',
+              a: 'That depends on the environment, the system and the preparation. ISO 12944 uses durability ranges as a design expectation, not a guarantee. Regular inspection and local repair extend service life considerably.',
+            },
+          ],
+        },
+        {
+          type: 'cta',
+          title: 'Corrosion on an installation or steel structure?',
+          text: 'Send us photos and the environment of the object. We will look at whether local repair is enough or a refurbishment is needed.',
+          buttonLabel: 'See corrosion protection',
+          to: '/services/corrosiebescherming',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'gritstralen',
+    date: '2026-11-06',
+    author: 'Stig Vanmarsenille',
+    authorRole: {
+      NL: 'NACE Level 2 coating inspector',
+      EN: 'NACE Level 2 coating inspector',
+    },
+    authorBio: {
+      NL: 'Stig Vanmarsenille is NACE Level 2 coating inspector bij Russo NV. Hij keurt en begeleidt dagelijks industriële straal- en coatingwerken op de werf, van tankbekleding tot staalconstructies in de petrochemie.',
+      EN: 'Stig Vanmarsenille is a NACE Level 2 coating inspector at Russo NV. He inspects and supervises industrial blasting and coating work on site every day, from tank linings to structural steel in petrochemicals.',
+    },
+    authorUrl: 'https://www.linkedin.com/in/stig-vanmarsenille-747176b9/',
+    authorImage: '/images/author-stig.jpg',
+    heroImage: '/images/tank-blasting.jpg',
+    heroAlt: {
+      NL: 'Straler aan het werk in een donkere tank, straalnevel in het lamplicht',
+      EN: 'Blaster at work in a dark tank, blasting mist in the lamp light',
+    },
+    keywords: {
+      NL: ['gritstralen', 'wat is gritstralen', 'zandstralen', 'straalgrit', 'straalmiddel', 'staal stralen', 'stralen op locatie', 'vacuümstralen'],
+      EN: ['grit blasting', 'what is grit blasting', 'sandblasting', 'blasting abrasive', 'steel grit', 'blasting steel', 'on-site blasting', 'vacuum blasting'],
+    },
+    NL: {
+      title: 'Wat is gritstralen? Het verschil met zandstralen uitgelegd',
+      metaTitle: 'Wat is gritstralen? Verschil met zandstralen | Russo NV',
+      description: 'Gritstralen reinigt staal en geeft het een ruw profiel voor de coating. Het verschil met zandstralen, de straalmiddelen en hoe het op locatie gaat.',
+      excerpt: 'In de volksmond heet alles zandstralen, maar in de industrie stralen we met grit. Dit is wat gritstralen doet, welke straalmiddelen er zijn, wat er met het gebruikte grit gebeurt en wanneer je beter een andere methode kiest.',
+      category: 'Oppervlaktevoorbereiding',
+      body: [
+        {
+          type: 'p',
+          segments: [
+            'Gritstralen is het reinigen en opruwen van een oppervlak met een harde, korrelige straalstof die met perslucht op hoge snelheid wordt weggeschoten. Het haalt roest, walshuid en oude coating weg en laat een ruw profiel achter waar de nieuwe laag zich aan kan vastzetten. Bij ',
+            { text: 'industriële schilderwerken', to: '/' },
+            ' aan tanks en staalconstructies is het de standaardmethode om staal klaar te maken voor een coatingsysteem.',
+          ],
+        },
+        { type: 'h2', text: 'Wat is het verschil tussen gritstralen en zandstralen?' },
+        {
+          type: 'p',
+          text: 'In de volksmond heet alles zandstralen, maar industrieel gebeurt het niet met zand. Droog stralen met korrels die meer dan 1% vrij kristallijn silica bevatten, is in België volledig verboden, ook in afgesloten systemen. Het stof dat daarbij vrijkomt, tast de longen aan. Industrieel straalwerk gebeurt daarom met grit: minerale slakken, granaat, korund of staalgrit. Het principe is hetzelfde, het straalmiddel niet.',
+        },
+        { type: 'h2', text: 'Welk straalmiddel kies je?' },
+        {
+          type: 'table',
+          caption: 'De gangbare straalmiddelen in de industrie. De normen ISO 11126 en ISO 11124 leggen de eisen vast.',
+          headers: ['Straalmiddel', 'Hergebruik', 'Typisch gebruik'],
+          rows: [
+            ['Minerale slak of aluminiumsilicaat', 'Eenmalig', 'Open stralen op locatie: tanks, staalconstructies'],
+            ['Granaat', 'Beperkt, met terugwinning', 'Waar stof en hoeveelheid afval beperkt moeten blijven'],
+            ['Staalgrit', 'Vele keren, met terugwinning', 'Straalateliers en werven met een terugwinsysteem'],
+            ['Korund (aluminiumoxide)', 'Meerdere keren', 'Hard en scherp: roestvast staal, ateliers'],
+            ['Glasparels', 'Meerdere keren', 'Reinigen zonder ruw profiel, niet voor coatingvoorbereiding'],
+          ],
+        },
+        {
+          type: 'p',
+          text: 'De keuze hangt af van het vereiste profiel, de plaats en wat er met het afval moet gebeuren. Op een werf waar het grit niet kan worden teruggewonnen, is een eenmalig mineraal straalmiddel meestal de logische keuze. Korrelgrootte en druk stemmen we af op het ruwheidsprofiel dat het datablad vraagt.',
+        },
+        { type: 'h2', text: 'Hoe verloopt gritstralen op locatie?' },
+        {
+          type: 'ol',
+          items: [
+            'Voorbereiding: afdekken van wat niet geraakt mag worden, afscherming van de omgeving en reinigen van vet en olie. Stralen verwijdert vet niet, het smeert het uit.',
+            'Klimaat meten: de staaltemperatuur moet minstens 3 °C boven het dauwpunt liggen, anders vormt zich vliegroest op het verse staal.',
+            'Stralen: de straler werkt met een straalketel, compressor en droge perslucht, met een helm op ademlucht.',
+            'Controle: reinheidsgraad volgens ISO 8501-1, ruwheid volgens ISO 8503, stof volgens ISO 8502-3 en oplosbare zouten met de Bresle-methode.',
+            'Afzuigen en vrijgeven: grit en stof worden verwijderd, en het staal gaat zo snel mogelijk onder de eerste laag.',
+          ],
+        },
+        {
+          type: 'image',
+          src: '/images/tank-blasting-sa25.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Vers gestraalde onderste wandring in een opslagtank, blank staal tot reinheidsgraad Sa 2½',
+          caption: 'Na het gritstralen: egaal staal met een ruw profiel. De reinheidsgraad wordt beoordeeld volgens ISO 8501-1.',
+        },
+        {
+          type: 'p',
+          segments: [
+            'Wat de reinheidsgraden Sa 2½ en Sa 3 precies betekenen, lees je in ons artikel over ',
+            { text: 'reinheidsgraden van staal', to: '/insights/reinheidsgraden-staal' },
+            '. De volledige keten van reinigen tot vrijgeven beschrijven we in onze gids over ',
+            { text: 'oppervlaktevoorbereiding', to: '/insights/steel-surface-preparation' },
+            '.',
+          ],
+        },
+        { type: 'h2', text: 'Wat gebeurt er met het gebruikte grit?' },
+        {
+          type: 'p',
+          text: 'Gebruikt grit is afval, en het bevat alles wat er van het staal is gehaald, inclusief oude coating. Oude verfsystemen kunnen zware metalen bevatten, en dan gelden andere regels voor de afvoer. Daarom hoort de afvoer van het straalgrit vooraf in de planning en in de offerte thuis, met duidelijke afspraken over wie wat regelt. Op grote projecten is de hoeveelheid grit vaak een van de grootste logistieke posten.',
+        },
+        { type: 'h2', text: 'Wanneer kies je geen gritstralen?' },
+        {
+          type: 'ul',
+          items: [
+            'Op plaatsen waar open stralen niet mag of de installatie in bedrijf blijft: daar is vacuümstralen een optie, waarbij het grit aan de kop direct wordt afgezogen.',
+            'Op oude coatings die verwijderd moeten worden zonder grote hoeveelheden besmet grit: daar kan waterstralen beter passen.',
+            'Bij lichte, plaatselijke reiniging van naden en lassen, waar mechanisch reinigen tot St 2 of St 3 volstaat als het coatingsysteem dat toelaat.',
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'Meer over de alternatieve methode lees je in ons artikel over ',
+            { text: 'UHP-waterstralen', to: '/insights/uhp-waterstralen' },
+            '. Voor uitvoering op locatie kun je terecht bij onze dienst ',
+            { text: 'industrieel stralen', to: '/services/industrieel-stralen' },
+            '.',
+          ],
+        },
+        { type: 'h2', text: 'Veelgestelde vragen' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'Is zandstralen verboden in België?',
+              a: 'Droog stralen met zand of andere korrels met meer dan 1% vrij kristallijn silica is in België volledig verboden, ook in afgesloten systemen. Dat volgt uit de Codex over het welzijn op het werk. Wat men vandaag zandstralen noemt, gebeurt in de praktijk met andere straalmiddelen, zoals minerale slakken of granaat.',
+            },
+            {
+              q: 'Wat is straalgrit?',
+              a: 'Straalgrit is de harde, korrelige straalstof waarmee staal wordt gereinigd en opgeruwd. Het kan een mineraal product zijn, zoals een slak of granaat, of een metallisch product, zoals staalgrit. ISO 11126 en ISO 11124 leggen de eisen vast.',
+            },
+            {
+              q: 'Hoe ruw moet staal zijn na het stralen?',
+              a: 'Dat bepaalt het datablad van de coating, met een waarde in µm Rz of een klasse uit ISO 8503, zoals Medium G. Dikkere systemen en tank linings vragen meestal een ruwer profiel dan dunne systemen. Meet het profiel met een comparator of een meter, schat het niet op het oog.',
+            },
+            {
+              q: 'Kan er gestraald worden in een werkende installatie?',
+              a: 'Dat kan, met afscherming en de juiste vergunningen. In gevoelige zones gebruiken we vacuümstralen, waarbij het grit direct wordt afgezogen. In ATEX-zones en naast draaiende installaties wordt de methode altijd vooraf met de site afgestemd.',
+            },
+            {
+              q: 'Kan gritstralen ook op beton?',
+              a: 'Ja, grit wordt ook gebruikt om beton op te ruwen en cementhuid te verwijderen, met een aangepaste druk en korrel. Daarna is de ondergrond open en draagkrachtig voor een coating of herstelmortel.',
+            },
+          ],
+        },
+        {
+          type: 'cta',
+          title: 'Staal te stralen op locatie?',
+          text: 'Bezorg ons het object, de oppervlakte en de gevraagde reinheidsgraad. U krijgt een duidelijke aanpak met methode, planning en offerte.',
+          buttonLabel: 'Bekijk industrieel stralen',
+          to: '/services/industrieel-stralen',
+        },
+      ],
+    },
+    EN: {
+      title: 'What is grit blasting? The difference with sandblasting explained',
+      metaTitle: 'What is grit blasting? Difference with sandblasting | Russo NV',
+      description: 'Grit blasting cleans steel and gives it a rough profile for the coating. The difference with sandblasting, the abrasives and how it works on site.',
+      excerpt: 'People call everything sandblasting, but in industry we blast with grit. This is what grit blasting does, which abrasives exist, what happens to the spent grit and when another method is the better choice.',
+      category: 'Surface preparation',
+      body: [
+        {
+          type: 'p',
+          segments: [
+            'Grit blasting is cleaning and roughening a surface with a hard, granular abrasive fired at high speed by compressed air. It removes rust, mill scale and old coating and leaves a rough profile that the new layer can key into. In ',
+            { text: 'industrial painting', to: '/' },
+            ' of tanks and steel structures, it is the standard method for getting steel ready for a coating system.',
+          ],
+        },
+        { type: 'h2', text: 'What is the difference between grit blasting and sandblasting?' },
+        {
+          type: 'p',
+          text: 'People call everything sandblasting, but industrial blasting does not use sand. Dry blasting with grains containing more than 1% free crystalline silica is fully banned in Belgium, even in enclosed systems. The dust it releases damages the lungs. Industrial blasting therefore uses grit: mineral slags, garnet, corundum or steel grit. The principle is the same, the abrasive is not.',
+        },
+        { type: 'h2', text: 'Which abrasive do you choose?' },
+        {
+          type: 'table',
+          caption: 'The common abrasives in industry. The standards ISO 11126 and ISO 11124 set the requirements.',
+          headers: ['Abrasive', 'Reuse', 'Typical use'],
+          rows: [
+            ['Mineral slag or aluminium silicate', 'Single use', 'Open blasting on site: tanks, steel structures'],
+            ['Garnet', 'Limited, with recovery', 'Where dust and waste volume must stay limited'],
+            ['Steel grit', 'Many times, with recovery', 'Blasting shops and sites with a recovery system'],
+            ['Corundum (aluminium oxide)', 'Several times', 'Hard and sharp: stainless steel, workshops'],
+            ['Glass beads', 'Several times', 'Cleaning without a rough profile, not for coating preparation'],
+          ],
+        },
+        {
+          type: 'p',
+          text: 'The choice depends on the required profile, the location and what must happen to the waste. On a site where the grit cannot be recovered, a single-use mineral abrasive is usually the logical choice. We match grain size and pressure to the roughness profile the data sheet asks for.',
+        },
+        { type: 'h2', text: 'How does grit blasting work on site?' },
+        {
+          type: 'ol',
+          items: [
+            'Preparation: masking what must not be hit, shielding the surroundings and removing grease and oil. Blasting does not remove grease, it smears it.',
+            'Measuring the climate: the steel temperature must be at least 3 °C above the dew point, or flash rust forms on the fresh steel.',
+            'Blasting: the blaster works with a blast pot, compressor and dry compressed air, wearing a helmet on breathing air.',
+            'Inspection: cleanliness grade to ISO 8501-1, roughness to ISO 8503, dust to ISO 8502-3 and soluble salts with the Bresle method.',
+            'Vacuuming and release: grit and dust are removed, and the steel goes under the first coat as soon as possible.',
+          ],
+        },
+        {
+          type: 'image',
+          src: '/images/tank-blasting-sa25.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Freshly blasted lower wall ring in a storage tank, bare steel to cleanliness grade Sa 2½',
+          caption: 'After grit blasting: even steel with a rough profile. The cleanliness grade is assessed to ISO 8501-1.',
+        },
+        {
+          type: 'p',
+          segments: [
+            'What the grades Sa 2½ and Sa 3 mean exactly is covered in our article on ',
+            { text: 'steel cleanliness grades', to: '/insights/reinheidsgraden-staal' },
+            '. The full chain from cleaning to release is described in our guide to ',
+            { text: 'surface preparation', to: '/insights/steel-surface-preparation' },
+            '.',
+          ],
+        },
+        { type: 'h2', text: 'What happens to the spent grit?' },
+        {
+          type: 'p',
+          text: 'Spent grit is waste, and it contains everything taken off the steel, including old coating. Old paint systems can contain heavy metals, and then different disposal rules apply. That is why disposal of the grit belongs in the planning and the quotation from the start, with clear agreements on who arranges what. On large projects, the volume of grit is often one of the biggest logistics items.',
+        },
+        { type: 'h2', text: 'When do you not choose grit blasting?' },
+        {
+          type: 'ul',
+          items: [
+            'Where open blasting is not allowed or the installation stays in operation: vacuum blasting is an option there, with the grit extracted straight at the head.',
+            'On old coatings that must be removed without large volumes of contaminated grit: water jetting may fit better.',
+            'For light, local cleaning of seams and welds, where mechanical cleaning to St 2 or St 3 is enough if the coating system allows it.',
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'Read more about the alternative in our article on ',
+            { text: 'UHP water jetting', to: '/insights/uhp-waterstralen' },
+            '. For work on site, see our ',
+            { text: 'industrial blasting', to: '/services/industrieel-stralen' },
+            ' service.',
+          ],
+        },
+        { type: 'h2', text: 'Frequently asked questions' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'Is sandblasting banned in Belgium?',
+              a: 'Dry blasting with sand or other grains containing more than 1% free crystalline silica is fully banned in Belgium, even in enclosed systems. This follows from the Belgian code on well-being at work. What people call sandblasting today in practice uses other abrasives, such as mineral slags or garnet.',
+            },
+            {
+              q: 'What is blasting grit?',
+              a: 'Blasting grit is the hard, granular abrasive used to clean and roughen steel. It can be a mineral product, such as a slag or garnet, or a metallic product, such as steel grit. ISO 11126 and ISO 11124 set the requirements.',
+            },
+            {
+              q: 'How rough must steel be after blasting?',
+              a: 'The coating data sheet decides, with a value in µm Rz or a class from ISO 8503, such as Medium G. Thicker systems and tank linings usually ask for a rougher profile than thin systems. Measure the profile with a comparator or a gauge, do not judge it by eye.',
+            },
+            {
+              q: 'Can blasting be done in a working installation?',
+              a: 'Yes, with shielding and the right permits. In sensitive zones we use vacuum blasting, with the grit extracted directly. In ATEX zones and next to running equipment, the method is always agreed with the site beforehand.',
+            },
+            {
+              q: 'Can grit blasting also be used on concrete?',
+              a: 'Yes, grit is also used to roughen concrete and remove laitance, with adjusted pressure and grain size. The surface is then open and sound for a coating or repair mortar.',
+            },
+          ],
+        },
+        {
+          type: 'cta',
+          title: 'Steel to blast on site?',
+          text: 'Send us the object, the area and the required cleanliness grade. You will receive a clear approach with method, planning and quotation.',
+          buttonLabel: 'See industrial blasting',
+          to: '/services/industrieel-stralen',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'reinheidsgraden-staal',
+    date: '2026-11-06',
+    author: 'Stig Vanmarsenille',
+    authorRole: {
+      NL: 'NACE Level 2 coating inspector',
+      EN: 'NACE Level 2 coating inspector',
+    },
+    authorBio: {
+      NL: 'Stig Vanmarsenille is NACE Level 2 coating inspector bij Russo NV. Hij keurt en begeleidt dagelijks industriële straal- en coatingwerken op de werf, van tankbekleding tot staalconstructies in de petrochemie.',
+      EN: 'Stig Vanmarsenille is a NACE Level 2 coating inspector at Russo NV. He inspects and supervises industrial blasting and coating work on site every day, from tank linings to structural steel in petrochemicals.',
+    },
+    authorUrl: 'https://www.linkedin.com/in/stig-vanmarsenille-747176b9/',
+    authorImage: '/images/author-stig.jpg',
+    heroImage: '/images/step2.jpg',
+    heroAlt: {
+      NL: 'Staal gestraald tot reinheidsgraad Sa 2½ volgens ISO 8501-1',
+      EN: 'Steel blasted to cleanliness grade Sa 2½ to ISO 8501-1',
+    },
+    keywords: {
+      NL: ['reinheidsgraad staal', 'Sa 2,5', 'Sa 2½', 'St 2', 'St 3', 'verschil St2 en St3', 'ISO 8501-1', 'ISO 8501-4', 'Wa 2½'],
+      EN: ['steel cleanliness grade', 'Sa 2.5', 'Sa 2½', 'St 2', 'St 3', 'difference St2 and St3', 'ISO 8501-1', 'ISO 8501-4', 'Wa 2½'],
+    },
+    NL: {
+      title: 'Reinheidsgraden van staal: Sa 2½, St 2 en St 3 uitgelegd',
+      metaTitle: 'Reinheidsgraden staal: Sa 2,5, St 2 en St 3 | Russo NV',
+      description: 'Wat betekent Sa 2,5? Wat is het verschil tussen St 2 en St 3? De reinheidsgraden uit ISO 8501-1, wanneer je welke vraagt en wat de norm niet meet.',
+      excerpt: 'Een coatingspecificatie staat of valt met een korte code: Sa 2½, St 3 of Wa 2. Dit is wat die codes betekenen, wanneer je welke graad nodig hebt en waarom een mooi gestraald oppervlak nog niet schoon genoeg hoeft te zijn.',
+      category: 'Oppervlaktevoorbereiding',
+      body: [
+        {
+          type: 'p',
+          segments: [
+            'De reinheidsgraad zegt hoe grondig staal is gereinigd voordat de eerste laag erop komt. De norm is ISO 8501-1: een reeks foto\'s en omschrijvingen waarmee je op de werf visueel beoordeelt wat er nog op het staal zit. Bij ',
+            { text: 'industriële schilderwerken', to: '/' },
+            ' staat die code in elke specificatie, omdat de levensduur van een coating sterk afhangt van de ondergrond.',
+          ],
+        },
+        { type: 'h2', text: 'Wat betekenen de reinheidsgraden?' },
+        {
+          type: 'table',
+          caption: 'De reinheidsgraden uit ISO 8501-1, samengevat. Sa staat voor stralen, St voor handmatig of mechanisch reinigen.',
+          headers: ['Graad', 'Omschrijving', 'Wat je ziet'],
+          rows: [
+            ['Sa 1', 'Licht stralen', 'Losse walshuid, roest en verf weg; vastzittende resten blijven'],
+            ['Sa 2', 'Grondig stralen', 'Meeste walshuid, roest en verf weg; wat overblijft zit vast'],
+            ['Sa 2½', 'Zeer grondig stralen', 'Alleen nog lichte schaduwen of strepen'],
+            ['Sa 3', 'Stralen tot visueel schoon staal', 'Egaal metalen uiterlijk, geen resten'],
+            ['St 2', 'Grondig handmatig of mechanisch', 'Geen losse roest, verf of walshuid meer'],
+            ['St 3', 'Zeer grondig handmatig of mechanisch', 'Als St 2, maar verder gereinigd tot een metallische glans'],
+          ],
+        },
+        {
+          type: 'p',
+          text: 'De norm beoordeelt ook de beginstaat van het staal, met roestgraden A tot D. Die letter hoort bij de foto: Sa 2½ op staal met walshuid ziet er anders uit dan Sa 2½ op staal met putcorrosie. Op de werf vergelijk je dus altijd met de foto van dezelfde beginstaat.',
+        },
+        { type: 'h2', text: 'Wat betekent Sa 2,5?' },
+        {
+          type: 'p',
+          text: 'Sa 2,5, ook geschreven als Sa 2½, is de meest gevraagde graad in de industrie. Het staal is zeer grondig gestraald: walshuid, roest en coating zijn weg, en wat overblijft zijn hooguit lichte schaduwen of strepen. Bij inwendige tank linings en zware industriële systemen is dit doorgaans het minimum. Sa 3 gaat nog een stap verder en wordt vooral gevraagd voor metalliseren en sommige hoogwaardige linings. Het kost merkbaar meer tijd dan Sa 2½, dus vraag het alleen als het datablad het nodig heeft.',
+        },
+        {
+          type: 'image',
+          src: '/images/tank-blasting-sa25.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Vers gestraalde onderste wandring in een opslagtank, blank staal tot reinheidsgraad Sa 2½',
+          caption: 'Vers gestraald staal onderaan een tankwand: Sa 2½ tekent zich scherp af tegen de nog te stralen wand erboven.',
+        },
+        { type: 'h2', text: 'Wat is het verschil tussen St 2 en St 3?' },
+        {
+          type: 'p',
+          text: 'Beide graden gelden voor handmatig of mechanisch reinigen, met onder meer schraapgereedschap, staalborstels of schuurschijven. St 2 vraagt dat alle losse walshuid, roest en verf weg zijn. St 3 vraagt hetzelfde, maar veel grondiger, tot het staal een metallische glans krijgt. Let op: mechanisch reinigen maakt het staal niet ruw zoals stralen. Een coating die een straalprofiel nodig heeft, hecht dus niet automatisch op St 3.',
+        },
+        { type: 'h2', text: 'Welke graad vraag je wanneer?' },
+        {
+          type: 'table',
+          caption: 'Veelvoorkomende toepassingen. Het datablad en de projectspecificatie zijn altijd bepalend.',
+          headers: ['Toepassing', 'Gebruikelijke graad'],
+          rows: [
+            ['Inwendige tank lining', 'Sa 2½, soms Sa 3'],
+            ['Nieuwbouw staalconstructie in zware omgeving', 'Sa 2½'],
+            ['Metalliseren', 'Sa 3'],
+            ['Onderhoud buitenzijde, plaatselijk herstel', 'St 2 of St 3, of plaatselijk stralen'],
+            ['Naden en lassen bij renovatie met een tolerant systeem', 'St 2, als het systeem dat toelaat'],
+          ],
+        },
+        { type: 'h2', text: 'En waterstralen? De Wa-graden' },
+        {
+          type: 'p',
+          segments: [
+            'Voor reiniging met water onder hoge druk bestaat ISO 8501-4, met de graden Wa 1, Wa 2 en Wa 2½. Daarbovenop komt een graad voor de vliegroest die na het drogen ontstaat: L (licht), M (matig) of H (zwaar). In Amerikaanse specificaties zie je hetzelfde idee als WJ-1 tot WJ-4. Welke vliegroest een primer verdraagt, staat in het datablad. Meer daarover lees je in ons artikel over ',
+            { text: 'UHP-waterstralen', to: '/insights/uhp-waterstralen' },
+            '.',
+          ],
+        },
+        { type: 'h2', text: 'Wat de reinheidsgraad niet zegt' },
+        {
+          type: 'p',
+          text: 'ISO 8501-1 is een visuele norm. Staal kan er perfect uitzien en toch niet klaar zijn voor de coating. Daarom horen er andere metingen bij:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Oplosbare zouten: onzichtbaar, gemeten met de Bresle-methode volgens ISO 8502-6 en -9.',
+            'Stof: volgens ISO 8502-3, met een tape op het oppervlak.',
+            'Ruwheid: volgens ISO 8503, met een comparator of een meter.',
+            'Lassen en randen: de kwaliteit van de voorbereiding volgens ISO 8501-3, met de graden P1 tot P3.',
+            'Klimaat: de staaltemperatuur moet minstens 3 °C boven het dauwpunt liggen.',
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'De hele keten leggen we uit in onze gids over ',
+            { text: 'oppervlaktevoorbereiding van staal', to: '/insights/steel-surface-preparation' },
+            '. Hoe het op de werf gaat, lees je in ',
+            { text: 'wat is gritstralen', to: '/insights/gritstralen' },
+            '.',
+          ],
+        },
+        { type: 'h2', text: 'Veelgestelde vragen' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'Wat is de beste reinheidsgraad?',
+              a: 'Er is geen beste graad, alleen de graad die het coatingsysteem vraagt. Sa 3 is de zuiverste, maar het kost meer tijd. Voor de meeste zware systemen is Sa 2½ de eis, en bij sommige tolerante onderhoudssystemen volstaat St 2.',
+            },
+            {
+              q: 'Wie controleert de reinheidsgraad?',
+              a: 'Dat gebeurt door de eigen kwaliteitscontroleur van de aannemer, vaak aangevuld met een inspecteur van de opdrachtgever of de coatingfabrikant. In het inspectieplan staat wie op welk moment moet tekenen voor vrijgave.',
+            },
+            {
+              q: 'Hoe lang mag gestraald staal blijven liggen voor het coaten?',
+              a: 'Zo kort mogelijk. Vers gestraald staal roest snel zodra het vocht ziet. Coat binnen dezelfde shift als dat kan en controleer vlak voor het coaten of de reinheidsgraad nog klopt. Is er vliegroest ontstaan, dan moet er opnieuw gestraald worden.',
+            },
+            {
+              q: 'Geldt ISO 8501-1 ook voor bestaande coatings?',
+              a: 'De norm is opgesteld voor onbehandeld staal en staal waarvan de coating volledig is verwijderd. Voor gedeeltelijke voorbereiding van bestaande coatings is er ISO 8501-2, met graden zoals P Sa 2½ en P St 3.',
+            },
+          ],
+        },
+        {
+          type: 'cta',
+          title: 'Twijfel over de juiste reinheidsgraad?',
+          text: 'Bezorg ons het datablad of de specificatie. Wij bekijken wat er haalbaar is op uw object en hoe we dat aantoonbaar opleveren.',
+          buttonLabel: 'Bekijk industrieel stralen',
+          to: '/services/industrieel-stralen',
+        },
+      ],
+    },
+    EN: {
+      title: 'Steel cleanliness grades: Sa 2½, St 2 and St 3 explained',
+      metaTitle: 'Steel cleanliness grades: Sa 2.5, St 2 and St 3 | Russo NV',
+      description: 'What does Sa 2.5 mean? What is the difference between St 2 and St 3? The cleanliness grades from ISO 8501-1 and when to ask for which.',
+      excerpt: 'A coating specification stands or falls with a short code: Sa 2½, St 3 or Wa 2. This is what those codes mean, when you need which grade and why a nicely blasted surface is not necessarily clean enough.',
+      category: 'Surface preparation',
+      body: [
+        {
+          type: 'p',
+          segments: [
+            'The cleanliness grade states how thoroughly steel has been cleaned before the first coat goes on. The standard is ISO 8501-1: a set of photographs and descriptions used on site to judge visually what is still on the steel. In ',
+            { text: 'industrial painting', to: '/' },
+            ', this code is in every specification, because the service life of a coating depends heavily on the substrate.',
+          ],
+        },
+        { type: 'h2', text: 'What do the cleanliness grades mean?' },
+        {
+          type: 'table',
+          caption: 'The cleanliness grades from ISO 8501-1, summarised. Sa stands for blasting, St for hand or power tool cleaning.',
+          headers: ['Grade', 'Description', 'What you see'],
+          rows: [
+            ['Sa 1', 'Light blast cleaning', 'Loose mill scale, rust and paint gone; firmly adhering residues remain'],
+            ['Sa 2', 'Thorough blast cleaning', 'Most mill scale, rust and paint gone; what remains adheres firmly'],
+            ['Sa 2½', 'Very thorough blast cleaning', 'Only light shadows or streaks remain'],
+            ['Sa 3', 'Blast cleaning to visually clean steel', 'Uniform metallic appearance, no residues'],
+            ['St 2', 'Thorough hand or power tool cleaning', 'No loose rust, paint or mill scale left'],
+            ['St 3', 'Very thorough hand or power tool cleaning', 'As St 2, but cleaned further to a metallic sheen'],
+          ],
+        },
+        {
+          type: 'p',
+          text: 'The standard also rates the initial condition of the steel, with rust grades A to D. That letter belongs to the photograph: Sa 2½ on steel with mill scale looks different from Sa 2½ on pitted steel. On site you therefore always compare with the photograph of the same initial condition.',
+        },
+        { type: 'h2', text: 'What does Sa 2.5 mean?' },
+        {
+          type: 'p',
+          text: 'Sa 2.5, also written Sa 2½, is the most requested grade in industry. The steel has been blasted very thoroughly: mill scale, rust and coating are gone, and what remains is at most light shadows or streaks. For internal tank linings and heavy industrial systems, this is usually the minimum. Sa 3 goes a step further and is mainly requested for thermal spray and some high-end linings. It takes noticeably more time than Sa 2½, so only ask for it when the data sheet needs it.',
+        },
+        {
+          type: 'image',
+          src: '/images/tank-blasting-sa25.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Freshly blasted lower wall ring in a storage tank, bare steel to cleanliness grade Sa 2½',
+          caption: 'Freshly blasted steel at the bottom of a tank wall: Sa 2½ stands out sharply against the wall above, still to be blasted.',
+        },
+        { type: 'h2', text: 'What is the difference between St 2 and St 3?' },
+        {
+          type: 'p',
+          text: 'Both grades apply to hand or power tool cleaning, with scrapers, steel brushes or sanding discs among others. St 2 requires all loose mill scale, rust and paint to be gone. St 3 requires the same but much more thoroughly, until the steel takes on a metallic sheen. Note: mechanical cleaning does not roughen the steel the way blasting does. A coating that needs a blast profile therefore does not automatically adhere on St 3.',
+        },
+        { type: 'h2', text: 'Which grade do you ask for when?' },
+        {
+          type: 'table',
+          caption: 'Common applications. The data sheet and project specification always decide.',
+          headers: ['Application', 'Usual grade'],
+          rows: [
+            ['Internal tank lining', 'Sa 2½, sometimes Sa 3'],
+            ['New-build steel structure in a heavy environment', 'Sa 2½'],
+            ['Thermal spray', 'Sa 3'],
+            ['Exterior maintenance, local repair', 'St 2 or St 3, or local blasting'],
+            ['Seams and welds in refurbishment with a tolerant system', 'St 2, if the system allows it'],
+          ],
+        },
+        { type: 'h2', text: 'And water jetting? The Wa grades' },
+        {
+          type: 'p',
+          segments: [
+            'For cleaning with high-pressure water, there is ISO 8501-4, with grades Wa 1, Wa 2 and Wa 2½. On top of that comes a grade for the flash rust that forms after drying: L (light), M (medium) or H (heavy). American specifications express the same idea as WJ-1 to WJ-4. The flash rust a primer tolerates is stated in its data sheet. Read more in our article on ',
+            { text: 'UHP water jetting', to: '/insights/uhp-waterstralen' },
+            '.',
+          ],
+        },
+        { type: 'h2', text: 'What the cleanliness grade does not tell you' },
+        {
+          type: 'p',
+          text: 'ISO 8501-1 is a visual standard. Steel can look perfect and still not be ready for coating. That is why other measurements belong with it:',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Soluble salts: invisible, measured with the Bresle method to ISO 8502-6 and -9.',
+            'Dust: to ISO 8502-3, with tape on the surface.',
+            'Roughness: to ISO 8503, with a comparator or a gauge.',
+            'Welds and edges: the quality of preparation to ISO 8501-3, with grades P1 to P3.',
+            'Climate: the steel temperature must be at least 3 °C above the dew point.',
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'We explain the whole chain in our guide to ',
+            { text: 'steel surface preparation', to: '/insights/steel-surface-preparation' },
+            '. How it works on site is covered in ',
+            { text: 'what is grit blasting', to: '/insights/gritstralen' },
+            '.',
+          ],
+        },
+        { type: 'h2', text: 'Frequently asked questions' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'What is the best cleanliness grade?',
+              a: 'There is no best grade, only the grade the coating system asks for. Sa 3 is the cleanest, but takes more time. For most heavy systems Sa 2½ is the requirement, and for some tolerant maintenance systems St 2 is enough.',
+            },
+            {
+              q: 'Who checks the cleanliness grade?',
+              a: 'The contractor’s own quality controller, often joined by an inspector from the client or the coating manufacturer. The inspection plan states who must sign for release at which moment.',
+            },
+            {
+              q: 'How long can blasted steel wait before coating?',
+              a: 'As briefly as possible. Freshly blasted steel rusts quickly once it sees moisture. Coat within the same shift if you can, and check just before coating that the grade still holds. If flash rust has formed, it has to be blasted again.',
+            },
+            {
+              q: 'Does ISO 8501-1 also apply to existing coatings?',
+              a: 'The standard was written for uncoated steel and steel with the coating fully removed. For partial preparation of existing coatings there is ISO 8501-2, with grades such as P Sa 2½ and P St 3.',
+            },
+          ],
+        },
+        {
+          type: 'cta',
+          title: 'Unsure about the right cleanliness grade?',
+          text: 'Send us the data sheet or the specification. We will look at what is feasible on your object and how we deliver it demonstrably.',
+          buttonLabel: 'See industrial blasting',
+          to: '/services/industrieel-stralen',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'corrosieklassen-belgie',
+    date: '2026-11-06',
+    author: 'Stig Vanmarsenille',
+    authorRole: {
+      NL: 'NACE Level 2 coating inspector',
+      EN: 'NACE Level 2 coating inspector',
+    },
+    authorBio: {
+      NL: 'Stig Vanmarsenille is NACE Level 2 coating inspector bij Russo NV. Hij keurt en begeleidt dagelijks industriële straal- en coatingwerken op de werf, van tankbekleding tot staalconstructies in de petrochemie.',
+      EN: 'Stig Vanmarsenille is a NACE Level 2 coating inspector at Russo NV. He inspects and supervises industrial blasting and coating work on site every day, from tank linings to structural steel in petrochemicals.',
+    },
+    authorUrl: 'https://www.linkedin.com/in/stig-vanmarsenille-747176b9/',
+    authorImage: '/images/author-stig.jpg',
+    heroImage: '/images/iso-c5-omgeving.jpg',
+    heroAlt: {
+      NL: 'Vers gecoat tankdak in de haven: industriële atmosfeer, zeelucht en chemie in één omgeving',
+      EN: 'Freshly coated tank roof in the port: industrial atmosphere, sea air and chemicals in one environment',
+    },
+    keywords: {
+      NL: ['corrosieklasse België', 'corrosieklasse C5', 'corrosiviteitsklasse', 'ISO 12944-2', 'C3 C4 C5', 'corrosieklasse haven', 'wat is C5 coating'],
+      EN: ['corrosivity class Belgium', 'corrosivity class C5', 'ISO 12944-2', 'C3 C4 C5', 'corrosivity class port', 'what is C5 coating'],
+    },
+    NL: {
+      title: 'Corrosieklassen in België: welke klasse geldt op jouw locatie?',
+      metaTitle: 'Corrosieklassen België: C3, C4 en C5 per locatie | Russo NV',
+      description: 'Welke corrosieklasse volgens ISO 12944 geldt aan de kust, in de haven, in de stad of in het binnenland? Een praktisch overzicht voor België.',
+      excerpt: 'De corrosieklasse bepaalt welk coatingsysteem je nodig hebt, maar de norm kent geen kaart van België. Dit is wat wij op de werf gebruiken: de gebruikelijke klasse per type locatie, de waarden uit ISO 12944-2 en wat een locatie zwaarder maakt dan ze lijkt.',
+      category: 'Corrosiebescherming',
+      body: [
+        {
+          type: 'p',
+          segments: [
+            'De corrosieklasse is de eerste keuze in elke specificatie voor staal. Ze bepaalt hoe zwaar het coatingsysteem moet zijn, en dus de kost en de levensduur. Bij ',
+            { text: 'industriële schilderwerken', to: '/' },
+            ' in België krijgen we vaak dezelfde vraag: welke klasse geldt hier? ISO 12944-2 geeft de definities, maar geen kaart. Daarom zetten we hier op een rij wat op de gebruikelijke Belgische locaties wordt aangehouden.',
+          ],
+        },
+        { type: 'h2', text: 'De corrosieklassen uit ISO 12944-2' },
+        {
+          type: 'p',
+          text: 'De norm deelt de atmosfeer in op basis van hoeveel staal er in het eerste jaar verloren gaat. Dat is dus een meetbare grootheid, geen inschatting:',
+        },
+        {
+          type: 'table',
+          caption: 'Massaverlies en diktevermindering van koolstofstaal in het eerste jaar, volgens ISO 12944-2.',
+          headers: ['Klasse', 'Corrosiviteit', 'Massaverlies (g/m²)', 'Diktevermindering (µm)', 'Voorbeeld buiten'],
+          rows: [
+            ['C1', 'Zeer laag', 'Tot 10', 'Tot 1,3', 'Niet van toepassing, alleen binnen'],
+            ['C2', 'Laag', '10 tot 200', '1,3 tot 25', 'Lage vervuiling, vooral landelijk'],
+            ['C3', 'Gemiddeld', '200 tot 400', '25 tot 50', 'Stad en lichte industrie, kust met weinig zout'],
+            ['C4', 'Hoog', '400 tot 650', '50 tot 80', 'Industrie en kust met matig zout'],
+            ['C5', 'Zeer hoog', '650 tot 1.500', '80 tot 200', 'Zware industrie en kust met veel zout'],
+            ['CX', 'Extreem', '1.500 tot 5.500', '200 tot 700', 'Offshore en extreme industrie'],
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Voor staal dat ondergedompeld is of in de grond zit, gelden de klassen Im1 tot Im4. Die gaan over water en grond, niet over chemische stoffen in tanks.',
+        },
+        { type: 'h2', text: 'Welke klasse op welke locatie in België?' },
+        {
+          type: 'table',
+          caption: 'Indicatief overzicht op basis van onze werfervaring. De werkelijke klasse hangt af van het microklimaat en wordt per object vastgelegd.',
+          headers: ['Type locatie', 'Gebruikelijke klasse', 'Waarom'],
+          rows: [
+            ['Kust en haven van Zeebrugge', 'C5', 'Zout uit de zeelucht, veel vocht'],
+            ['Haven van Antwerpen', 'C4 tot C5', 'Brak water, vocht en industriële emissies'],
+            ['Haven van Gent en kanaalzone', 'C4', 'Industriële omgeving met vocht, hoger bij chemie'],
+            ['Chemische sites, ongeacht de regio', 'C5', 'Emissies en lokale condensatie'],
+            ['Industriezones in het binnenland', 'C3 tot C4', 'Afhankelijk van de activiteiten rondom'],
+            ['Steden, zoals Brussel of Antwerpen buiten de haven', 'C3', 'Stedelijke atmosfeer'],
+            ['Landelijk gebied', 'C2 tot C3', 'Lage vervuiling, wel vocht'],
+            ['Binnen, verwarmd', 'C1', 'Droog en schoon'],
+            ['Binnen, onverwarmd', 'C2', 'Mogelijk condensatie'],
+            ['Binnen, productie met vocht', 'C3 tot C4', 'Brouwerijen, wasserijen, voeding'],
+          ],
+        },
+        {
+          type: 'image',
+          src: '/images/tank-coating-exterior.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Buitenzijde van een opslagtank na tankcoating, afgewerkt in een wit meerlaagssysteem',
+          caption: 'Een tank in de haven staat in een zware omgeving. De buitenzijde krijgt daarom doorgaans een systeem voor C4 of C5.',
+        },
+        { type: 'h2', text: 'Wat maakt een locatie zwaarder dan ze lijkt?' },
+        {
+          type: 'ul',
+          items: [
+            'Afstand tot zee en heersende wind: zout reist mee met de westenwind.',
+            'Beschutte zones: regen spoelt zout weg. Onder een dak of een overstek blijft het juist liggen, en daar is de belasting vaak hoger.',
+            'Condensatie: koud staal in een warme, vochtige omgeving staat lang nat.',
+            'Naburige emissies: een schoorsteen of een laadplaats kan de klasse lokaal een stap verhogen.',
+            'Spatwater en kanalen: zones die regelmatig nat worden, vragen een aparte beoordeling.',
+          ],
+        },
+        { type: 'h2', text: 'Hoe bepaal je de klasse echt?' },
+        {
+          type: 'ol',
+          items: [
+            'Begin bij de omschrijvingen uit ISO 12944-2 en het type locatie.',
+            'Beoordeel elk deel van het object apart. Een dak, een onderzijde en een pijpbrug kunnen verschillen.',
+            'Kijk naar wat er al staat. Corrosie op bestaand staal in de buurt is een goede praktijktest.',
+            'Twijfel je op een belangrijk project? Dan kun je de corrosiviteit meten met proefplaatjes volgens ISO 9226, zoals ISO 9223 beschrijft. Dat duurt wel een jaar.',
+            'Houd bij twijfel de zwaardere klasse aan: het verschil in systeemkost is meestal klein vergeleken met vroegtijdig herschilderen.',
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'Welk systeem bij welke klasse hoort, met laagdiktes en levensduur, leggen we uit in onze gids over ',
+            { text: 'corrosiebescherming volgens ISO 12944', to: '/insights/corrosion-protection-iso-12944' },
+            '.',
+          ],
+        },
+        { type: 'h2', text: 'Veelgestelde vragen' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'Wat is een C5-coating?',
+              a: 'Dat is een coatingsysteem dat volgens ISO 12944 is getest en opgebouwd voor een omgeving met zeer hoge corrosiviteit, zoals de kust of zware industrie. C5 zegt iets over de omgeving en het systeem samen, en de levensduur hangt ook af van het gekozen levensduurbereik.',
+            },
+            {
+              q: 'Wat betekent C5-M?',
+              a: 'C5-M en C5-I zijn oudere aanduidingen voor maritiem en industrieel. Sinds de herziening van 2017 spreekt ISO 12944 gewoon van C5. In oudere specificaties en databladen kom je de oude aanduidingen nog tegen.',
+            },
+            {
+              q: 'Welke corrosieklasse heeft Antwerpen?',
+              a: 'Dat hangt af van de plaats. De haven ligt doorgaans op C4 tot C5, door vocht, brak water en industriële emissies. De stad buiten de haven ligt meestal rond C3. Voor een echt object bepaalt het microklimaat de klasse.',
+            },
+            {
+              q: 'Geldt de corrosieklasse ook binnen in een tank?',
+              a: 'Nee. De C-klassen gelden voor de atmosfeer. Binnen in een tank bepaalt het opgeslagen product de keuze, en dan kijk je naar de chemische resistentie van de lining, niet naar de corrosieklasse.',
+            },
+          ],
+        },
+        {
+          type: 'cta',
+          title: 'Welke klasse en welk systeem voor uw object?',
+          text: 'Bezorg ons de locatie, foto\'s en de gewenste levensduur. Wij stellen een systeem voor dat past bij de omgeving en bij de praktijk op de site.',
+          buttonLabel: 'Bekijk corrosiebescherming',
+          to: '/services/corrosiebescherming',
+        },
+      ],
+    },
+    EN: {
+      title: 'Corrosivity classes in Belgium: which class applies to your site?',
+      metaTitle: 'Corrosivity classes Belgium: C3, C4, C5 by location | Russo NV',
+      description: 'Which ISO 12944 corrosivity class applies on the coast, in the port, in the city or inland? A practical overview for Belgium, with the values from the standard.',
+      excerpt: 'The corrosivity class decides which coating system you need, but the standard has no map of Belgium. This is what we use on site: the usual class per type of location, the values from ISO 12944-2 and what makes a location heavier than it looks.',
+      category: 'Corrosion protection',
+      body: [
+        {
+          type: 'p',
+          segments: [
+            'The corrosivity class is the first choice in any specification for steel. It decides how heavy the coating system must be, and so the cost and the service life. In ',
+            { text: 'industrial painting', to: '/' },
+            ' in Belgium we often get the same question: which class applies here? ISO 12944-2 gives the definitions, but no map. So here we list what is commonly used at typical Belgian locations.',
+          ],
+        },
+        { type: 'h2', text: 'The corrosivity classes from ISO 12944-2' },
+        {
+          type: 'p',
+          text: 'The standard classifies the atmosphere by how much steel is lost in the first year. So it is a measurable quantity, not an estimate:',
+        },
+        {
+          type: 'table',
+          caption: 'Mass loss and thickness loss of carbon steel in the first year, according to ISO 12944-2.',
+          headers: ['Class', 'Corrosivity', 'Mass loss (g/m²)', 'Thickness loss (µm)', 'Outdoor example'],
+          rows: [
+            ['C1', 'Very low', 'Up to 10', 'Up to 1.3', 'Not applicable, indoors only'],
+            ['C2', 'Low', '10 to 200', '1.3 to 25', 'Low pollution, mainly rural'],
+            ['C3', 'Medium', '200 to 400', '25 to 50', 'Urban and light industry, coast with low salt'],
+            ['C4', 'High', '400 to 650', '50 to 80', 'Industry and coast with moderate salt'],
+            ['C5', 'Very high', '650 to 1,500', '80 to 200', 'Heavy industry and coast with high salt'],
+            ['CX', 'Extreme', '1,500 to 5,500', '200 to 700', 'Offshore and extreme industry'],
+          ],
+        },
+        {
+          type: 'p',
+          text: 'For submerged or buried steel, classes Im1 to Im4 apply. Those concern water and soil, not chemicals in tanks.',
+        },
+        { type: 'h2', text: 'Which class at which location in Belgium?' },
+        {
+          type: 'table',
+          caption: 'Indicative overview based on our site experience. The actual class depends on the microclimate and is set per object.',
+          headers: ['Type of location', 'Usual class', 'Why'],
+          rows: [
+            ['Coast and Port of Zeebrugge', 'C5', 'Salt from sea air, much moisture'],
+            ['Port of Antwerp', 'C4 to C5', 'Brackish water, moisture and industrial emissions'],
+            ['Port of Ghent and canal zone', 'C4', 'Industrial environment with moisture, higher near chemicals'],
+            ['Chemical sites, whatever the region', 'C5', 'Emissions and local condensation'],
+            ['Inland industrial zones', 'C3 to C4', 'Depends on the activities around'],
+            ['Cities, such as Brussels or Antwerp outside the port', 'C3', 'Urban atmosphere'],
+            ['Rural areas', 'C2 to C3', 'Low pollution, but moisture'],
+            ['Indoors, heated', 'C1', 'Dry and clean'],
+            ['Indoors, unheated', 'C2', 'Possible condensation'],
+            ['Indoors, production with moisture', 'C3 to C4', 'Breweries, laundries, food'],
+          ],
+        },
+        {
+          type: 'image',
+          src: '/images/tank-coating-exterior.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Exterior of a storage tank after tank coating, finished in a white multi-coat system',
+          caption: 'A tank in the port stands in a heavy environment. The exterior therefore usually gets a system for C4 or C5.',
+        },
+        { type: 'h2', text: 'What makes a location heavier than it looks?' },
+        {
+          type: 'ul',
+          items: [
+            'Distance to the sea and prevailing wind: salt travels with the westerly wind.',
+            'Sheltered zones: rain washes salt away. Under a roof or an overhang it stays put, and the load there is often higher.',
+            'Condensation: cold steel in a warm, humid environment stays wet for a long time.',
+            'Nearby emissions: a stack or a loading point can raise the class locally by a step.',
+            'Splash water and canals: zones that get wet regularly need a separate assessment.',
+          ],
+        },
+        { type: 'h2', text: 'How do you really determine the class?' },
+        {
+          type: 'ol',
+          items: [
+            'Start with the descriptions in ISO 12944-2 and the type of location.',
+            'Assess each part of the object separately. A roof, an underside and a pipe bridge can differ.',
+            'Look at what is already there. Corrosion on existing steel nearby is a good practical test.',
+            'In doubt on an important project? You can measure corrosivity with test coupons to ISO 9226, as ISO 9223 describes. That does take a year.',
+            'When in doubt, keep to the heavier class: the difference in system cost is usually small compared with early repainting.',
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'Which system belongs to which class, with film thicknesses and service life, is covered in our guide to ',
+            { text: 'corrosion protection to ISO 12944', to: '/insights/corrosion-protection-iso-12944' },
+            '.',
+          ],
+        },
+        { type: 'h2', text: 'Frequently asked questions' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'What is a C5 coating?',
+              a: 'A coating system tested and built up to ISO 12944 for an environment with very high corrosivity, such as the coast or heavy industry. C5 says something about the environment and the system together, and the service life also depends on the chosen durability range.',
+            },
+            {
+              q: 'What does C5-M mean?',
+              a: 'C5-M and C5-I are older designations for marine and industrial. Since the 2017 revision, ISO 12944 simply speaks of C5. You will still meet the old designations in older specifications and data sheets.',
+            },
+            {
+              q: 'Which corrosivity class does Antwerp have?',
+              a: 'It depends on the place. The port is usually C4 to C5, because of moisture, brackish water and industrial emissions. The city outside the port is mostly around C3. For a real object, the microclimate decides the class.',
+            },
+            {
+              q: 'Does the corrosivity class apply inside a tank?',
+              a: 'No. The C classes apply to the atmosphere. Inside a tank the stored product decides the choice, and you look at the chemical resistance of the lining, not at the corrosivity class.',
+            },
+          ],
+        },
+        {
+          type: 'cta',
+          title: 'Which class and system for your object?',
+          text: 'Send us the location, photos and the required service life. We will propose a system that suits the environment and the practice on site.',
+          buttonLabel: 'See corrosion protection',
+          to: '/services/corrosiebescherming',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'uhp-waterstralen',
+    date: '2026-11-06',
+    author: 'Stig Vanmarsenille',
+    authorRole: {
+      NL: 'NACE Level 2 coating inspector',
+      EN: 'NACE Level 2 coating inspector',
+    },
+    authorBio: {
+      NL: 'Stig Vanmarsenille is NACE Level 2 coating inspector bij Russo NV. Hij keurt en begeleidt dagelijks industriële straal- en coatingwerken op de werf, van tankbekleding tot staalconstructies in de petrochemie.',
+      EN: 'Stig Vanmarsenille is a NACE Level 2 coating inspector at Russo NV. He inspects and supervises industrial blasting and coating work on site every day, from tank linings to structural steel in petrochemicals.',
+    },
+    authorUrl: 'https://www.linkedin.com/in/stig-vanmarsenille-747176b9/',
+    authorImage: '/images/author-stig.jpg',
+    heroImage: '/images/uhp-robot.jpg',
+    heroAlt: {
+      NL: 'Waterstraalrobot met afzuigslang, op de grens tussen de oude coating en het gereinigde oppervlak',
+      EN: 'Water jetting robot with extraction hose, on the line between the old coating and the cleaned surface',
+    },
+    keywords: {
+      NL: ['UHP waterstralen', 'hogedruk waterstralen', 'wat is UHP', 'waterjetting', 'coating verwijderen', 'vliegroest', 'hydrojetten', 'Wa 2½'],
+      EN: ['UHP water jetting', 'high-pressure water jetting', 'what is UHP', 'hydroblasting', 'coating removal', 'flash rust', 'WJ-2', 'Wa 2½'],
+    },
+    NL: {
+      title: 'UHP-waterstralen: coating verwijderen zonder grit',
+      metaTitle: 'UHP-waterstralen: coating verwijderen zonder grit | Russo NV',
+      description: 'Wat is UHP-waterstralen, wanneer is het beter dan gritstralen en wat betekent vliegroest voor de primer? De methode, de normen en de robots.',
+      excerpt: 'Met water onder extreem hoge druk haal je oude coating en zouten van staal, zonder grit en zonder stof. Dit is hoe UHP-waterstralen werkt, wanneer het de betere keuze is en waar je op moet letten bij de primer.',
+      category: 'Oppervlaktevoorbereiding',
+      body: [
+        {
+          type: 'p',
+          segments: [
+            'UHP staat voor ultra high pressure: water onder een druk van meer dan 1.700 bar, dat oude coating, roest en vervuiling van het staal blaast zonder straalmiddel. Bij ',
+            { text: 'industriële schilderwerken', to: '/' },
+            ' aan bestaande tanks en constructies is het een volwaardig alternatief voor gritstralen, vooral waar stof en afval een probleem zijn.',
+          ],
+        },
+        { type: 'h2', text: 'Wat is het verschil tussen de drukklassen?' },
+        {
+          type: 'table',
+          caption: 'Veelgebruikte indeling. Grenzen kunnen per norm en per opdrachtgever licht verschillen.',
+          headers: ['Methode', 'Druk', 'Waarvoor'],
+          rows: [
+            ['Reinigen onder lage druk', 'Tot ongeveer 340 bar', 'Zout, vuil en losse delen afspoelen'],
+            ['Hogedruk waterreinigen', 'Ongeveer 340 tot 700 bar', 'Grondig reinigen, losse coating verwijderen'],
+            ['Hogedruk waterstralen', 'Ongeveer 700 tot 1.700 bar', 'Vastzittende coating verwijderen'],
+            ['UHP-waterstralen', 'Boven 1.700 bar', 'Harde coatings en roest verwijderen tot op het staal'],
+          ],
+        },
+        { type: 'h2', text: 'Wanneer is waterstralen beter dan gritstralen?' },
+        {
+          type: 'table',
+          caption: 'De twee methodes naast elkaar',
+          headers: ['', 'UHP-waterstralen', 'Gritstralen'],
+          rows: [
+            ['Afval', 'Water en coatingresten, geen grit', 'Grote hoeveelheid grit met coatingresten'],
+            ['Stof', 'Vrijwel geen', 'Afscherming en afzuiging nodig'],
+            ['Oplosbare zouten', 'Wast ze ook uit putjes', 'Kan zouten achterlaten of inslaan'],
+            ['Ruwheidsprofiel', 'Maakt geen nieuw profiel, gebruikt het bestaande', 'Maakt een nieuw profiel'],
+            ['Nieuw staal met walshuid', 'Niet geschikt', 'Geschikt'],
+            ['Vliegroest', 'Ontstaat na het drogen, wordt beoordeeld', 'Te vermijden, opnieuw stralen'],
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'Waterstralen is dus vooral sterk bij renovatie: staal dat al eerder gestraald is, een oude coating die weg moet en een omgeving waar grit moeilijk ligt. Voor nieuwbouwstaal met walshuid of een systeem dat een nieuw profiel vraagt, blijft ',
+            { text: 'gritstralen', to: '/insights/gritstralen' },
+            ' de juiste methode.',
+          ],
+        },
+        { type: 'h2', text: 'Welke normen gelden, en wat betekent WJ-2?' },
+        {
+          type: 'p',
+          segments: [
+            'ISO 8501-4 beschrijft waterstralen met de graden Wa 1, Wa 2 en Wa 2½, vergelijkbaar met de ',
+            { text: 'reinheidsgraden voor stralen', to: '/insights/reinheidsgraden-staal' },
+            '. Amerikaanse specificaties, die je ook in Europa tegenkomt, gebruiken WJ-1 tot WJ-4, waarbij WJ-1 de zuiverste is. Daarbij hoort telkens een graad voor de vliegroest: L, M of H.',
+          ],
+        },
+        { type: 'h2', text: 'Vliegroest: de grootste valkuil' },
+        {
+          type: 'p',
+          text: 'Nat gereinigd staal roest licht zodra het droogt. Dat is normaal en die vliegroest wordt beoordeeld, maar de primer moet er wel tegen kunnen. Het datablad zegt welke graad is toegestaan: de ene primer vraagt L, de andere verdraagt M. Als de graad op de werf hoger is dan de primer toelaat, heb je een probleem dat je pas later ziet. Plan daarom de primer vlak achter het waterstralen, controleer de vliegroest voor het aanbrengen en leg dit vast in het inspectieplan.',
+        },
+        {
+          type: 'callout',
+          title: 'Controlepunten vlak voor de primer',
+          items: [
+            'Graad volgens de specificatie, bijvoorbeeld Wa 2½ of WJ-2.',
+            'Vliegroest niet hoger dan het datablad toelaat, op de zwaarste plek.',
+            'Staal droog en minstens 3 °C boven het dauwpunt.',
+            'Oplosbare zouten gemeten en onder de limiet.',
+            'Geen losse coatingresten aan randen en overlappen.',
+          ],
+        },
+        { type: 'h2', text: 'Met de hand of met een robot?' },
+        {
+          type: 'p',
+          segments: [
+            'Grote, vlakke tankwanden lenen zich goed voor een robot die zich met magneten op de staalwand vastzet. Dat werkt gelijkmatig, houdt de operator op afstand en vangt een deel van het water op. Lassen, hoeken, verstevigingen en aansluitingen blijven doorgaans handwerk met de lans, door opgeleide operators. Robotisch hydrojetten zetten we onder meer in voor de buitenzijde bij de ',
+            { text: 'tankrenovatie van Sea Tank Terminal in Antwerpen', to: '/projects/tankrenovatie-sea-tank-terminal-antwerpen' },
+            ': 15 opslagtanks op een terminal die bleef draaien.',
+          ],
+        },
+        { type: 'h2', text: 'Waar moet je verder op letten?' },
+        {
+          type: 'ul',
+          items: [
+            'Water: het afvalwater bevat coatingresten. Afspraken over opvang en afvoer horen in de planning.',
+            'Veiligheid: de terugslag en de waterstraal zelf zijn gevaarlijk. Werk met opgeleide operators, afgebakende zones en een vergunning van de site.',
+            'Aangrenzende installaties: elektrische kasten, isolatie en leidingen moeten worden afgeschermd.',
+            'Weer: wind en koude bepalen hoe snel het staal droogt, en dus hoeveel vliegroest er ontstaat.',
+          ],
+        },
+        { type: 'h2', text: 'Veelgestelde vragen' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'Wat is UHP?',
+              a: 'UHP staat voor ultra high pressure. Het gaat om waterstralen boven ongeveer 1.700 bar, waarmee harde coatings en roest worden verwijderd zonder straalmiddel.',
+            },
+            {
+              q: 'Verwijdert waterstralen ook zouten?',
+              a: 'Ja, en dat is een van de grootste voordelen. Water lost zouten op, ook in putjes waar stralen ze soms achterlaat. Ook na het waterstralen meten we de oplosbare zouten, omdat de limiet uit de specificatie gehaald moet worden.',
+            },
+            {
+              q: 'Hecht een coating op waterstraalwerk?',
+              a: 'Ja, als het staal al een ruwheidsprofiel heeft en de primer geschikt is voor waterstraalwerk en de optredende vliegroest. Dat staat in het datablad van de primer en wordt het best vooraf met de fabrikant afgestemd.',
+            },
+            {
+              q: 'Is UHP-waterstralen goedkoper dan gritstralen?',
+              a: 'Dat hangt af van het project. De uitvoering vraagt specifiek materieel, maar er is geen grit om aan te voeren en af te voeren. Op grote renovaties met oude coatings kan dat in de totale kost een groot verschil maken.',
+            },
+          ],
+        },
+        {
+          type: 'cta',
+          title: 'Een oude coating te verwijderen?',
+          text: 'Bezorg ons de staat van de bestaande coating, de oppervlakte en het nieuwe systeem. Wij bekijken welke methode past, gritstralen of waterstralen, en wat dat betekent voor de planning.',
+          buttonLabel: 'Bekijk tankcoating',
+          to: '/services/tankcoating',
+        },
+      ],
+    },
+    EN: {
+      title: 'UHP water jetting: removing coatings without grit',
+      metaTitle: 'UHP water jetting: removing coatings without grit | Russo NV',
+      description: 'What is UHP water jetting, when is it better than grit blasting and what does flash rust mean for the primer? The method, the standards and the robots.',
+      excerpt: 'Water at extremely high pressure strips old coating and salts from steel, without grit and without dust. This is how UHP water jetting works, when it is the better choice and what to watch for with the primer.',
+      category: 'Surface preparation',
+      body: [
+        {
+          type: 'p',
+          segments: [
+            'UHP stands for ultra high pressure: water at more than 1,700 bar that blasts old coating, rust and contamination off the steel without any abrasive. In ',
+            { text: 'industrial painting', to: '/' },
+            ' of existing tanks and structures, it is a full alternative to grit blasting, especially where dust and waste are a problem.',
+          ],
+        },
+        { type: 'h2', text: 'What is the difference between the pressure classes?' },
+        {
+          type: 'table',
+          caption: 'Commonly used division. Limits can differ slightly per standard and per client.',
+          headers: ['Method', 'Pressure', 'What for'],
+          rows: [
+            ['Low-pressure cleaning', 'Up to about 340 bar', 'Rinsing off salt, dirt and loose parts'],
+            ['High-pressure water cleaning', 'About 340 to 700 bar', 'Thorough cleaning, removing loose coating'],
+            ['High-pressure water jetting', 'About 700 to 1,700 bar', 'Removing firmly adhering coating'],
+            ['UHP water jetting', 'Above 1,700 bar', 'Removing hard coatings and rust down to the steel'],
+          ],
+        },
+        { type: 'h2', text: 'When is water jetting better than grit blasting?' },
+        {
+          type: 'table',
+          caption: 'The two methods side by side',
+          headers: ['', 'UHP water jetting', 'Grit blasting'],
+          rows: [
+            ['Waste', 'Water and coating residue, no grit', 'Large volume of grit with coating residue'],
+            ['Dust', 'Virtually none', 'Shielding and extraction needed'],
+            ['Soluble salts', 'Washes them out of pits as well', 'Can leave or drive in salts'],
+            ['Roughness profile', 'Creates no new profile, uses the existing one', 'Creates a new profile'],
+            ['New steel with mill scale', 'Not suitable', 'Suitable'],
+            ['Flash rust', 'Forms after drying, is assessed', 'To be avoided, blast again'],
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'Water jetting is therefore mainly strong in refurbishment: steel that has been blasted before, an old coating that has to go and an environment where grit is difficult. For new steel with mill scale or a system that needs a new profile, ',
+            { text: 'grit blasting', to: '/insights/gritstralen' },
+            ' remains the right method.',
+          ],
+        },
+        { type: 'h2', text: 'Which standards apply, and what does WJ-2 mean?' },
+        {
+          type: 'p',
+          segments: [
+            'ISO 8501-4 describes water jetting with grades Wa 1, Wa 2 and Wa 2½, comparable with the ',
+            { text: 'cleanliness grades for blasting', to: '/insights/reinheidsgraden-staal' },
+            '. American specifications, which you also meet in Europe, use WJ-1 to WJ-4, with WJ-1 the cleanest. Each comes with a grade for the flash rust: L, M or H.',
+          ],
+        },
+        { type: 'h2', text: 'Flash rust: the biggest pitfall' },
+        {
+          type: 'p',
+          text: 'Wet-cleaned steel rusts lightly as soon as it dries. That is normal and the flash rust is assessed, but the primer has to be able to handle it. The data sheet states the permitted grade: one primer asks for L, another tolerates M. If the grade on site is higher than the primer allows, you have a problem you only see later. So plan the primer right behind the water jetting, check the flash rust before application and record this in the inspection plan.',
+        },
+        {
+          type: 'callout',
+          title: 'Checkpoints just before the primer',
+          items: [
+            'Grade according to the specification, for example Wa 2½ or WJ-2.',
+            'Flash rust no higher than the data sheet allows, at the worst spot.',
+            'Steel dry and at least 3 °C above the dew point.',
+            'Soluble salts measured and below the limit.',
+            'No loose coating residue at edges and overlaps.',
+          ],
+        },
+        { type: 'h2', text: 'By hand or with a robot?' },
+        {
+          type: 'p',
+          segments: [
+            'Large, flat tank walls lend themselves well to a robot that holds onto the steel wall with magnets. It works evenly, keeps the operator at a distance and captures part of the water. Welds, corners, stiffeners and connections usually remain hand work with the lance, by trained operators. We used robotic hydro-jetting for the exterior in the ',
+            { text: 'tank refurbishment at Sea Tank Terminal in Antwerp', to: '/projects/tankrenovatie-sea-tank-terminal-antwerpen' },
+            ': 15 storage tanks on a terminal that kept running.',
+          ],
+        },
+        { type: 'h2', text: 'What else should you watch for?' },
+        {
+          type: 'ul',
+          items: [
+            'Water: the waste water contains coating residue. Agreements on collection and disposal belong in the planning.',
+            'Safety: the recoil and the water jet itself are dangerous. Work with trained operators, marked-off zones and a site permit.',
+            'Adjacent installations: electrical cabinets, insulation and piping have to be shielded.',
+            'Weather: wind and cold decide how quickly the steel dries, and so how much flash rust forms.',
+          ],
+        },
+        { type: 'h2', text: 'Frequently asked questions' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'What is UHP?',
+              a: 'UHP stands for ultra high pressure. It means water jetting above about 1,700 bar, which removes hard coatings and rust without an abrasive.',
+            },
+            {
+              q: 'Does water jetting also remove salts?',
+              a: 'Yes, and that is one of its biggest advantages. Water dissolves salts, also in pits where blasting sometimes leaves them. We still measure soluble salts after water jetting, because the limit in the specification has to be met.',
+            },
+            {
+              q: 'Does a coating adhere to water-jetted steel?',
+              a: 'Yes, if the steel already has a roughness profile and the primer is suitable for water jetting and the flash rust that occurs. That is stated in the primer data sheet and is best agreed with the manufacturer beforehand.',
+            },
+            {
+              q: 'Is UHP water jetting cheaper than grit blasting?',
+              a: 'That depends on the project. It needs specific equipment, but there is no grit to bring in and dispose of. On large refurbishments with old coatings, that can make a big difference in the total cost.',
+            },
+          ],
+        },
+        {
+          type: 'cta',
+          title: 'An old coating to remove?',
+          text: 'Send us the condition of the existing coating, the area and the new system. We will look at which method fits, grit blasting or water jetting, and what that means for the planning.',
+          buttonLabel: 'See tank coating',
+          to: '/services/tankcoating',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'soorten-industriele-coatings',
+    date: '2026-11-06',
+    author: 'Stig Vanmarsenille',
+    authorRole: {
+      NL: 'NACE Level 2 coating inspector',
+      EN: 'NACE Level 2 coating inspector',
+    },
+    authorBio: {
+      NL: 'Stig Vanmarsenille is NACE Level 2 coating inspector bij Russo NV. Hij keurt en begeleidt dagelijks industriële straal- en coatingwerken op de werf, van tankbekleding tot staalconstructies in de petrochemie.',
+      EN: 'Stig Vanmarsenille is a NACE Level 2 coating inspector at Russo NV. He inspects and supervises industrial blasting and coating work on site every day, from tank linings to structural steel in petrochemicals.',
+    },
+    authorUrl: 'https://www.linkedin.com/in/stig-vanmarsenille-747176b9/',
+    authorImage: '/images/author-stig.jpg',
+    heroImage: '/images/tank-spray.jpg',
+    heroAlt: {
+      NL: 'Applicateur in beschermpak spuit een coating airless aan in een tank',
+      EN: 'Applicator in a protective suit spraying a coating airless in a tank',
+    },
+    keywords: {
+      NL: ['soorten industriële coatings', 'industriële coatings', 'coating voor staal', 'epoxy coating', 'polyurethaan coating', 'zinksilicaat', 'polysiloxaan', 'zinkrijke primer'],
+      EN: ['types of industrial coatings', 'industrial coatings', 'coating for steel', 'epoxy coating', 'polyurethane coating', 'zinc silicate', 'polysiloxane', 'zinc-rich primer'],
+    },
+    NL: {
+      title: 'Soorten industriële coatings: epoxy, polyurethaan, zink en meer',
+      metaTitle: 'Soorten industriële coatings: welke voor staal? | Russo NV',
+      description: 'Epoxy, polyurethaan, zinksilicaat, polysiloxaan of vinylester? De soorten industriële coatings naast elkaar, met hun sterktes en zwaktes.',
+      excerpt: 'Een industriële coating is geen emmer verf maar een keuze per laag. Dit zijn de gangbare soorten, waar elk type sterk in is, waar het faalt en hoe je tot een systeem komt dat past bij de omgeving en de ondergrond.',
+      category: 'Coatings',
+      body: [
+        {
+          type: 'p',
+          segments: [
+            'Een industriële coating is een laag die staal of beton moet beschermen tegen corrosie, chemie, slijtage of hitte. Kleur is daarbij bijzaak. Bij ',
+            { text: 'industriële schilderwerken', to: '/' },
+            ' kies je daarom niet één product, maar een opbouw van lagen die elk een eigen taak hebben. Welk type waar past, hangt af van de omgeving, de ondergrond en wat er tijdens de uitvoering haalbaar is.',
+          ],
+        },
+        { type: 'h2', text: 'De soorten naast elkaar' },
+        {
+          type: 'table',
+          caption: 'De gangbare soorten industriële coatings. Het datablad van het gekozen product blijft bepalend.',
+          headers: ['Type', 'Sterk in', 'Zwak in', 'Typische plaats'],
+          rows: [
+            ['Zinkrijke epoxy', 'Zink offert zich op bij beschadiging; goede hechting', 'Vraagt goed gestraald staal; geen eindlaag', 'Primer in zware omgevingen'],
+            ['Zinksilicaat', 'Hard, slijtvast en bestand tegen hoge temperaturen', 'Kritische uitharding; poreus, dus een hechtlaag bij overlagen', 'Primer op leidingen en warme delen'],
+            ['Epoxy', 'Hechting, water en chemie', 'Verkrijt onder UV; hardt traag uit bij kou', 'Tussenlaag, binnenzijde, onder water'],
+            ['Epoxy mastic', 'Verdraagt een minder perfecte ondergrond; dik in één gang', 'Minder belastbaar dan een systeem op Sa 2½', 'Onderhoud waar stralen niet kan'],
+            ['Epoxy fenolisch of novolac', 'Solventen, zuren en hogere temperaturen', 'Strikte applicatie, soms nabehandeling met warmte', 'Tank linings'],
+            ['Polyurethaan', 'Kleur en glans onder UV; slijtvast', 'Vochtgevoelig bij applicatie; isocyanaten vragen bescherming', 'Eindlaag buiten'],
+            ['Polysiloxaan', 'Zeer lang kleur- en glansbehoud', 'Hogere prijs; vraagt ervaring', 'Eindlaag waar onderhoud duur is'],
+            ['Alkyd', 'Eenvoudig en voordelig, één component', 'Niet voor chemie, onderdompeling of zware omgevingen', 'Lichte omgevingen'],
+            ['Acryl op waterbasis', 'Weinig oplosmiddel, droogt snel', 'Beperkte belastbaarheid', 'Binnen en lichte omgevingen buiten'],
+            ['Vinylester en glasvlok', 'Zware chemische en mechanische belasting', 'Hoge eisen aan voorbereiding en applicatie', 'Zware chemie, tankbodems'],
+            ['Brandwerende coating', 'Zwelt op bij brand en vertraagt de opwarming van staal', 'Geen corrosiebescherming op zich', 'Constructiestaal'],
+          ],
+        },
+        { type: 'h2', text: 'Waarom een coating altijd een systeem is' },
+        {
+          type: 'p',
+          text: 'Elke laag heeft een eigen taak. De primer zorgt voor hechting en, bij zinkrijke types, voor actieve bescherming. De tussenlaag bouwt de dikte op en vormt de barrière. De eindlaag vangt het weer, de UV en de mechanische belasting op. Daarom testen fabrikanten systemen als geheel. Een laag vervangen door een ander product of merk is niet zonder risico: de lagen moeten compatibel zijn en binnen het overlaaginterval worden aangebracht.',
+        },
+        {
+          type: 'p',
+          segments: [
+            'Een voorbeeld uit de praktijk: bij de ',
+            { text: 'silorenovatie van Albeton', to: '/projects/silo-renovatie-albeton' },
+            ' kregen kale en geroeste plekken eerst een plaatselijke primer, daarna volgde een volledige tussenlaag en tot slot een polyurethaan eindlaag.',
+          ],
+        },
+        { type: 'h2', text: 'Hoe kies je de juiste coating?' },
+        {
+          type: 'ol',
+          items: [
+            'Omgeving: bepaal de corrosieklasse van de atmosfeer, of het product waarmee de coating in contact komt.',
+            'Temperatuur: gewone systemen houden op bij hogere bedrijfstemperaturen. Leidingen en warme tanks vragen een aparte keuze.',
+            'Ondergrond: kan er gestraald worden, of blijft het bij mechanisch reinigen? Dat beperkt de keuze meteen.',
+            'Uitvoering: seizoen, luchtvochtigheid, overlaagtijden en de toegang op de site beslissen mee over welk product haalbaar is.',
+            'Levensduur en onderhoud: een duurder systeem verdient zich terug op plaatsen waar stilstand of toegang veel kost.',
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'Voor de atmosfeer vertrek je van de ',
+            { text: 'corrosieklassen in België', to: '/insights/corrosieklassen-belgie' },
+            '. Voor contact met producten kijk je naar de ',
+            { text: 'chemische bestendigheid van coatings', to: '/insights/chemische-bestendigheid-coatings' },
+            '. En voor de ondergrond bepalen de ',
+            { text: 'reinheidsgraden van staal', to: '/insights/reinheidsgraden-staal' },
+            ' wat er mogelijk is.',
+          ],
+        },
+        { type: 'h2', text: 'De fouten die we het vaakst zien' },
+        {
+          type: 'ul',
+          items: [
+            'Epoxy als eindlaag buiten gebruiken. De bescherming blijft, maar de laag verkrijt en verkleurt snel in de zon.',
+            'Een zware coating op een slechte ondergrond zetten. Het duurste product kan geen slechte voorbereiding goedmaken.',
+            'De overlaagtijd overschrijden. De volgende laag hecht dan onvoldoende, tenzij er eerst wordt opgeruwd of gereinigd.',
+            'Merken en types mengen zonder de compatibiliteit te controleren.',
+            'Alleen naar de prijs per liter kijken. De kost zit in de uitvoering en in de levensduur, niet in het blik.',
+          ],
+        },
+        { type: 'h2', text: 'Veelgestelde vragen' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'Wat is het verschil tussen een coating en verf?',
+              a: 'In de industrie wordt met coating een technische beschermlaag bedoeld, met een getest systeem, voorgeschreven laagdiktes en een controle. Verf verwijst meestal naar een afwerking met vooral een esthetisch doel. Chemisch lopen ze deels in elkaar over, het verschil zit in de eisen.',
+            },
+            {
+              q: 'Wat is de beste coating voor staal?',
+              a: 'Die bestaat niet los van de toepassing. Buiten in een zware omgeving is een zinkrijke primer met een epoxy tussenlaag en een polyurethaan eindlaag een veelgebruikte opbouw. Binnen in een tank gelden andere regels, want daar bepaalt het opgeslagen product de keuze.',
+            },
+            {
+              q: 'Waarom krijgt epoxy buiten een poederige laag?',
+              a: 'UV-straling breekt het oppervlak van epoxy af, waardoor het gaat verkrijten en verkleuren. De bescherming eronder blijft meestal intact, maar het ziet er niet goed uit en de volgende laag moet op een gereinigd oppervlak komen. Daarom krijgt epoxy buiten doorgaans een UV-bestendige eindlaag.',
+            },
+            {
+              q: 'Hoe lang gaat een industriële coating mee?',
+              a: 'Dat hangt af van de omgeving, het systeem en de voorbereiding. ISO 12944 werkt met levensduurbereiken tot meer dan 25 jaar voor de zwaarste systemen, als ontwerpverwachting en niet als garantie. Inspectie en plaatselijk herstel rekken die periode.',
+            },
+            {
+              q: 'Kan een coating ook op beton?',
+              a: 'Ja, maar beton vraagt andere voorbereiding en vaak andere producten dan staal. Vocht in het beton, cementhuid en scheuren bepalen de aanpak, en bij silo\'s of tankputten komt daar vaak herstel van het beton zelf bij.',
+            },
+          ],
+        },
+        {
+          type: 'cta',
+          title: 'Welke coating past bij uw object?',
+          text: 'Bezorg ons de omgeving, de ondergrond en de gewenste levensduur. Wij stellen een systeem voor dat in de praktijk uitvoerbaar is op uw site.',
+          buttonLabel: 'Bekijk onze diensten',
+          to: '/services',
+        },
+      ],
+    },
+    EN: {
+      title: 'Types of industrial coatings: epoxy, polyurethane, zinc and more',
+      metaTitle: 'Types of industrial coatings: which for steel? | Russo NV',
+      description: 'Epoxy, polyurethane, zinc silicate, polysiloxane or vinyl ester? The types of industrial coatings side by side, with their strengths and weaknesses.',
+      excerpt: 'An industrial coating is not a bucket of paint but a choice per layer. These are the common types, what each is strong at, where it fails and how to arrive at a system that suits the environment and the substrate.',
+      category: 'Coatings',
+      body: [
+        {
+          type: 'p',
+          segments: [
+            'An industrial coating is a layer that has to protect steel or concrete against corrosion, chemicals, wear or heat. Colour is secondary. In ',
+            { text: 'industrial painting', to: '/' },
+            ' you therefore do not choose one product, but a build-up of layers that each have their own job. Which type fits where depends on the environment, the substrate and what is feasible during application.',
+          ],
+        },
+        { type: 'h2', text: 'The types side by side' },
+        {
+          type: 'table',
+          caption: 'The common types of industrial coatings. The data sheet of the chosen product always decides.',
+          headers: ['Type', 'Strong in', 'Weak in', 'Typical place'],
+          rows: [
+            ['Zinc-rich epoxy', 'Zinc sacrifices itself on damage; good adhesion', 'Needs well-blasted steel; no finish coat', 'Primer in heavy environments'],
+            ['Zinc silicate', 'Hard, wear-resistant and heat-resistant', 'Critical curing; porous, so a tie coat when overcoating', 'Primer on piping and hot parts'],
+            ['Epoxy', 'Adhesion, water and chemicals', 'Chalks under UV; cures slowly in the cold', 'Intermediate coat, interiors, submerged'],
+            ['Epoxy mastic', 'Tolerates a less perfect substrate; thick in one pass', 'Less resistant than a system on Sa 2½', 'Maintenance where blasting is not possible'],
+            ['Phenolic or novolac epoxy', 'Solvents, acids and higher temperatures', 'Strict application, sometimes post-curing with heat', 'Tank linings'],
+            ['Polyurethane', 'Colour and gloss under UV; wear-resistant', 'Moisture-sensitive during application; isocyanates need protection', 'Finish coat outdoors'],
+            ['Polysiloxane', 'Very long colour and gloss retention', 'Higher price; needs experience', 'Finish coat where maintenance is expensive'],
+            ['Alkyd', 'Simple and affordable, one component', 'Not for chemicals, immersion or heavy environments', 'Light environments'],
+            ['Waterborne acrylic', 'Little solvent, dries quickly', 'Limited resistance', 'Indoors and light outdoor environments'],
+            ['Vinyl ester and glass flake', 'Heavy chemical and mechanical load', 'High demands on preparation and application', 'Heavy chemicals, tank floors'],
+            ['Fireproof coating', 'Swells in a fire and slows the heating of steel', 'No corrosion protection in itself', 'Structural steel'],
+          ],
+        },
+        { type: 'h2', text: 'Why a coating is always a system' },
+        {
+          type: 'p',
+          text: 'Every layer has its own job. The primer provides adhesion and, with zinc-rich types, active protection. The intermediate coat builds thickness and forms the barrier. The finish coat takes the weather, UV and mechanical load. That is why manufacturers test systems as a whole. Replacing a layer with another product or brand is not without risk: the layers have to be compatible and applied within the overcoating interval.',
+        },
+        {
+          type: 'p',
+          segments: [
+            'An example from practice: in the ',
+            { text: 'Albeton silo renovation', to: '/projects/silo-renovatie-albeton' },
+            ', bare and rusted spots first received a local primer, followed by a full intermediate coat and finally a polyurethane finish coat.',
+          ],
+        },
+        { type: 'h2', text: 'How do you choose the right coating?' },
+        {
+          type: 'ol',
+          items: [
+            'Environment: determine the corrosivity class of the atmosphere, or the product the coating comes into contact with.',
+            'Temperature: ordinary systems stop at higher operating temperatures. Piping and hot tanks need a separate choice.',
+            'Substrate: can it be blasted, or is it limited to mechanical cleaning? That narrows the choice straight away.',
+            'Application: season, humidity, overcoating times and access on site help decide which product is feasible.',
+            'Service life and maintenance: a more expensive system pays for itself where downtime or access costs a lot.',
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'For the atmosphere, start from the ',
+            { text: 'corrosivity classes in Belgium', to: '/insights/corrosieklassen-belgie' },
+            '. For contact with products, look at the ',
+            { text: 'chemical resistance of coatings', to: '/insights/chemische-bestendigheid-coatings' },
+            '. And for the substrate, the ',
+            { text: 'steel cleanliness grades', to: '/insights/reinheidsgraden-staal' },
+            ' determine what is possible.',
+          ],
+        },
+        { type: 'h2', text: 'The mistakes we see most often' },
+        {
+          type: 'ul',
+          items: [
+            'Using epoxy as a finish coat outdoors. The protection stays, but the layer chalks and discolours quickly in the sun.',
+            'Putting a heavy coating on a poor substrate. The most expensive product cannot make up for poor preparation.',
+            'Exceeding the overcoating time. The next layer then does not adhere well enough, unless it is first roughened or cleaned.',
+            'Mixing brands and types without checking compatibility.',
+            'Looking only at the price per litre. The cost is in the application and the service life, not in the can.',
+          ],
+        },
+        { type: 'h2', text: 'Frequently asked questions' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'What is the difference between a coating and paint?',
+              a: 'In industry, a coating means a technical protective layer, with a tested system, specified film thicknesses and inspection. Paint usually refers to a finish with a mainly aesthetic purpose. Chemically they partly overlap, the difference is in the requirements.',
+            },
+            {
+              q: 'What is the best coating for steel?',
+              a: 'It does not exist apart from the application. Outdoors in a heavy environment, a zinc-rich primer with an epoxy intermediate coat and a polyurethane finish is a widely used build-up. Inside a tank other rules apply, because the stored product decides the choice.',
+            },
+            {
+              q: 'Why does epoxy get a powdery layer outdoors?',
+              a: 'UV radiation breaks down the surface of epoxy, so it chalks and discolours. The protection underneath usually stays intact, but it does not look good and the next layer has to go on a cleaned surface. That is why epoxy outdoors usually gets a UV-resistant finish coat.',
+            },
+            {
+              q: 'How long does an industrial coating last?',
+              a: 'That depends on the environment, the system and the preparation. ISO 12944 uses durability ranges up to more than 25 years for the heaviest systems, as a design expectation and not a guarantee. Inspection and local repair extend that period.',
+            },
+            {
+              q: 'Can a coating also go on concrete?',
+              a: 'Yes, but concrete needs different preparation and often different products than steel. Moisture in the concrete, laitance and cracks determine the approach, and silos or tank pits often also need repair of the concrete itself.',
+            },
+          ],
+        },
+        {
+          type: 'cta',
+          title: 'Which coating suits your object?',
+          text: 'Send us the environment, the substrate and the required service life. We will propose a system that is feasible in practice on your site.',
+          buttonLabel: 'See our services',
+          to: '/services',
         },
       ],
     },
