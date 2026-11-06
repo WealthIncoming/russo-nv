@@ -31,6 +31,8 @@ const LEGACY_PATHS = [
   [/^\/privacy-policy\/?$/, "/privacy"],
   // Specific legacy .be URL → recapture straight onto the dedicated page
   // (must come before the general /diensten rule below).
+  // The old chemical-resistance guide is back as a real article (2026-11-06), so its links land on the same topic.
+  [/^\/diensten\/industriele-schilderwerken\/chemische-bestendigheid-coatings\/?$/, "/insights/chemische-bestendigheid-coatings"],
   [/^\/diensten\/industriele-schilderwerken(\/.*)?$/, "/services/industriele-schilderwerken"],
   [/^\/diensten(\/.*)?$/, "/services"],
   [/^\/over-ons\/?$/, "/about"],
