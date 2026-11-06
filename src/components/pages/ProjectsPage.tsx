@@ -35,6 +35,10 @@ const PROJECT_TRANSLATION_MAP: Record<string, string> = {
 const CASE_STUDY_LINKS: Record<string, string> = {
   albeton: '/projects/silo-renovatie-albeton',
   gts: '/projects/tankcoating-gts-gent',
+  seaTank: '/projects/tankrenovatie-sea-tank-terminal-antwerpen',
+  csp: '/projects/kranen-coating-csp-zeebrugge',
+  bnfw: '/projects/coating-voedingsopslag-bnfw-zeebrugge',
+  itcRubis: '/projects/antislip-dakcoating-itc-rubis-zeebrugge',
 };
 
 // =============================================================================

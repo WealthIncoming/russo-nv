@@ -308,6 +308,514 @@ export const CASE_STUDIES: CaseStudy[] = [
       backToProjects: 'All projects',
     },
   },
+  {
+    slug: 'tankrenovatie-sea-tank-terminal-antwerpen',
+    client: 'Sea Tank Terminal',
+    completion: '2025-10-15',
+    heroImage: '/images/stt3.jpg',
+    secondaryImage: '/images/stt2.jpg',
+    breadcrumb: { NL: 'Tankrenovatie Sea Tank Terminal', EN: 'Sea Tank Terminal tank refurbishment' },
+    meta: {
+      NL: {
+        title: 'Tankrenovatie haven Antwerpen: 15 tanks Sea Tank | Russo NV',
+        description: 'Renovatie van 15 opslagtanks bij Sea Tank Terminal in de haven van Antwerpen: robotisch hydrojetten van de buitenzijde, inwendig stralen en coaten, gefaseerd uitgevoerd.',
+        image: '/images/stt3.jpg',
+      },
+      EN: {
+        title: 'Tank Refurbishment Port of Antwerp: 15 Tanks | Russo NV',
+        description: 'Refurbishment of 15 storage tanks at Sea Tank Terminal in the Port of Antwerp: robotic hydro-jetting of the exterior, internal blasting and coating, carried out in phases.',
+        image: '/images/stt3.jpg',
+      },
+    },
+    NL: {
+      kicker: 'Case study',
+      h1: 'Tankrenovatie in de haven van Antwerpen: 15 opslagtanks bij Sea Tank Terminal',
+      heroSub: 'Grootschalige renovatie van 15 opslagtanks op een werkende terminal: robotisch hydrojetten van de buitenzijde, inwendig stralen en coaten waar nodig, en een fasering die de opslagcapaciteit beschikbaar hield.',
+      heroAlt: 'Opslagtanks bij Sea Tank Terminal in de haven van Antwerpen tijdens de renovatie door Russo NV',
+      secondaryAlt: 'Renovatiewerken aan een opslagtank bij Sea Tank Terminal in Antwerpen',
+      facts: [
+        { label: 'Klant', value: 'Sea Tank Terminal' },
+        { label: 'Locatie', value: 'Haven van Antwerpen, België' },
+        { label: 'Scope', value: '15 opslagtanks' },
+        { label: 'Buitenzijde', value: 'Robotisch hydrojetten en verwijderen van de oude coating' },
+        { label: 'Binnenzijde', value: 'Inwendig stralen en coaten van geselecteerde tanks' },
+        { label: 'Uitvoering', value: 'Gefaseerd over meerdere tankparken' },
+        { label: 'Oplevering', value: 'Oktober 2025' },
+      ],
+      sections: [
+        {
+          title: 'De opdracht',
+          paragraphs: [
+            'Sea Tank Terminal in de haven van Antwerpen behoort tot de grootste onafhankelijke tankopslagbedrijven van Europa. Voor een renovatieprogramma van 15 opslagtanks zocht de terminal een partij die de voorbereiding, de coating en de planning op een werkende site in één hand kon nemen.',
+            'De buitenzijde van de tanks moest volledig worden voorbereid en ontdaan van de oude coating. Een deel van de tanks kreeg daarnaast een inwendige behandeling, afgestemd op de eisen voor chemische opslag.',
+          ],
+        },
+        {
+          title: 'De uitdaging: 15 tanks op een terminal die blijft draaien',
+          paragraphs: [
+            'Een tankterminal kan zijn capaciteit niet zomaar stilleggen. Elke tank die uit dienst gaat, moet passen in de planning van de terminal, en de werken verspreid over meerdere tankparken mogen elkaar niet in de weg zitten.',
+            'Daarom draaide dit programma evenveel om fasering en dagelijkse afstemming met de terminal als om het straal- en schilderwerk zelf.',
+          ],
+        },
+        {
+          title: 'De aanpak',
+          paragraphs: [
+            'Voor de voorbereiding van de buitenzijde werd robotische hydrojet-technologie ingezet: nauwkeurig reinigen en verwijderen van de oude coating, met een beperkte impact op de omgeving. Grote tankwanden worden zo gelijkmatig behandeld, zonder dat er straalgrit vrijkomt.',
+            'Geselecteerde tanks werden ook inwendig gestraald en gecoat, zodat ze voldoen aan de strenge eisen voor chemische opslag. De uitvoering verliep in fasen, tank per tank en tankpark per tankpark, in voortdurende afstemming met de operaties van de terminal.',
+          ],
+        },
+        {
+          title: 'Het resultaat',
+          paragraphs: [
+            '15 opslagtanks gerenoveerd, terwijl de opslagcapaciteit van de terminal gedurende het hele programma beschikbaar bleef. Het project toont wat Russo NV op een actieve terminal levert: de voorbereiding, de coating en de planning in één hand.',
+          ],
+        },
+      ],
+      related: [
+        { to: '/services/tankcoating', label: 'Tankcoating & tank lining' },
+        { to: '/services/corrosiebescherming', label: 'Corrosiebescherming' },
+        { to: '/insights/tank-coating-lining', label: 'Gids: tankcoating en tank lining' },
+      ],
+      relatedTitle: 'Diensten in dit project',
+      ctaTitle: 'Een tankpark te renoveren?',
+      ctaText: 'Bezorg ons het aantal tanks, de staat van de bestaande coating en de beschikbaarheid van de terminal. U krijgt een duidelijke aanpak met fasering, systeemkeuze en offerte.',
+      ctaButton: 'Vraag een offerte aan',
+      backToProjects: 'Alle projecten',
+    },
+    EN: {
+      kicker: 'Case study',
+      h1: 'Tank refurbishment in the Port of Antwerp: 15 storage tanks at Sea Tank Terminal',
+      heroSub: 'Large-scale refurbishment of 15 storage tanks on an active terminal: robotic hydro-jetting of the exterior, internal blasting and coating where needed, and phasing that kept storage capacity available.',
+      heroAlt: 'Storage tanks at Sea Tank Terminal in the Port of Antwerp during refurbishment by Russo NV',
+      secondaryAlt: 'Refurbishment works on a storage tank at Sea Tank Terminal in Antwerp',
+      facts: [
+        { label: 'Client', value: 'Sea Tank Terminal' },
+        { label: 'Location', value: 'Port of Antwerp, Belgium' },
+        { label: 'Scope', value: '15 storage tanks' },
+        { label: 'Exterior', value: 'Robotic hydro-jetting and removal of the old coating' },
+        { label: 'Interior', value: 'Internal blasting and coating of selected tanks' },
+        { label: 'Execution', value: 'In phases across multiple tank farms' },
+        { label: 'Completion', value: 'October 2025' },
+      ],
+      sections: [
+        {
+          title: 'The assignment',
+          paragraphs: [
+            'Sea Tank Terminal in the Port of Antwerp is one of the largest independent tank storage companies in Europe. For a refurbishment program of 15 storage tanks, the terminal looked for one party to take preparation, coating and planning in one hand on an active site.',
+            'The tank exteriors had to be fully prepared and stripped of the old coating. Part of the tanks also received internal treatment, matched to the requirements for chemical storage.',
+          ],
+        },
+        {
+          title: 'The challenge: 15 tanks on a terminal that keeps running',
+          paragraphs: [
+            'A tank terminal cannot simply shut down capacity. Every tank taken out of service has to fit the terminal planning, and works spread over multiple tank farms must not get in each other’s way.',
+            'This program was therefore as much about phasing and daily coordination with the terminal as about the blasting and painting itself.',
+          ],
+        },
+        {
+          title: 'The approach',
+          paragraphs: [
+            'Robotic hydro-jet technology was used to prepare the exterior: precise cleaning and removal of the old coating, with limited impact on the environment. Large tank walls are treated evenly this way, without releasing blasting grit.',
+            'Selected tanks were also blasted and coated internally to meet the strict requirements for chemical storage. Execution ran in phases, tank by tank and tank farm by tank farm, in constant coordination with terminal operations.',
+          ],
+        },
+        {
+          title: 'The result',
+          paragraphs: [
+            '15 storage tanks refurbished, while the terminal’s storage capacity remained available throughout the program. The project shows what Russo NV delivers on an active terminal: preparation, coating and planning in one hand.',
+          ],
+        },
+      ],
+      related: [
+        { to: '/services/tankcoating', label: 'Tank coating & lining' },
+        { to: '/services/corrosiebescherming', label: 'Corrosion protection' },
+        { to: '/insights/tank-coating-lining', label: 'Guide: tank coating and tank lining' },
+      ],
+      relatedTitle: 'Services in this project',
+      ctaTitle: 'A tank farm to refurbish?',
+      ctaText: 'Send us the number of tanks, the condition of the existing coating and the terminal availability. You will receive a clear approach with phasing, system choice and quote.',
+      ctaButton: 'Request a quote',
+      backToProjects: 'All projects',
+    },
+  },
+  {
+    slug: 'kranen-coating-csp-zeebrugge',
+    client: 'CSP Zeebrugge',
+    completion: '2025-11-20',
+    heroImage: '/images/csp1.jpg',
+    secondaryImage: '/images/csp2.jpg',
+    breadcrumb: { NL: 'Kranen CSP Zeebrugge', EN: 'CSP Zeebrugge cranes' },
+    meta: {
+      NL: {
+        title: 'Havenkranen coaten: 3 kranen CSP Zeebrugge | Russo NV',
+        description: 'Renovatie en corrosiebescherming van drie ship-to-shore containerkranen bij CSP Zeebrugge: voorbereiding, meerlaags anticorrosiesysteem en werken op hoogte op een actieve terminal.',
+        image: '/images/csp1.jpg',
+      },
+      EN: {
+        title: 'Port Crane Coating: 3 Cranes CSP Zeebrugge | Russo NV',
+        description: 'Refurbishment and corrosion protection of three ship-to-shore container cranes at CSP Zeebrugge: preparation, multi-layer anti-corrosion system and work at height on an active terminal.',
+        image: '/images/csp1.jpg',
+      },
+    },
+    NL: {
+      kicker: 'Case study',
+      h1: 'Havenkranen coaten: 3 ship-to-shore kranen bij CSP Zeebrugge',
+      heroSub: 'Renovatie en corrosiebescherming van drie grote containerkranen aan de Belgische kust, met een meerlaags anticorrosiesysteem op al het constructiestaal, op hoogte en op een terminal die bleef laden en lossen.',
+      heroAlt: 'Ship-to-shore containerkraan bij CSP Zeebrugge tijdens coatingwerken door Russo NV',
+      secondaryAlt: 'Containerkraan aan de kade van CSP Zeebrugge',
+      facts: [
+        { label: 'Klant', value: 'CSP Zeebrugge' },
+        { label: 'Locatie', value: 'Zeebrugge, België' },
+        { label: 'Scope', value: '3 ship-to-shore containerkranen' },
+        { label: 'Werk', value: 'Oppervlaktevoorbereiding en meerlaags anticorrosiesysteem' },
+        { label: 'Omgeving', value: 'Maritiem klimaat aan de kust' },
+        { label: 'Toegang', value: 'Werken op hoogte met gespecialiseerde toegang' },
+        { label: 'Oplevering', value: 'November 2025' },
+      ],
+      sections: [
+        {
+          title: 'De opdracht',
+          paragraphs: [
+            'CSP Zeebrugge is een belangrijke containerterminal aan de Belgische kust. Drie grote ship-to-shore kranen hadden een volledige structurele renovatie en corrosiebescherming nodig, inclusief al het constructiestaal dat is blootgesteld aan het maritieme klimaat.',
+          ],
+        },
+        {
+          title: 'De uitdaging: hoogte, zout en een actieve kade',
+          paragraphs: [
+            'Een containerkraan staat dag en nacht in zeelucht, en die zoutlast zet staal sneller aan het roesten dan bijna elke andere omgeving. Tegelijk gebeurt het werk op grote hoogte op infrastructuur die in gebruik is.',
+            'Dat vroeg om strikt veiligheidsbeheer, gespecialiseerde toegangsoplossingen en nauwe afstemming met de terminal, zodat het laden en lossen van schepen zo weinig mogelijk hinder ondervond.',
+          ],
+        },
+        {
+          title: 'De aanpak',
+          paragraphs: [
+            'De kranen kregen een grondige oppervlaktevoorbereiding, gevolgd door een meerlaags anticorrosiesysteem op alle constructiestalen delen. Zo wordt elke laag aangebracht op een ondergrond die er klaar voor is, en dat is in een maritieme omgeving doorslaggevend voor de levensduur.',
+          ],
+        },
+        {
+          title: 'Het resultaat',
+          paragraphs: [
+            'Drie ship-to-shore kranen opnieuw beschermd tegen het zware kustklimaat, met zo weinig mogelijk hinder voor de scheepsoperaties. Hetzelfde vakwerk passen we toe op kranen, staalconstructies en andere haveninfrastructuur.',
+          ],
+        },
+      ],
+      related: [
+        { to: '/services/corrosiebescherming', label: 'Corrosiebescherming' },
+        { to: '/services/industrieel-stralen', label: 'Industrieel stralen' },
+        { to: '/insights/corrosion-protection-iso-12944', label: 'Gids: corrosiebescherming volgens ISO 12944' },
+      ],
+      relatedTitle: 'Diensten in dit project',
+      ctaTitle: 'Kranen of staalconstructies in de haven?',
+      ctaText: 'Bezorg ons de constructie, de staat van de coating en de beschikbare stilstand. U krijgt een duidelijke aanpak met toegang, systeemkeuze en offerte.',
+      ctaButton: 'Vraag een offerte aan',
+      backToProjects: 'Alle projecten',
+    },
+    EN: {
+      kicker: 'Case study',
+      h1: 'Port crane coating: 3 ship-to-shore cranes at CSP Zeebrugge',
+      heroSub: 'Refurbishment and corrosion protection of three large container cranes on the Belgian coast, with a multi-layer anti-corrosion system on all structural steel, at height and on a terminal that kept loading and unloading.',
+      heroAlt: 'Ship-to-shore container crane at CSP Zeebrugge during coating works by Russo NV',
+      secondaryAlt: 'Container crane on the quay at CSP Zeebrugge',
+      facts: [
+        { label: 'Client', value: 'CSP Zeebrugge' },
+        { label: 'Location', value: 'Zeebrugge, Belgium' },
+        { label: 'Scope', value: '3 ship-to-shore container cranes' },
+        { label: 'Work', value: 'Surface preparation and multi-layer anti-corrosion system' },
+        { label: 'Environment', value: 'Maritime coastal climate' },
+        { label: 'Access', value: 'Work at height with specialized access' },
+        { label: 'Completion', value: 'November 2025' },
+      ],
+      sections: [
+        {
+          title: 'The assignment',
+          paragraphs: [
+            'CSP Zeebrugge is a major container terminal on the Belgian coast. Three large ship-to-shore cranes needed full structural refurbishment and corrosion protection, including all structural steel exposed to the maritime climate.',
+          ],
+        },
+        {
+          title: 'The challenge: height, salt and an active quay',
+          paragraphs: [
+            'A container crane stands in sea air day and night, and that salt load makes steel rust faster than almost any other environment. At the same time, the work takes place at great height on infrastructure that is in use.',
+            'That demanded strict safety management, specialized access solutions and close coordination with the terminal, so that vessel loading and unloading was disrupted as little as possible.',
+          ],
+        },
+        {
+          title: 'The approach',
+          paragraphs: [
+            'The cranes received thorough surface preparation, followed by a multi-layer anti-corrosion system on all structural steel components. Each coat is applied to a substrate that is ready for it, which is decisive for service life in a maritime environment.',
+          ],
+        },
+        {
+          title: 'The result',
+          paragraphs: [
+            'Three ship-to-shore cranes protected again against the harsh coastal climate, with as little disruption to vessel operations as possible. We apply the same craftsmanship to cranes, steel structures and other port infrastructure.',
+          ],
+        },
+      ],
+      related: [
+        { to: '/services/corrosiebescherming', label: 'Corrosion protection' },
+        { to: '/services/industrieel-stralen', label: 'Industrial blasting' },
+        { to: '/insights/corrosion-protection-iso-12944', label: 'Guide: corrosion protection to ISO 12944' },
+      ],
+      relatedTitle: 'Services in this project',
+      ctaTitle: 'Cranes or steel structures in the port?',
+      ctaText: 'Send us the structure, the condition of the coating and the available downtime. You will receive a clear approach with access, system choice and quote.',
+      ctaButton: 'Request a quote',
+      backToProjects: 'All projects',
+    },
+  },
+  {
+    slug: 'coating-voedingsopslag-bnfw-zeebrugge',
+    client: 'BNFW',
+    completion: '2025-05-15',
+    heroImage: '/images/kiwi1.jpg',
+    secondaryImage: '/images/kiwi2.jpg',
+    breadcrumb: { NL: 'Voedingsopslag BNFW Zeebrugge', EN: 'BNFW food storage Zeebrugge' },
+    meta: {
+      NL: {
+        title: 'Coating voedingsindustrie: opslaghallen BNFW | Russo NV',
+        description: 'Renovatie en voedingsveilige coating van grote opslaghallen bij BNFW in Zeebrugge: voorbereiding, corrosiebehandeling en gefaseerde uitvoering terwijl het magazijn in gebruik bleef.',
+        image: '/images/kiwi1.jpg',
+      },
+      EN: {
+        title: 'Food-Grade Coating: BNFW Storage Halls | Russo NV',
+        description: 'Refurbishment and food-grade coating of large storage halls at BNFW in Zeebrugge: preparation, corrosion treatment and phased execution while the warehouse stayed in use.',
+        image: '/images/kiwi1.jpg',
+      },
+    },
+    NL: {
+      kicker: 'Case study',
+      h1: 'Voedingsveilige coating in opslaghallen: BNFW Zeebrugge',
+      heroSub: 'Inwendige renovatie en coating van meerdere grote opslaghallen voor voeding, met systemen die bestand zijn tegen frequente reiniging en temperatuurwisselingen, gefaseerd uitgevoerd zodat het magazijn beschikbaar bleef.',
+      heroAlt: 'Coatingwerken in een opslaghal voor voeding bij BNFW in Zeebrugge door Russo NV',
+      secondaryAlt: 'Werkzaamheden in een opslaghal bij BNFW in Zeebrugge',
+      facts: [
+        { label: 'Klant', value: 'BNFW' },
+        { label: 'Locatie', value: 'Zeebrugge, België' },
+        { label: 'Scope', value: 'Meerdere grote opslaghallen voor voeding' },
+        { label: 'Systeem', value: 'Voedingsveilige coating, conform hygiënevoorschriften en HACCP' },
+        { label: 'Belasting', value: 'Frequente reiniging en temperatuurwisselingen' },
+        { label: 'Uitvoering', value: 'Gefaseerd, magazijn bleef beschikbaar' },
+        { label: 'Oplevering', value: 'Mei 2025' },
+      ],
+      sections: [
+        {
+          title: 'De opdracht',
+          paragraphs: [
+            'BNFW in Zeebrugge wilde meerdere grote opslaghallen voor voeding inwendig laten renoveren. Elke hal had een volledige oppervlaktevoorbereiding en corrosiebehandeling nodig, gevolgd door een coating die voldoet aan de strenge voorschriften voor voedselhygiëne en HACCP.',
+          ],
+        },
+        {
+          title: 'De uitdaging: renoveren in een actieve voedingsomgeving',
+          paragraphs: [
+            'In een opslag voor voeding is een coating meer dan bescherming. De afwerking moet frequente reinigingscycli en temperatuurwisselingen aankunnen en passen binnen de hygiëne-eisen van de site.',
+            'Bovendien moesten de hallen beschikbaar blijven voor de dagelijkse werking. De werken konden dus niet tegelijk over het hele magazijn lopen.',
+          ],
+        },
+        {
+          title: 'De aanpak',
+          paragraphs: [
+            'De hallen werden in fasen behandeld, zodat de klant zijn magazijn kon blijven gebruiken. Per hal volgden de oppervlaktevoorbereiding, de corrosiebehandeling en het aanbrengen van het voedingsveilige coatingsysteem elkaar op.',
+          ],
+        },
+        {
+          title: 'Het resultaat',
+          paragraphs: [
+            'Meerdere opslaghallen opnieuw beschermd met een afwerking die past bij een actieve voedingsomgeving, zonder dat het magazijn stil kwam te liggen.',
+          ],
+        },
+      ],
+      related: [
+        { to: '/industries#food', label: 'Voedingsindustrie' },
+        { to: '/services/corrosiebescherming', label: 'Corrosiebescherming' },
+        { to: '/services/industriele-schilderwerken', label: 'Onderhoudsschilderwerken' },
+      ],
+      relatedTitle: 'Diensten in dit project',
+      ctaTitle: 'Een hal of magazijn in de voedingsindustrie?',
+      ctaText: 'Bezorg ons de oppervlaktes, de staat van de ondergrond en de beschikbaarheid van de hallen. U krijgt een duidelijke aanpak met fasering, systeemkeuze en offerte.',
+      ctaButton: 'Vraag een offerte aan',
+      backToProjects: 'Alle projecten',
+    },
+    EN: {
+      kicker: 'Case study',
+      h1: 'Food-grade coating in storage halls: BNFW Zeebrugge',
+      heroSub: 'Interior refurbishment and coating of several large food storage halls, with systems that withstand frequent cleaning and temperature changes, carried out in phases so the warehouse stayed available.',
+      heroAlt: 'Coating works in a food storage hall at BNFW in Zeebrugge by Russo NV',
+      secondaryAlt: 'Works in a storage hall at BNFW in Zeebrugge',
+      facts: [
+        { label: 'Client', value: 'BNFW' },
+        { label: 'Location', value: 'Zeebrugge, Belgium' },
+        { label: 'Scope', value: 'Several large food storage halls' },
+        { label: 'System', value: 'Food-grade coating, in line with hygiene rules and HACCP' },
+        { label: 'Load', value: 'Frequent cleaning and temperature changes' },
+        { label: 'Execution', value: 'In phases, warehouse stayed available' },
+        { label: 'Completion', value: 'May 2025' },
+      ],
+      sections: [
+        {
+          title: 'The assignment',
+          paragraphs: [
+            'BNFW in Zeebrugge wanted several large food storage halls refurbished inside. Each hall needed full surface preparation and corrosion treatment, followed by a coating that meets the strict rules for food hygiene and HACCP.',
+          ],
+        },
+        {
+          title: 'The challenge: refurbishing in an active food environment',
+          paragraphs: [
+            'In food storage, a coating is more than protection. The finish has to withstand frequent cleaning cycles and temperature changes and fit within the hygiene requirements of the site.',
+            'The halls also had to stay available for daily operations, so the works could not run across the whole warehouse at once.',
+          ],
+        },
+        {
+          title: 'The approach',
+          paragraphs: [
+            'The halls were treated in phases, so the client could keep using the warehouse. For each hall, surface preparation, corrosion treatment and application of the food-grade coating system followed one another.',
+          ],
+        },
+        {
+          title: 'The result',
+          paragraphs: [
+            'Several storage halls protected again with a finish suited to an active food environment, without the warehouse coming to a standstill.',
+          ],
+        },
+      ],
+      related: [
+        { to: '/industries#food', label: 'Food industry' },
+        { to: '/services/corrosiebescherming', label: 'Corrosion protection' },
+        { to: '/services/industriele-schilderwerken', label: 'Maintenance painting' },
+      ],
+      relatedTitle: 'Services in this project',
+      ctaTitle: 'A hall or warehouse in the food industry?',
+      ctaText: 'Send us the areas, the condition of the substrate and the availability of the halls. You will receive a clear approach with phasing, system choice and quote.',
+      ctaButton: 'Request a quote',
+      backToProjects: 'All projects',
+    },
+  },
+  {
+    slug: 'antislip-dakcoating-itc-rubis-zeebrugge',
+    client: 'ITC Rubis',
+    completion: '2025-08-20',
+    heroImage: '/images/itc2.jpg',
+    secondaryImage: '/images/itc1.jpg',
+    breadcrumb: { NL: 'Antislip en dakcoating ITC Rubis', EN: 'ITC Rubis anti-slip and roof coating' },
+    meta: {
+      NL: {
+        title: 'Antislipcoating en tankdaken: ITC Rubis | Russo NV',
+        description: 'Antislipcoating op looppaden en beschermende coating op de daken van acht opslagtanks bij ITC Rubis in Zeebrugge, uitgevoerd op een actieve terminal in het kustklimaat.',
+        image: '/images/itc2.jpg',
+      },
+      EN: {
+        title: 'Anti-Slip Coating and Tank Roofs: ITC Rubis | Russo NV',
+        description: 'Anti-slip coating on walkways and protective coating on the roofs of eight storage tanks at ITC Rubis in Zeebrugge, carried out on an active terminal in the coastal climate.',
+        image: '/images/itc2.jpg',
+      },
+    },
+    NL: {
+      kicker: 'Case study',
+      h1: 'Antislipcoating en dakcoating op 8 opslagtanks: ITC Rubis Zeebrugge',
+      heroSub: 'Antislipcoatings voor looppaden en toegangszones en een beschermende coating op de tankdaken, op een actieve terminal aan de kust.',
+      heroAlt: 'Gecoat dak van een opslagtank bij ITC Rubis in Zeebrugge',
+      secondaryAlt: 'Opslagtanks bij ITC Rubis in Zeebrugge na de coatingwerken',
+      facts: [
+        { label: 'Klant', value: 'ITC Rubis' },
+        { label: 'Locatie', value: 'Zeebrugge, België' },
+        { label: 'Scope', value: '8 grote opslagtanks' },
+        { label: 'Veiligheid', value: 'Antislipcoating op looppaden en toegangszones' },
+        { label: 'Bescherming', value: 'Coating op de tankdaken tegen UV, zout en regenwater' },
+        { label: 'Site', value: 'Actieve terminal' },
+        { label: 'Oplevering', value: 'Augustus 2025' },
+      ],
+      sections: [
+        {
+          title: 'De opdracht',
+          paragraphs: [
+            'Op de terminal van ITC Rubis in Zeebrugge moesten acht grote opslagtanks worden behandeld op twee punten: de veiligheid van wie op de tanks werkt, en de bescherming van de daken tegen het kustklimaat.',
+          ],
+        },
+        {
+          title: 'Twee opgaven op dezelfde tank',
+          paragraphs: [
+            'Looppaden en toegangszones op een tank zijn werkplekken op hoogte. Een antislipsysteem moet daar voldoen aan strenge veiligheidsnormen, ook als het oppervlak nat is.',
+            'De tankdaken vragen iets anders: bescherming op lange termijn tegen UV, zoutnevel en insijpelend regenwater. Een dak is vaak het eerste deel van een tank dat problemen krijgt, omdat er water kan blijven staan.',
+          ],
+        },
+        {
+          title: 'De aanpak',
+          paragraphs: [
+            'Beide systemen werden aangebracht op een terminal in werking, met strikte veiligheids- en milieuprotocollen. Zo bleef de werking van de terminal gewaarborgd terwijl de tanks een voor een werden behandeld.',
+          ],
+        },
+        {
+          title: 'Het resultaat',
+          paragraphs: [
+            'Acht opslagtanks met veiligere looppaden en daken die opnieuw beschermd zijn tegen het kustklimaat van Zeebrugge.',
+          ],
+        },
+      ],
+      related: [
+        { to: '/services/tankcoating', label: 'Tankcoating & tank lining' },
+        { to: '/services/corrosiebescherming', label: 'Corrosiebescherming' },
+        { to: '/insights/tank-coating-lining', label: 'Gids: tankcoating en tank lining' },
+      ],
+      relatedTitle: 'Diensten in dit project',
+      ctaTitle: 'Tankdaken of looppaden te behandelen?',
+      ctaText: 'Bezorg ons de tankgegevens en de staat van de bestaande coating. U krijgt een duidelijke aanpak met systeemkeuze, planning en offerte.',
+      ctaButton: 'Vraag een offerte aan',
+      backToProjects: 'Alle projecten',
+    },
+    EN: {
+      kicker: 'Case study',
+      h1: 'Anti-slip and roof coating on 8 storage tanks: ITC Rubis Zeebrugge',
+      heroSub: 'Anti-slip coatings for walkways and access areas and a protective coating on the tank roofs, on an active terminal on the coast.',
+      heroAlt: 'Coated roof of a storage tank at ITC Rubis in Zeebrugge',
+      secondaryAlt: 'Storage tanks at ITC Rubis in Zeebrugge after the coating works',
+      facts: [
+        { label: 'Client', value: 'ITC Rubis' },
+        { label: 'Location', value: 'Zeebrugge, Belgium' },
+        { label: 'Scope', value: '8 large storage tanks' },
+        { label: 'Safety', value: 'Anti-slip coating on walkways and access areas' },
+        { label: 'Protection', value: 'Coating on tank roofs against UV, salt and rainwater' },
+        { label: 'Site', value: 'Active terminal' },
+        { label: 'Completion', value: 'August 2025' },
+      ],
+      sections: [
+        {
+          title: 'The assignment',
+          paragraphs: [
+            'At the ITC Rubis terminal in Zeebrugge, eight large storage tanks had to be treated on two points: the safety of people working on the tanks, and the protection of the roofs against the coastal climate.',
+          ],
+        },
+        {
+          title: 'Two tasks on the same tank',
+          paragraphs: [
+            'Walkways and access areas on a tank are workplaces at height. An anti-slip system there has to meet strict safety standards, including when the surface is wet.',
+            'The tank roofs ask for something else: long-term protection against UV, salt spray and rainwater infiltration. A roof is often the first part of a tank to develop problems, because water can stand on it.',
+          ],
+        },
+        {
+          title: 'The approach',
+          paragraphs: [
+            'Both systems were applied on a working terminal, under strict safety and environmental protocols. Terminal operations stayed secured while the tanks were treated one by one.',
+          ],
+        },
+        {
+          title: 'The result',
+          paragraphs: [
+            'Eight storage tanks with safer walkways and roofs protected again against the coastal climate of Zeebrugge.',
+          ],
+        },
+      ],
+      related: [
+        { to: '/services/tankcoating', label: 'Tank coating & lining' },
+        { to: '/services/corrosiebescherming', label: 'Corrosion protection' },
+        { to: '/insights/tank-coating-lining', label: 'Guide: tank coating and tank lining' },
+      ],
+      relatedTitle: 'Services in this project',
+      ctaTitle: 'Tank roofs or walkways to treat?',
+      ctaText: 'Send us the tank details and the condition of the existing coating. You will receive a clear approach with system choice, planning and quote.',
+      ctaButton: 'Request a quote',
+      backToProjects: 'All projects',
+    },
+  },
 ];
 
 export function findCaseStudy(slug: string): CaseStudy | undefined {
