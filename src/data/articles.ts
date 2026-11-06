@@ -3679,7 +3679,7 @@ export const ARTICLES: Article[] = [
         {
           type: 'p',
           segments: [
-            'UHP staat voor ultra high pressure: water onder een druk van meer dan 1.700 bar, dat oude coating, roest en vervuiling van het staal blaast zonder straalmiddel. Bij ',
+            'UHP staat voor ultra high pressure: water onder een druk van ruim 2.000 bar, dat oude coating, roest en vervuiling van het staal blaast zonder straalmiddel. Bij ',
             { text: 'industriële schilderwerken', to: '/' },
             ' aan bestaande tanks en constructies is het een volwaardig alternatief voor gritstralen, vooral waar stof en afval een probleem zijn.',
           ],
@@ -3687,13 +3687,13 @@ export const ARTICLES: Article[] = [
         { type: 'h2', text: 'Wat is het verschil tussen de drukklassen?' },
         {
           type: 'table',
-          caption: 'Veelgebruikte indeling. Grenzen kunnen per norm en per opdrachtgever licht verschillen.',
+          caption: 'Veelgebruikte indeling. Vanaf 700 bar spreekt men van waterstralen. Waar UHP begint, verschilt per norm en fabrikant: je vindt grenzen van 1.400 tot 2.100 bar.',
           headers: ['Methode', 'Druk', 'Waarvoor'],
           rows: [
             ['Reinigen onder lage druk', 'Tot ongeveer 340 bar', 'Zout, vuil en losse delen afspoelen'],
             ['Hogedruk waterreinigen', 'Ongeveer 340 tot 700 bar', 'Grondig reinigen, losse coating verwijderen'],
-            ['Hogedruk waterstralen', 'Ongeveer 700 tot 1.700 bar', 'Vastzittende coating verwijderen'],
-            ['UHP-waterstralen', 'Boven 1.700 bar', 'Harde coatings en roest verwijderen tot op het staal'],
+            ['Hogedruk waterstralen', 'Vanaf 700 bar', 'Vastzittende coating verwijderen, roest deels'],
+            ['UHP-waterstralen', 'Ruim 2.000 bar', 'Harde coatings en roest verwijderen tot op het staal'],
           ],
         },
         { type: 'h2', text: 'Wanneer is waterstralen beter dan gritstralen?' },
@@ -3768,7 +3768,7 @@ export const ARTICLES: Article[] = [
           items: [
             {
               q: 'Wat is UHP?',
-              a: 'UHP staat voor ultra high pressure. Het gaat om waterstralen boven ongeveer 1.700 bar, waarmee harde coatings en roest worden verwijderd zonder straalmiddel.',
+              a: 'UHP staat voor ultra high pressure. Het gaat om waterstralen onder zeer hoge druk, doorgaans boven 2.000 bar, waarmee harde coatings en roest worden verwijderd zonder straalmiddel. De exacte ondergrens verschilt per norm en fabrikant.',
             },
             {
               q: 'Verwijdert waterstralen ook zouten?',
@@ -3803,7 +3803,7 @@ export const ARTICLES: Article[] = [
         {
           type: 'p',
           segments: [
-            'UHP stands for ultra high pressure: water at more than 1,700 bar that blasts old coating, rust and contamination off the steel without any abrasive. In ',
+            'UHP stands for ultra high pressure: water at well over 2,000 bar that blasts old coating, rust and contamination off the steel without any abrasive. In ',
             { text: 'industrial painting', to: '/' },
             ' of existing tanks and structures, it is a full alternative to grit blasting, especially where dust and waste are a problem.',
           ],
@@ -3811,13 +3811,13 @@ export const ARTICLES: Article[] = [
         { type: 'h2', text: 'What is the difference between the pressure classes?' },
         {
           type: 'table',
-          caption: 'Commonly used division. Limits can differ slightly per standard and per client.',
+          caption: 'Commonly used division. From 700 bar it is called water jetting. Where UHP starts differs per standard and manufacturer: you will find limits from 1,400 to 2,100 bar.',
           headers: ['Method', 'Pressure', 'What for'],
           rows: [
             ['Low-pressure cleaning', 'Up to about 340 bar', 'Rinsing off salt, dirt and loose parts'],
             ['High-pressure water cleaning', 'About 340 to 700 bar', 'Thorough cleaning, removing loose coating'],
-            ['High-pressure water jetting', 'About 700 to 1,700 bar', 'Removing firmly adhering coating'],
-            ['UHP water jetting', 'Above 1,700 bar', 'Removing hard coatings and rust down to the steel'],
+            ['High-pressure water jetting', 'From 700 bar', 'Removing firmly adhering coating, partly rust'],
+            ['UHP water jetting', 'Well over 2,000 bar', 'Removing hard coatings and rust down to the steel'],
           ],
         },
         { type: 'h2', text: 'When is water jetting better than grit blasting?' },
@@ -3892,7 +3892,7 @@ export const ARTICLES: Article[] = [
           items: [
             {
               q: 'What is UHP?',
-              a: 'UHP stands for ultra high pressure. It means water jetting above about 1,700 bar, which removes hard coatings and rust without an abrasive.',
+              a: 'UHP stands for ultra high pressure. It means water jetting at very high pressure, usually above 2,000 bar, which removes hard coatings and rust without an abrasive. The exact lower limit differs per standard and manufacturer.',
             },
             {
               q: 'Does water jetting also remove salts?',
