@@ -25,13 +25,13 @@ export type PageMeta = {
 export const PAGE_META: Record<string, PageMeta> = {
   '/': {
     NL: {
-      title: 'Industriële Schilderwerken & Stralen Antwerpen | Russo NV',
+      title: 'Industriële Schilderwerken & Stralen in België | Russo NV',
       description: 'Industriële schilderwerken in Antwerpen en heel België: stralen, coatings, corrosiebescherming en tankcoating voor de industrie. VCA en ISO gecertificeerd.',
       image: '/images/og-card.jpg',
       heroImage: '/images/home-hero.jpg',
     },
     EN: {
-      title: 'Industrial Painting & Sandblasting in Antwerp | Russo NV',
+      title: 'Industrial Painting & Sandblasting in Belgium | Russo NV',
       description: 'Industrial painting, coating and blasting in Antwerp and across Belgium: corrosion protection and tank coating for industry. VCA and ISO certified.',
       image: '/images/og-card.jpg',
       heroImage: '/images/home-hero.jpg',
