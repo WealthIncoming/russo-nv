@@ -312,19 +312,19 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: 'tankrenovatie-sea-tank-terminal-antwerpen',
     client: 'Sea Tank Terminal',
     completion: '2025-10-15',
-    heroImage: '/images/stt3.jpg',
-    secondaryImage: '/images/stt2.jpg',
+    heroImage: '/images/sea-tank-terminal-renovatie-tanks.jpg',
+    secondaryImage: '/images/sea-tank-terminal-renovatie-tankwand.jpg',
     breadcrumb: { NL: 'Tankrenovatie Sea Tank Terminal', EN: 'Sea Tank Terminal tank refurbishment' },
     meta: {
       NL: {
         title: 'Tankrenovatie haven Antwerpen: 15 tanks Sea Tank | Russo NV',
         description: 'Renovatie van 15 opslagtanks bij Sea Tank Terminal in de haven van Antwerpen: robotisch hydrojetten van de buitenzijde, inwendig stralen en coaten, gefaseerd uitgevoerd.',
-        image: '/images/stt3.jpg',
+        image: '/images/sea-tank-terminal-renovatie-tanks.jpg',
       },
       EN: {
         title: 'Tank Refurbishment Port of Antwerp: 15 Tanks | Russo NV',
         description: 'Refurbishment of 15 storage tanks at Sea Tank Terminal in the Port of Antwerp: robotic hydro-jetting of the exterior, internal blasting and coating, carried out in phases.',
-        image: '/images/stt3.jpg',
+        image: '/images/sea-tank-terminal-renovatie-tanks.jpg',
       },
     },
     NL: {
@@ -442,19 +442,19 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: 'kranen-coating-csp-zeebrugge',
     client: 'CSP Zeebrugge',
     completion: '2025-11-20',
-    heroImage: '/images/csp1.jpg',
-    secondaryImage: '/images/csp2.jpg',
+    heroImage: '/images/csp-zeebrugge-containerkraan-kade.jpg',
+    secondaryImage: '/images/csp-zeebrugge-containerkraan.jpg',
     breadcrumb: { NL: 'Kranen CSP Zeebrugge', EN: 'CSP Zeebrugge cranes' },
     meta: {
       NL: {
         title: 'Havenkranen coaten: 3 kranen CSP Zeebrugge | Russo NV',
         description: 'Renovatie en corrosiebescherming van drie ship-to-shore containerkranen bij CSP Zeebrugge: voorbereiding, meerlaags anticorrosiesysteem en werken op hoogte op een actieve terminal.',
-        image: '/images/csp1.jpg',
+        image: '/images/csp-zeebrugge-containerkraan-kade.jpg',
       },
       EN: {
         title: 'Port Crane Coating: 3 Cranes CSP Zeebrugge | Russo NV',
         description: 'Refurbishment and corrosion protection of three ship-to-shore container cranes at CSP Zeebrugge: preparation, multi-layer anti-corrosion system and work at height on an active terminal.',
-        image: '/images/csp1.jpg',
+        image: '/images/csp-zeebrugge-containerkraan-kade.jpg',
       },
     },
     NL: {
@@ -568,19 +568,19 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: 'coating-voedingsopslag-bnfw-zeebrugge',
     client: 'BNFW',
     completion: '2025-05-15',
-    heroImage: '/images/kiwi1.jpg',
-    secondaryImage: '/images/kiwi2.jpg',
+    heroImage: '/images/bnfw-zeebrugge-opslaghal-werf.jpg',
+    secondaryImage: '/images/bnfw-zeebrugge-opslaghal.jpg',
     breadcrumb: { NL: 'Voedingsopslag BNFW Zeebrugge', EN: 'BNFW food storage Zeebrugge' },
     meta: {
       NL: {
         title: 'Coating voedingsindustrie: opslaghallen BNFW | Russo NV',
         description: 'Renovatie en voedingsveilige coating van grote opslaghallen bij BNFW in Zeebrugge: voorbereiding, corrosiebehandeling en gefaseerde uitvoering terwijl het magazijn in gebruik bleef.',
-        image: '/images/kiwi1.jpg',
+        image: '/images/bnfw-zeebrugge-opslaghal-werf.jpg',
       },
       EN: {
         title: 'Food-Grade Coating: BNFW Storage Halls | Russo NV',
         description: 'Refurbishment and food-grade coating of large storage halls at BNFW in Zeebrugge: preparation, corrosion treatment and phased execution while the warehouse stayed in use.',
-        image: '/images/kiwi1.jpg',
+        image: '/images/bnfw-zeebrugge-opslaghal-werf.jpg',
       },
     },
     NL: {
@@ -694,19 +694,19 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: 'antislip-dakcoating-itc-rubis-zeebrugge',
     client: 'ITC Rubis',
     completion: '2025-08-20',
-    heroImage: '/images/itc2.jpg',
-    secondaryImage: '/images/itc1.jpg',
+    heroImage: '/images/itc-rubis-zeebrugge-tankdak.jpg',
+    secondaryImage: '/images/itc-rubis-zeebrugge-tanks.jpg',
     breadcrumb: { NL: 'Antislip en dakcoating ITC Rubis', EN: 'ITC Rubis anti-slip and roof coating' },
     meta: {
       NL: {
         title: 'Antislipcoating en tankdaken: ITC Rubis | Russo NV',
         description: 'Antislipcoating op looppaden en beschermende coating op de daken van acht opslagtanks bij ITC Rubis in Zeebrugge, uitgevoerd op een actieve terminal in het kustklimaat.',
-        image: '/images/itc2.jpg',
+        image: '/images/itc-rubis-zeebrugge-tankdak.jpg',
       },
       EN: {
         title: 'Anti-Slip Coating and Tank Roofs: ITC Rubis | Russo NV',
         description: 'Anti-slip coating on walkways and protective coating on the roofs of eight storage tanks at ITC Rubis in Zeebrugge, carried out on an active terminal in the coastal climate.',
-        image: '/images/itc2.jpg',
+        image: '/images/itc-rubis-zeebrugge-tankdak.jpg',
       },
     },
     NL: {
