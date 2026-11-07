@@ -211,8 +211,53 @@ const ParallaxText = ({ children, baseVelocity = 100 }: { children: string; base
   );
 };
 
+// Answers the informational side of "industriële schilderwerken": vdab.be and
+// vlaanderen.be hold page 1 slots for it, so the homepage must explain the term too.
+const HOME_GUIDE = {
+  NL: {
+    label: 'Uitleg',
+    title: 'Wat zijn industriële schilderwerken?',
+    paragraphs: [
+      ['Industriële schilderwerken zijn het aanbrengen van beschermende verf- en coatingsystemen op staal en beton in industriële omgevingen: opslagtanks, staalconstructies, leidingen, havenkranen, silo\'s en installaties. Anders dan bij gewoon schilderwerk staat niet de kleur voorop, maar de bescherming tegen corrosie, chemicaliën, vuur en slijtage.'],
+      ['Het werk volgt een vaste keten: de ondergrond reinigen en ', { text: 'stralen tot de vereiste reinheidsgraad', to: '/insights/steel-surface-preparation' }, ', klimaat en zouten meten, het coatingsysteem laag per laag aanbrengen, en de laagdikte en kwaliteit controleren. Welk systeem past, hangt af van de omgeving en de belasting, vaak volgens ', { text: 'ISO 12944', to: '/insights/corrosion-protection-iso-12944' }, '. Omdat dit werk meestal op hoogte of in besloten ruimte gebeurt, op een haven- of chemiesite, vragen opdrachtgevers doorgaans ook een VCA-certificaat.'],
+    ],
+    faqTitle: 'Veelgestelde vragen',
+    faq: [
+      { q: 'Wat is het verschil met gewoon schilderwerk?', a: 'Bij gewoon schilderwerk gaat het vooral om afwerking en uitzicht. Bij industriële schilderwerken gaat het om een technisch systeem: een voorgeschreven reinheidsgraad van het staal, gemeten laagdiktes, klimaatregistratie en een dossier dat aantoont wat er op het staal zit.' },
+      { q: 'Wat valt onder industriële schilderwerken?', a: 'Opslagtanks binnen en buiten, staalconstructies, pijpleidingen en pijpbruggen, havenkranen, silo\'s, loodsen en magazijnen, en installaties in de chemie, de energie en de voedingsindustrie.' },
+      { q: 'Hoe lang gaat een industrieel coatingsysteem mee?', a: 'Dat hangt af van de omgeving en het systeem. ISO 12944 werkt met levensduurbereiken van laag, tot 7 jaar, tot zeer hoog, meer dan 25 jaar. Dat is een ontwerpverwachting en geen garantie: de voorbereiding en het onderhoud bepalen mee hoe lang een systeem het volhoudt.' },
+      { q: 'Werkt Russo NV alleen in Antwerpen?', a: 'Nee. Vanuit Merksem werken we in heel België en in Nederland, onder meer in de havens van Antwerpen, Gent en Zeebrugge en op industriële sites in de regio Amsterdam.' },
+    ],
+  },
+  EN: {
+    label: 'Explained',
+    title: 'What is industrial painting?',
+    paragraphs: [
+      ['Industrial painting is the application of protective paint and coating systems to steel and concrete in industrial environments: storage tanks, steel structures, piping, port cranes, silos and installations. Unlike ordinary painting, the point is not the colour but protection against corrosion, chemicals, fire and wear.'],
+      ['The work follows a fixed chain: cleaning and ', { text: 'blasting the surface to the required cleanliness grade', to: '/insights/steel-surface-preparation' }, ', measuring climate and salts, applying the coating system coat by coat, and checking film thickness and quality. Which system fits depends on the environment and the load, often according to ', { text: 'ISO 12944', to: '/insights/corrosion-protection-iso-12944' }, '. Because this work usually takes place at height or in confined spaces, on port or chemical sites, clients generally also require a VCA certificate.'],
+    ],
+    faqTitle: 'Frequently asked questions',
+    faq: [
+      { q: 'How does it differ from ordinary painting?', a: 'Ordinary painting is mainly about finish and appearance. Industrial painting is a technical system: a prescribed steel cleanliness grade, measured film thicknesses, climate records and a dossier proving what is on the steel.' },
+      { q: 'What does industrial painting cover?', a: 'Storage tanks inside and out, steel structures, pipelines and pipe bridges, port cranes, silos, sheds and warehouses, and installations in chemicals, energy and food production.' },
+      { q: 'How long does an industrial coating system last?', a: 'That depends on the environment and the system. ISO 12944 uses durability ranges from low, up to 7 years, to very high, more than 25 years. That is a design expectation and not a guarantee: preparation and maintenance help decide how long a system lasts.' },
+      { q: 'Does Russo NV only work in Antwerp?', a: 'No. From Merksem we work across Belgium and in the Netherlands, including the ports of Antwerp, Ghent and Zeebrugge and industrial sites in the Amsterdam region.' },
+    ],
+  },
+} as const;
+
 export default function HomePage() {
-  const { localize } = useLocale();
+  const { localize, locale } = useLocale();
+  const guide = HOME_GUIDE[locale === 'EN' ? 'EN' : 'NL'];
+  const guideFaqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: guide.faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
   const { copied, copy } = useCopyPhone();
   const onCallClick = () => copy('+32 475 43 48 19');
 
@@ -235,6 +280,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(ORGANIZATION_JSON_LD) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(guideFaqSchema) }}
       />
       <style>{`
         /* Only clip on md+ where the grid is multi-column and short.
@@ -609,6 +658,37 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      {/* --- WHAT IS INDUSTRIAL PAINTING --- */}
+      <section id="uitleg" className="w-full bg-dark-grey/[0.04] border-y border-dark-grey/10 scroll-mt-24">
+        <div className="max-w-[52rem] mx-auto px-6 md:px-8 py-20 lg:py-24">
+          <SectionLabel text={guide.label} />
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-foreground uppercase mb-8 leading-tight">{guide.title}</h2>
+          {guide.paragraphs.map((para, i) => (
+            <p key={i} className="font-paragraph text-foreground/75 text-base md:text-lg leading-relaxed mb-6">
+              {para.map((seg, j) =>
+                typeof seg === 'string' ? (
+                  <span key={j}>{seg}</span>
+                ) : (
+                  <Link key={j} to={localize(seg.to)} className="text-primary underline underline-offset-4 hover:text-primary/80">{seg.text}</Link>
+                ),
+              )}
+            </p>
+          ))}
+          <h3 className="font-heading text-xl sm:text-2xl text-foreground uppercase mt-12 mb-6 leading-tight">{guide.faqTitle}</h3>
+          <div className="divide-y divide-dark-grey/15 border-y border-dark-grey/15">
+            {guide.faq.map((f) => (
+              <details key={f.q} className="group py-5">
+                <summary className="flex items-center justify-between cursor-pointer list-none font-heading text-lg sm:text-xl text-foreground">
+                  <span className="pr-6">{f.q}</span>
+                  <span className="text-primary text-2xl leading-none transition-transform group-open:rotate-45 shrink-0">+</span>
+                </summary>
+                <p className="font-paragraph text-base text-foreground/75 leading-relaxed mt-3">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* --- CTA SECTION --- */}
       <section id="cta" className="relative w-full bg-primary py-32 overflow-hidden scroll-mt-24">
         <div className="absolute inset-0 grid-bg opacity-20 mix-blend-multiply" />
