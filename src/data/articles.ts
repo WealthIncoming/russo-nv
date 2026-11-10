@@ -74,6 +74,8 @@ export interface Article {
   /** Hero image, served from /public/images. Swap for a real job photo. */
   heroImage: string;
   heroAlt: Record<Locale, string>;
+  /** 'light' keeps the bottom dark for the title but lets the photo's colours show above it. */
+  heroOverlay?: 'light';
   keywords: Record<Locale, string[]>;
   NL: ArticleContent;
   EN: ArticleContent;
@@ -1646,6 +1648,7 @@ export const ARTICLES: Article[] = [
     date: '2026-08-22',
     author: 'Russo NV',
     heroImage: '/images/tankterminal-zonsondergang.jpg',
+    heroOverlay: 'light',
     heroAlt: {
       NL: 'Opslagtanks op een tankterminal bij zonsondergang',
       EN: 'Storage tanks at a tank terminal at sunset',
