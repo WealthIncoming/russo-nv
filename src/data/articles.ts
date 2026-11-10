@@ -1645,10 +1645,10 @@ export const ARTICLES: Article[] = [
     slug: 'gianna-russo-top-100-tank-storage-influencers',
     date: '2026-08-22',
     author: 'Russo NV',
-    heroImage: '/images/tank-finished.jpg',
+    heroImage: '/images/tankterminal-zonsondergang.jpg',
     heroAlt: {
-      NL: 'Afgewerkte opslagtank op een Belgische terminal, gecoat door Russo NV',
-      EN: 'Finished storage tank at a Belgian terminal, coated by Russo NV',
+      NL: 'Opslagtanks op een tankterminal bij zonsondergang',
+      EN: 'Storage tanks at a tank terminal at sunset',
     },
     keywords: {
       NL: ['Gianna Russo', 'Top 100 Tank Storage Influencers', 'Storage Terminals Magazine', 'tankopslag', 'Russo NV', 'tankterminal'],
