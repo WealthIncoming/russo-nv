@@ -139,6 +139,58 @@ const CONTENT = {
     ctaText: 'Send us your specification or schedule a survey. You will receive a clear quote with category, system and approach, without over- or under-protection.',
     relatedTitle: 'Related services',
   },
+  FR: {
+    kicker: 'Services',
+    breadcrumbServices: 'Services',
+    breadcrumbHere: 'Protection anticorrosion',
+    h1: 'Protection anticorrosion & préservation de l’acier',
+    heroSub: 'Systèmes de peinture complets selon ISO 12944, de C2 en intérieur à C5 en zone côtière et industrielle. Sablage, mise en peinture et inspection entre les mêmes mains, sur site dans toute la Belgique.',
+    ctaPrimary: 'Demander un devis',
+    ctaPhone: 'Appeler le +32 475 43 48 19',
+    intro: [
+      'La rouille ne s’arrête jamais d’elle-même. Toute structure en acier exposée sans protection à l’extérieur, dans un port, à côté d’une installation chimique ou simplement sous le climat belge, perd chaque année de l’acier. La protection anticorrosion est le métier qui met ce processus à l’arrêt : le bon système de peinture, sur un support correctement préparé, aux épaisseurs de film prescrites.',
+      'Russo NV protège l’acier depuis 1994 : charpentes métalliques, parcs de réservoirs, racks de tuyauteries, hangars et installations, en construction neuve comme en entretien. Nous déterminons la catégorie de corrosivité de l’environnement, conseillons le système et réalisons l’ensemble du processus avec notre propre matériel : sablage, application et inspection, documentés jusqu’au dossier de réception.',
+    ],
+    scopeTitle: 'Ce que comprend notre protection anticorrosion',
+    scope: [
+      { title: 'Systèmes de peinture complets', text: 'Primaire, couches intermédiaires et couche de finition formant un seul système testé, adapté à la catégorie de corrosivité (C2 à C5) et à la durabilité souhaitée selon ISO 12944.' },
+      { title: 'Protection des constructions neuves', text: 'Nouvelles charpentes métalliques et installations bien protégées dès la première couche : sablage jusqu’au degré de soin prescrit et composition du système conforme à la spécification.' },
+      { title: 'Peinture d’entretien & rénovation', text: 'Structures existantes présentant de la corrosion : évaluation de l’ancien revêtement, réparation locale ou rénovation complète, par phases afin que le site reste en activité.' },
+      { title: 'Charpentes métalliques & installations', text: 'Racks de tuyauteries, parcs de réservoirs (extérieur), hangars, plateformes, conduites et équipements, y compris en hauteur et sur des sites en exploitation.' },
+      { title: 'Conseil & détermination de la catégorie', text: 'Définition de la catégorie de corrosivité et de la durabilité souhaitée, traduites en un choix de système qui ne protège ni trop ni trop peu.' },
+      { title: 'Inspection & dossier', text: 'Mesures d’épaisseur de film sec (DFT), enregistrement des conditions ambiantes et essais d’adhérence si nécessaire, consignés dans un dossier de réception par projet.' },
+    ],
+    processTitle: 'Notre méthode de travail',
+    processIntro: 'Un système de peinture n’est jamais plus solide que son étape la plus faible. C’est pourquoi, chez nous, toutes les étapes restent entre les mêmes mains.',
+    process: [
+      { step: '01', title: 'Diagnostic & catégorie', text: 'Évaluer l’environnement, l’état de l’acier et les couches existantes ; définir la catégorie de corrosivité et la durabilité.' },
+      { step: '02', title: 'Choix du système', text: 'Sélectionner le système testé adapté à la catégorie et au budget, avec fiche technique et épaisseurs de film par écrit.' },
+      { step: '03', title: 'Préparation', text: 'Sablage ou préparation mécanique jusqu’au degré de soin prescrit, avec mesures avant validation.' },
+      { step: '04', title: 'Application', text: 'Couche par couche dans la fenêtre climatique, avec contrôles de l’épaisseur de film humide pendant les travaux.' },
+      { step: '05', title: 'Inspection & dossier', text: 'Mesures DFT par zone, retouches si nécessaire et un dossier qui démontre ce qui a réellement été appliqué.' },
+    ],
+    processLink: 'En savoir plus : la protection anticorrosion selon ISO 12944, le guide complet',
+    sectorsTitle: 'Pour quels secteurs',
+    whyTitle: 'Pourquoi Russo NV',
+    why: [
+      { icon: BadgeCheck, to: '/safety', title: 'Certifié', text: 'VCA et ISO 9001, systèmes et épaisseurs de film selon ISO 12944 et la spécification du fabricant du revêtement.' },
+      { icon: History, title: 'Depuis 1994', text: 'Plus de 30 ans de protection de l’acier dans le port et l’industrie d’Anvers : nous connaissons la pratique C5 de l’intérieur.' },
+      { icon: Factory, title: 'Notre propre matériel', text: 'Nos propres sableuses, compresseurs et installations de pulvérisation : préparation et application sans sous-traitant intermédiaire.' },
+      { icon: Ruler, title: 'Qualité mesurable', text: 'Degré de soin, conditions ambiantes et épaisseurs de film sont mesurés et enregistrés, du premier sablage au dossier de réception.' },
+    ],
+    faqTitle: 'Questions fréquentes',
+    faq: [
+      { q: 'Combien coûte la protection anticorrosion au m² ?', a: 'Le prix dépend de la catégorie de corrosivité, du système, de l’état du support et de l’accessibilité. Un système C3 dans un hangar ne se chiffre pas comme un système C5 en hauteur sur un site en exploitation. Comme chaque projet est différent, nous calculons sur la base d’une inspection ou de votre spécification : ainsi, le devis correspond à ce qui doit réellement être fait.' },
+      { q: 'Combien de temps dure un système de peinture ?', a: 'L’ISO 12944 définit des classes de durabilité allant jusqu’à plus de 25 ans pour les systèmes les plus robustes. En pratique, trois éléments déterminent la durée de vie atteignable : la qualité de la préparation, le choix du système par rapport à l’environnement réel et l’entretien. Un système correctement appliqué dans la bonne catégorie atteint la durabilité prévue à la conception ; une étape manquée lors de la préparation coûte des années.' },
+      { q: 'De quel système mon environnement a-t-il besoin ?', a: 'Cela découle de la catégorie de corrosivité : de C2 pour les locaux intérieurs secs à C5 pour les zones côtières et industrielles comme le port d’Anvers. Pour chaque catégorie et chaque durabilité souhaitée, l’ISO 12944 prescrit des compositions de systèmes testées. Nous déterminons la catégorie sur place et conseillons le système qui protège sans coûter trop cher.' },
+      { q: 'Peut-on appliquer un revêtement sur de la rouille existante ou une ancienne peinture ?', a: 'Pas n’importe comment. La rouille est éliminée jusqu’au degré de soin exigé par le système, et une couche de peinture existante est d’abord évaluée sur son adhérence et sa compatibilité avec le nouveau système. Une réparation locale avec recouvrement est souvent possible ; lorsque l’ancienne couche est usée ou incompatible, un sablage complet est la seule solution durable. Ce jugement, nous le portons avant les travaux, pas après.' },
+      { q: 'Quelle est la différence entre protection anticorrosion et peinture ?', a: 'La peinture apporte de la couleur ; la protection anticorrosion protège la structure. En protection anticorrosion, la catégorie de corrosivité et la norme déterminent le système, la préparation et les épaisseurs de film, et chaque étape est mesurée et consignée. Le résultat ressemble à des travaux de peinture, mais en dessous se trouve un système documenté conçu pour durer des décennies.' },
+      { q: 'Pouvez-vous aussi intervenir uniquement pour du conseil ou de l’inspection ?', a: 'Oui. Nous réalisons des diagnostics et des déterminations de catégorie, évaluons des systèmes de peinture existants et mesurons les épaisseurs de film sur des travaux existants. Nous le faisons aussi en contre-expertise sur le travail d’autres entreprises ou comme état de référence avant un programme d’entretien.' },
+    ],
+    ctaTitle: 'De l’acier à protéger ?',
+    ctaText: 'Transmettez-nous votre spécification ou planifiez un diagnostic sur site. Vous recevrez un devis clair avec la catégorie, le système et l’approche, sans surprotection ni sous-protection.',
+    relatedTitle: 'Services associés',
+  },
 } as const;
 
 export default function CorrosionProtectionPage() {
@@ -151,7 +203,7 @@ export default function CorrosionProtectionPage() {
     '@type': 'Service',
     '@id': `${pageUrl}#service`,
     name: c.h1,
-    serviceType: locale === 'NL' ? 'Corrosiebescherming en conservering van staal' : 'Corrosion protection and steel preservation',
+    serviceType: ({ NL: 'Corrosiebescherming en conservering van staal', EN: 'Corrosion protection and steel preservation', FR: 'Protection anticorrosion et préservation de l’acier' } as const)[locale],
     description: c.heroSub,
     url: pageUrl,
     image: `${SITE_URL}${HERO_IMAGE}`,
@@ -173,9 +225,7 @@ export default function CorrosionProtectionPage() {
     })),
   };
 
-  const heroAlt = locale === 'NL'
-    ? 'Tankwand met afbladderende coating en corrosie, beoordeeld door Russo NV'
-    : 'Tank shell with flaking coating and corrosion, assessed by Russo NV';
+  const heroAlt = ({ NL: 'Tankwand met afbladderende coating en corrosie, beoordeeld door Russo NV', EN: 'Tank shell with flaking coating and corrosion, assessed by Russo NV', FR: 'Robe de réservoir présentant un revêtement écaillé et de la corrosion, évaluée par Russo NV' } as const)[locale];
 
   return (
     <div className="min-h-screen bg-background">
@@ -191,7 +241,7 @@ export default function CorrosionProtectionPage() {
         <div className="relative z-10 w-full max-w-[100rem] mx-auto px-8 py-16 lg:py-20">
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex flex-wrap items-center gap-2 font-paragraph text-xs sm:text-sm text-white/70">
-              <li><Link to={localize('/')} className="hover:text-primary transition-colors">Home</Link></li>
+              <li><Link to={localize('/')} className="hover:text-primary transition-colors">{({ NL: 'Home', EN: 'Home', FR: 'Accueil' } as const)[locale]}</Link></li>
               <li className="text-white/40">/</li>
               <li><Link to={localize('/services')} className="hover:text-primary transition-colors">{c.breadcrumbServices}</Link></li>
               <li className="text-white/40">/</li>

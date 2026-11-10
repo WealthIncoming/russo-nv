@@ -16,7 +16,7 @@ export type LocaleMeta = {
 export type PageMeta = {
   NL: LocaleMeta;
   EN: LocaleMeta;
-  FR: LocaleMeta;
+  FR?: LocaleMeta;
   noindex?: boolean;
 };
 
@@ -193,6 +193,13 @@ export const PAGE_META: Record<string, PageMeta> = {
     noindex: true,
   },
 };
+
+// French titles and descriptions: images come from the NL entry.
+import { FR_META } from './page-meta-fr';
+for (const [path, fr] of Object.entries(FR_META)) {
+  const m = PAGE_META[path];
+  if (m) m.FR = { ...m.NL, ...fr };
+}
 
 // Case-study pages: meta lives in the case-study data itself; register each
 // entry under its /projects/<slug> base path so astro + RouteSync find it.

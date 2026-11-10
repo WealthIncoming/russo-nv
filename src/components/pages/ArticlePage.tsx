@@ -213,7 +213,7 @@ export default function ArticlePage() {
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex flex-wrap items-center gap-2 font-paragraph text-xs sm:text-sm text-white/70">
-              <li><Link to={localize('/')} className="hover:text-primary transition-colors">Home</Link></li>
+              <li><Link to={localize('/')} className="hover:text-primary transition-colors">{({ NL: 'Home', EN: 'Home', FR: 'Accueil' } as const)[locale]}</Link></li>
               <li className="text-white/40">/</li>
               <li><Link to={localize('/insights')} className="hover:text-primary transition-colors">{t('insights', 'kicker')}</Link></li>
             </ol>

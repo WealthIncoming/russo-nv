@@ -51,7 +51,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     completion: '2026-08-01',
     heroImage: '/images/albeton-full.jpg',
     secondaryImage: '/images/albeton1.jpg',
-    breadcrumb: { NL: 'Silorenovatie Albeton', EN: 'Albeton silo renovation' },
+    breadcrumb: { NL: 'Silorenovatie Albeton', EN: 'Albeton silo renovation', FR: 'Rénovation de silos Albeton' },
     meta: {
       NL: {
         title: 'Silorenovatie Albeton, Diemen | Case study | Russo NV',
@@ -61,6 +61,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       EN: {
         title: 'Albeton Silo Renovation, Diemen | Case Study | Russo NV',
         description: 'Complete renovation and repainting of the cement silos and steel infrastructure at Albeton in Diemen, in 2.5 weeks and without a production stop. This is how we did it.',
+        image: '/images/albeton-full.jpg',
+      },
+      FR: {
+        title: 'Rénovation de silos Albeton, Diemen | Étude de cas | Russo NV',
+        description: 'Rénovation et remise en peinture des silos à ciment et de l’infrastructure en acier d’Albeton à Diemen, en 2,5 semaines, sans arrêt de production. Notre approche.',
         image: '/images/albeton-full.jpg',
       },
     },
@@ -180,6 +185,67 @@ export const CASE_STUDIES: CaseStudy[] = [
       ctaButton: 'Request a quote',
       backToProjects: 'All projects',
     },
+    FR: {
+      kicker: 'Étude de cas',
+      h1: 'Rénovation de silos chez Albeton, Diemen',
+      heroSub: 'Rénovation complète et remise en peinture des silos à ciment et de l’infrastructure en acier environnante d’une centrale à béton en activité. Livrée en 2,5 semaines, sans un seul jour d’arrêt de production.',
+      heroAlt: 'Silos à ciment d’Albeton à Diemen, rénovés et remis en peinture',
+      secondaryAlt: 'Détail des silos rénovés et de la structure en acier chez Albeton',
+      facts: [
+        { label: 'Client', value: 'Albeton' },
+        { label: 'Lieu', value: 'Diemen (Amsterdam), Pays-Bas' },
+        {
+          label: 'Périmètre',
+          value: 'Silos, structures porteuses, tuyauteries et installation de convoyage',
+        },
+        { label: 'Durée', value: '2,5 semaines' },
+        { label: 'Production', value: 'La centrale est restée entièrement en activité' },
+        { label: 'Système de peinture', value: 'SigmaCover 350 + SigmaDur 550H (PPG)' },
+        { label: 'Teintes', value: 'RAL 5009, RAL 7022, RAL 1003' },
+        { label: 'Réception', value: 'Août 2026' },
+      ],
+      sections: [
+        {
+          title: 'La mission',
+          paragraphs: [
+            'Albeton, une centrale à béton à Diemen, près d’Amsterdam, souhaitait faire entièrement rénover et remettre en peinture ses silos à ciment et l’infrastructure en acier environnante. Après des années de service, l’installation était dans l’état que l’on attend d’un acier exposé aux intempéries : des points de corrosion sur les parois des silos, des couches de peinture altérées sur les structures porteuses et une installation de convoyage qui avait perdu de son éclat.',
+            'Le périmètre comprenait le traitement de tous les points de corrosion, le ponçage et le nettoyage complets des surfaces, des retouches locales et une nouvelle couche de finition complète sur les silos, les structures porteuses, les tuyauteries et l’installation de convoyage.',
+          ],
+        },
+        {
+          title: 'Le défi : peindre au-dessus d’une centrale en activité',
+          paragraphs: [
+            'Une condition était fixée : la centrale ne pouvait pas fermer. Les camions malaxeurs continuaient à charger toute la journée sous les silos sur lesquels nous travaillions, et les bandes transporteuses restaient en service. De plus, tous les travaux se faisaient en hauteur.',
+            'Cela impliquait un phasage serré par zone, des mesures de sécurité strictes et une coordination quotidienne avec le planning de production : chaque matin, on fixait quelles zones étaient libérées, où les malaxeurs pouvaient charger et où nous pouvions travailler sans que personne ne se trouve sous nous.',
+          ],
+        },
+        {
+          title: 'L’approche',
+          paragraphs: [
+            'Nous avons traité l’installation zone par zone, toujours dans le même ordre. D’abord un nettoyage approfondi de toute la surface à haute pression, un dérouillage manuel des zones rouillées jusqu’à St2/St3 et un ponçage complet du revêtement existant, pour que les nouvelles couches puissent s’accrocher. Ensuite un dépoussiérage, et alors seulement la peinture.',
+            'Le système appliqué était un système PPG Sigma en trois couches : les zones nues et rouillées ont d’abord reçu un primaire local SigmaCover 350 Alu, puis une couche intermédiaire complète de SigmaCover 350 et enfin la couche de finition polyuréthane SigmaDur 550H, chaque zone dans sa propre teinte : bleu (RAL 5009) sur les silos, gris (RAL 7022) sur les supports et jaune (RAL 1003) pour les accents. Ainsi, chaque zone recevait son système complet avant que nous passions à la suivante, et le nombre de zones de travail occupées restait limité à tout moment.',
+            'Grâce à ce phasage, la production a pu continuer pendant que l’installation se renouvelait à vue d’œil : pas de grandes zones mises à l’arrêt, mais chaque semaine une partie de l’installation terminée.',
+          ],
+        },
+        {
+          title: 'Le résultat',
+          paragraphs: [
+            'La rénovation complète a été livrée en deux semaines et demie, sans arrêt de production. Les silos, les structures porteuses, les tuyauteries et l’installation de convoyage ont reçu leur nouvelle couche de finition complète, et Albeton dispose à nouveau d’une installation capable de résister pendant des années au climat néerlandais.',
+            'Parallèlement au chantier de Diemen, notre équipe a également réalisé des travaux de sablage et de peinture sur le site d’Albeton à Amsterdam, avec un sablage jusqu’à Sa 2,5 et le même système de peinture. Pour nous, ce double projet a prouvé que notre méthode de travail passe la frontière : le même phasage et la même approche de la sécurité que nous appliquons chaque jour dans le port d’Anvers fonctionnent tout aussi bien sur des sites en activité aux Pays-Bas.',
+          ],
+        },
+      ],
+      related: [
+        { to: '/services/corrosiebescherming', label: 'Protection anticorrosion & préservation de l’acier' },
+        { to: '/', label: 'Peinture industrielle' },
+        { to: '/services/industrieel-stralen', label: 'Sablage industriel' },
+      ],
+      relatedTitle: 'Services dans ce projet',
+      ctaTitle: 'Un projet similaire ?',
+      ctaText: 'Des silos, des réservoirs ou des structures en acier à rénover alors que votre site doit continuer à tourner ? Décrivez-nous la situation et vous recevrez une approche claire, avec phasage et devis.',
+      ctaButton: 'Demander un devis',
+      backToProjects: 'Tous les projets',
+    },
   },
   {
     slug: 'tankcoating-gts-gent',
@@ -187,7 +253,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     completion: '2026-04-01',
     heroImage: '/images/gts1.jpg',
     secondaryImage: '/images/gts3.jpg',
-    breadcrumb: { NL: 'Tankcoating GTS Gent', EN: 'GTS Ghent tank coating' },
+    breadcrumb: { NL: 'Tankcoating GTS Gent', EN: 'GTS Ghent tank coating', FR: 'Revêtement de réservoirs GTS Gand' },
     meta: {
       NL: {
         title: 'Tankcoating in Gent: 16 nieuwbouwtanks bij GTS | Russo NV',
@@ -197,6 +263,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       EN: {
         title: 'Tank Coating in Ghent: 16 New-Build Tanks at GTS | Russo NV',
         description: 'Complete surface preparation and coating of 16 newly built storage tanks at Ghent Tank Storage in the Port of Ghent, inside and out, including internal linings.',
+        image: '/images/gts1.jpg',
+      },
+      FR: {
+        title: 'Revêtement de 16 réservoirs neufs chez GTS à Gand | Russo NV',
+        description: 'Préparation de surface et revêtement de 16 nouveaux réservoirs de stockage chez Ghent Tank Storage, port de Gand, intérieur et extérieur, linings intérieurs inclus.',
         image: '/images/gts1.jpg',
       },
     },
@@ -313,6 +384,63 @@ export const CASE_STUDIES: CaseStudy[] = [
       ctaText: 'From new-build tanks to renovation of existing tank farms: send us your specification and you will receive a clear approach with system choice, planning and quote.',
       ctaButton: 'Request a quote',
       backToProjects: 'All projects',
+    },
+    FR: {
+      kicker: 'Étude de cas',
+      h1: 'Revêtement de 16 réservoirs neufs chez GTS, port de Gand',
+      heroSub: 'Préparation de surface complète et revêtement de protection de 16 réservoirs de stockage nouvellement construits, intérieur et extérieur, avec des revêtements intérieurs spécialisés pour produits chimiques et pétroliers. Livré sur un chantier de construction en activité, dans les délais de mise en service.',
+      heroAlt: 'Nouveaux réservoirs de stockage chez Ghent Tank Storage dans le port de Gand, revêtus par Russo NV',
+      secondaryAlt: 'Travaux de revêtement sur un réservoir de stockage chez GTS à Gand',
+      facts: [
+        { label: 'Client', value: 'Ghent Tank Storage (GTS)' },
+        { label: 'Lieu', value: 'Port de Gand, Belgique' },
+        { label: 'Périmètre', value: '16 réservoirs neufs, intérieur et extérieur' },
+        { label: 'Spécialité', value: 'Revêtements intérieurs pour la chimie et le pétrole' },
+        { label: 'Préparation', value: 'Sablage complet, intérieur et extérieur' },
+        { label: 'Site', value: 'Chantier de construction en activité' },
+        { label: 'Échéance', value: 'Planning de mise en service respecté' },
+        { label: 'Réception', value: 'Avril 2026' },
+      ],
+      sections: [
+        {
+          title: 'La mission',
+          paragraphs: [
+            'Ghent Tank Storage construisait une série de nouveaux réservoirs de stockage dans le port de Gand et cherchait un partenaire capable de prendre en charge à lui seul l’ensemble des travaux de revêtement : seize réservoirs nouvellement construits, de l’acier nu au système de protection, tant à l’extérieur qu’à l’intérieur.',
+            'Une partie des réservoirs était destinée à des produits chimiques et pétroliers et exigeait donc des systèmes de revêtement intérieur spécialisés : des revêtements qui offrent, en plus de la protection anticorrosion, une résistance chimique adaptée au produit stocké.',
+          ],
+        },
+        {
+          title: 'Le défi : appliquer les revêtements sur un chantier neuf en activité',
+          paragraphs: [
+            'Sur un chantier de construction neuve, on n’est jamais seul. Pendant que nous sablions et appliquions les revêtements, les travaux de construction se poursuivaient et les dates de mise en service du terminal étaient fixées. Cela exigeait une coordination étroite avec les autres entrepreneurs, des séquences de travail par réservoir et un planning qui ne laissait aucune marge pour qu’un réservoir prenne du retard.',
+            'Le travail à l’intérieur des réservoirs signifie en outre travailler en espace confiné : accès contrôlé, ventilation, maîtrise du climat et mesures avant chaque étape.',
+          ],
+        },
+        {
+          title: 'L’approche',
+          paragraphs: [
+            'Chaque réservoir a suivi la même chaîne. D’abord un sablage complet, à l’intérieur et à l’extérieur, jusqu’au degré de soin exigé par le système de revêtement, avec contrôle de la propreté et du profil de rugosité avant libération. Ensuite, la constitution du système couche par couche, avec des mesures climatiques avant chaque activité de mise en peinture et des mesures d’épaisseur après chaque couche.',
+            'Pour les réservoirs avec revêtement intérieur, le système a été adapté au futur produit, appliqué dans des conditions contrôlées et entièrement documenté. Le terminal a ainsi reçu pour chaque réservoir un dossier qui démontre ce qui se trouve sur l’acier, du rapport de sablage aux épaisseurs finales.',
+          ],
+        },
+        {
+          title: 'Le résultat',
+          paragraphs: [
+            'Seize réservoirs, protégés à l’intérieur et à l’extérieur et prêts pour des décennies de service dans le climat portuaire de Gand, livrés dans le respect du planning de mise en service du terminal. Réunir le sablage, le revêtement et le lining chez un seul intervenant a permis de tenir un planning serré et de garder une responsabilité sans ambiguïté.',
+            'GTS est resté un client fidèle après ce programme : Russo NV travaille également sur le terminal pour des projets ultérieurs dans le port de Gand.',
+          ],
+        },
+      ],
+      related: [
+        { to: '/services/tankcoating', label: 'Revêtement de réservoirs & tank lining' },
+        { to: '/services/industrieel-stralen', label: 'Sablage industriel' },
+        { to: '/services/corrosiebescherming', label: 'Protection anticorrosion' },
+      ],
+      relatedTitle: 'Services dans ce projet',
+      ctaTitle: 'Des réservoirs à revêtir à Gand ou ailleurs ?',
+      ctaText: 'Des réservoirs neufs à la rénovation de parcs de réservoirs existants : transmettez-nous votre spécification et vous recevrez une approche claire, avec choix du système, planning et devis.',
+      ctaButton: 'Demander un devis',
+      backToProjects: 'Tous les projets',
     },
   },
 ];

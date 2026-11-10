@@ -1,4 +1,6 @@
-export type Language = 'EN' | 'NL';
+import { FR } from './translations-fr';
+
+export type Language = 'EN' | 'NL' | 'FR';
 
 export interface Translations {
   [key: string]: {
@@ -1766,4 +1768,5 @@ export const translations: Record<Language, Translations> = {
       terms12Body: 'Voor vragen over deze Voorwaarden, kunt u contact met ons opnemen via info@russonv.be of per post aan Russo NV, Taxandriastraat 33-35, 2170 Antwerpen, België.',
     },
   },
+  FR,
 };

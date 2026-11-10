@@ -244,11 +244,26 @@ const HOME_GUIDE = {
       { q: 'Does Russo NV only work in Belgium?', a: 'No. From our base in Merksem we work across Belgium, from the ports of Antwerp, Ghent and Zeebrugge to industrial sites elsewhere in the country, and in the Netherlands, including the Amsterdam region. We also work further abroad, wherever the project needs us: right now we are carrying out a tank project in Malta.' },
     ],
   },
+  FR: {
+    label: 'Explication',
+    title: 'Qu’est-ce que la peinture industrielle ?',
+    paragraphs: [
+      ['La peinture industrielle consiste à appliquer des systèmes de peinture et de revêtement protecteurs sur l’acier et le béton en milieu industriel : réservoirs de stockage, charpentes métalliques, tuyauteries, grues portuaires, silos et installations. Contrairement à la peinture classique, ce n’est pas la couleur qui prime, mais la protection contre la corrosion, les produits chimiques, le feu et l’usure.'],
+      ['Le travail suit une chaîne fixe : nettoyer le support et ', { text: 'le sabler jusqu’au degré de soin requis', to: '/insights/steel-surface-preparation' }, ', mesurer le climat et les sels, appliquer le système de peinture couche par couche, puis contrôler l’épaisseur et la qualité. Le choix du système dépend de l’environnement et des sollicitations, souvent selon la norme ', { text: 'ISO 12944', to: '/insights/corrosion-protection-iso-12944' }, '. Comme ce travail se fait généralement en hauteur ou en espace confiné, sur un site portuaire ou chimique, les donneurs d’ordre demandent en règle générale aussi un certificat VCA.'],
+    ],
+    faqTitle: 'Questions fréquentes',
+    faq: [
+      { q: 'Quelle différence avec la peinture classique ?', a: 'La peinture classique concerne surtout la finition et l’aspect. La peinture industrielle est un système technique : un degré de soin prescrit pour l’acier, des épaisseurs mesurées, un enregistrement des conditions climatiques et un dossier qui prouve ce qui a été appliqué sur l’acier.' },
+      { q: 'Que couvre la peinture industrielle ?', a: 'Les réservoirs de stockage à l’intérieur comme à l’extérieur, les charpentes métalliques, les canalisations et ponts de tuyauteries, les grues portuaires, les silos, les hangars et entrepôts, ainsi que les installations de la chimie, de l’énergie et de l’industrie alimentaire.' },
+      { q: 'Combien de temps dure un système de peinture industriel ?', a: 'Cela dépend de l’environnement et du système. La norme ISO 12944 définit des classes de durabilité allant de faible (jusqu’à 7 ans) à très haute (plus de 25 ans). Il s’agit d’une durabilité prévue à la conception, pas d’une garantie : la préparation et l’entretien déterminent aussi combien de temps un système tient.' },
+      { q: 'Russo NV travaille-t-elle uniquement en Belgique ?', a: 'Non. Depuis notre base de Merksem, nous travaillons dans toute la Belgique, des ports d’Anvers, de Gand et de Zeebruges aux sites industriels du reste du pays, ainsi qu’aux Pays-Bas, notamment dans la région d’Amsterdam. Nous intervenons aussi plus loin à l’étranger, là où le projet le demande : nous réalisons en ce moment un projet de réservoirs à Malte.' },
+    ],
+  },
 } as const;
 
 export default function HomePage() {
   const { localize, locale } = useLocale();
-  const guide = HOME_GUIDE[locale === 'EN' ? 'EN' : 'NL'];
+  const guide = HOME_GUIDE[locale];
   const guideFaqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

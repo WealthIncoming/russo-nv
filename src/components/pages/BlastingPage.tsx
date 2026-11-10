@@ -139,6 +139,58 @@ const CONTENT = {
     ctaText: 'Send us your specification or schedule an inspection. You will receive a clear quote for the blasting work, with cleanliness grade, approach and timing.',
     relatedTitle: 'Related services',
   },
+  FR: {
+    kicker: 'Services',
+    breadcrumbServices: 'Services',
+    breadcrumbHere: 'Sablage industriel',
+    h1: 'Sablage industriel & préparation de surface',
+    heroSub: 'Sablage à l’abrasif jusqu’à Sa 2½ ou Sa 3, sur site dans toute la Belgique. Également du sablage sous vide sans dispersion d’abrasif et du sablage en espace confiné. Certifié VCA et ISO.',
+    ctaPrimary: 'Demander un devis',
+    ctaPhone: 'Appeler le +32 475 43 48 19',
+    intro: [
+      'Tout revêtement industriel durable commence par le sablage. Le degré de soin et le profil de rugosité déterminent l’adhérence du système, et donc sa durée de vie. Russo NV réalise le sablage industriel avec son propre parc de sableuses, de compresseurs et de refroidisseurs d’air : de la robe complète d’un réservoir jusqu’à la réparation locale par sablage sous vide.',
+      'Nous sablons principalement sur site : dans les terminaux de stockage, les raffineries, sur les chantiers et les sites industriels de toute la Belgique et du Benelux. Le degré de soin, le profil de rugosité et les conditions ambiantes sont mesurés et consignés, de sorte que le revêtement appliqué ensuite repose de manière démontrable sur un support conforme.',
+    ],
+    scopeTitle: 'Ce que comprennent nos travaux de sablage',
+    scope: [
+      { title: 'Sablage à l’abrasif jusqu’à Sa 2½ / Sa 3', text: 'Sablage jusqu’au degré de soin prescrit selon ISO 8501-1, avec le profil de rugosité exigé par le système de peinture.' },
+      { title: 'Sablage sous vide (réparation localisée)', text: 'Sablage local sans dispersion d’abrasif : idéal pour les réparations dans des installations en service et aux endroits où le sablage à l’air libre est impossible.' },
+      { title: 'Espaces confinés & réservoirs', text: 'Sablage à l’intérieur des réservoirs et des cuves, avec air respirable, climat contrôlé et aspiration continue des poussières et de l’abrasif.' },
+      { title: 'Profil de rugosité sur mesure', text: 'Abrasif et pression adaptés à la fiche technique : le bon profil (Rz) pour l’épaisseur de film sec prescrite.' },
+      { title: 'Mesures & validation', text: 'Degré de soin, test de poussière (ISO 8502-3), sels solubles (Bresle) et conditions ambiantes, mesurés et documentés avant la mise en peinture.' },
+      { title: 'Sablage et peinture entre les mêmes mains', text: 'Mise en peinture immédiatement après, dans la fenêtre climatique, avant l’apparition de rouille éclair. Aucune discussion entre le sableur et le peintre.' },
+    ],
+    processTitle: 'Notre méthode de travail',
+    processIntro: 'Le sablage est un travail sur mesure : l’environnement, le support et le système de peinture déterminent l’approche.',
+    process: [
+      { step: '01', title: 'Visite & plan', text: 'Évaluer le support, l’accessibilité et l’environnement ; définir le confinement et l’aspiration.' },
+      { step: '02', title: 'Confinement', text: 'La zone de travail est confinée et les installations voisines sont protégées.' },
+      { step: '03', title: 'Sablage', text: 'Jusqu’au degré de soin prescrit et au bon profil, avec nos propres sableuses et compresseurs.' },
+      { step: '04', title: 'Mesures', text: 'Degré de soin, profil, poussière, sels et conditions ambiantes sont contrôlés et consignés.' },
+      { step: '05', title: 'Validation & mise en peinture', text: 'Validation du support, puis mise en peinture immédiate dans la fenêtre climatique.' },
+    ],
+    processLink: 'En savoir plus : comment préparer l’acier avant la mise en peinture',
+    sectorsTitle: 'Pour quels secteurs',
+    whyTitle: 'Pourquoi Russo NV',
+    why: [
+      { icon: BadgeCheck, to: '/safety', title: 'Certifié', text: 'VCA et ISO 9001, sablage selon ISO 8501/8502/8503 et la spécification du fabricant du revêtement.' },
+      { icon: Factory, title: 'Notre propre matériel', text: 'Notre propre parc de sableuses, compresseurs, refroidisseurs d’air et filtres à air respirable : aucune attente de sous-traitants ou de matériel de location.' },
+      { icon: Wind, title: 'Aussi à faible empoussièrement', text: 'Sablage sous vide pour les réparations localisées et les environnements sensibles : aucune dispersion d’abrasif, impact minimal sur l’exploitation.' },
+      { icon: Ruler, title: 'Qualité mesurable', text: 'Degré de soin, profil, poussière et sels sont mesurés et consignés dans un rapport avant toute mise en peinture.' },
+    ],
+    faqTitle: 'Questions fréquentes',
+    faq: [
+      { q: 'Quelle est la différence entre le sablage au sable et le sablage à l’abrasif ?', a: 'Dans le langage courant, tout s’appelle « sablage », mais le sablage avec du vrai sable est interdit en Belgique depuis des décennies (silicose). Le sablage industriel se fait avec un abrasif : des grains angulaires comme la grenaille d’acier ou les scories de fusion, qui nettoient l’acier et créent le profil de rugosité dans lequel le revêtement s’ancre. Pour les façades et les meubles, il existe des techniques plus douces ; notre métier, c’est le sablage industriel de l’acier.' },
+      { q: 'Quel degré de soin me faut-il ?', a: 'C’est le système de peinture qui le prescrit. Pour la plupart des systèmes de protection industriels, il s’agit de Sa 2½ selon ISO 8501-1 ; pour un service en immersion comme le revêtement intérieur de réservoirs (tank lining), souvent de Sa 2½ à Sa 3. La fiche technique du revêtement fait toujours foi ; nous sablons et mesurons jusqu’à ce que ce degré soit atteint de manière démontrable.' },
+      { q: 'Pouvez-vous sabler sans nuisances de poussière ?', a: 'Oui. Avec le sablage sous vide, l’abrasif est directement réaspiré au niveau de la tête : aucune dispersion d’abrasif et pratiquement pas de poussière. Cela permet des réparations locales dans des installations en service, à côté d’équipements sensibles et aux endroits où le sablage à l’air libre est interdit.' },
+      { q: 'Combien coûte le sablage industriel au m² ?', a: 'Le prix dépend du degré de soin, de l’état du support, de l’accessibilité et de la nécessité d’un confinement ou d’une aspiration. Le sablage à l’abrasif de grandes surfaces à l’air libre ne se chiffre pas comme le sablage sous vide de zones de réparation. Comme chaque projet est différent, nous établissons un devis sur mesure après une inspection ou sur la base de votre spécification.' },
+      { q: 'Sablez-vous aussi dans des réservoirs et des espaces confinés ?', a: 'Oui, c’est une spécialité. Nos équipes travaillent avec des systèmes d’air respirable, des mesures de gaz, un climat contrôlé et une aspiration continue. Voir aussi notre approche du revêtement de réservoirs et du revêtement intérieur (tank lining), où le sablage à l’intérieur du réservoir est la première étape.' },
+      { q: 'Combien de temps après le sablage faut-il appliquer le revêtement ?', a: 'Le plus vite possible : en présence d’humidité, l’acier fraîchement sablé commence à former de la rouille éclair en quelques heures. Nous planifions le sablage et la mise en peinture comme un tout, afin que la première couche soit appliquée dans la fenêtre climatique sur un support encore parfait. C’est le grand avantage du sablage et de la peinture entre les mêmes mains.' },
+    ],
+    ctaTitle: 'Besoin de travaux de sablage ?',
+    ctaText: 'Transmettez-nous votre spécification ou planifiez une inspection. Vous recevrez un devis clair pour les travaux de sablage, avec le degré de soin, l’approche et le planning.',
+    relatedTitle: 'Services associés',
+  },
 } as const;
 
 export default function BlastingPage() {
@@ -151,7 +203,7 @@ export default function BlastingPage() {
     '@type': 'Service',
     '@id': `${pageUrl}#service`,
     name: c.h1,
-    serviceType: locale === 'NL' ? 'Industrieel stralen en oppervlaktevoorbereiding' : 'Industrial blasting and surface preparation',
+    serviceType: ({ NL: 'Industrieel stralen en oppervlaktevoorbereiding', EN: 'Industrial blasting and surface preparation', FR: 'Sablage industriel et préparation de surface' } as const)[locale],
     description: c.heroSub,
     url: pageUrl,
     image: `${SITE_URL}${HERO_IMAGE}`,
@@ -173,9 +225,7 @@ export default function BlastingPage() {
     })),
   };
 
-  const heroAlt = locale === 'NL'
-    ? 'Industrieel gritstralen van staal door Russo NV'
-    : 'Industrial grit blasting of steel by Russo NV';
+  const heroAlt = ({ NL: 'Industrieel gritstralen van staal door Russo NV', EN: 'Industrial grit blasting of steel by Russo NV', FR: 'Sablage industriel à l’abrasif sur acier par Russo NV' } as const)[locale];
 
   return (
     <div className="min-h-screen bg-background">
@@ -191,7 +241,7 @@ export default function BlastingPage() {
         <div className="relative z-10 w-full max-w-[100rem] mx-auto px-8 py-16 lg:py-20">
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex flex-wrap items-center gap-2 font-paragraph text-xs sm:text-sm text-white/70">
-              <li><Link to={localize('/')} className="hover:text-primary transition-colors">Home</Link></li>
+              <li><Link to={localize('/')} className="hover:text-primary transition-colors">{({ NL: 'Home', EN: 'Home', FR: 'Accueil' } as const)[locale]}</Link></li>
               <li className="text-white/40">/</li>
               <li><Link to={localize('/services')} className="hover:text-primary transition-colors">{c.breadcrumbServices}</Link></li>
               <li className="text-white/40">/</li>

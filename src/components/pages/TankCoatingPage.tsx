@@ -138,6 +138,58 @@ const CONTENT = {
     ctaText: 'Send us your specification or schedule an inspection. You will receive a clear quote for tank coating or tank lining, with approach and timing.',
     relatedTitle: 'Related services',
   },
+  FR: {
+    kicker: 'Services',
+    breadcrumbServices: 'Services',
+    breadcrumbHere: 'Revêtement de réservoirs & tank lining',
+    h1: 'Revêtement de réservoirs & tank lining',
+    heroSub: 'Revêtements intérieurs (linings) et extérieurs pour réservoirs de stockage. Du sablage au contrôle de porosité, réalisés sur des terminaux à Anvers, Gand et Zeebruges. Certification VCA et ISO.',
+    ctaPrimary: 'Demander un devis',
+    ctaPhone: 'Appeler le +32 475 43 48 19',
+    intro: [
+      'La protection des réservoirs est le cœur de métier de Russo NV. Ces dernières années, nous avons revêtu des dizaines de réservoirs de stockage sur des terminaux belges : 15 réservoirs chez Sea Tank Terminal dans le port d’Anvers, 16 réservoirs neufs chez Ghent Transport & Storage et 8 réservoirs chez ITC Rubis à Zeebruges. À l’intérieur comme à l’extérieur, pour des carburants, des produits chimiques et des produits pétroliers.',
+      'Un revêtement intérieur de réservoir est en contact permanent avec le produit stocké et ne pardonne aucune erreur. C’est pourquoi nous réalisons l’ensemble du processus en interne, du dégazage et du sablage jusqu’au dernier contrôle de porosité, avec un dossier de mesures complet à la réception. Même lorsque votre terminal poursuit son exploitation.',
+    ],
+    scopeTitle: 'Ce que couvrent nos travaux de revêtement de réservoirs',
+    scope: [
+      { title: 'Revêtements intérieurs de réservoirs', text: 'Systèmes résistants aux produits chimiques (époxy phénolique, époxy novolaque, renforcés aux paillettes de verre) pour le service en immersion, adaptés au produit stocké.' },
+      { title: 'Revêtement extérieur de réservoirs', text: 'Systèmes multicouches contre la corrosion, les UV et l’air marin (jusqu’à la catégorie C5, anciennement C5-M), pour les robes et les toits de réservoirs et les structures en acier.' },
+      { title: 'Toits de réservoirs & antidérapant', text: 'Revêtements de toit contre les intempéries et systèmes antidérapants pour les passerelles et les zones d’accès sur le réservoir.' },
+      { title: 'Réparation ponctuelle & rénovation', text: 'Réparation locale de revêtements intérieurs endommagés, notamment par sablage sous vide : pas de dispersion d’abrasif, impact minimal sur le terminal.' },
+      { title: 'Sablage en espace confiné', text: 'Sablage jusqu’à Sa 2½ ou Sa 3 à l’intérieur du réservoir, avec mesures des sels et des poussières (ISO 8502) et climat contrôlé.' },
+      { title: 'Inspection & dossier de mesures', text: 'Mesures d’épaisseur (ISO 19840), détection de porosités (holiday detection) et rapports : une qualité démontrable pour le propriétaire et l’inspecteur.' },
+    ],
+    processTitle: 'Notre méthode',
+    processIntro: 'Chaque réservoir suit le même processus contrôlé, car en service d’immersion, un seul point faible est un point faible de trop.',
+    process: [
+      { step: '01', title: 'Dégazage & inspection', text: 'Mesures, permis de travail et évaluation du fond, de la robe et des soudures avant le début des travaux.' },
+      { step: '02', title: 'Sablage', text: 'Sablage jusqu’au degré de soin prescrit, avec contrôle des sels et des poussières avant la mise en peinture.' },
+      { step: '03', title: 'Maîtrise du climat', text: 'La déshumidification et la ventilation maintiennent l’acier au-dessus du point de rosée, du sablage jusqu’à la dernière couche.' },
+      { step: '04', title: 'Application', text: 'Couches de renfort (stripe coats) sur les soudures et les angles, puis application par pulvérisation jusqu’à l’épaisseur prescrite.' },
+      { step: '05', title: 'Contrôle de porosité & réception', text: 'Détection de porosités, contrôle d’épaisseur et dossier de mesures complet à la remise.' },
+    ],
+    processLink: 'En savoir plus : revêtement de réservoirs et tank lining, le guide complet',
+    sectorsTitle: 'Pour quels secteurs',
+    whyTitle: 'Pourquoi Russo NV',
+    why: [
+      { icon: BadgeCheck, to: '/safety', title: 'Certifications', text: 'VCA et ISO 9001, travail conforme aux normes ISO 8501/8502, ISO 19840 et aux normes d’inspection AMPP.' },
+      { icon: ClipboardCheck, title: 'Références sur terminaux', text: '39 réservoirs revêtus pour Sea Tank Terminal, Ghent Transport & Storage et ITC Rubis, à l’intérieur et à l’extérieur.' },
+      { icon: Ruler, title: 'Qualité mesurable', text: 'Degré de soin, sels, épaisseur et contrôle de porosité : tout est mesuré et consigné dans un rapport.' },
+      { icon: Clock, title: 'Immobilisation minimale', text: 'Exécution par phases sur des terminaux en exploitation, en fonction de votre planning et de la manutention de vos produits.' },
+    ],
+    faqTitle: 'Questions fréquentes',
+    faq: [
+      { q: 'Combien coûte le revêtement d’un réservoir ?', a: 'Le prix dépend de la surface du réservoir, de l’état du revêtement existant, du système de revêtement intérieur requis et de l’accessibilité. Comme chaque réservoir est différent, nous établissons un devis sur mesure après une inspection ou sur la base de votre spécification.' },
+      { q: 'Combien de temps un réservoir est-il hors service ?', a: 'Pour une réfection complète du revêtement intérieur, comptez quelques semaines : dégazage, sablage, application en plusieurs couches et polymérisation. Nous planifions par phases, pour que le reste du terminal continue de fonctionner normalement.' },
+      { q: 'Quels systèmes de revêtement intérieur utilisez-vous ?', a: 'Selon le produit stocké : systèmes époxy, époxy phénolique, époxy novolaque ou renforcés aux paillettes de verre. La liste de résistance chimique du fabricant de peinture détermine le choix, et nous ne nous en écartons jamais.' },
+      { q: 'Intervenez-vous sur des terminaux en exploitation ?', a: 'Oui. La plupart de nos projets de réservoirs se déroulent sur des terminaux en activité, comme chez Sea Tank Terminal, GTS et ITC Rubis. Les procédures de sécurité, le phasage et la coordination avec l’exploitation du terminal font partie de notre approche standard.' },
+      { q: 'Qu’est-ce qu’un holiday test ?', a: 'Un contrôle de porosité qui détecte les pores invisibles et les piqûres (pinholes) dans le revêtement intérieur, à l’aide d’un détecteur basse tension ou haute tension. En service d’immersion, ce test est essentiel : un seul pore non détecté suffit à provoquer une corrosion perforante locale. Chez nous, aucun réservoir n’est mis en service sans test réussi.' },
+      { q: 'Réparez-vous aussi les revêtements intérieurs existants ?', a: 'Oui. En cas de dommages localisés, notre équipe sable les zones concernées (notamment par sablage sous vide), reconstitue le système couche par couche et teste à nouveau les zones réparées. Il n’est donc pas nécessaire de remplacer immédiatement l’ensemble du revêtement intérieur.' },
+    ],
+    ctaTitle: 'Un projet de réservoirs en vue ?',
+    ctaText: 'Envoyez-nous votre spécification ou planifiez une inspection. Vous recevrez un devis clair pour le revêtement de vos réservoirs ou leur tank lining, avec méthode et planning.',
+    relatedTitle: 'Services associés',
+  },
 } as const;
 
 export default function TankCoatingPage() {
@@ -150,7 +202,7 @@ export default function TankCoatingPage() {
     '@type': 'Service',
     '@id': `${pageUrl}#service`,
     name: c.h1,
-    serviceType: locale === 'NL' ? 'Tankcoating en tank lining' : 'Tank coating and tank lining',
+    serviceType: ({ NL: 'Tankcoating en tank lining', EN: 'Tank coating and tank lining', FR: 'Revêtement de réservoirs et tank lining' } as const)[locale],
     description: c.heroSub,
     url: pageUrl,
     image: `${SITE_URL}${HERO_IMAGE}`,
@@ -172,9 +224,7 @@ export default function TankCoatingPage() {
     })),
   };
 
-  const heroAlt = locale === 'NL'
-    ? 'Opslagtanks gecoat door Russo NV bij Ghent Transport & Storage'
-    : 'Storage tanks coated by Russo NV at Ghent Transport & Storage';
+  const heroAlt = ({ NL: 'Opslagtanks gecoat door Russo NV bij Ghent Transport & Storage', EN: 'Storage tanks coated by Russo NV at Ghent Transport & Storage', FR: 'Réservoirs de stockage revêtus par Russo NV chez Ghent Transport & Storage' } as const)[locale];
 
   return (
     <div className="min-h-screen bg-background">
@@ -190,7 +240,7 @@ export default function TankCoatingPage() {
         <div className="relative z-10 w-full max-w-[100rem] mx-auto px-8 py-16 lg:py-20">
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex flex-wrap items-center gap-2 font-paragraph text-xs sm:text-sm text-white/70">
-              <li><Link to={localize('/')} className="hover:text-primary transition-colors">Home</Link></li>
+              <li><Link to={localize('/')} className="hover:text-primary transition-colors">{({ NL: 'Home', EN: 'Home', FR: 'Accueil' } as const)[locale]}</Link></li>
               <li className="text-white/40">/</li>
               <li><Link to={localize('/services')} className="hover:text-primary transition-colors">{c.breadcrumbServices}</Link></li>
               <li className="text-white/40">/</li>

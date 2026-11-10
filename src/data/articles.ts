@@ -100,10 +100,12 @@ export const ARTICLES: Article[] = [
     authorRole: {
       NL: 'NACE Level 2 coating inspector',
       EN: 'NACE Level 2 coating inspector',
+      FR: 'Inspecteur revêtements NACE niveau 2',
     },
     authorBio: {
       NL: 'Stig Vanmarsenille is NACE Level 2 coating inspector bij Russo NV. Hij keurt en begeleidt dagelijks industriële straal- en coatingwerken op de werf, van tankbekleding tot staalconstructies in de petrochemie.',
       EN: 'Stig Vanmarsenille is a NACE Level 2 coating inspector at Russo NV. He inspects and supervises industrial blasting and coating work on site every day, from tank linings to structural steel in petrochemicals.',
+      FR: 'Stig Vanmarsenille est inspecteur revêtements NACE niveau 2 chez Russo NV. Il contrôle et encadre chaque jour sur chantier des travaux industriels de sablage et de mise en peinture, du revêtement intérieur de réservoirs aux structures en acier dans la pétrochimie.',
     },
     authorUrl: 'https://www.linkedin.com/in/stig-vanmarsenille-747176b9/',
     authorImage: '/images/author-stig.jpg',
@@ -111,10 +113,21 @@ export const ARTICLES: Article[] = [
     heroAlt: {
       NL: 'Industriële straalwerken op staal: oppervlaktevoorbereiding tot reinheidsgraad Sa 2½ door Russo NV in Antwerpen',
       EN: 'Abrasive blasting of steel: surface preparation to cleanliness grade Sa 2½ by Russo NV in Antwerp',
+      FR: 'Sablage industriel de l’acier : préparation de surface au degré de soin Sa 2½ par Russo NV à Anvers',
     },
     keywords: {
       NL: ['oppervlaktevoorbereiding', 'staal stralen', 'reinheidsgraad Sa 2½', 'straalprofiel', 'ISO 8501-1', 'industriële coating', 'corrosiebescherming'],
       EN: ['surface preparation', 'abrasive blasting steel', 'cleanliness grade Sa 2½', 'surface profile', 'ISO 8501-1', 'industrial coating', 'corrosion protection'],
+      FR: [
+        'préparation de surface',
+        'sablage acier',
+        'degré de soin Sa 2½',
+        'profil de rugosité',
+        'ISO 8501-1',
+        'peinture industrielle',
+        'revêtement industriel',
+        'protection anticorrosion',
+      ],
     },
     NL: {
       title: 'Staal voorbereiden voor coating',
@@ -530,6 +543,229 @@ export const ARTICLES: Article[] = [
         },
       ],
     },
+    FR: {
+      title: 'Préparer l’acier avant la mise en peinture',
+      metaTitle: 'Préparer l’acier avant peinture : le guide complet | Russo NV',
+      description: 'Un revêtement ne vaut que par sa préparation. Découvrez comment dégraisser l’acier, le sabler au degré de soin Sa 2½ et obtenir le bon profil, selon ISO 8501-1.',
+      excerpt: 'La grande majorité des défaillances prématurées de revêtement ne vient pas de la peinture, mais de la préparation en dessous. Voici comment bien s’y prendre, étape par étape, selon les normes que nous appliquons au quotidien.',
+      category: 'Préparation de surface',
+      body: [
+        {
+          type: 'p',
+          segments: [
+            'Un revêtement coûteux sur un acier mal préparé, c’est de l’argent jeté par les fenêtres. La préparation détermine l’adhérence, et l’adhérence détermine la durée de vie. En ',
+            { text: 'peinture industrielle', to: '/' },
+            ', la qualité ne commence donc jamais par la peinture elle-même, mais par l’acier qu’elle recouvre.',
+          ],
+        },
+        { type: 'h2', text: 'Pourquoi la préparation décide de la réussite de votre revêtement' },
+        {
+          type: 'p',
+          text: 'Un revêtement adhère au support à la fois mécaniquement et chimiquement. La graisse, la rouille, la calamine (mill scale) et les sels solubles empêchent cette adhérence. Si l’on applique le revêtement par-dessus une telle couche, il finit par se décoller : cloquage, corrosion sous film, délaminage. Nettoyer soigneusement le support et créer la bonne rugosité n’est donc pas une formalité, c’est l’étape décisive.',
+        },
+        { type: 'h2', text: 'Étape 1 : dégraisser et nettoyer' },
+        {
+          type: 'p',
+          text: 'Avant que le moindre grain d’abrasif ne touche l’acier, la surface doit être exempte d’huile, de graisse et de saletés. Sabler sur de la graisse ne fait qu’enfoncer la pollution plus profondément, et contamine en plus votre abrasif. Soyez particulièrement attentif aux points suivants :',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Huile et graisse : à éliminer avec un dégraissant adapté (conformément à SSPC-SP 1), pas uniquement à l’eau.',
+            'Sels solubles (chlorures) : invisibles mais redoutables. Ils attirent l’humidité sous le revêtement. À mesurer et, si nécessaire, à éliminer par nettoyage à la vapeur.',
+            'Poussière, saletés libres et ancienne peinture non adhérente : à éliminer mécaniquement.',
+          ],
+        },
+        {
+          type: 'image',
+          src: '/images/step1.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Contamination par l’huile sur une surface d’acier fraîchement sablée',
+          caption: 'Contamination par l’huile sur de l’acier fraîchement sablé : dégraissez d’abord, sinon vous contaminez à la fois le revêtement et l’abrasif.',
+        },
+        { type: 'h2', text: 'Étape 2 : sabler au bon degré de soin (ISO 8501-1)' },
+        {
+          type: 'p',
+          text: 'La norme internationale ISO 8501-1 décrit des degrés de soin visuels pour l’acier sablé. Le degré requis est prescrit par le fabricant du revêtement dans la fiche technique. Pour la plupart des systèmes de protection industriels, c’est Sa 2½.',
+        },
+        {
+          type: 'table',
+          caption: 'Degrés de soin pour le sablage selon ISO 8501-1',
+          headers: ['Degré', 'Description', 'Utilisation courante'],
+          rows: [
+            [
+              'Sa 1',
+              'Sablage léger : calamine, rouille et peinture non adhérentes éliminées',
+              'Rarement suffisant pour les revêtements industriels',
+            ],
+            [
+              'Sa 2',
+              'Sablage soigné : presque toutes les impuretés éliminées',
+              'Systèmes de protection plus légers',
+            ],
+            [
+              'Sa 2½',
+              'Sablage très soigné : seules de légères ombres ou traînées sont tolérées',
+              'Standard pour la plupart des systèmes industriels et pétrochimiques',
+            ],
+            [
+              'Sa 3',
+              'Sablage jusqu’au métal blanc : visuellement entièrement propre',
+              'Sollicitations les plus sévères : immersion, revêtement intérieur de réservoirs',
+            ],
+          ],
+        },
+        {
+          type: 'p',
+          text: 'En pratique, demandez toujours la fiche technique : appliquer le revêtement sur un degré de soin insuffisant annule la garantie du fabricant et constitue la cause la plus fréquente de défaillance prématurée.',
+        },
+        {
+          type: 'image',
+          src: '/images/step2.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Acier sablé au degré de soin Sa 2½',
+          caption: 'Voici à quoi ressemble un acier sablé au degré de soin Sa 2½.',
+        },
+        { type: 'h2', text: 'Étape 3 : le bon profil de rugosité (profil d’ancrage)' },
+        {
+          type: 'p',
+          text: 'Le sablage fait plus que nettoyer : il crée une rugosité, le « profil d’ancrage » dans lequel le revêtement s’accroche. Trop lisse, et le revêtement n’a aucune prise. Trop rugueux, et les pics traversent l’épaisseur du film et rouillent les premiers.',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Le profil requis (souvent de 30 à 75 µm Rz) figure dans la fiche technique et dépend du système de peinture et de l’épaisseur de film sec.',
+            'L’abrasif (grit ou mélange de grits) et la pression de sablage déterminent le profil. Un abrasif plus grossier donne un profil plus profond.',
+            'Mesurez le profil de manière objective avec du ruban de réplique (Testex) ou un rugosimètre, sans vous fier à l’œil.',
+          ],
+        },
+        {
+          type: 'image',
+          src: '/images/step3.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Mesure du profil de rugosité en µm avec un comparateur à cadran Elcometer',
+          caption: 'Mesurer le profil objectivement en µm, et non l’estimer à l’œil.',
+        },
+        { type: 'h2', text: 'Étape 4 : conditions climatiques, point de rosée et délais' },
+        {
+          type: 'p',
+          text: 'L’acier sablé est chimiquement « nu » et rouille à une vitesse étonnante (rouille éclair ou flash rust). Les conditions climatiques au moment du sablage et de l’application sont donc cruciales :',
+        },
+        {
+          type: 'ul',
+          items: [
+            'La température de l’acier doit être supérieure d’au moins 3 °C au point de rosée, sinon l’humidité se condense sur la surface.',
+            'Surveillez l’humidité relative (valeur indicative : moins de 85 %).',
+            'Appliquez le revêtement dans le délai prescrit par le fabricant, souvent le jour même, avant l’apparition de rouille éclair.',
+          ],
+        },
+        {
+          type: 'image',
+          src: '/images/step4.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Appareil Elcometer de mesure du point de rosée affichant l’humidité de l’air, la température de surface et le point de rosée',
+          caption: 'Contrôle de l’humidité de l’air, de la température de surface et du point de rosée avant l’application.',
+        },
+        { type: 'h2', text: 'Étape 5 : mesurer, documenter et choisir le bon abrasif' },
+        {
+          type: 'p',
+          text: 'Une bonne préparation se mesure. Consignez objectivement chaque paramètre critique : vous démontrez ainsi après coup que le travail a été réalisé selon la spécification et vous évitez toute discussion à la réception.',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Sels solubles : mesurez la conductivité selon ISO 8502 (par exemple la méthode de Bresle) avant d’appliquer le revêtement.',
+            'Profil de rugosité : déterminez la classe de rugosité selon ISO 8503 (fin, moyen ou grossier) avec du ruban de réplique ou un rugosimètre.',
+            'Conditions climatiques : enregistrez en continu la température de l’acier, la température de l’air, l’humidité relative et le point de rosée.',
+            'Choix de l’abrasif : adaptez l’abrasif à l’objectif. Le grenat et la grenaille d’acier angulaire donnent un profil anguleux et plus profond, un grain arrondi ou de la grenaille ronde un profil moins profond.',
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'C’est précisément cette culture de la mesure qui permet à un revêtement industriel de tenir pendant des années. Consultez nos ',
+            { text: 'projets réalisés', to: '/projects' },
+            ' pour voir comment nous appliquons cette approche sur le terrain.',
+          ],
+        },
+        {
+          type: 'image',
+          src: '/images/step5.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Rapport d’inspection avec les mesures ISO 8502 des conditions climatiques, de la poussière et des sels solubles',
+          caption: 'Chaque mesure documentée selon ISO 8502.',
+        },
+        {
+          type: 'callout',
+          title: 'Points clés',
+          items: [
+            'Ce n’est pas la peinture mais la préparation qui détermine la tenue d’un revêtement.',
+            'Dégraissez d’abord : sabler sur de la graisse contamine tout.',
+            'Sa 2½ est le degré de soin standard pour la plupart des systèmes industriels.',
+            'Mesurez le profil de rugosité, ne le devinez pas.',
+            'Respectez le point de rosée et le délai de recouvrement, et appliquez le revêtement avant la rouille éclair.',
+          ],
+        },
+        { type: 'h2', text: 'Erreurs fréquentes' },
+        {
+          type: 'ul',
+          items: [
+            'Appliquer le revêtement sur de la rouille éclair ou sur une corrosion sous-jacente visible.',
+            'Ignorer les sels solubles parce qu’ils sont invisibles.',
+            'Un profil de rugosité inadapté (trop lisse ou trop rugueux).',
+            'Négliger le contrôle des conditions climatiques et continuer à travailler par humidité trop élevée.',
+            'Dépasser le délai de recouvrement du primaire.',
+          ],
+        },
+        { type: 'h2', text: 'Questions fréquentes' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'Que signifie le degré de soin Sa 2½ ?',
+              a: 'Sa 2½ est un degré de soin visuel défini par ISO 8501-1 pour l’acier sablé. La surface est sablée de manière très soignée : la calamine, la rouille et l’ancienne peinture sont éliminées, seules de légères ombres ou traînées restent tolérées. C’est le standard pour la plupart des systèmes de protection industriels.',
+            },
+            {
+              q: 'Combien de temps l’acier sablé peut-il rester à nu avant l’application du revêtement ?',
+              a: 'Le moins longtemps possible. L’acier fraîchement sablé rouille vite (rouille éclair), souvent en quelques heures par temps humide. Appliquez le revêtement de préférence le jour même, dans le délai prescrit par le fabricant, et toujours avant l’apparition de nouvelle rouille.',
+            },
+            {
+              q: 'De quel profil de rugosité ai-je besoin ?',
+              a: 'Il est indiqué dans la fiche technique du revêtement, généralement de 30 à 75 µm Rz. Trop lisse, l’adhérence est insuffisante. Trop rugueux, les pics traversent l’épaisseur du film. Mesurez le profil objectivement avec du ruban de réplique ou un rugosimètre, ne l’estimez pas à l’œil.',
+            },
+            {
+              q: 'Qu’est-ce que la rouille éclair (flash rust) et comment l’éviter ?',
+              a: 'La rouille éclair est la fine couche de rouille qui se forme sur un acier fraîchement sablé, chimiquement « nu », dès qu’il entre en contact avec l’humidité. Appliquer le revêtement sur de la rouille éclair affaiblit l’adhérence. Le contrôle des conditions climatiques (maintenir l’acier au-dessus du point de rosée) et une mise en peinture rapide permettent de l’éviter.',
+            },
+            {
+              q: 'Pourquoi les sels solubles sont-ils si importants ?',
+              a: 'Les sels solubles comme les chlorures sont invisibles, mais ils attirent l’humidité sous le revêtement et provoquent cloquage et corrosion sous film. Le sablage seul ne les élimine pas de manière fiable. Mesurez-les selon ISO 8502 et nettoyez à la vapeur si nécessaire.',
+            },
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'Votre projet concerne un réservoir de stockage ? Une dimension supplémentaire s’ajoute alors : le service en immersion. Lisez aussi notre guide consacré au ',
+            { text: 'revêtement de réservoirs et au tank lining', to: '/insights/tank-coating-lining' },
+            '.',
+          ],
+        },
+        { type: 'h2', text: 'Besoin d’aide pour votre projet ?' },
+        {
+          type: 'cta',
+          title: 'Une préparation qui tient vraiment',
+          text: 'Russo NV réalise le sablage, la préparation de surface et les revêtements industriels, selon des procédures de sécurité certifiées VCA et conformément aux normes ISO applicables, avec des degrés de soin mesurables et des profils de rugosité contrôlés. Demandez un devis ou un conseil sans engagement.',
+          buttonLabel: 'Demander un devis',
+          to: '/contact',
+        },
+      ],
+    },
   },
   {
     slug: 'tank-coating-lining',
@@ -539,10 +775,12 @@ export const ARTICLES: Article[] = [
     authorRole: {
       NL: 'NACE Level 2 coating inspector',
       EN: 'NACE Level 2 coating inspector',
+      FR: 'Inspecteur revêtements NACE niveau 2',
     },
     authorBio: {
       NL: 'Stig Vanmarsenille is NACE Level 2 coating inspector bij Russo NV. Hij keurt en begeleidt dagelijks industriële straal- en coatingwerken op de werf, van tankbekleding tot staalconstructies in de petrochemie.',
       EN: 'Stig Vanmarsenille is a NACE Level 2 coating inspector at Russo NV. He inspects and supervises industrial blasting and coating work on site every day, from tank linings to structural steel in petrochemicals.',
+      FR: 'Stig Vanmarsenille est inspecteur revêtements NACE niveau 2 chez Russo NV. Il contrôle et encadre chaque jour sur chantier des travaux industriels de sablage et de revêtement, du revêtement intérieur de réservoirs aux structures en acier dans la pétrochimie.',
     },
     authorUrl: 'https://www.linkedin.com/in/stig-vanmarsenille-747176b9/',
     authorImage: '/images/author-stig.jpg',
@@ -550,10 +788,21 @@ export const ARTICLES: Article[] = [
     heroAlt: {
       NL: 'Vers afgewerkte tank lining: glanzende gecoate tankbodem met afgeplakte verwarmingsspiralen',
       EN: 'Freshly finished tank lining: glossy coated tank floor with masked heating coils',
+      FR: 'Revêtement intérieur de réservoir fraîchement terminé : fond de réservoir revêtu et brillant, serpentins de chauffage masqués',
     },
     keywords: {
       NL: ['tankcoating', 'tank lining', 'tankbekleding', 'opslagtank coaten', 'epoxy tankcoating', 'holiday detectie', 'ISO 8501-1', 'chemische resistentie'],
       EN: ['tank coating', 'tank lining', 'storage tank coating', 'epoxy tank lining', 'holiday testing', 'ISO 8501-1', 'chemical resistance'],
+      FR: [
+        'revêtement de réservoirs',
+        'tank lining',
+        'revêtement intérieur de réservoir',
+        'peinture réservoir de stockage',
+        'revêtement époxy réservoir',
+        'détection de porosités',
+        'ISO 8501-1',
+        'résistance chimique',
+      ],
     },
     NL: {
       title: 'Tankcoating en tank lining: zo wordt een opslagtank duurzaam beschermd',
@@ -1075,6 +1324,282 @@ export const ARTICLES: Article[] = [
         },
       ],
     },
+    FR: {
+      title: 'Revêtement de réservoirs et tank lining : protéger durablement un réservoir de stockage',
+      metaTitle: 'Revêtement de réservoirs et tank lining : le guide | Russo NV',
+      description: 'Guide pratique du revêtement de réservoirs et du tank lining : choix du système, sablage, mesures de sels et de poussières, épaisseur et détection de porosités.',
+      excerpt: 'Un revêtement intérieur de réservoir travaille dans les conditions les plus sévères qui soient : en immersion permanente dans le produit stocké. Voici comment se réalise un tank lining professionnel, de la préparation au test à l’étincelle, selon les normes que nous appliquons au quotidien.',
+      category: 'Protection des réservoirs',
+      body: [
+        {
+          type: 'p',
+          segments: [
+            'Aucun revêtement n’est plus sollicité qu’un tank lining. Là où un revêtement de façade voit de temps en temps la pluie, un revêtement intérieur de réservoir est en contact direct, jour et nuit, avec du carburant, des produits chimiques ou de l’eau de process. Un seul point faible suffit pour provoquer de la corrosion, une contamination du produit ou un refus lors de l’inspection. C’est pourquoi, en ',
+            { text: 'peinture industrielle', to: '/' },
+            ', les travaux sur réservoirs sont soumis aux exigences les plus strictes du métier, et tout commence par la préparation.',
+          ],
+        },
+        { type: 'h2', text: 'Quelle est la différence entre revêtement de réservoirs et tank lining ?' },
+        {
+          type: 'p',
+          text: 'Le revêtement de réservoirs est le terme général pour toute couche de protection sur un réservoir de stockage, à l’intérieur comme à l’extérieur. Le tank lining (ou revêtement intérieur) est plus spécifique : c’est le système intérieur, résistant à l’immersion, qui est en contact direct avec le produit stocké. Dans la pratique, les deux termes se confondent ; cet article traite des deux, en mettant l’accent sur le revêtement intérieur, car c’est là que les exigences sont les plus élevées.',
+        },
+        {
+          type: 'image',
+          src: '/images/tank-coating-exterior.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Extérieur d’un réservoir de stockage après mise en peinture : système multicouche blanc sur le réservoir T 296 de 3.053 m³',
+          caption: 'Revêtement de réservoirs : l’extérieur d’un réservoir de stockage, fini ici avec un système multicouche blanc qui doit résister aux intempéries, aux UV et à l’air marin.',
+        },
+        {
+          type: 'image',
+          src: '/images/tank-lining-interior.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Intérieur d’un réservoir de stockage avec un revêtement intérieur bleu clair sur la robe, le toit et les serpentins de chauffage',
+          caption: 'Tank lining : l’intérieur, entièrement revêtu d’un système résistant à l’immersion, en contact jour et nuit avec le produit stocké.',
+        },
+        { type: 'h2', text: 'Pourquoi un réservoir est l’environnement le plus sévère pour un revêtement' },
+        {
+          type: 'p',
+          text: 'En service d’immersion (immersion permanente), le revêtement ne connaît aucun répit. L’osmose pousse l’humidité et les substances dissoutes à travers des points faibles microscopiques, les variations de température font travailler la robe en acier, et les produits agressifs mettent à l’épreuve la résistance chimique de chaque centimètre carré. Des défauts qui restent invisibles pendant des années sur un revêtement extérieur ordinaire provoquent dans un réservoir, en quelques mois, du cloquage ou de la corrosion sous film. La barre pour l’exécution et le contrôle est donc placée un niveau plus haut : degré de soin Sa 2½ à Sa 3, épaisseurs de film contrôlées et un test de porosité concluant avant la mise en service.',
+        },
+        { type: 'h2', text: 'Intérieur et extérieur : deux défis différents' },
+        {
+          type: 'p',
+          text: 'L’intérieur (le revêtement intérieur) doit résister chimiquement au produit stocké. L’extérieur se bat sur un autre front : intempéries, UV, air marin et corrosion sous isolation. Chacun demande son propre choix de système :',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Intérieur : systèmes chimiquement résistants, généralement époxy phénolique ou époxy novolaque. L’épaisseur totale de film sec varie selon le produit et l’application, d’environ 300 µm à plus de 1.000 µm ; la fiche technique et la spécification du projet sont toujours déterminantes.',
+            'Extérieur : un système multicouche classique avec primaire riche en zinc, couche intermédiaire époxy et couche de finition polyuréthane pour la tenue de la teinte et la résistance aux UV.',
+            'Toits de réservoirs et passerelles : travaux complémentaires de revêtement antidérapant et de revêtement de toit, souvent combinés avec des zones de protection antichute.',
+          ],
+        },
+        { type: 'h2', text: 'Choisir le bon système de revêtement intérieur' },
+        {
+          type: 'p',
+          text: 'Le produit stocké détermine le système. Le fabricant de peinture publie pour chaque produit une liste de résistance chimique ; on ne s’en écarte jamais. À titre indicatif :',
+        },
+        {
+          type: 'table',
+          caption: 'Systèmes de revêtement intérieur typiques par produit stocké',
+          headers: ['Produit stocké', 'Système de revêtement intérieur typique', 'Point d’attention'],
+          rows: [
+            [
+              'Diesel, gasoil, fioul',
+              'Époxy (standard ou phénolique)',
+              'Conductivité et charges électrostatiques',
+            ],
+            [
+              'Produits chimiques et solvants',
+              'Époxy novolaque ou phénolique',
+              'La liste de résistance du fabricant fait foi',
+            ],
+            ['Eau de process, eau d’extinction', 'Époxy sans solvant', 'Résistance à l’osmose'],
+            ['Eau potable', 'Époxy certifié', 'Agrément par pays (Belgaqua, KTW, WRAS)'],
+            [
+              'Denrées et huiles alimentaires',
+              'Époxy avec agrément contact alimentaire',
+              'Agrément par produit et par application',
+            ],
+            [
+              'Haute température ou changements de produit',
+              'Époxy novolaque renforcé de paillettes de verre',
+              'Cycles thermiques et chocs',
+            ],
+          ],
+        },
+        { type: 'h2', text: 'L’exécution, étape par étape' },
+        { type: 'h3', text: '1. Dégazage, nettoyage et inspection' },
+        {
+          type: 'p',
+          text: 'Un réservoir est un espace confiné : mesures de dégazage, ventilation et permis de travail passent avant tout. Ensuite, les résidus de produit sont éliminés et l’état du fond, de la robe et des cordons de soudure est évalué. La corrosion par piqûres ou une déformation du fond doivent apparaître maintenant, pas après le sablage.',
+        },
+        {
+          type: 'image',
+          src: '/images/tank-cleaning.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Robe du réservoir en cours de nettoyage, avec des marquages à la craie qui indiquent les zones de lavage selon le nombre de passages',
+          caption: 'Nettoyage de la robe du réservoir : chaque zone est marquée et lavée jusqu’à l’élimination de tous les résidus de produit.',
+        },
+        { type: 'h3', text: '2. Sablage jusqu’à Sa 2½ ou Sa 3' },
+        {
+          type: 'p',
+          segments: [
+            'Pour le service en immersion, les fabricants prescrivent un degré de soin Sa 2½ à Sa 3, avec un profil de rugosité anguleux adapté à l’épaisseur de film. Le déroulement précis de ce sablage, des degrés de soin au profil de rugosité, est expliqué dans notre guide sur la ',
+            { text: 'préparation de l’acier avant revêtement', to: '/insights/steel-surface-preparation' },
+            '. Dans un réservoir, un facteur s’y ajoute : toute la poussière de sablage doit aussi en ressortir, jusqu’au dernier gramme, ce que l’on contrôle par le test de poussière selon ISO 8502-3.',
+          ],
+        },
+        {
+          type: 'image',
+          src: '/images/tank-blasting.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Sableur au travail dans un réservoir sombre, nuage d’abrasif dans la lumière des projecteurs',
+          caption: 'Sablage dans le réservoir : un travail lourd en espace confiné, avec adduction d’air respirable et aspiration continue.',
+        },
+        {
+          type: 'image',
+          src: '/images/tank-blasting-sa25.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Virole inférieure fraîchement sablée dans un réservoir de stockage, acier nu au degré de soin Sa 2½',
+          caption: 'Acier fraîchement sablé au bas de la robe du réservoir : le degré de soin Sa 2½ se détache nettement de la robe encore à sabler au-dessus.',
+        },
+        { type: 'h3', text: '3. Mesurer les sels solubles' },
+        {
+          type: 'p',
+          text: 'Les chlorures et les sulfates présents sur l’acier attirent plus tard l’humidité à travers le revêtement (osmose) et sont, en service d’immersion, le facteur de défaillance caché par excellence. Nous les mesurons par la méthode de Bresle selon ISO 8502-6 (ou par conductivité selon ISO 8502-9), puis nous nettoyons et mesurons à nouveau jusqu’à ce que la valeur soit inférieure à la limite du fabricant, généralement de 20 à 50 mg/m² selon le produit.',
+        },
+        {
+          type: 'image',
+          src: '/images/tank-salt-test.jpg',
+          width: 900,
+          height: 675,
+          alt: 'Test de Bresle avec un mesureur de sels Elcometer sur un fond de réservoir sablé, valeur mesurée en mg/m²',
+          caption: 'Mesure de Bresle sur un fond de réservoir sablé : la mise en peinture ne peut commencer qu’en dessous de la valeur limite du fabricant.',
+        },
+        { type: 'h3', text: '4. Maîtrise du climat' },
+        {
+          type: 'p',
+          text: 'Dans un réservoir fermé, c’est vous qui déterminez le climat. Grâce à la déshumidification et à la ventilation, nous maintenons l’humidité relative basse et l’acier au-dessus du point de rosée, afin qu’aucune rouille éclair (flash rust) ne se forme entre le sablage et la mise en peinture. Les données climatiques sont enregistrées en continu, du premier sablage à la dernière couche.',
+        },
+        {
+          type: 'image',
+          src: '/images/tank-dehumidifier.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Installation de déshumidification et de ventilation à côté du réservoir pendant les travaux de revêtement',
+          caption: 'L’installation de déshumidification tourne jour et nuit à côté du réservoir : le climat intérieur détermine la qualité.',
+        },
+        {
+          type: 'image',
+          src: '/images/tank-climate-log.jpg',
+          width: 900,
+          height: 900,
+          alt: 'Mesureur de point de rosée dans un réservoir de stockage : 13,4 pour cent d’humidité relative et acier à 27,4 degrés au-dessus du point de rosée',
+          caption: 'L’enregistreur climatique pendant les travaux : 13,4 % d’humidité relative et un acier à plus de 27 °C au-dessus du point de rosée, bien dans la marge de sécurité contre la rouille éclair.',
+        },
+        { type: 'h3', text: '5. Couches de renfort (stripe coats) et application' },
+        {
+          type: 'p',
+          text: 'Les cordons de soudure, les angles et les boulons reçoivent d’abord une couche de renfort appliquée à la main (stripe coat) : c’est précisément à ces endroits qu’une couche pulvérisée s’amincit. Ensuite, le système est appliqué au pistolet airless en passes contrôlées jusqu’à l’épaisseur prescrite, avec des mesures d’épaisseur de film humide pendant le travail et des mesures d’épaisseur de film sec (DFT) après durcissement de chaque couche.',
+        },
+        {
+          type: 'image',
+          src: '/images/tank-spray.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Applicateur en combinaison de protection appliquant le revêtement intérieur au pistolet airless dans le réservoir',
+          caption: 'Application airless du revêtement intérieur, en passes contrôlées jusqu’à l’épaisseur de film prescrite.',
+        },
+        { type: 'h2', text: 'Contrôle qualité avant la mise en service' },
+        {
+          type: 'ul',
+          items: [
+            'Épaisseur de film sec (DFT) : mesurée selon un quadrillage fixe sur le fond et la robe (ISO 19840) ; la moyenne comme les minima doivent se situer dans la spécification du projet.',
+            'Détection de porosités (test de porosité) : à l’aide d’un détecteur basse tension ou haute tension, selon le système et l’épaisseur de film, on repère les pores et les pinholes du revêtement intérieur. En service d’immersion, un seul pore manqué suffit pour une corrosion traversante : ce test n’est donc pas négociable.',
+            'Adhérence et durcissement : contrôle du degré de durcissement et, lorsque c’est prescrit, essai d’adhérence avant la remise en service du réservoir.',
+            'Rapport : toutes les mesures (climat, sels, profil, DFT, test à l’étincelle) dans un seul dossier d’inspection pour le propriétaire et l’inspecteur.',
+          ],
+        },
+        {
+          type: 'image',
+          src: '/images/tank-finished.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Revêtement intérieur terminé : robe, toit et tuyauteries revêtus avec soin',
+          caption: 'Le résultat final : un revêtement intérieur parfaitement fini, prêt pour le test de porosité et la réception.',
+        },
+        {
+          type: 'callout',
+          title: 'Points essentiels',
+          items: [
+            'Un tank lining subit en permanence la sollicitation la plus sévère possible : l’immersion.',
+            'Le produit stocké détermine le système ; la liste de résistance du fabricant fait foi.',
+            'Sa 2½ à Sa 3 et une mesure de sels inférieure à la valeur limite en sont le fondement.',
+            'Les couches de renfort sur les cordons de soudure et les angles évitent les points faibles classiques.',
+            'Sans détection de porosités réussie, un réservoir n’est pas mis en service.',
+          ],
+        },
+        { type: 'h2', text: 'Rénover ou refaire entièrement le revêtement intérieur ?' },
+        {
+          type: 'p',
+          segments: [
+            'Tous les réservoirs ne doivent pas immédiatement recevoir un revêtement intérieur entièrement neuf. En cas de dommages locaux, une réparation localisée (spot repair) peut être une solution à part entière : les zones sont sablées localement (par exemple par sablage sous vide, sans dispersion d’abrasif), les bords sont poncés en biseau et le système est reconstitué couche par couche jusqu’à l’épaisseur d’origine. Si le revêtement intérieur est âgé, décollé à grande échelle ou attaqué chimiquement, le remplacement complet est le seul choix durable. Découvrez nos ',
+            { text: 'projets de réservoirs réalisés', to: '/projects' },
+            ' pour voir à quoi ressemblent les deux approches dans la pratique.',
+          ],
+        },
+        {
+          type: 'image',
+          src: '/images/tank-touchup.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Réparation localisée du revêtement intérieur : zone masquée reconstituée couche par couche',
+          caption: 'La réparation localisée en pratique : la zone masquée est reconstituée couche par couche jusqu’à l’épaisseur de film d’origine.',
+        },
+        { type: 'h2', text: 'Erreurs fréquentes' },
+        {
+          type: 'ul',
+          items: [
+            'Peindre sur un degré de soin insuffisant parce que « ça a l’air propre ».',
+            'Faire l’impasse sur les mesures de sels ; les sels sont invisibles, mais fatals en immersion.',
+            'Omettre les couches de renfort sur les cordons de soudure, les angles et les assemblages boulonnés.',
+            'Sauter le test à l’étincelle ou le réaliser avant le durcissement complet.',
+            'Choisir un système sur la base du prix plutôt que de la liste de résistance du fabricant.',
+            'Remplir le réservoir trop tôt, avant que le revêtement ait durci chimiquement.',
+          ],
+        },
+        { type: 'h2', text: 'Questions fréquentes' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'Combien de temps dure un revêtement de réservoir ?',
+              a: 'En règle générale, un tank lining appliqué de manière professionnelle dure de 10 à 20 ans, mais il n’existe pas de durée de vie universelle : le produit stocké, la température, le régime de nettoyage et le nombre de changements de produit font la différence. Une inspection périodique (visuelle et par mesures d’épaisseur) prolonge la durée de vie, car les dommages locaux sont alors réparés avant l’apparition de corrosion sous film.',
+            },
+            {
+              q: 'Qu’est-ce que la détection de porosités ou le test à l’étincelle ?',
+              a: 'Un holiday test repère les pores et pinholes invisibles d’un revêtement à l’aide d’un détecteur basse tension ou haute tension, selon le système et l’épaisseur de film ; la méthode et la tension d’essai suivent la fiche technique et la spécification du projet. En service d’immersion, ce test est essentiel : un seul pore manqué suffit pour une corrosion traversante locale de la robe du réservoir.',
+            },
+            {
+              q: 'Quel revêtement convient au stockage de produits chimiques ?',
+              a: 'Pour les produits chimiques et les solvants, on utilise généralement des systèmes époxy novolaque ou époxy phénolique, qui offrent une résistance chimique et thermique supérieure à celle de l’époxy standard. La liste de résistance du fabricant de peinture détermine, produit par produit, si un système convient ; on ne peut jamais s’en écarter.',
+            },
+            {
+              q: 'Combien de temps un réservoir est-il hors service pour un nouveau revêtement intérieur ?',
+              a: 'Pour un remplacement complet, comptez quelques semaines : dégazage, nettoyage, sablage, application en plusieurs couches et durcissement chimique. Le temps de durcissement avant de pouvoir remplir à nouveau le réservoir dépend du produit et figure dans la fiche technique ; raccourcir ce délai est le chemin le plus rapide vers une défaillance prématurée.',
+            },
+            {
+              q: 'Un revêtement intérieur endommagé peut-il être réparé localement ?',
+              a: 'Oui. En cas de dommages locaux, les zones sont sablées localement, les bords du revêtement existant sont poncés en biseau et le système d’origine est reconstitué couche par couche jusqu’à l’épaisseur prescrite, puis un nouveau test à l’étincelle est réalisé sur les zones réparées. La condition est que le revêtement intérieur environnant adhère encore bien.',
+            },
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'Curieux de savoir comment nous procédons en tant qu’entrepreneur, du sablage au test de porosité ? Consultez notre page de services consacrée au ',
+            { text: 'revêtement de réservoirs et au tank lining', to: '/services/tankcoating' },
+            '.',
+          ],
+        },
+        { type: 'h2', text: 'Besoin d’aide pour votre projet de réservoir ?' },
+        {
+          type: 'cta',
+          title: 'Protection des réservoirs conforme aux normes',
+          text: 'Russo NV réalise le revêtement de réservoirs et le tank lining, du sablage au test de porosité, selon des procédures de sécurité certifiées VCA et conformément aux normes d’inspection ISO et AMPP applicables, avec un dossier de mesures complet à la réception. Demandez sans engagement un devis ou un conseil.',
+          buttonLabel: 'Demander un devis',
+          to: '/contact',
+        },
+      ],
+    },
   },
   {
     slug: 'corrosion-protection-iso-12944',
@@ -1084,10 +1609,12 @@ export const ARTICLES: Article[] = [
     authorRole: {
       NL: 'NACE Level 2 coating inspector',
       EN: 'NACE Level 2 coating inspector',
+      FR: 'Inspecteur revêtements NACE niveau 2',
     },
     authorBio: {
       NL: 'Stig Vanmarsenille is NACE Level 2 coating inspector bij Russo NV. Hij keurt en begeleidt dagelijks industriële straal- en coatingwerken op de werf, van tankbekleding tot staalconstructies in de petrochemie.',
       EN: 'Stig Vanmarsenille is a NACE Level 2 coating inspector at Russo NV. He inspects and supervises industrial blasting and coating work on site every day, from tank linings to structural steel in petrochemicals.',
+      FR: 'Stig Vanmarsenille est inspecteur revêtements NACE niveau 2 chez Russo NV. Il contrôle et encadre chaque jour sur chantier des travaux industriels de sablage et de mise en peinture, du revêtement intérieur de réservoirs aux structures en acier dans la pétrochimie.',
     },
     authorUrl: 'https://www.linkedin.com/in/stig-vanmarsenille-747176b9/',
     authorImage: '/images/author-stig.jpg',
@@ -1095,10 +1622,21 @@ export const ARTICLES: Article[] = [
     heroAlt: {
       NL: 'Russo NV inspecteert een tankwand met afbladderende coating en corrosie in de haven',
       EN: 'Russo NV inspecting a tank shell with flaking coating and corrosion in the port',
+      FR: 'Russo NV inspecte la robe d’un réservoir présentant un revêtement écaillé et de la corrosion dans le port',
     },
     keywords: {
       NL: ['corrosiebescherming', 'ISO 12944', 'corrosiviteitsklasse', 'C5 kustklimaat', 'conservering staal', 'coatingsysteem', 'zinkrijke primer', 'levensduur coating'],
       EN: ['corrosion protection', 'ISO 12944', 'corrosivity category', 'C5 marine', 'steel protection', 'coating system', 'zinc-rich primer', 'coating durability'],
+      FR: [
+        'protection anticorrosion',
+        'ISO 12944',
+        'catégorie de corrosivité',
+        'C5 environnement marin',
+        'protection de l’acier',
+        'système de peinture anticorrosion',
+        'primaire riche en zinc',
+        'durée de vie revêtement',
+      ],
     },
     NL: {
       title: 'Corrosiebescherming volgens ISO 12944: klassen, systemen en levensduur',
@@ -1574,6 +2112,255 @@ export const ARTICLES: Article[] = [
         },
       ],
     },
+    FR: {
+      title: 'Protection anticorrosion selon ISO 12944 : catégories, systèmes et durabilité',
+      metaTitle: 'Protection anticorrosion selon ISO 12944 : le guide | Russo NV',
+      description: 'Quel système de peinture choisir pour l’acier ? Catégories de corrosivité C1 à CX, durabilité et composition des systèmes ISO 12944, expliquées concrètement.',
+      excerpt: 'Chaque projet en acier soulève la même question : quel système de peinture, combien de couches, quelle épaisseur ? La réponse tient dans une seule norme : ISO 12944. Voici comment la lire et l’appliquer, sans surprotection ni sous-protection coûteuse.',
+      category: 'Protection anticorrosion',
+      body: [
+        {
+          type: 'p',
+          segments: [
+            'L’acier ne rouille pas partout à la même vitesse. Un hangar en Campine n’a rien à voir avec un mur de quai dans le port d’Anvers, et celui qui applique le même système de peinture aux deux endroits paie soit trop cher, soit une deuxième fois beaucoup trop tôt. C’est pourquoi il existe un cadre international unique pour la ',
+            { text: 'peinture industrielle', to: '/' },
+            ' sur acier au moyen de systèmes de peinture : ISO 12944, la référence internationale par excellence dans ce domaine. Qui comprend cette norme comprend chaque devis, chaque cahier des charges et chaque discussion sur la garantie.',
+          ],
+        },
+        { type: 'h2', text: 'Qu’est-ce que la norme ISO 12944 ?' },
+        {
+          type: 'p',
+          text: 'ISO 12944 est la norme internationale relative à la protection anticorrosion des structures en acier par systèmes de peinture. Elle se compose de plusieurs parties qui couvrent à elles toutes le processus complet : la classification des environnements (partie 2), les principes de conception (partie 3), les types de surface et leur préparation (partie 4), les systèmes de peinture eux-mêmes (partie 5), les essais en laboratoire (partie 6), l’exécution et la surveillance des travaux (partie 7) et les spécifications pour les travaux neufs et l’entretien (partie 8). Lors du cycle de révision de 2017 à 2019, la partie 9 s’y est ajoutée, spécifiquement pour l’offshore et d’autres conditions extrêmes. En pratique, presque chaque choix se résume à deux questions : dans quelle catégorie de corrosivité se trouve la structure, et combien de temps le système doit-il durer ?',
+        },
+        { type: 'h2', text: 'Les catégories de corrosivité : de C1 à CX' },
+        {
+          type: 'p',
+          text: 'La partie 2 de la norme classe les environnements selon leur agressivité envers l’acier. Plus la catégorie est élevée, plus le système requis est lourd :',
+        },
+        {
+          type: 'table',
+          caption: 'Catégories de corrosivité selon ISO 12944-2',
+          headers: ['Catégorie', 'Agressivité du milieu', 'Exemples types'],
+          rows: [
+            ['C1', 'Très faible', 'Locaux intérieurs chauffés à air sec (bureaux, écoles)'],
+            ['C2', 'Faible', 'Entrepôts non chauffés, atmosphère rurale peu polluée'],
+            ['C3', 'Moyenne', 'Atmosphère urbaine et faiblement industrielle, halls de production humides'],
+            [
+              'C4',
+              'Élevée',
+              'Zones industrielles et zones côtières à salinité modérée, installations chimiques',
+            ],
+            [
+              'C5',
+              'Très élevée',
+              'Environnement industriel à atmosphère agressive, zones côtières et portuaires à forte salinité',
+            ],
+            [
+              'CX',
+              'Extrême',
+              'Offshore, zones de marnage, conditions industrielles extrêmes (depuis la révision de 2017)',
+            ],
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Les structures immergées ou enterrées relèvent de catégories d’immersion distinctes :',
+        },
+        {
+          type: 'table',
+          caption: 'Catégories d’immersion selon ISO 12944-2',
+          headers: ['Catégorie', 'Exposition'],
+          rows: [
+            ['Im1', 'Eau douce'],
+            ['Im2', 'Eau de mer ou eau saumâtre sans protection cathodique'],
+            ['Im3', 'Sol'],
+            ['Im4', 'Eau de mer ou eau saumâtre avec protection cathodique'],
+          ],
+        },
+        {
+          type: 'p',
+          segments: [
+            'Nuance importante : les catégories Im ne déterminent pas automatiquement le système pour l’intérieur d’un réservoir de stockage. ISO 12944 exclut explicitement l’intérieur des réservoirs, les canalisations et les structures enterrées. Là, ce sont le produit stocké, la température, la résistance chimique et l’approbation du fabricant qui priment. Nous traitons ce domaine séparément dans notre guide consacré au ',
+            { text: 'revêtement de réservoirs et au tank lining', to: '/insights/tank-coating-lining' },
+            '.',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'Et la catégorie elle-même ? Elle dépend de l’exposition réelle, pas de l’adresse. Dans les ports d’Anvers, de Gand et de Zeebruges, de nombreuses structures sont classées C4 à C5, mais sur les projets de terminaux, nous ne classons jamais un site entier d’un seul bloc : l’acier abrité sous un auvent, les zones à condensation permanente, l’acier extérieur exposé au vent de mer et les zones d’éclaboussures exposées aux embruns peuvent chacun exiger une évaluation différente au sein d’une même installation. La catégorie est déterminée par structure et par zone d’exposition.',
+        },
+        {
+          type: 'image',
+          src: '/images/iso-c5-omgeving.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Toit de réservoir fraîchement revêtu dans le port : atmosphère industrielle, air marin et chimie dans un même environnement',
+          caption: 'Un environnement C4/C5 typique : industrie, air marin et chimie sur une même image. Le toit fraîchement revêtu au premier plan est une de nos réalisations.',
+        },
+        {
+          type: 'image',
+          src: '/images/iso-pitting.jpg',
+          width: 1200,
+          height: 900,
+          alt: 'Gros plan sur une corrosion par piqûres (pitting) dans une surface en acier',
+          caption: 'Ce qui se passe sans protection adaptée : la corrosion par piqûres (pitting) ronge l’acier localement.',
+        },
+        { type: 'h2', text: 'Plages de durabilité : combien de temps le système doit-il tenir ?' },
+        {
+          type: 'p',
+          text: 'Le deuxième axe de la norme est la durée de vie attendue jusqu’au premier entretien majeur. ISO 12944 distingue quatre plages : faible (jusqu’à 7 ans), moyenne (de 7 à 15 ans), haute (de 15 à 25 ans) et, depuis la révision de 2017, très haute (plus de 25 ans). À savoir : il ne s’agit pas d’une durée de garantie, mais d’une hypothèse de conception. C’est la combinaison de la catégorie de corrosivité et de la plage de durabilité qui détermine le niveau de robustesse du système. Un C5 avec une durabilité attendue haute exige une solution fondamentalement différente d’un C3 avec une durabilité moyenne.',
+        },
+        { type: 'h2', text: 'Comment se compose un système de peinture' },
+        {
+          type: 'p',
+          text: 'Commençons par dissiper un malentendu : ISO 12944 ne prescrit pas de recette universelle par catégorie. Le système est choisi en fonction de la catégorie, de la durabilité souhaitée, du support, de la préparation, de l’exposition et de la documentation système approuvée du fabricant. Ce qui revient toujours, en revanche, c’est la structure multicouche dans laquelle chaque couche a sa propre fonction :',
+        },
+        {
+          type: 'ul',
+          items: [
+            'Primaire (couche de fond) : assure l’adhérence et la première barrière contre la corrosion. Selon le système choisi, il s’agit d’un primaire riche en zinc (le zinc protège l’acier même en cas de dommage, par action cathodique) ou d’un primaire reposant sur un autre mécanisme de protection.',
+            'Couches intermédiaires : elles construisent l’épaisseur et forment la barrière contre l’humidité et l’oxygène. Généralement en époxy, souvent avec de l’oxyde de fer micacé (MIO) pour un effet barrière renforcé.',
+            'Couche de finition : protège contre les UV et les intempéries, détermine la teinte et la brillance. Le plus souvent en polyuréthane, en polysiloxane pour les exigences UV extrêmes.',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'L’épaisseur totale de film sec augmente avec la catégorie. À titre indicatif, et en aucun cas comme valeurs normatives : les systèmes C3 se situent souvent autour de 160 à 200 µm, les C4 typiquement de 200 à 240 µm et les C5 de 260 à 320 µm ou plus, répartis sur trois couches ou plus. L’épaisseur nominale de film sec (NDFT) et le nombre de couches découlent toujours du système complet et testé et de la classe de durabilité, tels que définis dans la partie 5 de la norme et dans la fiche technique du fabricant. On n’y déroge jamais.',
+        },
+        {
+          type: 'image',
+          src: '/images/iso-second-layer.jpg',
+          width: 675,
+          height: 1200,
+          alt: 'Application d’une deuxième couche au pistolet airless depuis un échafaudage',
+          caption: 'Construire couche par couche : la deuxième couche est appliquée, chacune avec sa propre fonction et sa propre épaisseur.',
+        },
+        { type: 'h2', text: 'La préparation détermine si le système atteint sa durée de vie' },
+        {
+          type: 'p',
+          segments: [
+            'ISO 12944 est claire sur ce point : le meilleur système échoue sur un mauvais support. La partie 4 renvoie directement aux degrés de soin de la norme ISO 8501-1 et au profil de rugosité correspondant. Pour l’acier sablé dans les systèmes lourds, on spécifie généralement Sa 2½, mais le degré de préparation requis découle toujours du système choisi et de la spécification du projet. La mise en pratique de cette préparation, du dégraissage à la mesure des sels, est expliquée étape par étape dans notre guide pour ',
+            { text: 'préparer l’acier avant la mise en peinture', to: '/insights/steel-surface-preparation' },
+            '. En règle générale, comptez que la moitié de la qualité d’un système anticorrosion réside dans la préparation.',
+          ],
+        },
+        {
+          type: 'image',
+          src: '/images/iso-spot-blast.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Zone sablée localement sur un fond de réservoir riveté, prête pour la réparation',
+          caption: 'Sablage local jusqu’au métal nu : c’est ainsi que commence toute réparation durable.',
+        },
+        { type: 'h2', text: 'Construction neuve ou entretien : deux calculs différents' },
+        {
+          type: 'p',
+          segments: [
+            'En construction neuve, le choix est relativement simple : déterminer la catégorie, choisir la durabilité, sélectionner un système dans la partie 5. En entretien, une évaluation s’ajoute : quel pourcentage de la surface est atteint, le revêtement existant adhère-t-il encore, et une réparation locale a-t-elle du sens ou un sablage complet suivi d’un nouveau système revient-il moins cher sur l’ensemble de la durée de vie ? Nous faisons cet arbitrage chaque jour sur des terminaux et des sites industriels. Nos ',
+            { text: 'projets réalisés', to: '/projects' },
+            ' montrent les deux approches en pratique.',
+          ],
+        },
+        { type: 'h2', text: 'Que doit contenir une spécification ISO 12944 complète ?' },
+        {
+          type: 'p',
+          text: '« C5 » à lui seul ne constitue pas une spécification. Un cahier des charges complet selon ISO 12944 fixe au minimum les éléments suivants :',
+        },
+        {
+          type: 'ul',
+          items: [
+            'La catégorie de corrosivité par structure (ou partie de structure) et par zone d’exposition.',
+            'La classe de durabilité (faible, moyenne, haute ou très haute).',
+            'Le support et le degré de préparation requis (par ex. Sa 2½), avec le profil de rugosité.',
+            'Le système de peinture avec la NDFT par couche et pour l’ensemble du système, conformément à la documentation système approuvée.',
+            'Les couches de renfort (stripe coats) sur les cordons de soudure, les arêtes et les boulons.',
+            'Les conditions d’application (plage climatique, délais de recouvrement).',
+            'La méthode d’inspection et les critères d’acceptation à la réception.',
+          ],
+        },
+        {
+          type: 'p',
+          text: 'S’il manque l’un de ces éléments, il y a de fortes chances que l’entrepreneur et le maître d’ouvrage découvrent à la réception qu’ils ne parlaient pas de la même chose. Un cahier des charges complet protège les deux parties.',
+        },
+        {
+          type: 'image',
+          src: '/images/iso-dft.jpg',
+          width: 900,
+          height: 1200,
+          alt: 'Mesure de l’épaisseur de film sec (DFT) avec un Elcometer sur un revêtement fini, valeur mesurée 385 µm',
+          caption: 'Mesurer, c’est savoir : contrôle de la DFT sur le revêtement fini, ici 385 µm.',
+        },
+        {
+          type: 'callout',
+          title: 'Points clés',
+          items: [
+            'ISO 12944 relie l’environnement (C1 à CX et Im) au niveau de robustesse du système de peinture.',
+            'De nombreuses structures dans les ports belges sont classées C4 à C5, une évaluation faite par zone d’exposition.',
+            'La plage de durabilité est un choix de conception : faible, moyenne, haute ou très haute (plus de 25 ans).',
+            'Les primaires riches en zinc, les couches intermédiaires époxy et les couches de finition PU forment l’ossature de nombreux systèmes lourds.',
+            'La moitié de la qualité réside dans la préparation. Le degré requis découle du système et du cahier des charges.',
+            'La NDFT découle du système testé, pas de la seule catégorie.',
+          ],
+        },
+        { type: 'h2', text: 'Erreurs fréquentes' },
+        {
+          type: 'ul',
+          items: [
+            'Sous-estimer la catégorie de corrosivité pour faire baisser le devis : vous payez la différence deux fois au premier entretien.',
+            'Spécifier un système C5 mais économiser sur le sablage en dessous.',
+            'Additionner les épaisseurs sur papier sans les mesurer couche par couche pendant l’exécution.',
+            'Supprimer la couche de finition « puisque c’est à l’intérieur de toute façon » alors qu’il y a de la condensation ou des vapeurs chimiques.',
+            'Reporter l’entretien au-delà du point où une réparation locale est encore possible.',
+          ],
+        },
+        { type: 'h2', text: 'Questions fréquentes' },
+        {
+          type: 'faq',
+          items: [
+            {
+              q: 'Quelle catégorie de corrosivité s’applique dans le port d’Anvers ?',
+              a: 'Comptez sur C4 à C5 : une combinaison d’atmosphère industrielle, d’air marin et d’agressions chimiques. Pour les parties de structure situées dans la zone de marnage ou immergées, ce sont les catégories Im ou CX qui s’appliquent. Une détermination correcte de la catégorie par projet est toujours la première étape. En cas de doute, on choisit la catégorie supérieure.',
+            },
+            {
+              q: 'Combien de temps dure un système de peinture selon ISO 12944 ?',
+              a: 'La norme fonctionne avec des plages de durabilité jusqu’au premier entretien majeur : faible (jusqu’à 7 ans), moyenne (de 7 à 15), haute (de 15 à 25) et très haute (plus de 25 ans). La plage atteignable dépend de la catégorie, du système choisi, de l’épaisseur et surtout de la qualité de la préparation et de l’application.',
+            },
+            {
+              q: 'Quand un primaire riche en zinc est-il indiqué ?',
+              a: 'Le zinc protège l’acier même lorsque le revêtement est endommagé localement : il se sacrifie à la place de l’acier (protection cathodique). C’est pourquoi de nombreux systèmes approuvés pour les catégories sévères comme C4 et C5 reposent sur une base riche en zinc, combinée à des couches intermédiaires époxy et à une couche de finition résistante aux UV. Ce n’est pas obligatoire : c’est le système choisi et testé qui détermine le primaire.',
+            },
+            {
+              q: 'ISO 12944 impose-t-elle une épaisseur minimale ?',
+              a: 'Non, pas par catégorie. Aucune épaisseur n’est automatiquement associée à C3, C4 ou C5. L’épaisseur nominale de film sec (NDFT) et le nombre de couches découlent du système complet et testé et de la classe de durabilité choisie, tels que définis dans la partie 5 et dans la fiche technique du fabricant. La spécification du projet fixe ces valeurs, ainsi que les critères de mesure et d’acceptation.',
+            },
+            {
+              q: 'ISO 12944 s’applique-t-elle aussi à l’intérieur des réservoirs de stockage ?',
+              a: 'Non. L’intérieur des réservoirs, les canalisations et les structures enterrées sont explicitement exclus de la norme. Pour un revêtement intérieur de réservoir (tank lining), ce sont le produit stocké, la température, la résistance chimique et l’approbation du fabricant qui priment. Consultez à ce sujet notre guide distinct sur le revêtement de réservoirs et le tank lining.',
+            },
+            {
+              q: 'Combien coûte la protection anticorrosion au m² ?',
+              a: 'Cela dépend de la catégorie, du système, de l’épaisseur, de l’état du support et de l’accessibilité. Un système C3 dans un atelier n’est pas le même calcul qu’un système C5 en hauteur dans un terminal en activité. Comme chaque projet est différent, nous chiffrons sur la base d’une inspection ou de votre cahier des charges.',
+            },
+            {
+              q: 'Quelles informations faut-il pour un devis précis ?',
+              a: 'Au minimum : la localisation et l’environnement (ou la catégorie fixée), la surface à traiter en m², l’état du revêtement existant ou de l’acier, la durabilité souhaitée, l’accessibilité (hauteur, échafaudages, site en activité) et le cahier des charges ou le système souhaité, le cas échéant. Avec ces éléments, un devis sans surprises peut être établi. S’il manque quelque chose, nous planifions une courte inspection.',
+            },
+            {
+              q: 'Un système de peinture existant peut-il être renforcé pour un environnement plus agressif ou une durée de vie plus longue ?',
+              a: 'Oui. Après évaluation du revêtement existant, la structure est sablée jusqu’au degré de soin requis et un système plus robuste est appliqué, adapté à l’exposition évaluée et à la durée de vie souhaitée. En cas de dégradation partielle, cela peut se faire par phases, afin que le site reste opérationnel.',
+            },
+          ],
+        },
+        { type: 'h2', text: 'Besoin d’aide pour votre projet ?' },
+        {
+          type: 'cta',
+          title: 'Une protection adaptée à l’environnement',
+          text: 'Russo NV détermine la catégorie de corrosivité, conseille le bon système et réalise l’ensemble du processus : sablage, application et inspection, selon des procédures de sécurité certifiées VCA et conformément à ISO 12944. Demandez un devis ou un conseil sans engagement.',
+          buttonLabel: 'Demander un devis',
+          to: '/contact',
+        },
+      ],
+    },
   },
   {
     slug: 'gianna-russo-top-100-tank-storage-influencers',
@@ -1584,10 +2371,19 @@ export const ARTICLES: Article[] = [
     heroAlt: {
       NL: 'Opslagtanks op een tankterminal bij zonsondergang',
       EN: 'Storage tanks at a tank terminal at sunset',
+      FR: 'Réservoirs de stockage sur un terminal de stockage au coucher du soleil',
     },
     keywords: {
       NL: ['Gianna Russo', 'Top 100 Tank Storage Influencers', 'Storage Terminals Magazine', 'tankopslag', 'Russo NV', 'tankterminal'],
       EN: ['Gianna Russo', 'Top 100 Tank Storage Influencers', 'Storage Terminals Magazine', 'tank storage', 'Russo NV', 'tank terminal'],
+      FR: [
+        'Gianna Russo',
+        'Top 100 Tank Storage Influencers',
+        'Storage Terminals Magazine',
+        'stockage en réservoirs',
+        'Russo NV',
+        'terminal de stockage',
+      ],
     },
     NL: {
       title: 'Gianna Russo opgenomen in de Top 100 Tank Storage Influencers 2027',
@@ -1717,6 +2513,75 @@ export const ARTICLES: Article[] = [
           title: 'Work with a recognized team?',
           text: 'Discover how Russo NV blasts, coats and renovates storage tanks on terminals across Belgium.',
           buttonLabel: 'View our projects',
+          to: '/projects',
+        },
+      ],
+    },
+    FR: {
+      title: 'Gianna Russo figure dans le Top 100 Tank Storage Influencers 2027',
+      metaTitle: 'Gianna Russo au Top 100 Tank Storage Influencers | Russo NV',
+      description: 'Notre CEO Gianna Russo figure dans le Top 100 Tank Storage Influencers Guide 2027 de Storage Terminals Magazine, une reconnaissance internationale du secteur.',
+      excerpt: 'Storage Terminals Magazine a intégré notre CEO Gianna Russo dans son Top 100 Tank Storage Influencers Guide 2027. Une reconnaissance internationale et, pour notre équipe, la confirmation du cap que nous suivons ensemble.',
+      category: 'Actualité de l’entreprise',
+      body: [
+        {
+          type: 'p',
+          text: 'Fin août, nous avons reçu une nouvelle qui nous a d’abord laissés sans voix, puis surtout rendus très fiers : notre CEO Gianna Russo figure dans le Top 100 Tank Storage Influencers Guide 2027 de Storage Terminals Magazine. Elle rejoint ainsi une liste internationale de personnes qui façonnent le secteur du stockage en réservoirs dans le monde entier.',
+        },
+        {
+          type: 'image',
+          src: '/images/gianna-russo-ceo.jpg',
+          width: 940,
+          height: 940,
+          alt: 'Gianna Russo, CEO de Russo NV, avec casque et vêtements de travail sur le chantier',
+          caption: 'Gianna Russo, CEO de Russo NV.',
+        },
+        {
+          type: 'p',
+          segments: [
+            'La nouvelle a aussi été partagée sur LinkedIn : ',
+            {
+              text: 'voir la publication',
+              to: 'https://www.linkedin.com/posts/tankstorage-top100influencers-industryleadership-share-7498396615343271937-VAMa/',
+            },
+            '.',
+          ],
+        },
+        { type: 'h2', text: 'Qu’est-ce que le Top 100 Tank Storage Influencers Guide ?' },
+        {
+          type: 'p',
+          text: 'Storage Terminals Magazine est une revue professionnelle internationale entièrement consacrée au secteur du stockage en réservoirs : terminaux, opérateurs, prestataires de services et la technologie qui les entoure. La rédaction compose le guide annuel du Top 100 sur une période de plusieurs mois, sur la base d’entretiens avec des opérateurs, des propriétaires de terminaux, des prestataires de services et des experts du monde entier. Le guide distingue des personnes ayant une influence démontrable sur la sécurité, le partage des connaissances, la professionnalisation et la transition énergétique au sein du secteur, et il est diffusé lors de conférences et de salons dans le monde entier.',
+        },
+        {
+          type: 'quote',
+          text: 'Le guide met en lumière les personnes qui portent l’innovation et l’excellence dans le stockage en réservoirs à travers le monde.',
+          cite: 'Storage Terminals Magazine',
+        },
+        { type: 'h2', text: 'Pourquoi cette reconnaissance compte' },
+        {
+          type: 'p',
+          segments: [
+            'Le secteur du stockage en réservoirs est dominé par de grands acteurs internationaux. Qu’une entreprise familiale belge d’Anvers figure sur cette liste, aux côtés de CEO de groupes mondiaux de terminaux et de fédérations sectorielles, témoigne du chemin parcouru par Russo NV ces dernières années. Notre équipe travaille jour après jour sur des réservoirs de stockage dans des terminaux belges, du ',
+            { text: 'revêtement de réservoirs et tank lining', to: '/services/tankcoating' },
+            ' jusqu’aux rénovations complètes de parcs de réservoirs, comme récemment sur ',
+            { text: 'un terminal du port de Gand', to: '/projects/tankcoating-gts-gent' },
+            '. Cette présence quotidienne sur le chantier, combinée à plus de trente ans d’expérience depuis 1994, est précisément le type de leadership ancré dans la pratique que le guide entend distinguer.',
+          ],
+        },
+        { type: 'h2', text: 'Remise à Londres' },
+        {
+          type: 'p',
+          text: 'La reconnaissance sera célébrée lors de l’événement de networking du Top 100 à Londres, qui a traditionnellement lieu pendant l’International Energy Week, au début de l’année prochaine. Gianna y sera présente, parmi des collègues du monde entier.',
+        },
+        {
+          type: 'p',
+          text: 'Au nom de toute l’équipe : félicitations, Gianna. Cette reconnaissance est méritée.',
+        },
+        {
+          type: 'cta',
+          title: 'Travailler avec une équipe reconnue ?',
+          text: 'Découvrez comment Russo NV sable, met en peinture et rénove des réservoirs de stockage sur des terminaux dans toute la Belgique.',
+          buttonLabel: 'Voir nos projets',
           to: '/projects',
         },
       ],

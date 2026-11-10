@@ -51,7 +51,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudy }) {
         <div className="relative z-10 w-full max-w-[100rem] mx-auto px-8 py-16 lg:py-20">
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex flex-wrap items-center gap-2 font-paragraph text-xs sm:text-sm text-white/70">
-              <li><Link to={localize('/')} className="hover:text-primary transition-colors">Home</Link></li>
+              <li><Link to={localize('/')} className="hover:text-primary transition-colors">{({ NL: 'Home', EN: 'Home', FR: 'Accueil' } as const)[locale]}</Link></li>
               <li className="text-white/40">/</li>
               <li><Link to={localize('/projects')} className="hover:text-primary transition-colors">{c.backToProjects}</Link></li>
               <li className="text-white/40">/</li>

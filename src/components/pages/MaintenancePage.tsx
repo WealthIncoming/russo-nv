@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Mail, Phone } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 
-type Lang = 'NL' | 'EN';
+type Lang = 'NL' | 'FR' | 'EN';
 
 const copy: Record<Lang, { heading: string; subtitle: string; contact: string }> = {
   NL: {
@@ -15,6 +15,11 @@ const copy: Record<Lang, { heading: string; subtitle: string; contact: string }>
     subtitle: 'Curing time: soon.',
     contact: 'Contact',
   },
+  FR: {
+    heading: 'Le site reçoit un revêtement protecteur.',
+    subtitle: 'Temps de durcissement : bientôt.',
+    contact: 'Contact',
+  },
 };
 
 export default function MaintenancePage() {
@@ -24,7 +29,7 @@ export default function MaintenancePage() {
   return (
     <main className="min-h-screen w-full bg-white flex flex-col items-center justify-center px-6 py-16 relative">
       <div className="absolute top-6 right-6 flex items-center gap-1 font-paragraph text-xs font-bold tracking-[0.15em] uppercase">
-        {(['NL', 'EN'] as const).map((code, i) => (
+        {(['NL', 'FR', 'EN'] as const).map((code, i) => (
           <span key={code} className="flex items-center">
             {i > 0 && <span className="text-dark-grey/30 mx-2">|</span>}
             <button

@@ -146,6 +146,60 @@ const CONTENT = {
     ctaText: 'Send us your specification or schedule a short inspection and you’ll get a clear quote for your industrial painting.',
     relatedTitle: 'Related services',
   },
+  FR: {
+    kicker: 'Services',
+    breadcrumbServices: 'Services',
+    breadcrumbHere: 'Entreprise de peinture industrielle',
+    h1: 'Entreprise de peinture industrielle pour la peinture d’entretien',
+    heroSub: 'Peinture d’entretien et travaux de peinture sur acier, réservoirs, tuyauteries et installations. Réalisés dans les règles de l’art, sur site à Anvers et dans toute la Belgique. Certification VCA et ISO.',
+    ctaPrimary: 'Demander un devis',
+    ctaPhone: 'Appeler le +32 475 43 48 19',
+    intro: [
+      'La peinture industrielle est une affaire de protection, pas d’esthétique. Un système de peinture correctement mis en œuvre protège l’acier pendant des années contre la corrosion, les produits chimiques, la chaleur et l’usure. Tout commence par une préparation de surface soignée. Russo NV prend en charge l’ensemble du processus : du sablage et des primaires jusqu’à la couche de finition, avec une qualité mesurable à chaque étape.',
+      'Nous travaillons principalement sur site : dans des raffineries, sur des terminaux de stockage, dans le port d’Anvers et sur des sites industriels dans toute la Belgique et le Benelux. Nos équipes sont certifiées VCA et travaillent selon la norme ISO 12944 et les spécifications du fabricant de peinture.',
+    ],
+    introLink: { before: 'En tant qu’entreprise de peinture industrielle, Russo NV réalise des ', anchor: 'travaux de peinture industrielle', after: ' dans toute la Belgique, de la construction neuve à l’entretien. Sur cette page, vous découvrez comment nous abordons la peinture d’entretien des installations existantes.' },
+    scopeTitle: 'Ce que comprennent nos travaux de peinture d’entretien',
+    scope: [
+      { title: 'Préparation de surface & sablage', text: 'Sablage jusqu’au degré de soin Sa 2½ ou Sa 3, avec le bon profil de rugosité. C’est la base de tout revêtement durable.' },
+      { title: 'Primaires & couches intermédiaires', text: 'Primaires riches en zinc et couches intermédiaires époxy, qui forment la première et la plus importante barrière contre la corrosion.' },
+      { title: 'Couches de finition', text: 'Couches de finition polyuréthane et époxy : stables en teinte et résistantes aux UV, aux produits chimiques et aux sollicitations mécaniques.' },
+      { title: 'Protection passive contre l’incendie', text: 'Peintures intumescentes et revêtements thermiques qui préservent l’intégrité structurelle de l’acier en cas d’incendie.' },
+      { title: 'Protection anticorrosion', text: 'Systèmes de protection adaptés à la catégorie de corrosivité (ISO 12944), de C2 à C5 et en immersion.' },
+      { title: 'Inspection & contrôle d’épaisseur', text: 'Mesures DFT, essais d’adhérence et rapports, pour que vous ayez la certitude que la spécification est respectée.' },
+    ],
+    processTitle: 'Notre méthode',
+    processIntro: 'Chaque projet suit la même mise en œuvre contrôlée, car un revêtement n’est pas plus solide que son étape la plus faible.',
+    process: [
+      { step: '01', title: 'Inspection & préparation', text: 'Nous évaluons le support, définissons le système de peinture adapté et sécurisons la zone de travail.' },
+      { step: '02', title: 'Sablage', text: 'Sablage jusqu’au degré de soin prescrit et au bon profil de rugosité.' },
+      { step: '03', title: 'Primaire', text: 'Application du primaire dans les conditions climatiques requises, avant l’apparition de rouille éclair (flash rust).' },
+      { step: '04', title: 'Mise en peinture', text: 'Application des couches intermédiaires et de finition jusqu’à l’épaisseur totale prescrite.' },
+      { step: '05', title: 'Inspection & réception', text: 'Mesure d’épaisseur, contrôle et rapport, comme preuve que la spécification est respectée.' },
+    ],
+    processLink: 'En savoir plus : comment préparer l’acier avant la mise en peinture',
+    processLinkIso: 'À lire aussi : la protection anticorrosion selon ISO 12944',
+    sectorsTitle: 'Pour quels secteurs',
+    whyTitle: 'Pourquoi Russo NV',
+    why: [
+      { icon: BadgeCheck, to: '/safety', title: 'Certifications', text: 'VCA et ISO 9001, travail conforme aux normes NACE/SSPC et ISO 12944.' },
+      { icon: MapPin, title: 'Sur site', text: 'Nous intervenons sur votre site, partout en Belgique et au Benelux, y compris en environnement de production.' },
+      { icon: Ruler, title: 'Qualité mesurable', text: 'Degré de soin, profil de rugosité et épaisseur de film sont mesurés et consignés dans un rapport.' },
+      { icon: ClipboardCheck, title: 'Références éprouvées', text: 'Projets d’envergure pour, entre autres, Sea Tank Terminal, Ghent Transport & Storage, CSP terminals, Pfizer et Katoennatie.' },
+    ],
+    faqTitle: 'Questions fréquentes',
+    faq: [
+      { q: 'Qu’est-ce que la peinture industrielle ?', a: 'La peinture industrielle consiste à appliquer des systèmes de revêtement protecteurs sur l’acier et les installations industrielles. L’objectif est la protection contre la corrosion, les produits chimiques, la chaleur et l’usure, et pas seulement l’esthétique. Un système complet comprend la préparation de surface, un primaire, des couches intermédiaires et une couche de finition.' },
+      { q: 'Combien coûtent des travaux de peinture industrielle ?', a: 'Le prix dépend de la surface (m²), de l’état du support, du système de peinture choisi et de l’accessibilité. Comme chaque projet est différent, nous établissons un devis sur mesure après une brève inspection ou sur la base de votre spécification.' },
+      { q: 'Intervenez-vous sur site ?', a: 'Oui. Nous réalisons la plus grande partie de nos travaux de peinture industrielle sur site : dans des raffineries, sur des terminaux de stockage, dans le port d’Anvers et sur des sites industriels dans toute la Belgique et le Benelux.' },
+      { q: 'Quels systèmes de peinture utilisez-vous ?', a: 'Selon l’exposition : primaires riches en zinc, couches intermédiaires époxy, couches de finition polyuréthane et peintures intumescentes de protection incendie. Le système est choisi en fonction de la catégorie de corrosivité (ISO 12944) et de la spécification du fabricant.' },
+      { q: 'Quelles normes et certifications appliquez-vous ?', a: 'Nous sommes certifiés VCA et ISO 9001 et travaillons selon ISO 8501 (degrés de soin), ISO 12944 (protection anticorrosion) et les directives NACE/SSPC. Les inspections sont réalisées avec des appareils de mesure étalonnés.' },
+      { q: 'Combien de temps dure un revêtement industriel ?', a: 'Un système correctement mis en œuvre sur un acier bien préparé tient généralement de 15 à 25 ans, selon la catégorie de corrosivité et l’entretien. Important : il s’agit de la durabilité prévue jusqu’au premier entretien majeur selon ISO 12944, et non d’une durée de garantie. La préparation est le facteur déterminant.' },
+    ],
+    ctaTitle: 'Besoin d’un devis ?',
+    ctaText: 'Envoyez-nous votre spécification ou planifiez une brève inspection. Vous recevrez un devis clair pour vos travaux de peinture industrielle.',
+    relatedTitle: 'Services associés',
+  },
 } as const;
 
 export default function IndustrialPaintingPage() {
@@ -158,7 +212,7 @@ export default function IndustrialPaintingPage() {
     '@type': 'Service',
     '@id': `${pageUrl}#service`,
     name: c.h1,
-    serviceType: locale === 'NL' ? 'Onderhoudsschilderwerken en industrieel schilderwerk' : 'Industrial painting',
+    serviceType: ({ NL: 'Onderhoudsschilderwerken en industrieel schilderwerk', EN: 'Industrial painting', FR: 'Peinture d’entretien et travaux de peinture industrielle' } as const)[locale],
     description: c.heroSub,
     url: pageUrl,
     image: `${SITE_URL}${HERO_IMAGE}`,
@@ -180,9 +234,7 @@ export default function IndustrialPaintingPage() {
     })),
   };
 
-  const heroAlt = locale === 'NL'
-    ? 'Russo NV industriële schilderwerken op staal in de haven van Antwerpen'
-    : 'Russo NV industrial painting on steel in the Port of Antwerp';
+  const heroAlt = ({ NL: 'Russo NV industriële schilderwerken op staal in de haven van Antwerpen', EN: 'Russo NV industrial painting on steel in the Port of Antwerp', FR: 'Travaux de peinture industrielle de Russo NV sur acier dans le port d’Anvers' } as const)[locale];
 
   return (
     <div className="min-h-screen bg-background">
@@ -198,7 +250,7 @@ export default function IndustrialPaintingPage() {
         <div className="relative z-10 w-full max-w-[100rem] mx-auto px-8 py-16 lg:py-20">
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex flex-wrap items-center gap-2 font-paragraph text-xs sm:text-sm text-white/70">
-              <li><Link to={localize('/')} className="hover:text-primary transition-colors">Home</Link></li>
+              <li><Link to={localize('/')} className="hover:text-primary transition-colors">{({ NL: 'Home', EN: 'Home', FR: 'Accueil' } as const)[locale]}</Link></li>
               <li className="text-white/40">/</li>
               <li><Link to={localize('/services')} className="hover:text-primary transition-colors">{c.breadcrumbServices}</Link></li>
               <li className="text-white/40">/</li>
