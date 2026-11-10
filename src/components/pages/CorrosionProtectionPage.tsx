@@ -149,7 +149,7 @@ const CONTENT = {
     ctaPhone: 'Appeler le +32 475 43 48 19',
     intro: [
       'La rouille ne s’arrête jamais d’elle-même. Toute structure en acier exposée sans protection à l’extérieur, dans un port, à côté d’une installation chimique ou simplement sous le climat belge, perd chaque année de l’acier. La protection anticorrosion est le métier qui met ce processus à l’arrêt : le bon système de peinture, sur un support correctement préparé, aux épaisseurs de film prescrites.',
-      'Russo NV protège l’acier depuis 1994 : charpentes métalliques, parcs de réservoirs, racks de tuyauteries, hangars et installations, en construction neuve comme en entretien. Nous déterminons la catégorie de corrosivité de l’environnement, conseillons le système et réalisons l’ensemble du processus avec notre propre matériel : sablage, application et inspection, documentés jusqu’au dossier de réception.',
+      'Russo NV protège l’acier depuis 1984 : charpentes métalliques, parcs de réservoirs, racks de tuyauteries, hangars et installations, en construction neuve comme en entretien. Nous déterminons la catégorie de corrosivité de l’environnement, conseillons le système et réalisons l’ensemble du processus avec notre propre matériel : sablage, application et inspection, documentés jusqu’au dossier de réception.',
     ],
     scopeTitle: 'Ce que comprend notre protection anticorrosion',
     scope: [
@@ -174,7 +174,7 @@ const CONTENT = {
     whyTitle: 'Pourquoi Russo NV',
     why: [
       { icon: BadgeCheck, to: '/safety', title: 'Certifié', text: 'VCA et ISO 9001, systèmes et épaisseurs de film selon ISO 12944 et la spécification du fabricant du revêtement.' },
-      { icon: History, title: 'Depuis 1994', text: 'Plus de 30 ans de protection de l’acier dans le port et l’industrie d’Anvers : nous connaissons la pratique C5 de l’intérieur.' },
+      { icon: History, title: 'Depuis 1984', text: 'Plus de 40 ans de protection de l’acier dans le port et l’industrie d’Anvers : nous connaissons la pratique C5 de l’intérieur.' },
       { icon: Factory, title: 'Notre propre matériel', text: 'Nos propres sableuses, compresseurs et installations de pulvérisation : préparation et application sans sous-traitant intermédiaire.' },
       { icon: Ruler, title: 'Qualité mesurable', text: 'Degré de soin, conditions ambiantes et épaisseurs de film sont mesurés et enregistrés, du premier sablage au dossier de réception.' },
     ],

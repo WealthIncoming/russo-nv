@@ -2565,7 +2565,7 @@ export const ARTICLES: Article[] = [
             { text: 'revêtement de réservoirs et tank lining', to: '/services/tankcoating' },
             ' jusqu’aux rénovations complètes de parcs de réservoirs, comme récemment sur ',
             { text: 'un terminal du port de Gand', to: '/projects/tankcoating-gts-gent' },
-            '. Cette présence quotidienne sur le chantier, combinée à plus de trente ans d’expérience depuis 1994, est précisément le type de leadership ancré dans la pratique que le guide entend distinguer.',
+            '. Cette présence quotidienne sur le chantier, combinée à plus de quarante ans d’expérience depuis 1984, est précisément le type de leadership ancré dans la pratique que le guide entend distinguer.',
           ],
         },
         { type: 'h2', text: 'Remise à Londres' },
