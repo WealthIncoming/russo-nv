@@ -50,7 +50,7 @@ const CONTENT = {
       'Industriële schilderwerken draaien om bescherming, niet om esthetiek. Een correct opgebouwd coatingsysteem beschermt staal jarenlang tegen corrosie, chemicaliën, hitte en slijtage. Dat begint bij een vakkundige oppervlaktevoorbereiding. Russo NV verzorgt het volledige traject: van stralen en grondlagen tot de afwerkende toplaag, met meetbare kwaliteit op elke stap.',
       'We werken hoofdzakelijk op locatie: in raffinaderijen, op tankterminals, in de haven van Antwerpen en op industriële sites in heel België en de Benelux. Onze ploegen zijn VCA-gecertificeerd en werken volgens ISO 12944 en de specificaties van de coatingfabrikant.',
     ],
-    introLink: { before: 'Als industrieel schildersbedrijf voert Russo NV ', anchor: 'industriële schilderwerken', after: ' uit in heel Vlaanderen, van nieuwbouw tot onderhoud. Op deze pagina leest u hoe we onderhoudsschilderwerken aan bestaande installaties aanpakken.' },
+    introLink: { before: 'Als industrieel schildersbedrijf voert Russo NV ', anchor: 'industriële schilderwerken', after: ' uit in heel België, van nieuwbouw tot onderhoud. Op deze pagina leest u hoe we onderhoudsschilderwerken aan bestaande installaties aanpakken.' },
     scopeTitle: 'Wat onze onderhoudsschilderwerken omvatten',
     scope: [
       { title: 'Oppervlaktevoorbereiding & stralen', text: 'Stralen tot reinheidsgraad Sa 2½ of Sa 3 met het juiste ankerprofiel. Dit is de basis van elke duurzame coating.' },
@@ -104,7 +104,7 @@ const CONTENT = {
       'Industrial painting is about protection, not aesthetics. A correctly built coating system protects steel for years against corrosion, chemicals, heat and wear. It all starts with expert surface preparation. Russo NV handles the whole process: from blasting and primers to the finishing top coat, with measurable quality at every step.',
       'We work mainly on-site: in refineries, on tank terminals, in the Port of Antwerp and at industrial sites across Belgium and the Benelux. Our crews are VCA-certified and work to ISO 12944 and the coating manufacturer’s specification.',
     ],
-    introLink: { before: 'As an industrial painting contractor, Russo NV delivers ', anchor: 'industrial painting', after: ' across Flanders, from new-build to maintenance. This page covers how we approach maintenance painting of existing installations.' },
+    introLink: { before: 'As an industrial painting contractor, Russo NV delivers ', anchor: 'industrial painting', after: ' across Belgium, from new-build to maintenance. This page covers how we approach maintenance painting of existing installations.' },
     scopeTitle: 'What our industrial painting covers',
     scope: [
       { title: 'Surface preparation & blasting', text: 'Blasting to cleanliness grade Sa 2½ or Sa 3 with the correct anchor profile, the basis of any durable coating.' },
