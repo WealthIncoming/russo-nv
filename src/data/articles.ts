@@ -1604,6 +1604,14 @@ export const ARTICLES: Article[] = [
           alt: 'Gianna Russo, CEO van Russo NV, met helm en werkkledij op de werf',
           caption: 'Gianna Russo, CEO van Russo NV.',
         },
+        {
+          type: 'p',
+          segments: [
+            'Het nieuws werd ook op LinkedIn gedeeld: ',
+            { text: 'bekijk het bericht', to: 'https://www.linkedin.com/posts/tankstorage-top100influencers-industryleadership-share-7498396615343271937-VAMa/' },
+            '.',
+          ],
+        },
         { type: 'h2', text: 'Wat is de Top 100 Tank Storage Influencers Guide?' },
         {
           type: 'p',
@@ -1661,6 +1669,14 @@ export const ARTICLES: Article[] = [
           height: 940,
           alt: 'Gianna Russo, CEO of Russo NV, in helmet and workwear on site',
           caption: 'Gianna Russo, CEO of Russo NV.',
+        },
+        {
+          type: 'p',
+          segments: [
+            'The news was also shared on LinkedIn: ',
+            { text: 'see the post', to: 'https://www.linkedin.com/posts/tankstorage-top100influencers-industryleadership-share-7498396615343271937-VAMa/' },
+            '.',
+          ],
         },
         { type: 'h2', text: 'What is the Top 100 Tank Storage Influencers Guide?' },
         {
