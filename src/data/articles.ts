@@ -1097,7 +1097,6 @@ export const ARTICLES: Article[] = [
     slug: 'corrosion-protection-iso-12944',
     updated: '2026-11-06',
     date: '2026-08-19',
-    updated: '2026-08-19',
     author: 'Stig Vanmarsenille',
     authorRole: {
       NL: 'NACE Level 2 coating inspector',
