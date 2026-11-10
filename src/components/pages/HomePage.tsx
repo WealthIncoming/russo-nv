@@ -229,7 +229,7 @@ const HOME_GUIDE = {
       { q: 'Wat is het verschil met gewoon schilderwerk?', a: 'Bij gewoon schilderwerk gaat het vooral om afwerking en uitzicht. Bij industriële schilderwerken gaat het om een technisch systeem: een voorgeschreven reinheidsgraad van het staal, gemeten laagdiktes, klimaatregistratie en een dossier dat aantoont wat er op het staal zit.' },
       { q: 'Wat valt onder industriële schilderwerken?', a: 'Opslagtanks binnen en buiten, staalconstructies, pijpleidingen en pijpbruggen, havenkranen, silo\'s, loodsen en magazijnen, en installaties in de chemie, de energie en de voedingsindustrie.' },
       { q: 'Hoe lang gaat een industrieel coatingsysteem mee?', a: 'Dat hangt af van de omgeving en het systeem. ISO 12944 werkt met levensduurbereiken van laag, tot 7 jaar, tot zeer hoog, meer dan 25 jaar. Dat is een ontwerpverwachting en geen garantie: de voorbereiding en het onderhoud bepalen mee hoe lang een systeem het volhoudt.' },
-      { q: 'Werkt Russo NV alleen in Antwerpen?', a: 'Nee. Vanuit Merksem werken we in heel België en in Nederland, onder meer in de havens van Antwerpen, Gent en Zeebrugge en op industriële sites in de regio Amsterdam.' },
+      { q: 'Werkt Russo NV alleen in Antwerpen?', a: 'Nee. Vanuit Merksem werken we in heel België en Nederland, onder meer in de havens van Antwerpen, Gent en Zeebrugge en in de regio Amsterdam. We werken ook in het buitenland, waar het project ons nodig heeft: op dit moment voeren we een tankproject uit op Malta.' },
     ],
   },
   EN: {
@@ -244,7 +244,7 @@ const HOME_GUIDE = {
       { q: 'How does it differ from ordinary painting?', a: 'Ordinary painting is mainly about finish and appearance. Industrial painting is a technical system: a prescribed steel cleanliness grade, measured film thicknesses, climate records and a dossier proving what is on the steel.' },
       { q: 'What does industrial painting cover?', a: 'Storage tanks inside and out, steel structures, pipelines and pipe bridges, port cranes, silos, sheds and warehouses, and installations in chemicals, energy and food production.' },
       { q: 'How long does an industrial coating system last?', a: 'That depends on the environment and the system. ISO 12944 uses durability ranges from low, up to 7 years, to very high, more than 25 years. That is a design expectation and not a guarantee: preparation and maintenance help decide how long a system lasts.' },
-      { q: 'Does Russo NV only work in Antwerp?', a: 'No. From Merksem we work across Belgium and in the Netherlands, including the ports of Antwerp, Ghent and Zeebrugge and industrial sites in the Amsterdam region.' },
+      { q: 'Does Russo NV only work in Antwerp?', a: 'No. From Merksem we work across Belgium and the Netherlands, including the ports of Antwerp, Ghent and Zeebrugge and the Amsterdam region. We also work abroad, wherever the project needs us: right now we are carrying out a tank project in Malta.' },
     ],
   },
 } as const;
