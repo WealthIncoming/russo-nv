@@ -46,6 +46,16 @@ export default function ArticlePage() {
     segments.map((s, i) =>
       typeof s === 'string' ? (
         <span key={i}>{s}</span>
+      ) : /^https?:\/\//.test(s.to) ? (
+        <a
+          key={i}
+          href={s.to}
+          target="_blank"
+          rel="noopener"
+          className="text-primary font-medium underline underline-offset-2 hover:text-primary/80"
+        >
+          {s.text}
+        </a>
       ) : (
         <Link
           key={i}
