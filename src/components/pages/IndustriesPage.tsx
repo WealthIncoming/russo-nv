@@ -125,7 +125,7 @@ export default function IndustriesPage() {
             <span className="font-paragraph text-primary text-sm uppercase tracking-wider">
               {t('industries', 'heroLabel')}
             </span>
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-white mt-4 mb-8 leading-tight sm:leading-none uppercase">
+            <h1 className={`font-heading ${locale === 'FR' ? 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl' : 'text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl'} text-white mt-4 mb-8 leading-tight sm:leading-none uppercase`}>
               {t('industries', 'heroLine1')}<br />
               <span className="text-primary">{t('industries', 'heroLine2')}</span>
             </h1>

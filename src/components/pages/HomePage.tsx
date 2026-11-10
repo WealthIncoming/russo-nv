@@ -354,7 +354,7 @@ export default function HomePage() {
             </motion.div>
 
             <div className="w-full max-w-full md:max-w-[900px] mx-auto md:mx-0">
-              <h1 className="font-heading font-black text-white uppercase text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.88] md:leading-[0.85] tracking-tight text-center md:text-left">
+              <h1 className={`font-heading font-black text-white uppercase ${locale === 'FR' ? 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl' : 'text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl'} leading-[0.88] md:leading-[0.85] tracking-tight text-center md:text-left`}>
                 <motion.span
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
