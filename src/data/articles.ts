@@ -1665,6 +1665,14 @@ export const ARTICLES: Article[] = [
           type: 'p',
           text: 'Eind augustus kregen we nieuws binnen waar we stil van werden, en daarna vooral heel trots: onze CEO Gianna Russo is opgenomen in de Top 100 Tank Storage Influencers Guide 2027 van Storage Terminals Magazine. Daarmee staat ze op een internationale lijst van mensen die de tankopslagsector wereldwijd vormgeven.',
         },
+        {
+          type: 'image',
+          src: '/images/gianna-russo-ceo.jpg',
+          width: 940,
+          height: 940,
+          alt: 'Gianna Russo, CEO van Russo NV, met helm en werkkledij op de werf',
+          caption: 'Gianna Russo, CEO van Russo NV.',
+        },
         { type: 'h2', text: 'Wat is de Top 100 Tank Storage Influencers Guide?' },
         {
           type: 'p',
@@ -1714,6 +1722,14 @@ export const ARTICLES: Article[] = [
         {
           type: 'p',
           text: 'In late August we received news that made us pause, and then made us very proud: our CEO Gianna Russo has been included in the Top 100 Tank Storage Influencers Guide 2027 of Storage Terminals Magazine. That places her on an international list of people shaping the tank storage sector worldwide.',
+        },
+        {
+          type: 'image',
+          src: '/images/gianna-russo-ceo.jpg',
+          width: 940,
+          height: 940,
+          alt: 'Gianna Russo, CEO of Russo NV, in helmet and workwear on site',
+          caption: 'Gianna Russo, CEO of Russo NV.',
         },
         { type: 'h2', text: 'What is the Top 100 Tank Storage Influencers Guide?' },
         {
