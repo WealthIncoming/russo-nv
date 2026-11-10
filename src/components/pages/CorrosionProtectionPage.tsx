@@ -46,13 +46,8 @@ const CONTENT = {
     ctaPrimary: 'Vraag een offerte aan',
     ctaPhone: 'Bel +32 475 43 48 19',
     intro: [
-<<<<<<< HEAD
       'Roest stopt nooit uit zichzelf. Elke staalconstructie die onbeschermd buiten staat, in een haven, naast een chemische installatie of gewoon in het Belgische klimaat, levert elk jaar staal in. Corrosiebescherming is de vakdiscipline die dat proces stillegt: het juiste coatingsysteem, op een correct voorbereide ondergrond, in de voorgeschreven laagdiktes. Staat er al roest, dan begint het bij corrosiebestrijding: de aangetaste zones saneren en het systeem zo opbouwen dat de schade niet terugkomt.',
-      'Russo NV conserveert staal sinds 1994: staalconstructies, tankparken, pijpbruggen, loodsen en installaties, in nieuwbouw en in onderhoud. We bepalen de corrosiviteitsklasse van de omgeving, adviseren het systeem en voeren het volledige traject uit met eigen materieel: stralen, applicatie en inspectie, gedocumenteerd tot en met het opleverdossier.',
-=======
-      'Roest stopt nooit uit zichzelf. Elke staalconstructie die onbeschermd buiten staat, in een haven, naast een chemische installatie of gewoon in het Belgische klimaat, levert elk jaar staal in. Corrosiebescherming is de vakdiscipline die dat proces stillegt: het juiste coatingsysteem, op een correct voorbereide ondergrond, in de voorgeschreven laagdiktes.',
       'Russo NV conserveert staal sinds 1984: staalconstructies, tankparken, pijpbruggen, loodsen en installaties, in nieuwbouw en in onderhoud. We bepalen de corrosiviteitsklasse van de omgeving, adviseren het systeem en voeren het volledige traject uit met eigen materieel: stralen, applicatie en inspectie, gedocumenteerd tot en met het opleverdossier.',
->>>>>>> selfhost
     ],
     scopeTitle: 'Wat onze corrosiebescherming omvat',
     scope: [
@@ -104,13 +99,8 @@ const CONTENT = {
     ctaPrimary: 'Request a quote',
     ctaPhone: 'Call +32 475 43 48 19',
     intro: [
-<<<<<<< HEAD
       'Rust never stops by itself. Every steel structure standing unprotected outdoors, in a port, next to a chemical plant or simply in the Belgian climate, gives up steel every year. Corrosion protection is the discipline that halts that process: the right coating system, on a correctly prepared substrate, at the specified film thicknesses. If rust is already there, it starts with corrosion control: remediating the affected zones and building the system so the damage does not come back.',
-      'Russo NV has been preserving steel since 1994: structures, tank farms, pipe racks, warehouses and installations, in new-build and in maintenance. We determine the corrosivity category of the environment, advise the system and deliver the complete scope with our own equipment: blasting, application and inspection, documented through to the handover dossier.',
-=======
-      'Rust never stops by itself. Every steel structure standing unprotected outdoors, in a port, next to a chemical plant or simply in the Belgian climate, gives up steel every year. Corrosion protection is the discipline that halts that process: the right coating system, on a correctly prepared substrate, at the specified film thicknesses.',
       'Russo NV has been preserving steel since 1984: structures, tank farms, pipe racks, warehouses and installations, in new-build and in maintenance. We determine the corrosivity category of the environment, advise the system and deliver the complete scope with our own equipment: blasting, application and inspection, documented through to the handover dossier.',
->>>>>>> selfhost
     ],
     scopeTitle: 'What our corrosion protection covers',
     scope: [
