@@ -6,10 +6,11 @@ import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { useLocale } from '@/lib/i18n/useLocale';
 import { serializeJsonLd, toIsoDateOrUndefined } from '@/lib/json-ld';
 import { format } from 'date-fns';
-import { nl } from 'date-fns/locale';
+import { fr, nl } from 'date-fns/locale';
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, Calendar, MapPin, Wrench } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { CASE_STUDIES, caseStudyHasLocale } from '@/data/case-studies';
 import { Link } from 'react-router-dom';
 
 // =============================================================================
@@ -36,6 +37,12 @@ const CASE_STUDY_LINKS: Record<string, string> = {
   albeton: '/projects/silo-renovatie-albeton',
   gts: '/projects/tankcoating-gts-gent',
 };
+
+// French pages exist only for case studies that have been translated.
+function caseStudyAvailable(path: string, locale: 'NL' | 'EN' | 'FR'): boolean {
+  const study = CASE_STUDIES.find((c) => `/projects/${c.slug}` === path);
+  return !study || caseStudyHasLocale(study, locale);
+}
 
 // =============================================================================
 // HELPER - Find the translation prefix for a given project title.
@@ -151,7 +158,7 @@ export default function ProjectsPage() {
     if (!date) return 'N/A';
     try {
       return format(new Date(date), 'MMMM yyyy', {
-        locale: locale === 'NL' ? nl : undefined,
+        locale: locale === 'NL' ? nl : locale === 'FR' ? fr : undefined,
       });
     } catch {
       return 'N/A';
@@ -167,7 +174,7 @@ export default function ProjectsPage() {
     name: t('projects', 'pageTitle'),
     description: t('projects', 'heroDescription'),
     url: collectionUrl,
-    inLanguage: locale === 'EN' ? 'en' : 'nl-BE',
+    inLanguage: { NL: 'nl-BE', EN: 'en', FR: 'fr-BE' }[locale],
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': `${SITE_URL}/#organization` },
     hasPart: projects.map((p) => {
@@ -214,7 +221,7 @@ export default function ProjectsPage() {
               {t('projects', 'heroLabel')}
             </span>
             <h1 className={`font-heading text-white mt-4 mb-8 leading-none uppercase ${
-              locale === 'NL'
+              locale !== 'EN'
                 ? 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl'
                 : 'text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl'
             }`}>
@@ -332,12 +339,12 @@ export default function ProjectsPage() {
                       </p>
 
                       <div className="flex flex-wrap gap-x-8 gap-y-3">
-                        {slug && CASE_STUDY_LINKS[slug] && (
+                        {slug && CASE_STUDY_LINKS[slug] && caseStudyAvailable(CASE_STUDY_LINKS[slug], locale) && (
                           <Link
                             to={localize(CASE_STUDY_LINKS[slug])}
                             className="inline-flex items-center gap-2 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all"
                           >
-                            {locale === 'NL' ? 'Lees de case study' : 'Read the case study'}
+                            {{ NL: 'Lees de case study', EN: 'Read the case study', FR: 'Lire l’étude de cas' }[locale]}
                             <ArrowUpRight className="w-4 h-4" />
                           </Link>
                         )}

@@ -2,7 +2,7 @@
 import "@/styles/global.css";
 // Static 404 served by Cloudflare Pages with a real 404 status for unknown
 // URLs (replaces the SPA fallback that returned 200 + a client redirect).
-// Bilingual on one page: locale of an unknown URL can't be known statically.
+// Trilingual on one page: locale of an unknown URL can't be known statically.
 ---
 
 <html lang="nl" class="w-full h-full">
@@ -22,7 +22,7 @@ import "@/styles/global.css";
         Pagina niet gevonden
       </h1>
       <p class="font-paragraph text-base text-foreground/70 max-w-prose">
-        Deze pagina bestaat niet (meer). / This page does not exist.
+        Deze pagina bestaat niet (meer). / Cette page n’existe pas. / This page does not exist.
       </p>
       <div class="flex flex-wrap gap-4 justify-center">
         <a
@@ -36,6 +36,12 @@ import "@/styles/global.css";
           class="font-paragraph font-bold uppercase tracking-wider text-sm border border-foreground/20 text-foreground px-6 py-3 hover:border-primary"
         >
           Go to homepage
+        </a>
+        <a
+          href="/fr"
+          class="font-paragraph font-bold uppercase tracking-wider text-sm border border-foreground/20 text-foreground px-6 py-3 hover:border-primary"
+        >
+          Vers l’accueil
         </a>
       </div>
     </main>

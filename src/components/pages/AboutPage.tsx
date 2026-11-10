@@ -42,7 +42,7 @@ export default function AboutPage() {
               {t('about', 'heroLabel')}
             </span>
             <h1 className={`font-heading text-white mt-4 mb-8 leading-tight sm:leading-none uppercase ${
-              locale === 'NL'
+              locale !== 'EN'
                 ? 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl'
                 : 'text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl'
             }`}>

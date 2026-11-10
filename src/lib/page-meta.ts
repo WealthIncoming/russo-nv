@@ -3,7 +3,7 @@
 // RouteSync (document.title on client-side navigation). Keep both consumers in
 // mind when editing: keys are *base* paths without the /en prefix.
 
-export type Locale = 'NL' | 'EN';
+export type Locale = 'NL' | 'EN' | 'FR';
 
 export type LocaleMeta = {
   title: string;
@@ -16,6 +16,7 @@ export type LocaleMeta = {
 export type PageMeta = {
   NL: LocaleMeta;
   EN: LocaleMeta;
+  FR: LocaleMeta;
   noindex?: boolean;
 };
 
@@ -197,5 +198,5 @@ export const PAGE_META: Record<string, PageMeta> = {
 // entry under its /projects/<slug> base path so astro + RouteSync find it.
 import { CASE_STUDIES } from '@/data/case-studies';
 for (const cs of CASE_STUDIES) {
-  PAGE_META[`/projects/${cs.slug}`] = cs.meta;
+  PAGE_META[`/projects/${cs.slug}`] = { NL: cs.meta.NL, EN: cs.meta.EN, FR: cs.meta.FR ?? cs.meta.NL };
 }

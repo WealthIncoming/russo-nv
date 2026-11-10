@@ -4,6 +4,7 @@
 // publication (the /projects card) or facts Bruno supplies explicitly.
 // Routing/meta/sitemap all derive from this array, like articles.ts.
 import type { Locale } from '@/lib/page-meta';
+import type { LocaleText } from '@/data/articles';
 
 export interface CaseStudyContent {
   kicker: string;
@@ -28,10 +29,16 @@ export interface CaseStudy {
   completion: string;
   heroImage: string;
   secondaryImage?: string;
-  breadcrumb: Record<Locale, string>;
-  meta: Record<Locale, { title: string; description: string; image: string }>;
+  breadcrumb: LocaleText<string>;
+  meta: LocaleText<{ title: string; description: string; image: string }>;
   NL: CaseStudyContent;
   EN: CaseStudyContent;
+  FR?: CaseStudyContent;
+}
+
+/** True when the case study exists in this locale (FR only once translated). */
+export function caseStudyHasLocale(study: CaseStudy, locale: Locale): boolean {
+  return locale !== 'FR' || !!study.FR;
 }
 
 export const CASE_STUDY_BASE = '/projects';

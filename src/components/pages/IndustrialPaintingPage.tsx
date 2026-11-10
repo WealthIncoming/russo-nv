@@ -20,21 +20,21 @@ const ARTICLE_TO = '/insights/steel-surface-preparation';
 const ARTICLE_ISO_TO = '/insights/corrosion-protection-iso-12944';
 
 const RELATED = [
-  { to: '/services#sandblastingAbrasive', NL: 'Stralen & oppervlaktevoorbereiding', EN: 'Blasting & surface preparation' },
-  { to: '/services#corrosionProtection', NL: 'Corrosiebescherming', EN: 'Corrosion protection' },
-  { to: '/services#fireproofingThermal', NL: 'Brandwerende coatings', EN: 'Fireproofing coatings' },
-  { to: '/services#coatingInspection', NL: 'Coating-inspectie', EN: 'Coating inspection' },
+  { to: '/services#sandblastingAbrasive', NL: 'Stralen & oppervlaktevoorbereiding', EN: 'Blasting & surface preparation' , FR: 'Sablage et préparation de surface' },
+  { to: '/services#corrosionProtection', NL: 'Corrosiebescherming', EN: 'Corrosion protection' , FR: 'Protection anticorrosion' },
+  { to: '/services#fireproofingThermal', NL: 'Brandwerende coatings', EN: 'Fireproofing coatings' , FR: 'Peintures intumescentes' },
+  { to: '/services#coatingInspection', NL: 'Coating-inspectie', EN: 'Coating inspection' , FR: 'Inspection des revêtements' },
 ];
 
 // Sector cards link to the matching section on the Industries page.
 // Anchors come from INDUSTRY_TRANSLATION_MAP in IndustriesPage.tsx.
 const SECTORS = [
-  { to: '/industries#oilgas', NL: 'Petrochemie, olie & gas', EN: 'Petrochemical, oil & gas' },
-  { to: '/industries#chemical', NL: 'Chemie', EN: 'Chemical' },
-  { to: '/industries#marine', NL: 'Maritiem & haven', EN: 'Marine & port' },
-  { to: '/industries#food', NL: 'Voedingsindustrie', EN: 'Food production' },
-  { to: '/industries#manufacturing', NL: 'Productie & industrie', EN: 'Manufacturing & industry' },
-  { to: '/industries#power', NL: 'Energie & nutsbedrijven', EN: 'Energy & utilities' },
+  { to: '/industries#oilgas', NL: 'Petrochemie, olie & gas', EN: 'Petrochemical, oil & gas' , FR: 'Pétrochimie, pétrole et gaz' },
+  { to: '/industries#chemical', NL: 'Chemie', EN: 'Chemical' , FR: 'Chimie' },
+  { to: '/industries#marine', NL: 'Maritiem & haven', EN: 'Marine & port' , FR: 'Maritime et portuaire' },
+  { to: '/industries#food', NL: 'Voedingsindustrie', EN: 'Food production' , FR: 'Industrie alimentaire' },
+  { to: '/industries#manufacturing', NL: 'Productie & industrie', EN: 'Manufacturing & industry' , FR: 'Production et industrie' },
+  { to: '/industries#power', NL: 'Energie & nutsbedrijven', EN: 'Energy & utilities' , FR: 'Énergie et services publics' },
 ];
 
 const CONTENT = {

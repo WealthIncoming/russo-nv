@@ -53,11 +53,11 @@ export default function Header() {
     { path: '/contact', labelKey: 'contact' },
   ];
 
-  const languages = ['NL', 'EN'] as const;
+  const languages = ['NL', 'FR', 'EN'] as const;
 
   const isActive = (path: string) => location.pathname === localize(path);
 
-  const onLanguageChange = (lang: 'EN' | 'NL') => {
+  const onLanguageChange = (lang: 'EN' | 'NL' | 'FR') => {
     if (lang === locale) return;
     navigate(swap(lang));
   };
@@ -117,7 +117,7 @@ export default function Header() {
               <Globe className="w-4 h-4 text-foreground" />
               <select
                 value={locale}
-                onChange={(e) => onLanguageChange(e.target.value as 'EN' | 'NL')}
+                onChange={(e) => onLanguageChange(e.target.value as 'EN' | 'NL' | 'FR')}
                 className="font-paragraph text-sm bg-transparent border-none outline-none cursor-pointer text-foreground"
                 aria-label="Language"
               >
@@ -182,7 +182,7 @@ export default function Header() {
                   <Globe className="w-4 h-4 text-foreground" />
                   <select
                     value={locale}
-                    onChange={(e) => onLanguageChange(e.target.value as 'EN' | 'NL')}
+                    onChange={(e) => onLanguageChange(e.target.value as 'EN' | 'NL' | 'FR')}
                     className="font-paragraph text-sm bg-transparent border-none outline-none cursor-pointer text-foreground flex-1"
                     aria-label="Language"
                   >

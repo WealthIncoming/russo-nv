@@ -4,10 +4,10 @@ import { ArrowRight, Clock } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { useLocale } from '@/lib/i18n/useLocale';
-import { sortedArticles, articleUrl, readingMinutes } from '@/data/articles';
+import { sortedArticles, articleUrl, readingMinutes, articleContent, hasLocale, localeText } from '@/data/articles';
 
-function formatDate(iso: string, locale: 'NL' | 'EN') {
-  return new Date(iso).toLocaleDateString(locale === 'NL' ? 'nl-BE' : 'en-GB', {
+function formatDate(iso: string, locale: 'NL' | 'EN' | 'FR') {
+  return new Date(iso).toLocaleDateString({ NL: 'nl-BE', EN: 'en-GB', FR: 'fr-BE' }[locale], {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
@@ -17,7 +17,7 @@ function formatDate(iso: string, locale: 'NL' | 'EN') {
 export default function ArticlesIndexPage() {
   const { t } = useLanguageStore();
   const { locale, localize } = useLocale();
-  const articles = sortedArticles();
+  const articles = sortedArticles().filter((a) => hasLocale(a, locale));
 
   return (
     <div className="min-h-screen bg-background">
@@ -46,7 +46,7 @@ export default function ArticlesIndexPage() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {articles.map((article, i) => {
-              const c = article[locale];
+              const c = articleContent(article, locale);
               return (
                 <motion.article
                   key={article.slug}
@@ -60,7 +60,7 @@ export default function ArticlesIndexPage() {
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <Image
                         src={article.heroImage}
-                        alt={article.heroAlt[locale]}
+                        alt={localeText(article.heroAlt, locale)}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                         width={768}
                       />

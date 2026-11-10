@@ -103,6 +103,7 @@ export const routes: RouteObject[] = [
     children: [
       ...pageChildren,
       { path: 'en', children: pageChildren },
+      { path: 'fr', children: pageChildren },
       { path: '*', element: <Navigate to="/" replace /> },
     ],
   },

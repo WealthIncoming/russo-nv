@@ -22,7 +22,10 @@
 // (VCA-gecertificeerd, grond- en tussenlagen) are correct spelling and stay.
 // ---------------------------------------------------------------------------
 
-export type Locale = 'NL' | 'EN';
+export type Locale = 'NL' | 'EN' | 'FR';
+
+/** Per-locale value; French is optional while the French site grows. */
+export type LocaleText<T> = { NL: T; EN: T; FR?: T };
 
 /** A run of text that may contain inline internal links (good for SEO). */
 export type Segment = string | { text: string; to: string };
@@ -64,21 +67,22 @@ export interface Article {
   /** Byline name. A named, credentialed human strengthens E-E-A-T. */
   author: string;
   /** Author credential / job title, shown in the byline + bio (localized). */
-  authorRole?: Record<Locale, string>;
+  authorRole?: LocaleText<string>;
   /** Short author bio for the end-of-article E-E-A-T box (localized). */
-  authorBio?: Record<Locale, string>;
+  authorBio?: LocaleText<string>;
   /** Author profile URL (e.g. LinkedIn) → schema.org Person.sameAs. */
   authorUrl?: string;
   /** Author headshot, served from /public/images → bio box + Person.image. */
   authorImage?: string;
   /** Hero image, served from /public/images. Swap for a real job photo. */
   heroImage: string;
-  heroAlt: Record<Locale, string>;
+  heroAlt: LocaleText<string>;
   /** 'light' keeps the bottom dark for the title but lets the photo's colours show above it. */
   heroOverlay?: 'light';
-  keywords: Record<Locale, string[]>;
+  keywords: LocaleText<string[]>;
   NL: ArticleContent;
   EN: ArticleContent;
+  FR?: ArticleContent;
 }
 
 export const ARTICLE_BASE = '/insights';
@@ -1723,6 +1727,21 @@ export const ARTICLES: Article[] = [
 // ---------------------------------------------------------------------------
 // Helpers (pure)
 // ---------------------------------------------------------------------------
+
+/** True when the article exists in this locale (NL and EN always, FR only once translated). */
+export function hasLocale(article: Article, locale: Locale): boolean {
+  return locale !== 'FR' || !!article.FR;
+}
+
+/** The article's content in this locale, falling back to NL. */
+export function articleContent(article: Article, locale: Locale): ArticleContent {
+  return article[locale] ?? article.NL;
+}
+
+/** A per-locale value, falling back to NL. */
+export function localeText<T>(value: LocaleText<T>, locale: Locale): T {
+  return value[locale] ?? value.NL;
+}
 
 export function sortedArticles(): Article[] {
   // Newest first. ISO date strings sort lexicographically.

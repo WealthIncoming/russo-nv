@@ -18,20 +18,20 @@ const PHONE_HREF = '+32475434819';
 const ARTICLE_TO = '/insights/corrosion-protection-iso-12944';
 
 const RELATED = [
-  { to: '/services/industriele-schilderwerken', NL: 'Industriële schilderwerken', EN: 'Industrial painting' },
-  { to: '/services/industrieel-stralen', NL: 'Industrieel stralen', EN: 'Industrial blasting' },
-  { to: '/services/tankcoating', NL: 'Tankcoating & tank lining', EN: 'Tank coating & lining' },
-  { to: '/services#coatingInspection', NL: 'Coating-inspectie', EN: 'Coating inspection' },
+  { to: '/services/industriele-schilderwerken', NL: 'Industriële schilderwerken', EN: 'Industrial painting' , FR: 'Peinture industrielle' },
+  { to: '/services/industrieel-stralen', NL: 'Industrieel stralen', EN: 'Industrial blasting' , FR: 'Sablage industriel' },
+  { to: '/services/tankcoating', NL: 'Tankcoating & tank lining', EN: 'Tank coating & lining' , FR: 'Revêtement de réservoirs' },
+  { to: '/services#coatingInspection', NL: 'Coating-inspectie', EN: 'Coating inspection' , FR: 'Inspection des revêtements' },
 ];
 
 // Sector cards link to the matching section on the Industries page.
 const SECTORS = [
-  { to: '/industries#oilgas', NL: 'Petrochemie, olie & gas', EN: 'Petrochemical, oil & gas' },
-  { to: '/industries#chemical', NL: 'Chemie', EN: 'Chemical' },
-  { to: '/industries#marine', NL: 'Maritiem & haven', EN: 'Marine & port' },
-  { to: '/industries#food', NL: 'Voedingsindustrie', EN: 'Food production' },
-  { to: '/industries#manufacturing', NL: 'Productie & industrie', EN: 'Manufacturing & industry' },
-  { to: '/industries#power', NL: 'Energie & nutsbedrijven', EN: 'Energy & utilities' },
+  { to: '/industries#oilgas', NL: 'Petrochemie, olie & gas', EN: 'Petrochemical, oil & gas' , FR: 'Pétrochimie, pétrole et gaz' },
+  { to: '/industries#chemical', NL: 'Chemie', EN: 'Chemical' , FR: 'Chimie' },
+  { to: '/industries#marine', NL: 'Maritiem & haven', EN: 'Marine & port' , FR: 'Maritime et portuaire' },
+  { to: '/industries#food', NL: 'Voedingsindustrie', EN: 'Food production' , FR: 'Industrie alimentaire' },
+  { to: '/industries#manufacturing', NL: 'Productie & industrie', EN: 'Manufacturing & industry' , FR: 'Production et industrie' },
+  { to: '/industries#power', NL: 'Energie & nutsbedrijven', EN: 'Energy & utilities' , FR: 'Énergie et services publics' },
 ];
 
 const CONTENT = {

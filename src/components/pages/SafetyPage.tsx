@@ -5,7 +5,7 @@ import { BaseCrudService } from '@/integrations';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { useLocale } from '@/lib/i18n/useLocale';
 import { format } from 'date-fns';
-import { nl } from 'date-fns/locale';
+import { fr, nl } from 'date-fns/locale';
 import { motion } from 'framer-motion';
 import { ArrowRight, Award, CheckCircle, FileCheck, Shield } from 'lucide-react';
 import { useEffect, useState } from 'react';
@@ -81,7 +81,7 @@ export default function SafetyPage() {
     if (!date) return 'N/A';
     try {
       return format(new Date(date), 'MMMM yyyy', {
-        locale: locale === 'NL' ? nl : undefined,
+        locale: locale === 'NL' ? nl : locale === 'FR' ? fr : undefined,
       });
     } catch {
       return 'N/A';

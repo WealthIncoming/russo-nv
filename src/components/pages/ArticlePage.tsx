@@ -6,16 +6,19 @@ import { Image } from '@/components/ui/image';
 import { useLanguageStore } from '@/lib/i18n/useLanguage';
 import { useLocale } from '@/lib/i18n/useLocale';
 import {
+  articleContent,
   articleUrl,
   findArticle,
+  hasLocale,
+  localeText,
   readingMinutes,
   relatedArticles,
   type ArticleBlock,
   type Segment,
 } from '@/data/articles';
 
-function formatDate(iso: string, locale: 'NL' | 'EN') {
-  return new Date(iso).toLocaleDateString(locale === 'NL' ? 'nl-BE' : 'en-GB', {
+function formatDate(iso: string, locale: 'NL' | 'EN' | 'FR') {
+  return new Date(iso).toLocaleDateString({ NL: 'nl-BE', EN: 'en-GB', FR: 'fr-BE' }[locale], {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
@@ -32,15 +35,16 @@ export default function ArticlePage() {
   // HTML already ships the right <title> (built in [...slug].astro), but a SPA
   // hop never reloads the document, so set it here too.
   useEffect(() => {
-    if (article) document.title = article[locale].metaTitle;
+    if (article) document.title = articleContent(article, locale).metaTitle;
   }, [article, locale]);
 
-  if (!article) {
+  // Unknown slug, or no translation in this language yet: back to the overview of this language.
+  if (!article || !hasLocale(article, locale)) {
     return <Navigate to={localize('/insights')} replace />;
   }
 
-  const c = article[locale];
-  const related = relatedArticles(article.slug);
+  const c = articleContent(article, locale);
+  const related = relatedArticles(article.slug, 6).filter((a) => hasLocale(a, locale)).slice(0, 3);
 
   const renderSegments = (segments: Segment[]) =>
     segments.map((s, i) =>
@@ -202,7 +206,7 @@ export default function ArticlePage() {
       {/* Hero */}
       <header className="relative w-full min-h-[52vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src={article.heroImage} alt={article.heroAlt[locale]} className="w-full h-full object-cover" width={1600} />
+          <Image src={article.heroImage} alt={localeText(article.heroAlt, locale)} className="w-full h-full object-cover" width={1600} />
           <div className={`absolute inset-0 bg-gradient-to-t ${article.heroOverlay === 'light' ? 'from-black/85 via-black/25 to-black/0' : 'from-black/90 via-black/70 to-black/40'}`} />
         </div>
         <div className="relative z-10 w-full max-w-[80rem] mx-auto px-8 py-16 lg:py-20">
@@ -223,7 +227,7 @@ export default function ArticlePage() {
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-6 font-paragraph text-sm text-white/70">
               <span>
                 {t('insights', 'by')} {article.author}
-                {article.authorRole && <span className="text-white/50">, {article.authorRole[locale]}</span>}
+                {article.authorRole && <span className="text-white/50">, {localeText(article.authorRole, locale)}</span>}
               </span>
               <span className="text-white/30">•</span>
               <time dateTime={article.date}>{formatDate(article.date, locale)}</time>
@@ -246,7 +250,7 @@ export default function ArticlePage() {
           {article.authorBio && (
             <aside className="mt-14 pt-8 border-t border-dark-grey/15">
               <p className="font-paragraph text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">
-                {locale === 'NL' ? 'Over de auteur' : 'About the author'}
+                {{ NL: 'Over de auteur', EN: 'About the author', FR: 'À propos de l’auteur' }[locale]}
               </p>
               <div className="flex items-start gap-4">
                 {article.authorImage ? (
@@ -265,11 +269,11 @@ export default function ArticlePage() {
                   <p className="font-heading text-lg text-foreground leading-tight">{article.author}</p>
                   {article.authorRole && (
                     <p className="font-paragraph text-xs font-bold uppercase tracking-wider text-primary mt-0.5">
-                      {article.authorRole[locale]}
+                      {localeText(article.authorRole, locale)}
                     </p>
                   )}
                   <p className="font-paragraph text-sm text-foreground/70 leading-relaxed mt-2 max-w-2xl">
-                    {article.authorBio[locale]}
+                    {localeText(article.authorBio, locale)}
                   </p>
                   {article.authorUrl && (
                     <a
@@ -307,7 +311,7 @@ export default function ArticlePage() {
             <h2 className="font-heading text-2xl sm:text-3xl text-foreground uppercase mb-10">{t('insights', 'relatedTitle')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {related.map((r) => {
-                const rc = r[locale];
+                const rc = articleContent(r, locale);
                 return (
                   <Link
                     key={r.slug}
@@ -315,7 +319,7 @@ export default function ArticlePage() {
                     className="group flex flex-col border border-dark-grey/15 bg-white hover:border-primary transition-colors"
                   >
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image src={r.heroImage} alt={r.heroAlt[locale]} className="w-full h-full object-cover" width={500} />
+                      <Image src={r.heroImage} alt={localeText(r.heroAlt, locale)} className="w-full h-full object-cover" width={500} />
                     </div>
                     <div className="p-6">
                       <span className="font-paragraph text-xs font-bold text-primary uppercase tracking-wider">{rc.category}</span>

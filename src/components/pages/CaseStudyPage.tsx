@@ -5,6 +5,8 @@
 // breadcrumb schema is built in [...slug].astro.
 import { Image } from '@/components/ui/image';
 import type { CaseStudy } from '@/data/case-studies';
+import { localeText } from '@/data/articles';
+import { Navigate } from 'react-router-dom';
 import { useLocale } from '@/lib/i18n/useLocale';
 import { serializeJsonLd } from '@/lib/json-ld';
 import { motion } from 'framer-motion';
@@ -15,7 +17,7 @@ const SITE_URL = 'https://www.russonv.com';
 
 export default function CaseStudyPage({ study }: { study: CaseStudy }) {
   const { locale, localize } = useLocale();
-  const c = study[locale];
+  const c = study[locale] ?? study.NL;
   const pageUrl = `${SITE_URL}${localize(`/projects/${study.slug}`)}`;
 
   // Matches the CreativeWork items the /projects collection schema exposes.
@@ -29,9 +31,12 @@ export default function CaseStudyPage({ study }: { study: CaseStudy }) {
     url: pageUrl,
     image: `${SITE_URL}${study.heroImage}`,
     dateCreated: study.completion,
-    inLanguage: locale === 'EN' ? 'en' : 'nl-BE',
+    inLanguage: { NL: 'nl-BE', EN: 'en', FR: 'fr-BE' }[locale],
     provider: { '@id': `${SITE_URL}/#organization` },
   };
+
+  // No French version yet: send French visitors to the French projects overview.
+  if (!study[locale]) return <Navigate to={localize('/projects')} replace />;
 
   return (
     <div className="min-h-screen bg-background">
@@ -50,7 +55,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudy }) {
               <li className="text-white/40">/</li>
               <li><Link to={localize('/projects')} className="hover:text-primary transition-colors">{c.backToProjects}</Link></li>
               <li className="text-white/40">/</li>
-              <li className="text-white/90">{study.breadcrumb[locale]}</li>
+              <li className="text-white/90">{localeText(study.breadcrumb, locale)}</li>
             </ol>
           </nav>
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>

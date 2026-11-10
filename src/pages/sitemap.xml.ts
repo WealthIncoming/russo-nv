@@ -17,15 +17,18 @@ const PAGES = [
   { path: '/about',      priority: '0.7', changefreq: 'monthly' },
   { path: '/contact',    priority: '0.9', changefreq: 'monthly' },
   { path: ARTICLE_BASE,  priority: '0.8', changefreq: 'weekly' },
-  ...CASE_STUDIES.map((c) => ({ path: `/projects/${c.slug}`, priority: '0.7', changefreq: 'monthly' })),
+  ...CASE_STUDIES.map((c) => ({ path: `/projects/${c.slug}`, priority: '0.7', changefreq: 'monthly', fr: !!c.FR })),
 ];
 
 const enPath = (path: string) => (path === '/' ? '/en' : `/en${path}`);
+const frPath = (path: string) => (path === '/' ? '/fr' : `/fr${path}`);
 
-const alternatesFor = (nlUrl: string, enUrl: string) =>
+const alternatesFor = (nlUrl: string, enUrl: string, frUrl?: string) =>
   `    <xhtml:link rel="alternate" hreflang="nl-be" href="${nlUrl}" />
     <xhtml:link rel="alternate" hreflang="nl" href="${nlUrl}" />
-    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />
+    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />${frUrl ? `
+    <xhtml:link rel="alternate" hreflang="fr-be" href="${frUrl}" />
+    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />` : ''}
     <xhtml:link rel="alternate" hreflang="x-default" href="${nlUrl}" />`;
 
 const urlBlock = (loc: string, changefreq: string, priority: string, alternates: string, lastmod?: string) =>
@@ -40,10 +43,13 @@ export const GET: APIRoute = () => {
   const pageEntries = PAGES.flatMap((page) => {
     const nlUrl = `${SITE_URL}${page.path}`;
     const enUrl = `${SITE_URL}${enPath(page.path)}`;
-    const alternates = alternatesFor(nlUrl, enUrl);
+    const hasFr = (page as { fr?: boolean }).fr !== false;
+    const frUrl = hasFr ? `${SITE_URL}${frPath(page.path)}` : undefined;
+    const alternates = alternatesFor(nlUrl, enUrl, frUrl);
     return [
       urlBlock(nlUrl, page.changefreq, page.priority, alternates),
       urlBlock(enUrl, page.changefreq, page.priority, alternates),
+      ...(frUrl ? [urlBlock(frUrl, page.changefreq, page.priority, alternates)] : []),
     ];
   });
 
@@ -51,11 +57,13 @@ export const GET: APIRoute = () => {
     const path = `${ARTICLE_BASE}/${article.slug}`;
     const nlUrl = `${SITE_URL}${path}`;
     const enUrl = `${SITE_URL}${enPath(path)}`;
-    const alternates = alternatesFor(nlUrl, enUrl);
+    const frUrl = article.FR ? `${SITE_URL}${frPath(path)}` : undefined;
+    const alternates = alternatesFor(nlUrl, enUrl, frUrl);
     const lastmod = (article.updated ?? article.date).slice(0, 10);
     return [
       urlBlock(nlUrl, 'monthly', '0.7', alternates, lastmod),
       urlBlock(enUrl, 'monthly', '0.7', alternates, lastmod),
+      ...(frUrl ? [urlBlock(frUrl, 'monthly', '0.7', alternates, lastmod)] : []),
     ];
   });
 

@@ -310,7 +310,8 @@ function sourceOf(referer) {
 function prettyPage(path) {
   if (!path) return "-";
   const en = /^\/en(\/|$)/.test(path);
-  let p = path.replace(/^\/en/, "").replace(/\/+$/, "");
+  const fr = /^\/fr(\/|$)/.test(path);
+  let p = path.replace(/^\/(en|fr)(?=\/|$)/, "").replace(/\/+$/, "");
   let name;
   if (p === "" || p === "/") name = "Home";
   else {
@@ -318,7 +319,7 @@ function prettyPage(path) {
       .map((s) => s.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()))
       .join(" / ");
   }
-  return en ? name + " · EN" : name;
+  return en ? name + " · EN" : fr ? name + " · FR" : name;
 }
 
 function csvCell(v) {

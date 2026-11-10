@@ -270,7 +270,7 @@ export default function ServicesPage() {
                             {/* Service name - now translated */}
                             <div className="min-w-0">
                               <h2 className={`font-heading text-foreground leading-[1.05] tracking-tight ${
-                                locale === 'NL'
+                                locale !== 'EN'
                                   ? 'text-xl sm:text-2xl lg:text-3xl xl:text-4xl'
                                   : 'text-2xl sm:text-3xl lg:text-4xl xl:text-5xl'
                               }`}>
@@ -290,7 +290,7 @@ export default function ServicesPage() {
                                 to={localize('/services/industriele-schilderwerken')}
                                 className="inline-flex items-center gap-2 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all w-fit"
                               >
-                                {locale === 'NL' ? 'Meer over industriële schilderwerken' : 'More about industrial painting'}
+                                {{ NL: 'Meer over industriële schilderwerken', EN: 'More about industrial painting', FR: 'En savoir plus sur la peinture industrielle' }[locale]}
                                 <ArrowRight className="w-4 h-4" />
                               </Link>
                             )}
@@ -301,7 +301,7 @@ export default function ServicesPage() {
                                 to={localize('/services/industrieel-stralen')}
                                 className="inline-flex items-center gap-2 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all w-fit"
                               >
-                                {locale === 'NL' ? 'Meer over industrieel stralen' : 'More about industrial blasting'}
+                                {{ NL: 'Meer over industrieel stralen', EN: 'More about industrial blasting', FR: 'En savoir plus sur le sablage industriel' }[locale]}
                                 <ArrowRight className="w-4 h-4" />
                               </Link>
                             )}
@@ -312,7 +312,7 @@ export default function ServicesPage() {
                                 to={localize('/services/corrosiebescherming')}
                                 className="inline-flex items-center gap-2 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all w-fit"
                               >
-                                {locale === 'NL' ? 'Meer over corrosiebescherming' : 'More about corrosion protection'}
+                                {{ NL: 'Meer over corrosiebescherming', EN: 'More about corrosion protection', FR: 'En savoir plus sur la protection anticorrosion' }[locale]}
                                 <ArrowRight className="w-4 h-4" />
                               </Link>
                             )}
@@ -323,7 +323,7 @@ export default function ServicesPage() {
                                 to={localize('/services/tankcoating')}
                                 className="inline-flex items-center gap-2 font-paragraph text-sm font-bold uppercase tracking-wider text-primary hover:gap-3 transition-all w-fit"
                               >
-                                {locale === 'NL' ? 'Meer over tankcoating & tank lining' : 'More about tank coating & tank lining'}
+                                {{ NL: 'Meer over tankcoating & tank lining', EN: 'More about tank coating & tank lining', FR: 'En savoir plus sur le revêtement de réservoirs' }[locale]}
                                 <ArrowRight className="w-4 h-4" />
                               </Link>
                             )}
