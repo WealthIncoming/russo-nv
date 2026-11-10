@@ -45,7 +45,7 @@ const CONTENT = {
     ctaPhone: 'Bel +32 475 43 48 19',
     intro: [
       'Roest stopt nooit uit zichzelf. Elke staalconstructie die onbeschermd buiten staat, in een haven, naast een chemische installatie of gewoon in het Belgische klimaat, levert elk jaar staal in. Corrosiebescherming is de vakdiscipline die dat proces stillegt: het juiste coatingsysteem, op een correct voorbereide ondergrond, in de voorgeschreven laagdiktes.',
-      'Russo NV conserveert staal sinds 1994: staalconstructies, tankparken, pijpbruggen, loodsen en installaties, in nieuwbouw en in onderhoud. We bepalen de corrosiviteitsklasse van de omgeving, adviseren het systeem en voeren het volledige traject uit met eigen materieel: stralen, applicatie en inspectie, gedocumenteerd tot en met het opleverdossier.',
+      'Russo NV conserveert staal sinds 1984: staalconstructies, tankparken, pijpbruggen, loodsen en installaties, in nieuwbouw en in onderhoud. We bepalen de corrosiviteitsklasse van de omgeving, adviseren het systeem en voeren het volledige traject uit met eigen materieel: stralen, applicatie en inspectie, gedocumenteerd tot en met het opleverdossier.',
     ],
     scopeTitle: 'Wat onze corrosiebescherming omvat',
     scope: [
@@ -70,7 +70,7 @@ const CONTENT = {
     whyTitle: 'Waarom Russo NV',
     why: [
       { icon: BadgeCheck, to: '/safety', title: 'Gecertificeerd', text: 'VCA en ISO 9001, systemen en laagdiktes volgens ISO 12944 en de specificatie van de coatingfabrikant.' },
-      { icon: History, title: 'Sinds 1994', text: 'Meer dan 30 jaar staal conserveren in de Antwerpse haven en industrie: wij kennen de C5-praktijk van binnenuit.' },
+      { icon: History, title: 'Sinds 1984', text: 'Meer dan 40 jaar staal conserveren in de Antwerpse haven en industrie: wij kennen de C5-praktijk van binnenuit.' },
       { icon: Factory, title: 'Eigen materieel', text: 'Eigen straalketels, compressoren en spuitinstallaties: voorbereiding en applicatie zonder onderaannemers ertussen.' },
       { icon: Ruler, title: 'Meetbare kwaliteit', text: 'Reinheid, klimaat en laagdiktes worden gemeten en geregistreerd, van eerste straalbeurt tot opleverdossier.' },
     ],
@@ -97,7 +97,7 @@ const CONTENT = {
     ctaPhone: 'Call +32 475 43 48 19',
     intro: [
       'Rust never stops by itself. Every steel structure standing unprotected outdoors, in a port, next to a chemical plant or simply in the Belgian climate, gives up steel every year. Corrosion protection is the discipline that halts that process: the right coating system, on a correctly prepared substrate, at the specified film thicknesses.',
-      'Russo NV has been preserving steel since 1994: structures, tank farms, pipe racks, warehouses and installations, in new-build and in maintenance. We determine the corrosivity category of the environment, advise the system and deliver the complete scope with our own equipment: blasting, application and inspection, documented through to the handover dossier.',
+      'Russo NV has been preserving steel since 1984: structures, tank farms, pipe racks, warehouses and installations, in new-build and in maintenance. We determine the corrosivity category of the environment, advise the system and deliver the complete scope with our own equipment: blasting, application and inspection, documented through to the handover dossier.',
     ],
     scopeTitle: 'What our corrosion protection covers',
     scope: [
@@ -122,7 +122,7 @@ const CONTENT = {
     whyTitle: 'Why Russo NV',
     why: [
       { icon: BadgeCheck, to: '/safety', title: 'Certified', text: 'VCA and ISO 9001, systems and film thicknesses to ISO 12944 and the coating manufacturer specification.' },
-      { icon: History, title: 'Since 1994', text: 'Over 30 years of preserving steel in the port of Antwerp and industry: we know C5 practice from the inside.' },
+      { icon: History, title: 'Since 1984', text: 'Over 40 years of preserving steel in the port of Antwerp and industry: we know C5 practice from the inside.' },
       { icon: Factory, title: 'Own equipment', text: 'Own blast pots, compressors and spray equipment: preparation and application without subcontractors in between.' },
       { icon: Ruler, title: 'Measurable quality', text: 'Cleanliness, climate and film thicknesses are measured and recorded, from the first blast to the handover dossier.' },
     ],
