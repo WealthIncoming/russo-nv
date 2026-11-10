@@ -113,7 +113,7 @@ const ORGANIZATION_JSON_LD = {
   alternateName: 'Russo Industriële Coatings',
   url: 'https://www.russonv.com',
   logo: 'https://www.russonv.com/images/logo.png',
-  foundingDate: '1994-06-28',
+  foundingDate: '1984',
   vatID: 'BE0453001480',
   knowsAbout: ['industriële schilderwerken', 'industrieel stralen', 'tankcoating', 'tank lining', 'corrosiebescherming', 'brandwerende coatings', 'ISO 12944', 'ISO 8501-1'],
   description: 'Specialist in industriële coatings, stralen en brandwerende coatings in Antwerpen, actief in heel België, Nederland en Luxemburg voor petrochemie, maritieme sector en industrie.',
