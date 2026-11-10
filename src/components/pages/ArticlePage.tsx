@@ -193,7 +193,7 @@ export default function ArticlePage() {
       <header className="relative w-full min-h-[52vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src={article.heroImage} alt={article.heroAlt[locale]} className="w-full h-full object-cover" width={1600} />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40" />
+          <div className={`absolute inset-0 bg-gradient-to-t ${article.heroOverlay === 'light' ? 'from-black/85 via-black/25 to-black/0' : 'from-black/90 via-black/70 to-black/40'}`} />
         </div>
         <div className="relative z-10 w-full max-w-[80rem] mx-auto px-8 py-16 lg:py-20">
           {/* Breadcrumb */}
