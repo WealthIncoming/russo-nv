@@ -210,11 +210,76 @@ function esc(value) {
 // ---------------------------------------------------------------------------
 
 // Known crawlers, SEO/AI bots, scanners and CLI/library agents.
-const BOT_UA_RE = /bot\b|bot\/|crawl|spider|slurp|mediapartners|bingpreview|facebookexternalhit|facebot|ia_archiver|ahrefs|semrush|mj12|dotbot|petal|bytespider|gptbot|chatgpt|oai-searchbot|ccbot|claudebot|claude-web|anthropic|perplexity|amazonbot|applebot|dataforseo|blexbot|seznam|screaming\s?frog|headlesschrome|phantomjs|python-requests|python-urllib|aiohttp|go-http-client|libwww|httpclient|okhttp|scrapy|masscan|zgrab|censys|shodan|nuclei|nmap|wget|curl\/|java\/|jakarta|axios|node-fetch|got\s|lighthouse|pingdom|uptimerobot|statuscake|gtmetrix|site24x7|expanse|internet-?measurement|paloaltonetworks|l9scan|scanner|probe|monitoring/i;
+const BOT_UA_RE = /bot\b|bot\/|crawl|spider|slurp|mediapartners|bingpreview|facebookexternalhit|facebot|ia_archiver|ahrefs|semrush|mj12|dotbot|petal|bytespider|gptbot|chatgpt|oai-searchbot|ccbot|claudebot|claude-web|anthropic|perplexity|amazonbot|applebot|dataforseo|blexbot|seznam|screaming\s?frog|headlesschrome|phantomjs|python-requests|python-urllib|aiohttp|go-http-client|libwww|httpclient|okhttp|scrapy|masscan|zgrab|censys|shodan|nuclei|nmap|wget|curl\/|java\/|jakarta|axios|node-fetch|got\s|lighthouse|pingdom|uptimerobot|statuscake|gtmetrix|site24x7|expanse|internet-?measurement|paloaltonetworks|l9scan|scanner|probe|monitoring|whatsapp|uripreview|preview|fingerprint|domain-list|puppeteer|playwright|selenium|electron\/|microsoft office\//i;
 
 // Hosting / cloud / scanner networks - traffic from here is automated even when
-// the User-Agent is spoofed to look like a browser.
-const DC_ORG_RE = /amazon|aws|google\s?(llc|cloud|inc)|microsoft|azure|digitalocean|digital\s?ocean|ovh|hetzner|linode|akamai|fastly|vultr|scaleway|contabo|leaseweb|choopa|oracle|alibaba|tencent|huawei|censys|shodan|stretchoid|binaryedge|driftnet|palo\s?alto|internet\s?census|datacamp|m247|cogent|hostwinds|hostinger|namecheap|godaddy|colocrossing|quadranet|servers|data\s?center|datacenter|hosting|\bvpn\b|proxy|\brelay\b|colocation|code200|collyer|aventice|sabotage|techoff|cia\s?triad|mod\s?mission|aceville|artikel\s?10/i;
+// the User-Agent is spoofed to look like a browser. The second line holds the
+// hosting firms seen faking browser traffic in the log (checked 11/11/2026).
+const DC_ORG_RE = new RegExp([
+  "amazon|aws|google\\s?(llc|cloud|inc)|microsoft|azure|digitalocean|digital\\s?ocean|ovh|hetzner|linode|akamai|fastly|vultr|scaleway|contabo|leaseweb|choopa|oracle|alibaba|tencent|huawei|censys|shodan|stretchoid|binaryedge|driftnet|palo\\s?alto|internet\\s?census|datacamp|m247|cogent|hostwinds|hostinger|namecheap|godaddy|colocrossing|quadranet|servers|data\\s?center|datacenter|hosting|\\bvpn\\b|proxy|\\brelay\\b|colocation|code200|collyer|aventice|sabotage|techoff|cia\\s?triad|mod\\s?mission|aceville|artikel\\s?10",
+  "feo\\s?prest|netcrafters|bestdc|datagio|3xk\\s?tech|white\\s?label\\s?services|racknerd|hostpapa|aliyun|wookra|a100\\s?row|atlas\\s?network|logicweb|host\\s?baltic|power\\s?nms|serv\\.host|alexhost|global\\s?layer|^server$|internet\\s?security|tower\\s?two|barracuda|hurricane?\\s?electric",
+  "hostroyale|hostaly|directbackup|myridweb|traffictransit|\\bipxo\\b|netcup|netlabs|blatant|subnet\\s?digital|\\bsyn\\s?ltd|limited\\s?network|chiron\\s?software|4th\\s?utility|global\\s?transit|panaglobal|^decrypt$|virtualine|frantech|web2objects|\\bbl\\s?networks",
+].join("|"), "i");
+
+// russonv.be, www.russonv.be and the bare russonv.com only ever answer with a
+// 301 to www.russonv.com, and a browser keeps the ORIGINAL referrer across a
+// redirect. A page view that claims to come from one of them is forged; scanners
+// even put the file they just probed there (https://russonv.be/.git/config).
+const FAKE_REF_RE = /^https?:\/\/(?:(?:www\.)?russonv\.be|russonv\.com)(?:[:/?#]|$)/i;
+const PROBE_REF_RE = /^https?:\/\/[^/]*russonv\.[a-z]+\/(?:[^?#]*\/)?(?:\.|%2e)|^https?:\/\/[^/]*russonv\.[a-z]+\/.*(?:php-?info|info\.php|actuator|server-status|wp-admin|wp-login|cgi-bin|backend\/|%2f)/i;
+
+// Chrome ships a new major version every 4 weeks (131 on 12/11/2024) and updates
+// itself, so a plain Chrome or Edge more than STALE_CHROME majors behind the date
+// of the visit is a frozen bot User-Agent, not a person. Only the plain Chrome /
+// Edge template is judged: Samsung Internet, Opera and in-app browsers can lag.
+const CHROME_BASE_MAJOR = 131;
+const CHROME_BASE_MS = Date.UTC(2024, 10, 12);
+const STALE_CHROME = 12;
+const PLAIN_CHROME_RE = /^Mozilla\/5\.0 \(([^)]*)\) AppleWebKit\/537\.36 \(KHTML, like Gecko\) Chrome\/((\d+)\.\d+\.\d+\.\d+) (?:Mobile )?Safari\/537\.36(?: Edg\/[\d.]+)?$/;
+
+// Browsers whose Chrome token lags behind Chrome itself (in-app WebViews, phone
+// makers' own browsers): never judged on version age.
+const LAGGING_CHROME_RE = /; wv\)|SamsungBrowser|MiuiBrowser|HuaweiBrowser|UCBrowser|QQBrowser|Quark|HeyTap|VivoBrowser|OppoBrowser|Silk\//i;
+// Firefox also ships every 4 weeks (133 on 26/11/2024) except the ESR lines,
+// which companies keep for a year.
+const FIREFOX_BASE_MAJOR = 133;
+const FIREFOX_BASE_MS = Date.UTC(2024, 10, 26);
+const FIREFOX_ESR = { 115: 1, 128: 1, 140: 1, 152: 1, 153: 1 };
+const RELEASE_MS = 28 * 86400000;
+
+// A User-Agent that no real browser sends. Returns the reason, or null.
+function forgedBrowser(u, ts) {
+  if (/MSIE |Trident\//.test(u)) return "Internet Explorer (retired)";
+  if (!/AppleWebKit\/|Gecko\//.test(u)) return "Not a browser";
+  const t = Date.parse(ts || "") || Date.now();
+  const c = u.match(/\bChrome\/([\d.]+)/);
+  if (c) {
+    // Real Chrome always sends a four-part version and "(KHTML, like Gecko)".
+    if (c[1].split(".").length !== 4 || !/\(KHTML, like Gecko\)/.test(u)) return "Fake browser signature";
+    const major = +c[1].split(".")[0];
+    const m = u.match(PLAIN_CHROME_RE);
+    if (m) {
+      if (/Windows NT [56]\./.test(m[1]) && major >= 110) return "Fake browser signature"; // Chrome 110+ never ran on Windows 7
+      // Since Chrome 113 every real Chrome and Edge sends the reduced string:
+      // version NNN.0.0.0 and, on Android, the frozen "Linux; Android 10; K".
+      // A full build number or a real phone model there is a bot's UA list.
+      if (major >= 113 && !/\.0\.0\.0$/.test(m[2])) return "Fake browser signature";
+      if (major >= 113 && /Android/.test(m[1]) && m[1] !== "Linux; Android 10; K") return "Fake browser signature";
+    }
+    if (!LAGGING_CHROME_RE.test(u)) {
+      const expected = CHROME_BASE_MAJOR + Math.floor((t - CHROME_BASE_MS) / RELEASE_MS);
+      if (major < expected - STALE_CHROME) return "Outdated browser (bot)";
+    }
+  } else if (/AppleWebKit\/537\.36/.test(u) && !/Safari\//.test(u)) {
+    return "Fake browser signature"; // truncated Chromium string
+  }
+  const f = u.match(/\bFirefox\/(\d+)/);
+  if (f && !FIREFOX_ESR[+f[1]]) {
+    const expected = FIREFOX_BASE_MAJOR + Math.floor((t - FIREFOX_BASE_MS) / RELEASE_MS);
+    if (+f[1] < expected - STALE_CHROME) return "Outdated browser (bot)";
+  }
+  return null;
+}
 
 const BOT_NAMES = {
   googlebot: "Googlebot", bingbot: "Bingbot", yandexbot: "YandexBot", duckduckbot: "DuckDuckBot",
@@ -225,22 +290,155 @@ const BOT_NAMES = {
   facebookexternalhit: "Facebook", ccbot: "CCBot", dataforseo: "DataForSEO", censys: "Censys (scanner)",
   masscan: "masscan (scanner)", zgrab: "zgrab (scanner)", nuclei: "nuclei (scanner)",
   curl: "curl", wget: "wget", "python-requests": "Python script", scrapy: "Scrapy",
+  whatsapp: "WhatsApp link preview", uripreview: "Link preview", fingerprint: "CMS fingerprinter",
+  "microsoft office/": "Office app link check",
 };
 
-function classifyVisit(ua, org, country) {
+// A full page load whose referrer is the same page of the live site. The site
+// navigates client-side, so a person never produces that; form-spam bots that
+// fetch / and then /contact with a home-made referrer do.
+function selfReferral(referer, path) {
+  if (!referer || !path) return false;
+  let ref;
+  try { ref = new URL(referer); } catch (_) { return false; }
+  if (ref.hostname !== CANONICAL_HOST) return false;
+  const norm = (p) => (p.replace(/\/+$/, "") || "/");
+  return norm(ref.pathname) === norm(path);
+}
+
+// The name of a self-declared bot / tool User-Agent, or null.
+function botName(u) {
+  if (!BOT_UA_RE.test(u)) return null;
+  const lower = u.toLowerCase();
+  for (const key in BOT_NAMES) {
+    if (lower.includes(key)) return BOT_NAMES[key];
+  }
+  const m = u.match(/([a-z0-9.\-]*bot)/i);
+  return m ? m[1] : "Bot / crawler";
+}
+
+// A 30-day window holds ~10k rows but only ~700 distinct User-Agents and
+// networks, so the regex work is memoised per call (keeps the Worker's CPU low).
+function memo(map, key, fn) {
+  if (!map) return fn();
+  if (map.has(key)) return map.get(key);
+  const v = fn();
+  map.set(key, v);
+  return v;
+}
+function newClassifyCache() {
+  return { bot: new Map(), forged: new Map(), dc: new Map() };
+}
+
+function classifyVisit(ua, org, country, ts, referer, path, cache) {
   const u = (ua || "").trim();
   if (!u) return { kind: "bot", name: "No user-agent" };
   if ((country || "").toUpperCase() === "T1") return { kind: "bot", name: "Tor" };
-  if (BOT_UA_RE.test(u)) {
-    const lower = u.toLowerCase();
-    for (const key in BOT_NAMES) {
-      if (lower.includes(key)) return { kind: "bot", name: BOT_NAMES[key] };
-    }
-    const m = u.match(/([a-z0-9.\-]*bot)/i);
-    return { kind: "bot", name: m ? m[1] : "Bot / crawler" };
+  const named = memo(cache && cache.bot, u, () => botName(u));
+  if (named) return { kind: "bot", name: named };
+  if (referer) {
+    if (PROBE_REF_RE.test(referer)) return { kind: "bot", name: "Vulnerability scanner" };
+    if (FAKE_REF_RE.test(referer)) return { kind: "bot", name: "Fake referrer" };
+    if (selfReferral(referer, path)) return { kind: "bot", name: "Fake referrer" };
   }
-  if (org && DC_ORG_RE.test(org)) return { kind: "datacenter", name: "Datacenter / automated" };
+  // Browser age only moves one version per 4 weeks: one verdict per UA per month.
+  const forged = memo(cache && cache.forged, u + "|" + (ts || "").slice(0, 7), () => forgedBrowser(u, ts));
+  if (forged) return { kind: "bot", name: forged };
+  if (org && memo(cache && cache.dc, org, () => DC_ORG_RE.test(org))) return { kind: "datacenter", name: "Datacenter / automated" };
   return { kind: "human", name: "Human" };
+}
+
+// Behavioural pass over rows already classified one by one: catches bots that
+// wear a clean browser User-Agent from a residential or proxy network.
+//   1. Page burst. The site navigates client-side, so a person logs one server
+//      page view per landing. BURST or more full page loads from one IP within
+//      BURST_MS is a crawler walking the menu. Applies to every country.
+//   2. Flood. A foreign IP with more than FLOOD views, or any IP (home market
+//      included) with more than DAY_FLOOD views on one day.
+//   3. Fleet. One exact User-Agent spread over UA_FLEET or more foreign IPs.
+//   4. Swarm. SWARM or more different foreign IPs within SWARM_MS: a botnet on
+//      residential proxies, one hit per IP. Real foreign visits to this site
+//      come a few per day, never five in the same minute.
+// BE/NL/LU visitors are only judged by 1 and the day cap of 2, so a real
+// Belgian sharing a common phone User-Agent is never hidden.
+function applyBehaviour(rows) {
+  const BURST = 4, BURST_MS = 30000, PAIR_MS = 3000, FLOOD = 20, DAY_FLOOD = 30, UA_FLEET = 20, SWARM = 5, SWARM_MS = 60000;
+  const HOME = { BE: 1, NL: 1, LU: 1 };
+  const isHuman = (r) => r._kind === "human";
+  const mark = (r, name) => { r._kind = "bot"; r._name = name; };
+
+  const byIp = new Map();
+  for (const r of rows) {
+    if (!isHuman(r)) continue;
+    let a = byIp.get(r.ip);
+    if (!a) { a = []; byIp.set(r.ip, a); }
+    a.push(r);
+  }
+  for (const list of byIp.values()) {
+    if (list.length < 2) continue;
+    list.sort((a, b) => a._t - b._t);
+    const t = list.map((r) => r._t);
+    let j = 0;
+    for (let i = 0; i < list.length; i++) {
+      while (t[i] - t[j] > BURST_MS) j++;
+      if (i - j + 1 >= BURST) for (let k = j; k <= i; k++) mark(list[k], "Crawler (page burst)");
+      // Two different pages loaded within PAIR_MS: no person clicks that fast,
+      // form-spam bots fetch / and /contact back to back.
+      if (i > 0 && t[i] - t[i - 1] <= PAIR_MS && list[i].path !== list[i - 1].path) {
+        mark(list[i - 1], "Crawler (page burst)");
+        mark(list[i], "Crawler (page burst)");
+      }
+    }
+  }
+
+  const ipHits = new Map(), ipDay = new Map(), uaIps = new Map();
+  for (const r of rows) {
+    if (!isHuman(r)) continue;
+    ipHits.set(r.ip, (ipHits.get(r.ip) || 0) + 1);
+    const dk = r.ip + "|" + (r.ts || "").slice(0, 10);
+    ipDay.set(dk, (ipDay.get(dk) || 0) + 1);
+    let s = uaIps.get(r.ua);
+    if (!s) { s = new Set(); uaIps.set(r.ua, s); }
+    s.add(r.ip);
+  }
+  for (const r of rows) {
+    if (!isHuman(r)) continue;
+    if ((ipDay.get(r.ip + "|" + (r.ts || "").slice(0, 10)) || 0) > DAY_FLOOD) { mark(r, "High-volume IP"); continue; }
+    if (HOME[(r.country || "").toUpperCase()]) continue;
+    if ((ipHits.get(r.ip) || 0) > FLOOD) mark(r, "High-volume IP");
+    else if (r.ua && (uaIps.get(r.ua) || new Set()).size >= UA_FLEET) mark(r, "Bot fleet (shared UA)");
+  }
+
+  // The swarm window counts every browser-looking foreign row (also the ones
+  // already caught on their own), but only marks rows still counted as human.
+  const foreign = rows
+    .filter((r) => r._browserish && !HOME[(r.country || "").toUpperCase()])
+    .sort((a, b) => a._t - b._t);
+  const ft = foreign.map((r) => r._t);
+  const inWin = new Map();
+  let lo = 0;
+  for (let i = 0; i < foreign.length; i++) {
+    inWin.set(foreign[i].ip, (inWin.get(foreign[i].ip) || 0) + 1);
+    while (ft[i] - ft[lo] > SWARM_MS) {
+      const ip = foreign[lo].ip, n = inWin.get(ip) - 1;
+      if (n) inWin.set(ip, n); else inWin.delete(ip);
+      lo++;
+    }
+    if (inWin.size >= SWARM) for (let k = lo; k <= i; k++) if (isHuman(foreign[k])) mark(foreign[k], "Bot swarm");
+  }
+}
+
+function classifyRows(rows, cache) {
+  const c0 = cache || newClassifyCache();
+  for (const r of rows) {
+    const c = classifyVisit(r.ua, r.org, r.country, r.ts, r.referer, r.path, c0);
+    r._kind = c.kind;
+    r._name = c.name;
+    r._t = Date.parse(r.ts) || 0;
+    const u = (r.ua || "").trim();
+    r._browserish = !!u && u.startsWith("Mozilla/5.0 (") && !memo(c0.bot, u, () => botName(u));
+  }
+  applyBehaviour(rows);
 }
 
 function parseUA(ua) {
@@ -262,6 +460,9 @@ function parseUA(ua) {
   else if (/firefox\/|fxios/i.test(u)) browser = "Firefox";
   else if (/chrome\/|crios/i.test(u)) browser = "Chrome";
   else if (/safari\//i.test(u) && /version\//i.test(u)) browser = "Safari";
+  if (/linkedinapp|linkedin/i.test(u)) browser = "LinkedIn app";
+  else if (/fban|fbav|instagram/i.test(u)) browser = "Facebook / Instagram app";
+  else if (browser === "-" && /iphone|ipad|; wv\)/i.test(u)) browser = "In-app browser";
   return { device, os, browser };
 }
 
@@ -378,60 +579,82 @@ async function handleVisits(request, env) {
   const wantsCsv = url.pathname.endsWith(".csv") || url.searchParams.get("format") === "csv";
   const showBots = url.searchParams.get("bots") === "1" || url.searchParams.get("bots") === "show";
 
-  const LIMIT = 6000;
-  let rows = [];
+  // Bots are over 90% of the log (55k rows in 90 days on 11/11/2026), so the
+  // newest N rows of the whole table only reached back about a week. The
+  // dashboard therefore reads a fixed window of WINDOW_DAYS: per-day totals
+  // straight from SQL, and only the rows that could be a person (a real browser
+  // User-Agent, no bot name, not Tor) for the detailed classification. The
+  // "include bots" view, JSON and bot CSV add the newest RAW_LIMIT raw rows.
+  const WINDOW_DAYS = 30;
+  const CAND_LIMIT = 15000;
+  const RAW_LIMIT = 6000;
+  const dayMs = 86400000;
+  const todayStart = (() => { const d = new Date(); d.setUTCHours(0, 0, 0, 0); return d.getTime(); })();
+  const since = new Date(todayStart - (WINDOW_DAYS - 1) * dayMs).toISOString();
+  const COLS = "ts, ip, country, city, region, org, path, referer, ua";
+  const CAND_SQL =
+    "SELECT " + COLS + " FROM visits WHERE ts >= ? " +
+    "AND ua LIKE 'Mozilla/5.0 (%' AND (ua LIKE '%AppleWebKit/%' OR ua LIKE '%Gecko/%') " +
+    "AND ua NOT LIKE '%bot%' AND ua NOT LIKE '%crawl%' AND ua NOT LIKE '%spider%' " +
+    "AND ua NOT LIKE '%Trident/%' AND ua NOT LIKE '%MSIE %' AND (country IS NULL OR country <> 'T1') " +
+    "ORDER BY ts DESC LIMIT " + CAND_LIMIT;
+
+  let cand = [], dayTotals = [], raw = null;
   try {
-    rows = (await env.DB.prepare(
-      "SELECT ts, ip, country, city, region, org, path, referer, ua FROM visits ORDER BY ts DESC LIMIT " + LIMIT
-    ).all()).results || [];
+    cand = (await env.DB.prepare(CAND_SQL).bind(since).all()).results || [];
+    dayTotals = (await env.DB.prepare(
+      "SELECT substr(ts, 1, 10) AS d, COUNT(*) AS n FROM visits WHERE ts >= ? GROUP BY d"
+    ).bind(since).all()).results || [];
+    if (showBots || wantsJson) {
+      raw = (await env.DB.prepare(
+        "SELECT " + COLS + " FROM visits ORDER BY ts DESC LIMIT " + RAW_LIMIT
+      ).all()).results || [];
+    }
   } catch (_) {
     return plain("No visits recorded yet. Check back after the site receives traffic.");
   }
-  if (!rows.length) return plain("No visits recorded yet. Check back after the site receives traffic.");
+  if (!dayTotals.length && !(raw && raw.length)) {
+    return plain("No visits recorded yet. Check back after the site receives traffic.");
+  }
 
   try {
-    const capped = rows.length >= LIMIT;
-    for (const r of rows) {
-      const c = classifyVisit(r.ua, r.org, r.country);
-      r._kind = c.kind;
-      r._name = c.name;
-    }
-    // Behavioural pass: catch bots that wear a real browser User-Agent from an
-    // unlisted (residential/proxy) network - either one IP hammering the site,
-    // or one exact User-Agent spread across a fleet of one-hit IPs. Skips the
-    // home market (BE/NL/LU) entirely, so a real Belgian/Dutch visitor sharing a
-    // common phone UA is never hidden; only foreign automated traffic is hit.
-    {
-      const FLOOD = 20, UA_FLEET = 20, HOME = { BE: 1, NL: 1, LU: 1 };
-      const ipHits = new Map(), uaIps = new Map();
-      for (const r of rows) {
-        if (r._kind !== "human") continue;
-        ipHits.set(r.ip, (ipHits.get(r.ip) || 0) + 1);
-        let s = uaIps.get(r.ua); if (!s) { s = new Set(); uaIps.set(r.ua, s); }
-        s.add(r.ip);
+    const capped = cand.length >= CAND_LIMIT;
+    classifyRows(cand);
+    const humans = cand.filter((r) => r._kind === "human");
+    const totalEvents = dayTotals.reduce((s, d) => s + (d.n || 0), 0);
+    const botCount = Math.max(0, totalEvents - humans.length);
+
+    // Raw rows take the verdict of the same row in the window, so both views
+    // agree; older or obvious-bot rows are judged on their own.
+    let rows = cand;
+    if (raw) {
+      const key = (r) => r.ts + "|" + r.ip + "|" + r.path;
+      const verdict = new Map();
+      for (const r of cand) verdict.set(key(r), r);
+      const rc = newClassifyCache();
+      for (const r of raw) {
+        const v = verdict.get(key(r));
+        if (v) { r._kind = v._kind; r._name = v._name; continue; }
+        const c = classifyVisit(r.ua, r.org, r.country, r.ts, r.referer, r.path, rc);
+        r._kind = c.kind;
+        r._name = c.name;
       }
-      for (const r of rows) {
-        if (r._kind !== "human" || HOME[(r.country || "").toUpperCase()]) continue;
-        if ((ipHits.get(r.ip) || 0) > FLOOD) { r._kind = "bot"; r._name = "High-volume IP"; }
-        else if (r.ua && (uaIps.get(r.ua) || new Set()).size >= UA_FLEET) { r._kind = "bot"; r._name = "Bot fleet (shared UA)"; }
-      }
+      rows = raw;
     }
-    const humans = rows.filter((r) => r._kind === "human");
-    const botCount = rows.length - humans.length;
 
     // ---- JSON API ----
     if (wantsJson) {
       const payload = {
         generatedAt: new Date().toISOString(),
-        window: capped ? "most recent " + LIMIT + " events" : "all events (<= 90 days)",
+        window: "last " + WINDOW_DAYS + " days (totals); visits = most recent " + RAW_LIMIT + " raw events",
         totals: {
-          events: rows.length,
+          events: totalEvents,
           humanViews: humans.length,
           bots: botCount,
           uniqueHumanVisitors: new Set(humans.map((h) => h.ip)).size,
         },
         visits: rows.map((r) => ({
-          ts: r.ts, kind: r._kind, ip: r.ip, country: r.country, city: r.city,
+          ts: r.ts, kind: r._kind, detail: r._name, ip: r.ip, country: r.country, city: r.city,
           region: r.region, network: r.org, page: r.path, source: sourceOf(r.referer),
           referer: r.referer, ua: r.ua,
         })),
@@ -462,8 +685,6 @@ async function handleVisits(request, env) {
 
     // ---- Aggregates for the HTML dashboard ----
     const now = Date.now();
-    const dayMs = 86400000;
-    const todayStart = (() => { const d = new Date(); d.setUTCHours(0, 0, 0, 0); return d.getTime(); })();
     const tsMs = (r) => Date.parse(r.ts) || 0;
 
     // Contact-form leads (conversions). A missing table just means "none yet".
@@ -487,27 +708,25 @@ async function handleVisits(request, env) {
     const uniqueHumans = new Set(humans.map((h) => h.ip)).size;
     const humansToday = humans.filter((h) => tsMs(h) >= todayStart).length;
     const humans7 = humans.filter((h) => tsMs(h) >= now - 7 * dayMs).length;
-    const humans30 = humans.filter((h) => tsMs(h) >= now - 30 * dayMs).length;
+    const humans30 = humans.length;
+    const fromGoogle = humans.filter((h) => sourceOf(h.referer) === "Google").length;
 
-    // Daily chart (human vs bot), last 30 calendar days incl. empty days.
-    const byDay = new Map();
-    for (const r of rows) {
-      const day = (r.ts || "").slice(0, 10);
-      if (!day) continue;
-      const e = byDay.get(day) || { h: 0, b: 0 };
-      if (r._kind === "human") e.h++; else e.b++;
-      byDay.set(day, e);
-    }
+    // Daily chart (human vs bot), last 30 calendar days incl. empty days:
+    // all events per day from SQL, people from the classified window.
+    const totalByDay = new Map(dayTotals.map((d) => [d.d, d.n || 0]));
+    const humanByDay = countBy(humans, (r) => (r.ts || "").slice(0, 10));
     const days = [];
-    for (let i = 29; i >= 0; i--) {
+    for (let i = WINDOW_DAYS - 1; i >= 0; i--) {
       const ds = new Date(todayStart - i * dayMs).toISOString().slice(0, 10);
-      const e = byDay.get(ds) || { h: 0, b: 0 };
-      days.push({ ds, h: e.h, b: e.b });
+      const h = humanByDay.get(ds) || 0;
+      days.push({ ds, h, b: Math.max(0, (totalByDay.get(ds) || 0) - h) });
     }
-    const dayMax = Math.max(...days.map((d) => d.h + d.b), 1);
+    // Bots outnumber people about 30 to 1, so in the real-visitor view the
+    // chart shows people only (scaled to them); the bots view stacks both.
+    const dayMax = Math.max(...days.map((d) => d.h + (showBots ? d.b : 0)), 1);
     const chartBars = days.map((d) => {
       const hH = Math.round((d.h / dayMax) * 100);
-      const bH = Math.round((d.b / dayMax) * 100);
+      const bH = showBots ? Math.round((d.b / dayMax) * 100) : 0;
       return `<div class="col" title="${d.ds} - ${d.h} visitors, ${d.b} bots">` +
         `<div class="col-bars"><div class="seg human" style="height:${hH}%"></div>` +
         `<div class="seg bot" style="height:${bH}%"></div></div>` +
@@ -720,7 +939,7 @@ async function handleVisits(request, env) {
 <body>
 <header>
   <div class="brand"><h1>Russo NV - Visitor analytics</h1><span class="pill">${esc(viewLabel)}</span></div>
-  <div class="sub">Cookieless &amp; server-side · location detected at the Cloudflare edge · data auto-deletes after ${RETENTION_DAYS} days${capped ? " · showing most recent " + fmt(LIMIT) + " events" : ""}</div>
+  <div class="sub">Cookieless &amp; server-side · location detected at the Cloudflare edge · data auto-deletes after ${RETENTION_DAYS} days · figures cover the last ${WINDOW_DAYS} days${capped ? " (capped at " + fmt(CAND_LIMIT) + " possible visitors)" : ""}${showBots ? " · bot rows below = newest " + fmt(RAW_LIMIT) + " raw events" : ""}</div>
 </header>
 <main>
   ${alertBanner}
@@ -732,14 +951,14 @@ async function handleVisits(request, env) {
   </div>
 
   <div class="cards">
-    <div class="card hero"><div class="n">${fmt(uniqueHumans)}</div><div class="l">Real visitors (unique)</div></div>
+    <div class="card hero"><div class="n">${fmt(uniqueHumans)}</div><div class="l">Real visitors, 30 days (unique)</div></div>
     <div class="card lead"><div class="n">${fmt(leadsTotal)}</div><div class="l">Contact-form leads</div></div>
     <div class="card"><div class="n">${fmt(returningVisitors)}</div><div class="l">Returning visitors</div></div>
-    <div class="card"><div class="n">${fmt(humans.length)}</div><div class="l">Human page views</div></div>
+    <div class="card"><div class="n">${fmt(fromGoogle)}</div><div class="l">From Google, 30 days</div></div>
     <div class="card"><div class="n">${fmt(humansToday)}</div><div class="l">Visits today</div></div>
     <div class="card"><div class="n">${fmt(humans7)}</div><div class="l">Last 7 days</div></div>
     <div class="card"><div class="n">${fmt(humans30)}</div><div class="l">Last 30 days</div></div>
-    <div class="card muted"><div class="n">${fmt(botCount)}</div><div class="l">Bots filtered out</div></div>
+    <div class="card muted"><div class="n">${fmt(botCount)}</div><div class="l">Bots filtered out, 30 days</div></div>
   </div>
 
   ${leadRows ? `<h2 id="leads">Contact-form leads: who filled in the form</h2>
@@ -751,7 +970,7 @@ async function handleVisits(request, env) {
   <h2>Visits per day - last 30 days</h2>
   <div class="panel">
     <div class="chart">${chartBars}</div>
-    <div class="legend"><span><i style="background:var(--accent)"></i>Real visitors</span><span><i style="background:var(--bot)"></i>Bots / crawlers</span></div>
+    <div class="legend"><span><i style="background:var(--accent)"></i>Real visitors</span>${showBots ? '<span><i style="background:var(--bot)"></i>Bots / crawlers</span>' : '<span class="muted">Bots hidden here, see "Include bots"</span>'}</div>
   </div>
 
   <h2>Where your visitors come from</h2>
@@ -781,7 +1000,7 @@ async function handleVisits(request, env) {
 
   <footer>
     Privacy-friendly analytics - no cookies, no tracking scripts, no consent banner required (GDPR legitimate interest; data auto-deleted after ${RETENTION_DAYS} days).
-    Bot detection is heuristic (User-Agent + originating network) and applied across the whole log. ·
+    Bot detection is heuristic: bot names, forged or outdated browser signatures, forged referrers, hosting networks, and behaviour (page bursts, floods, swarms). It is applied at view time, so it also cleans older rows. ·
     <a href="${csvHref}">CSV</a> · <a href="/_visits.json">JSON</a>
   </footer>
 </main>
